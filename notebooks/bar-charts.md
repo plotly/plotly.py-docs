@@ -10,132 +10,123 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
-  plotly:
-    description: How to make Bar Charts in Python with Plotly.
-    display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/186
-    language: python
-    layout: user-guide
-    name: Bar Charts
-    order: 4
-    page_type: example_index
-    permalink: python/bar-charts/
-    thumbnail: thumbnail/bar.jpg
-    title: Bar Charts | plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-#### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version. 
-
 ```python
-import plotly
-plotly.__version__
+from _plotly_future_ import v4
 ```
 
-#### Basic Bar Chart
+### Bar chart with plotly express
+
+Plotly express functions (here needs link to stable px doc entry) take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). 
+
+In a bar plot, each row of the DataFrame is represented as a rectangular mark.
 
 ```python
-import plotly.plotly as py
+import plotly_express as px
+data = px.data.gapminder()
+data_canada = data[data.country == 'Canada']
+px.bar(data_canada, x='year', y='pop')
+```
+
+```python
+data_canada
+```
+
+### Customize bar chart with plotly express
+
+```python
+import plotly_express as px
+data = px.data.gapminder()
+
+data_canada = data[data.country == 'Canada']
+px.bar(data_canada, x='year', y='pop', 
+       hover_data=['lifeExp', 'gdpPercap'], color='lifeExp', 
+       labels={'pop':'population of Canada'}, height=400)
+```
+
+```python
+import plotly_express as px
+tips = px.data.tips()
+px.bar(tips, x="sex", y="total_bill", color='time')
+```
+
+```python
+px.bar(tips, x="sex", y="total_bill", color='smoker', barmode='group',
+             height=400)
+```
+
+```python
+px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group", 
+       facet_row="time", facet_col="day",
+       category_orders={"day": ["Thur", "Fri", "Sat", "Sun"], "time": ["Lunch", "Dinner"]})
+```
+
+To learn more, see the *link to px.bar reference page*.
+
+
+#### Basic Bar Chart with plotly.graph_objs
+
+When data are not available as pandas DataFrame, it is also possible to use the more generic `go.Bar` function from `plotly.graph_objs`.
+
+```python
 import plotly.graph_objs as go
+animals=['giraffes', 'orangutans', 'monkeys']
 
-data = [go.Bar(
-            x=['giraffes', 'orangutans', 'monkeys'],
-            y=[20, 14, 23]
-    )]
-
-py.iplot(data, filename='basic-bar')
+fig = go.Figure([go.Bar(x=animals, y=[20, 14, 23])])
+fig
 ```
 
 #### Grouped Bar Chart
 
+Customize the figure using `fig.update`.
+
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
+animals=['giraffes', 'orangutans', 'monkeys']
 
-trace1 = go.Bar(
-    x=['giraffes', 'orangutans', 'monkeys'],
-    y=[20, 14, 23],
-    name='SF Zoo'
-)
-trace2 = go.Bar(
-    x=['giraffes', 'orangutans', 'monkeys'],
-    y=[12, 18, 29],
-    name='LA Zoo'
-)
-
-data = [trace1, trace2]
-layout = go.Layout(
-    barmode='group'
-)
-
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='grouped-bar')
+fig = go.Figure(data=[
+    go.Bar(name='SF Zoo', x=animals, y=[20, 14, 23]),
+    go.Bar(name='LA Zoo', x=animals, y=[12, 18, 29])
+])
+fig.update(layout_barmode='group')
 ```
 
 ### Stacked Bar Chart
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
+animals=['giraffes', 'orangutans', 'monkeys']
 
-trace1 = go.Bar(
-    x=['giraffes', 'orangutans', 'monkeys'],
-    y=[20, 14, 23],
-    name='SF Zoo'
-)
-trace2 = go.Bar(
-    x=['giraffes', 'orangutans', 'monkeys'],
-    y=[12, 18, 29],
-    name='LA Zoo'
-)
-
-data = [trace1, trace2]
-layout = go.Layout(
-    barmode='stack'
-)
-
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='stacked-bar')
+fig = go.Figure(data=[
+    go.Bar(name='SF Zoo', x=animals, y=[20, 14, 23]),
+    go.Bar(name='LA Zoo', x=animals, y=[12, 18, 29])
+])
+fig.update(layout_barmode='stack')
 ```
 
 ### Bar Chart with Hover Text
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
-trace0 = go.Bar(
-    x=['Product A', 'Product B', 'Product C'],
-    y=[20, 14, 23],
-    text=['27% market share', '24% market share', '19% market share'],
-    marker=dict(
-        color='rgb(158,202,225)',
-        line=dict(
-            color='rgb(8,48,107)',
-            width=1.5,
-        )
-    ),
-    opacity=0.6
-)
+x = ['Product A', 'Product B', 'Product C']
+y = [20, 14, 23]
 
-data = [trace0]
-layout = go.Layout(
-    title='January 2013 Sales Report',
-)
+data = [go.Bar(x=x, y=y,
+               text=['27% market share', '24% market share', '19% market share'])]
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='text-hover-bar')
+fig = go.Figure(data=data)
+# Customize aspect
+fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
+                  marker_line_width=1.5, opacity=0.6)
+fig.update(layout_title_text='January 2013 Sales Report')
+fig
 ```
 
 ### Bar Chart with Direct Labels
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 x = ['Product A', 'Product B', 'Product C']
@@ -145,7 +136,7 @@ data = [go.Bar(
             x=x,
             y=y,
             text=y,
-            textposition = 'auto',
+            textposition='auto',
             marker=dict(
                 color='rgb(158,202,225)',
                 line=dict(
@@ -155,116 +146,63 @@ data = [go.Bar(
             opacity=0.6
         )]
 
-py.iplot(data, filename='bar-direct-labels')
-```
-
-### Grouped Bar Chart with Direct Labels
-
-```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
-x = ['Product A', 'Product B', 'Product C']
-y = [20, 14, 23]
-y2 = [16,12,27]
-
-trace1 = go.Bar(
-    x=x,
-    y=y,
-    text=y,
-    textposition = 'auto',
-    marker=dict(
-        color='rgb(158,202,225)',
-        line=dict(
-            color='rgb(8,48,107)',
-            width=1.5),
-        ),
-    opacity=0.6
-)
-
-trace2 = go.Bar(
-    x=x,
-    y=y2,
-    text=y2,
-    textposition = 'auto',
-    marker=dict(
-        color='rgb(58,200,225)',
-        line=dict(
-            color='rgb(8,48,107)',
-            width=1.5),
-        ),
-    opacity=0.6
-)
-
-data = [trace1,trace2]
-
-py.iplot(data, filename='grouped-bar-direct-labels')
+fig = go.Figure(data=data)
+fig
 ```
 
 ### Rotated Bar Chart Labels
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
 trace0 = go.Bar(
-    x=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    x=months,
     y=[20, 14, 25, 16, 18, 22, 19, 15, 12, 16, 14, 17],
     name='Primary Product',
-    marker=dict(
-        color='rgb(49,130,189)'
-    )
+    marker_color='rgb(49,130,189)'
 )
 trace1 = go.Bar(
-    x=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    x=months,
     y=[19, 14, 22, 14, 16, 19, 15, 14, 10, 12, 12, 16],
     name='Secondary Product',
-    marker=dict(
-        color='rgb(204,204,204)',
-    )
+    marker_color='rgb(204,204,204)'
 )
 
 data = [trace0, trace1]
-layout = go.Layout(
-    xaxis=dict(tickangle=-45),
-    barmode='group',
-)
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='angled-text-bar')
+fig = go.Figure(data=data)
+fig.update(layout_barmode='group', layout_xaxis_tickangle=-45)
+fig
 ```
 
 ### Customizing Individual Bar Colors
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
+
+grey = 'rgba(204,204,204,1)'
+red = 'rgba(222,45,38,0.8)'
+colors = [grey,] * 5
+colors[1] = red
 
 trace0 = go.Bar(
     x=['Feature A', 'Feature B', 'Feature C',
        'Feature D', 'Feature E'],
     y=[20, 14, 23, 25, 22],
-    marker=dict(
-        color=['rgba(204,204,204,1)', 'rgba(222,45,38,0.8)',
-               'rgba(204,204,204,1)', 'rgba(204,204,204,1)',
-               'rgba(204,204,204,1)']),
+    marker_color=colors
 )
 
-data = [trace0]
-layout = go.Layout(
-    title='Least Used Feature',
-)
-
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='color-bar')
+fig = go.Figure(data=[trace0])
+fig.update(layout_title_text='Least Used Feature')
+fig
 ```
 
 ### Customizing Individual Bar Widths
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace0 = go.Bar(
@@ -273,70 +211,53 @@ trace0 = go.Bar(
     width = [0.8, 0.8, 0.8, 3.5, 4]
 )
 
-data = [trace0]
-
-fig = go.Figure(data=data)
-py.iplot(fig, filename='width-bar')
+fig = go.Figure(data=[trace0])
+fig
 ```
 
 ### Customizing Individual Bar Base
 
+*I find this example not very good, because I think I would instead plot negative values for the expenses instead of changing the base. Can we come up with a better idea?*
+
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
-data = [
-    go.Bar(
-        x = ['2016','2017','2018'],
-        y = [500,600,700],
-        base = [-500,-600,-700],
-        marker = dict(
-          color = 'red'
-        ),
-        name = 'expenses'
-    ),
-    go.Bar(
-        x = ['2016','2017','2018'],
-        y = [300,400,700],
-        base = 0,
-        marker = dict(
-          color = 'blue'
-        ),
-        name = 'revenue'
-    )
-]
+years = ['2016','2017','2018']
 
+trace0 = go.Bar(x=years, y=[500, 600, 700],
+                base = [-500,-600,-700],
+                marker_color='red',
+                name = 'expenses')
+trace1 = go.Bar(x=years, y=[300, 400, 700], 
+                base=0,
+                marker_color='blue',
+                name='revenue'
+                )
 
-fig = go.Figure(data=data)
-py.iplot(fig, filename='base-bar')
+fig = go.Figure(data=[trace0, trace1])
+fig
 ```
 
 ### Colored and Styled Bar Chart
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
-trace1 = go.Bar(
-    x=[1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
-       2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012],
-    y=[219, 146, 112, 127, 124, 180, 236, 207, 236, 263,
-       350, 430, 474, 526, 488, 537, 500, 439],
-    name='Rest of world',
-    marker=dict(
-        color='rgb(55, 83, 109)'
-    )
-)
-trace2 = go.Bar(
-    x=[1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
-       2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012],
-    y=[16, 13, 10, 11, 28, 37, 43, 55, 56, 88, 105, 156, 270,
-       299, 340, 403, 549, 499],
-    name='China',
-    marker=dict(
-        color='rgb(26, 118, 255)'
-    )
-)
+years = [1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
+         2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012]
+
+trace1 = go.Bar(x=years,
+                y=[219, 146, 112, 127, 124, 180, 236, 207, 236, 263,
+                   350, 430, 474, 526, 488, 537, 500, 439],
+                name='Rest of world',
+                marker_color='rgb(55, 83, 109)'
+                )
+trace2 = go.Bar(x=years,
+                y=[16, 13, 10, 11, 28, 37, 43, 55, 56, 88, 105, 156, 270,
+                   299, 340, 403, 549, 499],
+                name='China',
+                marker_color='rgb(26, 118, 255)'
+                )
 data = [trace1, trace2]
 layout = go.Layout(
     title='US Export of Plastic Scrap',
@@ -369,13 +290,12 @@ layout = go.Layout(
 )
 
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='style-bar')
+fig
 ```
 
 ### Waterfall Bar Chart
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 x_data = ['Product<br>Revenue', 'Services<br>Revenue',
@@ -385,49 +305,27 @@ y_data = [400, 660, 660, 590, 400, 400, 340]
 text = ['$430K', '$260K', '$690K', '$-120K', '$-200K', '$-320K', '$370K']
 
 # Base
-trace0 = go.Bar(
-    x=x_data,
-    y=[0, 430, 0, 570, 370, 370, 0],
-    marker=dict(
-        color='rgba(1,1,1, 0.0)',
-    )
-)
+trace0 = go.Bar(x=x_data,
+                y=[0, 430, 0, 570, 370, 370, 0],
+                marker_color='rgba(1,1,1, 0.0)')
 # Revenue
-trace1 = go.Bar(
-    x=x_data,
-    y=[430, 260, 690, 0, 0, 0, 0],
-    marker=dict(
-        color='rgba(55, 128, 191, 0.7)',
-        line=dict(
-            color='rgba(55, 128, 191, 1.0)',
-            width=2,
-        )
-    )
-)
+trace1 = go.Bar(x=x_data,
+                y=[430, 260, 690, 0, 0, 0, 0],
+                marker_color='rgba(55, 128, 191, 0.7)',
+                marker_line_color='rgba(55, 128, 191, 1.0)'
+                )
 # Costs
-trace2 = go.Bar(
-    x=x_data,
-    y=[0, 0, 0, 120, 200, 320, 0],
-    marker=dict(
-        color='rgba(219, 64, 82, 0.7)',
-        line=dict(
-            color='rgba(219, 64, 82, 1.0)',
-            width=2,
-        )
-    )
-)
+trace2 = go.Bar(x=x_data,
+                y=[0, 0, 0, 120, 200, 320, 0],
+                marker_color='rgba(219, 64, 82, 0.7)',
+                marker_line_color='rgba(219, 64, 82, 1.0)',
+                )
 # Profit
-trace3 = go.Bar(
-    x=x_data,
-    y=[0, 0, 0, 0, 0, 0, 370],
-    marker=dict(
-        color='rgba(50, 171, 96, 0.7)',
-        line=dict(
-            color='rgba(50, 171, 96, 1.0)',
-            width=2,
-        )
-    )
-)
+trace3 = go.Bar(x=x_data,
+                y=[0, 0, 0, 0, 0, 0, 370],
+                marker_color='rgba(50, 171, 96, 0.7)',
+                marker_line_color='rgba(50, 171, 96, 1.0)'
+                )
 data = [trace0, trace1, trace2, trace3]
 layout = go.Layout(
     title='Annual Profit- 2015',
@@ -447,7 +345,8 @@ for i in range(0, 7):
     layout['annotations'] = annotations
 
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='waterfall-bar-profit')
+fig.update_traces(marker_line_width=2)
+fig
 ```
 
 ### Bar Chart with Relative Barmode
@@ -455,40 +354,16 @@ py.iplot(fig, filename='waterfall-bar-profit')
 ```python
 x = [1, 2, 3, 4]
 
-trace1 = {
-  'x': x,
-  'y': [1, 4, 9, 16],
-  'name': 'Trace1',
-  'type': 'bar'
-};
-trace2 = {
-  'x': x,
-  'y': [6, -8, -4.5, 8],
-  'name': 'Trace2',
-  'type': 'bar'
-};
-trace3 = {
-  'x': x,
-  'y': [-15, -3, 4.5, -8],
-  'name': 'Trace3',
-  'type': 'bar'
- }
- 
-trace4 = {
-  'x': x,
-  'y': [-1, 3, -3, -4],
-  'name': 'Trace4',
-  'type': 'bar'
- }
- 
-data = [trace1, trace2, trace3, trace4];
-layout = {
-  'xaxis': {'title': 'X axis'},
-  'yaxis': {'title': 'Y axis'},
-  'barmode': 'relative',
-  'title': 'Relative Barmode'
-};
-py.iplot({'data': data, 'layout': layout}, filename='barmode-relative')
+trace0 = go.Bar(x=x, y=[1, 4, 9, 16])
+trace1 = go.Bar(x=x, y=[6, -8, -4.5, 8]) 
+trace2 = go.Bar(x=x, y=[-15, -3, 4.5, -8])
+trace3 = go.Bar(x=x, y=[-1, 3, -3, -4])
+
+data = [trace0, trace1, trace2, trace3];
+
+fig = go.Figure(data=data)
+fig.update(layout_barmode='relative', layout_title_text='Relative Barmode')
+fig
 ```
 
 ### Horizontal Bar Charts
@@ -498,7 +373,7 @@ See examples of horizontal bar charts [here](https://plot.ly/python/horizontal-b
 ### Dash Example
 
 
-[Dash](https://plot.ly/products/dash/) is an Open Source Python library which can help you convert plotly figures into a reactive, web-based application. Below is a simple example of a dashboard created using Dash. Its [source code](https://github.com/plotly/simple-example-chart-apps/tree/master/dash-barplot) can easily be deployed to a PaaS.
+[Dash](https://plot.ly/products/dash/) is an Open Source Python library which can help you convert plotly figures into a reactive, web-based application. Below is a simple example of a dashboard created using Dash. Its [source code](https://github.com/plotly/simple-example-chart-apps/tree/master/dash-barplot) is also show below and can easily be deployed to a PaaS (platform as a service).
 
 ```python
 from IPython.display import IFrame
@@ -514,20 +389,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-barplot/code", width="80%
 ### Reference
 See https://plot.ly/python/reference/#bar for more information and chart attribute options!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-#! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'bars.ipynb', 'python/bar-charts/', 'Python Bar Charts | plotly',
-    'How to make Bar Charts in Python with Plotly.',
-    title = 'Bar Charts | plotly',
-    name = 'Bar Charts',
-    thumbnail='thumbnail/bar.jpg', language='python',
-    page_type='example_index', has_thumbnail='true', display_as='basic', order=4,
-    ipynb= '~notebook_demo/186')
-```

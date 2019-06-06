@@ -10,6 +10,19 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  plotly:
+    description: How to make Bar Charts in Python with Plotly.
+    display_as: basic
+    has_thumbnail: true
+    ipynb: ~notebook_demo/186
+    language: python
+    layout: user-guide
+    name: Bar Charts
+    order: 4
+    page_type: example_index
+    permalink: python/bar-charts/
+    thumbnail: thumbnail/bar.jpg
+    title: Bar Charts | plotly
 ---
 
 ```python

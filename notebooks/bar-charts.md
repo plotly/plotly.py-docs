@@ -24,9 +24,9 @@ In a bar plot, each row of the DataFrame is represented as a rectangular mark.
 
 ```python
 import plotly_express as px
-data = px.data.gapminder()
-data_canada = data[data.country == 'Canada']
-px.bar(data_canada, x='year', y='pop')
+data_canada = px.data.gapminder().query("country == 'Canada'")
+fig = px.bar(data_canada, x='year', y='pop')
+fig.show()
 ```
 
 ```python
@@ -35,31 +35,45 @@ data_canada
 
 ### Customize bar chart with plotly express
 
+The bar plot can be customized using keyword arguments *TODO here link to meta doc page on customizing plotly plots?*.
+
 ```python
 import plotly_express as px
 data = px.data.gapminder()
 
 data_canada = data[data.country == 'Canada']
-px.bar(data_canada, x='year', y='pop', 
-       hover_data=['lifeExp', 'gdpPercap'], color='lifeExp', 
-       labels={'pop':'population of Canada'}, height=400)
+fig = px.bar(data_canada, x='year', y='pop', 
+             hover_data=['lifeExp', 'gdpPercap'], color='lifeExp', 
+             labels={'pop':'population of Canada'}, height=400)
+fig.show()
 ```
+
+When several rows share the same value of `x` (here Female or Male), the rectangles are stacked on top of one another by default.
 
 ```python
 import plotly_express as px
 tips = px.data.tips()
-px.bar(tips, x="sex", y="total_bill", color='time')
+fig = px.bar(tips, x="sex", y="total_bill", color='time')
+fig.show()
 ```
 
 ```python
-px.bar(tips, x="sex", y="total_bill", color='smoker', barmode='group',
+# Change the default stacking
+fig = px.bar(tips, x="sex", y="total_bill", color='smoker', barmode='group',
              height=400)
+fig.show()
 ```
 
+#### Facetted subplots
+
+Use the keyword arguments `facet_row` (resp. `facet_col`) to create facetted subplots, where different rows (resp. columns) correspond to different values of the dataframe column specified in `facet_row`. 
+
 ```python
-px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group", 
-       facet_row="time", facet_col="day",
-       category_orders={"day": ["Thur", "Fri", "Sat", "Sun"], "time": ["Lunch", "Dinner"]})
+fig = px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group", 
+             facet_row="time", facet_col="day",
+             category_orders={"day": ["Thur", "Fri", "Sat", "Sun"],
+                              "time": ["Lunch", "Dinner"]})
+fig.show()
 ```
 
 To learn more, see the *link to px.bar reference page*.
@@ -67,14 +81,14 @@ To learn more, see the *link to px.bar reference page*.
 
 #### Basic Bar Chart with plotly.graph_objs
 
-When data are not available as pandas DataFrame, it is also possible to use the more generic `go.Bar` function from `plotly.graph_objs`.
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Bar` function from `plotly.graph_objs`.
 
 ```python
 import plotly.graph_objs as go
 animals=['giraffes', 'orangutans', 'monkeys']
 
 fig = go.Figure([go.Bar(x=animals, y=[20, 14, 23])])
-fig
+fig.show()
 ```
 
 #### Grouped Bar Chart
@@ -89,6 +103,7 @@ fig = go.Figure(data=[
     go.Bar(name='SF Zoo', x=animals, y=[20, 14, 23]),
     go.Bar(name='LA Zoo', x=animals, y=[12, 18, 29])
 ])
+# Change the bar mode
 fig.update(layout_barmode='group')
 ```
 
@@ -102,6 +117,7 @@ fig = go.Figure(data=[
     go.Bar(name='SF Zoo', x=animals, y=[20, 14, 23]),
     go.Bar(name='LA Zoo', x=animals, y=[12, 18, 29])
 ])
+# Change the bar mode
 fig.update(layout_barmode='stack')
 ```
 
@@ -113,15 +129,14 @@ import plotly.graph_objs as go
 x = ['Product A', 'Product B', 'Product C']
 y = [20, 14, 23]
 
-data = [go.Bar(x=x, y=y,
-               text=['27% market share', '24% market share', '19% market share'])]
-
-fig = go.Figure(data=data)
+# Use the text kw argument for hover text
+fig = go.Figure(data=[go.Bar(x=x, y=y,
+                text=['27% market share', '24% market share', '19% market share'])])
 # Customize aspect
 fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
                   marker_line_width=1.5, opacity=0.6)
 fig.update(layout_title_text='January 2013 Sales Report')
-fig
+fig.show()
 ```
 
 ### Bar Chart with Direct Labels
@@ -132,6 +147,7 @@ import plotly.graph_objs as go
 x = ['Product A', 'Product B', 'Product C']
 y = [20, 14, 23]
 
+# Use textposition='auto' for direct text
 data = [go.Bar(
             x=x,
             y=y,
@@ -143,11 +159,11 @@ data = [go.Bar(
                     color='rgb(8,48,107)',
                     width=1.5),
             ),
-            opacity=0.6
+            opacity=0.5
         )]
 
 fig = go.Figure(data=data)
-fig
+fig.show()
 ```
 
 ### Rotated Bar Chart Labels
@@ -171,11 +187,9 @@ trace1 = go.Bar(
     marker_color='rgb(204,204,204)'
 )
 
-data = [trace0, trace1]
-
-fig = go.Figure(data=data)
+fig = go.Figure(data=[trace0, trace1])
+# Here we modify the tickangle of the xaxis, resulting in rotated labels.
 fig.update(layout_barmode='group', layout_xaxis_tickangle=-45)
-fig
 ```
 
 ### Customizing Individual Bar Colors
@@ -192,12 +206,11 @@ trace0 = go.Bar(
     x=['Feature A', 'Feature B', 'Feature C',
        'Feature D', 'Feature E'],
     y=[20, 14, 23, 25, 22],
-    marker_color=colors
+    marker_color=colors # marker color can be a single color value or an iterable
 )
 
 fig = go.Figure(data=[trace0])
 fig.update(layout_title_text='Least Used Feature')
-fig
 ```
 
 ### Customizing Individual Bar Widths
@@ -208,16 +221,15 @@ import plotly.graph_objs as go
 trace0 = go.Bar(
     x=[1, 2, 3, 5.5, 10],
     y=[10, 8, 6, 4, 2],
-    width = [0.8, 0.8, 0.8, 3.5, 4]
+    width=[0.8, 0.8, 0.8, 3.5, 4] # customize width here
 )
 
 fig = go.Figure(data=[trace0])
-fig
+fig.show()
 ```
 
 ### Customizing Individual Bar Base
 
-*I find this example not very good, because I think I would instead plot negative values for the expenses instead of changing the base. Can we come up with a better idea?*
 
 ```python
 import plotly.graph_objs as go
@@ -225,9 +237,9 @@ import plotly.graph_objs as go
 years = ['2016','2017','2018']
 
 trace0 = go.Bar(x=years, y=[500, 600, 700],
-                base = [-500,-600,-700],
+                base=[-500,-600,-700],
                 marker_color='red',
-                name = 'expenses')
+                name='expenses')
 trace1 = go.Bar(x=years, y=[300, 400, 700], 
                 base=0,
                 marker_color='blue',
@@ -235,10 +247,12 @@ trace1 = go.Bar(x=years, y=[300, 400, 700],
                 )
 
 fig = go.Figure(data=[trace0, trace1])
-fig
+fig.show()
 ```
 
 ### Colored and Styled Bar Chart
+
+In this example several parameters of the layout as customized, hence it is convenient to use directly the `go.Layout(...)` constructor instead of calling `fig.update`. 
 
 ```python
 import plotly.graph_objs as go
@@ -285,12 +299,12 @@ layout = go.Layout(
         bordercolor='rgba(255, 255, 255, 0)'
     ),
     barmode='group',
-    bargap=0.15,
-    bargroupgap=0.1
+    bargap=0.15, # gap between bars of adjacent location coordinates.
+    bargroupgap=0.1 # gap between bars of the same location coordinate.
 )
 
 fig = go.Figure(data=data, layout=layout)
-fig
+fig.show()
 ```
 
 ### Waterfall Bar Chart
@@ -346,10 +360,13 @@ for i in range(0, 7):
 
 fig = go.Figure(data=data, layout=layout)
 fig.update_traces(marker_line_width=2)
-fig
+fig.show()
 ```
 
 ### Bar Chart with Relative Barmode
+
+With "relative" barmode, the bars are stacked on top of one another, with negative values
+below the axis, positive values above.
 
 ```python
 x = [1, 2, 3, 4]
@@ -363,7 +380,6 @@ data = [trace0, trace1, trace2, trace3];
 
 fig = go.Figure(data=data)
 fig.update(layout_barmode='relative', layout_title_text='Relative Barmode')
-fig
 ```
 
 ### Horizontal Bar Charts

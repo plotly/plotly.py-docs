@@ -26,10 +26,6 @@ jupyter:
     title: Python Histograms | plotly
 ---
 
-```python
-from _plotly_future_ import v4
-```
-
 ## Histogram with plotly express
 
 A [histogram](https://en.wikipedia.org/wiki/Histogram) is representation of the distribution of numerical data, where the data are binned and the count for each bin is represented.

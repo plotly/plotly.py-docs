@@ -25,10 +25,6 @@ jupyter:
     title: Bar Charts | plotly
 ---
 
-```python
-from _plotly_future_ import v4
-```
-
 ### Bar chart with plotly express
 
 Plotly express functions (here needs link to stable px doc entry) take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). 

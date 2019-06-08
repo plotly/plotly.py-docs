@@ -25,11 +25,6 @@ jupyter:
     title: Time Series Plots | plotly
 ---
 
-```python
-from _plotly_future_ import v4
-```
-
-
 ### Time Series Plot with `datetime` Objects ###
 
 Time series can be represented using either `plotly_express` functions (`px.line`, `px.scatter`) or `plotly.graph_objs` charts objects (`go.Scatter`). For more examples of such charts, see the documentation of [line and scatter plots](https://plot.ly/python/line-and-scatter/).

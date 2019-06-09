@@ -25,16 +25,9 @@ jupyter:
     title: 3D Surface Plots in Python | Plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
 #### Topographical 3D Surface Plot
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 import pandas as pd
@@ -42,25 +35,14 @@ import pandas as pd
 # Read data from a csv
 z_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv')
 
-data = [
-    go.Surface(
-        z=z_data.as_matrix()
-    )
-]
-layout = go.Layout(
-    title='Mt Bruno Elevation',
-    autosize=False,
-    width=500,
-    height=500,
-    margin=dict(
-        l=65,
-        r=50,
-        b=65,
-        t=90
-    )
-)
+data = [go.Surface(z=z_data.values)]
+
+layout = go.Layout(title='Mt Bruno Elevation', autosize=False,
+                   width=500, height=500,
+                   margin=dict(l=65, r=50, b=65, t=90)
+                   )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='elevations-3d-surface')
+fig.show()
 ```
 
 #### Surface Plot With Contours
@@ -69,7 +51,6 @@ py.iplot(fig, filename='elevations-3d-surface')
 Display and customize contour data for each axis using the `contours` attribute ([reference](plot.ly/python/reference/#surface-contours)).
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 import pandas as pd
@@ -79,41 +60,30 @@ z_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/a
 
 data = [
     go.Surface(
-        z=z_data.as_matrix(),
-        contours=go.surface.Contours(
-            z=go.surface.contours.Z(
+        z=z_data.values,
+        contours_z = dict(
               show=True,
               usecolormap=True,
-              highlightcolor="#42f462",
-              project=dict(z=True)
-            )
-        )
-    )
+              highlightcolor="limegreen",
+              project_z=True
+        ))
 ]
-layout = go.Layout(
-    title='Mt Bruno Elevation',
-    autosize=False,
-    scene=dict(camera=dict(eye=dict(x=1.87, y=0.88, z=-0.64))),
-    width=500,
-    height=500,
-    margin=dict(
-        l=65,
-        r=50,
-        b=65,
-        t=90
-    )
+layout = go.Layout(title='Mt Bruno Elevation', autosize=False,
+    scene_camera_eye=dict(x=1.87, y=0.88, z=-0.64),
+    width=500, height=500,
+    margin=dict(l=65, r=50, b=65, t=90)
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='elevations-3d-surface-contours')
+fig.show()
 ```
 
 #### Multiple 3D Surface Plots
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
+import numpy as np
 
-z1 = [
+z1 = np.array([
     [8.83,8.89,8.81,8.87,8.9,8.87],
     [8.89,8.94,8.85,8.94,8.96,8.92],
     [8.84,8.9,8.82,8.92,8.93,8.91],
@@ -129,10 +99,10 @@ z1 = [
     [9,9.01,9,9.2,9.23,9.2],
     [8.99,8.99,8.98,9.18,9.2,9.19],
     [8.93,8.97,8.97,9.18,9.2,9.18]
-]
+])
 
-z2 = [[zij+1 for zij in zi] for zi in z1]
-z3 = [[zij-1 for zij in zi] for zi in z1]
+z2 = z1 + 1
+z3 = z1 - 1
 
 data = [
     go.Surface(z=z1),
@@ -141,7 +111,8 @@ data = [
 
 ]
 
-py.iplot(data,filename='python-docs/multiple-surfaces')
+fig = go.Figure(data=data)
+fig.show()
 ```
 
 ### Dash Example
@@ -164,21 +135,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-3dsurfaceplot/code", widt
 
 See https://plot.ly/python/reference/#surface for more information!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
-import publisher
-publisher.publish(
-    '3d-surface.ipynb', 'python/3d-surface-plots/', '3D Surface Plots in Python',
-    'How to make 3D-surface plots in Python',
-    title= '3D Surface Plots in Python | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/3d-surface.jpg', 
-    language='python', page_type='example_index', 
-    display_as='3d_charts', order=6,
-    ipynb= '~notebook_demo/66')
-```

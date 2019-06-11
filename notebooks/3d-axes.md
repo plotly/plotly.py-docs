@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -10,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to format axes of 3d plots in Python with Plotly.
     display_as: layout_opt
@@ -43,19 +54,13 @@ trace1 = go.Mesh3d(x=(70*np.random.randn(N)),
                    color='rgba(244,22,100,0.6)'
                   )
 
-layout = go.Layout(
-                    scene = dict(
-                    xaxis = dict(
-                        nticks=4, range=[-100,100],),
-                    yaxis = dict(
-                        nticks=4, range=[-50,100],),
-                    zaxis = dict(
-                        nticks=4, range=[-100,100],),),
-                    width=700,
-                    margin=dict(
-                    r=20, l=10,
-                    b=10, t=10)
-                  )
+layout = go.Layout(scene = dict(
+		     xaxis = dict(nticks=4, range=[-100,100],),
+                     yaxis = dict(nticks=4, range=[-50,100],),
+                     zaxis = dict(nticks=4, range=[-100,100],),),
+                     width=700,
+                     margin=dict(r=20, l=10, b=10, t=10))
+
 fig = go.Figure(data=[trace1], layout=layout)
 fig.show()
 ```
@@ -86,14 +91,14 @@ for i in [1,2]:
 
 fig.update(layout_width=700, layout_margin=dict(r=10, l=10, b=10, t=10))
 # fix the ratio in the top left subplot to be a cube
-fig['layout']['scene'].update(aspectmode='cube')
+fig.update(layout_scene_aspectmode='cube')
 # manually force the z-axis to appear twice as big as the other two
-fig['layout']['scene2'].update(aspectmode='manual',
-                               aspectratio=dict(x=1, y=1, z=2))
+fig.update(layout_scene2_aspectmode='manual',
+           layout_scene2_aspectratio=dict(x=1, y=1, z=2))
 # draw axes in proportion to the proportion of their ranges
-fig['layout']['scene3'].update(aspectmode='data')
+fig.update(layout_scene3_aspectmode='data')
 # automatically produce something that is well proportioned using 'data' as the default
-fig['layout']['scene4'].update(aspectmode='auto')
+fig.update(layout_scene4_aspectmode='auto')
 fig.show()
 ```
 

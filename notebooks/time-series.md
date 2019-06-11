@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -10,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to plot date and time in python.
     display_as: financial
@@ -62,9 +73,8 @@ import datetime
 x = [datetime.datetime(year=2013, month=10, day=4),
      datetime.datetime(year=2013, month=11, day=5),
      datetime.datetime(year=2013, month=12, day=6)]
-data = [go.Scatter(x=x, y=[1, 3, 6])]
 
-fig = go.Figure(data=data)
+fig = go.Figure(data=[go.Scatter(x=x, y=[1, 3, 6])])
 # Use datetime objects to set xaxis range
 fig.update(layout_xaxis_range=[datetime.datetime(2013, 10, 17),
                                datetime.datetime(2013, 11, 20)])
@@ -105,17 +115,11 @@ import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
-trace_high = go.Scatter(
-    x=df.Date,
-    y=df['AAPL.High'],
-    name="AAPL High",
-    line_color='deepskyblue')
+trace_high = go.Scatter(x=df.Date, y=df['AAPL.High'], name="AAPL High",
+                        line_color='deepskyblue')
 
-trace_low = go.Scatter(
-    x=df.Date,
-    y=df['AAPL.Low'],
-    name="AAPL Low",
-    line_color='dimgray')
+trace_low = go.Scatter(x=df.Date, y=df['AAPL.Low'], name="AAPL Low",
+                       line_color='dimgray')
 
 fig = go.Figure(data=[trace_high, trace_low])
 fig.update(layout_title_text='Time Series with Rangeslider', 

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -25,193 +26,204 @@ jupyter:
     title: Box Plots | plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
+A [box plot](https://en.wikipedia.org/wiki/Box_plot) is a statistical representation of numerical data through their quartiles. The ends of the box represent the lower and upper quartiles, while the median (second quartile) is marked by a line inside the box. For other statistical representations of numerical data, see [other statistical charts](https://plot.ly/python/statistical-charts/). 
 
 
+## Box Plot with plotly express
+
+Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). In a box plot created by `px.box`, the distribution of the column given as `y` argument is represented. 
+
+If your data are not available as a tidy dataframe, you can use ``go.Box`` as [described below](https://plot.ly/python/box-plots/#box-plot-with-go.Box).
+
+```python
+import plotly_express as px
+tips = px.data.tips()
+fig = px.box(tips, y="total_bill")
+fig.show()
+```
+
+If a column name is given as `x` argument, a box plot is drawn for each value of `x`.
+
+```python
+import plotly_express as px
+tips = px.data.tips()
+fig = px.box(tips, x="time", y="total_bill")
+fig.show()
+```
+
+### Display the underlying data
+
+With the `points` argument, display underlying data points with either all points (`all`), outliers only (`outliers`, default), or none of them (`False`).
+
+```python
+import plotly_express as px
+tips = px.data.tips()
+fig = px.box(tips, x="time", y="total_bill", points="all")
+fig.show()
+```
+
+#### Styled box plot
+
+```python
+import plotly_express as px
+tips = px.data.tips()
+fig = px.box(tips, x="time", y="total_bill", color="smoker",
+             notched=True, # used notched shape for the box so that median is more visible
+             title="Box plot of total bill",
+             hover_data=["day"] # add day column to hover data
+            )
+fig.show()
+```
+
+## Box plot with go.Box
+
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Box` function from `plotly.graph_objs`. All available options for `go.Box` are described in the reference page https://plot.ly/python/reference/#box.
 
 ### Basic Box Plot ###
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
-
 import numpy as np
 
-y0 = np.random.randn(50)-1
-y1 = np.random.randn(50)+1
+y0 = np.random.randn(50) - 1
+y1 = np.random.randn(50) + 1
 
-trace0 = go.Box(
-    y=y0
-)
-trace1 = go.Box(
-    y=y1
-)
-data = [trace0, trace1]
-py.iplot(data)
+trace0 = go.Box(y=y0)
+trace1 = go.Box(y=y1)
+
+fig = go.Figure(data=[trace0, trace1])
+fig.show()
 ```
 
 ### Basic Horizontal Box Plot ###
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
-
 import numpy as np
 
 x0 = np.random.randn(50)
-x1 = np.random.randn(50) + 2
+x1 = np.random.randn(50) + 2 # shift mean
 
+# Use x instead of y argument for horizontal plot
 trace0 = go.Box(x=x0)
 trace1 = go.Box(x=x1)
-data = [trace0, trace1]
-py.iplot(data)
+
+fig = go.Figure(data=[trace0, trace1])
+fig.show()
 ```
 
 ### Box Plot That Displays the Underlying Data ###
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
-data = [
-    go.Box(
-        y=[0, 1, 1, 2, 3, 5, 8, 13, 21],
-        boxpoints='all',
-        jitter=0.3,
-        pointpos=-1.8
-    )
-]
-py.iplot(data)
+trace = go.Box(y=[0, 1, 1, 2, 3, 5, 8, 13, 21],
+               boxpoints='all', # can also be outliers, or suspectedoutliers, or False 
+               jitter=0.3, # add some jitter for a better separation between points
+               pointpos=-1.8 # relative position of points wrt box
+              )
+
+fig = go.Figure(data=[trace])
+fig.show()
 ```
 
 ### Colored Box Plot ###
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
-
 import numpy as np
 
 y0 = np.random.randn(50)
-y1 = np.random.randn(50)+1
+y1 = np.random.randn(50) + 1 # shift mean
 
-trace0 = go.Box(
-    y=y0,
-    name = 'Sample A',
-    marker = dict(
-        color = 'rgb(214, 12, 140)',
-    )
-)
-trace1 = go.Box(
-    y=y1,
-    name = 'Sample B',
-    marker = dict(
-        color = 'rgb(0, 128, 128)',
-    )
-)
-data = [trace0, trace1]
-py.iplot(data)
+trace0 = go.Box(y=y0, name='Sample A',
+                marker_color = 'rgb(214, 12, 140)')
+trace1 = go.Box(y=y1, name = 'Sample B',
+                marker_color = 'rgb(0, 128, 128)')
+
+fig = go.Figure(data=[trace0, trace1])
+fig.show()
 ```
 
 ### Box Plot Styling Mean & Standard Deviation ###
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace0 = go.Box(
     y=[2.37, 2.16, 4.82, 1.73, 1.04, 0.23, 1.32, 2.91, 0.11, 4.51, 0.51, 3.75, 1.35, 2.98, 4.50, 0.18, 4.66, 1.30, 2.06, 1.19],
     name='Only Mean',
-    marker=dict(
-        color='rgb(8, 81, 156)',
-    ),
-    boxmean=True
+    marker_color='rgb(8, 81, 156)',
+    boxmean=True # represent mean
 )
 trace1 = go.Box(
     y=[2.37, 2.16, 4.82, 1.73, 1.04, 0.23, 1.32, 2.91, 0.11, 4.51, 0.51, 3.75, 1.35, 2.98, 4.50, 0.18, 4.66, 1.30, 2.06, 1.19],
     name='Mean & SD',
-    marker=dict(
-        color='rgb(10, 140, 208)',
-    ),
-    boxmean='sd'
+    marker_color='rgb(10, 140, 208)',
+    boxmean='sd' # represent mean and standard deviation
 )
-data = [trace0, trace1]
-py.iplot(data)
+
+fig = go.Figure(data=[trace0, trace1])
+fig.show()
 ```
 
 ### Styling Outliers ###
 
+The example below shows how to use the `boxpoints` argument. If "outliers", only the sample points lying outside the whiskers are shown. If "suspectedoutliers", the outlier points are shown and points either less than 4Q1-3Q3 or greater than 4Q3-3Q1 are highlighted (using  `outliercolor`). If "all", all sample points are shown. If False, only the boxes are shown with no sample points.
+
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace0 = go.Box(
-    y = [0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
+    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
        8.15, 8.65, 8.93, 9.2, 9.5, 10, 10.25, 11.5, 12, 16, 20.90, 22.3, 23.25],
-    name = "All Points",
-    jitter = 0.3,
-    pointpos = -1.8,
-    boxpoints = 'all',
-    marker = dict(
-        color = 'rgb(7,40,89)'),
-    line = dict(
-        color = 'rgb(7,40,89)')
+    name="All Points",
+    jitter=0.3,
+    pointpos=-1.8,
+    boxpoints='all', # represent all points
+    marker_color='rgb(7,40,89)',
+    line_color='rgb(7,40,89)'
 )
 
 trace1 = go.Box(
-    y = [0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
+    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
         8.15, 8.65, 8.93, 9.2, 9.5, 10, 10.25, 11.5, 12, 16, 20.90, 22.3, 23.25],
-    name = "Only Whiskers",
-    boxpoints = False,
-    marker = dict(
-        color = 'rgb(9,56,125)'),
-    line = dict(
-        color = 'rgb(9,56,125)')
+    name="Only Whiskers",
+    boxpoints=False, # no data points
+    marker_color='rgb(9,56,125)',
+    line_color='rgb(9,56,125)'
 )
 
 trace2 = go.Box(
-    y = [0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
+    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
         8.15, 8.65, 8.93, 9.2, 9.5, 10, 10.25, 11.5, 12, 16, 20.90, 22.3, 23.25],
-    name = "Suspected Outliers",
-    boxpoints = 'suspectedoutliers',
-    marker = dict(
-        color = 'rgb(8,81,156)',
-        outliercolor = 'rgba(219, 64, 82, 0.6)',
-        line = dict(
-            outliercolor = 'rgba(219, 64, 82, 0.6)',
-            outlierwidth = 2)),
-    line = dict(
-        color = 'rgb(8,81,156)')
+    name="Suspected Outliers",
+    boxpoints='suspectedoutliers', # only suspected outliers
+    marker=dict(
+        color='rgb(8,81,156)',
+        outliercolor='rgba(219, 64, 82, 0.6)',
+        line=dict(
+            outliercolor='rgba(219, 64, 82, 0.6)',
+            outlierwidth=2)),
+    line_color='rgb(8,81,156)'
 )
 
 trace3 = go.Box(
-    y = [0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
+    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
         8.15, 8.65, 8.93, 9.2, 9.5, 10, 10.25, 11.5, 12, 16, 20.90, 22.3, 23.25],
-    name = "Whiskers and Outliers",
-    boxpoints = 'outliers',
-    marker = dict(
-        color = 'rgb(107,174,214)'),
-    line = dict(
-        color = 'rgb(107,174,214)')
+    name="Whiskers and Outliers",
+    boxpoints='outliers', # only outliers
+    marker_color='rgb(107,174,214)',
+    line_color='rgb(107,174,214)'
 )
 
-data = [trace0,trace1,trace2,trace3]
-
-layout = go.Layout(
-    title = "Box Plot Styling Outliers"
-)
-
-fig = go.Figure(data=data,layout=layout)
-py.iplot(fig, filename = "Box Plot Styling Outliers")
+fig = go.Figure(data=[trace0, trace1, trace2, trace3])
+fig.update(layout_title_text="Box Plot Styling Outliers")
 ```
 
 ### Grouped Box Plots ###
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 x = ['day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1',
@@ -221,148 +233,125 @@ trace0 = go.Box(
     y=[0.2, 0.2, 0.6, 1.0, 0.5, 0.4, 0.2, 0.7, 0.9, 0.1, 0.5, 0.3],
     x=x,
     name='kale',
-    marker=dict(
-        color='#3D9970'
-    )
+    marker_color='#3D9970'
 )
 trace1 = go.Box(
     y=[0.6, 0.7, 0.3, 0.6, 0.0, 0.5, 0.7, 0.9, 0.5, 0.8, 0.7, 0.2],
     x=x,
     name='radishes',
-    marker=dict(
-        color='#FF4136'
-    )
+    marker_color='#FF4136'
 )
 trace2 = go.Box(
     y=[0.1, 0.3, 0.1, 0.9, 0.6, 0.6, 0.9, 1.0, 0.3, 0.6, 0.8, 0.5],
     x=x,
     name='carrots',
-    marker=dict(
-        color='#FF851B'
-    )
+    marker_color='#FF851B'
 )
-data = [trace0, trace1, trace2]
+
 layout = go.Layout(
-    yaxis=dict(
-        title='normalized moisture',
-        zeroline=False
-    ),
-    boxmode='group'
+    yaxis_title='normalized moisture',
+    boxmode='group' # group together boxes of the different traces for each value of x
 )
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig)
+fig = go.Figure(data=[trace0, trace1, trace2], layout=layout)
+fig.show()
 ```
 
 ### Grouped Horizontal Box Plot ###
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
-data = [
-    {
-        'x': [0.2, 0.2, 0.6, 1.0, 0.5, 0.4, 0.2, 0.7, 0.9, 0.1, 0.5, 0.3],
-        'y': ['day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2'],
-        'name':'kale',
-        'marker': {
-            'color': '#3D9970'
-        },
-        'boxmean': False,
-        'orientation': 'h',
-        "type": "box",
-    },
-    {
-        'x': [0.6, 0.7, 0.3, 0.6, 0.0, 0.5, 0.7, 0.9, 0.5, 0.8, 0.7, 0.2],
-        'y': ['day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2'],
-        'name': 'radishes',
-        'marker':{
-            'color': '#FF4136',
-        },
-        'boxmean': False,
-        'orientation': 'h',
-        "type": "box",
-    },
-    {
-        'x': [0.1, 0.3, 0.1, 0.9, 0.6, 0.6, 0.9, 1.0, 0.3, 0.6, 0.8, 0.5],
-        'y': ['day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2'],
-        'name':'carrots',
-        'marker': {
-            'color': '#FF851B',
-        },
-        'boxmean': False,
-        'orientation': 'h',
-        "type": "box",
-    }
-]
-layout = {
-    'xaxis': {
-        'title': 'normalized moisture',
-        'zeroline': False,
-    },
-    'boxmode': 'group',
-}
-fig = go.Figure(data=data, layout=layout)
+y = ['day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1',
+     'day 2', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2']
 
-py.iplot(fig)
+trace0 = go.Box(
+    x=[0.2, 0.2, 0.6, 1.0, 0.5, 0.4, 0.2, 0.7, 0.9, 0.1, 0.5, 0.3],
+    y=y,
+    name='kale',
+    marker_color='#3D9970'
+)
+trace1 = go.Box(
+    x=[0.6, 0.7, 0.3, 0.6, 0.0, 0.5, 0.7, 0.9, 0.5, 0.8, 0.7, 0.2],
+    y=y,
+    name='radishes',
+    marker_color='#FF4136'
+)
+trace2 = go.Box(
+    x=[0.1, 0.3, 0.1, 0.9, 0.6, 0.6, 0.9, 1.0, 0.3, 0.6, 0.8, 0.5],
+    y=y,
+    name='carrots',
+    marker_color='#FF851B'
+)
+
+layout = go.Layout(
+    xaxis=dict(
+        title='normalized moisture',
+        zeroline=False
+    ),
+    boxmode='group'
+)
+
+fig = go.Figure(data=[trace0, trace1, trace2], layout=layout)
+fig.update_traces(orientation='h') # horizontal box plots
 ```
 
 ### Rainbow Box Plots ###
 
 ```python
-import random
-import plotly.plotly as py
-
-from numpy import * 
+import plotly.graph_objs as go
+import numpy as np
 
 N = 30     # Number of boxes
 
-# generate an array of rainbow colors by fixing the saturation and lightness of the HSL representation of colour 
-# and marching around the hue. 
+# generate an array of rainbow colors by fixing the saturation and lightness of the HSL r
+# epresentation of colour and marching around the hue. 
 # Plotly accepts any CSS color format, see e.g. http://www.w3schools.com/cssref/css_colors_legal.asp.
-c = ['hsl('+str(h)+',50%'+',50%)' for h in linspace(0, 360, N)]
+c = ['hsl('+str(h)+',50%'+',50%)' for h in np.linspace(0, 360, N)]
 
 # Each box is represented by a dict that contains the data, the type, and the colour. 
 # Use list comprehension to describe N boxes, each with a different colour and with different randomly generated data:
-data = [{
-    'y': 3.5*sin(pi * i/N) + i/N+(1.5+0.5*cos(pi*i/N))*random.rand(10), 
-    'type':'box',
-    'marker':{'color': c[i]}
-    } for i in range(int(N))]
+data = [go.Box(
+    y=3.5 * np.sin(np.pi * i/N) + i/N + (1.5 + 0.5 * np.cos(np.pi*i/N)) * np.random.rand(10), 
+    marker_color=c[i]
+    ) for i in range(int(N))]
 
 # format the layout
-layout = {'xaxis': {'showgrid':False,'zeroline':False, 'tickangle':60,'showticklabels':False},
-          'yaxis': {'zeroline':False,'gridcolor':'white'},
-          'paper_bgcolor': 'rgb(233,233,233)',
-          'plot_bgcolor': 'rgb(233,233,233)',
-          }
+layout = go.Layout(
+    xaxis=dict(showgrid=False, zeroline=False, tickangle=60, showticklabels=False),
+    yaxis=dict(zeroline=False, gridcolor='white'),
+    paper_bgcolor='rgb(233,233,233)',
+    plot_bgcolor='rgb(233,233,233)',
+)
 
-py.iplot(data)
+fig = go.Figure(data=data, layout=layout)
+fig.show()
 ```
 
 ### Fully Styled Box Plots ###
 
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 x_data = ['Carmelo Anthony', 'Dwyane Wade',
           'Deron Williams', 'Brook Lopez',
           'Damian Lillard', 'David West',]
 
-y0 = np.random.randn(50)-1
-y1 = np.random.randn(50)+1
-y2 = np.random.randn(50)
-y3 = np.random.randn(50)+2
-y4 = np.random.randn(50)-2
-y5 = np.random.randn(50)+3
+N = 50
 
-y_data = [y0,y1,y2,y3,y4,y5]
+y0 = (10 * np.random.randn(N) + 30).astype(np.int)
+y1 = (13 * np.random.randn(N) + 38).astype(np.int)
+y2 = (11 * np.random.randn(N) + 33).astype(np.int)
+y3 = (9 * np.random.randn(N) + 36).astype(np.int)
+y4 = (15 * np.random.randn(N) + 31).astype(np.int)
+y5 = (12 * np.random.randn(N) + 40).astype(np.int)
 
-colors = ['rgba(93, 164, 214, 0.5)', 'rgba(255, 144, 14, 0.5)', 'rgba(44, 160, 101, 0.5)', 'rgba(255, 65, 54, 0.5)', 'rgba(207, 114, 255, 0.5)', 'rgba(127, 96, 0, 0.5)']
+y_data = [y0, y1, y2, y3, y4, y5]
+
+colors = ['rgba(93, 164, 214, 0.5)', 'rgba(255, 144, 14, 0.5)', 'rgba(44, 160, 101, 0.5)', 
+          'rgba(255, 65, 54, 0.5)', 'rgba(207, 114, 255, 0.5)', 'rgba(127, 96, 0, 0.5)']
 
 traces = []
-
 for xd, yd, cls in zip(x_data, y_data, colors):
         traces.append(go.Box(
             y=yd,
@@ -371,11 +360,9 @@ for xd, yd, cls in zip(x_data, y_data, colors):
             jitter=0.5,
             whiskerwidth=0.2,
             fillcolor=cls,
-            marker=dict(
-                size=2,
-            ),
-            line=dict(width=1),
-        ))
+            marker_size=2,
+            line_width=1)
+        )
 
 layout = go.Layout(
     title='Points Scored by the Top 9 Scoring NBA Players in 2012',
@@ -401,7 +388,7 @@ layout = go.Layout(
 )
 
 fig = go.Figure(data=traces, layout=layout)
-py.iplot(fig)
+fig.show()
 ```
 
 ### Dash Example
@@ -423,25 +410,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-boxplot/code", width="100
 #### Reference
 See https://plot.ly/python/reference/#box for more information and chart attribute options!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'box.ipynb', 'python/box-plots/', 'Box Plots | plotly',
-    'How to make Box Plots in Python with Plotly.',
-    title = 'Box Plots | plotly',
-    name = 'Box Plots',
-    has_thumbnail='true', thumbnail='thumbnail/box.jpg', 
-    language='python', page_type='example_index',
-    display_as='statistical', order=3,
-    ipynb='~notebook_demo/20')  
-```
-
-```python
-
-```

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -110,7 +111,7 @@ fig.show()
 
 ## Histograms with go.Histogram
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Histogram` from `plotly.graph_objs`.
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Histogram` from `plotly.graph_objs`. All of the available histogram options are described in the histogram section of the reference page: https://plot.ly/python/reference#histogram.
 
 ### Basic Histogram ###
 
@@ -120,9 +121,8 @@ import plotly.graph_objs as go
 import numpy as np
 
 x = np.random.randn(500)
-data = [go.Histogram(x=x)]
 
-fig = go.Figure(data=data)
+fig = go.Figure(data=[go.Histogram(x=x)])
 fig.show()
 ```
 
@@ -134,8 +134,7 @@ import plotly.graph_objs as go
 import numpy as np
 
 x = np.random.randn(500)
-data = [go.Histogram(x=x,
-                     histnorm='probability')]
+data = [go.Histogram(x=x, histnorm='probability')]
 
 fig = go.Figure(data=data)
 fig.show()
@@ -164,6 +163,7 @@ import plotly.graph_objs as go
 import numpy as np
 
 x0 = np.random.randn(500)
+# Add 1 to shift the mean of the Gaussian distribution
 x1 = np.random.randn(500) + 1
 
 trace0 = go.Histogram(x=x0)
@@ -206,7 +206,7 @@ x1 = np.random.randn(500) + 1
 trace0 = go.Histogram(
     x=x0,
     histnorm='percent',
-    name='control', # name used in legend
+    name='control', # name used in legend and hover labels
     xbins=dict( # bins used for histogram
         start=-4.0,
         end=3.0,

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -26,36 +27,20 @@ jupyter:
     thumbnail: thumbnail/net.jpg
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!# Network Graphs with Plotly.
+In this example we show how to visualize a network graph created using `networkx`.
 
-Install the Python library `networkx` with `sudo pip install networkx`.
+Install the Python library `networkx` with `pip install networkx`.
 
 
-#### Get Node Positions
-Store position as node attribute data for random_geometric_graph and find node near center (0.5, 0.5)
+
+### Create random graph
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 import networkx as nx
 
-G=nx.random_geometric_graph(200,0.125)
-pos=nx.get_node_attributes(G,'pos')
-
-dmin=1
-ncenter=0
-for n in pos:
-    x,y=pos[n]
-    d=(x-0.5)**2+(y-0.5)**2
-    if d<dmin:
-        ncenter=n
-        dmin=d
-
-p=nx.single_source_shortest_path_length(G,ncenter)
+G = nx.random_geometric_graph(200, 0.125)
 ```
 
 #### Create Edges
@@ -63,9 +48,8 @@ Add edges as disconnected lines in a single trace and nodes as a scatter trace
 
 ```python
 edge_trace = go.Scatter(
-    x=[],
-    y=[],
-    line=dict(width=0.5,color='#888'),
+    x=[], y=[],
+    line=dict(width=0.5, color='#888'),
     hoverinfo='none',
     mode='lines')
 
@@ -97,7 +81,7 @@ node_trace = go.Scatter(
             xanchor='left',
             titleside='right'
         ),
-        line=dict(width=2)))
+        line_width=2))
 
 for node in G.nodes():
     x, y = G.node[node]['pos']
@@ -113,9 +97,9 @@ i.e. ```node_trace['marker']['size'].append(len(adjacencies))```
 
 ```python
 for node, adjacencies in enumerate(G.adjacency()):
-    node_trace['marker']['color']+=tuple([len(adjacencies[1])])
+    node_trace['marker']['color'] += tuple([len(adjacencies[1])])
     node_info = '# of connections: '+str(len(adjacencies[1]))
-    node_trace['text']+=tuple([node_info])
+    node_trace['text'] += tuple([node_info])
 ```
 
 #### Create Network Graph
@@ -124,7 +108,7 @@ for node, adjacencies in enumerate(G.adjacency()):
 fig = go.Figure(data=[edge_trace, node_trace],
              layout=go.Layout(
                 title='<br>Network graph made with Python',
-                titlefont=dict(size=16),
+                titlefont_size=16,
                 showlegend=False,
                 hovermode='closest',
                 margin=dict(b=20,l=5,r=5,t=40),
@@ -134,9 +118,9 @@ fig = go.Figure(data=[edge_trace, node_trace],
                     xref="paper", yref="paper",
                     x=0.005, y=-0.002 ) ],
                 xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-                yaxis=dict(showgrid=False, zeroline=False, showticklabels=False)))
-
-py.iplot(fig, filename='networkx')
+                yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
+                )
+fig.show()      
 ```
 
 ### Dash Example
@@ -157,24 +141,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-networkplot/code", width=
 #### Reference
 See https://plot.ly/python/reference/#scatter for more information and chart attribute options!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'networkx.ipynb', 'python/network-graphs/', 'Python Network Graphs',
-    'How to make Network Graphs in Python with Plotly. '
-    'One examples of a network graph with NetworkX',
-    name = 'Network Graphs',
-    thumbnail='thumbnail/net.jpg', language='python',
-    has_thumbnail='true', display_as='scientific', order=14, redirect_from='ipython-notebooks/networks/',
-    ipynb= '~notebook_demo/223') 
-```
-
-```python
-
-```

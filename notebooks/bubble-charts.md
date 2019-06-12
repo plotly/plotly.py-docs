@@ -1,15 +1,26 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
       format_version: '1.1'
       jupytext_version: 1.1.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make bubble charts in Python with Plotly.
     display_as: basic
@@ -26,46 +37,28 @@ jupyter:
     title: Bubble Charts | plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-#### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version. 
-
-```python
-import plotly
-plotly.__version__
-```
-
 ### Simple Bubble Chart
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace0 = go.Scatter(
-    x=[1, 2, 3, 4],
-    y=[10, 11, 12, 13],
+    x=[1, 2, 3, 4], y=[10, 11, 12, 13],
     mode='markers',
-    marker=dict(
-        size=[40, 60, 80, 100],
-    )
+    marker_size=[40, 60, 80, 100]
 )
 
-data = [trace0]
-py.iplot(data, filename='bubblechart-size')
+fig = go.Figure(data=[trace0])
+fig.show()
 ```
 
 ### Setting Marker Size and Color
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace0 = go.Scatter(
-    x=[1, 2, 3, 4],
-    y=[10, 11, 12, 13],
+    x=[1, 2, 3, 4], y=[10, 11, 12, 13],
     mode='markers',
     marker=dict(
         color=['rgb(93, 164, 214)', 'rgb(255, 144, 14)',
@@ -75,8 +68,8 @@ trace0 = go.Scatter(
     )
 )
 
-data = [trace0]
-py.iplot(data, filename='bubblechart-color')
+fig = go.Figure(data = [trace0])
+fig.show()
 ```
 
 ### Scaling the Size of Bubble Charts
@@ -86,7 +79,6 @@ Note that setting 'sizeref' to a value greater than 1, decreases the rendered ma
 Additionally, we recommend setting the sizemode attribute: https://plot.ly/python/reference/#scatter-marker-sizemode to area.
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 size = [20, 40, 60, 80, 100, 80, 60, 40, 20, 40]
@@ -102,19 +94,17 @@ trace0 = go.Scatter(
     )
 )
 
-data = [trace0]
-py.iplot(data, filename='bubblechart-size-ref')
+fig = go.Figure(data=[trace0])
+fig.show()
 ```
 
 ### Hover Text with Bubble Charts
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace0 = go.Scatter(
-    x=[1, 2, 3, 4],
-    y=[10, 11, 12, 13],
+    x=[1, 2, 3, 4], y=[10, 11, 12, 13],
     text=['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
     mode='markers',
     marker=dict(
@@ -123,38 +113,33 @@ trace0 = go.Scatter(
     )
 )
 
-data = [trace0]
-py.iplot(data, filename='bubblechart-text')
+fig = go.Figure(data=[trace0])
+fig.show()
 ```
 
 ### Bubble Charts with Colorscale
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
-data = [
-    {
-        'x': [1, 3.2, 5.4, 7.6, 9.8, 12.5],
-        'y': [1, 3.2, 5.4, 7.6, 9.8, 12.5],
-        'mode': 'markers',
-        'marker': {
-            'color': [120, 125, 130, 135, 140, 145],
-            'size': [15, 30, 55, 70, 90, 110],
-            'showscale': True
-        }
-    }
-]
-
-py.iplot(data, filename='scatter-colorscale')
+trace = go.Scatter(
+    x=[1, 3.2, 5.4, 7.6, 9.8, 12.5],
+    y=[1, 3.2, 5.4, 7.6, 9.8, 12.5],
+    mode='markers',
+    marker=dict(
+        color=[120, 125, 130, 135, 140, 145],
+        size=[15, 30, 55, 70, 90, 110],
+        showscale=True
+        )
+)
+fig = go.Figure(data=[trace])
+fig.show()
 ```
 
 ### Categorical Bubble Charts
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
-
 import pandas as pd
 import math
 
@@ -192,9 +177,7 @@ trace0 = go.Scatter(
         sizemode='area',
         sizeref=sizeref,
         size=df_2007['size'][df_2007['continent'] == 'Africa'],
-        line=dict(
-            width=2
-        ),
+        line_width=2
     )
 )
 trace1 = go.Scatter(
@@ -207,9 +190,7 @@ trace1 = go.Scatter(
         sizemode='area',
         sizeref=sizeref,
         size=df_2007['size'][df_2007['continent'] == 'Americas'],
-        line=dict(
-            width=2
-        ),
+        line_width=2
     )
 )
 trace2 = go.Scatter(
@@ -222,9 +203,7 @@ trace2 = go.Scatter(
         sizemode='area',
         sizeref=sizeref,
         size=df_2007['size'][df_2007['continent'] == 'Asia'],
-        line=dict(
-            width=2
-        ),
+        line_width=2
     )
 )
 trace3 = go.Scatter(
@@ -237,9 +216,7 @@ trace3 = go.Scatter(
         sizemode='area',
         sizeref=sizeref,
         size=df_2007['size'][df_2007['continent'] == 'Europe'],
-        line=dict(
-            width=2
-        ),
+        line_width=2
     )
 )
 trace4 = go.Scatter(
@@ -252,13 +229,10 @@ trace4 = go.Scatter(
         sizemode='area',
         sizeref=sizeref,
         size=df_2007['size'][df_2007['continent'] == 'Oceania'],
-        line=dict(
-            width=2
-        ),
+        line_width=2,
     )
 )
 
-data = [trace0, trace1, trace2, trace3, trace4]
 layout = go.Layout(
     title='Life Expectancy v. Per Capita GDP, 2007',
     xaxis=dict(
@@ -282,33 +256,10 @@ layout = go.Layout(
     plot_bgcolor='rgb(243, 243, 243)',
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='life-expectancy-per-GDP-2007')
+fig = go.Figure(data=[trace0, trace1, trace2, trace3, trace4], layout=layout)
+fig.show()
 ```
 
 ### Reference
 See https://plot.ly/python/reference/#scatter for more information and chart attribute options!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'bubble.ipynb', 'python/bubble-charts/', 'Python Bubble Charts | plotly',
-    'How to make bubble charts in Python with Plotly.',
-    title = 'Bubble Charts | plotly',
-    name = 'Bubble Charts', language='python',
-    has_thumbnail='true', thumbnail='thumbnail/bubble.jpg',
-    display_as='basic', order=3,
-    ipynb= '~notebook_demo/1/new-to-plotly-plotlys-python-library-i',
-    redirect_from='python/bubble-charts-tutorial/',
-)
-```
-
-```python
-
-```

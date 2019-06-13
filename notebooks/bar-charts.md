@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -157,21 +158,12 @@ x = ['Product A', 'Product B', 'Product C']
 y = [20, 14, 23]
 
 # Use textposition='auto' for direct text
-data = [go.Bar(
-            x=x,
-            y=y,
+fig = go.Figure(data=[go.Bar(
+            x=x, y=y,
             text=y,
             textposition='auto',
-            marker=dict(
-                color='rgb(158,202,225)',
-                line=dict(
-                    color='rgb(8,48,107)',
-                    width=1.5),
-            ),
-            opacity=0.5
-        )]
+        )])
 
-fig = go.Figure(data=data)
 fig.show()
 ```
 
@@ -183,20 +175,20 @@ import plotly.graph_objs as go
 months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
           'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-trace0 = go.Bar(
+fig = go.Figure()
+fig.add_trace(go.Bar(
     x=months,
     y=[20, 14, 25, 16, 18, 22, 19, 15, 12, 16, 14, 17],
     name='Primary Product',
-    marker_color='rgb(49,130,189)'
-)
-trace1 = go.Bar(
+    marker_color='indianred'
+))
+fig.add_trace(go.Bar(
     x=months,
     y=[19, 14, 22, 14, 16, 19, 15, 14, 10, 12, 12, 16],
     name='Secondary Product',
-    marker_color='rgb(204,204,204)'
-)
+    marker_color='lightsalmon'
+))
 
-fig = go.Figure(data=[trace0, trace1])
 # Here we modify the tickangle of the xaxis, resulting in rotated labels.
 fig.update(layout_barmode='group', layout_xaxis_tickangle=-45)
 ```
@@ -206,19 +198,15 @@ fig.update(layout_barmode='group', layout_xaxis_tickangle=-45)
 ```python
 import plotly.graph_objs as go
 
-grey = 'rgba(204,204,204,1)'
-red = 'rgba(222,45,38,0.8)'
-colors = [grey,] * 5
-colors[1] = red
+colors = ['lightslategray',] * 5
+colors[1] = 'crimson'
 
-trace0 = go.Bar(
+fig = go.Figure(data=[go.Bar(
     x=['Feature A', 'Feature B', 'Feature C',
        'Feature D', 'Feature E'],
     y=[20, 14, 23, 25, 22],
     marker_color=colors # marker color can be a single color value or an iterable
-)
-
-fig = go.Figure(data=[trace0])
+)])
 fig.update(layout_title_text='Least Used Feature')
 ```
 
@@ -227,13 +215,12 @@ fig.update(layout_title_text='Least Used Feature')
 ```python
 import plotly.graph_objs as go
 
-trace0 = go.Bar(
+fig = go.Figure(data=[go.Bar(
     x=[1, 2, 3, 5.5, 10],
     y=[10, 8, 6, 4, 2],
     width=[0.8, 0.8, 0.8, 3.5, 4] # customize width here
-)
+)])
 
-fig = go.Figure(data=[trace0])
 fig.show()
 ```
 
@@ -245,17 +232,17 @@ import plotly.graph_objs as go
 
 years = ['2016','2017','2018']
 
-trace0 = go.Bar(x=years, y=[500, 600, 700],
+fig = go.Figure()
+fig.add_trace(go.Bar(x=years, y=[500, 600, 700],
                 base=[-500,-600,-700],
-                marker_color='red',
-                name='expenses')
-trace1 = go.Bar(x=years, y=[300, 400, 700], 
+                marker_color='crimson',
+                name='expenses'))
+fig.add_trace(go.Bar(x=years, y=[300, 400, 700], 
                 base=0,
-                marker_color='blue',
+                marker_color='lightslategrey',
                 name='revenue'
-                )
+                ))
 
-fig = go.Figure(data=[trace0, trace1])
 fig.show()
 ```
 
@@ -269,37 +256,27 @@ import plotly.graph_objs as go
 years = [1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
          2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012]
 
-trace1 = go.Bar(x=years,
+fig = go.Figure()
+fig.add_trace(go.Bar(x=years,
                 y=[219, 146, 112, 127, 124, 180, 236, 207, 236, 263,
                    350, 430, 474, 526, 488, 537, 500, 439],
                 name='Rest of world',
                 marker_color='rgb(55, 83, 109)'
-                )
-trace2 = go.Bar(x=years,
+                ))
+fig.add_trace(go.Bar(x=years,
                 y=[16, 13, 10, 11, 28, 37, 43, 55, 56, 88, 105, 156, 270,
                    299, 340, 403, 549, 499],
                 name='China',
                 marker_color='rgb(26, 118, 255)'
-                )
-data = [trace1, trace2]
+                ))
+
 layout = go.Layout(
     title='US Export of Plastic Scrap',
-    xaxis=dict(
-        tickfont=dict(
-            size=14,
-            color='rgb(107, 107, 107)'
-        )
-    ),
+    xaxis_tickfont_size=14,
     yaxis=dict(
         title='USD (millions)',
-        titlefont=dict(
-            size=16,
-            color='rgb(107, 107, 107)'
-        ),
-        tickfont=dict(
-            size=14,
-            color='rgb(107, 107, 107)'
-        )
+        titlefont_size=16,
+        tickfont_size=14,
     ),
     legend=dict(
         x=0,
@@ -311,8 +288,7 @@ layout = go.Layout(
     bargap=0.15, # gap between bars of adjacent location coordinates.
     bargroupgap=0.1 # gap between bars of the same location coordinate.
 )
-
-fig = go.Figure(data=data, layout=layout)
+fig.update(layout=layout)
 fig.show()
 ```
 
@@ -327,29 +303,30 @@ x_data = ['Product<br>Revenue', 'Services<br>Revenue',
 y_data = [400, 660, 660, 590, 400, 400, 340]
 text = ['$430K', '$260K', '$690K', '$-120K', '$-200K', '$-320K', '$370K']
 
+fig = go.Figure()
 # Base
-trace0 = go.Bar(x=x_data,
+fig.add_trace(go.Bar(x=x_data,
                 y=[0, 430, 0, 570, 370, 370, 0],
-                marker_color='rgba(1,1,1, 0.0)')
+                marker_color='rgba(1,1,1, 0.0)'))
 # Revenue
-trace1 = go.Bar(x=x_data,
+fig.add_trace(go.Bar(x=x_data,
                 y=[430, 260, 690, 0, 0, 0, 0],
                 marker_color='rgba(55, 128, 191, 0.7)',
                 marker_line_color='rgba(55, 128, 191, 1.0)'
-                )
+                ))
 # Costs
-trace2 = go.Bar(x=x_data,
+fig.add_trace(go.Bar(x=x_data,
                 y=[0, 0, 0, 120, 200, 320, 0],
                 marker_color='rgba(219, 64, 82, 0.7)',
                 marker_line_color='rgba(219, 64, 82, 1.0)',
-                )
+                ))
 # Profit
-trace3 = go.Bar(x=x_data,
+fig.add_trace(go.Bar(x=x_data,
                 y=[0, 0, 0, 0, 0, 0, 370],
                 marker_color='rgba(50, 171, 96, 0.7)',
                 marker_line_color='rgba(50, 171, 96, 1.0)'
-                )
-data = [trace0, trace1, trace2, trace3]
+                ))
+
 layout = go.Layout(
     title='Annual Profit- 2015',
     barmode='stack',
@@ -367,7 +344,7 @@ for i in range(0, 7):
                                   showarrow=False,))
     layout['annotations'] = annotations
 
-fig = go.Figure(data=data, layout=layout)
+fig.update(layout=layout)
 fig.update_traces(marker_line_width=2)
 fig.show()
 ```
@@ -378,16 +355,15 @@ With "relative" barmode, the bars are stacked on top of one another, with negati
 below the axis, positive values above.
 
 ```python
+import plotly.graph_objs as go
 x = [1, 2, 3, 4]
 
-trace0 = go.Bar(x=x, y=[1, 4, 9, 16])
-trace1 = go.Bar(x=x, y=[6, -8, -4.5, 8]) 
-trace2 = go.Bar(x=x, y=[-15, -3, 4.5, -8])
-trace3 = go.Bar(x=x, y=[-1, 3, -3, -4])
+fig = go.Figure()
+fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16]))
+fig.add_trace(go.Bar(x=x, y=[6, -8, -4.5, 8])) 
+fig.add_trace(go.Bar(x=x, y=[-15, -3, 4.5, -8]))
+fig.add_trace(go.Bar(x=x, y=[-1, 3, -3, -4]))
 
-data = [trace0, trace1, trace2, trace3];
-
-fig = go.Figure(data=data)
 fig.update(layout_barmode='relative', layout_title_text='Relative Barmode')
 ```
 

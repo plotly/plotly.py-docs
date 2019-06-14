@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make Bar Charts in Python with Plotly.
     display_as: basic
@@ -139,9 +149,9 @@ import plotly.graph_objs as go
 x = ['Product A', 'Product B', 'Product C']
 y = [20, 14, 23]
 
-# Use the text kw argument for hover text
+# Use the hovertext kw argument for hover text
 fig = go.Figure(data=[go.Bar(x=x, y=y,
-                text=['27% market share', '24% market share', '19% market share'])])
+            hovertext=['27% market share', '24% market share', '19% market share'])])
 # Customize aspect
 fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
                   marker_line_width=1.5, opacity=0.6)

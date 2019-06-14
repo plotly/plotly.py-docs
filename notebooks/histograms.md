@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make Histograms in Python with Plotly.
     display_as: statistical
@@ -25,6 +35,7 @@ jupyter:
     redirect_from: /python/histogram-tutorial/
     thumbnail: thumbnail/histogram.jpg
     title: Python Histograms | plotly
+    v4upgrade: true
 ---
 
 ## Histogram with plotly express
@@ -134,9 +145,8 @@ import plotly.graph_objs as go
 import numpy as np
 
 x = np.random.randn(500)
-data = [go.Histogram(x=x, histnorm='probability')]
+fig = go.Figure(data=[go.Histogram(x=x, histnorm='probability')])
 
-fig = go.Figure(data=data)
 fig.show()
 ```
 
@@ -149,9 +159,8 @@ import numpy as np
 
 y = np.random.randn(500)
 # Use `y` argument instead of `x` for horizontal histogram
-data = [go.Histogram(y=y)]
 
-fig = go.Figure(data=data)
+fig = go.Figure(data=[go.Histogram(y=y)])
 fig.show()
 ```
 
@@ -166,10 +175,10 @@ x0 = np.random.randn(500)
 # Add 1 to shift the mean of the Gaussian distribution
 x1 = np.random.randn(500) + 1
 
-trace0 = go.Histogram(x=x0)
-trace1 = go.Histogram(x=x1)
+fig = go.Figure()
+fig.add_trace(go.Histogram(x=x0))
+fig.add_trace(go.Histogram(x=x1))
 
-fig = go.Figure(data=[trace0, trace1])
 # Overlay both histograms
 fig.update(layout_barmode='overlay')
 # Reduce opacity to see both histograms
@@ -186,10 +195,10 @@ import numpy as np
 x0 = np.random.randn(2000)
 x1 = np.random.randn(2000) + 1
 
-trace0 = go.Histogram(x=x0)
-trace1 = go.Histogram(x=x1)
+fig = go.Figure()
+fig.add_trace(go.Histogram(x=x0))
+fig.add_trace(go.Histogram(x=x1))
 
-fig = go.Figure(data=[trace0, trace1])
 # The two histograms are drawn on top of another
 fig.update(layout_barmode='stack')
 ```
@@ -203,7 +212,8 @@ import numpy as np
 x0 = np.random.randn(500)
 x1 = np.random.randn(500) + 1
 
-trace0 = go.Histogram(
+fig = go.Figure()
+fig.add_trace(go.Histogram(
     x=x0,
     histnorm='percent',
     name='control', # name used in legend and hover labels
@@ -214,8 +224,8 @@ trace0 = go.Histogram(
     ),
     marker_color='#EB89B5',
     opacity=0.75
-)
-trace1 = go.Histogram(
+))
+fig.add_trace(go.Histogram(
     x=x1,
     histnorm='percent',
     name='experimental',
@@ -226,16 +236,16 @@ trace1 = go.Histogram(
     ),
     marker_color='#330C73',
     opacity=0.75
-)
+))
 
-layout = go.Layout(
+fig.update(layout=go.Layout(
     title='Sampled Results', # title of plot
     xaxis_title='Value', # xaxis label
     yaxis_title='Count', # yaxis label
     bargap=0.2, # gap between bars of adjacent location coordinates
     bargroupgap=0.1 # gap between bars of the same location coordinates
-)
-fig = go.Figure(data=[trace0, trace1], layout=layout)
+))
+
 fig.show()
 ```
 
@@ -247,9 +257,8 @@ import plotly.graph_objs as go
 import numpy as np
 
 x = np.random.randn(500)
-data = [go.Histogram(x=x, cumulative_enabled=True)]
+fig = go.Figure(data=[go.Histogram(x=x, cumulative_enabled=True)])
 
-fig = go.Figure(data=data)
 fig.show()
 ```
 
@@ -261,23 +270,21 @@ import plotly.graph_objs as go
 x = ["Apples","Apples","Apples","Oranges", "Bananas"]
 y = ["5","10","3","10","5"]
 
-data = [
-  go.Histogram(
+fig = go.Figure()
+fig.add_trace(go.Histogram(
     histfunc = "count",
     y=y,
     x=x,
     name="count"
-  ),
-  go.Histogram(
+))
+fig.add_trace(go.Histogram(
     histfunc="sum",
     y=y,
     x=x,
     name="sum"
-  )
-]
+))
 
-fig = go.Figure(data=data)
-fig
+fig.show()
 ```
 
 ### Custom Binning
@@ -290,6 +297,7 @@ from plotly.subplots import make_subplots
 x = ['1970-01-01', '1970-01-01', '1970-02-01', '1970-04-01', '1970-01-02', 
      '1972-01-31', '1970-02-13', '1971-04-19']
 
+fig = make_subplots(rows=3, cols=2)
 
 trace0 = go.Histogram(x=x, nbinsx=4)
 trace1 = go.Histogram(x=x, nbinsx = 8)
@@ -316,7 +324,6 @@ trace5 = go.Histogram(x=x,
                       autobinx = False
                       )
   
-fig = make_subplots(rows=3, cols=2)
 fig.append_trace(trace0, 1, 1)
 fig.append_trace(trace1, 1, 2)
 fig.append_trace(trace2, 2, 1)

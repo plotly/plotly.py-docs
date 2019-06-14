@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make 3D-surface plots in Python
     display_as: 3d_charts
@@ -37,13 +47,13 @@ import pandas as pd
 # Read data from a csv
 z_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv')
 
-data = [go.Surface(z=z_data.values)]
+fig = go.Figure(data=[go.Surface(z=z_data.values)])
 
-layout = go.Layout(title='Mt Bruno Elevation', autosize=False,
+fig.update(layout=go.Layout(title='Mt Bruno Elevation', autosize=False,
                    width=500, height=500,
                    margin=dict(l=65, r=50, b=65, t=90)
-                   )
-fig = go.Figure(data=data, layout=layout)
+                   ))
+
 fig.show()
 ```
 
@@ -60,7 +70,7 @@ import pandas as pd
 # Read data from a csv
 z_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv')
 
-data = [
+fig = go.Figure(data=[
     go.Surface(
         z=z_data.values,
         contours_z = dict(
@@ -69,13 +79,13 @@ data = [
               highlightcolor="limegreen",
               project_z=True
         ))
-]
-layout = go.Layout(title='Mt Bruno Elevation', autosize=False,
+])
+fig.update(layout=go.Layout(title='Mt Bruno Elevation', autosize=False,
     scene_camera_eye=dict(x=1.87, y=0.88, z=-0.64),
     width=500, height=500,
     margin=dict(l=65, r=50, b=65, t=90)
-)
-fig = go.Figure(data=data, layout=layout)
+))
+
 fig.show()
 ```
 
@@ -106,14 +116,13 @@ z1 = np.array([
 z2 = z1 + 1
 z3 = z1 - 1
 
-data = [
+fig = go.Figure(data=[
     go.Surface(z=z1),
     go.Surface(z=z2, showscale=False, opacity=0.9),
     go.Surface(z=z3, showscale=False, opacity=0.9)
 
-]
+])
 
-fig = go.Figure(data=data)
 fig.show()
 ```
 

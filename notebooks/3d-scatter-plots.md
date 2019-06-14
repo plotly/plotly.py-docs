@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make 3D scatter plots in Python with Plotly.
     display_as: 3d_charts
@@ -35,40 +45,26 @@ Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `go.Scatter
 import plotly.graph_objs as go
 import numpy as np
 
+fig = go.Figure()
+
 x0, y0, z0 = np.random.multivariate_normal(np.array([0, 0, 0]), np.eye(3), 100).transpose()
-trace0 = go.Scatter3d(
-    x=x0,
-    y=y0,
-    z=z0,
-    mode='markers',
-    marker=dict(
-        size=12,
-        line_color='rgba(217, 217, 217, 0.14)',
-        line_width=0.5,
-        opacity=0.8
-    )
-)
+fig.add_trace(go.Scatter3d(
+    x=x0, y=y0, z=z0,
+    mode='markers'
+))
 
 x1, y1, z1 = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 100).transpose()
-trace1 = go.Scatter3d(
-    x=x1,
-    y=y1,
-    z=z1,
+fig.add_trace(go.Scatter3d(
+    x=x1, y=y1, z=z1,
     mode='markers',
-    marker=dict(
-        color='gray',
-        size=12,
-        symbol='circle',
-        line_color='lightgray',
-        line_width=1,
-        opacity=0.9
-    )
-)
+    marker_color='gray',
+))
 
-
-fig = go.Figure(data=[trace0, trace1])
 # tight layout
 fig.update(layout_margin=dict(l=0, r=0, b=0, t=0))
+# marker common configuration for the two Scatter3d
+fig.update_traces(marker_line_color='lightgray', marker_opacity=0.8, marker_size=12,
+                  marker_line_width=1)
 fig.show()
 ```
 
@@ -81,7 +77,7 @@ import numpy as np
 
 x, y, z = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 400).transpose()
 
-trace = go.Scatter3d(
+fig = go.Figure(data=[go.Scatter3d(
     x=x,
     y=y,
     z=z,
@@ -92,9 +88,8 @@ trace = go.Scatter3d(
         colorscale='Viridis',   # choose a colorscale
         opacity=0.8
     )
-)
+)])
 
-fig = go.Figure(data=[trace])
 # tight layout
 fig.update(layout_margin=dict(l=0, r=0, b=0, t=0))
 fig.show()

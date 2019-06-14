@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make 3D Mesh Plots
     display_as: 3d_charts
@@ -40,8 +50,7 @@ ds = np.DataSource()
 pts = np.loadtxt(ds.open('https://raw.githubusercontent.com/plotly/datasets/master/mesh_dataset.txt'))
 x, y, z = pts.T
 
-trace = go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50)
-fig = go.Figure(data=[trace])
+fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50)])
 fig.show()
 ```
 
@@ -58,11 +67,10 @@ ds = np.DataSource()
 pts = np.loadtxt(ds.open('https://raw.githubusercontent.com/plotly/datasets/master/mesh_dataset.txt'))
 x, y, z = pts.T
 
-trace = go.Mesh3d(x=x, y=y, z=z,
+fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z,
                    alphahull=5,
                    opacity=0.4,
-                   color='cyan')
-fig = go.Figure(data=[trace])
+                   color='cyan')])
 fig.show()
 ```
 
@@ -71,15 +79,17 @@ fig.show()
 In this example we use the `ì`, `j` and `k` parameters to specify manually the geometry of the triangles of the mesh.
 
 ```python
-data = [
+import plotly.graph_objs as go
+
+fig = go.Figure(data=[
     go.Mesh3d(
         x=[0, 1, 2, 0],
         y=[0, 0, 1, 2],
         z=[0, 2, 0, 1],
         colorbar_title='z',
-        colorscale=[[0, 'red'], 
-                    [0.5, 'green'], 
-                    [1, 'blue']],
+        colorscale=[[0, 'gold'], 
+                    [0.5, 'mediumturquoise'], 
+                    [1, 'magenta']],
         # Intensity of each vertex, which will be interpolated and color-coded
         intensity=[0, 0.33, 0.66, 1],
         # i, j and k give the vertices of triangles
@@ -90,25 +100,25 @@ data = [
         name='y',
         showscale=True
     )
-]
+])
 
-fig = go.Figure(data=data)
 fig.show()
 ```
 
 ### Mesh Cube
 
 ```python
-data = [
+import plotly.graph_objs as go
+fig = go.Figure(data=[
     go.Mesh3d(
         # 8 vertices of a cube
         x=[0, 0, 1, 1, 0, 0, 1, 1],
         y=[0, 1, 1, 0, 0, 1, 1, 0],
         z=[0, 0, 0, 0, 1, 1, 1, 1],
         colorbar_title='z',
-        colorscale=[[0, 'magenta'],
-                    [0.5, 'green'], 
-                    [1, 'blue']],
+        colorscale=[[0, 'gold'],
+                    [0.5, 'mediumturquoise'], 
+                    [1, 'magenta']],
         # Intensity of each vertex, which will be interpolated and color-coded
         intensity = np.linspace(0, 1, 8, endpoint=True),
         # i, j and k give the vertices of triangles
@@ -118,9 +128,8 @@ data = [
         name='y',
         showscale=True
     )
-]
+])
 
-fig = go.Figure(data=data)
 fig.show()
 ```
 

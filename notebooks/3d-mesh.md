@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -23,6 +24,7 @@ jupyter:
     permalink: python/3d-mesh/
     thumbnail: thumbnail/3d-mesh.jpg
     title: 3D Mesh Plots in Python | plotly
+    v4upgrade: true
 ---
 
 ### Simple 3D Mesh example ###

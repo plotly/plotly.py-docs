@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -23,6 +24,7 @@ jupyter:
     permalink: python/3d-scatter-plots/
     thumbnail: thumbnail/3d-scatter.jpg
     title: 3D Python Scatter Plots | plotly
+    v4upgrade: true
 ---
 
 #### Basic 3D Scatter Plot

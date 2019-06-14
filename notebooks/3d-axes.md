@@ -34,6 +34,7 @@ jupyter:
     permalink: python/3d-axes/
     thumbnail: thumbnail/your-tutorial-chart.jpg
     title: Format 3d Axes | plotly
+    v4upgrade: true
 ---
 
 ### Range of axes
@@ -47,21 +48,21 @@ import plotly.graph_objs as go
 import numpy as np
 
 N = 70
-trace1 = go.Mesh3d(x=(70*np.random.randn(N)),
+
+fig = go.Figure(data=[go.Mesh3d(x=(70*np.random.randn(N)),
                    y=(55*np.random.randn(N)),
                    z=(40*np.random.randn(N)),
                    opacity=0.5,
                    color='rgba(244,22,100,0.6)'
-                  )
+                  )])
 
-layout = go.Layout(scene = dict(
+fig.update(layout=go.Layout(scene = dict(
 		     xaxis = dict(nticks=4, range=[-100,100],),
                      yaxis = dict(nticks=4, range=[-50,100],),
                      zaxis = dict(nticks=4, range=[-100,100],),),
                      width=700,
-                     margin=dict(r=20, l=10, b=10, t=10))
+                     margin=dict(r=20, l=10, b=10, t=10)))
 
-fig = go.Figure(data=[trace1], layout=layout)
 fig.show()
 ```
 
@@ -110,27 +111,27 @@ import numpy as np
 
 # Define random surface
 N = 50
-trace1 = go.Mesh3d(x=(60*np.random.randn(N)),
+fig = go.Figure()
+fig.add_trace(go.Mesh3d(x=(60*np.random.randn(N)),
                    y=(25*np.random.randn(N)),
                    z=(40*np.random.randn(N)),
                    opacity=0.5,
                    color='yellow'
-                  )
-trace2 = go.Mesh3d(x=(70*np.random.randn(N)),
+                  ))
+fig.add_trace(go.Mesh3d(x=(70*np.random.randn(N)),
                    y=(55*np.random.randn(N)),
                    z=(30*np.random.randn(N)),
                    opacity=0.5,
                    color='pink'
-                  )
+                  ))
 
-layout = go.Layout(scene = dict(
+fig.update(layout=go.Layout(scene = dict(
                    xaxis_title='X AXIS TITLE',
                    yaxis_title='Y AXIS TITLE',
                    zaxis_title='Z AXIS TITLE'),
                    width=700,
-                   margin=dict(r=20, b=10, l=10, t=10))
+                   margin=dict(r=20, b=10, l=10, t=10)))
 
-fig = go.Figure(data=[trace1,trace2], layout=layout)
 fig.show()
 ```
 
@@ -142,15 +143,15 @@ import numpy as np
 
 # Define random surface
 N = 50
-trace1 = go.Mesh3d(x=(60*np.random.randn(N)),
+fig = go.Figure(data=[go.Mesh3d(x=(60*np.random.randn(N)),
                    y=(25*np.random.randn(N)),
                    z=(40*np.random.randn(N)),
                    opacity=0.5,
                    color='rgba(100,22,200,0.5)'
-                  )
+                  )])
 
 # Different types of customized ticks
-layout = go.Layout(
+fig.update(layout=go.Layout(
                     scene = dict(
                     xaxis = dict(
                         ticktext= ['TICKS','MESH','PLOTLY','PYTHON'],
@@ -166,8 +167,8 @@ layout = go.Layout(
                         tick0=0, tickwidth=4),),
                     width=700,
                     margin=dict(r=10, l=10, b=10, t=10)
-                  )
-fig = go.Figure(data=[trace1], layout=layout)
+                  ))
+
 fig.show()
 ```
 
@@ -178,14 +179,14 @@ import plotly.graph_objs as go
 import numpy as np
 
 N = 50
-trace1 = go.Mesh3d(x=(30*np.random.randn(N)),
+fig = go.Figure(data=[go.Mesh3d(x=(30*np.random.randn(N)),
                    y=(25*np.random.randn(N)),
                    z=(30*np.random.randn(N)),
-                   opacity=0.5,)
+                   opacity=0.5,)])
 
 
 # xaxis.backgroundcolor is used to set background color
-layout = go.Layout(
+fig.update(layout = go.Layout(
                     scene = dict(
                     xaxis = dict(
                          backgroundcolor="rgb(200, 200, 230)",
@@ -206,7 +207,10 @@ layout = go.Layout(
                     margin=dict(
                     r=10, l=10,
                     b=10, t=10)
-                  )
-fig = go.Figure(data=[trace1], layout=layout)
+                  ))
 fig.show()
+```
+
+```python
+
 ```

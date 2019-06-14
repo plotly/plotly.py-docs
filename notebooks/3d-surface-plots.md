@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -23,6 +24,7 @@ jupyter:
     permalink: python/3d-surface-plots/
     thumbnail: thumbnail/3d-surface.jpg
     title: 3D Surface Plots in Python | Plotly
+    v4upgrade: true
 ---
 
 #### Topographical 3D Surface Plot

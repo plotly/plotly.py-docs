@@ -34,6 +34,7 @@ jupyter:
     permalink: python/bar-charts/
     thumbnail: thumbnail/bar.jpg
     title: Bar Charts | plotly
+    v4upgrade: true
 ---
 
 ### Bar chart with plotly express
@@ -43,7 +44,7 @@ Plotly express functions (here needs link to stable px doc entry) take as argume
 In a bar plot, each row of the DataFrame is represented as a rectangular mark.
 
 ```python
-import plotly_express as px
+import plotly.express as px
 data_canada = px.data.gapminder().query("country == 'Canada'")
 fig = px.bar(data_canada, x='year', y='pop')
 fig.show()
@@ -58,7 +59,7 @@ data_canada
 The bar plot can be customized using keyword arguments *TODO here link to meta doc page on customizing plotly plots?*.
 
 ```python
-import plotly_express as px
+import plotly.express as px
 data = px.data.gapminder()
 
 data_canada = data[data.country == 'Canada']
@@ -71,7 +72,7 @@ fig.show()
 When several rows share the same value of `x` (here Female or Male), the rectangles are stacked on top of one another by default.
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.bar(tips, x="sex", y="total_bill", color='time')
 fig.show()
@@ -79,6 +80,7 @@ fig.show()
 
 ```python
 # Change the default stacking
+import plotly.express as px
 fig = px.bar(tips, x="sex", y="total_bill", color='smoker', barmode='group',
              height=400)
 fig.show()
@@ -89,6 +91,7 @@ fig.show()
 Use the keyword arguments `facet_row` (resp. `facet_col`) to create facetted subplots, where different rows (resp. columns) correspond to different values of the dataframe column specified in `facet_row`. 
 
 ```python
+import plotly.express as px
 fig = px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group", 
              facet_row="time", facet_col="day",
              category_orders={"day": ["Thur", "Fri", "Sat", "Sun"],

@@ -42,10 +42,10 @@ jupyter:
 
 A [histogram](https://en.wikipedia.org/wiki/Histogram) is representation of the distribution of numerical data, where the data are binned and the count for each bin is represented.
 
-Plotly express functions *(TODO here needs link to stable px doc entry)* take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
+Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill")
 fig.show()      
@@ -56,7 +56,7 @@ fig.show()
 By default, the number of bins is chosen so that this number is comparable to the typical number of samples in a bin. This number can be customized, as well as the range of values.
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", nbins=20)
 fig.show()  
@@ -67,7 +67,7 @@ fig.show()
 The default mode is to represent the count of samples in each bin. With the `histnorm` argument, it is also possible to represent the percentage or fraction of samples in each bin (`histnorm='percent'` or `probability`), or a density histogram (the sum of bars is equal to 100, `density`), or a probability density histogram (sum equal to 1, `probability density`).
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", histnorm='probability density')
 fig.show()  
@@ -76,7 +76,7 @@ fig.show()
 #### Aspect of the histogram plot 
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill",
                    title='Histogram of bills',
@@ -91,7 +91,7 @@ fig.show()
 #### Several histograms for the different values of one column
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", color="sex")
 fig.show()  
@@ -102,7 +102,7 @@ fig.show()
 For each bin of `x`, one can compute a function of data using `histfunc`. The argument of `histfunc` is the dataframe column given as the `y` argument. Below the plot shows that the average tip increases with the total bill.
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", y="tip", histfunc='avg')
 fig.show()  
@@ -110,10 +110,10 @@ fig.show()
 
 #### Visualizing the distribution
 
-With the `marginal` keyword, a subplot is drawn alongside the histogram, visualizing the distribution.
+With the `marginal` keyword, a subplot is drawn alongside the histogram, visualizing the distribution. See [the distplot page](https://plot.ly/python/distplot/)for more examples of combined statistical representations.
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", color="sex", marginal="rug", # can be `box`, `violin`
                          hover_data=tips.columns)

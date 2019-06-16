@@ -34,6 +34,7 @@ jupyter:
     permalink: python/table/
     thumbnail: thumbnail/table.gif
     title: Tables | plotly
+    v4upgrade
 ---
 
 `go.Table` provides a Table object for detailed data viewing. The data are arranged in

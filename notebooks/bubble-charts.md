@@ -35,20 +35,39 @@ jupyter:
     redirect_from: python/bubble-charts-tutorial/
     thumbnail: thumbnail/bubble.jpg
     title: Bubble Charts | plotly
+    v4upgrade: true
 ---
+
+## Bubble chart with plotly.express
+
+A [bubble chart](https://en.wikipedia.org/wiki/Bubble_chart) is a scatter plot in which a third dimension of the data is shown through the size of markers. For other types of scatter plot, see the [line and scatter page](https://plot.ly/python/line-and-scatter/).
+
+We first show a bubble chart example using plotly express. Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). The size of markers is set from the dataframe column given as the `size` parameter.
+
+```python
+import plotly.express as px
+gapminder = px.data.gapminder()
+
+px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", 
+           size="pop", color="continent",
+           hover_name="country", log_x=True, size_max=60)
+```
+
+## Bubble Chart with plotly.graph_objs
+
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Scatter` from `plotly.graph_objs`, and define the size of markers to create a bubble chart. All of the available options are described in the scatter section of the reference page: https://plot.ly/python/reference#scatter.
 
 ### Simple Bubble Chart
 
 ```python
 import plotly.graph_objs as go
 
-trace0 = go.Scatter(
+fig = go.Figure(data=[go.Scatter(
     x=[1, 2, 3, 4], y=[10, 11, 12, 13],
     mode='markers',
-    marker_size=[40, 60, 80, 100]
-)
-
-fig = go.Figure(data=[trace0])
+    marker_size=[40, 60, 80, 100])
+])
+                      
 fig.show()
 ```
 
@@ -57,7 +76,7 @@ fig.show()
 ```python
 import plotly.graph_objs as go
 
-trace0 = go.Scatter(
+fig = go.Figure(data=[go.Scatter(
     x=[1, 2, 3, 4], y=[10, 11, 12, 13],
     mode='markers',
     marker=dict(
@@ -66,9 +85,8 @@ trace0 = go.Scatter(
         opacity=[1, 0.8, 0.6, 0.4],
         size=[40, 60, 80, 100],
     )
-)
+)])
 
-fig = go.Figure(data = [trace0])
 fig.show()
 ```
 
@@ -82,7 +100,7 @@ Additionally, we recommend setting the sizemode attribute: https://plot.ly/pytho
 import plotly.graph_objs as go
 
 size = [20, 40, 60, 80, 100, 80, 60, 40, 20, 40]
-trace0 = go.Scatter(
+fig = go.Figure(data=[go.Scatter(
     x=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     y=[11, 12, 10, 11, 12, 11, 12, 13, 12, 11],
     mode='markers',
@@ -92,9 +110,8 @@ trace0 = go.Scatter(
         sizeref=2.*max(size)/(40.**2),
         sizemin=4
     )
-)
+)])
 
-fig = go.Figure(data=[trace0])
 fig.show()
 ```
 
@@ -103,7 +120,7 @@ fig.show()
 ```python
 import plotly.graph_objs as go
 
-trace0 = go.Scatter(
+fig = go.Figure(data=[go.Scatter(
     x=[1, 2, 3, 4], y=[10, 11, 12, 13],
     text=['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
     mode='markers',
@@ -111,9 +128,8 @@ trace0 = go.Scatter(
         color=['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
         size=[40, 60, 80, 100],
     )
-)
+)])
 
-fig = go.Figure(data=[trace0])
 fig.show()
 ```
 
@@ -122,7 +138,7 @@ fig.show()
 ```python
 import plotly.graph_objs as go
 
-trace = go.Scatter(
+fig = go.Figure(data=[go.Scatter(
     x=[1, 3.2, 5.4, 7.6, 9.8, 12.5],
     y=[1, 3.2, 5.4, 7.6, 9.8, 12.5],
     mode='markers',
@@ -131,8 +147,8 @@ trace = go.Scatter(
         size=[15, 30, 55, 70, 90, 110],
         showscale=True
         )
-)
-fig = go.Figure(data=[trace])
+)])
+
 fig.show()
 ```
 
@@ -140,13 +156,15 @@ fig.show()
 
 ```python
 import plotly.graph_objs as go
+import plotly.express as px
 import pandas as pd
 import math
 
-data = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv")
+# Load data, define hover text and bubble size
+data = px.data.gapminder()
 df_2007 = data[data['year']==2007]
 df_2007 = df_2007.sort_values(['continent', 'country'])
-slope = 2.666051223553066e-05
+
 hover_text = []
 bubble_size = []
 
@@ -160,104 +178,47 @@ for index, row in df_2007.iterrows():
                                             gdp=row['gdpPercap'],
                                             pop=row['pop'],
                                             year=row['year']))
-    bubble_size.append(math.sqrt(row['pop']*slope))
+    bubble_size.append(math.sqrt(row['pop']))
 
 df_2007['text'] = hover_text
 df_2007['size'] = bubble_size
 sizeref = 2.*max(df_2007['size'])/(100**2)
 
-trace0 = go.Scatter(
-    x=df_2007['gdpPercap'][df_2007['continent'] == 'Africa'],
-    y=df_2007['lifeExp'][df_2007['continent'] == 'Africa'],
-    mode='markers',
-    name='Africa',
-    text=df_2007['text'][df_2007['continent'] == 'Africa'],
-    marker=dict(
-        symbol='circle',
-        sizemode='area',
-        sizeref=sizeref,
-        size=df_2007['size'][df_2007['continent'] == 'Africa'],
-        line_width=2
-    )
-)
-trace1 = go.Scatter(
-    x=df_2007['gdpPercap'][df_2007['continent'] == 'Americas'],
-    y=df_2007['lifeExp'][df_2007['continent'] == 'Americas'],
-    mode='markers',
-    name='Americas',
-    text=df_2007['text'][df_2007['continent'] == 'Americas'],
-    marker=dict(
-        sizemode='area',
-        sizeref=sizeref,
-        size=df_2007['size'][df_2007['continent'] == 'Americas'],
-        line_width=2
-    )
-)
-trace2 = go.Scatter(
-    x=df_2007['gdpPercap'][df_2007['continent'] == 'Asia'],
-    y=df_2007['lifeExp'][df_2007['continent'] == 'Asia'],
-    mode='markers',
-    name='Asia',
-    text=df_2007['text'][df_2007['continent'] == 'Asia'],
-    marker=dict(
-        sizemode='area',
-        sizeref=sizeref,
-        size=df_2007['size'][df_2007['continent'] == 'Asia'],
-        line_width=2
-    )
-)
-trace3 = go.Scatter(
-    x=df_2007['gdpPercap'][df_2007['continent'] == 'Europe'],
-    y=df_2007['lifeExp'][df_2007['continent'] == 'Europe'],
-    mode='markers',
-    name='Europe',
-    text=df_2007['text'][df_2007['continent'] == 'Europe'],
-    marker=dict(
-        sizemode='area',
-        sizeref=sizeref,
-        size=df_2007['size'][df_2007['continent'] == 'Europe'],
-        line_width=2
-    )
-)
-trace4 = go.Scatter(
-    x=df_2007['gdpPercap'][df_2007['continent'] == 'Oceania'],
-    y=df_2007['lifeExp'][df_2007['continent'] == 'Oceania'],
-    mode='markers',
-    name='Oceania',
-    text=df_2007['text'][df_2007['continent'] == 'Oceania'],
-    marker=dict(
-        sizemode='area',
-        sizeref=sizeref,
-        size=df_2007['size'][df_2007['continent'] == 'Oceania'],
-        line_width=2,
-    )
-)
+# Dictionary with dataframes for each continent
+continent_names = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+continent_data = {continent:df_2007.query("continent == '%s'" %continent) 
+                              for continent in continent_names}
 
-layout = go.Layout(
+# Create figure
+fig = go.Figure()
+        
+for continent_name, continent in continent_data.items():
+    fig.add_trace(go.Scatter(
+        x=continent['gdpPercap'], y=continent['lifeExp'],
+        name=continent_name, text=continent['text'],
+        marker_size=continent['size'],
+        ))
+
+# Tune marker appearance and layout
+fig.update_traces(mode='markers', marker=dict(sizemode='area', 
+                                              sizeref=sizeref, line_width=2))
+                       
+fig.update(layout=go.Layout(
     title='Life Expectancy v. Per Capita GDP, 2007',
     xaxis=dict(
         title='GDP per capita (2000 dollars)',
-        gridcolor='rgb(255, 255, 255)',
-        range=[2.003297660701705, 5.191505530708712],
+        gridcolor='white',
         type='log',
-        zerolinewidth=1,
-        ticklen=5,
         gridwidth=2,
     ),
     yaxis=dict(
         title='Life Expectancy (years)',
-        gridcolor='rgb(255, 255, 255)',
-        range=[36.12621671352166, 91.72921793264332],
-        zerolinewidth=1,
-        ticklen=5,
+        gridcolor='white',
         gridwidth=2,
     ),
     paper_bgcolor='rgb(243, 243, 243)',
     plot_bgcolor='rgb(243, 243, 243)',
-)
-
-fig = go.Figure(data=[trace0, trace1, trace2, trace3, trace4], layout=layout)
-fig.show()
+))
 ```
 
 ### Reference

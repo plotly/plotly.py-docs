@@ -25,6 +25,8 @@ jupyter:
     permalink: python/network-graphs/
     redirect_from: ipython-notebooks/networks/
     thumbnail: thumbnail/net.jpg
+    title: Network Graphs | plotly
+    v4upgrade: true
 ---
 
 In this example we show how to visualize a network graph created using `networkx`.

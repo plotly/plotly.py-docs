@@ -36,6 +36,7 @@ jupyter:
     permalink: python/candlestick-charts/
     thumbnail: thumbnail/candlestick.jpg
     title: Python Candlestick Charts | plotly
+    v4upgrade: true
 ---
 
 The [candlestick chart](https://en.wikipedia.org/wiki/Candlestick_chart) is a style of financial chart describing open, high, low and close for a given `x` coordinate (most likely
@@ -51,12 +52,12 @@ from datetime import datetime
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Candlestick(x=df['Date'],
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
                 open=df['AAPL.Open'],
                 high=df['AAPL.High'],
                 low=df['AAPL.Low'],
-                close=df['AAPL.Close'])
-fig = go.Figure(data=[trace])
+                close=df['AAPL.Close'])])
+
 fig.show()
 ```
 
@@ -68,11 +69,11 @@ import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Candlestick(x=df['Date'],
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
                 open=df['AAPL.Open'], high=df['AAPL.High'],
                 low=df['AAPL.Low'], close=df['AAPL.Close'])
+                     ])
 
-fig = go.Figure(data=[trace])
 fig.update(layout_xaxis_rangeslider_visible=False)
 ```
 
@@ -85,21 +86,22 @@ import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Candlestick(x=df['Date'],
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
                 open=df['AAPL.Open'], high=df['AAPL.High'],
                 low=df['AAPL.Low'], close=df['AAPL.Close'])
+                      ])
 
-layout = go.Layout(
+fig.update(layout=go.Layout(
     title='The Great Recession',
     yaxis_title='AAPL Stock',
     shapes = [dict(
         x0='2016-12-09', x1='2016-12-09', y0=0, y1=1, xref='x', yref='paper',
-        line=dict(color='rgb(30,30,30)', width=1))],
+        line_width=2)],
     annotations=[dict(
         x='2016-12-09', y=0.05, xref='x', yref='paper',
         showarrow=False, xanchor='left', text='Increase Period Begins')]
-)
-fig = go.Figure(data=[trace], layout=layout)
+))
+
 fig.show()
 ```
 
@@ -111,13 +113,13 @@ import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Candlestick(
+fig = go.Figure(data=[go.Candlestick(
     x=df['Date'],
     open=df['AAPL.Open'], high=df['AAPL.High'],
     low=df['AAPL.Low'], close=df['AAPL.Close'],
     increasing_line_color= 'cyan', decreasing_line_color= 'gray'
-)
-fig = go.Figure(data=[trace])
+)])
+
 fig.show()
 ```
 
@@ -137,10 +139,10 @@ dates = [datetime(year=2013, month=10, day=10),
          datetime(year=2014, month=1, day=10),
          datetime(year=2014, month=2, day=10)]
 
-trace = go.Candlestick(x=dates,
+fig = go.Figure(data=[go.Candlestick(x=dates,
                        open=open_data, high=high_data,
-                       low=low_data, close=close_data)
-fig = go.Figure(data=[trace])
+                       low=low_data, close=close_data)])
+
 fig.show()
 ```
 

@@ -34,6 +34,7 @@ jupyter:
     permalink: python/tree-plots/
     thumbnail: thumbnail/treeplot.jpg
     title: Python Tree-plots | plotly
+    v4upgrade: true
 ---
 
 #### Set Up Tree with [igraph](http://igraph.org/python/)
@@ -71,13 +72,14 @@ labels = v_label
 
 ```python
 import plotly.graph_objs as go
-lines = go.Scatter(x=Xe,
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=Xe,
                    y=Ye,
                    mode='lines',
                    line=dict(color='rgb(210,210,210)', width=1),
                    hoverinfo='none'
-                   )
-dots = go.Scatter(x=Xn,
+                   ))
+fig.add_trace(go.Scatter(x=Xn,
                   y=Yn,
                   mode='markers',
                   name='bla',
@@ -89,7 +91,7 @@ dots = go.Scatter(x=Xn,
                   text=labels,
                   hoverinfo='text',
                   opacity=0.8
-                  )
+                  ))
 ```
 
 #### Create Text Inside the Circle via Annotations
@@ -121,7 +123,7 @@ axis = dict(showline=False, # hide axis line, grid, ticklabels and  title
             showticklabels=False,
             )
 
-layout = dict(title= 'Tree with Reingold-Tilford Layout',  
+fig.update(layout=go.Layout(title= 'Tree with Reingold-Tilford Layout',  
               annotations=make_annotations(position, v_label),
               font_size=12,
               showlegend=False,
@@ -130,14 +132,7 @@ layout = dict(title= 'Tree with Reingold-Tilford Layout',
               margin=dict(l=40, r=40, b=85, t=100),
               hovermode='closest',
               plot_bgcolor='rgb(248,248,248)'          
-              )
-```
-
-#### Plot!
-
-```python
-fig=go.Figure(data=[lines, dots], layout=layout)
-fig.show()
+              ))
 ```
 
 #### Reference

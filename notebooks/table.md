@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make tables in Python with Plotly.
     display_as: basic
@@ -36,10 +46,9 @@ Note that [Dash](https://dash.plot.ly/) provides a different type of [DataTable]
 ```python
 import plotly.graph_objs as go
 
-trace = go.Table(header=dict(values=['A Scores', 'B Scores']),
+fig = go.Figure(data=[go.Table(header=dict(values=['A Scores', 'B Scores']),
                  cells=dict(values=[[100, 90, 80, 90], [95, 85, 75, 95]]))
-
-fig = go.Figure(data=[trace]) 
+                     ])
 fig.show()
 ```
 
@@ -48,18 +57,18 @@ fig.show()
 ```python
 import plotly.graph_objs as go
 
-trace = go.Table(
+fig = go.Figure(data=[go.Table(
     header=dict(values=['A Scores', 'B Scores'],
-                line_color='#7D7F80',
-                fill_color='#a1c3d1',
+                line_color='darkslategray',
+                fill_color='lightskyblue',
                 align='left'),
     cells=dict(values=[[100, 90, 80, 90], # 1st column
                        [95, 85, 75, 95]], # 2nd column
-               line_color='#7D7F80',
-               fill_color='#EDFAFF',
+               line_color='darkslategray',
+               fill_color='lightcyan',
                align='left'))
+])
 
-fig = go.Figure(data=[trace])
 fig.update(layout_width=500, layout_height=300)
 ```
 
@@ -71,15 +80,15 @@ import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv')
 
-trace = go.Table(
+fig = go.Figure(data=[go.Table(
     header=dict(values=list(df.columns),
-                fill_color='#C2D4FF',
+                fill_color='paleturquoise',
                 align='left'),
     cells=dict(values=[df.Rank, df.State, df.Postal, df.Population],
-               fill_color='#F5F8FF',
+               fill_color='lavender',
                align='left'))
+])
 
-fig = go.Figure(data=[trace])
 fig.show()
 ```
 
@@ -96,28 +105,27 @@ values = [['Salaries', 'Office', 'Merchandise', 'Legal', '<b>TOTAL<br>EXPENSES</
   "Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad"]]
 
 
-trace0 = go.Table(
+fig = go.Figure(data=[go.Table(
   columnorder = [1,2],
   columnwidth = [80,400],
   header = dict(
     values = [['<b>EXPENSES</b><br>as of July 2017'],
                   ['<b>DESCRIPTION</b>']],
-    line_color='#506784',
-    fill_color='#119DFF',
+    line_color='darkslategray',
+    fill_color='royalblue',
     align=['left','center'],
     font=dict(color='white', size=12),
     height=40
   ),
-  cells = dict(
+  cells=dict(
     values=values,
-    line_color='#506784',
-    fill=dict(color = ['#25FEFD', 'white']),
+    line_color='darkslategray',
+    fill=dict(color=['paleturquoise', 'white']),
     align=['left', 'center'],
-    font=dict(color='#506784', size=12),
-    height=30
-    ))
-
-fig = go.Figure(data=[trace0])
+    font_size=12,
+    height=30)
+    )
+])
 fig.show()
 ```
 
@@ -130,10 +138,10 @@ headerColor = 'grey'
 rowEvenColor = 'lightgrey'
 rowOddColor = 'white'
 
-trace0 = go.Table(
+fig = go.Figure(data=[go.Table(
   header=dict(
     values=['<b>EXPENSES</b>','<b>Q1</b>','<b>Q2</b>','<b>Q3</b>','<b>Q4</b>'],
-    line_color='#506784',
+    line_color='darkslategray',
     fill_color=headerColor,
     align=['left','center'],
     font=dict(color='white', size=12)
@@ -145,14 +153,14 @@ trace0 = go.Table(
       [1300000, 20000, 70000, 2000, 130902000],
       [1300000, 20000, 120000, 2000, 131222000],
       [1400000, 20000, 90000, 2000, 14102000]],
-    line_color='#506784',
+    line_color='darkslategray',
     # 2-D list of colors for alternating rows
     fill_color = [[rowOddColor,rowEvenColor,rowOddColor, rowEvenColor,rowOddColor]*5],
     align = ['left', 'center'],
-    font = dict(color = '#506784', size = 11)
+    font = dict(color = 'darkslategray', size = 11)
     ))
+])
 
-fig = go.Figure(data=[trace0])
 fig.show()
 ```
 
@@ -168,7 +176,7 @@ colors = ['rgb(239, 243, 255)', 'rgb(189, 215, 231)', 'rgb(107, 174, 214)',
 data = {'Year' : [2010, 2011, 2012, 2013, 2014], 'Color' : colors}
 df = pd.DataFrame(data)
 
-trace0 = go.Table(
+fig = go.Figure(data=[go.Table(
   header=dict(
     values=["Color", "<b>YEAR</b>"],
     line_color='white', fill_color='white',
@@ -179,7 +187,8 @@ trace0 = go.Table(
     line_color=[df.Color], fill_color=[df.Color],
     align='center', font=dict(color='black', size=11)
   ))
-fig = go.Figure(data=[trace0])
+])
+
 fig.show()
 ```
 
@@ -195,8 +204,7 @@ a = np.random.randint(low=0, high=9, size=10)
 b = np.random.randint(low=0, high=9, size=10)
 c = np.random.randint(low=0, high=9, size=10)
 
-
-trace0 = go.Table(
+fig = go.Figure(data=[go.Table(
   header=dict(
     values=['<b>Column A</b>', '<b>Column B</b>', '<b>Column C</b>'],
     line_color='white', fill_color='white',
@@ -208,8 +216,8 @@ trace0 = go.Table(
     fill_color=[np.array(colors)[a],np.array(colors)[b], np.array(colors)[c]],
     align='center', font=dict(color='white', size=11)
     ))
+])
 
-fig = go.Figure(data=[trace0])
 fig.show()
 ```
 

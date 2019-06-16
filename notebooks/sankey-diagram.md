@@ -36,6 +36,7 @@ jupyter:
     permalink: python/sankey-diagram/
     thumbnail: thumbnail/sankey.jpg
     title: Sankey Diagram | Plotly
+    v4upgrade: true
 ---
 
 A [Sankey diagram](https://en.wikipedia.org/wiki/Sankey_diagram) is a flow diagram, in which the width of arrows is proportional to the flow quantity.
@@ -46,7 +47,7 @@ A [Sankey diagram](https://en.wikipedia.org/wiki/Sankey_diagram) is a flow diagr
 ```python
 import plotly.graph_objs as go
 
-data = go.Sankey(
+fig = go.Figure(data=[go.Sankey(
     node = dict(
       pad = 15,
       thickness = 20,
@@ -58,10 +59,8 @@ data = go.Sankey(
       source = [0, 1, 0, 2, 3, 3], # indices correspond to labels, eg A1, A2, A2, B1, ...
       target = [2, 3, 3, 4, 4, 5],
       value = [8, 4, 2, 8, 4, 2]
-  ))
+  ))])
 
-
-fig = go.Figure(data=[data])
 fig.update(layout_title_text="Basic Sankey Diagram", layout_font_size=10)
 fig.show()
 ```
@@ -74,8 +73,7 @@ import urllib, json
 url = 'https://raw.githubusercontent.com/plotly/plotly.js/master/test/image/mocks/sankey_energy.json'
 response = urllib.request.urlopen(url)
 data = json.loads(response.read())
-
-data_trace = go.Sankey(
+fig = go.Figure(data=[go.Sankey(
     valueformat = ".0f",
     valuesuffix = "TWh",
     # Define nodes
@@ -92,9 +90,8 @@ data_trace = go.Sankey(
       target =  data['data'][0]['link']['target'],
       value =  data['data'][0]['link']['value'],
       label =  data['data'][0]['link']['label']
-  ))
+  ))])
 
-fig = go.Figure(data=[data_trace])
 fig.update(layout_title_text="Energy forecast for 2050<br>Source: Department of Energy & Climate Change, Tom Counsell via <a href='https://bost.ocks.org/mike/sankey/'>Mike Bostock</a>",
            layout_font_size=10)
 fig.show()
@@ -109,7 +106,7 @@ url = 'https://raw.githubusercontent.com/plotly/plotly.js/master/test/image/mock
 response = urllib.request.urlopen(url)
 data = json.loads(response.read())
 
-data_trace = go.Sankey(
+fig = go.Figure(data=[go.Sankey(
     valueformat = ".0f",
     valuesuffix = "TWh",
     node = dict(
@@ -124,16 +121,14 @@ data_trace = go.Sankey(
       target =  data['data'][0]['link']['target'],
       value =  data['data'][0]['link']['value'],
       label =  data['data'][0]['link']['label']
-  ))
+  ))])
 
-layout =  dict(
+fig.update(layout =  dict(
     title = "Energy forecast for 2050<br>Source: Department of Energy & Climate Change, Tom Counsell via <a href='https://bost.ocks.org/mike/sankey/'>Mike Bostock</a>",
     font = dict(size = 10, color = 'white'),
     plot_bgcolor = 'black',
     paper_bgcolor = 'black'
-)
-fig = go.Figure(data=[data_trace], layout=layout)
-fig.show()
+))
 ```
 
 ### Reference

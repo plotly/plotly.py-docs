@@ -34,20 +34,35 @@ jupyter:
     permalink: python/filled-area-plots/
     thumbnail: thumbnail/area.jpg
     title: Filled Area Plots | plotly
+    v4upgrade: true
 ---
 
 This example shows how to fill the area enclosed by traces. 
 
+
+## Filled area plot with plotly.express
+
+Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
+
+`px.area` creates a stacked area plot. Each filled area corresponds to one value of the column given by the `line_group` parameter.
+
+```python
+import plotly.express as px
+gapminder = px.data.gapminder()
+px.area(gapminder, x="year", y="pop", color="continent", line_group="country")
+```
+
+### Filled area chart with plotly.graph_objs
 
 #### Basic Overlaid Area Chart
 
 ```python
 import plotly.graph_objs as go
 
-trace0 = go.Scatter(x=[1, 2, 3, 4], y=[0, 2, 3, 5], fill='tozeroy') # fill down to xaxis
-trace1 = go.Scatter(x=[1, 2, 3, 4], y=[3, 5, 1, 7], fill='tonexty') # fill to trace0 y 
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[0, 2, 3, 5], fill='tozeroy')) # fill down to xaxis
+fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[3, 5, 1, 7], fill='tonexty')) # fill to trace0 y 
 
-fig = go.Figure(data=[trace0, trace1])
 fig.show()
 ```
 
@@ -56,13 +71,13 @@ fig.show()
 ```python
 import plotly.graph_objs as go
 
-trace0 = go.Scatter(x=[1, 2, 3, 4], y=[0, 2, 3, 5], fill='tozeroy',
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[0, 2, 3, 5], fill='tozeroy',
                     mode='none' # override default markers+lines
-                    )
-trace1 = go.Scatter(x=[1, 2, 3, 4], y=[3, 5, 1, 7], fill='tonexty',
-                    mode= 'none')
+                    ))
+fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[3, 5, 1, 7], fill='tonexty',
+                    mode= 'none'))
 
-fig = go.Figure(data=[trace0, trace1])
 fig.show()
 ```
 
@@ -71,18 +86,18 @@ fig.show()
 ```python
 import plotly.graph_objs as go
 
-trace0 = go.Scatter(x=[1, 2, 3, 4], y=[3, 4, 8, 3],
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[3, 4, 8, 3],
     fill=None,
     mode='lines',
     line_color='indigo',
-    )
-trace1 = go.Scatter(
+    ))
+fig.add_trace(go.Scatter(
     x=[1, 2, 3, 4],
     y=[1, 6, 2, 6],
     fill='tonexty', # fill area between trace0 and trace1
-    mode='lines', line_color='indigo')
+    mode='lines', line_color='indigo'))
 
-fig = go.Figure(data=[trace0, trace1])
 fig.show()
 ```
 
@@ -95,29 +110,29 @@ import plotly.graph_objs as go
 
 x=['Winter', 'Spring', 'Summer', 'Fall']
 
-trace0 = go.Scatter(
+fig = go.Figure()
+fig.add_trace(go.Scatter(
     x=x, y=[40, 60, 40, 10],
     hoverinfo='x+y',
     mode='lines',
     line=dict(width=0.5, color='rgb(131, 90, 241)'),
     stackgroup='one' # define stack group
-)
-trace1 = go.Scatter(
+))
+fig.add_trace(go.Scatter(
     x=x, y=[20, 10, 10, 60],
     hoverinfo='x+y',
     mode='lines',
     line=dict(width=0.5, color='rgb(111, 231, 219)'),
     stackgroup='one'
-)
-trace2 = go.Scatter(
+))
+fig.add_trace(go.Scatter(
     x=x, y=[40, 30, 50, 30],
     hoverinfo='x+y',
     mode='lines',
     line=dict(width=0.5, color='rgb(184, 247, 212)'),
     stackgroup='one'
-)
+))
 
-fig = go.Figure(data=[trace0, trace1, trace2])
 fig.update(layout_yaxis_range=(0, 100))
 fig.show()
 ```
@@ -128,43 +143,44 @@ fig.show()
 import plotly.graph_objs as go
 
 x=['Winter', 'Spring', 'Summer', 'Fall']
-trace0 = dict(
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
     x=x, y=[40, 20, 30, 40],
     mode='lines',
     line=dict(width=0.5, color='rgb(184, 247, 212)'),
     stackgroup='one',
     groupnorm='percent' # sets the normalization for the sum of the stackgroup
-)
-trace1 = dict(
+))
+fig.add_trace(go.Scatter(
     x=x, y=[50, 70, 40, 60],
     mode='lines',
     line=dict(width=0.5, color='rgb(111, 231, 219)'),
     stackgroup='one'
-)
-trace2 = dict(
+))
+fig.add_trace(go.Scatter(
     x=x, y=[70, 80, 60, 70],
     mode='lines',
     line=dict(width=0.5, color='rgb(127, 166, 238)'),
     stackgroup='one'
-)
-trace3 = dict(
+))
+fig.add_trace(go.Scatter(
     x=x, y=[100, 100, 100, 100],
     mode='lines',
     line=dict(width=0.5, color='rgb(131, 90, 241)'),
     stackgroup='one'
-)
+))
 
-layout = go.Layout(
+fig.update(layout = go.Layout(
     showlegend=True,
     xaxis_type='category',
     yaxis=dict(
         type='linear',
         range=[1, 100],
-        dtick=20,
         ticksuffix='%'
     )
-)
-fig = go.Figure(data=[trace0, trace1, trace2, trace3], layout=layout)
+))
+
 fig.show()
 ```
 
@@ -173,27 +189,27 @@ fig.show()
 ```python
 import plotly.graph_objs as go
 
-trace0 = go.Scatter(x=[0,0.5,1,1.5,2], y=[0,1,2,1,0],
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=[0,0.5,1,1.5,2], y=[0,1,2,1,0],
                     fill='toself', fillcolor='darkviolet',
                     hoveron = 'points+fills', # select where hover is active
                     line_color='darkviolet',
                     text="Points + Fills",
-                    hoverinfo = 'text+x+y')
+                    hoverinfo = 'text+x+y'))
 
-trace1 = go.Scatter(x=[3,3.5,4,4.5,5], y=[0,1,2,1,0],
+fig.add_trace(go.Scatter(x=[3,3.5,4,4.5,5], y=[0,1,2,1,0],
                     fill='toself', fillcolor = 'violet',
                     hoveron='points',
                     line_color='violet',
                     text="Points only",
-                    hoverinfo='text+x+y')
+                    hoverinfo='text+x+y'))
 
-layout = go.Layout(
+fig.update(layout = go.Layout(
     title = "hover on <i>points</i> or <i>fill</i>",
     xaxis_range = [0,5.2],
     yaxis_range = [0,3]
-)
+))
 
-fig = go.Figure(data=[trace0, trace1],layout=layout)
 fig.show()
 ```
 

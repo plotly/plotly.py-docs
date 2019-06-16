@@ -36,6 +36,28 @@ jupyter:
     title: Python Distplots | plotly
 ---
 
+## Combined statistical representations with px.histogram
+
+Several representations of statistical distributions are available in plotly, such as [histograms](https://plot.ly/python/histograms/), [violin plots](https://plot.ly/python/violin/), [box plots](https://plot.ly/python/box-plots/) (see [the complete list here](https://plot.ly/python/statistical-charts/)). It is also possible to combine several representations in the same plot. 
+
+For example, the `plotly.express` function `px.histogram` can add a subplot with a different statistical representation than the histogram, given by the parameter `marginal`. Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
+
+```python
+import plotly.express as px
+tips = px.data.tips()
+px.histogram(tips, x="total_bill", y="tip", color="sex", marginal="rug", 
+             hover_data=tips.columns)
+```
+
+```python
+import plotly.express as px
+tips = px.data.tips()
+px.histogram(tips, x="total_bill", y="tip", color="sex", marginal="box", # or violin, rug
+             hover_data=tips.columns)
+```
+
+## Combined statistical representations with distplot figure factory
+
 The distplot figure factory displays a combination of statistical representations of numerical data, such as histogram, kernel density estimation or normal curve, and rug plot.
 
 
@@ -266,7 +288,4 @@ fig.show()
 
 ```python
 help(ff.create_distplot)
-```
-```python
-
 ```

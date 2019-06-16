@@ -35,6 +35,7 @@ jupyter:
     permalink: python/gantt/
     thumbnail: thumbnail/gantt.jpg
     title: Python Gantt Charts | plotly
+    v4upgrade: true
 ---
 
 A [Gantt chart](https://en.wikipedia.org/wiki/Gantt_chart) is a type of bar chart that illustrates a project schedule. The chart lists the tasks to be performed on the vertical axis, and time intervals on the horizontal axis. The width of the horizontal bars in the graph shows the duration of each activity.

@@ -34,15 +34,16 @@ jupyter:
     permalink: python/time-series/
     thumbnail: thumbnail/time-series.jpg
     title: Time Series Plots | plotly
+    v4upgrade: true
 ---
 
 ### Time Series Plot with `datetime` Objects ###
 
-Time series can be represented using either `plotly_express` functions (`px.line`, `px.scatter`) or `plotly.graph_objs` charts objects (`go.Scatter`). For more examples of such charts, see the documentation of [line and scatter plots](https://plot.ly/python/line-and-scatter/).
+Time series can be represented using either `plotly.express` functions (`px.line`, `px.scatter`) or `plotly.graph_objs` charts objects (`go.Scatter`). For more examples of such charts, see the documentation of [line and scatter plots](https://plot.ly/python/line-and-scatter/).
 
 ```python
-# Using plotly_express
-import plotly_express as px
+# Using plotly.express
+import plotly.express as px
 
 import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
@@ -86,21 +87,21 @@ import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
-trace_high = go.Scatter(
+fig = go.Figure()
+fig.add_trace(go.Scatter(
                 x=df.Date,
                 y=df['AAPL.High'],
                 name="AAPL High",
                 line_color='deepskyblue',
-                opacity=0.8)
+                opacity=0.8))
 
-trace_low = go.Scatter(
+fig.add_trace(go.Scatter(
                 x=df.Date,
                 y=df['AAPL.Low'],
                 name="AAPL Low",
                 line_color='dimgray',
-                opacity=0.8)
+                opacity=0.8))
 
-fig = go.Figure(data=[trace_high, trace_low])
 # Use date string to set xaxis range
 fig.update(layout_xaxis_range=['2016-07-01','2016-12-31'],
            layout_title_text="Manually Set Date Range")
@@ -115,13 +116,13 @@ import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
-trace_high = go.Scatter(x=df.Date, y=df['AAPL.High'], name="AAPL High",
-                        line_color='deepskyblue')
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=df.Date, y=df['AAPL.High'], name="AAPL High",
+                        line_color='deepskyblue'))
 
-trace_low = go.Scatter(x=df.Date, y=df['AAPL.Low'], name="AAPL Low",
-                       line_color='dimgray')
+fig.add_trace(go.Scatter(x=df.Date, y=df['AAPL.Low'], name="AAPL Low",
+                       line_color='dimgray'))
 
-fig = go.Figure(data=[trace_high, trace_low])
 fig.update(layout_title_text='Time Series with Rangeslider', 
            layout_xaxis_rangeslider_visible=True)
 fig.show()

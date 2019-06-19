@@ -42,12 +42,11 @@ jupyter:
 `go.Mesh3d` draws a 3D set of triangles with vertices given by `x`, `y` and `z`. If only coordinates are given, an algorithm such as [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) is used to draw the triangles. Otherwise the triangles can be given using the `i`, `j` and `k` parameters (see examples below).
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 # Download data set from plotly repo
-ds = np.DataSource()
-pts = np.loadtxt(ds.open('https://raw.githubusercontent.com/plotly/datasets/master/mesh_dataset.txt'))
+pts = np.loadtxt(np.DataSource().open('https://raw.githubusercontent.com/plotly/datasets/master/mesh_dataset.txt'))
 x, y, z = pts.T
 
 fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50)])
@@ -60,11 +59,10 @@ fig.show()
 The `alphahull` parameter sets the shape of the mesh. If the value is -1 (default value) then [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) is used. If >0 then the [alpha-shape algorithm](https://en.wikipedia.org/wiki/Alpha_shape) is used. If 0, the [convex hull](https://en.wikipedia.org/wiki/Convex_hull) is represented (resulting in a convex body).
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
-ds = np.DataSource()
-pts = np.loadtxt(ds.open('https://raw.githubusercontent.com/plotly/datasets/master/mesh_dataset.txt'))
+pts = np.loadtxt(np.DataSource().open('https://raw.githubusercontent.com/plotly/datasets/master/mesh_dataset.txt'))
 x, y, z = pts.T
 
 fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z,
@@ -79,7 +77,7 @@ fig.show()
 In this example we use the `ì`, `j` and `k` parameters to specify manually the geometry of the triangles of the mesh.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[
     go.Mesh3d(
@@ -108,7 +106,7 @@ fig.show()
 ### Mesh Cube
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 fig = go.Figure(data=[
     go.Mesh3d(
         # 8 vertices of a cube

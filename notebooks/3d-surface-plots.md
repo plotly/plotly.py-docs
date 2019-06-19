@@ -40,7 +40,7 @@ jupyter:
 #### Topographical 3D Surface Plot
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 
@@ -49,10 +49,9 @@ z_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/a
 
 fig = go.Figure(data=[go.Surface(z=z_data.values)])
 
-fig.update(layout=go.Layout(title='Mt Bruno Elevation', autosize=False,
-                   width=500, height=500,
-                   margin=dict(l=65, r=50, b=65, t=90)
-                   ))
+fig.update_layout(title='Mt Bruno Elevation', autosize=False,
+                  width=500, height=500,
+                  margin=dict(l=65, r=50, b=65, t=90))
 
 fig.show()
 ```
@@ -63,7 +62,7 @@ fig.show()
 Display and customize contour data for each axis using the `contours` attribute ([reference](plot.ly/python/reference/#surface-contours)).
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 
@@ -80,11 +79,11 @@ fig = go.Figure(data=[
               project_z=True
         ))
 ])
-fig.update(layout=go.Layout(title='Mt Bruno Elevation', autosize=False,
-    scene_camera_eye=dict(x=1.87, y=0.88, z=-0.64),
-    width=500, height=500,
-    margin=dict(l=65, r=50, b=65, t=90)
-))
+fig.update_layout(title='Mt Bruno Elevation', autosize=False,
+                  scene_camera_eye=dict(x=1.87, y=0.88, z=-0.64),
+                  width=500, height=500,
+                  margin=dict(l=65, r=50, b=65, t=90)
+)
 
 fig.show()
 ```
@@ -92,7 +91,7 @@ fig.show()
 #### Multiple 3D Surface Plots
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 z1 = np.array([

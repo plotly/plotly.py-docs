@@ -37,45 +37,72 @@ jupyter:
     v4upgrade: true
 ---
 
-#### Basic 3D Scatter Plot
+## 3D scatter plot with plotly express
 
-Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `go.Scatter`, the 3D function `go.Scatter3d` plots individual data in three-dimensional space. 
+Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `px.scatter`, the 3D function `px.scatter_3d` plots individual data in three-dimensional space. Note that plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html) such as the ones defined in ``px.data``.
 
 ```python
-import plotly.graph_objs as go
-import numpy as np
-
-fig = go.Figure()
-
-x0, y0, z0 = np.random.multivariate_normal(np.array([0, 0, 0]), np.eye(3), 100).transpose()
-fig.add_trace(go.Scatter3d(
-    x=x0, y=y0, z=z0,
-    mode='markers'
-))
-
-x1, y1, z1 = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 100).transpose()
-fig.add_trace(go.Scatter3d(
-    x=x1, y=y1, z=z1,
-    mode='markers',
-    marker_color='gray',
-))
-
-# tight layout
-fig.update(layout_margin=dict(l=0, r=0, b=0, t=0))
-# marker common configuration for the two Scatter3d
-fig.update_traces(marker_line_color='lightgray', marker_opacity=0.8, marker_size=12,
-                  marker_line_width=1)
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter_3d(iris, x='sepal_length', y='sepal_width', z='petal_width',
+              color='species')
 fig.show()
 ```
 
-#### 3D Scatter Plot with Colorscaling
+A 4th dimension of the data can be represented thanks to the color of the markers. Also, values from the `species` column are used below to assign symbols to markers.
 
 ```python
-import plotly.graph_objs as go
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter_3d(iris, x='sepal_length', y='sepal_width', z='petal_width',
+                    color='petal_length', symbol='species')
+fig.show()
+```
 
+#### Style 3d scatter plot
+
+It is possible to customize the style of the figure through the parameters of `px.scatter_3d` for some options, or by updating the traces or the layout of the figure through `fig.update`.
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter_3d(iris, x='sepal_length', y='sepal_width', z='petal_width',
+              color='petal_length', size='petal_length', size_max=18,
+              symbol='species', opacity=0.7)
+
+# tight layout
+fig.update_layout(margin=dict(l=0, r=0, b=0, t=0))
+```
+
+### 3D Scatter Plot with go.Scatter3d
+
+#### Basic 3D Scatter Plot
+
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Scatter3D` from `plotly.graph_objs`. 
+Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `go.Scatter`, `go.Scatter3d` plots individual data in three-dimensional space. 
+
+```python
+import plotly.graph_objects as go
 import numpy as np
 
-x, y, z = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 400).transpose()
+# Helix equation
+t = np.linspace(0, 10, 50)
+x, y, z = np.cos(t), np.sin(t), t
+
+fig = go.Figure(data=[go.Scatter3d(x=x, y=y, z=z,
+                                   mode='markers')])
+fig.show()
+```
+
+#### 3D Scatter Plot with Colorscaling and Marker Styling
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+# Helix equation
+t = np.linspace(0, 20, 100)
+x, y, z = np.cos(t), np.sin(t), t
 
 fig = go.Figure(data=[go.Scatter3d(
     x=x,
@@ -91,7 +118,7 @@ fig = go.Figure(data=[go.Scatter3d(
 )])
 
 # tight layout
-fig.update(layout_margin=dict(l=0, r=0, b=0, t=0))
+fig.update_layout(margin=dict(l=0, r=0, b=0, t=0))
 fig.show()
 ```
 

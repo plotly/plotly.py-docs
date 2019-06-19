@@ -39,12 +39,14 @@ jupyter:
 
 ### Range of axes
 
-The `go.Layout.scene` of a 3D figure can be configured through its `xaxis`, `yaxis` and `zaxis` parameters, in order to set the range, title, ticks, color etc. of the axes. 
+3D figures have an attribute in `layout` called `scene`, which contains
+attributes such as `xaxis`, `yaxis` and `zaxis` parameters, in order to
+set the range, title, ticks, color etc. of the axes. 
 
 For creating 3D charts, see [this page](https://plot.ly/python/3d-charts/).
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 N = 70
@@ -56,12 +58,12 @@ fig = go.Figure(data=[go.Mesh3d(x=(70*np.random.randn(N)),
                    color='rgba(244,22,100,0.6)'
                   )])
 
-fig.update(layout=go.Layout(scene = dict(
-		     xaxis = dict(nticks=4, range=[-100,100],),
+fig.update_layout(scene = dict(
+        xaxis = dict(nticks=4, range=[-100,100],),
                      yaxis = dict(nticks=4, range=[-50,100],),
                      zaxis = dict(nticks=4, range=[-100,100],),),
                      width=700,
-                     margin=dict(r=20, l=10, b=10, t=10)))
+                     margin=dict(r=20, l=10, b=10, t=10))
 
 fig.show()
 ```
@@ -69,7 +71,7 @@ fig.show()
 ### Fixed Ratio Axes
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import numpy as np
 
@@ -90,23 +92,23 @@ for i in [1,2]:
               ), 
             row=i, col=j)
 
-fig.update(layout_width=700, layout_margin=dict(r=10, l=10, b=10, t=10))
+fig.update_layout(width=700, margin=dict(r=10, l=10, b=10, t=10))
 # fix the ratio in the top left subplot to be a cube
-fig.update(layout_scene_aspectmode='cube')
+fig.update_layout(scene_aspectmode='cube')
 # manually force the z-axis to appear twice as big as the other two
-fig.update(layout_scene2_aspectmode='manual',
-           layout_scene2_aspectratio=dict(x=1, y=1, z=2))
+fig.update_layout(scene2_aspectmode='manual',
+                  scene2_aspectratio=dict(x=1, y=1, z=2))
 # draw axes in proportion to the proportion of their ranges
-fig.update(layout_scene3_aspectmode='data')
+fig.update_layout(scene3_aspectmode='data')
 # automatically produce something that is well proportioned using 'data' as the default
-fig.update(layout_scene4_aspectmode='auto')
+fig.update_layout(scene4_aspectmode='auto')
 fig.show()
 ```
 
 ### Set Axes Title
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 # Define random surface
@@ -125,12 +127,12 @@ fig.add_trace(go.Mesh3d(x=(70*np.random.randn(N)),
                    color='pink'
                   ))
 
-fig.update(layout=go.Layout(scene = dict(
-                   xaxis_title='X AXIS TITLE',
-                   yaxis_title='Y AXIS TITLE',
-                   zaxis_title='Z AXIS TITLE'),
-                   width=700,
-                   margin=dict(r=20, b=10, l=10, t=10)))
+fig.update_layout(scene = dict(
+                    xaxis_title='X AXIS TITLE',
+                    yaxis_title='Y AXIS TITLE',
+                    zaxis_title='Z AXIS TITLE'),
+                    width=700,
+                    margin=dict(r=20, b=10, l=10, t=10))
 
 fig.show()
 ```
@@ -138,7 +140,7 @@ fig.show()
 ### Ticks Formatting
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 # Define random surface
@@ -151,8 +153,7 @@ fig = go.Figure(data=[go.Mesh3d(x=(60*np.random.randn(N)),
                   )])
 
 # Different types of customized ticks
-fig.update(layout=go.Layout(
-                    scene = dict(
+fig.update_layout(scene = dict(
                     xaxis = dict(
                         ticktext= ['TICKS','MESH','PLOTLY','PYTHON'],
                         tickvals= [0,50,75,-50]),
@@ -167,7 +168,7 @@ fig.update(layout=go.Layout(
                         tick0=0, tickwidth=4),),
                     width=700,
                     margin=dict(r=10, l=10, b=10, t=10)
-                  ))
+                  )
 
 fig.show()
 ```
@@ -175,7 +176,7 @@ fig.show()
 ### Background and Grid Color
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 N = 50
@@ -186,8 +187,7 @@ fig = go.Figure(data=[go.Mesh3d(x=(30*np.random.randn(N)),
 
 
 # xaxis.backgroundcolor is used to set background color
-fig.update(layout = go.Layout(
-                    scene = dict(
+fig.update_layout(scene = dict(
                     xaxis = dict(
                          backgroundcolor="rgb(200, 200, 230)",
                          gridcolor="white",
@@ -207,10 +207,6 @@ fig.update(layout = go.Layout(
                     margin=dict(
                     r=10, l=10,
                     b=10, t=10)
-                  ))
+                  )
 fig.show()
-```
-
-```python
-
 ```

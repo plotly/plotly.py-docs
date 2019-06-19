@@ -102,12 +102,12 @@ fig.show()
 To learn more, see the *link to px.bar reference page*.
 
 
-#### Basic Bar Chart with plotly.graph_objs
+#### Basic Bar Chart with plotly.graph_objects
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Bar` function from `plotly.graph_objs`.
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Bar` function from `plotly.graph_objects`.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 animals=['giraffes', 'orangutans', 'monkeys']
 
 fig = go.Figure([go.Bar(x=animals, y=[20, 14, 23])])
@@ -119,7 +119,7 @@ fig.show()
 Customize the figure using `fig.update`.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 animals=['giraffes', 'orangutans', 'monkeys']
 
 fig = go.Figure(data=[
@@ -127,13 +127,14 @@ fig = go.Figure(data=[
     go.Bar(name='LA Zoo', x=animals, y=[12, 18, 29])
 ])
 # Change the bar mode
-fig.update(layout_barmode='group')
+fig.update_layout(barmode='group')
+fig.show()
 ```
 
 ### Stacked Bar Chart
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 animals=['giraffes', 'orangutans', 'monkeys']
 
 fig = go.Figure(data=[
@@ -141,13 +142,14 @@ fig = go.Figure(data=[
     go.Bar(name='LA Zoo', x=animals, y=[12, 18, 29])
 ])
 # Change the bar mode
-fig.update(layout_barmode='stack')
+fig.update_layout(barmode='stack')
+fig.show()
 ```
 
 ### Bar Chart with Hover Text
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 x = ['Product A', 'Product B', 'Product C']
 y = [20, 14, 23]
@@ -158,14 +160,14 @@ fig = go.Figure(data=[go.Bar(x=x, y=y,
 # Customize aspect
 fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
                   marker_line_width=1.5, opacity=0.6)
-fig.update(layout_title_text='January 2013 Sales Report')
+fig.update_layout(title_text='January 2013 Sales Report')
 fig.show()
 ```
 
 ### Bar Chart with Direct Labels
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 x = ['Product A', 'Product B', 'Product C']
 y = [20, 14, 23]
@@ -183,7 +185,7 @@ fig.show()
 ### Rotated Bar Chart Labels
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
           'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -203,13 +205,14 @@ fig.add_trace(go.Bar(
 ))
 
 # Here we modify the tickangle of the xaxis, resulting in rotated labels.
-fig.update(layout_barmode='group', layout_xaxis_tickangle=-45)
+fig.update_layout(barmode='group', xaxis_tickangle=-45)
+fig.show()
 ```
 
 ### Customizing Individual Bar Colors
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 colors = ['lightslategray',] * 5
 colors[1] = 'crimson'
@@ -220,13 +223,13 @@ fig = go.Figure(data=[go.Bar(
     y=[20, 14, 23, 25, 22],
     marker_color=colors # marker color can be a single color value or an iterable
 )])
-fig.update(layout_title_text='Least Used Feature')
+fig.update_layout(title_text='Least Used Feature')
 ```
 
 ### Customizing Individual Bar Widths
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Bar(
     x=[1, 2, 3, 5.5, 10],
@@ -241,7 +244,7 @@ fig.show()
 
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 years = ['2016','2017','2018']
 
@@ -264,7 +267,7 @@ fig.show()
 In this example several parameters of the layout as customized, hence it is convenient to use directly the `go.Layout(...)` constructor instead of calling `fig.update`. 
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 years = [1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
          2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012]
@@ -283,7 +286,7 @@ fig.add_trace(go.Bar(x=years,
                 marker_color='rgb(26, 118, 255)'
                 ))
 
-layout = go.Layout(
+fig.update_layout(
     title='US Export of Plastic Scrap',
     xaxis_tickfont_size=14,
     yaxis=dict(
@@ -301,14 +304,13 @@ layout = go.Layout(
     bargap=0.15, # gap between bars of adjacent location coordinates.
     bargroupgap=0.1 # gap between bars of the same location coordinate.
 )
-fig.update(layout=layout)
 fig.show()
 ```
 
 ### Waterfall Bar Chart
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 x_data = ['Product<br>Revenue', 'Services<br>Revenue',
           'Total<br>Revenue', 'Fixed<br>Costs',
@@ -340,14 +342,6 @@ fig.add_trace(go.Bar(x=x_data,
                 marker_line_color='rgba(50, 171, 96, 1.0)'
                 ))
 
-layout = go.Layout(
-    title='Annual Profit- 2015',
-    barmode='stack',
-    paper_bgcolor='rgba(245, 246, 249, 1)',
-    plot_bgcolor='rgba(245, 246, 249, 1)',
-    showlegend=False
-)
-
 annotations = []
 
 for i in range(0, 7):
@@ -355,9 +349,14 @@ for i in range(0, 7):
                                   font=dict(family='Arial', size=14,
                                   color='rgba(245, 246, 249, 1)'),
                                   showarrow=False,))
-    layout['annotations'] = annotations
 
-fig.update(layout=layout)
+fig.update_layout(annotations=annotations,
+    title='Annual Profit- 2015',
+    barmode='stack',
+    paper_bgcolor='rgba(245, 246, 249, 1)',
+    plot_bgcolor='rgba(245, 246, 249, 1)',
+    showlegend=False)
+
 fig.update_traces(marker_line_width=2)
 fig.show()
 ```
@@ -368,7 +367,7 @@ With "relative" barmode, the bars are stacked on top of one another, with negati
 below the axis, positive values above.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 x = [1, 2, 3, 4]
 
 fig = go.Figure()
@@ -377,7 +376,8 @@ fig.add_trace(go.Bar(x=x, y=[6, -8, -4.5, 8]))
 fig.add_trace(go.Bar(x=x, y=[-15, -3, 4.5, -8]))
 fig.add_trace(go.Bar(x=x, y=[-1, 3, -3, -4]))
 
-fig.update(layout_barmode='relative', layout_title_text='Relative Barmode')
+fig.update_layout(barmode='relative', title_text='Relative Barmode')
+fig.show()
 ```
 
 ### Horizontal Bar Charts

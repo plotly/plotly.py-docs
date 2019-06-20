@@ -39,7 +39,9 @@ jupyter:
 
 ### Time Series Plot with `datetime` Objects ###
 
-Time series can be represented using either `plotly.express` functions (`px.line`, `px.scatter`) or `plotly.graph_objs` charts objects (`go.Scatter`). For more examples of such charts, see the documentation of [line and scatter plots](https://plot.ly/python/line-and-scatter/).
+Time series can be represented using either `plotly.express` functions (`px.line`, `px.scatter`) or `plotly.graph_objects` charts objects (`go.Scatter`). For more examples of such charts, see the documentation of [line and scatter plots](https://plot.ly/python/line-and-scatter/).
+
+Plotly auto-sets the axis type to a date format when the corresponding data are either ISO-formatted date strings or if they're a [date pandas column](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html) or [datetime NumPy array](https://docs.scipy.org/doc/numpy/reference/arrays.datetime.html).
 
 ```python
 # Using plotly.express
@@ -53,8 +55,8 @@ fig.show()
 ```
 
 ```python
-# Using graph_objs
-import plotly.graph_objs as go
+# Using graph_objects
+import plotly.graph_objects as go
 
 import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
@@ -68,7 +70,7 @@ fig.show()
 The data range can be set manually using either `datetime.datetime` objects, or date strings.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import datetime
 
 x = [datetime.datetime(year=2013, month=10, day=4),
@@ -77,12 +79,13 @@ x = [datetime.datetime(year=2013, month=10, day=4),
 
 fig = go.Figure(data=[go.Scatter(x=x, y=[1, 3, 6])])
 # Use datetime objects to set xaxis range
-fig.update(layout_xaxis_range=[datetime.datetime(2013, 10, 17),
+fig.update_layout(xaxis_range=[datetime.datetime(2013, 10, 17),
                                datetime.datetime(2013, 11, 20)])
+fig.show()
 ```
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
@@ -103,28 +106,28 @@ fig.add_trace(go.Scatter(
                 opacity=0.8))
 
 # Use date string to set xaxis range
-fig.update(layout_xaxis_range=['2016-07-01','2016-12-31'],
-           layout_title_text="Manually Set Date Range")
+fig.update_layout(xaxis_range=['2016-07-01','2016-12-31'],
+                  title_text="Manually Set Date Range")
 fig.show()
 ```
 
 ### Time Series With Rangeslider
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=df.Date, y=df['AAPL.High'], name="AAPL High",
-                        line_color='deepskyblue'))
+                         line_color='deepskyblue'))
 
 fig.add_trace(go.Scatter(x=df.Date, y=df['AAPL.Low'], name="AAPL Low",
-                       line_color='dimgray'))
+                         line_color='dimgray'))
 
-fig.update(layout_title_text='Time Series with Rangeslider', 
-           layout_xaxis_rangeslider_visible=True)
+fig.update_layout(title_text='Time Series with Rangeslider', 
+                  xaxis_rangeslider_visible=True)
 fig.show()
 ```
 

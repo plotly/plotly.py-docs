@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -10,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make Pie Charts.
     display_as: basic
@@ -23,6 +34,7 @@ jupyter:
     permalink: python/pie-charts/
     thumbnail: thumbnail/pie-chart.jpg
     title: Pie Charts in Python | plotly
+    v4upgrade: true
 ---
 
 ### Basic Pie Chart ###
@@ -30,7 +42,7 @@ jupyter:
 A pie chart ``go.Pie`` object is a circular statistical chart, which is divided into sectors to illustrate numerical proportion. Data visualized by the sectors of the pie is set in `values`. The sector labels are set in `labels`. The sector colors are set in `marker.colors`.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
 values = [4500, 2500, 1053, 500]
@@ -44,8 +56,8 @@ fig.show()
 Colors can be given as RGB triplets or hexadecimal strings, or with [CSS color names](https://www.w3schools.com/cssref/css_colors.asp) as below.
 
 ```python
-import plotly.graph_objs as go
-colors = ['pink', 'deeppink', 'seagreen', 'lightgreen']
+import plotly.graph_objects as go
+colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen']
 
 fig = go.Figure(data=[go.Pie(labels=['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen'], 
                              values=[4500,2500,1053,500])])
@@ -58,7 +70,20 @@ fig.show()
 
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
+
+labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
+values = [4500, 2500, 1053, 500]
+
+# Use `hole` to create a donut-like pie chart
+fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
+fig.show()
+```
+
+### Pie Charts in subplots
+
+```python
+import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 labels = ["US", "China", "European Union", "Russian Federation", "Brazil", "India", 
@@ -71,11 +96,13 @@ fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}
 fig.add_traces([trace0, trace1], rows=[1, 1], cols=[1, 2])
 # Use `hole` to create a donut-like pie chart
 fig.update_traces(hole=.4, hoverinfo="label+percent+name")
-# Title of plot
-fig.update(layout_title_text="Global Emissions 1990-2011")
-# Add annotations in the center of the donut pies.
-fig.update(layout_annotations=[dict(text='GHG', x=0.18, y=0.5, font_size=20, showarrow=False),
-                               dict(text='CO2', x=0.82, y=0.5, font_size=20, showarrow=False)])
+
+fig.update_layout(
+    title_text="Global Emissions 1990-2011",
+    # Add annotations in the center of the donut pies.
+    annotations=[dict(text='GHG', x=0.18, y=0.5, font_size=20, showarrow=False),
+                 dict(text='CO2', x=0.82, y=0.5, font_size=20, showarrow=False)])
+fig.show()
 ```
 
 ### Pie Chart Subplots ###
@@ -84,7 +111,7 @@ fig.update(layout_annotations=[dict(text='GHG', x=0.18, y=0.5, font_size=20, sho
 In order to create pie chart subplots, you need to use the [domain](https://plot.ly/python/reference/#pie-domain) attribute. It is important to note that the `X` array set the horizontal position whilst the `Y` array sets the vertical. For example, `x: [0,0.5], y: [0, 0.5]` would mean the bottom left position of the plot.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 labels = ['1st', '2nd', '3rd', '4th', '5th']
@@ -121,6 +148,20 @@ fig.update(layout_title_text='Van Gogh: 5 Most Prominent Colors Shown Proportion
            layout_showlegend=False)
 
 fig = go.Figure(fig)
+fig.show()
+```
+
+```python
+import plotly.graph_objects as go
+
+labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
+values1 = [4500, 2500, 1053, 500]
+values2 = [40, 250, 153, 50]
+
+# Use `hole` to create a donut-like pie chart
+fig = go.Figure()
+fig.add_trace(go.Pie(labels=labels, values=values1, hole=.5, scalegroup='one'))
+fig.add_trace(go.Pie(labels=labels, values=values2, scalegroup='one'))
 fig.show()
 ```
 

@@ -40,7 +40,7 @@ jupyter:
 
 ## Histogram with plotly express
 
-A [histogram](https://en.wikipedia.org/wiki/Histogram) is representation of the distribution of numerical data, where the data are binned and the count for each bin is represented.
+In statistics, a [histogram](https://en.wikipedia.org/wiki/Histogram) is representation of the distribution of numerical data, where the data are binned and the count for each bin is represented. More generally, in plotly a histogram is an aggregated bar chart, with several possible aggregation functions (e.g. sum, average, count...). Also, the data to be binned can be numerical data but also categorical or date data.
 
 Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
 
@@ -49,6 +49,14 @@ import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill")
 fig.show()      
+```
+
+```python
+import plotly.express as px
+tips = px.data.tips()
+# Here we use a column with categorical data
+fig = px.histogram(tips, x="day")
+fig.show()
 ```
 
 #### Choosing the number of bins
@@ -81,9 +89,9 @@ tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill",
                    title='Histogram of bills',
                    labels={'total_bill':'total bill'}, # can specify one label per df column
-                   opacity=0.6,
+                   opacity=0.8,
                    log_y=True, # represent bars with log scale
-                   color_discrete_sequence=['red'] # color of histogram bars
+                   color_discrete_sequence=['indianred'] # color of histogram bars
                    )
 fig.show()  
 ```
@@ -122,12 +130,12 @@ fig.show()
 
 ## Histograms with go.Histogram
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Histogram` from `plotly.graph_objs`. All of the available histogram options are described in the histogram section of the reference page: https://plot.ly/python/reference#histogram.
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Histogram` from `plotly.graph_objects`. All of the available histogram options are described in the histogram section of the reference page: https://plot.ly/python/reference#histogram.
 
 ### Basic Histogram ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -140,7 +148,7 @@ fig.show()
 ### Normalized Histogram
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -153,7 +161,7 @@ fig.show()
 ### Horizontal Histogram ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -167,7 +175,7 @@ fig.show()
 ### Overlaid Histogram ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -180,15 +188,16 @@ fig.add_trace(go.Histogram(x=x0))
 fig.add_trace(go.Histogram(x=x1))
 
 # Overlay both histograms
-fig.update(layout_barmode='overlay')
+fig.update_layout(barmode='overlay')
 # Reduce opacity to see both histograms
 fig.update_traces(opacity=0.75)
+fig.show()
 ```
 
 ### Stacked Histograms 
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -200,13 +209,14 @@ fig.add_trace(go.Histogram(x=x0))
 fig.add_trace(go.Histogram(x=x1))
 
 # The two histograms are drawn on top of another
-fig.update(layout_barmode='stack')
+fig.update_layout(barmode='stack')
+fig.show()
 ```
 
 ### Styled Histogram
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 x0 = np.random.randn(500)
@@ -238,13 +248,13 @@ fig.add_trace(go.Histogram(
     opacity=0.75
 ))
 
-fig.update(layout=go.Layout(
-    title='Sampled Results', # title of plot
-    xaxis_title='Value', # xaxis label
-    yaxis_title='Count', # yaxis label
+fig.update_layout(
+    title_text='Sampled Results', # title of plot
+    xaxis_title_text='Value', # xaxis label
+    yaxis_title_text='Count', # yaxis label
     bargap=0.2, # gap between bars of adjacent location coordinates
     bargroupgap=0.1 # gap between bars of the same location coordinates
-))
+)
 
 fig.show()
 ```
@@ -252,7 +262,7 @@ fig.show()
 ### Cumulative Histogram 
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -262,27 +272,17 @@ fig = go.Figure(data=[go.Histogram(x=x, cumulative_enabled=True)])
 fig.show()
 ```
 
-### Specify Binning Function
+### Specify Aggregation Function
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 x = ["Apples","Apples","Apples","Oranges", "Bananas"]
 y = ["5","10","3","10","5"]
 
 fig = go.Figure()
-fig.add_trace(go.Histogram(
-    histfunc = "count",
-    y=y,
-    x=x,
-    name="count"
-))
-fig.add_trace(go.Histogram(
-    histfunc="sum",
-    y=y,
-    x=x,
-    name="sum"
-))
+fig.add_trace(go.Histogram(histfunc="count", y=y, x=x, name="count"))
+fig.add_trace(go.Histogram(histfunc="sum", y=y, x=x, name="sum"))
 
 fig.show()
 ```
@@ -291,7 +291,7 @@ fig.show()
 For custom binning along x-axis, use the attribute [`nbinsx`](https://plot.ly/python/reference/#histogram-nbinsx). Please note that the autobin algorithm will choose a 'nice' round bin size that may result in somewhat fewer than `nbinsx` total bins. Alternatively, you can set the exact values for [`xbins`](https://plot.ly/python/reference/#histogram-xbins) along with `autobinx = False`.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 x = ['1970-01-01', '1970-01-01', '1970-02-01', '1970-04-01', '1970-01-02', 

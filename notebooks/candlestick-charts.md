@@ -45,7 +45,7 @@ time). The boxes represent the spread between the `open` and `close` values and 
 #### Simple Candlestick with Pandas
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 from datetime import datetime
@@ -64,7 +64,7 @@ fig.show()
 #### Candlestick without Rangeslider
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
@@ -74,13 +74,14 @@ fig = go.Figure(data=[go.Candlestick(x=df['Date'],
                 low=df['AAPL.Low'], close=df['AAPL.Close'])
                      ])
 
-fig.update(layout_xaxis_rangeslider_visible=False)
+fig.update_layout(xaxis_rangeslider_visible=False)
+fig.show()
 ```
 
 #### Adding Customized Text and Annotations
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import pandas as pd
 
 
@@ -91,7 +92,7 @@ fig = go.Figure(data=[go.Candlestick(x=df['Date'],
                 low=df['AAPL.Low'], close=df['AAPL.Close'])
                       ])
 
-fig.update(layout=go.Layout(
+fig.update_layout(
     title='The Great Recession',
     yaxis_title='AAPL Stock',
     shapes = [dict(
@@ -100,7 +101,7 @@ fig.update(layout=go.Layout(
     annotations=[dict(
         x='2016-12-09', y=0.05, xref='x', yref='paper',
         showarrow=False, xanchor='left', text='Increase Period Begins')]
-))
+)
 
 fig.show()
 ```
@@ -108,7 +109,7 @@ fig.show()
 #### Custom Candlestick Colors
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
@@ -126,7 +127,7 @@ fig.show()
 #### Simple Example with `datetime` Objects
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 from datetime import datetime
 
 open_data = [33.0, 33.3, 33.5, 33.0, 34.1]

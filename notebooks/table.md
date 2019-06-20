@@ -11,16 +11,6 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
-  language_info:
-    codemirror_mode:
-      name: ipython
-      version: 3
-    file_extension: .py
-    mimetype: text/x-python
-    name: python
-    nbconvert_exporter: python
-    pygments_lexer: ipython3
-    version: 3.6.7
   plotly:
     description: How to make tables in Python with Plotly.
     display_as: basic
@@ -34,7 +24,7 @@ jupyter:
     permalink: python/table/
     thumbnail: thumbnail/table.gif
     title: Tables | plotly
-    v4upgrade
+    v4upgrade: true
 ---
 
 `go.Table` provides a Table object for detailed data viewing. The data are arranged in
@@ -45,7 +35,7 @@ Note that [Dash](https://dash.plot.ly/) provides a different type of [DataTable]
 #### Basic Table
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Table(header=dict(values=['A Scores', 'B Scores']),
                  cells=dict(values=[[100, 90, 80, 90], [95, 85, 75, 95]]))
@@ -56,7 +46,7 @@ fig.show()
 #### Styled Table
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Table(
     header=dict(values=['A Scores', 'B Scores'],
@@ -70,13 +60,14 @@ fig = go.Figure(data=[go.Table(
                align='left'))
 ])
 
-fig.update(layout_width=500, layout_height=300)
+fig.update_layout(width=500, height=300)
+fig.show()
 ```
 
 #### Use a Pandas Dataframe
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv')
@@ -96,7 +87,7 @@ fig.show()
 #### Changing Row and Column Size
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 values = [['Salaries', 'Office', 'Merchandise', 'Legal', '<b>TOTAL<br>EXPENSES</b>'], #1st col
   ["Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad",
@@ -133,7 +124,7 @@ fig.show()
 #### Alternating Row Colors 
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 headerColor = 'grey'
 rowEvenColor = 'lightgrey'
@@ -168,7 +159,7 @@ fig.show()
 #### Row Color Based on Variable
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 
@@ -196,7 +187,7 @@ fig.show()
 #### Cell Color Based on Variable
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 from plotly.colors import n_colors
 import numpy as np
 

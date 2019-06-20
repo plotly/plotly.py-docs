@@ -45,15 +45,18 @@ For example, the `plotly.express` function `px.histogram` can add a subplot with
 ```python
 import plotly.express as px
 tips = px.data.tips()
-px.histogram(tips, x="total_bill", y="tip", color="sex", marginal="rug", 
-             hover_data=tips.columns)
+fig = px.histogram(tips, x="total_bill", y="tip", color="sex", marginal="rug", 
+                   hover_data=tips.columns)
+fig.show()
 ```
 
 ```python
 import plotly.express as px
 tips = px.data.tips()
-px.histogram(tips, x="total_bill", y="tip", color="sex", marginal="box", # or violin, rug
-             hover_data=tips.columns)
+fig = px.histogram(tips, x="total_bill", y="tip", color="sex",
+                   marginal="box", # or violin, rug
+                   hover_data=tips.columns)
+fig.show()
 ```
 
 ## Combined statistical representations with distplot figure factory
@@ -150,7 +153,7 @@ fig = ff.create_distplot(
     [x1, x2], group_labels, bin_size=.2,
     rug_text=rug_text, colors=colors)
 
-fig.update(layout_title_text='Customized Distplot')
+fig.update_layout(title_text='Customized Distplot')
 fig.show()
 ```
 
@@ -173,7 +176,7 @@ fig = ff.create_distplot([x1, x2], group_labels, bin_size=.5,
                          colors=colors)
 
 # Add title
-fig.update(layout_title_text='Distplot with Normal Distribution')
+fig.update_layout(title_text='Distplot with Normal Distribution')
 fig.show()
 ```
 
@@ -196,7 +199,7 @@ colors = ['#333F44', '#37AA9C', '#94F3E4']
 fig = ff.create_distplot(hist_data, group_labels, show_hist=False, colors=colors)
 
 # Add title
-fig.update(layout_title_text='Curve and Rug Plot')
+fig.update_layout(title_text='Curve and Rug Plot')
 fig.show()
 ```
 
@@ -220,7 +223,7 @@ fig = ff.create_distplot(hist_data, group_labels, colors=colors, bin_size=.25,
                          show_curve=False)
 
 # Add title
-fig.update(layout_title_text='Hist and Rug Plot')
+fig.update_layout(title_text='Hist and Rug Plot')
 fig.show()
 ```
 
@@ -267,7 +270,7 @@ fig = ff.create_distplot(hist_data, group_labels, colors=colors,
                          bin_size=.2, show_rug=False)
 
 # Add title
-fig.update(layout_title_text='Hist and Curve Plot')
+fig.update_layout(title_text='Hist and Curve Plot')
 fig.show()
 ```
 

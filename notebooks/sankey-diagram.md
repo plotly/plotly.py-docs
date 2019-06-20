@@ -45,7 +45,7 @@ A [Sankey diagram](https://en.wikipedia.org/wiki/Sankey_diagram) is a flow diagr
 ### Basic Sankey Diagram
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Sankey(
     node = dict(
@@ -61,7 +61,7 @@ fig = go.Figure(data=[go.Sankey(
       value = [8, 4, 2, 8, 4, 2]
   ))])
 
-fig.update(layout_title_text="Basic Sankey Diagram", layout_font_size=10)
+fig.update_layout(title_text="Basic Sankey Diagram", font_size=10)
 fig.show()
 ```
 
@@ -92,8 +92,8 @@ fig = go.Figure(data=[go.Sankey(
       label =  data['data'][0]['link']['label']
   ))])
 
-fig.update(layout_title_text="Energy forecast for 2050<br>Source: Department of Energy & Climate Change, Tom Counsell via <a href='https://bost.ocks.org/mike/sankey/'>Mike Bostock</a>",
-           layout_font_size=10)
+fig.update_layout(title_text="Energy forecast for 2050<br>Source: Department of Energy & Climate Change, Tom Counsell via <a href='https://bost.ocks.org/mike/sankey/'>Mike Bostock</a>",
+                  font_size=10)
 fig.show()
 ```
 
@@ -123,12 +123,12 @@ fig = go.Figure(data=[go.Sankey(
       label =  data['data'][0]['link']['label']
   ))])
 
-fig.update(layout =  dict(
-    title = "Energy forecast for 2050<br>Source: Department of Energy & Climate Change, Tom Counsell via <a href='https://bost.ocks.org/mike/sankey/'>Mike Bostock</a>",
-    font = dict(size = 10, color = 'white'),
-    plot_bgcolor = 'black',
-    paper_bgcolor = 'black'
-))
+fig.update_layout(
+    title="Energy forecast for 2050<br>Source: Department of Energy & Climate Change, Tom Counsell via <a href='https://bost.ocks.org/mike/sankey/'>Mike Bostock</a>",
+    font=dict(size = 10, color = 'white'),
+    plot_bgcolor='black',
+    paper_bgcolor='black'
+)
 ```
 
 ### Reference

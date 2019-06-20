@@ -49,15 +49,17 @@ Plotly express functions take as argument a tidy [pandas DataFrame](https://pand
 ```python
 import plotly.express as px
 gapminder = px.data.gapminder()
-px.area(gapminder, x="year", y="pop", color="continent", line_group="country")
+fig = px.area(gapminder, x="year", y="pop", color="continent",
+	      line_group="country")
+fig.show()
 ```
 
-### Filled area chart with plotly.graph_objs
+### Filled area chart with plotly.graph_objects
 
 #### Basic Overlaid Area Chart
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[0, 2, 3, 5], fill='tozeroy')) # fill down to xaxis
@@ -69,7 +71,7 @@ fig.show()
 #### Overlaid Area Chart Without Boundary Lines
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[0, 2, 3, 5], fill='tozeroy',
@@ -84,7 +86,7 @@ fig.show()
 #### Interior Filling for Area Chart
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[3, 4, 8, 3],
@@ -106,7 +108,7 @@ fig.show()
 The `stackgroup` parameter is used to add the `y` values of the different traces in the same group. Traces in the same group fill up to the next trace of the group.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 x=['Winter', 'Spring', 'Summer', 'Fall']
 
@@ -133,14 +135,14 @@ fig.add_trace(go.Scatter(
     stackgroup='one'
 ))
 
-fig.update(layout_yaxis_range=(0, 100))
+fig.update_layout(yaxis_range=(0, 100))
 fig.show()
 ```
 
 ### Stacked Area Chart with Normalized Values
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 x=['Winter', 'Spring', 'Summer', 'Fall']
 fig = go.Figure()
@@ -171,15 +173,13 @@ fig.add_trace(go.Scatter(
     stackgroup='one'
 ))
 
-fig.update(layout = go.Layout(
+fig.update_layout(
     showlegend=True,
     xaxis_type='category',
     yaxis=dict(
         type='linear',
         range=[1, 100],
-        ticksuffix='%'
-    )
-))
+        ticksuffix='%'))
 
 fig.show()
 ```
@@ -187,7 +187,7 @@ fig.show()
 #### Select Hover Points
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=[0,0.5,1,1.5,2], y=[0,1,2,1,0],
@@ -204,11 +204,11 @@ fig.add_trace(go.Scatter(x=[3,3.5,4,4.5,5], y=[0,1,2,1,0],
                     text="Points only",
                     hoverinfo='text+x+y'))
 
-fig.update(layout = go.Layout(
+fig.update_layout(
     title = "hover on <i>points</i> or <i>fill</i>",
     xaxis_range = [0,5.2],
     yaxis_range = [0,3]
-))
+)
 
 fig.show()
 ```

@@ -48,19 +48,20 @@ We first show a bubble chart example using plotly express. Plotly express functi
 import plotly.express as px
 gapminder = px.data.gapminder()
 
-px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", 
-           size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
+fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", 
+	         size="pop", color="continent",
+                 hover_name="country", log_x=True, size_max=60)
+fig.show()
 ```
 
-## Bubble Chart with plotly.graph_objs
+## Bubble Chart with plotly.graph_objects
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Scatter` from `plotly.graph_objs`, and define the size of markers to create a bubble chart. All of the available options are described in the scatter section of the reference page: https://plot.ly/python/reference#scatter.
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Scatter` from `plotly.graph_objects`, and define the size of markers to create a bubble chart. All of the available options are described in the scatter section of the reference page: https://plot.ly/python/reference#scatter.
 
 ### Simple Bubble Chart
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Scatter(
     x=[1, 2, 3, 4], y=[10, 11, 12, 13],
@@ -74,7 +75,7 @@ fig.show()
 ### Setting Marker Size and Color
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Scatter(
     x=[1, 2, 3, 4], y=[10, 11, 12, 13],
@@ -97,7 +98,7 @@ Note that setting 'sizeref' to a value greater than 1, decreases the rendered ma
 Additionally, we recommend setting the sizemode attribute: https://plot.ly/python/reference/#scatter-marker-sizemode to area.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 size = [20, 40, 60, 80, 100, 80, 60, 40, 20, 40]
 fig = go.Figure(data=[go.Scatter(
@@ -118,7 +119,7 @@ fig.show()
 ### Hover Text with Bubble Charts
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Scatter(
     x=[1, 2, 3, 4], y=[10, 11, 12, 13],
@@ -136,7 +137,7 @@ fig.show()
 ### Bubble Charts with Colorscale
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Scatter(
     x=[1, 3.2, 5.4, 7.6, 9.8, 12.5],
@@ -155,7 +156,7 @@ fig.show()
 ### Categorical Bubble Charts
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
 import math
@@ -203,7 +204,7 @@ for continent_name, continent in continent_data.items():
 fig.update_traces(mode='markers', marker=dict(sizemode='area', 
                                               sizeref=sizeref, line_width=2))
                        
-fig.update(layout=go.Layout(
+fig.update_layout(
     title='Life Expectancy v. Per Capita GDP, 2007',
     xaxis=dict(
         title='GDP per capita (2000 dollars)',
@@ -218,7 +219,8 @@ fig.update(layout=go.Layout(
     ),
     paper_bgcolor='rgb(243, 243, 243)',
     plot_bgcolor='rgb(243, 243, 243)',
-))
+)
+fig.show()
 ```
 
 ### Reference

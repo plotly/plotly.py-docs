@@ -88,12 +88,12 @@ fig.show()
 
 ## Box plot with go.Box
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Box` function from `plotly.graph_objs`. All available options for `go.Box` are described in the reference page https://plot.ly/python/reference/#box.
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Box` function from `plotly.graph_objects`. All available options for `go.Box` are described in the reference page https://plot.ly/python/reference/#box.
 
 ### Basic Box Plot ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 y0 = np.random.randn(50) - 1
@@ -109,7 +109,7 @@ fig.show()
 ### Basic Horizontal Box Plot ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 x0 = np.random.randn(50)
@@ -126,7 +126,7 @@ fig.show()
 ### Box Plot That Displays the Underlying Data ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Box(y=[0, 1, 1, 2, 3, 5, 8, 13, 21],
             boxpoints='all', # can also be outliers, or suspectedoutliers, or False 
@@ -140,7 +140,7 @@ fig.show()
 ### Colored Box Plot ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 y0 = np.random.randn(50)
@@ -158,7 +158,7 @@ fig.show()
 ### Box Plot Styling Mean & Standard Deviation ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Box(
@@ -182,7 +182,7 @@ fig.show()
 The example below shows how to use the `boxpoints` argument. If "outliers", only the sample points lying outside the whiskers are shown. If "suspectedoutliers", the outlier points are shown and points either less than 4Q1-3Q3 or greater than 4Q3-3Q1 are highlighted (using  `outliercolor`). If "all", all sample points are shown. If False, only the boxes are shown with no sample points.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Box(
@@ -229,13 +229,14 @@ fig.add_trace(go.Box(
 ))
 
 
-fig.update(layout_title_text="Box Plot Styling Outliers")
+fig.update_layout(title_text="Box Plot Styling Outliers")
+fig.show()
 ```
 
 ### Grouped Box Plots ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 x = ['day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1',
      'day 2', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2']
@@ -261,17 +262,17 @@ fig.add_trace(go.Box(
     marker_color='#FF851B'
 ))
 
-fig.update(layout = go.Layout(
+fig.update_layout(
     yaxis_title='normalized moisture',
     boxmode='group' # group together boxes of the different traces for each value of x
-))
-
+)
+fig.show()
 ```
 
 ### Grouped Horizontal Box Plot ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 y = ['day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1',
      'day 2', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2']
@@ -296,21 +297,19 @@ fig.add_trace(go.Box(
     marker_color='#FF851B'
 ))
 
-fig.update(layout = go.Layout(
-    xaxis=dict(
-        title='normalized moisture',
-        zeroline=False
-    ),
+fig.update_layout(
+    xaxis=dict(title='normalized moisture', zeroline=False),
     boxmode='group'
-))
+)
 
 fig.update_traces(orientation='h') # horizontal box plots
+fig.show()
 ```
 
 ### Rainbow Box Plots ###
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 N = 30     # Number of boxes
@@ -328,12 +327,12 @@ fig = go.Figure(data=[go.Box(
     ) for i in range(int(N))])
 
 # format the layout
-fig.update(layout = go.Layout(
+fig.update_layout(
     xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
     yaxis=dict(zeroline=False, gridcolor='white'),
     paper_bgcolor='rgb(233,233,233)',
     plot_bgcolor='rgb(233,233,233)',
-))
+)
 
 fig.show()
 ```
@@ -342,7 +341,7 @@ fig.show()
 
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 x_data = ['Carmelo Anthony', 'Dwyane Wade',
           'Deron Williams', 'Brook Lopez',
@@ -376,7 +375,7 @@ for xd, yd, cls in zip(x_data, y_data, colors):
             line_width=1)
         )
 
-fig.update(layout = go.Layout(
+fig.update_layout(
     title='Points Scored by the Top 9 Scoring NBA Players in 2012',
     yaxis=dict(
         autorange=True,
@@ -397,7 +396,7 @@ fig.update(layout = go.Layout(
     paper_bgcolor='rgb(243, 243, 243)',
     plot_bgcolor='rgb(243, 243, 243)',
     showlegend=False
-))
+)
 
 fig.show()
 ```

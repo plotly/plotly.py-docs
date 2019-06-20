@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make Network Graphs in Python with Plotly. One examples of
       a network graph with NetworkX
@@ -38,7 +48,7 @@ Install the Python library `networkx` with `pip install networkx`.
 ### Create random graph
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import networkx as nx
 

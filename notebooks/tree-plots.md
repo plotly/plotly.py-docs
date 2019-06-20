@@ -71,7 +71,7 @@ labels = v_label
 #### Create Plotly Traces
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=Xe,
                    y=Ye,
@@ -123,7 +123,7 @@ axis = dict(showline=False, # hide axis line, grid, ticklabels and  title
             showticklabels=False,
             )
 
-fig.update(layout=go.Layout(title= 'Tree with Reingold-Tilford Layout',  
+fig.update_layout(title= 'Tree with Reingold-Tilford Layout',  
               annotations=make_annotations(position, v_label),
               font_size=12,
               showlegend=False,
@@ -132,7 +132,8 @@ fig.update(layout=go.Layout(title= 'Tree with Reingold-Tilford Layout',
               margin=dict(l=40, r=40, b=85, t=100),
               hovermode='closest',
               plot_bgcolor='rgb(248,248,248)'          
-              ))
+              )
+fig.show()
 ```
 
 #### Reference

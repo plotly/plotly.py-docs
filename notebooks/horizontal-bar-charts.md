@@ -48,7 +48,7 @@ Plotly express functions take as argument a tidy [pandas DataFrame](https://pand
 #### Basic Horizontal Bar Chart with plotly express
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.bar(tips, x="total_bill", y="day", orientation='h')
 fig.show()
@@ -59,7 +59,7 @@ fig.show()
 In this example a column is used to color the bars, and we add the information from other columns to the hover data.
 
 ```python
-import plotly_express as px
+import plotly.express as px
 tips = px.data.tips()
 fig = px.bar(tips, x="total_bill", y="sex", color='day', orientation='h',
              hover_data=["tip", "size"],
@@ -70,29 +70,29 @@ fig.show()
 
 ### Horizontal Bar Chart with go.Bar
 
-When data are not available as a tidy dataframe, you can use the more generic function `go.Bar` from `plotly.graph_objs`. All the options of `go.Bar` are documented in the reference https://plot.ly/python/reference/#bar
+When data are not available as a tidy dataframe, you can use the more generic function `go.Bar` from `plotly.graph_objects`. All the options of `go.Bar` are documented in the reference https://plot.ly/python/reference/#bar
 
 
 #### Basic Horizontal Bar Chart
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace = go.Bar(
+fig = go.Figure(go.Bar(
             x=[20, 14, 23],
             y=['giraffes', 'orangutans', 'monkeys'],
-            orientation='h')
+            orientation='h'))
 
-fig = go.Figure(data=[trace])
 fig.show()
 ```
 
 ### Colored Horizontal Bar Chart
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Bar(
+fig = go.Figure()
+fig.add_trace(go.Bar(
     y=['giraffes', 'orangutans', 'monkeys'],
     x=[20, 14, 23],
     name='SF Zoo',
@@ -101,8 +101,8 @@ trace0 = go.Bar(
         color='rgba(246, 78, 139, 0.6)',
         line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
     )
-)
-trace1 = go.Bar(
+))
+fig.add_trace(go.Bar(
     y=['giraffes', 'orangutans', 'monkeys'],
     x=[12, 18, 29],
     name='LA Zoo',
@@ -111,16 +111,16 @@ trace1 = go.Bar(
         color='rgba(58, 71, 80, 0.6)',
         line=dict(color='rgba(58, 71, 80, 1.0)', width=3)
     )
-)
+))
 
-fig = go.Figure(data=[trace0, trace1])
-fig.update(layout_barmode='stack')
+fig.update_layout(barmode='stack')
+fig.show()
 ```
 
 ### Color Palette for Bar Chart
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 top_labels = ['Strongly<br>agree', 'Agree', 'Neutral', 'Disagree',
               'Strongly<br>disagree']
@@ -140,12 +140,11 @@ y_data = ['The course was effectively<br>organized',
           'my<br>ability to think critically about<br>the subject',
           'I would recommend this<br>course to a friend']
 
-
-traces = []
+fig = go.Figure()
 
 for i in range(0, len(x_data[0])):
     for xd, yd in zip(x_data, y_data):
-        traces.append(go.Bar(
+        fig.add_trace(go.Bar(
             x=[xd[i]], y=[yd],
             orientation='h',
             marker=dict(
@@ -154,7 +153,7 @@ for i in range(0, len(x_data[0])):
             )
         ))
 
-layout = go.Layout(
+fig.update_layout(
     xaxis=dict(
         showgrid=False,
         showline=False,
@@ -220,15 +219,15 @@ for yd, xd in zip(y_data, x_data):
                                         showarrow=False))
             space += xd[i]
 
-layout.update(annotations=annotations)
-fig = go.Figure(data=traces, layout=layout)
+fig.update_layout(annotations=annotations)
+
 fig.show()
 ```
 
 ### Bar Chart with Line Plot
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 import numpy as np
@@ -239,14 +238,17 @@ y_saving = [1.3586, 2.2623000000000002, 4.9821999999999997, 6.5096999999999996,
 y_net_worth = [93453.919999999998, 81666.570000000007, 69889.619999999995,
                78381.529999999999, 141395.29999999999, 92969.020000000004,
                66090.179999999993, 122379.3]
-x_saving = ['Japan', 'United Kingdom', 'Canada', 'Netherlands',
-            'United States', 'Belgium', 'Sweden', 'Switzerland']
-x_net_worth = ['Japan', 'United Kingdom', 'Canada', 'Netherlands',
-               'United States', 'Belgium', 'Sweden', 'Switzerland'
-               ]
-trace0 = go.Bar(
+x = ['Japan', 'United Kingdom', 'Canada', 'Netherlands',
+     'United States', 'Belgium', 'Sweden', 'Switzerland']
+
+
+# Creating two subplots
+fig = make_subplots(rows=1, cols=2, specs=[[{}, {}]], shared_xaxes=True,
+                    shared_yaxes=False, vertical_spacing=0.001)
+
+fig.append_trace(go.Bar(
     x=y_saving,
-    y=x_saving,
+    y=x,
     marker=dict(
         color='rgba(50, 171, 96, 0.6)',
         line=dict(
@@ -255,14 +257,16 @@ trace0 = go.Bar(
     ),
     name='Household savings, percentage of household disposable income',
     orientation='h',
-)
-trace1 = go.Scatter(
-    x=y_net_worth, y=x_net_worth,
+), 1, 1)
+
+fig.append_trace(go.Scatter(
+    x=y_net_worth, y=x,
     mode='lines+markers',
     line_color='rgb(128, 0, 128)',
     name='Household net worth, Million USD/capita',
-)
-layout = dict(
+), 1, 2)
+
+fig.update_layout(
     title='Household savings & net worth for eight OECD countries',
     yaxis=dict(
         showgrid=False,
@@ -306,7 +310,7 @@ y_s = np.round(y_saving, decimals=2)
 y_nw = np.rint(y_net_worth)
 
 # Adding labels
-for ydn, yd, xd in zip(y_nw, y_s, x_saving):
+for ydn, yd, xd in zip(y_nw, y_s, x):
     # labeling the scatter savings
     annotations.append(dict(xref='x2', yref='y2',
                             y=xd, x=ydn - 20000,
@@ -331,16 +335,8 @@ annotations.append(dict(xref='paper', yref='paper',
                         font=dict(family='Arial', size=10, color='rgb(150,150,150)'),
                         showarrow=False))
 
-layout.update(annotations=annotations)
+fig.update_layout(annotations=annotations)
 
-# Creating two subplots
-fig = make_subplots(rows=1, cols=2, specs=[[{}, {}]], shared_xaxes=True,
-                    shared_yaxes=False, vertical_spacing=0.001)
-
-fig.append_trace(trace0, 1, 1)
-fig.append_trace(trace1, 1, 2)
-
-fig.update(layout=layout)
 fig.show()
 ```
 

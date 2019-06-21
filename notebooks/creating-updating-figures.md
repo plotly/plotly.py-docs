@@ -105,7 +105,7 @@ fig.show()
 ```
 
 ### Plotly express
-Plotly express (included in plotly.py as the `plotly.express` module) is a high-level data exploration API that produces graph object figures.
+Plotly express (included as the `plotly.express` module) is a high-level data exploration API that produces graph object figures.
 
 ```python
 import plotly.express as px

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -47,7 +48,7 @@ import scipy
 #### Import Data
 
 
-Let us import a dataset to perform our statistics. We will be looking at the consumption of alcohol by country in 2010. 
+Let us import a dataset to perform our statistics. We will be looking at the consumption of alcohol by country in 2010.
 
 ```python
 data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2010_alcohol_consumption_by_country.csv')

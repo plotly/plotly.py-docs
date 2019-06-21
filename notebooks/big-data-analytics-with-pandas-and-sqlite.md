@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -87,7 +88,7 @@ j = 0
 index_start = 1
 
 for df in pd.read_csv('311_100M.csv', chunksize=chunksize, iterator=True, encoding='utf-8'):
-    
+
     df = df.rename(columns={c: c.replace(' ', '') for c in df.columns}) # Remove spaces from columns
 
     df['CreatedDate'] = pd.to_datetime(df['CreatedDate']) # Convert to datetimes
@@ -102,9 +103,9 @@ for df in pd.read_csv('311_100M.csv', chunksize=chunksize, iterator=True, encodi
 
     for c in df.columns:
         if c not in columns:
-            df = df.drop(c, axis=1)    
+            df = df.drop(c, axis=1)
 
-    
+
     j+=1
     print '{} seconds: completed {} rows'.format((dt.datetime.now() - start).seconds, j*chunksize)
 
@@ -177,7 +178,7 @@ df = pd.read_sql_query('SELECT ComplaintType, COUNT(*) as `num_complaints`, Agen
 most_common_complaints = df # used later
 py.iplot({
     'data': [go.Bar(x=df['ComplaintType'], y=df.num_complaints)],
-    'layout': { 
+    'layout': {
         'margin': {'b': 150}, # Make the bottom margin a bit bigger to handle the long text
         'xaxis': {'tickangle': 40}} # Angle the labels a bit
     }, filename='311/most common complaints by complaint type')
@@ -242,8 +243,8 @@ Now let's normalize these counts. This is super easy now that this data has been
 ```python
 for trace in traces:
     trace['y'] = 100.*trace['y']/sum(trace['y'])
-    
-py.iplot({'data': traces, 
+
+py.iplot({'data': traces,
           'layout': go.Layout(
                 barmode='group',
                 xaxis={'tickangle': 40, 'autorange': False, 'range': [-0.5, 16]},
@@ -255,11 +256,11 @@ py.iplot({'data': traces,
 
 - New York is loud
 - Staten Island is moldy, wet, and vacant
-- Flushing's muni meters are broken 
+- Flushing's muni meters are broken
 - Trash collection is great in the Bronx
 - Woodside doesn't like its graffiti
 
-Click and drag to pan across the graph and see more of the complaints. 
+Click and drag to pan across the graph and see more of the complaints.
 
 
 ### Part 2: SQLite time series with Pandas
@@ -341,9 +342,9 @@ for hour in range(1, 24):
                            'WHERE hour = "{}" '
                            'GROUP BY ComplaintType '
                            'ORDER BY -num_complaints'.format(hour_str), disk_engine)
-    
+
     complaint_traces['Other'][hour] = sum(df.num_complaints)
-    
+
     # Grab the 7 most common complaints for that hour
     for i in range(7):
         complaint = df.get_value(i, 'ComplaintType')
@@ -353,7 +354,7 @@ for hour in range(1, 24):
             complaint_traces[complaint][hour] = count
         else:
             complaint_traces[complaint] = {hour: count}
-            
+
 traces = []
 for complaint in complaint_traces:
     traces.append({
@@ -364,7 +365,7 @@ for complaint in complaint_traces:
     })
 
 py.iplot({
-    'data': traces, 
+    'data': traces,
     'layout': {
         'barmode': 'stack',
         'xaxis': {'title': 'Hour in Day'},
@@ -457,7 +458,7 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'sqlite.ipynb', 'python/big-data-analytics-with-pandas-and-sqlite/', 'Big Data Analytics with Pandas and SQLite', 
+    'sqlite.ipynb', 'python/big-data-analytics-with-pandas-and-sqlite/', 'Big Data Analytics with Pandas and SQLite',
     'A primer on out-of-memory analytics of large datasets with Pandas, SQLite, and IPython notebooks.',
     title='Big Data Workflow with Pandas and SQLite | Plotly', has_thumbnail='false',
     redirect_from='ipython-notebooks/big-data-analytics-with-pandas-and-sqlite/',

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -47,12 +48,12 @@ y = [item for sublist in y for item in sublist]
 trace = dict(type='heatmap', z=np.random.randint(1, 10,(12, n)), colorscale = 'Viridis')
 data=[trace]
 
-# Here's the key part - Scattergl text! 
+# Here's the key part - Scattergl text!
 
-data.append({'type': 'scattergl', 
-                    'mode': 'text', 
+data.append({'type': 'scattergl',
+                    'mode': 'text',
                     'x': list(range(n))*12,
-                    'y': y, 
+                    'y': y,
                     'text': np.random.choice(list('ATGC'), 12*250),
                     'textfont': {
                         'size': 20
@@ -91,8 +92,8 @@ publisher.publish(
     'How to add webGL based text labels and annotations to plots in python',
     title = 'WebGL Text and Annotations | plotly',
     name = 'WebGL Text and Annotations',
-    has_thumbnail='false', thumbnail='thumbnail/webgl-text-and-annotations.jpg', 
-    language='python', 
+    has_thumbnail='false', thumbnail='thumbnail/webgl-text-and-annotations.jpg',
+    language='python',
     page_type='example_index', display_as='style_opt', order=2,
     ipynb= '~notebook_demo/219', uses_plotly_offline=False)
 ```

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -86,7 +87,7 @@ th = np.linspace(-np.pi/13,2*np.pi*nspiral,1000); # angle
 yshift = (1.6 - (max(y)-min(y)))/2
 
 s = dict(x= -x+x[0], y= y-y[0]+yshift,
-     line =dict(color='white',width=3)) 
+     line =dict(color='white',width=3))
 
 # Build the rectangles as a heatmap
 # specify the edges of the heatmap squares
@@ -198,10 +199,10 @@ publisher.publish(
     'How to make Heatmaps in Python with Plotly.',
     title = 'Python Heatmaps | plotly',
     name = 'Heatmaps',
-    has_thumbnail='true', thumbnail='thumbnail/heatmap.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/heatmap.jpg',
     language='python', page_type='example_index',
     display_as='scientific',order=3,
-    ipynb= '~notebook_demo/33', redirect_from='python/heatmap/')  
+    ipynb= '~notebook_demo/33', redirect_from='python/heatmap/')
 ```
 
 ```python

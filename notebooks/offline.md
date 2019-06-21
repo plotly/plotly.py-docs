@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -82,11 +83,11 @@ iplot(cf.datagen.lines().iplot(asFigure=True,
 
 #### Use with the Cloud
 All methods in plotly.plotly will communicate with a Chart Studio Cloud or Chart Studio Enterprise. <br>
-`get_figure` downloads a figure from plot.ly or Chart Studio Enterprise.<br> 
+`get_figure` downloads a figure from plot.ly or Chart Studio Enterprise.<br>
 You need to provide credentials to download figures: https://plot.ly/python/getting-started/
 
 ```python
-import plotly.plotly as py 
+import plotly.plotly as py
 
 fig = py.get_figure('https://plot.ly/~jackp/8715', raw=True)
 iplot(fig)
@@ -129,14 +130,14 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'plotly_offline.ipynb', 'python/offline/', 'Plotly Offline for IPython Notebooks',
     'How to use Plotly offline inside IPython notebooks',
     title= 'Plotly Offline for IPython Notebooks',
     name = 'Offline Plots in Plotly',
-    has_thumbnail='false', 
+    has_thumbnail='false',
     language='python', page_type='example_index',
     ipynb= '~notebook_demo/267',
     uses_plotly_offline=True

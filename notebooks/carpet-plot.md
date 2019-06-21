@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -197,14 +198,14 @@ trace1 = go.Carpet(
 data = [trace1]
 
 layout = go.Layout(
-    plot_bgcolor = 'black', 
+    plot_bgcolor = 'black',
     paper_bgcolor = 'black',
     xaxis = dict(
-        showgrid = False, 
+        showgrid = False,
         showticklabels = False
     ),
     yaxis = dict(
-        showgrid = False, 
+        showgrid = False,
         showticklabels = False
     )
 )
@@ -235,8 +236,8 @@ publisher.publish(
     'carpet_plot.ipynb', 'python/carpet-plot/', 'Carpet Plots',
     'How to make carpet plots in Python with Plotly.',
     title = 'Carpet Plots | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/carpet.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/carpet.jpg',
+    language='python',
     # page_type='example_index', // note this is only if you want the tutorial to appear on the main page: plot.ly/python
     display_as='scientific', order=26,
     ipynb= '~notebook_demo/144')

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -83,7 +84,7 @@ Parallel coordinates are richly interactive by default. Drag the lines along the
 import plotly.plotly as py
 import plotly.graph_objs as go
 
-import pandas as pd 
+import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/bcdunbar/datasets/master/iris.csv")
 
@@ -120,7 +121,7 @@ py.iplot(fig, filename = 'parcoords-basic')
 import plotly.plotly as py
 import plotly.graph_objs as go
 
-import pandas as pd 
+import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/bcdunbar/datasets/master/parcoords_data.csv")
 
@@ -180,8 +181,8 @@ publisher.publish(
     'How to make parallel coorindates plots in Python with Plotly.',
     title = 'Parallel Coordinates Plot | plotly',
     name = 'Parallel Coordinates Plot',
-    has_thumbnail='true', thumbnail='thumbnail/parcoords.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/parcoords.jpg',
+    language='python',
     # page_type='example_index', // note this is only if you want the tutorial to appear on the main page: plot.ly/python
     display_as='scientific', order=11.5,
     ipynb= '~notebook_demo/142')

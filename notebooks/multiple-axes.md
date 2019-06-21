@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -248,7 +249,7 @@ layout = go.Layout(
         overlaying='y',
         side='right'
     ),
-    
+
     # Top right
     xaxis2=dict(
         title='xaxis2 title',
@@ -268,7 +269,7 @@ layout = go.Layout(
         side='right',
         anchor='x2'
     ),
-    
+
     # Bottom left
     xaxis3=dict(
         title='xaxis3 title',
@@ -288,7 +289,7 @@ layout = go.Layout(
         side='right',
         anchor='x3'
     ),
-    
+
     # Bottom right
     xaxis4=dict(
         title='xaxis4, title',
@@ -344,7 +345,7 @@ publisher.publish(
     'multiple-axes.ipynb', 'python/multiple-axes/', 'Multiple Axes | Plotly',
     'How to make a graph with multiple axes in python.',
     title = 'Python Mulitple Axes | Examples | Plotly',
-    name = 'Multiple Axes', has_thumbnail='true', thumbnail='thumbnail/multiple-axes.jpg', 
+    name = 'Multiple Axes', has_thumbnail='true', thumbnail='thumbnail/multiple-axes.jpg',
     language='python', page_type='example_index',
     display_as='multiple_axes', order=1,
     ipynb='~notebook_demo/270')

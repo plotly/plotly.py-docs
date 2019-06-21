@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -33,7 +34,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 
 
 #### Version Check
-Plotly's Python package is updated frequently. Run `pip install plotly --upgrade` to make sure you're using the latest version. 
+Plotly's Python package is updated frequently. Run `pip install plotly --upgrade` to make sure you're using the latest version.
 
 ```python
 import plotly
@@ -42,7 +43,7 @@ plotly.__version__
 
 #### Mapbox Access Token
 
-To plot on Mapbox maps with Plotly you'll need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/. 
+To plot on Mapbox maps with Plotly you'll need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/.
 
 
 #### Basic Example
@@ -174,7 +175,7 @@ data = [
         ),
         hoverinfo='none'
     )]
-        
+
 layout = go.Layout(
     title='Nuclear Waste Sites on Campus',
     autosize=True,
@@ -230,7 +231,7 @@ publisher.publish(
     'How to make scatter plots on Mapbox maps in Python.',
     title = 'Python Scatter Plots with Mapbox | Plotly',
     name = 'Scatter Plots on Mapbox',
-    has_thumbnail='true', thumbnail='thumbnail/scatter-mapbox.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/scatter-mapbox.jpg',
     language='python', page_type='example_index', ipynb='~notebook_demo/261',
     display_as='maps', order=7, mapbox_access_token = 'pk.eyJ1IjoicHJpeWF0aGFyc2FuIiwiYSI6ImNqbGRyMGQ5YTBhcmkzcXF6YWZldnVvZXoifQ.sN7gyyHTIq1BSfHQRBZdHA'
 )

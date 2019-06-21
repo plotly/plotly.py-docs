@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -245,10 +246,10 @@ publisher.publish(
     'colorscales.ipynb', 'python/colorscales/', 'Colorscales',
     'How to set colorscales and heatmap colorscales in Python and Plotly. Divergent, sequential, and qualitative colorscales.',
     title = 'Colorscales in Python | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/heatmap_colorscale.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/heatmap_colorscale.jpg',
+    language='python',
     page_type='example_index',
-    display_as='style_opt', 
+    display_as='style_opt',
     order=11,
     ipynb= '~notebook_demo/187')
 ```

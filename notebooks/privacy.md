@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -33,7 +34,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
 
 ```python
-import plotly 
+import plotly
 plotly.__version__
 ```
 
@@ -75,7 +76,7 @@ Below is the URL of the private plot above. Only the owner can view the private 
 py.plot(data, filename='privacy-private', sharing='private')
 ```
 
-### Secret Graphs 
+### Secret Graphs
 
 ```python
 py.iplot(data, filename='privacy-secret', sharing='secret')
@@ -91,7 +92,7 @@ py.plot(data, filename='privacy-secret', sharing='secret')
 To make all future plots private, you can update your configuration file to create private plots by default:
 
 ```python
-import plotly 
+import plotly
 plotly.tools.set_config_file(world_readable=False, sharing='private')
 ```
 

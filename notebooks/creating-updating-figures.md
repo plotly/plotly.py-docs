@@ -227,26 +227,6 @@ fig.show()
 
 Magic underscore notation is supported throughout the graph objects API, and it can often significantly simplify operations involving deeply nested properties.
 
-### Property assignment
-Trace and layout properties can be updated using property assignment syntax.  Here is an example of setting the figure title using property assignment.
-
-```python
-import plotly.graph_objects as go
-fig = go.Figure(data=go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
-fig.layout.title.text = "A Bar Chart"
-fig.show()
-```
-
-And here is an example of updating the bar outline using property assignment
-
-```python
-import plotly.graph_objects as go
-fig = go.Figure(data=go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
-fig.data[0].marker.line.width = 4
-fig.data[0].marker.line.color = "black"
-fig.show()
-```
-
 ### The update layout method
 Graph object figures support an `update_layout` method that may be used to update multiple nested properties of a figure's layout.  Here is an example of updating the text and font size of a figure's title using `update_layout`.
 
@@ -466,7 +446,7 @@ There are also `for_each_xaxis` and `for_each_yaxis` methods that are analogous 
 
 
 ### Chaining figure operations
-With the exception of property assignment, all of the figure update operations described in this section are methods that return a reference to the figure being modified.  This makes it possible the chain multiple figure modification operations together into a single expression.
+All of the figure update operations described above are methods that return a reference to the figure being modified.  This makes it possible the chain multiple figure modification operations together into a single expression.
 
 Here is an example of a chained expression that creates a faceted scatter plot with OLS trend lines using plotly express, sets the title font size using `update_layout`, disables vertical grid lines using `update_xaxes`, updates the width and dash pattern of the trend lines using `update_traces`, and then displays the figure using `show`.
 
@@ -481,4 +461,24 @@ iris = px.data.iris()
      line=dict(dash="dot", width=4),
      selector=dict(type="scatter", mode="lines"))
 ).show()
+```
+
+### Property assignment
+Trace and layout properties can be updated using property assignment syntax.  Here is an example of setting the figure title using property assignment.
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
+fig.layout.title.text = "A Bar Chart"
+fig.show()
+```
+
+And here is an example of updating the bar outline using property assignment
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
+fig.data[0].marker.line.width = 4
+fig.data[0].marker.line.color = "black"
+fig.show()
 ```

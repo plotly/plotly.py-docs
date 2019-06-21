@@ -307,60 +307,6 @@ fig.update_layout(
 fig.show()
 ```
 
-### Waterfall Bar Chart
-
-```python
-import plotly.graph_objects as go
-
-x_data = ['Product<br>Revenue', 'Services<br>Revenue',
-          'Total<br>Revenue', 'Fixed<br>Costs',
-          'Variable<br>Costs', 'Total<br>Costs', 'Total']
-y_data = [400, 660, 660, 590, 400, 400, 340]
-text = ['$430K', '$260K', '$690K', '$-120K', '$-200K', '$-320K', '$370K']
-
-fig = go.Figure()
-# Base
-fig.add_trace(go.Bar(x=x_data,
-                y=[0, 430, 0, 570, 370, 370, 0],
-                marker_color='rgba(1,1,1, 0.0)'))
-# Revenue
-fig.add_trace(go.Bar(x=x_data,
-                y=[430, 260, 690, 0, 0, 0, 0],
-                marker_color='rgba(55, 128, 191, 0.7)',
-                marker_line_color='rgba(55, 128, 191, 1.0)'
-                ))
-# Costs
-fig.add_trace(go.Bar(x=x_data,
-                y=[0, 0, 0, 120, 200, 320, 0],
-                marker_color='rgba(219, 64, 82, 0.7)',
-                marker_line_color='rgba(219, 64, 82, 1.0)',
-                ))
-# Profit
-fig.add_trace(go.Bar(x=x_data,
-                y=[0, 0, 0, 0, 0, 0, 370],
-                marker_color='rgba(50, 171, 96, 0.7)',
-                marker_line_color='rgba(50, 171, 96, 1.0)'
-                ))
-
-annotations = []
-
-for i in range(0, 7):
-    annotations.append(dict(x=x_data[i], y=y_data[i], text=text[i],
-                                  font=dict(family='Arial', size=14,
-                                  color='rgba(245, 246, 249, 1)'),
-                                  showarrow=False,))
-
-fig.update_layout(annotations=annotations,
-    title='Annual Profit- 2015',
-    barmode='stack',
-    paper_bgcolor='rgba(245, 246, 249, 1)',
-    plot_bgcolor='rgba(245, 246, 249, 1)',
-    showlegend=False)
-
-fig.update_traces(marker_line_width=2)
-fig.show()
-```
-
 ### Bar Chart with Relative Barmode
 
 With "relative" barmode, the bars are stacked on top of one another, with negative values

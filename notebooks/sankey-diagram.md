@@ -129,6 +129,8 @@ fig.update_layout(
     plot_bgcolor='black',
     paper_bgcolor='black'
 )
+
+fig.show()
 ```
 
 ### Reference

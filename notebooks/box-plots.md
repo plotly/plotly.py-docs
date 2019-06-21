@@ -75,11 +75,13 @@ fig.show()
 
 #### Styled box plot
 
+For the interpretation of the notches, see https://en.wikipedia.org/wiki/Box_plot#Variations.
+
 ```python
 import plotly.express as px
 tips = px.data.tips()
 fig = px.box(tips, x="time", y="total_bill", color="smoker",
-             notched=True, # used notched shape for the box so that median is more visible
+             notched=True, # used notched shape
              title="Box plot of total bill",
              hover_data=["day"] # add day column to hover data
             )
@@ -314,8 +316,8 @@ import numpy as np
 
 N = 30     # Number of boxes
 
-# generate an array of rainbow colors by fixing the saturation and lightness of the HSL r
-# epresentation of colour and marching around the hue. 
+# generate an array of rainbow colors by fixing the saturation and lightness of the HSL
+# representation of colour and marching around the hue. 
 # Plotly accepts any CSS color format, see e.g. http://www.w3schools.com/cssref/css_colors_legal.asp.
 c = ['hsl('+str(h)+',50%'+',50%)' for h in np.linspace(0, 360, N)]
 

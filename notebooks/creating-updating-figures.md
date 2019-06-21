@@ -469,13 +469,14 @@ There are also `for_each_xaxis` and `for_each_yaxis` methods that are analogous 
 ### Chaining figure operations
 With the exception of property assignment, all of the figure update operations described in this section are methods that return a reference to the figure being modified.  This makes it possible the chain multiple figure modification operations together into a single expression.
 
-Here is an example of a chained expression that creates a faceted scatter plot with OLS trend lines using plotly express, adds a title using `update_layout`, disables vertical grid lines using `update_xaxes`, updates the width and dash pattern of the trend lines using `update_traces`, and then displays the figure using `show`.
+Here is an example of a chained expression that creates a faceted scatter plot with OLS trend lines using plotly express, sets the title font size using `update_layout`, disables vertical grid lines using `update_xaxes`, updates the width and dash pattern of the trend lines using `update_traces`, and then displays the figure using `show`.
 
 ```python
 import plotly.express as px
 iris = px.data.iris()
-(px.scatter(iris, x="sepal_width", y="sepal_length", color="species", facet_col="species", trendline='ols')
- .update_layout(title_text='Iris Dataset')
+(px.scatter(iris, x="sepal_width", y="sepal_length", color="species",
+            facet_col="species", trendline="ols", title="Iris Dataset")
+ .update_layout(title_font_size=24)
  .update_xaxes(showgrid=False)
  .update_traces(
      line={'dash': 'dot', 'width': 4},

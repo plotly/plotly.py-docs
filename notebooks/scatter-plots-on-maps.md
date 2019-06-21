@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make scatter plots on maps in Python. Scatter plots on maps
       highlight geographic areas and can be colored by value.
@@ -25,39 +35,48 @@ jupyter:
     permalink: python/scatter-plots-on-maps/
     thumbnail: thumbnail/scatter-plot-on-maps.jpg
     title: Python Scatter Plots on Maps | Plotly
+    v4upgrade: true
 ---
-
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-#### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
-
-```python
-import plotly
-plotly.__version__
-```
 
 ### U.S. Airports Map
 
+#### Simple U.S. Airports Map
+
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2011_february_us_airport_traffic.csv')
-df.head()
-
 df['text'] = df['airport'] + '' + df['city'] + ', ' + df['state'] + '' + 'Arrivals: ' + df['cnt'].astype(str)
 
-scl = [ [0,"rgb(5, 10, 172)"],[0.35,"rgb(40, 60, 190)"],[0.5,"rgb(70, 100, 245)"],\
-    [0.6,"rgb(90, 120, 245)"],[0.7,"rgb(106, 137, 247)"],[1,"rgb(220, 220, 220)"] ]
+fig = go.Figure(data=go.Scattergeo(
+        lon = df['long'],
+        lat = df['lat'],
+        text = df['text'],
+        mode = 'markers',
+        marker_color = df['cnt'],
+        ))
 
-data = [ go.Scattergeo(
+fig.update_layout(
+        title = 'Most trafficked US airports<br>(Hover for airport names)',
+        geo_scope='usa',
+    )
+fig.show()
+```
+
+#### Styled U.S. Airports Map
+
+```python
+import plotly.graph_objects as go
+
+import pandas as pd
+
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2011_february_us_airport_traffic.csv')
+df['text'] = df['airport'] + '' + df['city'] + ', ' + df['state'] + '' + 'Arrivals: ' + df['cnt'].astype(str)
+
+
+fig = go.Figure(data=go.Scattergeo(
         locationmode = 'USA-states',
         lon = df['long'],
         lat = df['lat'],
@@ -73,20 +92,18 @@ data = [ go.Scattergeo(
                 width=1,
                 color='rgba(102, 102, 102)'
             ),
-            colorscale = scl,
+            colorscale = 'Blues',
             cmin = 0,
             color = df['cnt'],
             cmax = df['cnt'].max(),
-            colorbar=dict(
-                title="Incoming flights<br>February 2011"
-            )
-        ))]
+            colorbar_title="Incoming flights<br>February 2011"
+        )))
 
-layout = dict(
+fig.update_layout(
         title = 'Most trafficked US airports<br>(Hover for airport names)',
         geo = dict(
             scope='usa',
-            projection=dict( type='albers usa' ),
+            projection_type='albers usa',
             showland = True,
             landcolor = "rgb(250, 250, 250)",
             subunitcolor = "rgb(217, 217, 217)",
@@ -95,16 +112,13 @@ layout = dict(
             subunitwidth = 0.5
         ),
     )
-
-fig = go.Figure(data=data, layout=layout )
-py.iplot(fig, filename='d3-airports' )
+fig.show()
 ```
 
 ### North American Precipitation Map
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 
@@ -114,7 +128,7 @@ scl = [0,"rgb(150,0,90)"],[0.125,"rgb(0, 0, 200)"],[0.25,"rgb(0, 25, 255)"],\
 [0.375,"rgb(0, 152, 255)"],[0.5,"rgb(44, 255, 150)"],[0.625,"rgb(151, 255, 0)"],\
 [0.75,"rgb(255, 234, 0)"],[0.875,"rgb(255, 111, 0)"],[1,"rgb(255, 0, 0)"]
 
-data = [go.Scattergeo(
+fig = go.Figure(data=go.Scattergeo(
     lat = df['Lat'],
     lon = df['Lon'],
     text = df['Globvalue'].astype(str) + ' inches',
@@ -125,19 +139,16 @@ data = [go.Scattergeo(
         opacity = 0.7,
         size = 2,
         colorbar = dict(
-            thickness = 10,
             titleside = "right",
             outlinecolor = "rgba(68, 68, 68, 0)",
             ticks = "outside",
-            ticklen = 3,
             showticksuffix = "last",
-            ticksuffix = " inches",
             dtick = 0.1
         )
     )
-)]
+))
 
-layout = dict(
+fig.update_layout(
     geo = dict(
         scope = 'north america',
         showland = True,
@@ -170,33 +181,9 @@ layout = dict(
     ),
     title = 'US Precipitation 06-30-2015<br>Source: <a href="http://water.weather.gov/precip/">NOAA</a>',
 )
-
-fig = go.Figure(data=data, layout=layout )
-py.iplot(fig, filename='precipitation')
+fig.show()
 ```
 
 #### Reference
 See  https://plot.ly/python/reference/#scattergeo and https://plot.ly/python/reference/#layout-geo for more information and chart attribute options!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'scatter-plot-on-map.ipynb', 'python/scatter-plots-on-maps/', 'Python Scatter Plots on Maps | Examples | Plotly',
-    'How to make scatter plots on maps in Python. Scatter plots on maps highlight geographic areas and can be colored by value.',
-    title = 'Python Scatter Plots on Maps | Plotly',
-    name = 'Scatter Plots on Maps',
-    has_thumbnail='true', thumbnail='thumbnail/scatter-plot-on-maps.jpg',
-    language='python',
-    display_as='maps', order=2,
-    ipynb= '~notebook_demo/57')
-```
-
-```python
-
-```

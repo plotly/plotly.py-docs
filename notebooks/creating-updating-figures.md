@@ -23,6 +23,7 @@ jupyter:
     version: 3.7.3
   plotly:
     description: How to create and update figures in Python with Plotly.
+    v4upgrade: true
 ---
 
 # Representing Figures

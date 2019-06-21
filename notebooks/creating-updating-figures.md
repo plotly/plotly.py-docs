@@ -27,6 +27,7 @@ jupyter:
 ---
 
 # Representing Figures
+
 ## Figures as dictionaries
 The goal of plotly.py is to provide a pleasant Python interface for creating figure specifications for display in the Plotly.js JavaScript library. In Plotly.js, a figure is specified by a declarative JSON data structure, and so the ultimate responsibility of plotly.py is to produce Python dictionaries that can be serialized into a JSON data structure that represents a valid figure.
 
@@ -43,9 +44,9 @@ fig = {
 pio.show(fig)
 ```
 
-The value of the top-level `'data'` key is a list of trace specifications.  Each trace specification has a special `'type'` key that indicates the trace type that is being defined (e.g. a `'bar'`, `'scatter'`, `'contour'`, etc.).  The rest of the keys in the trace specification are used to configure the properties of the trace of this type.
+The value of the top-level `"data"` key is a list of trace specifications.  Each trace specification has a special `"type"` key that indicates the trace type that is being defined (e.g. a `"bar"`, `"scatter"`, `"contour"`, etc.).  The rest of the keys in the trace specification are used to configure the properties of the trace of this type.
 
-The value of the top-level `'layout'` key is a dictionary that specifies the properties of the figure's layout.  In contrast to trace configuration options that apply to individual traces, the layout configuration options apply to the figure as a whole.
+The value of the top-level `"layout"` key is a dictionary that specifies the properties of the figure's layout.  In contrast to trace configuration options that apply to individual traces, the layout configuration options apply to the figure as a whole.
 
 The [*Full Reference*](https://plot.ly/python/reference/) page contains descriptions of all of the supported trace and layout options.
 
@@ -98,7 +99,7 @@ As demonstrated above, you can build a complete figure by passing trace and layo
 import plotly.graph_objects as go
 fig = go.Figure(
     data=[go.Bar(x=[1, 2, 3], y=[1, 3, 2])],
-    layout={"title": {"text": "A Bar Chart"}}
+    layout=dict(title=dict(text="A Bar Chart"))
 )
 fig.show()
 ```
@@ -133,7 +134,7 @@ The `plotly.subplots.make_subplots` function produces a graph object figure that
 ```python
 from plotly.subplots import make_subplots
 fig = make_subplots(rows=1, cols=2)
-fig.add_trace(go.Scatter(y=[4, 2, 1], mode='lines'), row=1, col=1)
+fig.add_trace(go.Scatter(y=[4, 2, 1], mode="lines"), row=1, col=1)
 fig.add_trace(go.Bar(y=[2, 1, 3]), row=1, col=2)
 fig.show()
 ```
@@ -161,8 +162,8 @@ fig.add_trace(
     go.Scatter(
         x=[2, 4],
         y=[4, 8],
-        mode='lines',
-        line=go.scatter.Line(color='gray'),
+        mode="lines",
+        line=go.scatter.Line(color="gray"),
         showlegend=False)
 )
 fig.show()
@@ -174,7 +175,7 @@ If a figure was created using `plotly.subplots.make_subplots`, then the `row` an
 ```python
 from plotly.subplots import make_subplots
 fig = make_subplots(rows=1, cols=2)
-fig.add_trace(go.Scatter(y=[4, 2, 1], mode='lines'), row=1, col=1)
+fig.add_trace(go.Scatter(y=[4, 2, 1], mode="lines"), row=1, col=1)
 fig.add_trace(go.Bar(y=[2, 1, 3]), row=1, col=2)
 fig.show()
 ```
@@ -187,8 +188,8 @@ iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", facet_col="species")
 reference_line = go.Scatter(x=[2, 4],
                             y=[4, 8],
-                            mode='lines',
-                            line=go.scatter.Line(color='gray'),
+                            mode="lines",
+                            line=go.scatter.Line(color="gray"),
                             showlegend=False)
 fig.add_trace(reference_line, row=1, col=1)
 fig.add_trace(reference_line, row=1, col=2)
@@ -202,17 +203,17 @@ As an alternative to the `add_trace` method, graph object figures have a family 
 ```python
 from plotly.subplots import make_subplots
 fig = make_subplots(rows=1, cols=2)
-fig.add_scatter(y=[4, 2, 1], mode='lines', row=1, col=1)
+fig.add_scatter(y=[4, 2, 1], mode="lines", row=1, col=1)
 fig.add_bar(y=[2, 1, 3], row=1, col=2)
 fig.show()
 ```
 
 ### Magic underscore notation
-To make it easier to work with nested properties graph object constructors, and many graph object methods, support magic underscore notation. This allows you to reference nested properties by joining together multiple nested property names with underscores.  For example, specifying the figure title in the figure constructor *without* magic underscore notation requires setting the `layout` argument to `{"title": {"text": "A Chart"}}`.
+To make it easier to work with nested properties graph object constructors, and many graph object methods, support magic underscore notation. This allows you to reference nested properties by joining together multiple nested property names with underscores.  For example, specifying the figure title in the figure constructor *without* magic underscore notation requires setting the `layout` argument to `dict(title=dict(text="A Chart"))`.
 
 ```python
 import plotly.graph_objects as go
-fig = go.Figure(layout={"title": {"text": "A Chart"}})
+fig = go.Figure(layout=dict(title=dict(text="A Chart")))
 fig.show()
 ```
 
@@ -232,7 +233,7 @@ Trace and layout properties can be updated using property assignment syntax.  He
 ```python
 import plotly.graph_objects as go
 fig = go.Figure(data=go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
-fig.layout.title.text = 'A Bar Chart'
+fig.layout.title.text = "A Bar Chart"
 fig.show()
 ```
 
@@ -242,7 +243,7 @@ And here is an example of updating the bar outline using property assignment
 import plotly.graph_objects as go
 fig = go.Figure(data=go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
 fig.data[0].marker.line.width = 4
-fig.data[0].marker.line.color = 'black'
+fig.data[0].marker.line.color = "black"
 fig.show()
 ```
 
@@ -260,20 +261,18 @@ fig.show()
 Note that the following `update_layout` operations are equivalent:
 
 ```python
-fig.update_layout({"title": {"text": "A Bar Chart",
-                             "font": {"size": 30}}})
-                             
-fig.update_layout(title={"text": "A Bar Chart",
-                         "font": {"size": 30}})
-
-fig.update_layout(title=dict(text="A Bar Chart",
-                             font=dict(size=30)))
-                         
 fig.update_layout(title_text="A Bar Chart",
-                  title_font={"size": 30})
+                  title_font_size=30)
                   
 fig.update_layout(title_text="A Bar Chart",
-                  title_font_size=30);
+                  title_font=dict(size=30))
+                  
+      
+fig.update_layout(title=dict(text="A Bar Chart"),
+                             font=dict(size=30))
+                            
+fig.update_layout({"title": {"text": "A Bar Chart",
+                             "font": {"size": 30}}})
 
 fig.update_layout(
     title=go.layout.Title(text="A Bar Chart",
@@ -288,20 +287,20 @@ Graph object figures support an `update_traces` method that may be used to updat
 from plotly.subplots import make_subplots
 fig = make_subplots(rows=1, cols=2)
 
-fig.add_scatter(y=[4, 2, 3.5], mode='markers',
-                marker={'size': 20, 'color': 'LightSeaGreen'},
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
                 name="a", row=1, col=1)
 
 fig.add_bar(y=[2, 1, 3],
-            marker={'color': 'MediumPurple'},
+            marker=dict(color="MediumPurple"),
             name="b", row=1, col=1)
 
-fig.add_scatter(y=[2, 3.5, 4], mode='markers',
-                marker={'size': 20, 'color': 'MediumPurple'},
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
                 name="c", row=1, col=2)
 
 fig.add_bar(y=[1, 3, 2],
-            marker={'color': 'LightSeaGreen'},
+            marker=dict(color="LightSeaGreen"),
             name="d", row=1, col=2)
 
 fig.show()
@@ -313,23 +312,23 @@ Note that both `scatter` and `bar` traces have a `marker.color` property to cont
 from plotly.subplots import make_subplots
 fig = make_subplots(rows=1, cols=2)
 
-fig.add_scatter(y=[4, 2, 3.5], mode='markers',
-                marker={'size': 20, 'color': 'LightSeaGreen'},
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
                 name="a", row=1, col=1)
 
 fig.add_bar(y=[2, 1, 3],
-            marker={'color': 'MediumPurple'},
+            marker=dict(color="MediumPurple"),
             name="b", row=1, col=1)
 
-fig.add_scatter(y=[2, 3.5, 4], mode='markers',
-                marker={'size': 20, 'color': 'MediumPurple'},
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
                 name="c", row=1, col=2)
 
 fig.add_bar(y=[1, 3, 2],
-            marker={'color': 'LightSeaGreen'},
+            marker=dict(color="LightSeaGreen"),
             name="d", row=1, col=2)
 
-fig.update_traces(marker={'color': 'RoyalBlue'})
+fig.update_traces(marker=dict(color="RoyalBlue"))
 
 fig.show()
 ```
@@ -340,52 +339,52 @@ The `update_traces` method supports a `selector` argument to control which trace
 from plotly.subplots import make_subplots
 fig = make_subplots(rows=1, cols=2)
 
-fig.add_scatter(y=[4, 2, 3.5], mode='markers',
-                marker={'size': 20, 'color': 'LightSeaGreen'},
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
                 name="a", row=1, col=1)
 
 fig.add_bar(y=[2, 1, 3],
-            marker={'color': 'MediumPurple'},
+            marker=dict(color="MediumPurple"),
             name="b", row=1, col=1)
 
-fig.add_scatter(y=[2, 3.5, 4], mode='markers',
-                marker={'size': 20, 'color': 'MediumPurple'},
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
                 name="c", row=1, col=2)
 
 fig.add_bar(y=[1, 3, 2],
-            marker={'color': 'LightSeaGreen'},
+            marker=dict(color="LightSeaGreen"),
             name="d", row=1, col=2)
 
-fig.update_traces(marker={'color': 'RoyalBlue'},
-                  selector={'type': 'bar'})
+fig.update_traces(marker=dict(color="RoyalBlue"),
+                  selector=dict(type="bar"))
 
 fig.show()
 ```
 
-Magic underscore notation can be used in the selector to match nested properties.  Here is an example of updating the color of all traces that were formally colored `'MediumPurple'`.
+Magic underscore notation can be used in the selector to match nested properties.  Here is an example of updating the color of all traces that were formally colored `"MediumPurple"`.
 
 ```python
 from plotly.subplots import make_subplots
 fig = make_subplots(rows=1, cols=2)
 
-fig.add_scatter(y=[4, 2, 3.5], mode='markers',
-                marker={'size': 20, 'color': 'LightSeaGreen'},
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
                 name="a", row=1, col=1)
 
 fig.add_bar(y=[2, 1, 3],
-            marker={'color': 'MediumPurple'},
+            marker=dict(color="MediumPurple"),
             name="b", row=1, col=1)
 
-fig.add_scatter(y=[2, 3.5, 4], mode='markers',
-                marker={'size': 20, 'color': 'MediumPurple'},
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
                 name="c", row=1, col=2)
 
 fig.add_bar(y=[1, 3, 2],
-            marker={'color': 'LightSeaGreen'},
+            marker=dict(color="LightSeaGreen"),
             name="d", row=1, col=2)
 
-fig.update_traces(marker_color='RoyalBlue',
-                  selector={'marker_color': 'MediumPurple'})
+fig.update_traces(marker_color="RoyalBlue",
+                  selector=dict(marker_color="MediumPurple"))
 
 fig.show()
 ```
@@ -396,23 +395,23 @@ For figures with subplots, the `update_traces` method also supports `row` and `c
 from plotly.subplots import make_subplots
 fig = make_subplots(rows=1, cols=2)
 
-fig.add_scatter(y=[4, 2, 3.5], mode='markers',
-                marker={'size': 20, 'color': 'LightSeaGreen'},
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
                 name="a", row=1, col=1)
 
 fig.add_bar(y=[2, 1, 3],
-            marker={'color': 'MediumPurple'},
+            marker=dict(color="MediumPurple"),
             name="b", row=1, col=1)
 
-fig.add_scatter(y=[2, 3.5, 4], mode='markers',
-                marker={'size': 20, 'color': 'MediumPurple'},
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
                 name="c", row=1, col=2)
 
 fig.add_bar(y=[1, 3, 2],
-            marker={'color': 'LightSeaGreen'},
+            marker=dict(color="LightSeaGreen"),
             name="d", row=1, col=2)
 
-fig.update_traces(marker={'color': 'RoyalBlue'},
+fig.update_traces(marker=dict(color="RoyalBlue"),
                   col=2)
 
 fig.show()
@@ -424,10 +423,10 @@ The `update_traces` method can also be used on figures produced by figure factor
 import pandas as pd
 import plotly.express as px
 iris = px.data.iris()
-fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", facet_col="species", trendline='ols')
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", facet_col="species", trendline="ols")
 fig.update_traces(
-    line={'dash': 'dot', 'width': 4},
-    selector={'type': 'scatter', 'mode': 'lines'})
+    line=dict(dash="dot", width=4),
+    selector=dict(type="scatter", mode="lines"))
 fig.show()
 ```
 
@@ -445,7 +444,7 @@ iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species")
 
 fig.for_each_trace(
-    lambda trace: trace.update(name=trace.name.replace('=', ': ')),
+    lambda trace: trace.update(name=trace.name.replace("=", ": ")),
 )
 
 fig.show()
@@ -479,7 +478,7 @@ iris = px.data.iris()
  .update_layout(title_font_size=24)
  .update_xaxes(showgrid=False)
  .update_traces(
-     line={'dash': 'dot', 'width': 4},
-     selector={'type': 'scatter', 'mode': 'lines'})
+     line=dict(dash="dot", width=4),
+     selector=dict(type="scatter", mode="lines"))
 ).show()
 ```

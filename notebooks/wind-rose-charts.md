@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -107,8 +108,8 @@ publisher.publish(
     'How to graph wind rose charts in python. Wind Rose charts display wind speed and direction of a given location. ',
     title = 'Python Wind Rose Charts | plotly',
     name = 'Wind Rose Charts',
-    has_thumbnail='true', thumbnail='thumbnail/wind-rose.jpg', 
-    language='python', page_type='example_index', 
+    has_thumbnail='true', thumbnail='thumbnail/wind-rose.jpg',
+    language='python', page_type='example_index',
     display_as='scientific', order=8,
     ipynb= '~notebook_demo/38')
 ```

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -131,14 +132,14 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     '3d-line.ipynb', 'python/3d-line-plots/', 'Python 3D Line Plots | plotly',
     'How to make 3D Line Plots',
     title= '3D Line Plots in Python | plotly',
     name = '3D Line Plots',
-    has_thumbnail='true', thumbnail='thumbnail/3d-line.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/3d-line.jpg',
     language='python',
     display_as='3d_charts', order=3,
     ipynb= '~notebook_demo/63')

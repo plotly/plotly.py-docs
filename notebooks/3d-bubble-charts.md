@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -96,7 +97,7 @@ trace1 = go.Scatter3d(
         sizeref = 750, # info on sizeref: https://plot.ly/python/reference/#scatter-marker-sizeref
         size = planet_diameter,
         color = planet_colors,
-        )  
+        )
 )
 data=[trace1]
 
@@ -143,7 +144,7 @@ trace1 = go.Scatter3d(
         color = temperatures,
         colorbar = dict(title = 'Mean<br>Temperature'),
         colorscale=[[0, 'rgb(5, 10, 172)'], [.3, 'rgb(255, 255, 255)'], [1, 'rgb(178, 10, 28)']]
-        )  
+        )
 )
 data=[trace1]
 
@@ -172,7 +173,7 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     '3dbubble.ipynb', 'python/3d-bubble-charts/', 'Python 3D Bubble Charts',
@@ -180,7 +181,7 @@ publisher.publish(
     'Three examples of 3D Bubble Charts.',
     title = 'Python 3D Bubble Charts | plotly',
     name = '3D Bubble Charts',
-    has_thumbnail='true', thumbnail='thumbnail/3dbubble.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/3dbubble.jpg',
     language='python', display_as='3d_charts', order=2,
     ipynb= '~notebook_demo/62')
 ```

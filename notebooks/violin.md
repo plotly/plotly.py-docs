@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -103,7 +104,7 @@ for i in range(0,len(pd.unique(df['day']))):
         }
     data.append(trace)
 
-        
+
 fig = {
     "data": data,
     "layout" : {
@@ -321,7 +322,7 @@ for i in range(0,len(pd.unique(df['day']))):
             "showlegend": showLegend[i]
         }
     data.append(female)
-        
+
 
 fig = {
     "data": data,
@@ -355,11 +356,11 @@ publisher.publish(
     'violin.ipynb', 'python/violin/', 'Violin Plots',
     'How to make violin plots in Python with Plotly.',
     title = 'Violin Plots | Plotly',
-    has_thumbnail='true', 
-    thumbnail='thumbnail/violin.jpg', 
-    language='python', 
-    display_as='statistical', 
-    order=12, 
+    has_thumbnail='true',
+    thumbnail='thumbnail/violin.jpg',
+    language='python',
+    display_as='statistical',
+    order=12,
     ipynb='~notebook_demo/201')
 ```
 

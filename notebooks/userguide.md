@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -21,10 +22,10 @@ jupyter:
     title: Getting Started Plotly for Python
 ---
 
-# Plotly for Python User Guide 
+# Plotly for Python User Guide
 
 
-  
+
 
 
 <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~kevintest/21.embed"></iframe>
@@ -37,14 +38,14 @@ This user guide will provide an in-depth overview of the steps required to get y
 ### What is the Python API for Plotly?
 
 
-      
+
 As you may know, Plotly is software written to enable users to easily create beautiful interactive plots and graphs to visualize data. All plots are generated using our [javascript library](https://plot.ly/javascript), but we have multiple API's that will allow us to create these plots in our preferred language. Thus the purpose of the Python API is to allow users to generate these plots within a Python environment, including IPython Notebooks!
 
 
-### User Guide Sections: 
+### User Guide Sections:
 
 
-    
+
 The user guide is split into the following sections:
 
 - Section 0. [Getting Started with Plotly](https://plot.ly/python/getting_started)
@@ -58,12 +59,12 @@ The user guide is split into the following sections:
 - [Appendix A: Getting Started with Python](https://plot.ly/python/python-tutorial)
 
 
-### Want to know what's going on at Plotly? 
+### Want to know what's going on at Plotly?
 
-* Follow us on twitter: 
+* Follow us on twitter:
 [@plotlygraphs](https://twitter.com/plotlygraphs)
 
-### Issues or suggestions for the user guide? 
+### Issues or suggestions for the user guide?
 
 * Let us know at: [Plotly Community Support](http://community.plot.ly)
 
@@ -80,7 +81,7 @@ publisher.publish(
     'Getting Started with Plotly for Python',
     title = 'Getting Started Plotly for Python',
     thumbnail='', language='python',
-    layout='user-guide', has_thumbnail='false') 
+    layout='user-guide', has_thumbnail='false')
 ```
 
 ```python

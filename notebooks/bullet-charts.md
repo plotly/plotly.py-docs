@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -135,7 +136,7 @@ fig = ff.create_bullet(
     scatter_options={'marker': {'size': 30,
                                 'color': 'rgb(21, 166, 20)',
                                 'symbol': 'hourglass'}}
-    
+
 )
 
 # group legends

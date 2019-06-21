@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -516,7 +517,7 @@ py.iplot(fig, filename='programming-language-trends')
 As we already know about this trend, Python is dominating PHP throughout the timespan.
 
 
-#### Reference 
+#### Reference
 See https://plot.ly/python/getting-started/ for more information about Plotly's Python Open Source Graphing Library!
 
 ```python
@@ -531,9 +532,9 @@ publisher.publish(
     'BigQuery-Plotly.ipynb', 'python/google_big_query/', 'Google Big-Query',
     'How to make your-tutorial-chart plots in Python with Plotly.',
     title = 'Google Big Query | plotly',
-    has_thumbnail='true', thumbnail='thumbnail/bigquery2.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/bigquery2.jpg',
     language='python', page_type='example_index',
-    display_as='databases', order=7)  
+    display_as='databases', order=7)
 ```
 
 ```python

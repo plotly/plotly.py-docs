@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -119,7 +120,7 @@ TMA_i = \frac{SMA_i + ... + SMA_{i+n}}{n}
 $$
 
 ```python
-np.array(list(range(5)) + [5] + list(range(5)[::-1])) 
+np.array(list(range(5)) + [5] + list(range(5)[::-1]))
 ```
 
 ```python

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -185,7 +186,7 @@ fig = ff.create_choropleth(
     fips=fips, values=values,
     scope=NE_states, county_outline={'color': 'rgb(255,255,255)', 'width': 0.5},
     legend_title='Population per county'
-   
+
 )
 fig['layout']['legend'].update({'x': 0})
 fig['layout']['annotations'][0].update({'x': -0.12, 'xanchor': 'left'})
@@ -292,7 +293,7 @@ publisher.publish(
     'county_choropleth.ipynb', 'python/county-choropleth/', 'USA County Choropleth Maps',
     'How to create colormaped representations of USA counties by FIPS values in Python.',
     title = 'Python USA County Choropleth Maps | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/county-choropleth-usa-greybkgd.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/county-choropleth-usa-greybkgd.jpg',
     language='python', page_type='example_index',
     display_as='maps', order=0,
     uses_plotly_offline=False,ipynb='~notebook_demo/212')

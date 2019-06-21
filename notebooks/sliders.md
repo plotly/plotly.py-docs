@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -62,7 +63,7 @@ py.iplot(data, filename='Single Sine Wave')
 steps = []
 for i in range(len(data)):
     step = dict(
-        method = 'restyle',  
+        method = 'restyle',
         args = ['visible', [False] * len(data)],
     )
     step['args'][1][i] = True # Toggle i'th trace to "visible"
@@ -92,17 +93,17 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'sliders.ipynb', 'python/sliders/', 'Sliders | plotly',
     'How to add slider controls to your plots in Python with Plotly.',
     title = 'Python Slider Controls | plotly',
     name = 'Sliders',
-    has_thumbnail='true', thumbnail='thumbnail/slider2017.gif', 
+    has_thumbnail='true', thumbnail='thumbnail/slider2017.gif',
     language='python', page_type='example_index',
     display_as='controls', order=1.5,
-    ipynb= '~notebook_demo/85')  
+    ipynb= '~notebook_demo/85')
 ```
 
 ```python

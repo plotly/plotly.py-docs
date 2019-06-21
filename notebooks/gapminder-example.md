@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -48,7 +49,7 @@ First import the Gapminder data that we will be using for the example and store 
 
 ```python
 import plotly.plotly as py
-import plotly.figure_factory as ff 
+import plotly.figure_factory as ff
 from plotly.grid_objs import Grid, Column
 
 import pandas as pd
@@ -64,7 +65,7 @@ py.iplot(table, filename='animations-gapminder-data-preview')
 #### Make the Grid
 Since we are using the v2 api for animations in Plotly, we need to first make a `grid`. You can learn more in the [introduction to animation doc](https://plot.ly/python/animations/).
 
-We will first define a list of _string_ years which will represent the values that our `slider` will take on. Going through the dataset, we will take out all the unique continents from the column `continent` and store them as well. Finally, we make a grid with each column representing a slice of the dataframe by _year_, _continent_ and _column name_, making sure to name each column uniquly by these variables: 
+We will first define a list of _string_ years which will represent the values that our `slider` will take on. Going through the dataset, we will take out all the unique continents from the column `continent` and store them as well. Finally, we make a grid with each column representing a slice of the dataframe by _year_, _continent_ and _column name_, making sure to name each column uniquly by these variables:
 
 ```python
 years_from_col = set(dataset['year'])
@@ -75,7 +76,7 @@ years.remove('1957')
 # make list of continents
 continents = []
 for continent in dataset['continent']:
-    if continent not in continents: 
+    if continent not in continents:
         continents.append(continent)
 
 columns = []
@@ -222,7 +223,7 @@ custom_colors = {
 ```
 
 #### Fill in Figure with Data and Frames
-Now we can put the data from our grid into the figure. Since we are using referenced data from the grid, we use the `.get_column_reference()` method on the grid and supply the name of the column we want via a looping through all the years and continents. First we 
+Now we can put the data from our grid into the figure. Since we are using referenced data from the grid, we use the `.get_column_reference()` method on the grid and supply the name of the column we want via a looping through all the years and continents. First we
 
 Note: If you are using referenced data for a particular parameter, you `MUST` change the parameter name from `name` to `namesrc` to indicate that you are using referenced data from a grid. For instance, `x` becomes `xsrc`, `text` becomes `textsrc`, etc.
 

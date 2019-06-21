@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -30,7 +31,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 <br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
 <br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
 #### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version. 
+Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
 
 ```python
 import plotly
@@ -189,7 +190,7 @@ for yd, xd in zip(y_data, x_data):
     for i in range(1, len(xd)):
             # labeling the rest of percentages for each bar (x_axis)
             annotations.append(dict(xref='x', yref='y',
-                                    x=space + (xd[i]/2), y=yd, 
+                                    x=space + (xd[i]/2), y=yd,
                                     text=str(xd[i]) + '%',
                                     font=dict(family='Arial', size=14,
                                               color='rgb(248, 248, 255)'),
@@ -360,7 +361,7 @@ publisher.publish(
     'How to make horizontal bar charts in Python with Plotly.',
     title = 'Horizontal Bar Charts | plotly',
     name = 'Horizontal Bar Charts',
-    thumbnail='thumbnail/horizontal-bar.jpg', language='python', 
+    thumbnail='thumbnail/horizontal-bar.jpg', language='python',
     has_thumbnail='true', display_as='basic', order=5,
     ipynb= '~notebook_demo/5')
 ```

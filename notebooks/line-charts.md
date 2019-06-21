@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -103,7 +104,7 @@ py.iplot(data, filename='line-mode')
 ```
 
 #### Style Line Plots
-This example styles the color and dash of the traces, adds trace names, 
+This example styles the color and dash of the traces, adds trace names,
 modifiys line width, and adds plot and axes titles.
 
 ```python
@@ -193,7 +194,7 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace1 = go.Scatter(
-    x=[1, 2, 3, 4, 5, 
+    x=[1, 2, 3, 4, 5,
        6, 7, 8, 9, 10,
        11, 12, 13, 14, 15],
     y=[10, 20, None, 15, 10,

@@ -83,7 +83,7 @@ z = [ [13,3,3,5],
 
 fig = go.Figure(data=go.Heatmap(
           x = np.sort(xe),
-          y = np.sort(ye)+yshift,
+          y = np.sort(ye),
           z = z,
           type = 'heatmap',
           colorscale = 'Viridis'))
@@ -99,9 +99,7 @@ def spiral(th):
 theta = np.linspace(-np.pi/13,4*np.pi,1000); # angle
 (x,y) = spiral(theta)
 
-# shift the spiral north so that it is centered
-yshift = (1.6 - (max(y)-min(y)))/2
-fig.add_trace(go.Scatter(x= -x+x[0], y= y-y[0]+yshift,
+fig.add_trace(go.Scatter(x= -x+x[0], y= y-y[0],
      line =dict(color='white',width=3)))
 
 axis_template = dict(range = [0,1.6], autorange = False,

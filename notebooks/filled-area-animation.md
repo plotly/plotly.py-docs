@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -47,7 +48,7 @@ Let us import some apple stock data for this animation.
 ```python
 import plotly.plotly as py
 from plotly.grid_objs import Grid, Column
-from plotly.tools import FigureFactory as FF 
+from plotly.tools import FigureFactory as FF
 
 import time
 from datetime import datetime
@@ -72,7 +73,7 @@ def to_unix_time(dt):
 appl_price = list(appl['Adjusted'])
 my_columns = []
 for k in range(len(appl.Date) - 1):
-    my_columns.append(Column(list(appl.Date)[:k + 1], 'x{}'.format(k + 1)))   
+    my_columns.append(Column(list(appl.Date)[:k + 1], 'x{}'.format(k + 1)))
     my_columns.append(Column(appl_price[:k + 1], 'y{}'.format(k + 1)))
 grid = Grid(my_columns)
 py.grid_ops.upload(grid, 'AAPL-daily-stock-price' + str(time.time()), auto_open=False)
@@ -116,7 +117,7 @@ layout = dict(title='AAPL Daily Stock Price',
                                 pad=dict(t=0, r=10),
                                 buttons=[dict(label='Play',
                                               method='animate',
-                                              args=[None, dict(frame=dict(duration=50, redraw=False), 
+                                              args=[None, dict(frame=dict(duration=50, redraw=False),
                                                                transition=dict(duration=0),
                                                                fromcurrent=True,
                                                                mode='immediate')])])])

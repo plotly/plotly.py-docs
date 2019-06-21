@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -45,7 +46,7 @@ df.head()
 scatter = dict(
     mode = "markers",
     name = "y",
-    type = "scatter3d",    
+    type = "scatter3d",
     x = df['x'], y = df['y'], z = df['z'],
     marker = dict( size=2, color="rgb(23, 190, 207)" )
 )
@@ -53,7 +54,7 @@ clusters = dict(
     alphahull = 7,
     name = "y",
     opacity = 0.1,
-    type = "mesh3d",    
+    type = "mesh3d",
     x = df['x'], y = df['y'], z = df['z']
 )
 layout = dict(
@@ -84,15 +85,15 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     '3d-clusters.ipynb', 'python/3d-point-clustering/', 'Python 3D Clustering | plotly',
     'How to cluster points in 3d with alpha shapes in plotly and Python',
     title= '3D Point Clustering in Python | plotly',
     name = '3d Clustering',
-    has_thumbnail='true', thumbnail='thumbnail/3d-clusters.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/3d-clusters.jpg',
+    language='python',
     display_as='3d_charts', order=14,
     ipynb= '~notebook_demo/74')
 ```

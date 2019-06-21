@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -213,12 +214,12 @@ fig = go.FigureWidget(
 def update_color(trace, points, state):
     # Update scatter selection
     fig.data[0].selectedpoints = points.point_inds
-    
+
     # Update parcats colors
     new_color = np.zeros(len(cars_df), dtype='uint8')
     new_color[points.point_inds] = 1
     fig.data[1].line.color = new_color
-    
+
 # Register callback on scatter selection...
 fig.data[0].on_selection(update_color)
 # and parcats click
@@ -306,14 +307,14 @@ def update_color(trace, points, state):
     # Compute new color array
     new_color = np.array(fig.data[0].marker.color)
     new_color[points.point_inds] = color_toggle.index
-    
-    with fig.batch_update(): 
+
+    with fig.batch_update():
         # Update scatter color
         fig.data[0].marker.color = new_color
 
         # Update parcats colors
         fig.data[1].line.color = new_color
-    
+
 # Register callback on scatter selection...
 fig.data[0].on_selection(update_color)
 # and parcats click

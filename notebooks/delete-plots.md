@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -53,13 +54,13 @@ plotly.tools.set_credentials_file(username=username, api_key=api_key)
 ```
 
 #### [Trash](https://api.plot.ly/v2/files/#trash) and [Restore](https://api.plot.ly/v2/files/#restore)
-Create a plot and return the url to see the file id which will be used to delete the plot. 
+Create a plot and return the url to see the file id which will be used to delete the plot.
 
 ```python
 url = py.plot({"data": [{"x": [1, 2, 3],
                          "y": [4, 2, 4]}],
                "layout": {"title": "Let's Trash This Plot<br>(then restore it)"}},
-              filename='trash example') 
+              filename='trash example')
 
 url
 ```
@@ -80,19 +81,19 @@ requests.post('https://api.plot.ly/v2/files/'+fid+'/trash', auth=auth, headers=h
 Now if you visit the url, the plot won't be there. <br>However, at this point, there is the option to restore the plot (i.e. move it out of trash and back to the organize folder) with the following request:
 
 
- 
+
 
 
 #### [<b>PERMANENT</b> Delete](https://api.plot.ly/v2/files/#permanent_delete)
 
-This request <b>CANNOT!!!!!!!</b> be restored. 
+This request <b>CANNOT!!!!!!!</b> be restored.
 Only use `permanent_delete` when <b>absolutely sure the plot is no longer needed</b>.<br>
 
 ```python
 url = py.plot({"data": [{"x": [1, 2, 3],
                          "y": [3, 2, 1]}],
                "layout": {"title": "Let's Delete This Plot<br><b>FOREVER!!!!</b>"}},
-              filename='PERMANENT delete ex') 
+              filename='PERMANENT delete ex')
 url
 ```
 
@@ -126,7 +127,7 @@ def get_pages(username, page_size):
     page = json.loads(response.content)
     yield page
     while True:
-        resource = page['children']['next'] 
+        resource = page['children']['next']
         if not resource:
             break
         response = requests.get(resource, auth=auth, headers=headers)
@@ -134,7 +135,7 @@ def get_pages(username, page_size):
             break
         page = json.loads(response.content)
         yield page
-        
+
 def permanently_delete_files(username, page_size=500, filetype_to_delete='plot'):
     for page in get_pages(username, page_size):
         for x in range(0, len(page['children']['results'])):
@@ -164,7 +165,7 @@ import publisher
 publisher.publish(
     'delete.ipynb', 'python/delete-plots/', 'Deleting Plots with the Python API',
     'How to delete plotly graphs in python.',
-    name = 'Deleting Plots', language='python', 
+    name = 'Deleting Plots', language='python',
     has_thumbnail='true', thumbnail= 'thumbnail/delete.jpg',
     display_as='file_settings', ipynb= '~notebook_demo/98', order=9)
 ```

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -215,8 +216,8 @@ publisher.publish(
     'scattercarpet.ipynb', 'python/carpet-scatter/', 'Carpet Scatter Plot',
     'How to make carpet scatter plots in Python with Plotly.',
     title = 'Carpet Scatter Plots | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/scattercarpet.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/scattercarpet.jpg',
+    language='python',
     # page_type='example_index', // note this is only if you want the tutorial to appear on the main page: plot.ly/python
     display_as='scientific', order=28,
     ipynb= '~notebook_demo/146')

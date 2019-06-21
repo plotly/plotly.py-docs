@@ -257,6 +257,30 @@ fig.update_layout(title_text="A Bar Chart",
 fig.show()
 ```
 
+Note that the following `update_layout` operations are equivalent:
+
+```python
+fig.update_layout({"title": {"text": "A Bar Chart",
+                             "font": {"size": 30}}})
+                             
+fig.update_layout(title={"text": "A Bar Chart",
+                         "font": {"size": 30}})
+
+fig.update_layout(title=dict(text="A Bar Chart",
+                             font=dict(size=30)))
+                         
+fig.update_layout(title_text="A Bar Chart",
+                  title_font={"size": 30})
+                  
+fig.update_layout(title_text="A Bar Chart",
+                  title_font_size=30);
+
+fig.update_layout(
+    title=go.layout.Title(text="A Bar Chart",
+                          font=go.layout.title.Font(size=30)));
+```
+
+
 ### The update traces method
 Graph object figures support an `update_traces` method that may be used to update multiple nested properties of one or more of a figure's traces.  To show some examples, we will start with a figure that contains bar and scatter traces across two subplots.
 

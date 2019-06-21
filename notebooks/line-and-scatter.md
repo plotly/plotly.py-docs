@@ -35,6 +35,7 @@ jupyter:
     redirect_from: python/line-and-scatter-plots-tutorial/
     thumbnail: thumbnail/line-and-scatter.jpg
     title: Python Scatter Plots | plotly
+    v4upgrade: true
 ---
 
 ## Scatter plot with plotly express
@@ -42,7 +43,7 @@ jupyter:
 Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). With ``px.scatter``, each data point is represented as a marker point, which location is given by the `x` and `y` columns.
 
 ```python
-import plotly_express as px
+import plotly.express as px
 iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length")
 fig.show()
@@ -50,46 +51,42 @@ fig.show()
 
 #### Set size and color with column names
 
-Note that `color` and `info` data are added to hover information. You can add other columns to hover data with the `hover_data` argument of `px.scatter`.
+Note that `color` and `size` data are added to hover information. You can add other columns to hover data with the `hover_data` argument of `px.scatter`.
 
 ```python
-import plotly_express as px
+import plotly.express as px
 iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species",
-                 size='petal_length')
+                 size='petal_length', hover_data=['petal_width'])
 fig.show()
 ```
 
 ## Line plot with plotly express
 
 ```python
-import plotly_express as px
+import plotly.express as px
 gapminder = px.data.gapminder().query("continent == 'Oceania'")
-px.line(gapminder, x='year', y='lifeExp', color='country')
+fig = px.line(gapminder, x='year', y='lifeExp', color='country')
+fig.show()
 ```
 
 ## Scatter and line plot with go.Scatter
 
-When data are not available as tidy dataframes, it is possible to use the more generic `go.Scatter` function from `plotly.graph_objs`. Whereas `plotly_express` has two functions `scatter` and `line`, `go.Scatter` can be used both for plotting points (makers) or lines, depending on the value of `mode`. The different options of `go.Scatter` are documented in its [reference page](https://plot.ly/python/reference/#scatter ).
+When data are not available as tidy dataframes, it is possible to use the more generic `go.Scatter` function from `plotly.graph_objects`. Whereas `plotly.express` has two functions `scatter` and `line`, `go.Scatter` can be used both for plotting points (makers) or lines, depending on the value of `mode`. The different options of `go.Scatter` are documented in its [reference page](https://plot.ly/python/reference/#scatter ).
 
 
 #### Simple Scatter Plot
 
 ```python
-import plotly.graph_objs as go
-
-# Create random data with numpy
+import plotly.graph_objects as go
 import numpy as np
 
 N = 1000
-random_x = np.random.randn(N)
-random_y = np.random.randn(N)
+t = np.linspace(0, 10, 100)
+y = np.sin(t)
 
-# Create a trace
-trace = go.Scatter(x=random_x, y=random_y,
-                   mode='markers')
+fig = go.Figure(data=go.Scatter(x=t, y=y, mode='markers'))
 
-fig = go.Figure(data=[trace])
 fig.show()
 ```
 
@@ -98,7 +95,7 @@ fig.show()
 Use `mode` argument to choose between markers, lines, or a combination of both. For more options about line plots, see also the [line charts notebook](https://plot.ly/python/line-charts/) and the [filled area plots notebook](https://plot.ly/python/filled-area-plots/).
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 # Create random data with numpy
 import numpy as np
@@ -109,18 +106,19 @@ random_y0 = np.random.randn(N) + 5
 random_y1 = np.random.randn(N)
 random_y2 = np.random.randn(N) - 5
 
-# Create traces
-trace0 = go.Scatter(x=random_x, y=random_y0,
-                    mode='markers',
-                    name='markers')
-trace1 = go.Scatter(x=random_x, y=random_y1,
-                    mode='lines+markers',
-                    name='lines+markers')
-trace2 = go.Scatter(x=random_x, y=random_y2,
-                    mode='lines',
-                    name='lines')
+fig = go.Figure()
 
-fig = go.Figure(data=[trace0, trace1, trace2])
+# Add traces
+fig.add_trace(go.Scatter(x=random_x, y=random_y0,
+                    mode='markers',
+                    name='markers'))
+fig.add_trace(go.Scatter(x=random_x, y=random_y1,
+                    mode='lines+markers',
+                    name='lines+markers'))
+fig.add_trace(go.Scatter(x=random_x, y=random_y2,
+                    mode='lines',
+                    name='lines'))
+
 fig.show()
 ```
 
@@ -129,98 +127,77 @@ fig.show()
 In [bubble charts](https://en.wikipedia.org/wiki/Bubble_chart), a third dimension of the data is shown through the size of markers. For more examples, see the [bubble chart notebook](https://plot.ly/python/bubble-charts/)  
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Scatter(
+fig = go.Figure(data=go.Scatter(
     x=[1, 2, 3, 4],
     y=[10, 11, 12, 13],
     mode='markers',
     marker=dict(size=[40, 60, 80, 100], 
                 color=[0, 1, 2, 3])
-)
+))
 
-fig = go.Figure(data=[trace0])
 fig.show()
 ```
 
 #### Style Scatter Plots
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
-N = 500
 
-trace0 = go.Scatter(
-    x = np.random.randn(N), y = np.random.randn(N)+2,
-    name='Above',
+t = np.linspace(0, 10, 100)
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
+    x=t, y=np.sin(t),
+    name='sin',
     mode='markers',
-    marker=dict(
-        size=10,
-        color='rgba(152, 0, 0, .8)',
-        line=dict(width=2, color='rgb(0, 0, 0)')
-    )
-)
+    marker_color='rgba(152, 0, 0, .8)'
+))
 
-trace1 = go.Scatter(
-    x=np.random.randn(N),
-    y=np.random.randn(N)-2,
-    name='Below',
-    mode='markers',
-    marker=dict(size=10, color='rgba(255, 182, 193, .9)', line_width = 2)
-)
+fig.add_trace(go.Scatter(
+    x=t, y=np.cos(t),
+    name='cos',
+    marker_color='rgba(255, 182, 193, .9)'
+))
 
-layout = go.Layout(title='Styled Scatter',
-                   yaxis_zeroline=False, xaxis_zeroline=False)
+# Set options common to all traces with fig.update_traces
+fig.update_traces(mode='markers', marker_line_width=2, marker_size=10)
+fig.update_layout(title='Styled Scatter',
+                  yaxis_zeroline=False, xaxis_zeroline=False)
 
-fig = go.Figure(data=[trace0, trace1], layout=layout)
+
 fig.show()
 ```
 
 #### Data Labels on Hover
 
 ```python
-import plotly.graph_objs as go
-import random
-import numpy as np
+import plotly.graph_objects as go
 import pandas as pd
 
-l= []
-y= []
 data= pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv")
-# Setting colors for plot.
-N= 53
-c= ['hsl('+str(h)+',50%'+',50%)' for h in np.linspace(0, 360, N)]
 
-for i in range(int(N)):
-    y.append((2000+i))
-    trace0 = go.Scatter(
-        x=data['Rank'],
-        y=data['Population']+(i*1000000),
-        mode='markers',
-        marker=dict(size=14, line_width=1, color=c[i], opacity=0.3),
-        name=y[i],
-        text=data['State']) # The hover text goes here... 
-    l.append(trace0);
-
-layout= go.Layout(
-    title='Stats of USA States',
-    hovermode='closest',
-    xaxis=dict(title='Population', zeroline= False, gridwidth= 2),
-    yaxis=dict(title='Rank', gridwidth= 2),
-    showlegend= False
-)
-fig = go.Figure(data=l, layout=layout)
+fig = go.Figure(data=go.Scatter(x=data['Postal'], 
+                                y=data['Population'], 
+                                mode='markers',
+                                marker_color=data['Population'],
+                                text=data['State'])) # hover text goes here
+    
+fig.update_layout(title='Population of USA States')
 fig.show()
 ```
 
 #### Scatter with a Color Dimension
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
-trace1 = go.Scatter(
+fig = go.Figure(data=go.Scatter(
     y = np.random.randn(500),
     mode='markers',
     marker=dict(
@@ -229,8 +206,8 @@ trace1 = go.Scatter(
         colorscale='Viridis', # one of plotly colorscales
         showscale=True
     )
-)
-fig = go.Figure(data=[trace1])
+))
+
 fig.show()
 ```
 
@@ -240,11 +217,11 @@ Now in Ploty you can implement WebGL with `Scattergl()` in place of `Scatter()` 
 for increased speed, improved interactivity, and the ability to plot even more data!
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 N = 100000
-trace = go.Scattergl(
+fig = go.Figure(data=go.Scattergl(
     x = np.random.randn(N),
     y = np.random.randn(N),
     mode='markers',
@@ -253,8 +230,30 @@ trace = go.Scattergl(
         colorscale='Viridis',
         line_width=1
     )
-)
-fig = go.Figure(data=[trace])
+))
+
+fig.show()
+```
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+N = 100000
+r = np.random.uniform(0, 1, N)
+theta = np.random.uniform(0, 2*np.pi, N)
+
+fig = go.Figure(data=go.Scattergl(
+    x = r * np.cos(theta), # non-uniform distribution 
+    y = r * np.sin(theta), # zoom to see more points at the center
+    mode='markers',
+    marker=dict(
+        color=np.random.randn(N),
+        colorscale='Viridis',
+        line_width=1
+    )
+))
+
 fig.show()
 ```
 

@@ -35,34 +35,65 @@ jupyter:
     permalink: python/line-charts/
     thumbnail: thumbnail/line-plot.jpg
     title: Python Line Charts | plotly
+    v4upgrade: true
 ---
 
-For examples of line plots with `plotly_express`, see the [line and scatter notebook](https://plot.ly/python/line-and-scatter/).
+### Line Plot with plotly.express
+
+Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). With ``px.line``, each data point is represented as a vertex (which location is given by the `x` and `y` columns) of a **polyline mark** in 2D space.
+
+For more examples of line plots, see the [line and scatter notebook](https://plot.ly/python/line-and-scatter/).
+
+#### Simple Line Plot with plotly.express
+
+```python
+import plotly.express as px
+
+gapminder = px.data.gapminder().query("country=='Canada'")
+fig = px.line(gapminder, x="year", y="lifeExp", title='Life expectancy in Canada')
+fig.show()
+```
+
+### Line Plot with column encoding color
+
+```python
+import plotly.express as px
+
+gapminder = px.data.gapminder().query("continent=='Oceania'")
+fig = px.line(gapminder, x="year", y="lifeExp", color='country')
+fig.show()
+```
+
+```python
+import plotly.express as px
+
+gapminder = px.data.gapminder().query("continent != 'Asia'") # remove Asia for visibility
+fig = px.line(gapminder, x="year", y="lifeExp", color="continent", 
+              line_group="country", hover_name="country")
+fig.show()
+```
+
+### Line Plot with go.Scatter
+
+When data are not available as tidy dataframes, it is possible to use the more generic `go.Scatter` function from `plotly.graph_objects`. Whereas `plotly.express` has two functions `scatter` and `line`, `go.Scatter` can be used both for plotting points (makers) or lines, depending on the value of `mode`. The different options of `go.Scatter` are documented in its [reference page](https://plot.ly/python/reference/#scatter ).
 
 
 #### Simple Line Plot
 
 ```python
-import plotly.graph_objs as go
-
-# Create random data with numpy
+import plotly.graph_objects as go
 import numpy as np
 
-N = 500
-random_x = np.linspace(0, 1, N)
-random_y = np.random.randn(N)
+x = np.arange(10)
 
-# Create a trace
-trace = go.Scatter(x=random_x, y=random_y)
-
-fig = go.Figure(data=[trace])
+fig = go.Figure(data=go.Scatter(x=x, y=x**2))
 fig.show()
 ```
 
 #### Line Plot Modes
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 # Create random data with numpy
 import numpy as np
@@ -74,15 +105,16 @@ random_y1 = np.random.randn(N)
 random_y2 = np.random.randn(N) - 5
 
 # Create traces
-trace0 = go.Scatter(x=random_x, y=random_y0,
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=random_x, y=random_y0,
                     mode='lines',
-                    name='lines')
-trace1 = go.Scatter(x=random_x, y=random_y1,
+                    name='lines'))
+fig.add_trace(go.Scatter(x=random_x, y=random_y1,
                     mode='lines+markers',
-                    name='lines+markers')
-trace2 = go.Scatter(x=random_x, y=random_y2,
-                    mode='markers', name='markers')
-fig = go.Figure(data=[trace0, trace1, trace2])
+                    name='lines+markers'))
+fig.add_trace(go.Scatter(x=random_x, y=random_y2,
+                    mode='markers', name='markers'))
+
 fig.show()
 ```
 
@@ -91,7 +123,7 @@ This example styles the color and dash of the traces, adds trace names,
 modifies line width, and adds plot and axes titles.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 # Add data
 month = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
@@ -103,88 +135,91 @@ low_2007 = [23.6, 14.0, 27.0, 36.8, 47.6, 57.7, 58.9, 61.2, 53.3, 48.5, 31.0, 23
 high_2014 = [28.8, 28.5, 37.0, 56.8, 69.7, 79.7, 78.5, 77.8, 74.1, 62.6, 45.3, 39.9]
 low_2014 = [12.7, 14.3, 18.6, 35.5, 49.9, 58.0, 60.0, 58.6, 51.7, 45.2, 32.2, 29.1]
 
+fig = go.Figure()
 # Create and style traces
-trace0 = go.Scatter(x=month, y=high_2014, name='High 2014',
-                    line=dict(color='firebrick', width=4))
-trace1 = go.Scatter(x=month, y=low_2014, name = 'Low 2014',
-                    line=dict(color='royalblue', width=4))
-trace2 = go.Scatter(x=month, y=high_2007, name='High 2007',
-                    line=dict(color='firebrick', width=4,
+fig.add_trace(go.Scatter(x=month, y=high_2014, name='High 2014',
+                         line=dict(color='firebrick', width=4)))
+fig.add_trace(go.Scatter(x=month, y=low_2014, name = 'Low 2014',
+                         line=dict(color='royalblue', width=4)))
+fig.add_trace(go.Scatter(x=month, y=high_2007, name='High 2007',
+                         line=dict(color='firebrick', width=4,
                               dash='dash') # dash options include 'dash', 'dot', and 'dashdot'
-)
-trace3 = go.Scatter(x=month, y=low_2007, name='Low 2007',
-                    line = dict(color='royalblue', width=4, dash='dash'))
-trace4 = go.Scatter(x=month, y=high_2000, name='High 2000',
-                    line = dict(color='firebrick', width=4, dash='dot'))
-trace5 = go.Scatter(x=month, y=low_2000, name='Low 2000',
-                    line=dict(color='royalblue', width=4, dash='dot'))
+))
+fig.add_trace(go.Scatter(x=month, y=low_2007, name='Low 2007',
+                         line = dict(color='royalblue', width=4, dash='dash')))
+fig.add_trace(go.Scatter(x=month, y=high_2000, name='High 2000',
+                         line = dict(color='firebrick', width=4, dash='dot')))
+fig.add_trace(go.Scatter(x=month, y=low_2000, name='Low 2000',
+                         line=dict(color='royalblue', width=4, dash='dot')))
 
 # Edit the layout
-layout = go.Layout(title='Average High and Low Temperatures in New York',
+fig.update_layout(title='Average High and Low Temperatures in New York',
                    xaxis_title='Month',
                    yaxis_title='Temperature (degrees F)')
 
-fig = go.Figure(data=[trace0, trace1, trace2, trace3, trace4, trace5], layout=layout)
+
 fig.show()
 ```
 
 #### Connect Data Gaps
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 
-trace1 = go.Scatter(
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
     x=x,
     y=[10, 20, None, 15, 10, 5, 15, None, 20, 10, 10, 15, 25, 20, 10],
     name = '<b>No</b> Gaps', # Style name/legend entry with html tags
     connectgaps=True # override default to connect the gaps
-)
-trace2 = go.Scatter(
+))
+fig.add_trace(go.Scatter(
     x=x,
     y=[5, 15, None, 10, 5, 0, 10, None, 15, 5, 5, 10, 20, 15, 5],
     name='Gaps',
-)
+))
 
-fig = go.Figure(data=[trace1, trace2])
 fig.show()
 ```
 
 #### Interpolation with Line Plots
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 x = np.array([1, 2, 3, 4, 5])
 y = np.array([1, 3, 2, 3, 1])
 
-trace0 = go.Scatter(x=x, y=y, name="linear",
-                    line_shape='linear')
-trace1 = go.Scatter(x=x, y=y + 5, name="spline",
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=x, y=y, name="linear",
+                    line_shape='linear'))
+fig.add_trace(go.Scatter(x=x, y=y + 5, name="spline",
                     text=["tweak line smoothness<br>with 'smoothing' in line object"],
                     hoverinfo='text+name',
-                    line_shape='spline')
-trace2 = go.Scatter(x=x, y=y + 10, name="vhv",
-                    line_shape='vhv')
-trace3 = go.Scatter(x=x, y=y + 15, name="hvh",
-                    line_shape='hvh')
-trace4 = go.Scatter(x=x, y=y + 20, name="vh",
-                    line_shape='vh')
-trace5 = go.Scatter(x=x, y=y + 25, name="hv",
-                    line_shape='hv')
+                    line_shape='spline'))
+fig.add_trace(go.Scatter(x=x, y=y + 10, name="vhv",
+                    line_shape='vhv'))
+fig.add_trace(go.Scatter(x=x, y=y + 15, name="hvh",
+                    line_shape='hvh'))
+fig.add_trace(go.Scatter(x=x, y=y + 20, name="vh",
+                    line_shape='vh'))
+fig.add_trace(go.Scatter(x=x, y=y + 25, name="hv",
+                    line_shape='hv'))
 
-layout = dict(legend=dict(y=0.5, traceorder='reversed', font_size=16))
-fig = go.Figure(data=[trace0, trace1, trace2, trace3, trace4, trace5], layout=layout)
 fig.update_traces(hoverinfo='text+name', mode='lines+markers')
+fig.update_layout(legend=dict(y=0.5, traceorder='reversed', font_size=16))
+
 fig.show()
 ```
 
 #### Label Lines with Annotations
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 title = 'Main Source for News'
@@ -203,22 +238,24 @@ y_data = np.array([
     [18, 21, 18, 21, 16, 14, 13, 18, 17, 16, 19, 23],
 ])
 
-traces = []
+fig = go.Figure()
 
 for i in range(0, 4):
-    traces.append(go.Scatter(x=x_data[i], y=y_data[i], mode='lines',
+    fig.add_trace(go.Scatter(x=x_data[i], y=y_data[i], mode='lines',
+        name=labels[i],
         line=dict(color=colors[i], width=line_size[i]),
         connectgaps=True,
     ))
 
-    traces.append(go.Scatter(
+    # endpoints
+    fig.add_trace(go.Scatter(
         x=[x_data[i][0], x_data[i][-1]],
         y=[y_data[i][0], y_data[i][-1]],
         mode='markers',
         marker=dict(color=colors[i], size=mode_size[i])
     ))
 
-layout = go.Layout(
+fig.update_layout(
     xaxis=dict(
         showline=True,
         showgrid=False,
@@ -226,9 +263,6 @@ layout = go.Layout(
         linecolor='rgb(204, 204, 204)',
         linewidth=2,
         ticks='outside',
-        tickcolor='rgb(204, 204, 204)',
-        tickwidth=2,
-        ticklen=5,
         tickfont=dict(
             family='Arial',
             size=12,
@@ -248,7 +282,8 @@ layout = go.Layout(
         r=20,
         t=110,
     ),
-    showlegend=False
+    showlegend=False,
+    plot_bgcolor='white'
 )
 
 annotations = []
@@ -287,16 +322,15 @@ annotations.append(dict(xref='paper', yref='paper', x=0.5, y=-0.1,
                                         color='rgb(150,150,150)'),
                               showarrow=False))
 
-layout['annotations'] = annotations
+fig.update_layout(annotations=annotations)
 
-fig = go.Figure(data=traces, layout=layout)
 fig.show()
 ```
 
 #### Filled Lines
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 
@@ -323,7 +357,9 @@ y3_lower = [9, 7, 5, 3, 1, -.5, 1, 3, 1, -1]
 y3_lower = y3_lower[::-1]
 
 
-trace1 = go.Scatter(
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
     x=x+x_rev,
     y=y1_upper+y1_lower,
     fill='toself',
@@ -331,8 +367,8 @@ trace1 = go.Scatter(
     line_color='rgba(255,255,255,0)',
     showlegend=False,
     name='Fair',
-)
-trace2 = go.Scatter(
+))
+fig.add_trace(go.Scatter(
     x=x+x_rev,
     y=y2_upper+y2_lower,
     fill='toself',
@@ -340,8 +376,8 @@ trace2 = go.Scatter(
     line_color='rgba(255,255,255,0)',
     name='Premium',
     showlegend=False,
-)
-trace3 = go.Scatter(
+))
+fig.add_trace(go.Scatter(
     x=x+x_rev,
     y=y3_upper+y3_lower,
     fill='toself',
@@ -349,27 +385,23 @@ trace3 = go.Scatter(
     line_color='rgba(255,255,255,0)',
     showlegend=False,
     name='Fair',
-)
-trace4 = go.Scatter(
+))
+fig.add_trace(go.Scatter(
     x=x, y=y1,
     line_color='rgb(0,100,80)',
     name='Fair',
-)
-trace5 = go.Scatter(
+))
+fig.add_trace(go.Scatter(
     x=x, y=y2,
     line_color='rgb(0,176,246)',
     name='Premium',
-)
-trace6 = go.Scatter(
+))
+fig.add_trace(go.Scatter(
     x=x, y=y3,
     line_color='rgb(231,107,243)',
     name='Ideal',
-)
+))
 
-data = [trace1, trace2, trace3, trace4, trace5, trace6]
-
-
-fig = go.Figure(data=data)
 fig.update_traces(mode='lines')
 fig.show()
 ```

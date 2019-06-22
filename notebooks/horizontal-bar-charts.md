@@ -8,9 +8,19 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.1.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make horizontal bar charts in Python with Plotly.
     display_as: basic
@@ -24,80 +34,94 @@ jupyter:
     permalink: python/horizontal-bar-charts/
     thumbnail: thumbnail/horizontal-bar.jpg
     title: Horizontal Bar Charts | plotly
+    v4upgrade: true
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-#### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
+See more examples of bar charts (including vertical bar charts) and styling options [here](https://plot.ly/python/bar-charts/).
+
+
+### Horizontal Bar Chart with plotly express
+
+Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). For a horizontal bar char, use the `px.bar` function with `orientation='h'`.
+
+
+#### Basic Horizontal Bar Chart with plotly express
+
 
 ```python
-import plotly
-plotly.__version__
+import plotly.express as px
+tips = px.data.tips()
+fig = px.bar(tips, x="total_bill", y="day", orientation='h')
+fig.show()
 ```
+
+#### Configure horizontal bar chart
+
+In this example a column is used to color the bars, and we add the information from other columns to the hover data.
+
+```python
+import plotly.express as px
+tips = px.data.tips()
+fig = px.bar(tips, x="total_bill", y="sex", color='day', orientation='h',
+             hover_data=["tip", "size"],
+             height=400,
+             title='Restaurant bills')
+fig.show()
+```
+
+### Horizontal Bar Chart with go.Bar
+
+When data are not available as a tidy dataframe, you can use the more generic function `go.Bar` from `plotly.graph_objects`. All the options of `go.Bar` are documented in the reference https://plot.ly/python/reference/#bar
+
 
 #### Basic Horizontal Bar Chart
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-data = [go.Bar(
+fig = go.Figure(go.Bar(
             x=[20, 14, 23],
             y=['giraffes', 'orangutans', 'monkeys'],
-            orientation = 'h'
-)]
+            orientation='h'))
 
-py.iplot(data, filename='horizontal-bar')
+fig.show()
 ```
 
 ### Colored Horizontal Bar Chart
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace1 = go.Bar(
+fig = go.Figure()
+fig.add_trace(go.Bar(
     y=['giraffes', 'orangutans', 'monkeys'],
     x=[20, 14, 23],
     name='SF Zoo',
-    orientation = 'h',
-    marker = dict(
-        color = 'rgba(246, 78, 139, 0.6)',
-        line = dict(
-            color = 'rgba(246, 78, 139, 1.0)',
-            width = 3)
+    orientation='h',
+    marker=dict(
+        color='rgba(246, 78, 139, 0.6)',
+        line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
     )
-)
-trace2 = go.Bar(
+))
+fig.add_trace(go.Bar(
     y=['giraffes', 'orangutans', 'monkeys'],
     x=[12, 18, 29],
     name='LA Zoo',
-    orientation = 'h',
-    marker = dict(
-        color = 'rgba(58, 71, 80, 0.6)',
-        line = dict(
-            color = 'rgba(58, 71, 80, 1.0)',
-            width = 3)
+    orientation='h',
+    marker=dict(
+        color='rgba(58, 71, 80, 0.6)',
+        line=dict(color='rgba(58, 71, 80, 1.0)', width=3)
     )
-)
+))
 
-data = [trace1, trace2]
-layout = go.Layout(
-    barmode='stack'
-)
-
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='marker-h-bar')
+fig.update_layout(barmode='stack')
+fig.show()
 ```
 
 ### Color Palette for Bar Chart
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 top_labels = ['Strongly<br>agree', 'Agree', 'Neutral', 'Disagree',
               'Strongly<br>disagree']
@@ -117,24 +141,20 @@ y_data = ['The course was effectively<br>organized',
           'my<br>ability to think critically about<br>the subject',
           'I would recommend this<br>course to a friend']
 
-
-traces = []
+fig = go.Figure()
 
 for i in range(0, len(x_data[0])):
     for xd, yd in zip(x_data, y_data):
-        traces.append(go.Bar(
-            x=[xd[i]],
-            y=[yd],
+        fig.add_trace(go.Bar(
+            x=[xd[i]], y=[yd],
             orientation='h',
             marker=dict(
                 color=colors[i],
-                line=dict(
-                        color='rgb(248, 248, 249)',
-                        width=1)
+                line=dict(color='rgb(248, 248, 249)', width=1)
             )
         ))
 
-layout = go.Layout(
+fig.update_layout(
     xaxis=dict(
         showgrid=False,
         showline=False,
@@ -151,12 +171,7 @@ layout = go.Layout(
     barmode='stack',
     paper_bgcolor='rgb(248, 248, 255)',
     plot_bgcolor='rgb(248, 248, 255)',
-    margin=dict(
-        l=120,
-        r=10,
-        t=140,
-        b=80
-    ),
+    margin=dict(l=120, r=10, t=140, b=80),
     showlegend=False,
 )
 
@@ -205,18 +220,16 @@ for yd, xd in zip(y_data, x_data):
                                         showarrow=False))
             space += xd[i]
 
-layout['annotations'] = annotations
+fig.update_layout(annotations=annotations)
 
-fig = go.Figure(data=traces, layout=layout)
-py.iplot(fig, filename='bar-colorscale')
+fig.show()
 ```
 
 ### Bar Chart with Line Plot
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-from plotly import tools
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 import numpy as np
 
@@ -226,14 +239,17 @@ y_saving = [1.3586, 2.2623000000000002, 4.9821999999999997, 6.5096999999999996,
 y_net_worth = [93453.919999999998, 81666.570000000007, 69889.619999999995,
                78381.529999999999, 141395.29999999999, 92969.020000000004,
                66090.179999999993, 122379.3]
-x_saving = ['Japan', 'United Kingdom', 'Canada', 'Netherlands',
-            'United States', 'Belgium', 'Sweden', 'Switzerland']
-x_net_worth = ['Japan', 'United Kingdom', 'Canada', 'Netherlands',
-               'United States', 'Belgium', 'Sweden', 'Switzerland'
-               ]
-trace0 = go.Bar(
+x = ['Japan', 'United Kingdom', 'Canada', 'Netherlands',
+     'United States', 'Belgium', 'Sweden', 'Switzerland']
+
+
+# Creating two subplots
+fig = make_subplots(rows=1, cols=2, specs=[[{}, {}]], shared_xaxes=True,
+                    shared_yaxes=False, vertical_spacing=0.001)
+
+fig.append_trace(go.Bar(
     x=y_saving,
-    y=x_saving,
+    y=x,
     marker=dict(
         color='rgba(50, 171, 96, 0.6)',
         line=dict(
@@ -242,16 +258,16 @@ trace0 = go.Bar(
     ),
     name='Household savings, percentage of household disposable income',
     orientation='h',
-)
-trace1 = go.Scatter(
-    x=y_net_worth,
-    y=x_net_worth,
+), 1, 1)
+
+fig.append_trace(go.Scatter(
+    x=y_net_worth, y=x,
     mode='lines+markers',
-    line=dict(
-        color='rgb(128, 0, 128)'),
+    line_color='rgb(128, 0, 128)',
     name='Household net worth, Million USD/capita',
-)
-layout = dict(
+), 1, 2)
+
+fig.update_layout(
     title='Household savings & net worth for eight OECD countries',
     yaxis=dict(
         showgrid=False,
@@ -283,19 +299,8 @@ layout = dict(
         side='top',
         dtick=25000,
     ),
-    legend=dict(
-        x=0.029,
-        y=1.038,
-        font=dict(
-            size=10,
-        ),
-    ),
-    margin=dict(
-        l=100,
-        r=20,
-        t=70,
-        b=70,
-    ),
+    legend=dict(x=0.029, y=1.038, font_size=10),
+    margin=dict(l=100, r=20, t=70, b=70),
     paper_bgcolor='rgb(248, 248, 255)',
     plot_bgcolor='rgb(248, 248, 255)',
 )
@@ -306,7 +311,7 @@ y_s = np.round(y_saving, decimals=2)
 y_nw = np.rint(y_net_worth)
 
 # Adding labels
-for ydn, yd, xd in zip(y_nw, y_s, x_saving):
+for ydn, yd, xd in zip(y_nw, y_s, x):
     # labeling the scatter savings
     annotations.append(dict(xref='x2', yref='y2',
                             y=xd, x=ydn - 20000,
@@ -328,44 +333,13 @@ annotations.append(dict(xref='paper', yref='paper',
                              '(2015), Household savings (indicator), ' +
                              'Household net worth (indicator). doi: ' +
                              '10.1787/cfc6f499-en (Accessed on 05 June 2015)',
-                        font=dict(family='Arial', size=10,
-                                  color='rgb(150,150,150)'),
+                        font=dict(family='Arial', size=10, color='rgb(150,150,150)'),
                         showarrow=False))
 
-layout['annotations'] = annotations
+fig.update_layout(annotations=annotations)
 
-# Creating two subplots
-fig = tools.make_subplots(rows=1, cols=2, specs=[[{}, {}]], shared_xaxes=True,
-                          shared_yaxes=False, vertical_spacing=0.001)
-
-fig.append_trace(trace0, 1, 1)
-fig.append_trace(trace1, 1, 2)
-
-fig['layout'].update(layout)
-py.iplot(fig, filename='oecd-networth-saving-bar-line')
+fig.show()
 ```
 
 ### Reference
 See more examples of bar charts and styling options [here](https://plot.ly/python/bar-charts/).<br> See https://plot.ly/python/reference/#bar for more information and chart attribute options!
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-#! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'horizontal-bars.ipynb', 'python/horizontal-bar-charts/', 'Horizontal Bar Charts | plotly',
-    'How to make horizontal bar charts in Python with Plotly.',
-    title = 'Horizontal Bar Charts | plotly',
-    name = 'Horizontal Bar Charts',
-    thumbnail='thumbnail/horizontal-bar.jpg', language='python',
-    has_thumbnail='true', display_as='basic', order=5,
-    ipynb= '~notebook_demo/5')
-```
-
-```python
-
-```

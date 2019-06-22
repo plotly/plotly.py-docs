@@ -48,7 +48,7 @@ pio.show(fig)
 
 The value of the top-level `"data"` key is a list of trace specifications.  Each trace specification has a special `"type"` key that indicates the trace type that is being defined (e.g. a `"bar"`, `"scatter"`, `"contour"`, etc.).  The rest of the keys in the trace specification are used to configure the properties of the trace of this type.
 
-The value of the top-level `"layout"` key is a dictionary that specifies the properties of the figure's layout.  In contrast to trace configuration options that apply to individual traces, the layout configuration options apply to the figure as a whole.
+The value of the top-level `"layout"` key is a dictionary that specifies the properties of the figure's layout.  In contrast to trace configuration options that apply to individual traces, the layout configuration options apply to the figure as a whole, customizing items like the axes, annotations, shapes, legend, and more.
 
 The [*Full Reference*](https://plot.ly/python/reference/) page contains descriptions of all of the supported trace and layout options.
 

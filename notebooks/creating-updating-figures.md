@@ -52,7 +52,7 @@ The value of the top-level `"layout"` key is a dictionary that specifies the pro
 
 The [*Full Reference*](https://plot.ly/python/reference/) page contains descriptions of all of the supported trace and layout options.
 
-If working from the *Full Reference* to build figures as Python dictionaries suites your needs, go for it! This is a perfectly valid way to use use plotly.py to build figures.  On the other hand, if you would like an API that offers a bit more assistance, read on to learn about graph objects.
+If working from the *Full Reference* to build figures as Python dictionaries and lists suites your needs, go for it! This is a perfectly valid way to use plotly.py to build figures.  On the other hand, if you would like an API that offers a bit more assistance, read on to learn about graph objects.
 
 
 ## Figures as graph objects

@@ -60,7 +60,8 @@ As an alternative to working with Python dictionaries, plotly.py provides a hier
 
  1. Graph objects provide precise data validation. So if you provide an invalid property name or an invalid property value, an exception will be raised with a helpful error message describing the problem.
  2. Graph objects contain descriptions of each property as Python docstrings.  You can use these docstrings to learn about the available properties as an alternative to consulting the *Full Reference*.
- 3. Graph objects support higher-level convenience functions for making updates to already constructed figures, as described below.
+ 3. Properties of graph objects can be accessed using dictionary-style key lookup (e.g. `fig["layout"]`) or class-style property access (e.g. `fig.layout`).
+ 4. Graph objects support higher-level convenience functions for making updates to already constructed figures, as described below.
 
 Graph objects are stored in a hierarchy of modules under the `plotly.graph_objects` package.  Here is an example of one way that the figure above could be constructed using graph objects.
 

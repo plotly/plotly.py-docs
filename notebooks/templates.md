@@ -62,7 +62,7 @@ for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", 
 The theme for a particular graph object figure can be specified by setting the `template` property of the figure's `layout` to the name of a registered theme.  Here is an example of constructing a surface plot and then displaying it with each of five themes.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import pandas as pd
 
 z_data = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv")

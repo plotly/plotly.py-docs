@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -119,6 +120,6 @@ publisher.publish(
     title = 'Setting the Title, Legend Entries, and Axis Titles in Python | Examples | Plotly',
     name = 'Setting the Title, Legend Entries, and Axis Titles',
     thumbnail='thumbnail/labels.jpg', language='python',
-    page_type='example_index', has_thumbnail='false', display_as='layout_opt', order=0.5, 
+    page_type='example_index', has_thumbnail='false', display_as='layout_opt', order=0.5,
     ipynb='~notebook_demo/271')
 ```

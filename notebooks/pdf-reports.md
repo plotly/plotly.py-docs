@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -54,14 +55,14 @@ def report_block_template(report_type, graph_url, caption=''):
             '</a>')
 
     report_block = ('' +
-        graph_block + 
+        graph_block +
         '{caption}' + # Optional caption to include below the graph
         '<br>'      + # Line break
-        '<a href="{graph_url}" style="color: rgb(190,190,190); text-decoration: none; font-weight: 200;" target="_blank">'+ 
+        '<a href="{graph_url}" style="color: rgb(190,190,190); text-decoration: none; font-weight: 200;" target="_blank">'+
             'Click to comment and see the interactive graph' + # Direct readers to Plotly for commenting, interactive graph
-        '</a>' + 
-        '<br>' + 
-        '<hr>') # horizontal line                       
+        '</a>' +
+        '<br>' +
+        '<hr>') # horizontal line
 
     return report_block.format(graph_url=graph_url, caption=caption)
 
@@ -77,7 +78,7 @@ for graph_url in graphs:
     interactive_report += _interactive_block
 ```
 
-#### Display the Interactive Report 
+#### Display the Interactive Report
 
 This version, suited for the web, contains the interactive version of the Plotly graphs, served from Plotly's server.
 
@@ -140,7 +141,7 @@ width = 600
 height = 600
 
 template = (''
-    '<img style="width: {width}; height: {height}" src="data:image/png;base64,{image}">' 
+    '<img style="width: {width}; height: {height}" src="data:image/png;base64,{image}">'
     '{caption}'                              # Optional caption to include below the graph
     '<br>'
     '<hr>'
@@ -188,7 +189,7 @@ publisher.publish('pdf-reports.ipynb', 'python/pdf-reports/', 'PDF Reports'
                   'How to make PDF reports with Python and Plotly Graphs.',
                   title = 'Python PDF Reports | plotly',
                   name = 'PDF Reports',
-                  has_thumbnail='true', thumbnail='thumbnail/ipython_10_pdf_report.jpg', 
+                  has_thumbnail='true', thumbnail='thumbnail/ipython_10_pdf_report.jpg',
                   language='python', page_type='example_index',
                   display_as='report_generation', order=1)
 ```

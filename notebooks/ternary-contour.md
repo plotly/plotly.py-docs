@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -66,15 +67,15 @@ for i in data.keys():
         fillcolor=color_iter.next()
     )
     traces.append(trace)
-    
+
 layout = {
     'title': 'Simple Ternary Contour Plot with Python',
-    'ternary': 
+    'ternary':
         {'sum':100,
          'aaxis':{'title': 'clay', 'ticksuffix':'%', 'min': 0.01, 'linewidth':2, 'ticks':'outside' },
          'baxis':{'title': 'sand', 'ticksuffix':'%', 'min': 0.01, 'linewidth':2, 'ticks':'outside' },
          'caxis':{'title': 'silt','ticksuffix':'%', 'min': 0.01, 'linewidth':2, 'ticks':'outside' }},
-    'showlegend': False          
+    'showlegend': False
 }
 
 figure = dict(data=traces, layout=layout)

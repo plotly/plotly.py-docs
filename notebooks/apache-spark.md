@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -52,7 +53,7 @@ Start off by creating a new ipython profile. (Spark should have ipython install 
 ipython profile create pyspark
 ```
 
-Next you'll have to edit some configurations. Spark/Hadoop have plenty of ports that they open up so you'll have to change the below file to avoid any conflicts that might come up. 
+Next you'll have to edit some configurations. Spark/Hadoop have plenty of ports that they open up so you'll have to change the below file to avoid any conflicts that might come up.
 
 ```sh
 ~/.ipython/profile_pyspark/ipython_notebook_config.py
@@ -74,7 +75,7 @@ export SPARK_HOME="$HOME/Downloads/spark-1.3.1"
 
 <!-- #region -->
 #### Setup
-Now we'll need to add a file to make sure that we boot up with the Spark Context. Basically when we start the IPython Notebook, we need to be bring in the Spark Context. We need to set up a startup script that runs everytime we start a notebook from this profile. 
+Now we'll need to add a file to make sure that we boot up with the Spark Context. Basically when we start the IPython Notebook, we need to be bring in the Spark Context. We need to set up a startup script that runs everytime we start a notebook from this profile.
 
 Setting startup scripts are actually extremely easy - you just put them in the IPython Notebook directory under the "startup" folder. You can learn more about IPython configurations on the [IPython site](http://ipython.org/ipython-doc/1/config/overview.html).
 
@@ -85,30 +86,30 @@ in it we'll put
 ```py
 import os
 import sys
- 
+
 spark_home = os.environ.get('SPARK_HOME', None)
- 
+
 # check if it exists
 if not spark_home:
     raise ValueError('SPARK_HOME environment variable is not set')
- 
+
 # check if it is a directory
 if not os.path.isdir(spark_home):
     raise ValueError('SPARK_HOME environment variable is not a directory')
- 
+
 #check if we can find the python sub-directory
 if not os.path.isdir(os.path.join(spark_home, 'python')):
     raise ValueError('SPARK_HOME directory does not contain python')
- 
+
 sys.path.insert(0, os.path.join(spark_home, 'python'))
- 
+
 #check if we can find the py4j zip file
 if not os.path.exists(os.path.join(spark_home, 'python/lib/py4j-0.8.2.1-src.zip')):
     raise ValueError('Could not find the py4j library - \
             maybe your version number is different?(Looking for 0.8.2.1)')
- 
+
 sys.path.insert(0, os.path.join(spark_home, 'python/lib/py4j-0.8.2.1-src.zip'))
- 
+
 with open(os.path.join(spark_home, 'python/pyspark/shell.py')) as f:
     code = compile(f.read(), os.path.join(spark_home, 'python/pyspark/shell.py'), 'exec')
     exec(code)
@@ -255,7 +256,7 @@ for station in dep_stations['Start Station'][:3]:
         name=station
         )
     )
-    
+
 data = pop_stations
 py.iplot(data, filename="spark/over_time")
 ```
@@ -279,8 +280,8 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'apachespark.ipynb', 'python/apache-spark/', 'Plot Data from Apache Spark', 
-    'A tutorial showing how to plot Apache Spark DataFrames with Plotly', 
+    'apachespark.ipynb', 'python/apache-spark/', 'Plot Data from Apache Spark',
+    'A tutorial showing how to plot Apache Spark DataFrames with Plotly',
     title='Plotting Spark DataFrames | Plotly', has_thumbnail='false',
     language='python', page_type='example_index', display_as='databases', order=2,
     redirect_from= 'ipython-notebooks/apache-spark/')

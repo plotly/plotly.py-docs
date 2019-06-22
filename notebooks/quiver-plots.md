@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -93,7 +94,7 @@ py.iplot(fig, filename='Quiver with Points')
 ```
 
 <!-- #region {"deletable": true, "editable": true} -->
-#### Reference 
+#### Reference
 <!-- #endregion -->
 
 ```python deletable=true editable=true
@@ -113,10 +114,10 @@ publisher.publish(
     'How to make a quiver plot in Python. A quiver plot displays velocity vectors a arrows. ',
     title = 'Python Quiver Plots | plotly',
     name = 'Quiver Plots',
-    has_thumbnail='true', thumbnail='thumbnail/quiver-plot.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/quiver-plot.jpg',
+    language='python',
     display_as='scientific', order=12,
-    ipynb= '~notebook_demo/42')  
+    ipynb= '~notebook_demo/42')
 ```
 
 ```python deletable=true editable=true

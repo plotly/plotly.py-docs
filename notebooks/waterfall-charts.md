@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -32,7 +33,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 
 
 #### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version. 
+Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
 
 ```python
 import plotly
@@ -47,17 +48,17 @@ import plotly.graph_objs as go
 py.init_notebook_mode(connected = False)
 
 trace = go.Waterfall(
-    name = "20", orientation = "v", 
-    measure = ["relative", "relative", "total", "relative", "relative", "total"], 
-    x = ["Sales", "Consulting", "Net revenue", "Purchases", "Other expenses", "Profit before tax"], 
-    textposition = "outside", 
-    text = ["+60", "+80", "", "-40", "-20", "Total"], 
-    y = [60, 80, 0, -40, -20, 0], 
-    connector = {"line":{"color":"rgb(63, 63, 63)"}}, 
+    name = "20", orientation = "v",
+    measure = ["relative", "relative", "total", "relative", "relative", "total"],
+    x = ["Sales", "Consulting", "Net revenue", "Purchases", "Other expenses", "Profit before tax"],
+    textposition = "outside",
+    text = ["+60", "+80", "", "-40", "-20", "Total"],
+    y = [60, 80, 0, -40, -20, 0],
+    connector = {"line":{"color":"rgb(63, 63, 63)"}},
 )
 
 layout = go.Layout(
-        title = "Profit and loss statement 2018", 
+        title = "Profit and loss statement 2018",
         showlegend = True
 )
 
@@ -67,7 +68,7 @@ py.iplot(go.Figure([trace], layout), filename = "basic_waterfall_chart")
 ```
 
 ### Multi Category Waterfall Chart
-This example uses the [waterfallgroupgap attribute](https://plot.ly/python/reference/#layout-waterfallgroupgap), which sets a gap between bars. 
+This example uses the [waterfallgroupgap attribute](https://plot.ly/python/reference/#layout-waterfallgroupgap), which sets a gap between bars.
 
 ```python
 import plotly.offline as py
@@ -108,18 +109,18 @@ import plotly.graph_objs as go
 py.init_notebook_mode(connected = False)
 
 trace = go.Waterfall(
-    x = [["2016", "2017", "2017", "2017", "2017", "2018", "2018", "2018", "2018"], 
-       ["initial", "q1", "q2", "q3", "total", "q1", "q2", "q3", "total"]], 
-    measure = ["absolute", "relative", "relative", "relative", "total", "relative", "relative", "relative", "total"], 
-    y = [10, 20, 30, -10, None, 10, 20, -40, None], base = 300, 
-    decreasing = {"marker":{"color":"Maroon", "line":{"color":"red", "width":2}}}, 
-    increasing = {"marker":{"color":"Teal"}}, 
+    x = [["2016", "2017", "2017", "2017", "2017", "2018", "2018", "2018", "2018"],
+       ["initial", "q1", "q2", "q3", "total", "q1", "q2", "q3", "total"]],
+    measure = ["absolute", "relative", "relative", "relative", "total", "relative", "relative", "relative", "total"],
+    y = [10, 20, 30, -10, None, 10, 20, -40, None], base = 300,
+    decreasing = {"marker":{"color":"Maroon", "line":{"color":"red", "width":2}}},
+    increasing = {"marker":{"color":"Teal"}},
     totals = {"marker":{"color":"deep sky blue", "line":{"color":'blue', "width":3}}}
 )
 
 layout = go.Layout(
-    title = "Profit and loss statement", 
-    waterfallgap = 0.3, 
+    title = "Profit and loss statement",
+    waterfallgap = 0.3,
     xaxis = {"title":"", "tickfont":{"size":15}, "ticks":"outside"}
 )
 
@@ -136,20 +137,20 @@ import plotly.graph_objs as go
 py.init_notebook_mode(connected = False)
 
 trace = go.Waterfall(
-    name = "2018", orientation = "h", measure = ["relative", "relative", "relative", "relative", "total", "relative", 
-                                              "relative", "relative", "relative", "total", "relative", "relative", "total", "relative", "total"], 
-    y = ["Sales", "Consulting", "Maintenance", "Other revenue", "Net revenue", "Purchases", "Material expenses", 
-       "Personnel expenses", "Other expenses", "Operating profit", "Investment income", "Financial income", 
-       "Profit before tax", "Income tax (15%)", "Profit after tax"], 
-    x = [375, 128, 78, 27, None, -327, -12, -78, -12, None, 32, 89, None, -45, None], 
+    name = "2018", orientation = "h", measure = ["relative", "relative", "relative", "relative", "total", "relative",
+                                              "relative", "relative", "relative", "total", "relative", "relative", "total", "relative", "total"],
+    y = ["Sales", "Consulting", "Maintenance", "Other revenue", "Net revenue", "Purchases", "Material expenses",
+       "Personnel expenses", "Other expenses", "Operating profit", "Investment income", "Financial income",
+       "Profit before tax", "Income tax (15%)", "Profit after tax"],
+    x = [375, 128, 78, 27, None, -327, -12, -78, -12, None, 32, 89, None, -45, None],
     connector = {"mode":"between", "line":{"width":4, "color":"rgb(0, 0, 0)", "dash":"solid"}}
 )
 
 layout = go.Layout(
-    title = "Profit and loss statement 2018<br>waterfall chart displaying positive and negative", 
-        yaxis = {"type":"category", "autorange":"reversed"}, 
-        xaxis = {"type":"linear"}, 
-        margin = {"l":150}, 
+    title = "Profit and loss statement 2018<br>waterfall chart displaying positive and negative",
+        yaxis = {"type":"category", "autorange":"reversed"},
+        xaxis = {"type":"linear"},
+        margin = {"l":150},
         showlegend = True
 )
 

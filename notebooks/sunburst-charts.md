@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -165,8 +166,8 @@ publisher.publish(
     'sunburst-charts.ipynb', 'python/sunburst-charts/', 'Sunburst Charts',
     'How to make Sunburst Charts.',
     title= 'Sunburst in Python | plotly',
-    has_thumbnail='true', thumbnail='thumbnail/sunburst.gif', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/sunburst.gif',
+    language='python',
     display_as='basic', order=6.1,
     ipynb='~notebook_demo/274/')
 ```

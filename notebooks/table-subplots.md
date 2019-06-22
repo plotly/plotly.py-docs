@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -48,7 +49,7 @@ import re
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/Mining-BTC-180.csv')
 
-# remove min:sec:millisec from dates 
+# remove min:sec:millisec from dates
 for i, row in enumerate(df['Date']):
     p = re.compile(' 00:00:00')
     datetime = p.split(df['Date'][i])[0]
@@ -145,7 +146,7 @@ axis=dict(
     zeroline=False,
     showgrid=True,
     mirror=True,
-    ticklen=4, 
+    ticklen=4,
     gridcolor='#ffffff',
     tickfont=dict(size=10)
 )
@@ -156,11 +157,11 @@ layout1 = dict(
     autosize=False,
     title='Bitcoin mining stats for 180 days',
     margin = dict(t=100),
-    showlegend=False,   
+    showlegend=False,
     xaxis1=dict(axis, **dict(domain=[0.55, 1], anchor='y1', showticklabels=False)),
-    xaxis2=dict(axis, **dict(domain=[0.55, 1], anchor='y2', showticklabels=False)),        
-    xaxis3=dict(axis, **dict(domain=[0.55, 1], anchor='y3')), 
-    yaxis1=dict(axis, **dict(domain=[0.66, 1.0], anchor='x1', hoverformat='.2f')),  
+    xaxis2=dict(axis, **dict(domain=[0.55, 1], anchor='y2', showticklabels=False)),
+    xaxis3=dict(axis, **dict(domain=[0.55, 1], anchor='y3')),
+    yaxis1=dict(axis, **dict(domain=[0.66, 1.0], anchor='x1', hoverformat='.2f')),
     yaxis2=dict(axis, **dict(domain=[0.3 + 0.03, 0.63], anchor='x2', tickprefix='$', hoverformat='.2f')),
     yaxis3=dict(axis, **dict(domain=[0.0, 0.3], anchor='x3', tickprefix=u'\u20BF', hoverformat='.2f')),
     plot_bgcolor='rgba(228, 222, 249, 0.65)'
@@ -178,12 +179,12 @@ import plotly.graph_objs as go
 
 table_trace2 = go.Table(
     domain=dict(x=[0, 1],
-                y=[0.7, 1.0]),  
+                y=[0.7, 1.0]),
     columnwidth=[1, 2, 2, 2],
     columnorder=[0, 1, 2, 3, 4],
     header = dict(height = 50,
-                  values = [['<b>Date</b>'],['<b>Hash Rate, TH/sec</b>'], 
-                            ['<b>Mining revenue</b>'], ['<b>Transaction fees</b>']], 
+                  values = [['<b>Date</b>'],['<b>Hash Rate, TH/sec</b>'],
+                            ['<b>Mining revenue</b>'], ['<b>Transaction fees</b>']],
                   line = dict(color='rgb(50, 50, 50)'),
                   align = ['left'] * 5,
                   font = dict(color=['rgb(45, 45, 45)'] * 5, size=14),
@@ -192,7 +193,7 @@ table_trace2 = go.Table(
                  line = dict(color='#506784'),
                  align = ['left'] * 5,
                  font = dict(color=['rgb(40, 40, 40)'] * 5, size=12),
-                 format = [None] + [", .2f"] * 2 + [',.4f'],  
+                 format = [None] + [", .2f"] * 2 + [',.4f'],
                  prefix = [None] * 2 + ['$', u'\u20BF'],
                  suffix=[None] * 4,
                  height = 27,
@@ -233,8 +234,8 @@ axis=dict(
     showline=True,
     zeroline=False,
     showgrid=True,
-    mirror=True, 
-    ticklen=4, 
+    mirror=True,
+    ticklen=4,
     gridcolor='#ffffff',
     tickfont=dict(size=10)
 )
@@ -245,11 +246,11 @@ layout2 = dict(
     autosize=False,
     title='Bitcoin mining stats for 180 days',
     margin = dict(t=100),
-    showlegend=False,          
+    showlegend=False,
     xaxis1=dict(axis, **dict(domain=[0, 1], anchor='y1', showticklabels=False)),
-    xaxis2=dict(axis, **dict(domain=[0, 1], anchor='y2', showticklabels=False)),          
-    xaxis3=dict(axis, **dict(domain=[0, 1], anchor='y3')), 
-    yaxis1=dict(axis, **dict(domain=[2 * 0.21 + 0.02 + 0.02, 0.68], anchor='x1', hoverformat='.2f')),  
+    xaxis2=dict(axis, **dict(domain=[0, 1], anchor='y2', showticklabels=False)),
+    xaxis3=dict(axis, **dict(domain=[0, 1], anchor='y3')),
+    yaxis1=dict(axis, **dict(domain=[2 * 0.21 + 0.02 + 0.02, 0.68], anchor='x1', hoverformat='.2f')),
     yaxis2=dict(axis, **dict(domain=[0.21 + 0.02, 2 * 0.21 + 0.02], anchor='x2', tickprefix='$', hoverformat='.2f')),
     yaxis3=dict(axis, **dict(domain=[0.0, 0.21], anchor='x3', tickprefix=u'\u20BF', hoverformat='.2f')),
     plot_bgcolor='rgba(228, 222, 249, 0.65)'

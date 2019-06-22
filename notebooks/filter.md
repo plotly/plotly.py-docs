@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -84,7 +85,7 @@ publisher.publish(
     'filter.ipynb', 'python/filter/', 'Filter',
     'How to use filters in Python with Plotly.',
     title = 'Filter | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/filter.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/filter.jpg',
     language='python', uses_plotly_offline=True,
     page_type='example_index',
     display_as='transforms', order=1,

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -118,7 +119,7 @@ publisher.publish(
     'Create a polynomial fit / regression in Python and add a line of best fit to your chart.',
     title = 'Polynomial Fit',
     name = 'Polynomial Fit',
-    has_thumbnail='true', thumbnail='thumbnail/polynomial_fit.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/polynomial_fit.jpg',
     language='python', page_type='example_index',
     display_as='statistics', order=12,
     ipynb= '~notebook_demo/138')

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -216,7 +217,7 @@ layout = dict(
 off.iplot({'data': data,'layout': layout}, validate=False)
 ```
 
-#### Mapping with Aggregates 
+#### Mapping with Aggregates
 
 ```python
 import plotly.offline as off
@@ -292,7 +293,7 @@ publisher.publish(
     'aggregations.ipynb', 'python/aggregations/', 'Aggregations',
     'How to use aggregates in Python with Plotly.',
     title = 'Aggregations | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/aggregations.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/aggregations.jpg',
     language='python', uses_plotly_offline=True,
     page_type='example_index',
     display_as='transforms', order=3,

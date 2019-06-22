@@ -189,6 +189,7 @@ fig = go.Figure(data=go.Scatter(x=data['Postal'],
     
 fig.update_layout(title='Population of USA States')
 fig.show()
+
 ```
 
 #### Scatter with a Color Dimension

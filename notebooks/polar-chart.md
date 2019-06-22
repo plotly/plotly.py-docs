@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -88,7 +89,7 @@ data = [
         name = 'Figure8',
         line =  dict(
             color = 'peru'
-        )   
+        )
     ),
     go.Scatterpolar(
         r = df['x2'],
@@ -97,7 +98,7 @@ data = [
         name = 'Cardioid',
         line =  dict(
             color = 'darkviolet'
-        )   
+        )
     ),
     go.Scatterpolar(
         r = df['x3'],
@@ -106,7 +107,7 @@ data = [
         name = 'Hypercardioid',
         line =  dict(
             color = 'deepskyblue'
-        )   
+        )
     ),
     go.Scatterpolar(
         r = df['x4'],
@@ -115,7 +116,7 @@ data = [
         name = 'orangered',
         line =  dict(
             color = 'orangered'
-        )   
+        )
     ),
     go.Scatterpolar(
         r = df['x5'],
@@ -124,7 +125,7 @@ data = [
         name = 'Supercardioid',
         line =  dict(
             color = 'green'
-        )   
+        )
     )
 ]
 
@@ -157,7 +158,7 @@ data = [
         fillcolor = '#709BFF',
         line =  dict(
             color = 'black'
-        )   
+        )
     ),
     go.Scatterpolar(
         r = [0, 3.5, 3.5, 0],
@@ -167,7 +168,7 @@ data = [
         fillcolor = '#E4FF87',
         line =  dict(
             color = 'black'
-        )    
+        )
     ),
     go.Scatterpolar(
         r = [0, 4.5, 4.5, 0, 4.5, 4.5, 0],
@@ -177,7 +178,7 @@ data = [
         fillcolor = '#FFAA70',
         line =  dict(
             color = 'black'
-        )  
+        )
     ),
     go.Scatterpolar(
         r = [0, 4, 4, 0],
@@ -187,7 +188,7 @@ data = [
         fillcolor = '#FFDF70',
         line =  dict(
             color = 'black'
-        )    
+        )
     ),
     go.Scatterpolar(
         r = [0, 3, 3, 0],
@@ -197,7 +198,7 @@ data = [
         fillcolor = '#B6FFB4',
         line =  dict(
             color = 'black'
-        )    
+        )
     )
 ]
 
@@ -258,8 +259,8 @@ data = [
       fill = "toself"
     )
   ]
-        
-        
+
+
 layout = go.Layout(
     polar = dict(
       domain = dict(
@@ -578,7 +579,7 @@ data = [
       )
     )
 ]
-    
+
 layout = go.Layout(
     title = "Hobbs-Pearson Trials",
     font = dict(
@@ -619,22 +620,22 @@ data = [
         r = [1, 2, 3],
         theta = [50, 100, 200],
         marker = dict(symbol = "square")
-    ), 
+    ),
     go.Scatterpolar(
         r = [1, 2, 3],
         theta = [1, 2, 3],
         thetaunit = "radians"
-    ), 
+    ),
     go.Scatterpolar(
         r = ["a", "b", "c", "b"],
         theta = ["D", "C", "B", "A"],
         subplot = "polar2"
-    ), 
+    ),
     go.Scatterpolar(
         r = [50, 300, 900],
         theta = [0, 90, 180],
         subplot = "polar3"
-    ), 
+    ),
     go.Scatterpolar(
         mode = "lines",
         r = [3, 3, 4, 3],
@@ -643,7 +644,7 @@ data = [
         subplot = "polar4"
     )
 ]
-    
+
 layout = go.Layout(
     polar = dict(
       domain = dict(
@@ -706,8 +707,8 @@ publisher.publish(
     'polar.ipynb', 'python/polar-chart/', 'Polar Charts',
     'How to makepolar charts in Python with Plotly.',
     title = 'Polar Charts | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/polar.gif', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/polar.gif',
+    language='python',
     # page_type='example_index', // note this is only if you want the tutorial to appear on the main page: plot.ly/python
     display_as='scientific', order=29, ipynb='~notebook_demo/200',
     )

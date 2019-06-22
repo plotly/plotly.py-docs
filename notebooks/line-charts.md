@@ -119,8 +119,10 @@ fig.show()
 ```
 
 #### Style Line Plots
+
 This example styles the color and dash of the traces, adds trace names, 
 modifies line width, and adds plot and axes titles.
+
 
 ```python
 import plotly.graph_objects as go

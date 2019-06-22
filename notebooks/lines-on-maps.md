@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -245,7 +246,7 @@ publisher.publish(
     'How to draw lines, great circles, and contours on maps in Python.',
     title = 'Lines on maps | plotly',
     name = 'Lines on Maps',
-    has_thumbnail='true', thumbnail='thumbnail/flight-paths.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/flight-paths.jpg',
     language='python', page_type='example_index',
     display_as='maps', order=4,
     ipynb= '~notebook_demo/58')

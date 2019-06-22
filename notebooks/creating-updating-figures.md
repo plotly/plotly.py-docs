@@ -216,19 +216,27 @@ fig.show()
 ```
 
 ### Magic underscore notation
-To make it easier to work with nested properties graph object constructors, and many graph object methods, support magic underscore notation. This allows you to reference nested properties by joining together multiple nested property names with underscores.  For example, specifying the figure title in the figure constructor *without* magic underscore notation requires setting the `layout` argument to `dict(title=dict(text="A Chart"))`.
+To make it easier to work with nested properties graph object constructors, and many graph object methods, support magic underscore notation. This allows you to reference nested properties by joining together multiple nested property names with underscores.
+
+For example, specifying the figure title in the figure constructor *without* magic underscore notation requires setting the `layout` argument to `dict(title=dict(text="A Chart"))`. Similarly, setting the line color of a scatter trace requires setting the `marker` property to `dict(color="crimson")`.
 
 ```python
 import plotly.graph_objects as go
-fig = go.Figure(layout=dict(title=dict(text="A Chart")))
+fig = go.Figure(
+    data=[go.Scatter(y=[1, 3, 2], line=dict(color="crimson"))],
+    layout=dict(title=dict(text="A Chart"))
+)
 fig.show()
 ```
 
-With magic underscore notation, you can accomplish the same thing by passing the figure constructor a keyword argument named `layout_title_text` with the value `"A Chart"`.
+With magic underscore notation, you can accomplish the same thing by passing the figure constructor a keyword argument named `layout_title_text`, and by passing the `go.Scatter` constructor a keyword argument named `line_color`.
 
 ```python
 import plotly.graph_objects as go
-fig = go.Figure(layout_title_text="A Chart")
+fig = go.Figure(
+    data=[go.Scatter(y=[1, 3, 2], line_color="crimson")],
+    layout_title_text="A Chart"
+)
 fig.show()
 ```
 

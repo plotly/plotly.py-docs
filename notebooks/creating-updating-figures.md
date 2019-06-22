@@ -114,6 +114,10 @@ Plotly express (included as the `plotly.express` module) is a high-level data ex
 import plotly.express as px
 iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species")
+
+# If you print fig, you'll see that it's just a regular figure with data and layout 
+# print(fig)
+
 fig.show()
 ```
 

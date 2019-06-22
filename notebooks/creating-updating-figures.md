@@ -31,16 +31,18 @@ jupyter:
 ## Figures as dictionaries
 The goal of plotly.py is to provide a pleasant Python interface for creating figure specifications for display in the Plotly.js JavaScript library. In Plotly.js, a figure is specified by a declarative JSON data structure, and so the ultimate responsibility of plotly.py is to produce Python dictionaries that can be serialized into a JSON data structure that represents a valid figure.
 
-As a concrete example, here is the Python dictionary that represents a figure containing a single bar trace and a title.
+As a concrete example, here is a Python dictionary that represents a figure containing a single bar trace and a title.
 
 ```python
-import plotly.io as pio
 fig = {
     "data": [{"type": "bar",
               "x": [1, 2, 3],
               "y": [1, 3, 2]}],
     "layout": {"title": {"text": "A Bar Chart"}}
 }
+
+# To display the figure defined by this dict, use the low-level plotly.io.show function
+import plotly.io as pio
 pio.show(fig)
 ```
 

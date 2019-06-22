@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -182,7 +183,7 @@ for i in range(int(N)):
                     color= c[i],
                     opacity= 0.3
                    ),name= y[i],
-        text= data['State']) # The hover text goes here... 
+        text= data['State']) # The hover text goes here...
     l.append(trace0);
 
 layout= go.Layout(
@@ -278,14 +279,14 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'scatter.ipynb', 'python/line-and-scatter/', 'Python Scatter Plots | plotly',
     'How to make scatter plots in Python with Plotly.',
     title = 'Python Scatter Plots | plotly',
     name = 'Scatter Plots',
-    has_thumbnail='true', thumbnail='thumbnail/line-and-scatter.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/line-and-scatter.jpg',
     language='python', page_type='example_index',
     display_as='basic', order=2,
     redirect_from='python/line-and-scatter-plots-tutorial/',

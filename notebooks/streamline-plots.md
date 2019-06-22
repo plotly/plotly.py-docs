@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -122,10 +123,10 @@ publisher.publish(
     'How to make a streamline plot in Python. A streamline plot displays vector field data. ',
     title = 'Python Streamline Plots | plotly',
     name = 'Streamline Plots',
-    has_thumbnail='true', thumbnail='thumbnail/streamline.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/streamline.jpg',
+    language='python',
     display_as='scientific', order=13,
-    ipynb= '~notebook_demo/43') 
+    ipynb= '~notebook_demo/43')
 ```
 
 ```python deletable=true editable=true

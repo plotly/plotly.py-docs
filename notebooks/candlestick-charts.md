@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -10,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make interactive candlestick charts in Python with Plotly.
       Six examples of candlestick charts with Pandas, time series, and yahoo finance
@@ -25,136 +36,98 @@ jupyter:
     permalink: python/candlestick-charts/
     thumbnail: thumbnail/candlestick.jpg
     title: Python Candlestick Charts | plotly
+    v4upgrade: true
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-#### Version Check
-Plotly's Python API is updated frequently. Run `pip install plotly --upgrade` to update your Plotly version.
-
-```python
-import plotly
-plotly.__version__
-```
+The [candlestick chart](https://en.wikipedia.org/wiki/Candlestick_chart) is a style of financial chart describing open, high, low and close for a given `x` coordinate (most likely
+time). The boxes represent the spread between the `open` and `close` values and the lines represent the spread between the `low` and `high` values. Sample points where the close value is higher (lower) then the open value are called increasing (decreasing). By default, increasing candles are drawn in green whereas decreasing are drawn in red.
 
 #### Simple Candlestick with Pandas
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 from datetime import datetime
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Candlestick(x=df['Date'],
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
                 open=df['AAPL.Open'],
                 high=df['AAPL.High'],
                 low=df['AAPL.Low'],
-                close=df['AAPL.Close'])
-data = [trace]
-py.iplot(data, filename='simple_candlestick')
+                close=df['AAPL.Close'])])
+
+fig.show()
 ```
 
 #### Candlestick without Rangeslider
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
+import plotly.graph_objects as go
 import pandas as pd
-from datetime import datetime
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Candlestick(x=df['Date'],
-                open=df['AAPL.Open'],
-                high=df['AAPL.High'],
-                low=df['AAPL.Low'],
-                close=df['AAPL.Close'])
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
+                open=df['AAPL.Open'], high=df['AAPL.High'],
+                low=df['AAPL.Low'], close=df['AAPL.Close'])
+                     ])
 
-layout = go.Layout(
-    xaxis = dict(
-        rangeslider = dict(
-            visible = False
-        )
-    )
-)
-
-data = [trace]
-
-fig = go.Figure(data=data,layout=layout)
-py.iplot(fig, filename='simple_candlestick_without_range_slider')
+fig.update_layout(xaxis_rangeslider_visible=False)
+fig.show()
 ```
 
 #### Adding Customized Text and Annotations
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
+import plotly.graph_objects as go
 import pandas as pd
-from datetime import datetime
+
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Candlestick(x=df['Date'],
-                open=df['AAPL.Open'],
-                high=df['AAPL.High'],
-                low=df['AAPL.Low'],
-                close=df['AAPL.Close'])
-data = [trace]
-layout = {
-    'title': 'The Great Recession',
-    'yaxis': {'title': 'AAPL Stock'},
-    'shapes': [{
-        'x0': '2016-12-09', 'x1': '2016-12-09',
-        'y0': 0, 'y1': 1, 'xref': 'x', 'yref': 'paper',
-        'line': {'color': 'rgb(30,30,30)', 'width': 1}
-    }],
-    'annotations': [{
-        'x': '2016-12-09', 'y': 0.05, 'xref': 'x', 'yref': 'paper',
-        'showarrow': False, 'xanchor': 'left',
-        'text': 'Increase Period Begins'
-    }]
-}
-fig = dict(data=data, layout=layout)
-py.iplot(fig, filename='aapl-recession-candlestick')
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
+                open=df['AAPL.Open'], high=df['AAPL.High'],
+                low=df['AAPL.Low'], close=df['AAPL.Close'])
+                      ])
+
+fig.update_layout(
+    title='The Great Recession',
+    yaxis_title='AAPL Stock',
+    shapes = [dict(
+        x0='2016-12-09', x1='2016-12-09', y0=0, y1=1, xref='x', yref='paper',
+        line_width=2)],
+    annotations=[dict(
+        x='2016-12-09', y=0.05, xref='x', yref='paper',
+        showarrow=False, xanchor='left', text='Increase Period Begins')]
+)
+
+fig.show()
 ```
 
 #### Custom Candlestick Colors
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
+import plotly.graph_objects as go
 import pandas as pd
-from datetime import datetime
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Candlestick(
+fig = go.Figure(data=[go.Candlestick(
     x=df['Date'],
-    open=df['AAPL.Open'],
-    high=df['AAPL.High'],
-    low=df['AAPL.Low'],
-    close=df['AAPL.Close'],
-    increasing=dict(line=dict(color= '#17BECF')),
-    decreasing=dict(line=dict(color= '#7F7F7F'))
-)
-data = [trace]
-py.iplot(data, filename='styled_candlestick')
+    open=df['AAPL.Open'], high=df['AAPL.High'],
+    low=df['AAPL.Low'], close=df['AAPL.Close'],
+    increasing_line_color= 'cyan', decreasing_line_color= 'gray'
+)])
+
+fig.show()
 ```
 
 #### Simple Example with `datetime` Objects
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
+import plotly.graph_objects as go
 from datetime import datetime
 
 open_data = [33.0, 33.3, 33.5, 33.0, 34.1]
@@ -167,13 +140,11 @@ dates = [datetime(year=2013, month=10, day=10),
          datetime(year=2014, month=1, day=10),
          datetime(year=2014, month=2, day=10)]
 
-trace = go.Candlestick(x=dates,
-                       open=open_data,
-                       high=high_data,
-                       low=low_data,
-                       close=close_data)
-data = [trace]
-py.iplot(data, filename='candlestick_datetime')
+fig = go.Figure(data=[go.Candlestick(x=dates,
+                       open=open_data, high=high_data,
+                       low=low_data, close=close_data)])
+
+fig.show()
 ```
 
 ### Dash Example
@@ -194,24 +165,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-candlestickplot/code", wi
 #### Reference
 For more information on candlestick attributes, see: https://plot.ly/python/reference/#candlestick
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-!pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'candlestick-charts.ipynb', 'python/candlestick-charts/', 'Candlestick Charts',
-    'How to make interactive candlestick charts in Python with Plotly. '
-    'Six examples of candlestick charts with Pandas, time series, and yahoo finance data.',
-    title = 'Python Candlestick Charts | plotly',
-    thumbnail='thumbnail/candlestick.jpg', language='python',
-    page_type='example_index', has_thumbnail='true', display_as='financial', order=2,
-    ipynb= '~notebook_demo/275')
-```
-
-```python
-
-```

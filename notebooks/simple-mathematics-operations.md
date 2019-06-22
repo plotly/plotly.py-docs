@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -118,7 +119,7 @@ trace3 = go.Scatter(
     name='Column D - Column A',
     marker=dict(
         size=12,
-        symbol='square-open'   
+        symbol='square-open'
     )
 )
 

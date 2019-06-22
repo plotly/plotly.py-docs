@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -111,7 +112,7 @@ import plotly.graph_objs as go
 trace0 = go.Scatter(
     x=[2, 6],
     y=[1, 1],
-    text=['Line positioned relative to the plot', 
+    text=['Line positioned relative to the plot',
           'Line positioned relative to the axes'],
     mode='text',
 )
@@ -410,7 +411,7 @@ import plotly.graph_objs as go
 trace0 = go.Scatter(
     x=[1.5, 3.5],
     y=[0.75, 2.5],
-    text=['Unfilled Circle', 
+    text=['Unfilled Circle',
           'Filled Circle'],
     mode='text',
 )
@@ -750,6 +751,6 @@ publisher.publish(
     title = 'Shapes | plotly',
     name = 'Shapes',
     thumbnail='thumbnail/shape.jpg', language='python',
-    page_type='example_index', has_thumbnail='true', display_as='style_opt', order=5, 
+    page_type='example_index', has_thumbnail='true', display_as='style_opt', order=5,
     ipynb='~notebook_demo/14')
 ```

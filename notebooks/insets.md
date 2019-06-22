@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -80,9 +81,9 @@ publisher.publish(
     'How to make an inset graph in python.',
     title = 'Inset Plots | plotly',
     name = 'Inset Plots',
-    has_thumbnail='true', thumbnail='thumbnail/insets.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/insets.jpg',
     language='python', page_type='example_index',
-    display_as='multiple_axes', order=3)  
+    display_as='multiple_axes', order=3)
 ```
 
 ```python

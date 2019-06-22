@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -30,7 +31,7 @@ jupyter:
 A circular layout places the graph nodes uniformly on a circle. In this example we illustrate how to  draw the graph edges in order to avoid a cluttered visualization.
 
 
-### Eurovision Song Contest Example 
+### Eurovision Song Contest Example
 
 As an example, we consider a circular graph with the European countries as nodes. Among these countries, some qualified for the grand final [Eurovision Song Contest](http://www.eurovision.tv/page/timeline).
 
@@ -38,7 +39,7 @@ Each european country is a jury member and rates some contestants on a scale fro
 
 There is a directed edge from a jury member country to a contestant country  if the contestant acquired at least one point from the jury country voters.
 
-The jury member countries are placed uniformly, in alphabetical order, on the unit circle. If there is an edge between two nodes, then we draw a cubic [B&eacute;zier curve](http://nbviewer.ipython.org/github/empet/geom_modeling/blob/master/FP-Bezier-Bspline.ipynb) having  as the first and the last control point the given nodes. 
+The jury member countries are placed uniformly, in alphabetical order, on the unit circle. If there is an edge between two nodes, then we draw a cubic [B&eacute;zier curve](http://nbviewer.ipython.org/github/empet/geom_modeling/blob/master/FP-Bezier-Bspline.ipynb) having  as the first and the last control point the given nodes.
 
 To avoid cluttered edges we adopted the following procedure in choosing the interior control points for the B&eacute;zier curve:
 
@@ -55,7 +56,7 @@ nodes, `V[i], V[j]`, we compute the distance between these nodes, and deduce the
 Namely, if the distance(`V[i], V[j]`), belongs to the $K^{th}$ interval associated to `Dist`, then we choose `param= params[K]`.
 
 
-We processed data provided by [Eurovision Song Contest](http://www.eurovision.tv/page/history/by-year/contest?event=2083#Scoreboard), and saved  the corresponding graph in a `gml` file. Now we can read the `gml` file and define  an [`igraph.Graph`](http://igraph.org/python/) object. 
+We processed data provided by [Eurovision Song Contest](http://www.eurovision.tv/page/history/by-year/contest?event=2083#Scoreboard), and saved  the corresponding graph in a `gml` file. Now we can read the `gml` file and define  an [`igraph.Graph`](http://igraph.org/python/) object.
 
 Install the Python libraries with `sudo pip install python-igraph` and `sudo pip install networkx`.
 
@@ -68,14 +69,14 @@ G = ig.Graph.Read_GML('Eurovision15.gml')
 Define the list of nodes (vs stands for vertices):
 
 ```python
-V=list(G.vs) 
+V=list(G.vs)
 G.vs.attributes()# list node attributes
 ```
 
 Define the  label list. Labels  will be displayed in the Plotly plot:
 
 ```python
-labels=[v['label']  for v in V] 
+labels=[v['label']  for v in V]
 ```
 
 `G.es` is the sequence of graph edges
@@ -141,14 +142,14 @@ The function `get_idx_interv` returns the index of the interval  the distance `d
 ```python
 def get_idx_interv(d, D):
     k=0
-    while(d>D[k]): 
+    while(d>D[k]):
         k+=1
     return  k-1
 ```
 
-Below are defined the function `deCasteljau`  and `BezierCv`. The former  returns the point corresponding to the parameter `t`, on a B&eacute;zier curve of control points given in the list `b`. 
+Below are defined the function `deCasteljau`  and `BezierCv`. The former  returns the point corresponding to the parameter `t`, on a B&eacute;zier curve of control points given in the list `b`.
 
-The latter returns an array of shape (nr, 2) containing the coordinates of 
+The latter returns an array of shape (nr, 2) containing the coordinates of
 `nr` points evaluated on the B&eacute;zier curve, at equally spaced parameters in [0,1].
 
 For our purpose the default number of points evaluated on a B&eacute;zier edge is 5. Then setting the Plotly `shape` of the edge line as `spline`, the five points are  interpolated.
@@ -157,18 +158,18 @@ For our purpose the default number of points evaluated on a B&eacute;zier edge i
 class InvalidInputError(Exception):
     pass
 
-def deCasteljau(b,t): 
-    N=len(b) 
+def deCasteljau(b,t):
+    N=len(b)
     if(N<2):
         raise InvalidInputError("The  control polygon must have at least two points")
-    a=np.copy(b) #shallow copy of the list of control points 
-    for r in range(1,N): 
-        a[:N-r,:]=(1-t)*a[:N-r,:]+t*a[1:N-r+1,:]                             
+    a=np.copy(b) #shallow copy of the list of control points
+    for r in range(1,N):
+        a[:N-r,:]=(1-t)*a[:N-r,:]+t*a[1:N-r+1,:]
     return a[0,:]
 
 def BezierCv(b, nr=5):
     t=np.linspace(0, 1, nr)
-    return np.array([deCasteljau(b, t[k]) for k in range(nr)]) 
+    return np.array([deCasteljau(b, t[k]) for k in range(nr)])
 ```
 
 Finally we set data and layout for the Plotly plot of the circular graph:
@@ -177,7 +178,7 @@ Finally we set data and layout for the Plotly plot of the circular graph:
 import plotly.plotly as py
 import plotly.graph_objs as go
 
-node_color=['rgba(0,51,181, 0.85)'  if v['label'] in Contestant else '#CCCCCC' for v in G.vs] 
+node_color=['rgba(0,51,181, 0.85)'  if v['label'] in Contestant else '#CCCCCC' for v in G.vs]
 line_color=['#FFFFFF'  if v['label'] in Contestant else 'rgb(150,150,150)' for v in G.vs]
 edge_colors=['#d4daff','#84a9dd', '#5588c8', '#6d8acf']
 ```
@@ -300,7 +301,7 @@ G=nx.DiGraph()
 G.add_nodes_from(range(L))
 G.add_edges_from(E)
 
-plt.figure(figsize=(18,18))            
+plt.figure(figsize=(18,18))
 nx.draw_circular(G,node_color='g', edge_color='#909090', node_size=900)
 plt.axis('equal')
 ```

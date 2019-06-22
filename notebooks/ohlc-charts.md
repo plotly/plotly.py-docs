@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -216,7 +217,7 @@ publisher.publish(
     name = 'OHLC Charts',
     thumbnail='thumbnail/ohlc.jpg', language='python',
     page_type='example_index', has_thumbnail='true', display_as='financial', order=1,
-    ipynb= '~notebook_demo/53')    
+    ipynb= '~notebook_demo/53')
 ```
 
 ```python

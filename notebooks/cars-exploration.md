@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -327,10 +328,10 @@ Update hover function to update the image widget along with the HTML widget
 def hover_fn(trace, points, state):
 
     ind = points.point_inds[0]
-    
+
     # Update details HTML widget
     details.value = cars_df.iloc[ind].to_frame().to_html()
-    
+
     # Update image widget
     model_year = cars_df['Model Year'][ind].replace(' ', '_')
     image_widget.value = image_data[model_year]
@@ -369,15 +370,15 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'cars-exploration.ipynb', 'python/cars-exploration/', 'Car Exploration with go.FigureWidget, Case Study',
     'Use Plotly FigureWidget with hover callbacks and slider widgets',
     title = 'Car Exploration with Hover Events',
     name = 'Car Exploration with Hover Events',
-    has_thumbnail='true', thumbnail='thumbnail/zoom.jpg', 
-    language='python', page_type='example_index', 
+    has_thumbnail='true', thumbnail='thumbnail/zoom.jpg',
+    language='python', page_type='example_index',
     display_as='chart_events', order=26,
     ipynb= '~notebook_demo/242')
 ```

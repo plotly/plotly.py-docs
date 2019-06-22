@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -33,7 +34,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 Plotly's python package is updated frequently. Run pip install plotly --upgrade to use the latest version.
 
 ```python
-import plotly 
+import plotly
 plotly.__version__
 ```
 
@@ -108,15 +109,15 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 #!pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     '3d-subplots.ipynb', 'python/3d-subplots/', 'Python 3D Subplots | plotly',
     '3D Subplots in Plotly',
     title= '3D Subplots in Python | plotly',
     name = '3D Subplots',
-    has_thumbnail='true', thumbnail='thumbnail/3d-subplots.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/3d-subplots.jpg',
+    language='python',
     display_as='multiple_axes', order=4,
     ipynb= '~notebook_demo/75')
 ```

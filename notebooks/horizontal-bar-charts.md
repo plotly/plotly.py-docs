@@ -47,6 +47,7 @@ Plotly express functions take as argument a tidy [pandas DataFrame](https://pand
 
 #### Basic Horizontal Bar Chart with plotly express
 
+
 ```python
 import plotly.express as px
 tips = px.data.tips()
@@ -204,7 +205,7 @@ for yd, xd in zip(y_data, x_data):
     for i in range(1, len(xd)):
             # labeling the rest of percentages for each bar (x_axis)
             annotations.append(dict(xref='x', yref='y',
-                                    x=space + (xd[i]/2), y=yd, 
+                                    x=space + (xd[i]/2), y=yd,
                                     text=str(xd[i]) + '%',
                                     font=dict(family='Arial', size=14,
                                               color='rgb(248, 248, 255)'),
@@ -342,4 +343,3 @@ fig.show()
 
 ### Reference
 See more examples of bar charts and styling options [here](https://plot.ly/python/bar-charts/).<br> See https://plot.ly/python/reference/#bar for more information and chart attribute options!
-

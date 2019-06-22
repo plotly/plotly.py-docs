@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -36,9 +37,9 @@ Plotly at its core is a data visualization toolbox. Under every plotly graph is 
 import plotly.plotly as py
 import plotly.graph_objs as go
 
-trace1 = go.Scatter(x=[1,2,3], y=[4,5,6], marker={'color': 'red', 'symbol': 104, 'size': 10}, 
+trace1 = go.Scatter(x=[1,2,3], y=[4,5,6], marker={'color': 'red', 'symbol': 104, 'size': 10},
                     mode="markers+lines",  text=["one","two","three"], name='1st Trace')
-                                               
+
 data=go.Data([trace1])
 layout=go.Layout(title="First Plot", xaxis={'title':'x1'}, yaxis={'title':'x2'})
 figure=go.Figure(data=data,layout=layout)
@@ -58,10 +59,10 @@ figure.update(dict(layout=dict(title='Plot update'), data=dict(marker=dict(color
 py.iplot(figure, filename='pyguide_2')
 ```
 
-Moreover, Plotly plots are interactive, meaning you can manually explore the data by panning, selecting, zooming on the graphing surface (among other possible actions, try panning the axes!). We are also continually expanding the expressiveness of the Plotly package so we're able to graph and visualize all sorts of data. 
+Moreover, Plotly plots are interactive, meaning you can manually explore the data by panning, selecting, zooming on the graphing surface (among other possible actions, try panning the axes!). We are also continually expanding the expressiveness of the Plotly package so we're able to graph and visualize all sorts of data.
 
 
-In no time you will be able to figure out how to make plots the way you want them, and with the information that you want to be shared with those you want. For example we can take a quick look at how we would define the objects required to generate a scatterplot comparing life expectancies and GDP Per Capita between two different continents. 
+In no time you will be able to figure out how to make plots the way you want them, and with the information that you want to be shared with those you want. For example we can take a quick look at how we would define the objects required to generate a scatterplot comparing life expectancies and GDP Per Capita between two different continents.
 
 ```python
 import pandas as pd
@@ -117,12 +118,12 @@ fig_comp = go.Figure(data=data_comp, layout=layout_comp)
 py.iplot(fig_comp, filename='life-expectancy-per-GDP-2007')
 ```
 
-Hopefully this gives you an idea how plots are created with the Plotly Python Library. We'll go into more detail regarding the different parts that make up the plot in later sections. But for now, I hope you can see the customizability that's possible, and how we can define these graphs programmatically. 
+Hopefully this gives you an idea how plots are created with the Plotly Python Library. We'll go into more detail regarding the different parts that make up the plot in later sections. But for now, I hope you can see the customizability that's possible, and how we can define these graphs programmatically.
 
 
 #### The Source of Plotly's Power
 
-All the graphs and plots which Plotly generates are actually the product of our javascript library [`plotly.js`](https://plot.ly/javascript). Whether you see Plotly graphs in a browser, or an IPython notebook, all the visualizations and interactiveness is made possible by [`plotly.js`](https://plot.ly/javascript). Built on top of `d3.js` and `stack.gl`, [`plotly.js`](https://plot.ly/javascript) is a high-level, declarative charting library. [`plotly.js`](https://plot.ly/javascript) ships with 20 chart types, including 3D charts, statistical graphs, and SVG maps. 
+All the graphs and plots which Plotly generates are actually the product of our javascript library [`plotly.js`](https://plot.ly/javascript). Whether you see Plotly graphs in a browser, or an IPython notebook, all the visualizations and interactiveness is made possible by [`plotly.js`](https://plot.ly/javascript). Built on top of `d3.js` and `stack.gl`, [`plotly.js`](https://plot.ly/javascript) is a high-level, declarative charting library. [`plotly.js`](https://plot.ly/javascript) ships with 20 chart types, including 3D charts, statistical graphs, and SVG maps.
 
 
 ### Working with the Python API
@@ -135,7 +136,7 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 ```
 
-These are the two main modules that we will need in order to generate our Plotly graphs. 
+These are the two main modules that we will need in order to generate our Plotly graphs.
 
 - `plotly.plotly` contains the functions that will help us communicate with the Plotly servers
 - `plotly.graph_objs` contains the functions that will generate graph objects for us.
@@ -159,7 +160,7 @@ We see that data is actually a list object in Python. Data will actually contain
 Hence,
 
 ```python
-go.Scatter(x=[1,2,3], y=[4,5,6], marker={'color': 'red', 'symbol': 104, 'size': "10"}, 
+go.Scatter(x=[1,2,3], y=[4,5,6], marker={'color': 'red', 'symbol': 104, 'size': "10"},
                                                mode="markers+lines",  text=["one","two","three"])
 ```
 
@@ -201,7 +202,7 @@ layout
 ##### Annotations
 
 
-We added a plot title as well as titles for all the axes. 
+We added a plot title as well as titles for all the axes.
 For fun we could add some text annotation as well in order to indicate the maximum point that's been plotted on the current plotting surface.
 
 ```python
@@ -252,7 +253,7 @@ go.Figure(data=data, layout=layout)
 #### Why `graph_objs`?
 
 
-After viewing the outputs of these functions (ie: the objects), we can see that they are just lists or dictionaries. But they're a little more than that. Though they do inherit properties from dictionaries (traces, and layout) and lists (figure), they provide a bit more functionality as we'll soon see. Not to mention the fact that it's much simpler to create plots in this functional fashion compared to manually writing up a dictionary. 
+After viewing the outputs of these functions (ie: the objects), we can see that they are just lists or dictionaries. But they're a little more than that. Though they do inherit properties from dictionaries (traces, and layout) and lists (figure), they provide a bit more functionality as we'll soon see. Not to mention the fact that it's much simpler to create plots in this functional fashion compared to manually writing up a dictionary.
 
 
 The first neat option about using graph_objs is that you can call help on them.
@@ -280,7 +281,7 @@ As you can see, it tells us that `markers` is not a key in `scatter`. Instead as
 
 
 
-Now let's talk about the methods that come along with these objects. The one of most importance would be the `update` method. The difference here between the regular update method for dictionaries is that it allows for `nested updates`. 
+Now let's talk about the methods that come along with these objects. The one of most importance would be the `update` method. The difference here between the regular update method for dictionaries is that it allows for `nested updates`.
 Let me show you what that means.
 
 ```python
@@ -310,7 +311,7 @@ scatter_trace = {'marker': {'color': 'blue'},
 ### Looking at Examples
 
 
-Examples are one of the best ways to get started and get your feet wet. Through the examples you can get a good idea of what a certain type of plot is used for, and what can be possible with it. 
+Examples are one of the best ways to get started and get your feet wet. Through the examples you can get a good idea of what a certain type of plot is used for, and what can be possible with it.
 
 Moreover, the code in the examples are self-contained, meaning you can just copy and paste the code block and run it in your Python script or Ipython Notebook. But if you happen to run into an issue running the example, please let us know at our [Community Forums](http://community.plot.ly). By examining the code, you can further understand and experience the procedure in which Plotly plots are created. Something important to look at would be the data used in these examples; Because certain plots are only able to handle certain types of data (e.g: histograms are only useful for quantitative data), you will get an idea of the limitations and purpose of different plot types. In addition, you can see the effect certain parameters have on the data visualization and hopefully give you a sense of what's possible beyond the standard/default.
 
@@ -374,7 +375,7 @@ py.iplot(fig, filename='box_heatmap1')
 
 ```
 
-This looks great, however we'd like for our subplots to be on the same plotting surface. So let's take a look at the dictionary representation of our figure, and customize it using what we've learned before. 
+This looks great, however we'd like for our subplots to be on the same plotting surface. So let's take a look at the dictionary representation of our figure, and customize it using what we've learned before.
 
 ```python
 fig
@@ -413,14 +414,14 @@ At this point you may have a good idea of how you want to visualize your data, a
 
 When you first load the page you will see a menu on the left which is segregated into `Plot Objects` and `Layout`. This exemplifies the two components of every Plotly figure. So for example if you knew you wanted to change something related to the visualization of the data, then you would look at the first section. If instead you were interested in a general aesthetic feature of the graph then the Layout will probably be your best option.
 
-Now for example, if you decided to create a scatter plot, then you would choose `Scatter` under `Plot Objects`, and that will take you to the the section for `Scatter`. On your immediate right you will be able to see a breakdown of the Scatter section, which includes all the parameters and sub-parameters at your disposal. 
+Now for example, if you decided to create a scatter plot, then you would choose `Scatter` under `Plot Objects`, and that will take you to the the section for `Scatter`. On your immediate right you will be able to see a breakdown of the Scatter section, which includes all the parameters and sub-parameters at your disposal.
 
 
 
 ### Issues and Questions
 
 
-So you've developed a better understanding of Plotly now, and you're starting to create cooler plots and visualizations for different projects you're working on. If you ever happen to get stuck with certain use cases or features in Plotly, you can let us know at our **[Community Forums](http://community.plot.ly)**. 
+So you've developed a better understanding of Plotly now, and you're starting to create cooler plots and visualizations for different projects you're working on. If you ever happen to get stuck with certain use cases or features in Plotly, you can let us know at our **[Community Forums](http://community.plot.ly)**.
 ![Community Support](https://cloud.githubusercontent.com/assets/12302455/14265774/71a43b4a-fa91-11e5-86f8-f069037c74ea.png)
 Moreover if you sign up for a Pro Plan, we also offer e-mail and intercom support as well. Finally if you think you've caught a bug or if something just doesn't function the way it should, you can create an issue on our **[GitHub Repo](https://github.com/plotly/plotly.py/issues)**.
 
@@ -440,7 +441,7 @@ publisher.publish(
     'Plotly User Guide for Python',
     name = 'Plotly User Guide',
     thumbnail='', language='python',
-    layout='user-guide', has_thumbnail='false') 
+    layout='user-guide', has_thumbnail='false')
 ```
 
 ```python

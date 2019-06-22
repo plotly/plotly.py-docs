@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -10,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make 3D scatter plots in Python with Plotly.
     display_as: 3d_charts
@@ -23,79 +34,77 @@ jupyter:
     permalink: python/3d-scatter-plots/
     thumbnail: thumbnail/3d-scatter.jpg
     title: 3D Python Scatter Plots | plotly
+    v4upgrade: true
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
+## 3D scatter plot with plotly express
 
+Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `px.scatter`, the 3D function `px.scatter_3d` plots individual data in three-dimensional space. Note that plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html) such as the ones defined in ``px.data``.
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter_3d(iris, x='sepal_length', y='sepal_width', z='petal_width',
+              color='species')
+fig.show()
+```
+
+A 4th dimension of the data can be represented thanks to the color of the markers. Also, values from the `species` column are used below to assign symbols to markers.
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter_3d(iris, x='sepal_length', y='sepal_width', z='petal_width',
+                    color='petal_length', symbol='species')
+fig.show()
+```
+
+#### Style 3d scatter plot
+
+It is possible to customize the style of the figure through the parameters of `px.scatter_3d` for some options, or by updating the traces or the layout of the figure through `fig.update`.
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter_3d(iris, x='sepal_length', y='sepal_width', z='petal_width',
+              color='petal_length', size='petal_length', size_max=18,
+              symbol='species', opacity=0.7)
+
+# tight layout
+fig.update_layout(margin=dict(l=0, r=0, b=0, t=0))
+```
+
+### 3D Scatter Plot with go.Scatter3d
 
 #### Basic 3D Scatter Plot
 
-```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+When data are not available as tidy dataframes, it is also possible to use the more generic `go.Scatter3D` from `plotly.graph_objs`. 
+Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `go.Scatter`, `go.Scatter3d` plots individual data in three-dimensional space. 
 
+```python
+import plotly.graph_objects as go
 import numpy as np
 
-x, y, z = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 200).transpose()
-trace1 = go.Scatter3d(
-    x=x,
-    y=y,
-    z=z,
-    mode='markers',
-    marker=dict(
-        size=12,
-        line=dict(
-            color='rgba(217, 217, 217, 0.14)',
-            width=0.5
-        ),
-        opacity=0.8
-    )
-)
+# Helix equation
+t = np.linspace(0, 10, 50)
+x, y, z = np.cos(t), np.sin(t), t
 
-x2, y2, z2 = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 200).transpose()
-trace2 = go.Scatter3d(
-    x=x2,
-    y=y2,
-    z=z2,
-    mode='markers',
-    marker=dict(
-        color='rgb(127, 127, 127)',
-        size=12,
-        symbol='circle',
-        line=dict(
-            color='rgb(204, 204, 204)',
-            width=1
-        ),
-        opacity=0.9
-    )
-)
-data = [trace1, trace2]
-layout = go.Layout(
-    margin=dict(
-        l=0,
-        r=0,
-        b=0,
-        t=0
-    )
-)
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='simple-3d-scatter')
+fig = go.Figure(data=[go.Scatter3d(x=x, y=y, z=z,
+                                   mode='markers')])
+fig.show()
 ```
 
-#### 3D Scatter Plot with Colorscaling
+#### 3D Scatter Plot with Colorscaling and Marker Styling
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
+import plotly.graph_objects as go
 import numpy as np
 
-x, y, z = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 400).transpose()
+# Helix equation
+t = np.linspace(0, 20, 100)
+x, y, z = np.cos(t), np.sin(t), t
 
-trace1 = go.Scatter3d(
+fig = go.Figure(data=[go.Scatter3d(
     x=x,
     y=y,
     z=z,
@@ -106,19 +115,11 @@ trace1 = go.Scatter3d(
         colorscale='Viridis',   # choose a colorscale
         opacity=0.8
     )
-)
+)])
 
-data = [trace1]
-layout = go.Layout(
-    margin=dict(
-        l=0,
-        r=0,
-        b=0,
-        t=0
-    )
-)
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='3d-scatter-colorscale')
+# tight layout
+fig.update_layout(margin=dict(l=0, r=0, b=0, t=0))
+fig.show()
 ```
 
 ### Dash App
@@ -139,22 +140,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-3dscatterplot/code", widt
 #### Reference
 See https://plot.ly/python/reference/#scatter3d for more information and chart attribute options!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
-import publisher
-publisher.publish(
-    '3d_scatter.ipynb', 'python/3d-scatter-plots/', '3D Python Scatter Plots | plotly',
-    'How to make 3D scatter plots in Python with Plotly.',
-    title = '3D Python Scatter Plots | plotly',
-    name = '3D Scatter Plots',
-    has_thumbnail='true', thumbnail='thumbnail/3d-scatter.jpg', 
-    language='python', page_type='example_index', 
-    display_as='3d_charts', order=1,
-    ipynb= '~notebook_demo/61')
-```

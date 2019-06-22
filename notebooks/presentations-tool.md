@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -63,7 +64,7 @@ def url_to_iframe(url, text=True):
     <style>
     div.textbox {
         margin: 30px;
-        font-weight: bold;   
+        font-weight: bold;
     }
     </style>
     </head>'

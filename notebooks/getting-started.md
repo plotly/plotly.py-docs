@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -54,7 +55,7 @@ After installing the Plotly package, you're ready to fire up python:
 and set your credentials:
 
 ```python
-import plotly 
+import plotly
 plotly.tools.set_credentials_file(username='DemoAccount', api_key='lr1c37zw81')
 ```
 
@@ -84,7 +85,7 @@ Plot can be set to three different type of privacies: public, private or secret.
 By default all plots are set to **public**.  Users with free account have the permission to keep one private plot. If you need to save private plots, [upgrade to a pro account](https://plot.ly/plans). If you're a [Personal or Professional user](https://plot.ly/settings/subscription/?modal=true&utm_source=api-docs&utm_medium=support-oss) and would like the default setting for your plots to be private, you can edit your Plotly configuration:
 
 ```python
-import plotly 
+import plotly
 plotly.tools.set_config_file(world_readable=False,
                              sharing='private')
 ```
@@ -92,7 +93,7 @@ plotly.tools.set_config_file(world_readable=False,
 For more examples on privacy settings please visit [Python privacy documentation](https://plot.ly/python/privacy/)
 
 
-### Special Instructions for [Chart Studio Enterprise](https://plot.ly/product/enterprise/) Users 
+### Special Instructions for [Chart Studio Enterprise](https://plot.ly/product/enterprise/) Users
 
 
 Your API key for account on the public cloud will be different than the API key in Chart Studio Enterprise. Visit https://plotly.your-company.com/settings/api/ to find your Chart Studio Enterprise API key. Remember to replace "your-company.com" with the URL of your Chart Studio Enterprise server.
@@ -102,7 +103,7 @@ If your company has a Chart Studio Enterprise server, change the Python API endp
 In python, enter:
 
 ```python
-import plotly 
+import plotly
 plotly.tools.set_config_file(plotly_domain='https://plotly.your-company.com',
                              plotly_streaming_domain='https://stream-plotly.your-company.com')
 ```
@@ -115,9 +116,9 @@ Additionally, you can set your configuration so that you generate **private plot
 In python, enter:
 
 ```python
-import plotly 
+import plotly
 plotly.tools.set_config_file(plotly_domain='https://plotly.your-company.com',
-                             plotly_streaming_domain='https://stream-plotly.your-company.com', 
+                             plotly_streaming_domain='https://stream-plotly.your-company.com',
                              world_readable=False,
                              sharing='private')
 ```
@@ -127,7 +128,7 @@ Python's `virtualenv` allows us create multiple working Python environments whic
 
 **Install virtualenv globally**
 <br>`$ sudo pip install virtualenv`
- 
+
 **Create your virtualenvs**
 <br>`$ mkdir ~/.virtualenvs`
 <br>`$ cd ~/.virtualenvs`
@@ -218,7 +219,7 @@ You can also create plotly graphs with **matplotlib** syntax. Learn more in our 
 
 
 ### Initialization for Offline Plotting
-Plotly Offline allows you to create graphs offline and save them locally. There are also two methods for plotting offline: `plotly.offline.plot()` and `plotly.offline.iplot()`. 
+Plotly Offline allows you to create graphs offline and save them locally. There are also two methods for plotting offline: `plotly.offline.plot()` and `plotly.offline.iplot()`.
 - Use `plotly.offline.plot()` to create and standalone HTML that is saved locally and opened inside your web browser.
 - Use `plotly.offline.iplot()` when working offline in a Jupyter Notebook to display the plot in the notebook.
 
@@ -284,10 +285,10 @@ df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapmi
 fig = {
     'data': [
           {
-          'x': df.gdpPercap, 
-            'y': df.lifeExp, 
-            'text': df.country, 
-            'mode': 'markers', 
+          'x': df.gdpPercap,
+            'y': df.lifeExp,
+            'text': df.country,
+            'mode': 'markers',
             'name': '2007'},
     ],
     'layout': {

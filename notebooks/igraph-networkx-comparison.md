@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -60,8 +61,8 @@ Xe=[]
 Ye=[]
 for e in E:
     Xe+=[layt[e[0]][0],layt[e[1]][0], None]
-    Ye+=[layt[e[0]][1],layt[e[1]][1], None] 
-    
+    Ye+=[layt[e[0]][1],layt[e[1]][1], None]
+
 trace1=Scatter(x=Xe,
                y=Ye,
                mode='lines',
@@ -85,20 +86,20 @@ axis=dict(showline=False, # hide axis line, grid, ticklabels and  title
           zeroline=False,
           showgrid=False,
           showticklabels=False,
-          title='' 
+          title=''
           )
 
 width=800
 height=800
 layout=Layout(title= "Coauthorship network of scientists working on network theory and experiment"+\
-              "<br> Data source: <a href='https://networkdata.ics.uci.edu/data.php?id=11'> [1]</a>",  
+              "<br> Data source: <a href='https://networkdata.ics.uci.edu/data.php?id=11'> [1]</a>",
     font= dict(size=12),
     showlegend=False,
     autosize=False,
     width=width,
     height=height,
     xaxis=layout.XAxis(axis),
-    yaxis=layout.YAxis(axis),          
+    yaxis=layout.YAxis(axis),
     margin=layout.Margin(
         l=40,
         r=40,
@@ -108,24 +109,24 @@ layout=Layout(title= "Coauthorship network of scientists working on network theo
     hovermode='closest',
     annotations=[
            dict(
-           showarrow=False, 
-            text='This igraph.Graph has the Kamada-Kawai layout',  
-            xref='paper',     
-            yref='paper',     
-            x=0,  
-            y=-0.1,  
-            xanchor='left',   
-            yanchor='bottom',  
+           showarrow=False,
+            text='This igraph.Graph has the Kamada-Kawai layout',
+            xref='paper',
+            yref='paper',
+            x=0,
+            y=-0.1,
+            xanchor='left',
+            yanchor='bottom',
             font=dict(
-            size=14 
-            )     
+            size=14
             )
-        ]          
+            )
+        ]
     )
 
 data=[trace1, trace2]
 fig=Figure(data=data, layout=layout)
-py.iplot(fig, filename='Coautorship-network-igraph') 
+py.iplot(fig, filename='Coautorship-network-igraph')
 ```
 
 #### Networkx
@@ -141,7 +142,7 @@ g=nx.Graph()
 g.add_nodes_from(V)
 g.add_edges_from(E)# E is the list of edges
 
-pos=nx.fruchterman_reingold_layout(g) 
+pos=nx.fruchterman_reingold_layout(g)
 ```
 
 Data for the Plotly plot of the same network but with a different layout:
@@ -153,8 +154,8 @@ Xed=[]
 Yed=[]
 for edge in E:
     Xed+=[pos[edge[0]][0],pos[edge[1]][0], None]
-    Yed+=[pos[edge[0]][1],pos[edge[1]][1], None] 
-    
+    Yed+=[pos[edge[0]][1],pos[edge[1]][1], None]
+
 trace3=Scatter(x=Xed,
                y=Yed,
                mode='lines',
@@ -166,7 +167,7 @@ trace4=Scatter(x=Xv,
                mode='markers',
                name='net',
                marker=dict(symbol='circle-dot',
-                             size=5, 
+                             size=5,
                              color='#6959CD',
                              line=dict(color='rgb(50,50,50)', width=0.5)
                              ),
@@ -205,7 +206,7 @@ publisher.publish(
     name = 'Network Graphs Comparison',
     thumbnail='thumbnail/networks.jpg', language='python',
     has_thumbnail='true', display_as='scientific', order=14,
-    ipynb= '~notebook_demo/222') 
+    ipynb= '~notebook_demo/222')
 ```
 
 ```python

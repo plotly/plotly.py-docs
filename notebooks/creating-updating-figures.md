@@ -242,6 +242,8 @@ fig.show()
 
 Magic underscore notation is supported throughout the graph objects API, and it can often significantly simplify operations involving deeply nested properties.
 
+> Note: When you see keyword arguments with underscores passed to a graph object constructor or method, it is almost always safe to assume that it is an application of magic underscore notation. We have to say "almost always" rather than "always" because there are a few property names in the plotly schema that contain underscores: error_x, error_y, error_z, copy_xstyle, copy_ystyle, copy_zstyle, paper_bgcolor, and plot_bgcolor.  These were added back in the early days of the library (2012-2013) before we standardized on banning underscores from property names.
+
 ### The update layout method
 Graph object figures support an `update_layout` method that may be used to update multiple nested properties of a figure's layout.  Here is an example of updating the text and font size of a figure's title using `update_layout`.
 

@@ -51,11 +51,11 @@ gapminder = px.data.gapminder()
 gapminder_2007 = gapminder.query("year==2007")
 
 for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "none"]:
-    px.scatter(gapminder_2007,
-               x="gdpPercap", y="lifeExp", size="pop", color="continent", 
-               log_x=True, size_max=60,
-               template=template, title="Gapminder 2007: '%s' theme" % template
-              ).show()
+    fig = px.scatter(gapminder_2007,
+                     x="gdpPercap", y="lifeExp", size="pop", color="continent",
+                     log_x=True, size_max=60,
+                     template=template, title="Gapminder 2007: '%s' theme" % template)
+    fig.show()
 ```
 
 ### Specifying themes to graph object figures
@@ -71,12 +71,13 @@ fig = go.Figure(
     data=go.Surface(z=z_data.values),
     layout=go.Layout(
         title="Mt Bruno Elevation",
-        width=500, 
+        width=500,
         height=500,
-))
+    ))
 
 for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "none"]:
-    fig.update_layout(template=template, title="Mt Bruno Elevation: '%s' theme" % template).show()
+    fig.update_layout(template=template, title="Mt Bruno Elevation: '%s' theme" % template)
+    fig.show()
 ```
 
 ### Specifying a default themes
@@ -93,11 +94,11 @@ pio.templates.default = "plotly_white"
 gapminder = px.data.gapminder()
 gapminder_2007 = gapminder.query("year==2007")
 
-px.scatter(gapminder_2007,
-           x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           log_x=True, size_max=60,
-           title="Gapminder 2007: current default theme"
-          ).show()
+fig = px.scatter(gapminder_2007,
+                 x="gdpPercap", y="lifeExp", size="pop", color="continent",
+                 log_x=True, size_max=60,
+                 title="Gapminder 2007: current default theme")
+fig.show()
 ```
 
 ### Disable default theming
@@ -125,10 +126,10 @@ large_rockwell_template = go.layout.Template(
     layout=go.Layout(dict(title=dict(font=dict(family="Rockwell", size=24))))
 )
 
-(go.Figure()
- .update_layout(title="Figure Title",
-                template=large_rockwell_template)
-).show()
+fig = go.Figure()
+fig.update_layout(title="Figure Title",
+                  template=large_rockwell_template)
+fig.show()
 ```
 
 ### The template data property
@@ -142,10 +143,10 @@ import plotly.graph_objects as go
 diamond_template = go.layout.Template()
 diamond_template.data.scatter = [go.Scatter(marker=dict(symbol="diamond", size=20))]
 
-(go.Figure()
- .update_layout(template=diamond_template)
- .add_scatter(y=[2, 1, 3], mode="markers")
-).show()
+fig = go.Figure()
+fig.update_layout(template=diamond_template)
+fig.add_scatter(y=[2, 1, 3], mode="markers")
+fig.show()
 ```
 
 If a trace type property is set to a list of more than one trace, then the default properties are cycled as more traces are added to the figure.  Here is an example that creates a template that cycles the default marker symbol for scatter traces, and then constructs a figure that uses this template.
@@ -159,14 +160,13 @@ symbol_template.data.scatter = [
     go.Scatter(marker=dict(symbol="square", size=10)),
     go.Scatter(marker=dict(symbol="circle", size=10)),
 ]
-
-(go.Figure()
- .update_layout(template=symbol_template)
- .add_scatter(y=[1, 2, 3], mode="markers", name="first")
- .add_scatter(y=[2, 3, 4], mode="markers", name="second")
- .add_scatter(y=[3, 4, 5], mode="markers", name="third")
- .add_scatter(y=[4, 5, 6], mode="markers", name="forth")
-).show()
+fig = go.Figure()
+fig.update_layout(template=symbol_template)
+fig.add_scatter(y=[1, 2, 3], mode="markers", name="first")
+fig.add_scatter(y=[2, 3, 4], mode="markers", name="second")
+fig.add_scatter(y=[3, 4, 5], mode="markers", name="third")
+fig.add_scatter(y=[4, 5, 6], mode="markers", name="forth")
+fig.show()
 ```
 
 Note that because we built the template with a list of 3 scatter trace graph objects (one each for the diamond, square, and circle symbols), the forth scatter trace in the figure cycles around and takes on the defaults specified in the first template trace (The diamond symbol).
@@ -184,16 +184,15 @@ import plotly.graph_objects as go
 
 annotation_template = go.layout.Template()
 annotation_template.layout.annotationdefaults = go.layout.Annotation(font=dict(color="crimson"))
-
-(go.Figure()
- .update_layout(
+fig = go.Figure()
+fig.update_layout(
      template=annotation_template,
      annotations=[
          go.layout.Annotation(text="Look Here", x=1, y=1),
          go.layout.Annotation(text="Look There", x=2, y=2)
      ]
  )
-).show()
+fig.show()
 ```
 
 ### Including array elements in a theme
@@ -223,9 +222,9 @@ draft_template.layout.annotations = [
     )
 ]
 
-(go.Figure()
- .update_layout(template=draft_template)
-).show()
+fig=go.Figure()
+fig.update_layout(template=draft_template)
+fig.show()
 ```
 
 ### Customizing theme array elements in a figure
@@ -252,17 +251,17 @@ draft_template.layout.annotations = [
     )
 ]
 
-(go.Figure()
- .update_layout(
-     template=draft_template,
-     annotations=[
-         go.layout.Annotation(
-             templateitemname="draft watermark",
-             text="CONFIDENTIAL",
-         )
-     ]
- )
-).show()
+fig = go.Figure()
+fig.update_layout(
+    template=draft_template,
+    annotations=[
+        go.layout.Annotation(
+            templateitemname="draft watermark",
+            text="CONFIDENTIAL",
+        )
+    ]
+)
+fig.show()
 ```
 
 ### Registering themes as named templates
@@ -291,9 +290,9 @@ pio.templates["draft"] = go.layout.Template(
     ]
 )
 
-(go.Figure()
- .update_layout(template="draft")
-).show()
+fig = go.Figure()
+fig.update_layout(template="draft")
+fig.show()
 ```
 
 It is also possible to set your own custom template as the default so that you do not need to pass it by name when constructing graph object figures or calling plotly express functions.
@@ -320,7 +319,8 @@ pio.templates["draft"] = go.layout.Template(
 )
 pio.templates.default = "draft"
 
-go.Figure().show()
+fig = go.Figure()
+fig.show()
 ```
 
 ### Combining themes
@@ -352,7 +352,8 @@ pio.templates["draft"] = go.layout.Template(
 )
 pio.templates.default = "plotly+draft"
 
-go.Figure().show()
+fig = go.Figure()
+fig.show()
 ```
 
 Combining themes is also supported by plotly express
@@ -381,12 +382,11 @@ pio.templates.default = "plotly+draft"
 
 gapminder = px.data.gapminder()
 gapminder_2007 = gapminder.query("year==2007")
-
-px.scatter(gapminder_2007,
-           x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           log_x=True, size_max=60,
-           title="Gapminder 2007: current default theme"
-          ).show()
+fig = px.scatter(gapminder_2007,
+                 x="gdpPercap", y="lifeExp", size="pop", color="continent",
+                 log_x=True, size_max=60,
+                 title="Gapminder 2007: current default theme")
+fig.show()
 ```
 
 <!-- #region -->

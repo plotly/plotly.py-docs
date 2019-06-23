@@ -22,12 +22,14 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.7.3
   plotly:
-    description: Theming plotly with Python
+    description: Theming and templates with plotly with Python
     v4upgrade: true
 ---
 
-# Theming
+# Theming and templates
 The Plotly Python library comes pre-loaded with several themes that you can get started using right away, and it also provides support for creating and registering your own themes.
+
+> Note on terminology: Theming generally refers to the process of defining default styles for visual elements.  Themes in plotly are implemented using objects called templates. Templates are slightly more general than traditional themes because in addition to defining default styles, templates can pre-populate a figure with visual elements like annotations, shapes, images, and more. In the documentation we will refer to the overall process of defining default styles as theming, and when in comes to the plotly API we will talk about how themes are implemented using templates.
 
 ## Using built-in themes
 ### View available themes

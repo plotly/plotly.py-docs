@@ -125,7 +125,7 @@ Here is an example that creates a template that sets the default title font to s
 import plotly.graph_objects as go
 
 large_rockwell_template = go.layout.Template(
-    layout=go.Layout(dict(title=dict(font=dict(family="Rockwell", size=24))))
+    layout=go.Layout(title_font=dict(family="Rockwell", size=24))
 )
 
 fig = go.Figure()
@@ -133,6 +133,8 @@ fig.update_layout(title="Figure Title",
                   template=large_rockwell_template)
 fig.show()
 ```
+
+> Note: this example uses magic underscore notation to write `go.Layout(title=dict(font=dict(...)))` as `go.Layout(title_font=dict(...))`
 
 ### The template data property
 The `data` property of a template is used to customize the default values of the properties of traces that are added to a figure that the template is applied to.  This `data` property holds a graph object, with type `go.layout.template.Data`, that has a property named after each supported trace type. These trace type properties are then assigned lists or tuples of graph object traces of the corresponding type.
@@ -296,6 +298,8 @@ fig = go.Figure()
 fig.update_layout(template="draft")
 fig.show()
 ```
+
+> Note: this example uses magic underscore notation to write `go.layout.Template(layout=dict(annotations=[...]))` as ``go.layout.Template(layout_annotations=[...])`
 
 It is also possible to set your own custom template as the default so that you do not need to pass it by name when constructing graph object figures or calling plotly express functions.
 

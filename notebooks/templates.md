@@ -176,10 +176,10 @@ fig.show()
 Note that because we built the template with a list of 3 scatter trace graph objects (one each for the diamond, square, and circle symbols), the forth scatter trace in the figure cycles around and takes on the defaults specified in the first template trace (The diamond symbol).
 
 
-### Theming array properties
-Some properties in the figure hierarchy are specified as arrays of objects.  For example, the text annotations for a graph object figure are stored as a tuple of `go.layout.Annotation` objects in the `annotations` property of the figure's layout.
+### Theming object tuple properties
+Some properties in the figure hierarchy are specified as tuples of objects.  For example, the text annotations for a graph object figure are stored as a tuple of `go.layout.Annotation` objects in the `annotations` property of the figure's layout.
 
-To use a template to configure the default properties of all of the elements in an object array property (e.g. `layout.annotations`), use the `*defaults`  property in the template that corresponds to the array property (e.g. `layout.template.layout.annotationdefaults`).  The `*defaults` template property should be set to a single graph object that matches the type of the elements of the corresponding array. The properties of this `*defaults` object in the template will be applied to all elements of the object array in the figure that the template is applied to.
+To use a template to configure the default properties of all of the elements in an object tuple property (e.g. `layout.annotations`), use the `*defaults`  property in the template that corresponds to the tuple property (e.g. `layout.template.layout.annotationdefaults`).  The `*defaults` template property should be set to a single graph object that matches the type of the elements of the corresponding tuple. The properties of this `*defaults` object in the template will be applied to all elements of the object tuple in the figure that the template is applied to.
 
 Here is an example that creates a template that specifies the default annotation text color, and then constructs a figure that uses this template.
 
@@ -199,11 +199,11 @@ fig.update_layout(
 fig.show()
 ```
 
-### Including array elements in a theme
+### Including tuple elements in a theme
 
-The previous section described how to use a template to customize the default properties of array elements that are added to a figure that the template is applied to.  This is useful for styling, for example, any annotations, shapes, or images that will eventually be added to the figure.
+The previous section described how to use a template to customize the default properties of tuple elements that are added to a figure that the template is applied to.  This is useful for styling, for example, any annotations, shapes, or images that will eventually be added to the figure.
 
-It is also possible for a template to define array elements that should be included, as is, in any figure that the template is applied to. This is done by specifying a list of one or more array element graph objects (e.g. `go.layout.Annotation` objects) as the value of the corresponding array property in the template (e.g. at `template.layout.annotations`).  Note that the `name` property of these array element graph objects must be set to a unique non-empty string.
+It is also possible for a template to define tuple elements that should be included, as is, in any figure that the template is applied to. This is done by specifying a list of one or more tuple element graph objects (e.g. `go.layout.Annotation` objects) as the value of the corresponding tuple property in the template (e.g. at `template.layout.annotations`).  Note that the `name` property of these tuple element graph objects must be set to a unique non-empty string.
 
 Here is an example that creates a template that adds a large semi-transparent "DRAFT" watermark to the middle of the figure, and constructs a figure using this template.
 
@@ -231,8 +231,8 @@ fig.update_layout(template=draft_template)
 fig.show()
 ```
 
-### Customizing theme array elements in a figure
-The previous section described how a template can be used to add default array element graph objects (e.g. annotations, shapes, or images) to a figure.  The properties of these default array elements can be customized from within the figure by adding an array element with a `templateitemname` property that matches the `name` property of the template object.
+### Customizing theme tuple elements in a figure
+The previous section described how a template can be used to add default tuple element graph objects (e.g. annotations, shapes, or images) to a figure.  The properties of these default tuple elements can be customized from within the figure by adding an tuple element with a `templateitemname` property that matches the `name` property of the template object.
 
 Here is an example, using the same `draft_template` defined above, that customizes the watermark from within the figure to read "CONFIDENTIAL" rather than "DRAFT".
 

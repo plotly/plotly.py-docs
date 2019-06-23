@@ -48,8 +48,8 @@ All plotly express functions accept a `template` argument that can be set to the
 
 ```python
 import plotly.express as px
-gapminder = px.data.gapminder()
 
+gapminder = px.data.gapminder()
 gapminder_2007 = gapminder.query("year==2007")
 
 for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "none"]:
@@ -164,6 +164,7 @@ symbol_template.data.scatter = [
     go.Scatter(marker=dict(symbol="square", size=10)),
     go.Scatter(marker=dict(symbol="circle", size=10)),
 ]
+
 fig = go.Figure()
 fig.update_layout(template=symbol_template)
 fig.add_scatter(y=[1, 2, 3], mode="markers", name="first")
@@ -188,6 +189,7 @@ import plotly.graph_objects as go
 
 annotation_template = go.layout.Template()
 annotation_template.layout.annotationdefaults = go.layout.Annotation(font=dict(color="crimson"))
+
 fig = go.Figure()
 fig.update_layout(
      template=annotation_template,
@@ -388,6 +390,7 @@ pio.templates.default = "plotly+draft"
 
 gapminder = px.data.gapminder()
 gapminder_2007 = gapminder.query("year==2007")
+
 fig = px.scatter(gapminder_2007,
                  x="gdpPercap", y="lifeExp", size="pop", color="continent",
                  log_x=True, size_max=60,

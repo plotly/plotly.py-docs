@@ -125,7 +125,7 @@ This is a custom renderer for use with [Google Colab](https://colab.research.goo
 #### `browser`
 This renderer will open a figure in a browser tab using the default web browser.  This renderer can only be used when the Python kernel is running locally on the same machine as the web browser, so it is not compatible with Jupyter Hub or online notebook services. 
 
-> Implementation Note 1: The "default browser" is the browser that is chosen by the Python [`webbrowser`](https://docs.python.org/2/library/webbrowser.html) module.
+> Implementation Note 1: The "default browser" is the browser that is chosen by the Python [`webbrowser`](https://docs.python.org/3.7/library/webbrowser.html) module.
 
 > Implementation Note 2: The `browser` renderer works by setting up a single use local webserver on a local port. Since the webserver is shut down as soon as the figure is served to the browser, the figure will not be restored if the browser is refreshed.
 

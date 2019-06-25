@@ -61,7 +61,7 @@ fig
 
 > To be precise, figures will display themselves using the current default renderer when the two following conditions are true. First, the last expression in a cell must evaluates to a figure. Second, plotly.py must be running from within an IPython kernel.
 
-In many contexts, an appropriate renderer will be chosen automatically and you will not need to perform any additional configuration. These contexts include the classic Jupyter Notebook, JupyterLab (provided the `jupyterlab-plotly` JupyterLab extension is installed), Visual Studio Code notebooks, Colab, Kaggle notebooks, Azure notebooks, and the Python interactive shell.  Additional contexts are supported by choosing a compatible renderer including the IPython console, QtConsole, Spyder, and more.
+**In many contexts, an appropriate renderer will be chosen automatically and you will not need to perform any additional configuration.** These contexts include the classic Jupyter Notebook, JupyterLab (provided the `jupyterlab-plotly` JupyterLab extension is installed), Visual Studio Code notebooks, Colab, Kaggle notebooks, Azure notebooks, and the Python interactive shell.  Additional contexts are supported by choosing a compatible renderer including the IPython console, QtConsole, Spyder, and more.
 
 Next, we will show how to configure the default renderer.  After that, we will describe all of the built-in renderers and discuss why you might choose to use each one.
 

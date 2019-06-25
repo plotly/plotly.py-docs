@@ -77,6 +77,8 @@ pio.renderers
 
 The default renderer that you see when you display `pio.renderers` might be different than what is shown here.  This is because plotly.py attempts to autodetect an appropriate renderer at startup.  You can change the default renderer by assigning the name of an available renderer to the `pio.renderers.default` property.  For example, to switch to the `'browser'` renderer, which opens figures in a tab of the default web browser, you would run the following.
 
+> Note: Default renderers persist for the duration of a single session, but they do not persist across sessions. If you are working in an IPython kernel, this means that default renderers will persist for the life of the kernel, but they will not persist across kernel restarts.
+
 ```python
 import plotly.io as pio
 pio.renderers.default = "browser"

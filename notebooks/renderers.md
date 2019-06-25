@@ -99,7 +99,7 @@ fig.show(renderer="svg")
 ```
 
 ## The built-in renderers
-In this section, we will describe the built-in renderers so that you can choose the one(s) that best suite your needs.
+In this section, we will describe the built-in renderers so that you can choose the one(s) that best suit your needs.
 
 ### Interactive renderers
 Interactive renderers display figures using the Plotly.js JavaScript library and are fully interactive, supporting pan, zoom, hover tooltips, etc.

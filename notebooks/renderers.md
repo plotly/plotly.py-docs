@@ -142,7 +142,7 @@ This renderer may be useful when working with notebooks than contain lots of lar
 
 #### `plotly_mimetype`
 
-The `plotly_mimetype` renderer creates a specification of the plotly figure (called a MIME-type bundle), and requests that the current user interface display it. User interfaces that support this renderer include [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) (requires the [`jupyterlab-plotly`](https://www.npmjs.com/package/jupyterlab-plotly) extension), [nteract](https://nteract.io/), and the Visual Studio Code [notebook interface](https://code.visualstudio.com/docs/python/jupyter-support).
+The `plotly_mimetype` renderer creates a specification of the plotly figure (called a MIME-type bundle), and requests that the current user interface displays it. User interfaces that support this renderer include [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) (requires the [`jupyterlab-plotly`](https://www.npmjs.com/package/jupyterlab-plotly) extension), [nteract](https://nteract.io/), and the Visual Studio Code [notebook interface](https://code.visualstudio.com/docs/python/jupyter-support).
 
 #### `jupyterlab`, `nteract`, and `vscode`
 These are aliases for `plotly_mimetype` since this renderer is a good choice when working in JupyterLab, nteract, and the Visual Studio Code notebook interface.

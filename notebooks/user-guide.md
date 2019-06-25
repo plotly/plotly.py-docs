@@ -21,8 +21,16 @@ jupyter:
     nbconvert_exporter: python
     pygments_lexer: ipython3
     version: 3.7.3
-  plotly:
-    description: How to create and update figures in Python with Plotly.
+plotly:
+    description: Plotly User Guide for Python
+    has_thumbnail: false
+    language: python
+    layout: user-guide
+    name: Plotly User Guide
+    page_type: u-guide
+    permalink: python/user-guide/
+    thumbnail: null
+    title: Plotly User Guide for Python
     v4upgrade: true
 ---
 

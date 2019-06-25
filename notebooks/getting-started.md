@@ -222,7 +222,7 @@ $ conda install -c plotly chart-studio=1.0.0
 ## Where to next?
 Now that you have everything installed, you are ready to start reading and running examples of [basic charts](https://plot.ly/python/basic-charts/), [statistical charts](https://plot.ly/python/statistical-charts/), [scientific charts](https://plot.ly/python/scientific-charts/), [financial charts](https://plot.ly/python/#financial-charts), [geographic charts](https://plot.ly/python/maps/), and [3-dimensional charts](https://plot.ly/python/3d-charts/).
 
-For a complete overview of all of the ways that figures can be created and updated, see [*Creating and updating figures with Python*](https://plot.ly/python/creating-updating-figures/).
+For a complete overview of all of the ways that figures can be created and updated, see [*Creating and updating figures with Python*](https://plot.ly/python/user-guide/).
 
 For information on all of the ways that plotly figures can be displayed, see [*Displaying plotly figures with plotly for Python*](https://plot.ly/python/renderers/).
 

@@ -224,9 +224,11 @@ Now that you have everything installed, you are ready to start reading and runni
 
 For a complete overview of all of the ways that figures can be created and updated, see [*Creating and updating figures with Python*](https://plot.ly/python/user-guide/).
 
-For information on all of the ways that plotly figures can be displayed, see [*Displaying plotly figures with plotly for Python*](https://plot.ly/python/renderers/).
+For information on configuring figure layout options (e.g. axes, titles, legends, etc) see [*Layout Options*](https://plot.ly/python/#layout-options).
 
-For information on theming plotly figures, see [*Theming and templates with plotly for Python*](https://plot.ly/python/templates/).
+For information on styling figures (e.g. colors, fonts, annotations, images, shapes, etc.), see [*Style Options*](https://plot.ly/python/#style-options). And for information on theming plotly figures, see [*Theming and templates with plotly for Python*](https://plot.ly/python/templates/).
+
+For information on all of the ways that plotly figures can be displayed, see [*Displaying plotly figures with plotly for Python*](https://plot.ly/python/renderers/).
 
 For the full searchable reference of every figure property, see the [*Python figure reference*](https://plot.ly/python/reference/). 
 

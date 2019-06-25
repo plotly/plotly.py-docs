@@ -6,11 +6,21 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.6
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.7.3
   plotly:
     description: How to adjust axes properties in python. Seven examples of linear
       and logarithmic axes, axes titles, and styling and coloring axes and grid lines.
@@ -27,58 +37,36 @@ jupyter:
     title: Axes | plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-Learn about API authentication here: https://plot.ly/python/getting-started
-Find your api_key here: https://plot.ly/settings/api
-
-
 #### Toggling Axes Lines, Ticks, Labels, and Autorange
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace1 = go.Scatter(
-    x=[0, 1, 2, 3, 4, 5, 6, 7, 8],
-    y=[8, 7, 6, 5, 4, 3, 2, 1, 0]
+fig = go.Figure(
+#     data=[go.Scatter(y=[8, 7, 6, 5, 4, 3, 2, 1, 0]),
+#           go.Scatter(y=[0, 1, 2, 3, 4, 5, 6, 7, 8])],
 )
-trace2 = go.Scatter(
-    x=[0, 1, 2, 3, 4, 5, 6, 7, 8],
-    y=[0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+
+fig.update_xaxes(
+    showgrid=False,
+    zeroline=False,
+    showline=False,
+    showticklabels=False,
 )
-data = [trace1, trace2]
-layout = go.Layout(
-    xaxis=dict(
-        autorange=True,
-        showgrid=False,
-        zeroline=False,
-        showline=False,
-        ticks='',
-        showticklabels=False
-    ),
-    yaxis=dict(
-        autorange=True,
-        showgrid=False,
-        zeroline=False,
-        showline=False,
-        ticks='',
-        showticklabels=False
-    )
-)
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='axes-booleans')
+# fig.update_yaxes(
+#     showgrid=False,
+#     zeroline=False,
+#     showline=False,
+#     showticklabels=False,
+# )
+fig.show()
 ```
 
 #### Tick Placement, Color, and Style
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 trace1 = go.Scatter(
     x=[0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -110,14 +98,13 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='axes-ticks')
+fig.show()
 ```
 
 #### Set and Style Axes Title Labels and Ticks
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 trace1 = go.Scatter(
     x=[0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -165,14 +152,13 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='axes-labels')
+fig.show()
 ```
 
 #### Styling and Coloring Axes and the Zero-Line
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 trace1 = go.Scatter(
     x=[0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -210,14 +196,13 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='axes-lines')
+fig.show()
 ```
 
 #### Setting the Range of Axes Manually
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 trace1 = go.Scatter(
     x=[0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -237,14 +222,13 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='axes-range-manual')
+fig.show()
 ```
 
 #### Subcategory Axes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 trace1 = go.Box(
   x = [2, 3, 1, 5],
@@ -373,14 +357,13 @@ layout = go.Layout(
 )
 
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename = 'subcategory-axes')
+fig.show()
 ```
 
 #### Logarithmic Axes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 trace1 = go.Scatter(
     x=[0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -402,14 +385,13 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='axes-range-type')
+fig.show()
 ```
 
 ### Fixed Ratio Axes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 trace0 = go.Scatter(
   x = [0,1,1,0,0,1,1,2,2,3,3,2,2,3],
@@ -479,14 +461,13 @@ layout = go.Layout(
 )
 
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename = "aspect-ratio")
+fig.show()
 ```
 
 #### Reversed Axes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 data = [
     go.Scatter(
@@ -500,14 +481,13 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='axes-reversed')
+fig.show()
 ```
 
 #### Reversed Axes with Range ( Min/Max ) Specified
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -519,14 +499,13 @@ data = [trace]
 layout = go.Layout(title='Reversed Axis with Min/Max', xaxis=dict(range=[10, 0]))
 
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='example-reversed-axis-with-min-max')
+fig.show()
 ```
 
 #### <code>nonnegative</code>, <code>tozero</code>, and <code>normal</code> Rangemode
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 data = [
     go.Scatter(
@@ -546,14 +525,13 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='axes-range-mode')
+fig.show()
 ```
 
 #### Enumerated Ticks with Tickvals and Ticktext
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 
@@ -599,43 +577,8 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data, layout)
-
-py.iplot(fig, filename='tickvals-and-ticktext')
-```
-
-### Dash Example
-
-
-[Dash](https://plot.ly/products/dash/) is an Open Source Python library which can help you convert plotly figures into a reactive, web-based application. Below is a simple example of a dashboard created using Dash. Its [source code](https://github.com/plotly/simple-example-chart-apps/tree/master/dash-axesplot) can easily be deployed to a PaaS.
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-axesplot/", width="100%", height="850px", frameBorder="0")
-```
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-axesplot/code", width="100%", height=500, frameBorder="0")
+fig.show()
 ```
 
 #### Reference
 See https://plot.ly/python/reference/#layout-xaxis and https://plot.ly/python/reference/#layout-yaxis for more information and chart attribute options!
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'axes.ipynb', 'python/axes/', 'Axes | plotly',
-    'How to adjust axes properties in python. Seven examples of linear and logarithmic axes, axes titles, and styling and coloring axes and grid lines.',
-    title = 'Axes | plotly',
-    name = 'Axes',
-    has_thumbnail='true', thumbnail='thumbnail/your-tutorial-chart.jpg',
-    language='python', page_type='example_index',
-    display_as='layout_opt', order=3,
-    ipynb= '~notebook_demo/95')
-```

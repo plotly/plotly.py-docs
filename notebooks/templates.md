@@ -87,6 +87,8 @@ If a theme is not provided to a plotly express function or to a graph object fig
 
 Here is an example of changing to default theme to `"plotly_white"` and then constructing a scatter plot with plotly express without providing a template.
 
+> Note: Default themes persist for the duration of a single session, but they do not persist across sessions. If you are working in an IPython kernel, this means that default themes will persist for the life of the kernel, but they will not persist across kernel restarts.
+
 ```python
 import plotly.io as pio
 import plotly.express as px

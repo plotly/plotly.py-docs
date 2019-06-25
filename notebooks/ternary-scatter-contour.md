@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -55,8 +56,8 @@ scatter_data =  scatter_raw_data['Data']
 
 def clean_data(data_in):
     """
-    Cleans data in a format which can be conveniently 
-    used for drawing traces. Takes a dictionary as the 
+    Cleans data in a format which can be conveniently
+    used for drawing traces. Takes a dictionary as the
     input, and returns a list in the following format:
 
     input = {'key': ['a b c']}
@@ -88,7 +89,7 @@ for raw_data in scatter_data:
     c_list.append(data[1][0])
     a_list.append(data[1][1])
     b_list.append(data[1][2])
-    
+
 trace1 = dict(type='scatterternary',
               text=text,
               a=a_list,
@@ -131,16 +132,16 @@ colors_iterator = iter(colors)
 traces = []
 for raw_data in contour_dict:
     data = clean_data(raw_data)
-    
+
     a = [inner_data[0] for inner_data in data[1:]]
-    a.append(data[1][0]) # Closing the loop 
-    
+    a.append(data[1][0]) # Closing the loop
+
     b = [inner_data[1] for inner_data in data[1:]]
-    b.append(data[1][1]) # Closing the loop     
-    
+    b.append(data[1][1]) # Closing the loop
+
     c = [inner_data[2] for inner_data in data[1:]]
-    c.append(data[1][2]) # Closing the loop     
-    
+    c.append(data[1][2]) # Closing the loop
+
     trace = dict(
         type='scatterternary',text = data[0],
         a=a, b=b, c=c, mode='lines',
@@ -149,7 +150,7 @@ for raw_data in contour_dict:
         fillcolor = colors_iterator.next()
     )
     traces.append(trace)
-    
+
 layout['title'] = 'Ternary Contour Plot'
 contour_fig = dict(data=traces, layout=layout)
 py.iplot(contour_fig)

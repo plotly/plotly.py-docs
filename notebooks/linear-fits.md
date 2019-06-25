@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -67,16 +68,16 @@ line = slope*xi+intercept
 
 # Creating the dataset, and generating the plot
 trace1 = go.Scatter(
-                  x=xi, 
-                  y=y, 
+                  x=xi,
+                  y=y,
                   mode='markers',
                   marker=go.Marker(color='rgb(255, 127, 14)'),
                   name='Data'
                   )
 
 trace2 = go.Scatter(
-                  x=xi, 
-                  y=line, 
+                  x=xi,
+                  y=line,
                   mode='lines',
                   marker=go.Marker(color='rgb(31, 119, 180)'),
                   name='Fit'
@@ -116,7 +117,7 @@ publisher.publish(
     'Create a linear fit / regression in Python and add a line of best fit to your chart.',
     title = 'Linear Fit',
     name = 'Linear Fit',
-    has_thumbnail='true', thumbnail='thumbnail/linear_fit.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/linear_fit.jpg',
     language='python', page_type='example_index',
     display_as='statistics', order=10,
     ipynb= '~notebook_demo/139')

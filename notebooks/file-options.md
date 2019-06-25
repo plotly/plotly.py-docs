@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -125,7 +126,7 @@ data = [trace0, trace1, trace2]
 plot_url = py.plot(data, filename='extend plot', fileopt='extend')
 ```
 
-Then, extend the traces with more data. 
+Then, extend the traces with more data.
 
 ```python
 import plotly.plotly as py
@@ -164,12 +165,12 @@ publisher.publish(
     'fileopts.ipynb', 'python/file-options/', 'Updating Plotly Graphs',
     'How to update your graphs in Python with the fileopt parameter.',
     title = 'Python Filenames Options | Plotly',
-    has_thumbnail='true', 
-    thumbnail='thumbnail/horizontal-bar.jpg', 
-    language='python', 
+    has_thumbnail='true',
+    thumbnail='thumbnail/horizontal-bar.jpg',
+    language='python',
     page_type='example_index',
-    display_as='file_settings', 
-    order=3, 
+    display_as='file_settings',
+    order=3,
     #ipynb='~notebook_demo/1'
 )
 ```

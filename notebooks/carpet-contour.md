@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -82,7 +83,7 @@ layout = go.Layout(
         range = [0.388,4.361]
     ),
     xaxis = dict(
-    	range = [0.667,5.932]	
+    	range = [0.667,5.932]
     )
 )
 
@@ -148,7 +149,7 @@ layout = go.Layout(
         range = [0.388,4.361]
     ),
     xaxis = dict(
-    	range = [0.667,5.932]	
+    	range = [0.667,5.932]
     )
 )
 
@@ -167,7 +168,7 @@ import urllib, json
 url = "https://raw.githubusercontent.com/bcdunbar/datasets/master/airfoil_data.json"
 response = urllib.urlopen(url)
 data = json.loads(response.read())
-    
+
 trace1 = go.Carpet(
     a = data[0]['a'],
     b = data[0]['b'],
@@ -346,8 +347,8 @@ publisher.publish(
     'contourcarpet.ipynb', 'python/carpet-contour/', 'Carpet Contour Plot',
     'How to make carpet contour plots in Python with Plotly.',
     title = 'Carpet Contour Plots | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/contourcarpet.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/contourcarpet.jpg',
+    language='python',
     # page_type='example_index', // note this is only if you want the tutorial to appear on the main page: plot.ly/python
     display_as='scientific', order=27,
     ipynb= '~notebook_demo/145')

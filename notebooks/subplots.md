@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -535,8 +536,8 @@ publisher.publish(
     'subplots.ipynb', 'python/subplots/', 'Subplots | plotly',
     'How to make subplots in python. Examples of stacked, custom-sized, gridded, and annotated subplts.',
     title = 'Python Subplots | Examples | Plotly',
-    name = 'Subplots', has_thumbnail='true', thumbnail='thumbnail/subplots.jpg', 
-    language='python', page_type='example_index', redirect_from='ipython-notebooks/subplots/', 
+    name = 'Subplots', has_thumbnail='true', thumbnail='thumbnail/subplots.jpg',
+    language='python', page_type='example_index', redirect_from='ipython-notebooks/subplots/',
     display_as='multiple_axes', order=2,
     ipynb='~notebook_demo/269')
 ```

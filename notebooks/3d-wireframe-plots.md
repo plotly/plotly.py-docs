@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -97,14 +98,14 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     '3d-wireframe.ipynb', 'python/3d-wireframe-plots/', 'Python Wireframe Plots | plotly',
     'How to make wireframe plots in Python',
     title= '3D Wireframe Plots in Python | plotly',
     name = '3D Wireframe Plots',
-    has_thumbnail='true', thumbnail='thumbnail/wireframe.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/wireframe.jpg',
     language='python',
     display_as='3d_charts', order=8,
     ipynb= '~notebook_demo/68')

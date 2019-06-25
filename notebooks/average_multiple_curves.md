@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -53,7 +54,7 @@ Given two curves defined by functions $f$ and $g$ on $\mathbb{R} \rightarrow \ma
 x = np.linspace(0, 2*np.pi, 100)
 f = np.sin(x)
 g = np.cos(x)
-h = [(f[j] + g[j])/2 for j in range(len(x))] 
+h = [(f[j] + g[j])/2 for j in range(len(x))]
 
 trace1 = go.Scatter(
     x=x,

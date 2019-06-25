@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -132,7 +133,7 @@ fig = go.Figure(data=data, layout=layout)
 py.iplot(fig,filename='EXAMPLES/logo')
 ```
 
-#### Label Spectroscopy Data by Adding Multiple Images 
+#### Label Spectroscopy Data by Adding Multiple Images
 
 ```python
 import plotly.plotly as py
@@ -215,7 +216,7 @@ layout= go.Layout(
     showlegend=False,
     height = 500,
     width = 900
-        
+
 )
 
 fig = go.Figure(data=traces,layout=layout)
@@ -258,8 +259,8 @@ layout = go.Layout(
 )
 # we add a scatter trace with data points in opposite corners to give the Autoscale feature a reference point
 fig = go.Figure(data=[{
-    'x': [0, img_width*scale_factor], 
-    'y': [0, img_height*scale_factor], 
+    'x': [0, img_width*scale_factor],
+    'y': [0, img_height*scale_factor],
     'mode': 'markers',
     'marker': {'opacity': 0}}],layout = layout)
 py.iplot(fig, filename='EXAMPLES/zoom_bridge')
@@ -313,7 +314,7 @@ layout= go.Layout(
         scaleanchor = 'x'
         ),
     autosize=False,
-    height=img.shape[0], 
+    height=img.shape[0],
     width=img.shape[1],
     margin = {'l': 0, 'r': 0, 't': 0, 'b': 0},
     images= [dict(
@@ -340,7 +341,7 @@ humans=[
         mode='lines',
         line = dict(width=4,color='red'),
         showlegend = False
-        ) 
+        )
     for i,d in enumerate(human_dets)]
 
 dogs = [
@@ -353,7 +354,7 @@ dogs = [
         mode='lines',
         line = dict(width=4,color='blue'),
         showlegend = False
-        ) 
+        )
     for i,d in enumerate(dog_dets)]
 
 py.iplot(dict(data=humans+dogs,layout=layout),filename='EXAMPLES/facial_rec')
@@ -375,10 +376,10 @@ publisher.publish(
     'How to add images to charts as background images or logos.',
     title = 'Layout with images | plotly',
     name = 'Images',
-    has_thumbnail='true', thumbnail='thumbnail/your-tutorial-chart.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/your-tutorial-chart.jpg',
     language='python', page_type='example_index',
     display_as='style_opt', order=4,
-    ipynb= '~notebook_demo/216')  
+    ipynb= '~notebook_demo/216')
 ```
 
 ```python

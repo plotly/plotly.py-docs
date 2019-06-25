@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -31,9 +32,9 @@ jupyter:
 ### Getting Started with Streaming
 
 ```python
-import numpy as np 
-import plotly.plotly as py  
-import plotly.tools as tls   
+import numpy as np
+import plotly.plotly as py
+import plotly.tools as tls
 import plotly.graph_objs as go
 ```
 
@@ -43,20 +44,20 @@ Before you start streaming, you're going to need some [stream tokens](https://pl
 ![](https://cloud.githubusercontent.com/assets/12302455/15023505/bb729d8c-11fe-11e6-87a6-332ff9dfad2d.png)
 
 
-Now in the same way that you set your credentials, as shown in [Getting Started](https://plot.ly/python/getting-started/), you can add stream tokens to your credentials file. 
+Now in the same way that you set your credentials, as shown in [Getting Started](https://plot.ly/python/getting-started/), you can add stream tokens to your credentials file.
 
 ```python
 stream_ids = tls.get_credentials_file()['stream_ids']
 print stream_ids
 ```
 
-You'll see that `stream_ids` will contain a list of the stream tokens we added to the credentials file. 
+You'll see that `stream_ids` will contain a list of the stream tokens we added to the credentials file.
 
 
 #### An Example to Get You Started
 
 
-Now that you have some stream tokens to play with, we're going to go over how we're going to put these into action. 
+Now that you have some stream tokens to play with, we're going to go over how we're going to put these into action.
 There are two main objects that will be created and used for streaming:
 - Stream Id Object
 - Stream link Object
@@ -75,15 +76,15 @@ The `Stream Id Object` comes bundled in the `graph_objs` package. We can then ca
 help(go.Stream)
 ```
 
-As we can see, the `Stream Id Object` is a dictionary-like object that takes two parameters, and has all the methods that are assoicated with dictionaries. 
-We will need one of these objects for each of trace that we wish to stream data to. 
+As we can see, the `Stream Id Object` is a dictionary-like object that takes two parameters, and has all the methods that are assoicated with dictionaries.
+We will need one of these objects for each of trace that we wish to stream data to.
 We'll now create a single stream token for our streaming example, which will include one scatter trace.
 
 ```python
-# Get stream id from stream id list 
+# Get stream id from stream id list
 stream_id = stream_ids[0]
 
-# Make instance of stream id object 
+# Make instance of stream id object
 stream_1 = go.Stream(
     token=stream_id,  # link stream id to 'token' key
     maxpoints=80      # keep a max of 80 pts on screen
@@ -126,8 +127,8 @@ The Stream Link Object is what will be used to communicate with the Plotly serve
 help(py.Stream)  # run help() of the Stream link object
 ```
 
-You're going to need to set up one of these stream link objects for each trace you wish to stream data to. 
-<br>Below we'll set one up for the scatter trace we have in our plot. 
+You're going to need to set up one of these stream link objects for each trace you wish to stream data to.
+<br>Below we'll set one up for the scatter trace we have in our plot.
 
 ```python
 # We will provide the stream link object the same token that's associated with the trace we wish to stream to
@@ -137,35 +138,35 @@ s = py.Stream(stream_id)
 s.open()
 ```
 
-We can now use the Stream Link object `s` in order to `stream` data to our plot. 
+We can now use the Stream Link object `s` in order to `stream` data to our plot.
 <br>As an example, we will send a time stream and some random numbers:
 
 ```python
 # (*) Import module keep track and format current time
-import datetime 
-import time   
- 
+import datetime
+import time
+
 i = 0    # a counter
 k = 5    # some shape parameter
 
 # Delay start of stream by 5 sec (time to switch tabs)
-time.sleep(5) 
+time.sleep(5)
 
 while True:
-    
+
     # Current time on x-axis, random numbers on y-axis
     x = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
-    y = (np.cos(k*i/50.)*np.cos(i/50.)+np.random.randn(1))[0] 
-        
+    y = (np.cos(k*i/50.)*np.cos(i/50.)+np.random.randn(1))[0]
+
     # Send data to your plot
-    s.write(dict(x=x, y=y))  
-    
+    s.write(dict(x=x, y=y))
+
     #     Write numbers to stream to append current data on plot,
     #     write lists to overwrite existing data on plot
-            
-    time.sleep(1)  # plot a point every second    
+
+    time.sleep(1)  # plot a point every second
 # Close the stream when done plotting
-s.close() 
+s.close()
 ```
 
 ```python
@@ -180,11 +181,11 @@ import publisher
 publisher.publish(
     'python_streaming', 'python/streaming-tutorial/', 'Plotly Streaming',
     'Plotly Streaming', name='Plotly Streaming',
-    title = 'Plotly Streaming', 
-    redirect_from = 'python/streaming-line-tutorial/', 
+    title = 'Plotly Streaming',
+    redirect_from = 'python/streaming-line-tutorial/',
     language='python',
     layout='user-guide',
-    ipynb= '~notebook_demo/80') 
+    ipynb= '~notebook_demo/80')
 ```
 
 ```python

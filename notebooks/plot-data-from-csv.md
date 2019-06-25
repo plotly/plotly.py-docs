@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -89,7 +90,7 @@ py.iplot(df_external_source, filename='df-external-source-table')
 trace = go.Scatter(x = df['AAPL_x'], y = df['AAPL_y'],
                   name='Share Prices (in USD)')
 layout = go.Layout(title='Apple Share Prices over time (2014)',
-                   plot_bgcolor='rgb(230, 230,230)', 
+                   plot_bgcolor='rgb(230, 230,230)',
                    showlegend=True)
 fig = go.Figure(data=[trace], layout=layout)
 

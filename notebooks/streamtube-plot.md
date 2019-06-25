@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -42,7 +43,7 @@ plotly.__version__
 ### Introduction
 
 
-In streamtube plots, attributes inlcude `x`, `y`, and `z`, which set the coorindates of the vector field, and `u`, `v`, and `w`, which sets the x, y, and z components of the vector field. Additionally, you can use `starts` to determine the streamtube's starting position. Lastly, `maxdisplayed` determines the maximum segments displayed in a streamtube.   
+In streamtube plots, attributes inlcude `x`, `y`, and `z`, which set the coorindates of the vector field, and `u`, `v`, and `w`, which sets the x, y, and z components of the vector field. Additionally, you can use `starts` to determine the streamtube's starting position. Lastly, `maxdisplayed` determines the maximum segments displayed in a streamtube.
 
 
 ### Basic Streamtube Plot
@@ -63,7 +64,7 @@ data = [go.Streamtube(
     v = df['v'],
     w = df['w'],
     sizeref = 0.5,
-    colorscale = 'Blues', 
+    colorscale = 'Blues',
     cmin = 0,
     cmax = 3
     )

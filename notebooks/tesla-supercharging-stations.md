@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -42,7 +43,7 @@ plotly.__version__
 
 #### Mapbox Access Token
 
-To plot on Mapbox maps with Plotly you'll need a Mapbox account and a [Public Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/. 
+To plot on Mapbox maps with Plotly you'll need a Mapbox account and a [Public Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/.
 
 
 #### Google Maps API
@@ -133,14 +134,14 @@ Be careful! Make sure you are picking a start and end point that can be driven b
 def plot_route_between_tesla_stations(address_start, address_end, zoom=3, endpt_size=6):
     start = (supercharger_locations[address_start]['latitude'], supercharger_locations[address_start]['longitude'])
     end = (supercharger_locations[address_end]['latitude'], supercharger_locations[address_end]['longitude'])
-    
+
     #start = address_start
     #end = address_end
-    
+
     directions = gmaps.directions(start, end)
     steps = []
     steps.append(start)  # add starting coordinate to trip
-    
+
     for index in range(len(directions[0]['legs'][0]['steps'])):
         start_coords = directions[0]['legs'][0]['steps'][index]['start_location']
         steps.append((start_coords['lat'], start_coords['lng']))
@@ -185,7 +186,7 @@ def plot_route_between_tesla_stations(address_start, address_end, zoom=3, endpt_
 server_key = my_google_maps_api_key
 gmaps = googlemaps.Client(key=server_key)
 address_start = supercharger_locations.keys()[0]
-address_end = supercharger_locations.keys()[501] 
+address_end = supercharger_locations.keys()[501]
 zoom=12.2
 endpt_size=20
 

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -325,7 +326,7 @@ publisher.publish(
     'Choropleth_maps.ipynb', 'python/choropleth-maps/', 'Choropleth Maps',
     'How to make choropleth maps in Python with Plotly.',
     title = 'Python Choropleth Maps | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/choropleth.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/choropleth.jpg',
     language='python',
     display_as='maps', order=1, ipynb='~notebook_demo/55')
 ```

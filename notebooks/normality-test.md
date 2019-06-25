@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -34,9 +35,9 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 ### Normality Tests
 
 
-In statistics, normality tests are used to determine whether a data set is modeled for Normal (Gaussian) Distribution. Many statistical functions require that a distribution be normal or nearly normal. 
+In statistics, normality tests are used to determine whether a data set is modeled for Normal (Gaussian) Distribution. Many statistical functions require that a distribution be normal or nearly normal.
 
-There are several methods of assessing whether data are normally distributed or not. They fall into two broad categories: _graphical_ and _statistical_. 
+There are several methods of assessing whether data are normally distributed or not. They fall into two broad categories: _graphical_ and _statistical_.
 The common techniques are:
 
 **_Graphical_**
@@ -47,7 +48,7 @@ The common techniques are:
    - Shapiro-Wilk Test
    - Kolmogorov-Smirnov
    - D'Agostino's $K^{2}$ Test
-   - Anderson-Darling Test 
+   - Anderson-Darling Test
 
 
 ### Test Dataset
@@ -195,7 +196,7 @@ The tests assume that that the sample was drawn from a Gaussian distribution. Te
 In the SciPy implementation of these tests, you can interpret the p value as follows.
  - **_p <= alpha_**: reject H0, not normal.
  - **_p > alpha_**: fail to reject H0, normal.
- 
+
 This means that, in general, we are seeking results with a larger p-value to confirm that our sample was likely drawn from a Gaussian distribution.
 
 A result above 5% does not mean that the null hypothesis is true. It means that it is very likely true given available evidence. The p-value is not the probability of the data fitting a Gaussian distribution; it can be thought of as a value that helps us interpret the statistical test.
@@ -237,7 +238,7 @@ swt_table['layout']['margin']['b']=50
 py.iplot(swt_table, filename='shapiro-wilk-table')
 ```
 
-Running the above example calculates the statistic and p-value. 
+Running the above example calculates the statistic and p-value.
 
 The p-value is interested and finds that the data is likely drawn from a Gaussian distribution.
 
@@ -348,7 +349,7 @@ normt_table['layout']['margin']['b']=50
 py.iplot(normt_table, filename="D'Agostino-test-table")
 ```
 
-Running the above example calculates the statistic and p-value. 
+Running the above example calculates the statistic and p-value.
 The p-value is interpreted against an alpha of 5% and finds that the test dataset does not significantly deviate from normal.
 
 <!-- #region -->
@@ -361,7 +362,7 @@ We have covered a few normality tests, but this is not all of the tests that exi
    - Investigate why your data is not normal and perhaps use data preparation techniques to normalize the data.
    - Start looking into the use of nonparametric statistical methods instead of the parametric methods.
    - If some of the methods suggest that the sample is Gaussian and some not, then perhaps take this as an indication that your data is Gaussian-like.
-   
+
 _This tuorial is inspired from ["A Gentle Introduction to Normality Tests"](https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/)_
 <!-- #endregion -->
 

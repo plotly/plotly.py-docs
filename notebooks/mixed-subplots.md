@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -66,7 +67,7 @@ threed = go.Surface(z=df_v.values.tolist(), colorscale='Reds', showscale=False)
 
 # plot(3)  scattergeo map of volcano locations
 trace3 = {
-  "geo": "geo3", 
+  "geo": "geo3",
   "lon": df['Longitude'],
   "lat": df['Latitude'],
   "hoverinfo": 'text',
@@ -75,8 +76,8 @@ trace3 = {
     "opacity": 0.8,
     "color": '#CF1020',
     "colorscale": 'Viridis'
-  }, 
-  "mode": "markers", 
+  },
+  "mode": "markers",
   "type": "scattergeo"
 }
 
@@ -93,44 +94,44 @@ layout = {
   "font": {
       "color": 'white'
   },
-  "dragmode": "zoom", 
+  "dragmode": "zoom",
   "geo3": {
     "domain": {
-      "x": [0, 0.55], 
+      "x": [0, 0.55],
       "y": [0, 0.9]
-    }, 
+    },
     "lakecolor": "rgba(127,205,255,1)",
     "oceancolor": "rgb(6,66,115)",
     "landcolor": 'white',
-    "projection": {"type": "orthographic"}, 
-    "scope": "world", 
+    "projection": {"type": "orthographic"},
+    "scope": "world",
     "showlakes": True,
     "showocean": True,
     "showland": True,
     "bgcolor": 'black'
-  }, 
+  },
   "margin": {
-    "r": 10, 
-    "t": 25, 
-    "b": 40, 
+    "r": 10,
+    "t": 25,
+    "b": 40,
     "l": 60
-  }, 
+  },
   "scene": {"domain": {
-      "x": [0.5, 1], 
+      "x": [0.5, 1],
       "y": [0, 0.55]
     },
            "xaxis": {"gridcolor": 'white'},
            "yaxis": {"gridcolor": 'white'},
            "zaxis": {"gridcolor": 'white'}
-           }, 
-  "showlegend": False, 
-  "title": "<br>Volcano Database", 
+           },
+  "showlegend": False,
+  "title": "<br>Volcano Database",
   "xaxis": {
-    "anchor": "y", 
+    "anchor": "y",
     "domain": [0.6, 0.95]
-  }, 
+  },
   "yaxis": {
-    "anchor": "x", 
+    "anchor": "x",
     "domain": [0.65, 0.95],
     "showgrid": False
   }
@@ -165,7 +166,7 @@ publisher.publish(
     'How to make mixed subplots in Python with Plotly.',
     title = 'Mixed Subplots | plotly',
     name = 'Mixed Subplots',
-    has_thumbnail='true', thumbnail='thumbnail/mixed_subplot.JPG', 
+    has_thumbnail='true', thumbnail='thumbnail/mixed_subplot.JPG',
     language='python', page_type='example_index',
     display_as='multiple_axes', order=5,
     ipynb= '~notebook_demo/132')

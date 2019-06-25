@@ -32,6 +32,7 @@ jupyter:
     permalink: python/getting-started/
     thumbnail: /images/static-image
     title: Getting Started with Plotly for Python | plotly
+    v4upgrade: true
 ---
 
 ## Overview

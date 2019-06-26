@@ -79,7 +79,6 @@ fig.show()
 
 ##### Toggle grid and zerolines with update axis methods
 
-
 Axis properties can be also updated for figures after they are constructed using the `update_xaxes` and `update_yaxes` graph object figure methods.
 
 Here is an example that disables the x and y axis grid and zero lines using `update_xaxes` and `update_yaxes`.
@@ -92,6 +91,7 @@ fig = go.Figure(
 )
 fig.update_xaxes(showgrid=False, zeroline=False)
 fig.update_yaxes(showgrid=False, zeroline=False)
+
 fig.show()
 ```
 
@@ -109,6 +109,7 @@ iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", facet_col="species")
 fig.update_xaxes(showgrid=False, zeroline=False)
 fig.update_yaxes(showgrid=False, zeroline=False)
+
 fig.show()
 ```
 
@@ -124,6 +125,7 @@ iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", facet_col="species")
 fig.update_xaxes(ticks="inside")
 fig.update_yaxes(ticks="inside", col=1)
+
 fig.show()
 ```
 
@@ -139,6 +141,7 @@ iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", facet_col="species")
 fig.update_xaxes(showticklabels=False)
 fig.update_yaxes(showticklabels=False)
+
 fig.show()
 ```
 
@@ -155,6 +158,7 @@ iris = px.data.iris()
 
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", facet_col="species")
 fig.update_yaxes(nticks=20)
+
 fig.show()
 ```
 
@@ -169,6 +173,7 @@ iris = px.data.iris()
 
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", facet_col="species")
 fig.update_yaxes(tick0=0.25, dtick=0.5)
+
 fig.show()
 ```
 
@@ -183,6 +188,7 @@ iris = px.data.iris()
 
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", facet_col="species")
 fig.update_yaxes(tickvals=[5.1, 5.9, 6.3, 7.5])
+
 fig.show()
 ```
 
@@ -200,6 +206,7 @@ iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", facet_col="species")
 fig.update_xaxes(ticks="outside", tickwidth=2, tickcolor='crimson', ticklen=10)
 fig.update_yaxes(ticks="outside", tickwidth=2, tickcolor='crimson', ticklen=10, col=1)
+
 fig.show()
 ```
 
@@ -245,6 +252,7 @@ tips = px.data.tips()
 
 fig = px.histogram(tips, x="sex", y="tip", histfunc='sum', facet_col='smoker')
 fig.update_xaxes(tickangle=45, tickfont=dict(family='Rockwell', color='crimson', size=14))
+
 fig.show()
 ```
 
@@ -263,6 +271,7 @@ tips = px.data.tips()
 fig = px.histogram(tips, x="sex", y="tip", histfunc='sum', facet_col='smoker')
 fig.update_xaxes(showline=True, linewidth=2, linecolor='black')
 fig.update_yaxes(showline=True, linewidth=2, linecolor='black')
+
 fig.show()
 ```
 
@@ -278,6 +287,7 @@ tips = px.data.tips()
 fig = px.histogram(tips, x="sex", y="tip", histfunc='sum', facet_col='smoker')
 fig.update_xaxes(showline=True, linewidth=2, linecolor='black', mirror=True)
 fig.update_yaxes(showline=True, linewidth=2, linecolor='black', mirror=True)
+
 fig.show()
 ```
 
@@ -311,6 +321,7 @@ fig = go.Figure(
 
 fig.update_xaxes(zeroline=True, zerolinewidth=2, zerolinecolor='LightPink')
 fig.update_yaxes(zeroline=True, zerolinewidth=2, zerolinecolor='LightPink')
+
 fig.show()
 ```
 

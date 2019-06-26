@@ -236,6 +236,30 @@ fig.update_layout(
 fig.show()
 ```
 
+#### Ridgeline plot
+
+A ridgeline plot ([previously known as Joy Plot](https://serialmentor.com/blog/2017/9/15/goodbye-joyplots)) shows the distribution of a numerical value for several groups. They can be used for visualizing changes in distributions over time or space.
+
+```python
+import plotly.graph_objects as go
+from plotly.colors import n_colors
+import numpy as np
+
+# 12 sets of normal distributed random data, with increasing mean and standard deviation
+data = (np.linspace(1, 2, 12)[:, np.newaxis] * np.random.randn(12, 200) + 
+            (np.arange(12) + 2 * np.random.random(12))[:, np.newaxis])
+
+colors = n_colors('rgb(5, 200, 200)', 'rgb(200, 10, 10)', 12, colortype='rgb')
+
+fig = go.Figure()
+for data_line, color in zip(data, colors):
+    fig.add_trace(go.Violin(x=data_line, line_color=color))
+
+fig.update_traces(orientation='h', side='positive', width=3, points=False)
+fig.update_layout(xaxis_showgrid=False, xaxis_zeroline=False)
+fig.show()
+```
+
 #### Reference
 See https://plot.ly/python/reference/#violin for more information and chart attribute options!
 

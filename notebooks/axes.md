@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -552,7 +553,7 @@ py.iplot(fig, filename='axes-range-mode')
 
 ```python
 import plotly.plotly as py
-import plotly.graph_objs as go 
+import plotly.graph_objs as go
 
 import pandas as pd
 
@@ -571,15 +572,15 @@ tickvals = ['2016-04-01', '2016-07-01', '2016-10-01', apple_df_2016.Date.max()]
 
 data=[
     go.Scatter(
-        x = apple_df_2016.Date, 
-        y=apple_df_2016['AAPL.High'], 
-        name='Apple', 
+        x = apple_df_2016.Date,
+        y=apple_df_2016['AAPL.High'],
+        name='Apple',
         marker=dict(color='#851e52'),
     ),
     go.Scatter(
-        x=tesla_df_2016.date, 
-        y=tesla_df_2016.high, 
-        name='Tesla', 
+        x=tesla_df_2016.date,
+        y=tesla_df_2016.high,
+        name='Tesla',
         yaxis='y2',
         marker=dict(color='#d3560e'),
     ),
@@ -633,7 +634,7 @@ publisher.publish(
     'How to adjust axes properties in python. Seven examples of linear and logarithmic axes, axes titles, and styling and coloring axes and grid lines.',
     title = 'Axes | plotly',
     name = 'Axes',
-    has_thumbnail='true', thumbnail='thumbnail/your-tutorial-chart.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/your-tutorial-chart.jpg',
     language='python', page_type='example_index',
     display_as='layout_opt', order=3,
     ipynb= '~notebook_demo/95')

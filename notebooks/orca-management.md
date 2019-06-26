@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -153,7 +154,7 @@ By default, plotly.py searches the `PATH` for an executable named `orca` and che
 
 ```
 ----------------------------------------------------------------------------
-ValueError: 
+ValueError:
 The orca executable is required in order to export figures as static images,
 but it could not be found on the system path.
 
@@ -172,7 +173,7 @@ If you haven't installed orca yet, you can do so using conda as follows:
 Alternatively, see other installation methods in the orca project README at
 https://github.com/plotly/orca.
 
-After installation is complete, no further configuration should be needed. 
+After installation is complete, no further configuration should be needed.
 
 If you have installed orca, then for some reason plotly.py was unable to
 locate it. In this case, set the `plotly.io.orca.config.executable`
@@ -184,7 +185,7 @@ After updating this executable property, try the export operation again.
 If it is successful then you may want to save this configuration so that it
 will be applied automatically in future sessions. You can do this as follows:
 
-    >>> plotly.io.orca.config.save() 
+    >>> plotly.io.orca.config.save()
 
 If you're still having trouble, feel free to ask for help on the forums at
 https://community.plot.ly/c/api/python

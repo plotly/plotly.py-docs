@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -40,7 +41,7 @@ This notebook demonstrates how to use DataShader to display large datasets insid
 ```python
 # core
 import io
-import base64 
+import base64
 import time
 
 # pandas
@@ -90,14 +91,14 @@ Define a function that inputs an x/y ranges and the plot width/height and genera
 def gen_ds_image(x_range, y_range, plot_width, plot_height):
     if x_range is None or y_range is None or plot_width is None or plot_height is None:
         return None
-    
+
     cvs = ds.Canvas(x_range=x_range, y_range=y_range, plot_height=plot_height, plot_width=plot_width)
-    agg_scatter = cvs.points(iris_target_df, 
-                         'sepal_length', 'sepal_width', 
+    agg_scatter = cvs.points(iris_target_df,
+                         'sepal_length', 'sepal_width',
                           ds.count_cat('target'))
     img = tf.shade(agg_scatter)
     img = tf.dynspread(img, threshold=0.95, max_px=5, shape='circle')
-    
+
     return img.to_pil()
 ```
 
@@ -126,8 +127,8 @@ import plotly.graph_objs as go
 ```
 
 ```python
-f = go.FigureWidget(data=[{'x': x_range, 
-                           'y': y_range, 
+f = go.FigureWidget(data=[{'x': x_range,
+                           'y': y_range,
                            'mode': 'markers',
                            'marker': {'opacity': 0}}], # invisible trace to init axes and to support autoresize
                     layout={'width': plot_width, 'height': plot_height})
@@ -153,7 +154,7 @@ f.layout.images = [go.layout.Image(
 ```python
 def update_ds_image(layout, x_range, y_range, plot_width, plot_height):
     img = f.layout.images[0]
-    
+
     # Update with batch_update so all updates happen simultaneously
     with f.batch_update():
         img.x = x_range[0]
@@ -192,7 +193,7 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'change-callbacks-datashader.ipynb', 'python/change-callbacks-datashader/', 'FigureWidget | plotly',
@@ -200,8 +201,8 @@ publisher.publish(
     title = 'DataShader Case Study',
     name = 'DataShader Case Study',
     uses_plotly_offline=True,
-    has_thumbnail='true', thumbnail='thumbnail/ipython_widgets.jpg', 
-    language='python', page_type='example_index', 
+    has_thumbnail='true', thumbnail='thumbnail/ipython_widgets.jpg',
+    language='python', page_type='example_index',
     display_as='chart_events', order=24,
     ipynb= '~notebook_demo/239')
 ```

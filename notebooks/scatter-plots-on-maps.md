@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -62,8 +63,8 @@ data = [ go.Scattergeo(
         lat = df['lat'],
         text = df['text'],
         mode = 'markers',
-        marker = dict( 
-            size = 8, 
+        marker = dict(
+            size = 8,
             opacity = 0.8,
             reversescale = True,
             autocolorscale = False,
@@ -82,7 +83,7 @@ data = [ go.Scattergeo(
         ))]
 
 layout = dict(
-        title = 'Most trafficked US airports<br>(Hover for airport names)', 
+        title = 'Most trafficked US airports<br>(Hover for airport names)',
         geo = dict(
             scope='usa',
             projection=dict( type='albers usa' ),
@@ -91,7 +92,7 @@ layout = dict(
             subunitcolor = "rgb(217, 217, 217)",
             countrycolor = "rgb(217, 217, 217)",
             countrywidth = 0.5,
-            subunitwidth = 0.5        
+            subunitwidth = 0.5
         ),
     )
 
@@ -122,7 +123,7 @@ data = [go.Scattergeo(
         colorscale = scl,
         reversescale = True,
         opacity = 0.7,
-        size = 2,        
+        size = 2,
         colorbar = dict(
             thickness = 10,
             titleside = "right",
@@ -132,7 +133,7 @@ data = [go.Scattergeo(
             showticksuffix = "last",
             ticksuffix = " inches",
             dtick = 0.1
-        )                
+        )
     )
 )]
 
@@ -190,10 +191,10 @@ publisher.publish(
     'How to make scatter plots on maps in Python. Scatter plots on maps highlight geographic areas and can be colored by value.',
     title = 'Python Scatter Plots on Maps | Plotly',
     name = 'Scatter Plots on Maps',
-    has_thumbnail='true', thumbnail='thumbnail/scatter-plot-on-maps.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/scatter-plot-on-maps.jpg',
     language='python',
     display_as='maps', order=2,
-    ipynb= '~notebook_demo/57') 
+    ipynb= '~notebook_demo/57')
 ```
 
 ```python

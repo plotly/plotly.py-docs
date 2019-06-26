@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -58,7 +59,7 @@ for country, fill_color in zip(countries[::-1], fill_colors):
     country_coords = [country] * length
     pop = group['pop'].tolist()
     zeros = [0] * length
-    
+
     data.append(dict(
         type='scatter3d',
         mode='lines',
@@ -117,7 +118,7 @@ publisher.publish(
     'How to make 3D Filled Line Plots in Python',
     title = '3D Filled Line Plots in Python | plotly',
     name = '3D Filled Line Plots',
-    has_thumbnail='true', thumbnail='thumbnail/3d-filled-line-plot.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/3d-filled-line-plot.jpg',
     language='python',
     display_as='3d_charts', order=5,
     ipynb= '~notebook_demo/65')

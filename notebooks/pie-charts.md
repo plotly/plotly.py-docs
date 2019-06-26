@@ -107,8 +107,8 @@ fig.update_layout(
 fig.show()
 ```
 
-### Pie Chart Subplots ###
 
+### Pie Chart Subplots ###
 
 In order to create pie chart subplots, you need to use the [domain](https://plot.ly/python/reference/#pie-domain) attribute. It is important to note that the `X` array set the horizontal position whilst the `Y` array sets the vertical. For example, `x: [0,0.5], y: [0, 0.5]` would mean the bottom left position of the plot.
 
@@ -189,4 +189,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-pieplot/code", width="100
 
 #### Reference
 See https://plot.ly/python/reference/#pie for more information and chart attribute options!
-

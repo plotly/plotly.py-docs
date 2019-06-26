@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -63,16 +64,16 @@ annotations = []
 counter = 0
 
 for r in rects:
-    shapes.append( 
+    shapes.append(
         dict(
-            type = 'rect', 
-            x0 = r['x'], 
-            y0 = r['y'], 
-            x1 = r['x']+r['dx'], 
+            type = 'rect',
+            x0 = r['x'],
+            y0 = r['y'],
+            x1 = r['x']+r['dx'],
             y1 = r['y']+r['dy'],
             line = dict( width = 2 ),
             fillcolor = color_brewer[counter]
-        ) 
+        )
     )
     annotations.append(
         dict(
@@ -88,14 +89,14 @@ for r in rects:
 
 # For hover text
 trace0 = go.Scatter(
-    x = [ r['x']+(r['dx']/2) for r in rects ], 
+    x = [ r['x']+(r['dx']/2) for r in rects ],
     y = [ r['y']+(r['dy']/2) for r in rects ],
-    text = [ str(v) for v in values ], 
+    text = [ str(v) for v in values ],
     mode = 'text',
 )
-        
+
 layout = dict(
-    height=700, 
+    height=700,
     width=700,
     xaxis=dict(showgrid=False,zeroline=False),
     yaxis=dict(showgrid=False,zeroline=False),

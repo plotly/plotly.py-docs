@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -33,7 +34,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 
 
 #### Online Configuration Options
-Config options set via our API libraries are overridden on graphs hosted on plot.ly (i.e. when working online). 
+Config options set via our API libraries are overridden on graphs hosted on plot.ly (i.e. when working online).
 To set configutation options online, you can edit the plot's embed url. Visit our embed tutorial: http://help.plot.ly/embed-graphs-in-websites/#step-8-customize-the-iframe for more information on customizing the embed url to remove the "Edit Chart" link, hide the modebar, or autosize the plot.
 
 

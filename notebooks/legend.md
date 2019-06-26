@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -40,7 +41,7 @@ plotly.__version__
 ```
 
 #### Show Legend
-By default the legend is displayed on Plotly charts with multiple traces. 
+By default the legend is displayed on Plotly charts with multiple traces.
 
 ```python
 import plotly.plotly as py
@@ -262,17 +263,17 @@ data = [
         'line': {
             'color': 'rgb(164, 194, 244)'
         }
-    },   
+    },
     {
         'x': [1, 2, 3],
         'y': [4, 9, 2],
-        'legendgroup': 'group2', 
+        'legendgroup': 'group2',
         'name': 'second legend group',
         'mode': 'markers',
         'marker': {
             'color': 'rgb(142, 124, 195)'
         }
-    },        
+    },
     {
         'x': [1, 2, 3],
         'y': [5, 5, 5],
@@ -288,7 +289,7 @@ data = [
 py.iplot(data, filename='basic-legend-grouping')
 ```
 
-You can also hide entries in grouped legends: 
+You can also hide entries in grouped legends:
 
 ```python
 import plotly.plotly as py
@@ -374,6 +375,6 @@ publisher.publish(
     title = 'Legends | plotly',
     name = 'Legends',
     thumbnail='thumbnail/legend.jpg', language='python',
-    page_type='example_index', has_thumbnail='false', display_as='layout_opt', order=14, 
+    page_type='example_index', has_thumbnail='false', display_as='layout_opt', order=14,
     ipynb='~notebook_demo/14')
 ```

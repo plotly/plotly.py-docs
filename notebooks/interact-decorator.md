@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -84,15 +85,15 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'Interact.ipynb', 'python/interact-decorator/', 'Use the Interact decorator with go.FigureWidget',
     'Use the Interact decorator with go.FigureWidget',
     title = 'Use Interact decorator with FigureWidget',
     name = 'Use Interact decorator with FigureWidget',
-    has_thumbnail='true', thumbnail='thumbnail/zoom.jpg', 
-    language='python', page_type='example_index', 
+    has_thumbnail='true', thumbnail='thumbnail/zoom.jpg',
+    language='python', page_type='example_index',
     display_as='chart_events', order=4,
     ipynb= '~notebook_demo/254')
 ```

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -33,7 +34,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
 
 ```python
-import plotly 
+import plotly
 plotly.__version__
 ```
 
@@ -117,7 +118,7 @@ import plotly.figure_factory as ff
 table_data = [['Team', 'Wins', 'Losses', 'Ties'],
               ['Montréal<br>Canadiens', 18, 4, 0],
               ['Dallas Stars', 18, 5, 0],
-              ['NY Rangers', 16, 5, 0], 
+              ['NY Rangers', 16, 5, 0],
               ['Boston<br>Bruins', 13, 8, 0],
               ['Chicago<br>Blackhawks', 13, 8, 0],
               ['LA Kings', 13, 8, 0],
@@ -153,7 +154,7 @@ figure.layout.xaxis2.update({'domain': [0.6, 1.]})
 figure.layout.yaxis2.update({'anchor': 'x2'})
 figure.layout.yaxis2.update({'title': 'Goals'})
 
-# Update the margins to add a title and see graph x-labels. 
+# Update the margins to add a title and see graph x-labels.
 figure.layout.margin.update({'t':50, 'b':100})
 figure.layout.update({'title': '2016 Hockey Stats'})
 
@@ -171,7 +172,7 @@ import plotly.figure_factory as ff
 table_data = [['Team', 'Wins', 'Losses', 'Ties'],
               ['Montréal<br>Canadiens', 18, 4, 0],
               ['Dallas Stars', 18, 5, 0],
-              ['NY Rangers', 16, 5, 0], 
+              ['NY Rangers', 16, 5, 0],
               ['Boston<br>Bruins', 13, 8, 0],
               ['Chicago<br>Blackhawks', 13, 8, 0],
               ['Ottawa<br>Senators', 12, 5, 0]]
@@ -209,7 +210,7 @@ figure.layout.yaxis2.update({'anchor': 'x2'})
 figure.layout.xaxis2.update({'anchor': 'y2'})
 figure.layout.yaxis2.update({'title': 'Goals'})
 
-# Update the margins to add a title and see graph x-labels. 
+# Update the margins to add a title and see graph x-labels.
 figure.layout.margin.update({'t':75, 'l':50})
 figure.layout.update({'title': '2016 Hockey Stats'})
 
@@ -231,7 +232,7 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 #!pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'ff-subplots.ipynb', 'python/figure-factory-subplots/', 'Python Figure Factory Subplots | plotly',
@@ -239,7 +240,7 @@ publisher.publish(
     title= 'Figure Factory Subplots in Python | plotly',
     name = 'Figure Factory Subplots',
     has_thumbnail='true', thumbnail='thumbnail/ff-subplots.jpg',
-    language='python', 
+    language='python',
     display_as='multiple_axes', order=10,
     ipynb= '~PythonPlotBot/1828')
 ```

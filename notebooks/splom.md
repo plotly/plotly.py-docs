@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -141,7 +142,7 @@ trace1 = go.Splom(dimensions=[dict(label='sepal length',
                 text=text,
                 #default axes name assignment :
                 #xaxes= ['x1','x2',  'x3'],
-                #yaxes=  ['y1', 'y2', 'y3'], 
+                #yaxes=  ['y1', 'y2', 'y3'],
                 marker=dict(color=color_vals,
                             size=7,
                             colorscale=pl_colorscale,

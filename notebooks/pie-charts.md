@@ -88,12 +88,14 @@ from plotly.subplots import make_subplots
 
 labels = ["US", "China", "European Union", "Russian Federation", "Brazil", "India", 
           "Rest of World"]
-trace0 = go.Pie(labels=labels, values=[16, 15, 12, 6, 5, 4, 42], name="GHG Emissions")
-trace1 = go.Pie(labels=labels, values=[27, 11, 25, 8, 1, 3, 25], name="CO2 Emissions")
 
 # Create subplots: use 'domain' type for Pie subplot
 fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
-fig.add_traces([trace0, trace1], rows=[1, 1], cols=[1, 2])
+fig.add_trace(go.Pie(labels=labels, values=[16, 15, 12, 6, 5, 4, 42], name="GHG Emissions"),
+              1, 1)
+fig.add_trace(go.Pie(labels=labels, values=[27, 11, 25, 8, 1, 3, 25], name="CO2 Emissions"),
+              1, 2)
+
 # Use `hole` to create a donut-like pie chart
 fig.update_traces(hole=.4, hoverinfo="label+percent+name")
 
@@ -126,21 +128,19 @@ irises_colors = ['rgb(33, 75, 99)', 'rgb(79, 129, 102)', 'rgb(151, 179, 100)',
 cafe_colors =  ['rgb(146, 123, 21)', 'rgb(177, 180, 34)', 'rgb(206, 206, 40)',
                 'rgb(175, 51, 21)', 'rgb(35, 36, 21)']
 
-# Define pie charts
-night_pie = go.Pie(labels=labels, values=[38, 27, 18, 10, 7], name='Starry Night',
-                   marker_colors=night_colors)
-sunflowers_pie = go.Pie(labels=labels, values=[28, 26, 21, 15, 10], name='Sunflowers',
-                         marker_colors=sunflowers_colors)
-irises_pie = go.Pie(labels=labels, values=[38, 19, 16, 14, 13], name='Irises',
-                    marker_colors=irises_colors)
-cafe_pie = go.Pie(labels=labels, values=[31, 24, 19, 18, 8], name='The Night Café',
-                  marker_colors=cafe_colors)
-
-# Create subplots, using 'domain' type for pie charts
+# Create subplots, using 'domain' type for pie charts
 specs = [[{'type':'domain'}, {'type':'domain'}], [{'type':'domain'}, {'type':'domain'}]]
 fig = make_subplots(rows=2, cols=2, specs=specs)
-fig.add_traces([irises_pie, cafe_pie, night_pie, sunflowers_pie],
-               rows=[1, 1, 2, 2], cols=[1, 2, 1, 2])
+
+# Define pie charts
+fig.add_trace(go.Pie(labels=labels, values=[38, 27, 18, 10, 7], name='Starry Night',
+                     marker_colors=night_colors), 1, 1)
+fig.add_trace(go.Pie(labels=labels, values=[28, 26, 21, 15, 10], name='Sunflowers',
+                     marker_colors=sunflowers_colors), 1, 2)
+fig.add_trace(go.Pie(labels=labels, values=[38, 19, 16, 14, 13], name='Irises',
+                     marker_colors=irises_colors), 2, 1)
+fig.add_trace(go.Pie(labels=labels, values=[31, 24, 19, 18, 8], name='The Night Café',
+                     marker_colors=cafe_colors), 2, 2)
 
 # Tune layout and hover info
 fig.update_traces(hoverinfo='label+percent+name', textinfo='none')
@@ -151,17 +151,24 @@ fig = go.Figure(fig)
 fig.show()
 ```
 
+#### Plot chart with area proportional to total count
+
+Plots in the same `scalegroup` are represented with an area proportional to their total size.
+
 ```python
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
-labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
-values1 = [4500, 2500, 1053, 500]
-values2 = [40, 250, 153, 50]
+labels = ["Asia", "Europe", "Africa", "Americas", "Oceania"]
 
-# Use `hole` to create a donut-like pie chart
-fig = go.Figure()
-fig.add_trace(go.Pie(labels=labels, values=values1, hole=.5, scalegroup='one'))
-fig.add_trace(go.Pie(labels=labels, values=values2, scalegroup='one'))
+fig = make_subplots(1, 2, specs=[[{'type':'domain'}, {'type':'domain'}]],
+                    subplot_titles=['1980', '2007'])
+fig.add_trace(go.Pie(labels=labels, values=[4, 7, 1, 7, 0.5], scalegroup='one',
+                     name="World GDP 1980"), 1, 1)
+fig.add_trace(go.Pie(labels=labels, values=[21, 15, 3, 19, 1], scalegroup='one',
+                     name="World GDP 2007"), 1, 2)
+
+fig.update_layout(title_text='World GDP')
 fig.show()
 ```
 

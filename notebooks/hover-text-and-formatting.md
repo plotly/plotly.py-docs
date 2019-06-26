@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -126,8 +127,8 @@ publisher.publish(
     'hover-text-and-formatting.ipynb', 'python/hover-text-and-formatting/', 'Hover Text and Formatting',
     'How to use hover text and formatting in Python with Plotly.',
     title = 'Hover Text and Formatting | Plotly',
-    has_thumbnail='false', thumbnail='thumbnail/hover-text.jpg', 
-    language='python', 
+    has_thumbnail='false', thumbnail='thumbnail/hover-text.jpg',
+    language='python',
     page_type='example_index',
     display_as='layout_opt', order=20, ipynb='~notebook_demo/198',
     uses_plotly_offline=False)

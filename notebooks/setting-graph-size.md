@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -138,7 +139,7 @@ publisher.publish(
     'How to manipulate the graph size in Python with Plotly.',
     title = 'Setting Graph Size',
     name = 'Setting Graph Size',
-    has_thumbnail='true', thumbnail='thumbnail/sizing.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/sizing.jpg',
     language='python', page_type='example_index',
     display_as='layout_opt',
     ipynb= '~notebook_demo/133')

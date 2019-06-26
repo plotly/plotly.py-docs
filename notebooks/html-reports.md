@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -131,7 +132,7 @@ df.columns = tickers
 df.head()
 ```
 
-Use Plotly's <a href="https://plot.ly/python/overview/">get_subplots()</a> routine to generate an empty matrix of 6x6 subplots. We'll fill these in by plotting all stock ticker combinations against each other (ie, General Electric stock versus Apple stock) 
+Use Plotly's <a href="https://plot.ly/python/overview/">get_subplots()</a> routine to generate an empty matrix of 6x6 subplots. We'll fill these in by plotting all stock ticker combinations against each other (ie, General Electric stock versus Apple stock)
 
 ```python
 fig = plotly_tools.get_subplots(rows=6, columns=6, print_grid=True, horizontal_spacing= 0.05, vertical_spacing= 0.05)
@@ -154,7 +155,7 @@ for i in range(1,7):
     x_ticker = df.columns[i-1]
     for j in range(1,7):
         y_ticker = df.columns[j-1]
-        if i==j: 
+        if i==j:
             x = df[x_ticker]
             x_grid = np.linspace(x.min(), x.max(), 100)
             sp = [ go.Histogram( x=x, histnorm='probability density' ), \
@@ -162,7 +163,7 @@ for i in range(1,7):
                           line=dict(width=2,color='red',opacity='0.5') ) ]
         else:
             sp = [ go.Scatter( x=df[x_ticker], y=df[y_ticker], mode='markers', marker=dict(size=3) ) ]
-        
+
         for ea in sp:
             ea.update( name='{0} vs {1}'.format(x_ticker,y_ticker),\
                       xaxis='x{}'.format(subplots[sp_index]),\
@@ -179,7 +180,7 @@ for tk in tickers:
     fig['layout']['yaxis{}'.format(bottom_index)].update( title=tk )
     left_index=left_index+1
     bottom_index=bottom_index+6
-    
+
 # Remove legend by updating 'layout' key
 fig['layout'].update(showlegend=False,height=1000,width=1000, title='Major technology and CPG stock prices in 2014')
 fig['data'] = data
@@ -260,7 +261,7 @@ html_string = '''
         <iframe width="1000" height="550" frameborder="0" seamless="seamless" scrolling="no" \
 src="''' + first_plot_url + '''.embed?width=800&height=550"></iframe>
         <p>Apple stock price rose steadily through 2014.</p>
-        
+
         <!-- *** Section 2 *** --->
         <h2>Section 2: AAPL compared to other 2014 stocks</h2>
         <iframe width="1000" height="1000" frameborder="0" seamless="seamless" scrolling="no" \
@@ -293,8 +294,8 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="https://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 import publisher
-publisher.publish('html-reports', '/python/html-reports/', 
-                  'Python HTML Reports', 
+publisher.publish('html-reports', '/python/html-reports/',
+                  'Python HTML Reports',
                   'How to make HTML reports with Python, Pandas, and Plotly Graphs.')
 ```
 

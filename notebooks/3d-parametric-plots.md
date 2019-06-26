@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -148,14 +149,14 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     '3d-parametric.ipynb', 'python/3d-parametric-plots/', '3D Parametric Plots | plotly',
     'How to 3D Parameteric Plots in Python',
     title= '3D Parametric Plots in Python | plotly',
     name = 'Parametric Plots',
-    has_thumbnail='true', thumbnail='thumbnail/parametric.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/parametric.jpg',
     language='python',
     display_as='3d_charts', order=9,
     ipynb= '~notebook_demo/69')

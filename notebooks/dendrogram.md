@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -123,9 +124,9 @@ heat_data = heat_data[:,dendro_leaves]
 
 heatmap = [
     go.Heatmap(
-        x = dendro_leaves, 
+        x = dendro_leaves,
         y = dendro_leaves,
-        z = heat_data,    
+        z = heat_data,
         colorscale = 'Blues'
     )
 ]

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -68,9 +69,9 @@ values = [4500,2500,1053,500]
 colors = ['#FEBFB3', '#E1396C', '#96D38C', '#D0F9B1']
 
 trace = go.Pie(labels=labels, values=values,
-               hoverinfo='label+percent', textinfo='value', 
+               hoverinfo='label+percent', textinfo='value',
                textfont=dict(size=20),
-               marker=dict(colors=colors, 
+               marker=dict(colors=colors,
                            line=dict(color='#000000', width=2)))
 
 py.iplot([trace], filename='styled_pie_chart')
@@ -259,8 +260,8 @@ publisher.publish(
     'pie-charts.ipynb', 'python/pie-charts/', 'Pie Charts',
     'How to make Pie Charts.',
     title= 'Pie Charts in Python | plotly',
-    has_thumbnail='true', thumbnail='thumbnail/pie-chart.jpg', 
-    language='python', page_type='example_index', 
+    has_thumbnail='true', thumbnail='thumbnail/pie-chart.jpg',
+    language='python', page_type='example_index',
     display_as='basic', order=6,
     ipynb='~notebook_demo/7/')
 ```

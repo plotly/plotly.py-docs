@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -64,7 +65,7 @@ scale_labels = [scale1, scale2, scale3, scale4]
 traces = []
 for i in range(len(scales)):
     traces.append(go.Scatter(
-        x=[0.6], # Pad the title - a longer scale title would need a higher value 
+        x=[0.6], # Pad the title - a longer scale title would need a higher value
         y=[6.25],
         text=scales[i],
         mode='text',

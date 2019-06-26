@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -71,7 +72,7 @@ For more information on the choice of 0.05 for a significance level, check out [
 def q_test_for_smallest_point(dataset):
     q_ref = 0.29  # the reference Q value for a significance level of 95% and 30 data points
     q_stat = (dataset[1] - dataset[0])/(dataset[-1] - dataset[0])
-    
+
     if q_stat > q_ref:
         print("Since our Q-statistic is %f and %f > %f, we have evidence that our "
               "minimum point IS an outlier to the data.") %(q_stat, q_stat, q_ref)

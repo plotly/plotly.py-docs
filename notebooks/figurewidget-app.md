@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -63,7 +64,7 @@ df = df.drop(df.columns[[0]], axis=1)
 df.sample(3)
 ```
 
-Let's get the set of all the `airlines`, so that we can type the right things into the search box later. 
+Let's get the set of all the `airlines`, so that we can type the right things into the search box later.
 
 ```python
 df['carrier'].unique()

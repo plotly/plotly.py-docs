@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -23,7 +24,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 
 
 #### Defining and plotting triangulated surfaces
-#### with Plotly `Mesh3d` 
+#### with Plotly `Mesh3d`
 
 
 A triangulation of a compact surface is a finite collection of triangles that cover the surface in  such a way that every point on the surface is in a triangle,  and  the intersection of any two triangles is either void, a common edge or a common vertex. A triangulated surface is called tri-surface.
@@ -49,7 +50,7 @@ The Moebius band is parameterized by:
 $$\begin{align*}
 x(u,v)&=(1+0.5 v\cos(u/2))\cos(u)\\
 y(u,v)&=(1+0.5 v\cos(u/2))\sin(u)\quad\quad u\in[0,2\pi],\: v\in[-1,1]\\
-z(u,v)&=0.5 v\sin(u/2) 
+z(u,v)&=0.5 v\sin(u/2)
 \end{align*}
 $$
 
@@ -105,13 +106,13 @@ Define a function that maps a mean z-value to a matplotlib color, converted to a
 ```python
 def map_z2color(zval, colormap, vmin, vmax):
     #map the normalized value zval to a corresponding color in the colormap
-    
+
     if vmin>vmax:
         raise ValueError('incorrect relation between vmin and vmax')
     t=(zval-vmin)/float((vmax-vmin))#normalize val
     R, G, B, alpha=colormap(t)
     return 'rgb('+'{:d}'.format(int(R*255+0.5))+','+'{:d}'.format(int(G*255+0.5))+\
-           ','+'{:d}'.format(int(B*255+0.5))+')'   
+           ','+'{:d}'.format(int(B*255+0.5))+')'
 
 ```
 
@@ -121,42 +122,42 @@ To plot the triangles on a surface,  we set in Plotly `Mesh3d` the lists of x, y
 def tri_indices(simplices):
     #simplices is a numpy array defining the simplices of the triangularization
     #returns the lists of indices i, j, k
-    
+
     return ([triplet[c] for triplet in simplices] for c in range(3))
 
 def plotly_trisurf(x, y, z, simplices, colormap=cm.RdBu, plot_edges=None):
-    #x, y, z are lists of coordinates of the triangle vertices 
+    #x, y, z are lists of coordinates of the triangle vertices
     #simplices are the simplices that define the triangularization;
     #simplices  is a numpy array of shape (no_triangles, 3)
     #insert here the  type check for input data
-    
+
     points3D=np.vstack((x,y,z)).T
-    tri_vertices=map(lambda index: points3D[index], simplices)# vertices of the surface triangles     
-    zmean=[np.mean(tri[:,2]) for tri in tri_vertices ]# mean values of z-coordinates of 
+    tri_vertices=map(lambda index: points3D[index], simplices)# vertices of the surface triangles
+    zmean=[np.mean(tri[:,2]) for tri in tri_vertices ]# mean values of z-coordinates of
                                                       #triangle vertices
     min_zmean=np.min(zmean)
-    max_zmean=np.max(zmean)  
-    facecolor=[map_z2color(zz,  colormap, min_zmean, max_zmean) for zz in zmean] 
+    max_zmean=np.max(zmean)
+    facecolor=[map_z2color(zz,  colormap, min_zmean, max_zmean) for zz in zmean]
     I,J,K=tri_indices(simplices)
-    
+
     triangles=go.Mesh3d(x=x,
                      y=y,
                      z=z,
-                     facecolor=facecolor, 
+                     facecolor=facecolor,
                      i=I,
                      j=J,
                      k=K,
                      name=''
                     )
-    
-    if plot_edges is None:# the triangle sides are not plotted 
+
+    if plot_edges is None:# the triangle sides are not plotted
         return [triangles]
     else:
         #define the lists Xe, Ye, Ze, of x, y, resp z coordinates of edge end points for each triangle
         #None separates data corresponding to two consecutive triangles
         lists_coord=[[[T[k%3][c] for k in range(4)]+[ None]   for T in tri_vertices]  for c in range(3)]
         Xe, Ye, Ze=[reduce(lambda x,y: x+y, lists_coord[k]) for k in range(3)]
-        
+
         #define the lines to be plotted
         lines=go.Scatter3d(x=Xe,
                         y=Ye,
@@ -177,20 +178,20 @@ Set the  layout of the plot:
 
 ```python
 axis = dict(
-showbackground=True, 
+showbackground=True,
 backgroundcolor="rgb(230, 230,230)",
-gridcolor="rgb(255, 255, 255)",      
-zerolinecolor="rgb(255, 255, 255)",  
+gridcolor="rgb(255, 255, 255)",
+zerolinecolor="rgb(255, 255, 255)",
     )
 
 layout = go.Layout(
          title='Moebius band triangulation',
          width=800,
          height=800,
-         scene=dict(  
+         scene=dict(
          xaxis=dict(axis),
-         yaxis=dict(axis), 
-         zaxis=dict(axis), 
+         yaxis=dict(axis),
+         zaxis=dict(axis),
         aspectratio=dict(
             x=1,
             y=1,
@@ -226,7 +227,7 @@ y=r*np.sin(theta)
 x=np.append(x, 0)#  a trick to include the center of the disk in the set of points. It was avoided
                  # initially when we defined r=np.linspace(h, 1.0, n)
 y=np.append(y,0)
-z = np.sin(-x*y) 
+z = np.sin(-x*y)
 
 points2D=np.vstack([x,y]).T
 tri=Delaunay(points2D)
@@ -238,8 +239,8 @@ Plot the  surface with a modified layout:
 data2=plotly_trisurf(x,y,z, tri.simplices, colormap=cm.cubehelix, plot_edges=None)
 fig2 = go.Figure(data=data2, layout=layout)
 fig2['layout'].update(dict(title='Triangulated surface',
-                          scene=dict(camera=dict(eye=dict(x=1.75, 
-                                                          y=-0.7, 
+                          scene=dict(camera=dict(eye=dict(x=1.75,
+                                                          y=-0.7,
                                                           z= 0.75)
                                                 )
                                     )))
@@ -265,7 +266,7 @@ We choose a ply file from a list  provided [here](http://people.sc.fsu.edu/~jbur
 from plyfile import PlyData, PlyElement
 
 import urllib2
-req = urllib2.Request('http://people.sc.fsu.edu/~jburkardt/data/ply/chopper.ply') 
+req = urllib2.Request('http://people.sc.fsu.edu/~jburkardt/data/ply/chopper.ply')
 opener = urllib2.build_opener()
 f = opener.open(req)
 plydata = PlyData.read(f)
@@ -276,7 +277,7 @@ Read the file header:
 ```python
 for element in plydata.elements:
     print element
-    
+
 nr_points=plydata.elements[0].count
 nr_faces=plydata.elements[1].count
 ```
@@ -302,11 +303,11 @@ title="Trisurf from a PLY file<br>"+\
                 "Data Source:<a href='http://people.sc.fsu.edu/~jburkardt/data/ply/airplane.ply'> [1]</a>"
 
 noaxis=dict(showbackground=False,
-            showline=False,  
+            showline=False,
             zeroline=False,
             showgrid=False,
             showticklabels=False,
-            title='' 
+            title=''
           )
 
 fig3 = go.Figure(data=data3, layout=layout)
@@ -314,14 +315,14 @@ fig3['layout'].update(dict(title=title,
                            width=1000,
                            height=1000,
                            scene=dict(xaxis=noaxis,
-                                      yaxis=noaxis, 
-                                      zaxis=noaxis, 
+                                      yaxis=noaxis,
+                                      zaxis=noaxis,
                                       aspectratio=dict(x=1, y=1, z=0.4),
-                                      camera=dict(eye=dict(x=1.25, y=1.25, z= 1.25)     
+                                      camera=dict(eye=dict(x=1.25, y=1.25, z= 1.25)
                                      )
                            )
                      ))
-                      
+
 py.iplot(fig3, filename='Chopper-Ply-cls')
 ```
 

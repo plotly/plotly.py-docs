@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -186,8 +187,8 @@ box_a = {
     'title': 'scatter-for-dashboard'
 }
 
-text_for_box = """ 
-## Distributions: 
+text_for_box = """
+## Distributions:
 
 
 #### Scatter Plot
@@ -259,7 +260,7 @@ my_dboard.get_box(1)
 ```
 
 #### Swap Boxes
-If you want to swap the locations of two boxes you've already placed in the dashboard, run `my_dboard.get_preview()` to look at the layout of the dashboard, then simply pick two _unique_ box ids and you will swap the contents stored at those locations. 
+If you want to swap the locations of two boxes you've already placed in the dashboard, run `my_dboard.get_preview()` to look at the layout of the dashboard, then simply pick two _unique_ box ids and you will swap the contents stored at those locations.
 
 ```python
 my_dboard.get_box(3)['title']
@@ -338,7 +339,7 @@ stacked_dboard = dashboard.Dashboard()
 text_box = {
     'type': 'box',
     'boxType': 'text',
-    'text': 'empty space' 
+    'text': 'empty space'
 }
 for _ in range(5):
     stacked_dboard.insert(text_box, 'below', 1)

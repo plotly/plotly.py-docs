@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -46,7 +47,7 @@ spectra=np.loadtxt(f, delimiter=',')
 
 traces = []
 y_raw = spectra[:, 0] # wavelength
-sample_size = spectra.shape[1]-1 
+sample_size = spectra.shape[1]-1
 for i in range(1, sample_size):
     z_raw = spectra[:, i]
     x = []
@@ -80,15 +81,15 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'ribbon.ipynb', 'python/ribbon-plots/', 'Python Ribbon Plots | plotly',
     'How to make ribbon plots in Python. ',
     title = 'Python Ribbon Plots | plotly',
     name = 'Ribbon Plots',
-    has_thumbnail='true', thumbnail='thumbnail/ribbon-plot.jpg', 
-    language='python', page_type='example_index', 
+    has_thumbnail='true', thumbnail='thumbnail/ribbon-plot.jpg',
+    language='python', page_type='example_index',
     display_as='3d_charts', order=4,
     ipynb= '~notebook_demo/64')
 ```

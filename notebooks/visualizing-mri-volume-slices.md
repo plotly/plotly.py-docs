@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -107,7 +108,7 @@ py.grid_ops.upload(grid, 'anim_sliceshead'+str(time.time()), auto_open=False)
 ```python
 data=[
     dict(
-        type='surface', 
+        type='surface',
         zsrc=grid.get_column_reference('z1'),
         surfacecolorsrc=grid.get_column_reference('surfc1'),
         colorscale=pl_bone,
@@ -132,34 +133,34 @@ sliders=[
                             dict(mode='immediate',
                                  frame= dict(duration=70, redraw= False),
                                  transition=dict(duration=0))],
-                    label='{:d}'.format(k+1)) for k in range(68)], 
+                    label='{:d}'.format(k+1)) for k in range(68)],
         transition= dict(duration=0),
         x=0,
-        y=0, 
-        currentvalue=dict(font=dict(size=12), 
-                          prefix='slice: ', 
-                          visible=True, 
+        y=0,
+        currentvalue=dict(font=dict(size=12),
+                          prefix='slice: ',
+                          visible=True,
                           xanchor='center'
-                         ),  
+                         ),
         len=1.0
     )
 ]
 
 axis3d = dict(
-    showbackground=True, 
+    showbackground=True,
     backgroundcolor="rgb(230, 230,230)",
-    gridcolor="rgb(255, 255, 255)",      
-    zerolinecolor="rgb(255, 255, 255)",  
+    gridcolor="rgb(255, 255, 255)",
+    zerolinecolor="rgb(255, 255, 255)",
 )
 
 layout3d = dict(
-         title='Slices in volumetric data', 
+         title='Slices in volumetric data',
          font=dict(family='Balto'),
          width=600,
          height=600,
          scene=dict(xaxis=(axis3d),
-                    yaxis=(axis3d), 
-                    zaxis=dict(axis3d, **dict(range=[-0.1, 6.8], autorange=False)), 
+                    yaxis=(axis3d),
+                    zaxis=dict(axis3d, **dict(range=[-0.1, 6.8], autorange=False)),
                     aspectratio=dict(x=1, y=1, z=1),
                     ),
          updatemenus=[
@@ -173,7 +174,7 @@ layout3d = dict(
                   buttons=[dict(label='Play',
                                 method='animate',
                                 args=[
-                                    None, 
+                                    None,
                                     dict(frame=dict(duration=70, redraw=False),
                                          transition=dict(duration=0),
                                          fromcurrent=True,

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -115,10 +116,10 @@ publisher.publish(
     'radar.ipynb', 'python/radar-chart/', 'Radar Charts',
     'How to make radar charts in Python with Plotly.',
     title = 'Radar Charts | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/radar.gif', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/radar.gif',
+    language='python',
     display_as='scientific',
-    order=30, 
+    order=30,
     ipynb='~notebook_demo/202')
 ```
 

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -52,7 +53,7 @@ Let $T(x)$ be the function of the data, $B(x)$ the function of the baseline, and
 
 $$
 \begin{align}
-A = \int_{I} T(x)dx - \int_{I} B(x)dx 
+A = \int_{I} T(x)dx - \int_{I} B(x)dx
 \end{align}
 $$
 
@@ -131,7 +132,7 @@ annotation = go.Annotation(
 layout = go.Layout(
     annotations=[annotation]
 )
- 
+
 trace_data = [trace, trace2, trace3]
 fig = go.Figure(data=trace_data, layout=layout)
 py.iplot(fig, filename='milk-production-peak-integration')

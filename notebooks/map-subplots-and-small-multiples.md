@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -173,10 +174,10 @@ publisher.publish(
     'How to make map subplots and map small multiples in Python.',
     title = 'Python Map Subplots and Map Small Multiples | plotly',
     name = 'Map Subplots',
-    has_thumbnail='true', thumbnail='thumbnail/map-subplots.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/map-subplots.jpg',
     language='python',
     display_as='multiple_axes', order=5,
-    ipynb= '~notebook_demo/59') 
+    ipynb= '~notebook_demo/59')
 ```
 
 ```python

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -26,7 +27,7 @@ jupyter:
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->
-#### New to Plotly? 
+#### New to Plotly?
 Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
 <br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
 <br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
@@ -48,11 +49,11 @@ plotly.__version__
 import plotly.plotly as py
 import plotly.figure_factory as ff
 
-z = [[.1, .3, .5, .7, .9],  
+z = [[.1, .3, .5, .7, .9],
      [1, .8, .6, .4, .2],
-     [.2, 0, .5, .7, .9],  
+     [.2, 0, .5, .7, .9],
      [.9, .8, .4, .2, 0],
-     [.3, .4, .5, .7, 1]] 
+     [.3, .4, .5, .7, 1]]
 
 fig = ff.create_annotated_heatmap(z)
 py.iplot(fig, filename='annotated_heatmap')
@@ -66,10 +67,10 @@ py.iplot(fig, filename='annotated_heatmap')
 import plotly.plotly as py
 import plotly.figure_factory as ff
 
-z = [[.1, .3, .5, .7],  
+z = [[.1, .3, .5, .7],
      [1, .8, .6, .4],
-     [.6, .4, .2, .0],  
-     [.9, .7, .5, .3]] 
+     [.6, .4, .2, .0],
+     [.9, .7, .5, .3]]
 
 fig = ff.create_annotated_heatmap(z, colorscale='Viridis')
 py.iplot(fig, filename='annotated_heatmap_color')
@@ -83,10 +84,10 @@ py.iplot(fig, filename='annotated_heatmap_color')
 import plotly.plotly as py
 import plotly.figure_factory as ff
 
-z = [[.1, .3, .5, .7],  
+z = [[.1, .3, .5, .7],
      [1.0, .8, .6, .4],
-     [.6, .4, .2, 0.0],  
-     [.9, .7, .5, .3]] 
+     [.6, .4, .2, 0.0],
+     [.9, .7, .5, .3]]
 
 colorscale = [[0, '#66475e'], [1, '#ecbfe0']]
 font_colors = ['#efecee', '#3c3636']
@@ -95,7 +96,7 @@ py.iplot(fig, filename='annotated_heatmap_custom_color')
 ```
 
 <!-- #region {"deletable": true, "editable": true} -->
-#### Custom Text and X & Y Labels 
+#### Custom Text and X & Y Labels
 set `annotation_text` to a matrix with the same dimmensions as `z`
 <!-- #endregion -->
 
@@ -103,14 +104,14 @@ set `annotation_text` to a matrix with the same dimmensions as `z`
 import plotly.plotly as py
 import plotly.figure_factory as ff
 
-z = [[.1, .3, .5],  
+z = [[.1, .3, .5],
      [1.0, .8, .6],
      [.6, .4, .2]]
 
 x = ['Team A', 'Team B', 'Team C']
 y = ['Game Three', 'Game Two', 'Game One']
 
-z_text = [['Win', 'Lose', 'Win'],  
+z_text = [['Win', 'Lose', 'Win'],
           ['Lose', 'Lose', 'Win'],
           ['Win', 'Win', 'Lose']]
 
@@ -135,7 +136,7 @@ fig = ff.create_annotated_heatmap(z, annotation_text=z_text, colorscale='Greys',
 # Make text size smaller
 for i in range(len(fig.layout.annotations)):
     fig.layout.annotations[i].font.size = 8
-    
+
 py.iplot(fig, filename='annotated_heatmap_numpy')
 ```
 
@@ -173,7 +174,7 @@ element = [['Hydrogen', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 
 
 atomic_mass = [[ 1.00794, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0,  4.002602],
      [ 6.941, 9.012182, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0,  10.811, 12.0107, 14.0067, 15.9994, 18.9984032, 20.1797],
-     [ 22.98976928, 24.3050, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0,  26.9815386, 28.0855, 30.973762, 32.065, 35.453, 39.948], 
+     [ 22.98976928, 24.3050, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0,  26.9815386, 28.0855, 30.973762, 32.065, 35.453, 39.948],
      [ 39.0983, 40.078, 44.955912, 47.867, 50.9415, 51.9961, 54.938045, 55.845, 58.933195, 58.6934, 63.546, 65.38, 69.723, 72.64, 74.92160, 78.96, 79.904, 83.798],
      [ 85.4678, 87.62, 88.90585, 91.224, 92.90638, 95.96, 98, 101.07, 102.90550, 106.42, 107.8682, 112.411, 114.818, 118.710, 121.760, 127.60, 126.90447, 131.293],
      [ 132.9054519, 137.327, .0, 178.49, 180.94788, 183.84, 186.207, 190.23, 192.217, 195.084, 196.966569, 200.59, 204.3833, 207.2, 208.98040, 209, 210, 222],
@@ -186,7 +187,7 @@ atomic_mass = [[ 1.00794, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0
 
 z = [[.8, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, 1.],
      [.1, .2, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .7, .8, .8, .8, .9, 1.],
-     [.1, .2, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .6, .7, .8, .8, .9, 1], 
+     [.1, .2, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .6, .7, .8, .8, .9, 1],
      [.1, .2, .3, .3, .3, .3, .3, .3, .3, .3, .3, .3, .6, .7, .8, .8, .9, 1.],
      [.1, .2, .3, .3, .3, .3, .3, .3, .3, .3, .3, .3, .6, .6, .7, .7, .9, 1.],
      [.1, .2, .4, .3, .3, .3, .3, .3, .3, .3, .3, .3, .6, .6, .6, .7, .9, 1.],
@@ -208,8 +209,8 @@ hover = hover[::-1]
 z = z[::-1]
 
 # Set Colorscale
-colorscale=[[0.0, 'rgb(255,255,255)'], [.2, 'rgb(255, 255, 153)'], 
-            [.4, 'rgb(153, 255, 204)'], [.6, 'rgb(179, 217, 255)'], 
+colorscale=[[0.0, 'rgb(255,255,255)'], [.2, 'rgb(255, 255, 153)'],
+            [.4, 'rgb(153, 255, 204)'], [.6, 'rgb(179, 217, 255)'],
             [.8, 'rgb(240, 179, 255)'],[1.0, 'rgb(255, 77, 148)']]
 
 # Make Annotated Heatmap
@@ -244,7 +245,7 @@ publisher.publish(
     name = 'Annotated Heatmaps',
     thumbnail='thumbnail/ann_heat.jpg', language='python',
     has_thumbnail='true', display_as='scientific', order=4,
-    ipynb= '~notebook_demo/35')  
+    ipynb= '~notebook_demo/35')
 ```
 
 ```python deletable=true editable=true

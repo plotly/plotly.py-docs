@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -10,6 +11,21 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  plotly:
+    description: How to make interactive OHLC charts in Python with Plotly. Six examples
+      of OHLC charts with Pandas, time series, and yahoo finance data.
+    display_as: financial
+    has_thumbnail: true
+    ipynb: ~notebook_demo/53
+    language: python
+    layout: user-guide
+    name: OHLC Charts
+    order: 1
+    page_type: example_index
+    permalink: python/ohlc-charts/
+    thumbnail: thumbnail/ohlc.jpg
+    v4upgrade: true
+
 ---
 
 The [OHLC](https://en.wikipedia.org/wiki/Open-high-low-close_chart) chart (for open, high, low and close) is a style of financial chart describing open, high, low and close values for a given `x` coordinate (most likely time). The tip of the lines represent the `low` and `high` values and the horizontal segments represent the `open` and `close` values. Sample points where the close value is higher (lower) then the open value are called increasing (decreasing). By default, increasing items are drawn in green whereas decreasing are drawn in red.
@@ -145,4 +161,3 @@ fig.show()
 
 #### Reference
 For more information on candlestick attributes, see: https://plot.ly/python/reference/#ohlc
-

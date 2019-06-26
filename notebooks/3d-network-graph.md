@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -89,7 +90,7 @@ for node in data['nodes']:
 Get the node positions, set by the Kamada-Kawai layout for 3D graphs:
 
 ```python
-layt=G.layout('kk', dim=3) 
+layt=G.layout('kk', dim=3)
 ```
 
 `layt` is a list of three elements lists (the coordinates of nodes):
@@ -109,8 +110,8 @@ Ye=[]
 Ze=[]
 for e in Edges:
     Xe+=[layt[e[0]][0],layt[e[1]][0], None]# x-coordinates of edge ends
-    Ye+=[layt[e[0]][1],layt[e[1]][1], None]  
-    Ze+=[layt[e[0]][2],layt[e[1]][2], None]  
+    Ye+=[layt[e[0]][1],layt[e[1]][1], None]
+    Ze+=[layt[e[0]][2],layt[e[1]][2], None]
 ```
 
 ```python
@@ -203,8 +204,8 @@ publisher.publish(
     'How to make 3D Network Graphs in Python. ',
     title = '3D Network Graphs in Python | plotly',
     name = '3D Network Graphs',
-    has_thumbnail='true', thumbnail='thumbnail/3dnetwork.jpg', 
-    language='python', page_type='example_index', 
+    has_thumbnail='true', thumbnail='thumbnail/3dnetwork.jpg',
+    language='python', page_type='example_index',
     display_as='3d_charts', order=13,
     ipynb= '~notebook_demo/226')
 ```

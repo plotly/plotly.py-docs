@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -41,7 +42,7 @@ plotly.__version__
 ```
 
 #### Frames
-Now, along with `data` and `layout`, `frames` is added to the keys that `figure` allows. Your `frames` key points to a list of figures, each of which will be cycled through upon instantiation of the plot. 
+Now, along with `data` and `layout`, `frames` is added to the keys that `figure` allows. Your `frames` key points to a list of figures, each of which will be cycled through upon instantiation of the plot.
 
 <!-- #region -->
 #### Online Mode
@@ -142,7 +143,7 @@ py.icreate_animations(figure, 'ping_pong'+str(time.time()))
 
 <!-- #region -->
 #### Adding Control Buttons to Animations
-You can add play and pause buttons to control your animated charts by adding an `updatemenus` array to the `layout` of your `figure`. More information on style and placement of the buttons is available in Plotly's [`updatemenus` reference](https://plot.ly/python/reference/#layout-updatemenus).  
+You can add play and pause buttons to control your animated charts by adding an `updatemenus` array to the `layout` of your `figure`. More information on style and placement of the buttons is available in Plotly's [`updatemenus` reference](https://plot.ly/python/reference/#layout-updatemenus).
 <br>
 The buttons are defined as follows:
 ```
@@ -154,7 +155,7 @@ The buttons are defined as follows:
 <!-- #endregion -->
 
 #### Defining Button Arguments
-- `None`: Setting `'args'` to undefined (i.e. `'args': [None]`) will create a simple play button that will animate all frames.  
+- `None`: Setting `'args'` to undefined (i.e. `'args': [None]`) will create a simple play button that will animate all frames.
 - string: Animate all frames with group `'<some string>'`. This is a way of scoping the animations in case you would prefer to animate without explicitly enumerating all frames.
 - `['frame1', 'frame2', ...]`: Animate a sequence of named frames.
 - `[{data: [], layout: {}, traces: []}, {...}]`: Nearly identical to animating named frames; though this variant lets you inline data instead of adding it as named frames. This can be useful for interaction where it's undesirable to add and manage named frames for ephemeral changes.
@@ -327,12 +328,12 @@ xx=s+s**2
 yy=s-s**2
 
 
-data=[dict(x=x, y=y, 
-           mode='lines', 
+data=[dict(x=x, y=y,
+           mode='lines',
            line=dict(width=2, color='blue')
           ),
-      dict(x=x, y=y, 
-           mode='lines', 
+      dict(x=x, y=y,
+           mode='lines',
            line=dict(width=2, color='blue')
           )
     ]
@@ -345,14 +346,14 @@ layout=dict(xaxis=dict(range=[xm, xM], autorange=False, zeroline=False),
                                         'method': 'animate',
                                         'args': [None]}]}])
 
-frames=[dict(data=[dict(x=[xx[k]], 
-                        y=[yy[k]], 
-                        mode='markers', 
+frames=[dict(data=[dict(x=[xx[k]],
+                        y=[yy[k]],
+                        mode='markers',
                         marker=dict(color='red', size=10)
                         )
-                  ]) for k in range(N)]    
-          
-figure1=dict(data=data, layout=layout, frames=frames)          
+                  ]) for k in range(N)]
+
+figure1=dict(data=data, layout=layout, frames=frames)
 iplot(figure1)
 ```
 
@@ -382,11 +383,11 @@ ynoe=yy+ux
 
 data=[dict(x=x, y=y,
            name='frame',
-           mode='lines', 
+           mode='lines',
            line=dict(width=2, color='blue')),
       dict(x=x, y=y,
            name='curve',
-           mode='lines', 
+           mode='lines',
            line=dict(width=2, color='blue'))
     ]
 
@@ -399,13 +400,13 @@ layout=dict(width=600, height=600,
                                         'method': 'animate',
                                         'args': [None]}]}])
 
-frames=[dict(data=[dict(x=[xx[k], xend[k], None, xx[k], xnoe[k]], 
-                        y=[yy[k], yend[k], None, yy[k], ynoe[k]], 
-                        mode='lines', 
+frames=[dict(data=[dict(x=[xx[k], xend[k], None, xx[k], xnoe[k]],
+                        y=[yy[k], yend[k], None, yy[k], ynoe[k]],
+                        mode='lines',
                         line=dict(color='red', width=2))
-                  ]) for k in range(N)]    
-          
-figure2=dict(data=data, layout=layout, frames=frames)          
+                  ]) for k in range(N)]
+
+figure2=dict(data=data, layout=layout, frames=frames)
 iplot(figure2)
 ```
 
@@ -516,7 +517,7 @@ for continent in continents:
         'name': continent
     }
     figure['data'].append(data_dict)
-    
+
 # make frames
 for year in years:
     frame = {'data': [], 'name': str(year)}
@@ -549,7 +550,7 @@ for year in years:
      'method': 'animate'}
     sliders_dict['steps'].append(slider_step)
 
-    
+
 figure['layout']['sliders'] = [sliders_dict]
 
 iplot(figure)

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -54,7 +55,7 @@ trace = go.Scattergl(
     mode = 'markers',
     marker = dict(
         line = dict(
-            width = 1, 
+            width = 1,
             color = '#404040')
     )
 )
@@ -133,8 +134,8 @@ publisher.publish(
     'Implement WebGL for increased speed, improved interactivity, and the ability to plot even more data!',
     title = 'Python WebGL vs SVG | plotly',
     name = 'WebGL vs SVG',
-    has_thumbnail='true', thumbnail='thumbnail/webgl.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/webgl.jpg',
+    language='python',
     display_as='basic', order=0.5,
     ipynb= '~notebook_demo/44')
 ```

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -56,11 +57,11 @@ import cmocean
 def cmocean_to_plotly(cmap, pl_entries):
     h = 1.0/(pl_entries-1)
     pl_colorscale = []
-    
+
     for k in range(pl_entries):
         C = map(np.uint8, np.array(cmap(k*h)[:3])*255)
         pl_colorscale.append([k*h, 'rgb'+str((C[0], C[1], C[2]))])
-        
+
     return pl_colorscale
 ```
 
@@ -72,28 +73,28 @@ The examples data can be downloaded from [here.](https://github.com/plotly/docum
 example_dir = os.path.join(os.path.dirname('__file__'), "examples")
 hist2d = np.loadtxt(os.path.join(example_dir, "hist2d.txt"))
 st_helens = np.loadtxt(os.path.join(example_dir,
-                                        "st-helens_before-modified.txt.gz")).T   
-dx = dy = 0.05  
+                                        "st-helens_before-modified.txt.gz")).T
+dx = dy = 0.05
 y, x = np.mgrid[-5 : 5 + dy : dy, -5 : 10 + dx : dx]
 z = np.sin(x)**10 + np.cos(10 + y*x) + np.cos(x) + 0.2*y + 0.1*x
 
 elem_len = [len(hist2d), len(st_helens), len(z)]
 max_len = max(elem_len)
-    
-def colorscale_plot(colorscale, title):    
+
+def colorscale_plot(colorscale, title):
     trace1 = go.Heatmap(z=hist2d, colorscale=colorscale, showscale=False)
     trace2 = go.Heatmap(z=st_helens, colorscale=colorscale, y0=-5, x0=-5)
     trace3 = go.Heatmap(z=z,colorscale=colorscale, showscale=False)
-    
+
     fig = tools.make_subplots(rows=1, cols=3, print_grid=False)
     fig.append_trace(trace1, 1, 1)
     fig.append_trace(trace2, 1, 2)
     fig.append_trace(trace3, 1, 3)
-    
+
     fig['layout'].update(title=title)
     fig['layout']['xaxis2'].update(range=[0, 450])
     fig['layout']['yaxis2'].update(range=[0, 270])
-    
+
     return fig
 ```
 

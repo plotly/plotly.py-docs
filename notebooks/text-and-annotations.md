@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -536,6 +537,6 @@ publisher.publish(
     'How to add text labels and annotations to plots in python.',
     title = 'Text and Annotations | plotly',
     thumbnail='thumbnail/annotations.jpg', language='python',
-    page_type='example_index', has_thumbnail='false', display_as='style_opt', order=1, 
+    page_type='example_index', has_thumbnail='false', display_as='style_opt', order=1,
     ipynb='~notebook_demo/204', uses_plotly_offline=False)
 ```

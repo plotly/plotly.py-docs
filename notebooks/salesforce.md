@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -42,7 +43,7 @@ plotly.__version__
 #### Imports
 Salesforce reports are great for getting a handle on the numbers but [Plotly](https://plot.ly/) allows for interactivity not built into the Reports Module in Salesforce. Luckily Salesforce has amazing tools around exporting data, from excel and csv files to a robust and reliable API. With [Simple Salesforce](https://github.com/neworganizing/simple-salesforce), it's simple to make REST calls to the Salesforce API and get your hands on data to make real time, interactive charts.
 
-This notebook walks you through that basic process of getting something like that set up. 
+This notebook walks you through that basic process of getting something like that set up.
 First you'll need [Plotly](https://plot.ly/). Plotly is a free web-based platform for making graphs. You can keep graphs private, make them public, and run Plotly on your own servers (https://plot.ly/product/enterprise/). To get started visit https://plot.ly/python/getting-started/ . It's simple interface makes it easy to get interactive graphics done quickly.
 
 You'll also need a Salesforce Developer (or regular Salesforce Account). [You can get a salesforce developer account for free](https://developer.salesforce.com/signup) at their developer portal.
@@ -215,7 +216,7 @@ py.iplot(fig, filename='salesforce/open-large-deals-scatter')
 
 Plotly makes it easy to create many different kinds of charts. The above graph shows the deals in the pipeline over the coming months. The larger the bubble, the more likely it is to close. Hover over the bubbles to see that data. This graph is ideal for a sales manager to see how each of his sales reps are doing over the coming months.
 
-One of the benefits of Plotly is the availability of features. 
+One of the benefits of Plotly is the availability of features.
 
 #### References
 
@@ -232,7 +233,7 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'salesforce.ipynb', 'python/salesforce/', 'Plot Data from Salesforce', 
+    'salesforce.ipynb', 'python/salesforce/', 'Plot Data from Salesforce',
     'Create interactive graphs with salesforce, IPython Notebooks and Plotly',
     title='Interactive Salesforce Graphing | Plotly',
     redirect_from='ipython-notebooks/salesforce/', has_thumbnail='false', language='python', page_type='example_index',

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -90,7 +91,7 @@ b = 0.08
 N = int(np.ceil((4 / b)))
 if not N % 2: N += 1
 n = np.arange(N)
- 
+
 sinc_func = np.sinc(2 * fc * (n - (N - 1) / 2.))
 window = 0.42 - 0.5 * np.cos(2 * np.pi * n / (N - 1)) + 0.08 * np.cos(4 * np.pi * n / (N - 1))
 sinc_func = sinc_func * window
@@ -132,7 +133,7 @@ b = 0.08
 N = int(np.ceil((4 / b)))
 if not N % 2: N += 1
 n = np.arange(N)
- 
+
 sinc_func = np.sinc(2 * fc * (n - (N - 1) / 2.))
 window = np.blackman(N)
 sinc_func = sinc_func * window
@@ -177,19 +178,19 @@ b = 0.08
 N = int(np.ceil((4 / b)))
 if not N % 2: N += 1  # Make sure that N is odd.
 n = np.arange(N)
- 
+
 # low-pass filter
 hlpf = np.sinc(2 * fH * (n - (N - 1) / 2.))
 hlpf *= np.blackman(N)
 hlpf = hlpf / np.sum(hlpf)
- 
-# high-pass filter 
+
+# high-pass filter
 hhpf = np.sinc(2 * fL * (n - (N - 1) / 2.))
 hhpf *= np.blackman(N)
 hhpf = hhpf / np.sum(hhpf)
 hhpf = -hhpf
 hhpf[int((N - 1) / 2)] += 1
- 
+
 h = np.convolve(hlpf, hhpf)
 s = list(data['10 Min Std Dev'])
 new_signal = np.convolve(s, h)

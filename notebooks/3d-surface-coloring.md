@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -30,7 +31,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 <br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
 <br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
 #### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version. 
+Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
 
 ```python
 import plotly
@@ -111,7 +112,7 @@ fig['layout'].update(title='Ring Cyclide',
 fig['layout']['scene1'].update(scene)
 fig['layout']['scene2'].update(scene)
 fig['layout']['annotations'] = [
-    dict(x=0.1859205, y=0.95,     
+    dict(x=0.1859205, y=0.95,
          xref='x', yref='y',
          text='4th Dim Prop. to z',
          showarrow=False),
@@ -137,13 +138,13 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
-    
+
 publisher.publish(
     '3d_surface_coloring.ipynb', 'python/3d-surface-coloring/', '3D Python Surface Coloring | plotly',
     'How to Color 3D Surface Plots in Python with Plotly.',
     title = '3D Surface Coloring in Python | plotly',
     name = '3D Surface Coloring',
-    has_thumbnail='true', thumbnail='thumbnail/3d-surface-color.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/3d-surface-color.jpg',
     language='python', page_type='example_index',
     display_as='style_opt', order=7,
     ipynb= '~notebook_demo/76')

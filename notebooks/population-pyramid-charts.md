@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -70,7 +71,7 @@ data = [go.Bar(y=y,
                marker=dict(color='seagreen')
                )]
 
-py.iplot(dict(data=data, layout=layout), filename='EXAMPLES/bar_pyramid') 
+py.iplot(dict(data=data, layout=layout), filename='EXAMPLES/bar_pyramid')
 ```
 
 #### Stacked Population Pyramid

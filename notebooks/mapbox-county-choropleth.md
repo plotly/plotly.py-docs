@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -46,7 +47,7 @@ In this tutorial, we will be creating a choropleth of Florida's counties with th
 #### Mapbox Access Token
 
 
-To plot on Mapbox maps with Plotly you'll need a Mapbox account and a [Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/. 
+To plot on Mapbox maps with Plotly you'll need a Mapbox account and a [Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/.
 
 
 #### Read the Data
@@ -73,7 +74,7 @@ for county in florida_data['features']:
         if county['properties']['name'][m:m+6] == 'County':
             county_names.append(county['properties']['name'][0:m-1])
             county_names_dict[county['properties']['name'][0:m-1]] = county['properties']['name']
-            
+
 print county_names
 ```
 
@@ -106,7 +107,7 @@ for k, county in enumerate(county_names):
         if repub_democ_counties[new_j] != ',':
             repub_votes += repub_democ_counties[new_j]
         new_j += 1
-    
+
     # advance to next set of numbers
     new_j += 11
 
@@ -151,7 +152,7 @@ with open('florida-blue-data.json', 'w') as f:
     f.write(json.dumps(blue_data))
 ```
 
-and we can now plot our choropleth using Python. Make sure to have a [Mapbox Access Tolken](https://www.mapbox.com/studio) for the generation of the plot. For more information on plotting Mapbox maps in Python, checkout the [documentation](https://plot.ly/python/scattermapbox/) 
+and we can now plot our choropleth using Python. Make sure to have a [Mapbox Access Tolken](https://www.mapbox.com/studio) for the generation of the plot. For more information on plotting Mapbox maps in Python, checkout the [documentation](https://plot.ly/python/scattermapbox/)
 
 ```python
 import plotly.plotly as py

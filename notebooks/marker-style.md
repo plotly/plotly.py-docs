@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -52,7 +53,7 @@ import numpy as np
 
 x = np.random.uniform(low=3, high=6, size=(500,))
 y = np.random.uniform(low=3, high=6, size=(500,))
-  
+
 data = [
     go.Scatter(
         mode = 'markers',
@@ -89,7 +90,7 @@ py.iplot(data, filename = "style-add-border")
 ### Fully Opaque
 
 
-Fully opaque, the default setting, is useful for non-overlapping markers. When many points overlap it can be hard to observe density.  
+Fully opaque, the default setting, is useful for non-overlapping markers. When many points overlap it can be hard to observe density.
 
 ```python
 import plotly.plotly as py
@@ -99,7 +100,7 @@ import numpy as np
 
 x = np.random.uniform(low=3, high=6, size=(500,))
 y = np.random.uniform(low=3, high=6, size=(500,))
-  
+
 data = [
     go.Scatter(
         mode = 'markers',
@@ -136,7 +137,7 @@ py.iplot(data, filename = "style-full-opaque")
 ### Opacity
 
 
-Setting opacity outside the marker will set the opacity of the trace. Thus, it will allow greater visbility of additional traces but like fully opaque it is hard to distinguish density. 
+Setting opacity outside the marker will set the opacity of the trace. Thus, it will allow greater visbility of additional traces but like fully opaque it is hard to distinguish density.
 
 ```python
 import plotly.plotly as py
@@ -148,7 +149,7 @@ x = np.random.uniform(low=3, high=6, size=(500,))
 y = np.random.uniform(low=3, high=4.5, size=(500,))
 x2 = np.random.uniform(low=3, high=6, size=(500,))
 y2 = np.random.uniform(low=4.5, high=6, size=(500,))
-  
+
 data = [
     go.Scatter(
         mode = 'markers',
@@ -201,7 +202,7 @@ py.iplot(data, filename = "style-opacity")
 ### Marker Opacity
 
 
-To maximise visibility of density, it is recommended to set the opacity inside the marker `marker:{opacity:0.5}`. If mulitple traces exist with high density, consider using marker opacity in conjunction with trace opacity. 
+To maximise visibility of density, it is recommended to set the opacity inside the marker `marker:{opacity:0.5}`. If mulitple traces exist with high density, consider using marker opacity in conjunction with trace opacity.
 
 ```python
 import plotly.plotly as py
@@ -211,7 +212,7 @@ import numpy as np
 
 x = np.random.uniform(low=3, high=6, size=(500,))
 y = np.random.uniform(low=3, high=6, size=(500,))
-  
+
 data = [
     go.Scatter(
         mode = 'markers',
@@ -250,7 +251,7 @@ py.iplot(data, filename = "style-marker-opacity")
 ### Color Opacity
 
 
-To maximise visibility of each point, set the color opacity by using alpha: `marker:{color: 'rgba(0,0,0,0.5)'}`. Here, the marker line will remain opaque. 
+To maximise visibility of each point, set the color opacity by using alpha: `marker:{color: 'rgba(0,0,0,0.5)'}`. Here, the marker line will remain opaque.
 
 ```python
 import plotly.plotly as py
@@ -260,7 +261,7 @@ import numpy as np
 
 x = np.random.uniform(low=3, high=6, size=(500,))
 y = np.random.uniform(low=3, high=6, size=(500,))
-  
+
 data = [
     go.Scatter(
         mode = 'markers',

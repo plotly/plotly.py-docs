@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -38,35 +39,35 @@ plotly.__version__
 ```
 
 #### Basic Dot Plot
-Dot plots show changes between two points in time or between two conditions. 
+Dot plots show changes between two points in time or between two conditions.
 
 ```python
 import plotly.plotly as py
 import plotly.graph_objs as go
 
-trace1 = {"x": [72, 67, 73, 80, 76, 79, 84, 78, 86, 93, 94, 90, 92, 96, 94, 112], 
+trace1 = {"x": [72, 67, 73, 80, 76, 79, 84, 78, 86, 93, 94, 90, 92, 96, 94, 112],
           "y": ["Brown", "NYU", "Notre Dame", "Cornell", "Tufts", "Yale",
                 "Dartmouth", "Chicago", "Columbia", "Duke", "Georgetown",
-                "Princeton", "U.Penn", "Stanford", "MIT", "Harvard"], 
-          "marker": {"color": "pink", "size": 12}, 
-          "mode": "markers", 
-          "name": "Women", 
+                "Princeton", "U.Penn", "Stanford", "MIT", "Harvard"],
+          "marker": {"color": "pink", "size": 12},
+          "mode": "markers",
+          "name": "Women",
           "type": "scatter"
 }
 
-trace2 = {"x": [92, 94, 100, 107, 112, 114, 114, 118, 119, 124, 131, 137, 141, 151, 152, 165], 
+trace2 = {"x": [92, 94, 100, 107, 112, 114, 114, 118, 119, 124, 131, 137, 141, 151, 152, 165],
           "y": ["Brown", "NYU", "Notre Dame", "Cornell", "Tufts", "Yale",
                 "Dartmouth", "Chicago", "Columbia", "Duke", "Georgetown",
-                "Princeton", "U.Penn", "Stanford", "MIT", "Harvard"], 
-          "marker": {"color": "blue", "size": 12}, 
-          "mode": "markers", 
-          "name": "Men", 
-          "type": "scatter", 
+                "Princeton", "U.Penn", "Stanford", "MIT", "Harvard"],
+          "marker": {"color": "blue", "size": 12},
+          "mode": "markers",
+          "name": "Men",
+          "type": "scatter",
 }
 
 data = [trace1, trace2]
-layout = {"title": "Gender Earnings Disparity", 
-          "xaxis": {"title": "Annual Salary (in thousands)", }, 
+layout = {"title": "Gender Earnings Disparity",
+          "xaxis": {"title": "Annual Salary (in thousands)", },
           "yaxis": {"title": "School"}}
 
 fig = go.Figure(data=data, layout=layout)
@@ -169,13 +170,13 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'dot.ipynb', 'python/dot-plots/', 'Dot Plots',
     'How to make dot plots in Python with Plotly.',
     title = 'Python Dot Plots | plotly',
-    has_thumbnail='true', thumbnail='thumbnail/dot-plot.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/dot-plot.jpg',
     language='python',
     display_as='basic', order=3.1,
     ipynb= '~notebook_demo/2')

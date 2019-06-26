@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -300,10 +301,10 @@ publisher.publish(
     'polar.ipynb', 'python/legacy-polar-chart/', 'Polar Charts [Legacy]',
     'Legacy polar charts in python.',
     title = 'Python Polar Charts | plotly',
-    has_thumbnail='true', thumbnail='thumbnail/polar-scatter.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/polar-scatter.jpg',
+    language='python',
     display_as='legacy_charts', order=1,
-    ipynb= '~notebook_demo/37') 
+    ipynb= '~notebook_demo/37')
 ```
 
 ```python

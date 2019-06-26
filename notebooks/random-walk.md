@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -63,9 +64,9 @@ for j in range(100):
         x.append(x[j] + 1 + 0.05*np.random.normal())
     else:
         x.append(x[j] - 1 + 0.05*np.random.normal())
-        
+
 y = [0.05*np.random.normal() for j in range(len(x))]
-        
+
 trace1 = go.Scatter(
     x=x,
     y=y,
@@ -103,13 +104,13 @@ for j in range(1000):
         x.append(x[j] + 1 + np.random.normal())
     else:
         x.append(x[j] - 1 + np.random.normal())
-    
+
     step_y = random.randint(0,1)
     if step_y == 1:
         y.append(y[j] + 1 + np.random.normal())
     else:
         y.append(y[j] - 1 + np.random.normal())
-        
+
 trace1 = go.Scatter(
     x=x,
     y=y,

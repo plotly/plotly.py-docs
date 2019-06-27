@@ -6,12 +6,23 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.7
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.5
   plotly:
+    v4upgrade: true
     description: How to delete plotly graphs in python.
     display_as: file_settings
     has_thumbnail: true
@@ -25,20 +36,14 @@ jupyter:
     thumbnail: thumbnail/delete.jpg
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
 #### Imports and Credentials
 In additional to importing python's `requests` and `json` packages, this tutorial also uses [Plotly's REST API](https://api.plot.ly/v2/)
 
 First define YOUR [username and api key](https://plot.ly/settings/api) and create `auth` and `headers` to use with `requests`
 
 ```python
-import plotly
-import plotly.plotly as py
+import chart_studio
+import chart_studio.plotly as py
 
 import json
 import requests
@@ -50,7 +55,7 @@ api_key = 'k0yy0ztssk' # Replace with YOUR API KEY
 auth = HTTPBasicAuth(username, api_key)
 headers = {'Plotly-Client-Platform': 'python'}
 
-plotly.tools.set_credentials_file(username=username, api_key=api_key)
+chart_studio.tools.set_credentials_file(username=username, api_key=api_key)
 ```
 
 #### [Trash](https://api.plot.ly/v2/files/#trash) and [Restore](https://api.plot.ly/v2/files/#restore)
@@ -68,7 +73,7 @@ url
 Include the file id in your request. <br>The file id is your `username:plot_id#`
 
 ```python
-fid = username+':18'
+fid = username+':604'
 fid
 ```
 
@@ -98,7 +103,7 @@ url
 ```
 
 ```python
-fid_permanent_delete = username+':79'
+fid_permanent_delete = username+':652'
 fid_permanent_delete
 ```
 
@@ -152,22 +157,6 @@ def permanently_delete_files(username, page_size=500, filetype_to_delete='plot')
 
 permanently_delete_files(username, filetype_to_delete='plot')
 permanently_delete_files(username, filetype_to_delete='grid')
-```
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-#!pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'delete.ipynb', 'python/delete-plots/', 'Deleting Plots with the Python API',
-    'How to delete plotly graphs in python.',
-    name = 'Deleting Plots', language='python',
-    has_thumbnail='true', thumbnail= 'thumbnail/delete.jpg',
-    display_as='file_settings', ipynb= '~notebook_demo/98', order=9)
 ```
 
 ```python

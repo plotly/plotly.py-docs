@@ -6,12 +6,23 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.7
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.5
   plotly:
+    v4upgrade: true
     description: How to upload data to Plotly from Python with the Plotly Grid API.
     display_as: file_settings
     has_thumbnail: true
@@ -25,13 +36,6 @@ jupyter:
     title: Plotly Data API
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-
 #### Creating a Plotly Grid
 You can instantiate a grid with data by either uploading tabular data to Plotly or by creating a Plotly `grid` using the API. To upload the grid we will use `plotly.plotly.grid_ops.upload()`. It takes the following arguments:
 - `grid` (Grid Object): the actual grid object that you are uploading.
@@ -42,15 +46,15 @@ You can instantiate a grid with data by either uploading tabular data to Plotly 
 You can run `help(py.grid_ops.upload)` for a more detailed description of these and all the arguments.
 
 ```python
-import plotly
-import plotly.plotly as py
-import plotly.tools as tls
-import plotly.graph_objs as go
-from plotly.grid_objs import Column, Grid
+import chart_studio
+import chart_studio.plotly as py
+import chart_studio.tools as tls
+import plotly.graph_objects as go
+from chart_studio.grid_objs import Column, Grid
 
 from datetime import datetime as dt
 import numpy as np
-from IPython.display import Image
+from IPython.display import IFrame
 
 column_1 = Column(['a', 'b', 'c'], 'column 1')
 column_2 = Column([1, 2, 3], 'column 2') # Tabular data can be numbers, strings, or dates
@@ -66,7 +70,7 @@ print(url)
 You can view your newly created grid at the `url`:
 
 ```python
-Image('view_grid_url.png')
+IFrame(src= url.rstrip('/') + ".embed", width="100%",height="200px", frameBorder="0")
 ```
 
 You are also able to view the grid in your list of files inside your [organize folder](https://plot.ly/organize).
@@ -76,7 +80,7 @@ You are also able to view the grid in your list of files inside your [organize f
 Along with uploading a grid, you can upload a Dataframe as well as convert it to raw data as a grid:
 
 ```python
-import plotly.plotly as py
+import chart_studio.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -85,12 +89,6 @@ df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_
 df_head = df.head()
 table = ff.create_table(df_head)
 py.iplot(table, filename='dataframe_ex_preview')
-```
-
-```python
-grid = Grid([Column(df[column_name], column_name) for column_name in df.columns])
-url = py.grid_ops.upload(grid, filename='dataframe_ex_'+str(dt.now()), world_readable=True, auto_open=True)
-print(url)
 ```
 
 #### Making Graphs from Grids
@@ -124,7 +122,7 @@ print(url)
 ```
 
 ```python
-Image('rand_int_histogram_view.png')
+IFrame(src= url.rstrip('/') + ".embed", width="100%",height="200px", frameBorder="0")
 ```
 
 #### Make Graph from Raw Data
@@ -163,30 +161,10 @@ grid_url = py.grid_ops.upload(grid, filename='grid_with_metadata_'+str(dt.now())
 print(url)
 ```
 
-```python
-Image('metadata_view.png')
-```
-
 #### Reference
 
 ```python
 help(py.grid_ops)
-```
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'grid-api.ipynb', 'python/data-api/', 'Upload Data to Plotly from Python',
-    'How to upload data to Plotly from Python with the Plotly Grid API.',
-    title = 'Plotly Data API', name = 'Plots from Grids', order = 5,
-    language='python', has_thumbnail='true', thumbnail='thumbnail/table.jpg', display_as='file_settings'
-)
 ```
 
 ```python

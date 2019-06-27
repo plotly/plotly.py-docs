@@ -6,12 +6,13 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.7
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
   plotly:
+    v4upgrade: true
     description: Jupyter notebook tutorial on how to install, run, and use Jupyter
       for interactive matplotlib plotting, data analysis, and publishing code
     display_as: file_settings
@@ -31,7 +32,7 @@ jupyter:
 [Jupyter](http://jupyter.org/) has a beautiful notebook that lets you write and execute code, analyze data, embed content, and share reproducible work. Jupyter Notebook (previously referred to as IPython Notebook) allows you to easily share your code, data, plots, and explanation in a sinle notebook. Publishing is flexible: PDF, HTML, ipynb, dashboards, slides, and more. Code cells are based on an input and output format. For example:
 
 ```python
-print "hello world"
+print("hello world")
 ```
 
 #### Installation
@@ -90,14 +91,14 @@ Some useful packages that we'll use in this tutorial include:
 import pandas as pd
 import numpy as np
 import scipy as sp
-import plotly.plotly as py
+import chart_studio.plotly as py
 ```
 
 #### Import Data
 You can use pandas `read_csv()` function to import data. In the example below, we import a csv [hosted on github](https://github.com/plotly/datasets/) and display it in a [table using Plotly](https://plot.ly/python/table/):
 
 ```python
-import plotly.plotly as py
+import chart_studio.plotly as py
 import plotly.figure_factory as ff
 import pandas as pd
 
@@ -124,8 +125,8 @@ df.std()
 You can use [Plotly's python API](https://plot.ly/python) to plot inside your Jupyter Notebook by calling ```plotly.plotly.iplot()``` or ```plotly.offline.iplot()``` if working offline. Plotting in the notebook gives you the advantage of keeping your data analysis and plots in one place. Now we can do a bit of interactive plotting. Head to the [Plotly getting started](https://plot.ly/python/) page to learn how to set your credentials. Calling the plot with ```iplot``` automaticallly generates an interactive version of the plot inside the Notebook in an iframe. See below:
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import chart_studio.plotly as py
+import plotly.graph_objects as go
 
 data = [go.Bar(x=df.School,
             y=df.Gap)]
@@ -136,8 +137,8 @@ py.iplot(data, filename='jupyter-basic_bar')
 Plotting multiple traces and styling the chart with custom colors and titles is simple with Plotly syntax. Additionally, you can control the privacy with [```sharing```](https://plot.ly/python/privacy/) set to ```public```, ```private```, or ```secret```.
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import chart_studio.plotly as py
+import plotly.graph_objects as go
 
 trace_women = go.Bar(x=df.School,
                   y=df.Women,
@@ -172,8 +173,8 @@ Now we have interactive charts displayed in our notebook. Hover on the chart to 
 Plotly is now integrated with [Mapbox](https://www.mapbox.com/). In this example we'll plot lattitude and longitude data of nuclear waste sites. To plot on Mapbox maps with Plotly you'll need a Mapbox account and a [Mapbox Access Token](https://www.mapbox.com/studio/signin/) which you can add to your [Plotly settings]().
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import chart_studio.plotly as py
+import plotly.graph_objects as go
 
 import pandas as pd
 
@@ -237,8 +238,8 @@ py.iplot(fig, filename='jupyter-Nuclear Waste Sites on American Campuses')
 Using Numpy and Plotly, we can make interactive [3D plots](https://plot.ly/python/#3d) in the Notebook as well.
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import chart_studio.plotly as py
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -291,12 +292,12 @@ Checkout Plotly's [animation documentation](https://plot.ly/python/#animations) 
 Add sliders, buttons, and dropdowns to your inline chart:
 
 ```python
-import plotly.plotly as py
+import chart_studio.plotly as py
 import numpy as np
 
 data = [dict(
         visible = False,
-        line=dict(color='00CED1', width=6),
+        line=dict(color='#00CED1', width=6),
         name = '𝜈 = '+str(step),
         x = np.arange(0,10,0.01),
         y = np.sin(step*np.arange(0,10,0.01))) for step in np.arange(0,5,0.1)]
@@ -385,24 +386,6 @@ For users looking to ship and productionize Python apps, [dash](https://github.c
 For more Jupyter tutorials, checkout [Plotly's python documentation](https://plot.ly/python/): all documentation is written in jupyter notebooks that you can download and run yourself or checkout these [user submitted examples](https://plot.ly/ipython-notebooks/)!
 
 [![IPython Notebook Gallery](http://i.imgur.com/AdElJQx.png)](https://plot.ly/ipython-notebooks/)
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-!pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'jupyter_tutorial.ipynb', 'python/ipython-notebook-tutorial/', 'Jupyter Notebook Tutorial',
-    'Jupyter notebook tutorial on how to install, run, and use Jupyter for interactive matplotlib plotting, data analysis, and publishing code',
-    title = 'Jupyter Notebook Tutorial | plotly',
-    name = 'Jupyter Notebook Tutorial',
-    thumbnail='thumbnail/ipythonnb.jpg', language='python',
-    page_type='example_index', has_thumbnail='true', display_as='file_settings', order=11,
-    ipynb='~chelsea_lyn/14070')
-```
 
 ```python
 

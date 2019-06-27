@@ -6,11 +6,21 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.6
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.7.3
   plotly:
     description: How to make subplots in python. Examples of stacked, custom-sized,
       gridded, and annotated subplts.
@@ -37,38 +47,28 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 #### Simple Subplot
 
 ```python
-from plotly import tools
-import plotly.plotly as py
+from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 
-trace1 = go.Scatter(
-    x=[1, 2, 3],
-    y=[4, 5, 6],
-    mode='markers+text',
-    text=['Text A', 'Text B', 'Text C'],
-    textposition='bottom center'
-)
-trace2 = go.Scatter(
-    x=[20, 30, 40],
-    y=[50, 60, 70],
-    mode='markers+text',
-    text=['Text D', 'Text E', 'Text F'],
-    textposition='bottom center'
+fig = make_subplots(rows=1, cols=2)
+
+fig.add_trace(
+    go.Scatter(x=[1, 2, 3], y=[4, 5, 6]),
+    row=1, col=1
 )
 
-fig = tools.make_subplots(rows=1, cols=2)
+fig.add_trace(
+    go.Scatter(x=[20, 30, 40], y=[50, 60, 70]),
+    row=1, col=2
+)
 
-fig.append_trace(trace1, 1, 1)
-fig.append_trace(trace2, 1, 2)
-
-fig['layout'].update(height=600, width=800, title='i <3 annotations and subplots')
-py.iplot(fig, filename='simple-subplot-with-annotations')
+fig['layout'].update(height=600, width=800, title_text='i <3 subplots')
+fig.show()
 ```
 
 #### Multiple Subplots
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace1 = go.Scatter(
@@ -125,70 +125,75 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='multiple-subplots')
+fig.show()
 ```
 
 #### Multiple Subplots with Titles
 
 ```python
-from plotly import tools
-import plotly.plotly as py
+from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 
-trace1 = go.Scatter(x=[1, 2, 3], y=[4, 5, 6])
-trace2 = go.Scatter(x=[20, 30, 40], y=[50, 60, 70])
-trace3 = go.Scatter(x=[300, 400, 500], y=[600, 700, 800])
-trace4 = go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000])
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=('Plot 1', 'Plot 2', 'Plot 3', 'Plot 4'))
 
-fig = tools.make_subplots(rows=2, cols=2, subplot_titles=('Plot 1', 'Plot 2',
-                                                          'Plot 3', 'Plot 4'))
+fig.add_trace(go.Scatter(x=[1, 2, 3], y=[4, 5, 6]),
+              row=1, col=1)
 
-fig.append_trace(trace1, 1, 1)
-fig.append_trace(trace2, 1, 2)
-fig.append_trace(trace3, 2, 1)
-fig.append_trace(trace4, 2, 2)
+fig.add_trace(go.Scatter(x=[20, 30, 40], y=[50, 60, 70]),
+              row=1, col=2)
 
-fig['layout'].update(height=600, width=600, title='Multiple Subplots' +
-                                                  ' with Titles')
+fig.add_trace(go.Scatter(x=[300, 400, 500], y=[600, 700, 800]),
+              row=2, col=1)
 
-py.iplot(fig, filename='make-subplots-multiple-with-titles')
+fig.add_trace(go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000]),
+              row=2, col=2)
+
+fig.update_layout(height=600, width=600,
+                  title_text='Multiple Subplots with Titles')
+
+fig.show()
 ```
 
 #### Simple Subplot with Annotations
 
 ```python
-from plotly import tools
-import plotly.plotly as py
+from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 
-trace1 = go.Scatter(
-    x=[1, 2, 3],
-    y=[4, 5, 6],
-    mode='markers+text',
-    text=['Text A', 'Text B', 'Text C'],
-    textposition='bottom center'
-)
-trace2 = go.Scatter(
-    x=[20, 30, 40],
-    y=[50, 60, 70],
-    mode='markers+text',
-    text=['Text D', 'Text E', 'Text F'],
-    textposition='bottom center'
+fig = make_subplots(rows=1, cols=2)
+
+fig.add_trace(
+    go.Scatter(
+        x=[1, 2, 3],
+        y=[4, 5, 6],
+        mode='markers+text',
+        text=['Text A', 'Text B', 'Text C'],
+        textposition='bottom center'
+    ),
+    row=1, col=1
 )
 
-fig = tools.make_subplots(rows=1, cols=2)
+fig.add_trace(
+    go.Scatter(
+        x=[20, 30, 40],
+        y=[50, 60, 70],
+        mode='markers+text',
+        text=['Text D', 'Text E', 'Text F'],
+        textposition='bottom center'
+    ),
+    row=1, col=2
+)
 
-fig.append_trace(trace1, 1, 1)
-fig.append_trace(trace2, 1, 2)
+fig.update_layout(height=600, width=800, title_text='i <3 annotations and subplots')
 
-fig['layout'].update(height=600, width=800, title='i <3 annotations and subplots')
-py.iplot(fig, filename='simple-subplot-with-annotations')
+fig.show()
 ```
 
 #### Side by Side Subplot
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace1 = go.Scatter(
@@ -214,48 +219,48 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='side-by-side-subplot')
+fig.show()
 ```
 
 #### Customizing Subplot Axes
 
 ```python
-from plotly import tools
-import plotly.plotly as py
+from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 
-trace1 = go.Scatter(x=[1, 2, 3], y=[4, 5, 6])
-trace2 = go.Scatter(x=[20, 30, 40], y=[50, 60, 70])
-trace3 = go.Scatter(x=[300, 400, 500], y=[600, 700, 800])
-trace4 = go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000])
+# Initialize figure with subplots
+fig = make_subplots(
+    rows=2, cols=2, subplot_titles=('Plot 1', 'Plot 2', 'Plot 3', 'Plot 4')
+)
 
-fig = tools.make_subplots(rows=2, cols=2, subplot_titles=('Plot 1', 'Plot 2',
-                                                          'Plot 3', 'Plot 4'))
-fig.append_trace(trace1, 1, 1)
-fig.append_trace(trace2, 1, 2)
-fig.append_trace(trace3, 2, 1)
-fig.append_trace(trace4, 2, 2)
+# Add traces
+fig.add_trace(go.Scatter(x=[1, 2, 3], y=[4, 5, 6]), row=1, col=1)
+fig.add_trace(go.Scatter(x=[20, 30, 40], y=[50, 60, 70]), row=1, col=2)
+fig.add_trace(go.Scatter(x=[300, 400, 500], y=[600, 700, 800]), row=2, col=1)
+fig.add_trace(go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000]), row=2, col=2)
 
-fig['layout']['xaxis1'].update(title='xaxis 1 title')
-fig['layout']['xaxis2'].update(title='xaxis 2 title', range=[10, 50])
-fig['layout']['xaxis3'].update(title='xaxis 3 title', showgrid=False)
-fig['layout']['xaxis4'].update(title='xaxis 4 title', type='log')
+# Update xaxis properties
+fig.update_xaxes(title='xaxis 1 title', row=1, col=1)
+fig.update_xaxes(title='xaxis 2 title', range=[10, 50], row=1, col=2)
+fig.update_xaxes(title='xaxis 3 title', showgrid=False, row=2, col=1)
+fig.update_xaxes(title='xaxis 4 title', type='log', row=2, col=2)
 
-fig['layout']['yaxis1'].update(title='yaxis 1 title')
-fig['layout']['yaxis2'].update(title='yaxis 2 title', range=[40, 80])
-fig['layout']['yaxis3'].update(title='yaxis 3 title', showgrid=False)
-fig['layout']['yaxis4'].update(title='yaxis 4 title')
+# Update yaxis properties
+fig.update_yaxes(title='yaxis 1 title', row=1, col=1)
+fig.update_yaxes(title='yaxis 2 title', range=[40, 80], row=1, col=2)
+fig.update_yaxes(title='yaxis 3 title', showgrid=False, row=2, col=1)
+fig.update_yaxes(title='yaxis 4 title', row=2, col=2)
 
-fig['layout'].update(title='Customizing Subplot Axes')
+# Update title and height
+fig.update_layout(title_text='Customizing Subplot Axes', height=800)
 
-py.iplot(fig, filename='customizing-subplot-axes')
+fig.show()
 ```
 
 #### Subplots with Shared X-Axes
 
 ```python
 from plotly import tools
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace1 = go.Scatter(
@@ -278,14 +283,13 @@ fig.append_trace(trace2, 2, 1)
 fig.append_trace(trace3, 1, 1)
 
 fig['layout'].update(height=600, width=600, title='Stacked Subplots with Shared X-Axes')
-py.iplot(fig, filename='stacked-subplots-shared-xaxes')
+fig.show()
 ```
 
 #### Subplots with Shared Y-Axes
 
 ```python
 from plotly import tools
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace0 = go.Scatter(
@@ -314,13 +318,12 @@ fig.append_trace(trace3, 2, 2)
 
 fig['layout'].update(height=600, width=600,
                      title='Multiple Subplots with Shared Y-Axes')
-py.iplot(fig, filename='multiple-subplots-shared-yaxes')
+fig.show()
 ```
 
 #### Subplots with Shared Axes
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace1 = go.Scatter(
@@ -369,14 +372,13 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='shared-axes-subplots')
+fig.show()
 ```
 
 #### Stacked Subplots
 
 ```python
 from plotly import tools
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace1 = go.Scatter(
@@ -400,13 +402,12 @@ fig.append_trace(trace1, 3, 1)
 
 
 fig['layout'].update(height=600, width=600, title='Stacked subplots')
-py.iplot(fig, filename='stacked-subplots')
+fig.show()
 ```
 
 #### Stacked Subplots with a Shared X-Axis
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace1 = go.Scatter(
@@ -439,14 +440,13 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='stacked-subplots-shared-x-axis')
+fig.show()
 ```
 
 #### Custom Sized Subplot with Subplot Titles
 
 ```python
 from plotly import tools
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace0 = go.Scatter(
@@ -469,14 +469,13 @@ fig.append_trace(trace1, 1, 2)
 fig.append_trace(trace2, 2, 1)
 
 fig['layout'].update(showlegend=False, title='Specs with Subplot Title')
-py.iplot(fig, filename='custom-sized-subplot-with-subplot-titles')
+fig.show()
 ```
 
 #### Multiple Custom Sized Subplots
 
 ```python
 from plotly import tools
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 trace1 = go.Scatter(x=[1, 2], y=[1, 2], name='(1,1)')
@@ -502,22 +501,7 @@ fig.append_trace(trace5, 5, 1)
 fig.append_trace(trace6, 5, 2)
 
 fig['layout'].update(height=600, width=600, title='specs examples')
-py.iplot(fig, filename='multiple-custom-sized-subplots')
-```
-
-### Dash Example
-
-
-[Dash](https://plot.ly/products/dash/) is an Open Source Python library which can help you convert plotly figures into a reactive, web-based application. Below is a simple example of a dashboard created using Dash. Its [source code](https://github.com/plotly/simple-example-chart-apps/tree/master/dash-multiplesubplot) can easily be deployed to a PaaS.
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-multiplesubplot/", width="100%", height="950px", frameBorder="0")
-```
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-multiplesubplot/code", width="100%", height=500, frameBorder="0")
+fig.show()
 ```
 
 #### Reference
@@ -525,19 +509,10 @@ All of the x-axis properties are found here: https://plot.ly/python/reference/#X
 All of the y-axis properties are found here: https://plot.ly/python/reference/#YAxis
 
 ```python
-from IPython.display import display, HTML
+from plotly.subplots import make_subplots
+help(make_subplots)
+```
 
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
+```python
 
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'subplots.ipynb', 'python/subplots/', 'Subplots | plotly',
-    'How to make subplots in python. Examples of stacked, custom-sized, gridded, and annotated subplts.',
-    title = 'Python Subplots | Examples | Plotly',
-    name = 'Subplots', has_thumbnail='true', thumbnail='thumbnail/subplots.jpg',
-    language='python', page_type='example_index', redirect_from='ipython-notebooks/subplots/',
-    display_as='multiple_axes', order=2,
-    ipynb='~notebook_demo/269')
 ```

@@ -6,12 +6,22 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.6
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
-  plotly:
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.7.3
+plotly:
     description: Plotly User Guide for Python
     has_thumbnail: false
     language: python
@@ -21,429 +31,479 @@ jupyter:
     permalink: python/user-guide/
     thumbnail: null
     title: Plotly User Guide for Python
+    v4upgrade: true
 ---
 
-# Python API User Guide
+# Representing Figures
 
+## Figures as dictionaries
+The goal of plotly.py is to provide a pleasant Python interface for creating figure specifications for display in the Plotly.js JavaScript library. In Plotly.js, a figure is specified by a declarative JSON data structure, and so the ultimate responsibility of plotly.py is to produce Python dictionaries that can be serialized into a JSON data structure that represents a valid figure.
 
-So you've just finished the [`Getting Started document`](https://plot.ly/python/getting-started) and now you're looking to find out more. In this guide, we'll go through some of the internals of Plotly, as well as some tips and general practices that will allow you generate amazing data visualizations in no time.
-
-
-### What is Plotly?:
-
-Plotly at its core is a data visualization toolbox. Under every plotly graph is a JSON object, which is a dictionary like data structure. Simply by changing the values of some keywords in this object, we can get vastly different and ever more detailed plots. For example:
+As a concrete example, here is a Python dictionary that represents a figure containing a single bar trace and a title.
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+fig = {
+    "data": [{"type": "bar",
+              "x": [1, 2, 3],
+              "y": [1, 3, 2]}],
+    "layout": {"title": {"text": "A Bar Chart"}}
+}
 
-trace1 = go.Scatter(x=[1,2,3], y=[4,5,6], marker={'color': 'red', 'symbol': 104, 'size': 10},
-                    mode="markers+lines",  text=["one","two","three"], name='1st Trace')
-
-data=go.Data([trace1])
-layout=go.Layout(title="First Plot", xaxis={'title':'x1'}, yaxis={'title':'x2'})
-figure=go.Figure(data=data,layout=layout)
-py.iplot(figure, filename='pyguide_1')
+# To display the figure defined by this dict, use the low-level plotly.io.show function
+import plotly.io as pio
+pio.show(fig)
 ```
+
+The value of the top-level `"data"` key is a list of trace specifications.  Each trace specification has a special `"type"` key that indicates the trace type that is being defined (e.g. a `"bar"`, `"scatter"`, `"contour"`, etc.).  The rest of the keys in the trace specification are used to configure the properties of the trace of this type.
+
+The value of the top-level `"layout"` key is a dictionary that specifies the properties of the figure's layout.  In contrast to trace configuration options that apply to individual traces, the layout configuration options apply to the figure as a whole, customizing items like the axes, annotations, shapes, legend, and more.
+
+The [*Full Reference*](https://plot.ly/python/reference/) page contains descriptions of all of the supported trace and layout options.
+
+If working from the *Full Reference* to build figures as Python dictionaries and lists suites your needs, go for it! This is a perfectly valid way to use plotly.py to build figures.  On the other hand, if you would like an API that offers a bit more assistance, read on to learn about graph objects.
+
+
+## Figures as graph objects
+As an alternative to working with Python dictionaries, plotly.py provides a hierarchy of classes called "graph objects" that may be used to construct figures. Graph objects have several benefits compared to plain dictionaries.
+
+ 1. Graph objects provide precise data validation. So if you provide an invalid property name or an invalid property value, an exception will be raised with a helpful error message describing the problem.
+ 2. Graph objects contain descriptions of each property as Python docstrings.  You can use these docstrings to learn about the available properties as an alternative to consulting the *Full Reference*.
+ 3. Properties of graph objects can be accessed using dictionary-style key lookup (e.g. `fig["layout"]`) or class-style property access (e.g. `fig.layout`).
+ 4. Graph objects support higher-level convenience functions for making updates to already constructed figures, as described below.
+
+Graph objects are stored in a hierarchy of modules under the `plotly.graph_objects` package.  Here is an example of one way that the figure above could be constructed using graph objects.
 
 ```python
-figure
+import plotly.graph_objects as go
+fig = go.Figure(
+    data=[go.Bar(x=[1, 2, 3], y=[1, 3, 2])],
+    layout=go.Layout(
+        title=go.layout.Title(text="A Bar Chart")
+    )
+)
+fig.show()
 ```
 
-We can see that the figure that we're plotting with `py.iplot` is actually just a dictionary-like object. Moreover, we can customize and alter this plot simply by adding/defining the values of the **[possible keywords](https://plot.ly/python/reference/#scatter)** associated with scatter plots.
-
-Let's say we want to change the title of our scatter plot to `Plot update`, while at the same time, make the scatter plot blue instead of red.
+You can also create a graph object figure from a dictionary representation by passing the dictionary to the figure constructor.
 
 ```python
-figure.update(dict(layout=dict(title='Plot update'), data=dict(marker=dict(color='blue'))))
-py.iplot(figure, filename='pyguide_2')
+import plotly.graph_objects as go
+fig = go.Figure({
+    "data": [{"type": "bar",
+              "x": [1, 2, 3],
+              "y": [1, 3, 2]}],
+    "layout": {"title": {"text": "A Bar Chart"}}
+})
+fig.show()
 ```
 
-Moreover, Plotly plots are interactive, meaning you can manually explore the data by panning, selecting, zooming on the graphing surface (among other possible actions, try panning the axes!). We are also continually expanding the expressiveness of the Plotly package so we're able to graph and visualize all sorts of data.
+Once you have a figure as a graph object, you can retrieve the dictionary representation using the `fig.to_dict()` method.  You can also retrieve the JSON string representation using the `fig.to_json()` method.
 
 
-In no time you will be able to figure out how to make plots the way you want them, and with the information that you want to be shared with those you want. For example we can take a quick look at how we would define the objects required to generate a scatterplot comparing life expectancies and GDP Per Capita between two different continents.
+# Creating figures
+This section summarizes several ways to create new graph object figures with plotly.py
+
+### Constructor
+As demonstrated above, you can build a complete figure by passing trace and layout specifications to the `plotly.graph_objects.Figure` constructor.  These trace and layout specifications can be either dictionaries or graph objects. Here, for example, the traces are specified using graph objects and the layout is specified as a dictionary.
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure(
+    data=[go.Bar(x=[1, 2, 3], y=[1, 3, 2])],
+    layout=dict(title=dict(text="A Bar Chart"))
+)
+fig.show()
+```
+
+### Plotly express
+Plotly express (included as the `plotly.express` module) is a high-level data exploration API that produces graph object figures.
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species")
+
+# If you print fig, you'll see that it's just a regular figure with data and layout 
+# print(fig)
+
+fig.show()
+```
+
+### Figure factories
+Figure factories (included in plotly.py in the `plotly.figure_factory` module) are functions that produce graph object figures, often to satisfy the needs of specialized domains.  Here's an example of using the `create_quiver` figure factory to construct a graph object figure that displays a 2D quiver plot.
+
+```python
+import numpy as np
+import plotly.figure_factory as ff
+x1,y1 = np.meshgrid(np.arange(0, 2, .2), np.arange(0, 2, .2))
+u1 = np.cos(x1)*y1
+v1 = np.sin(x1)*y1
+
+fig = ff.create_quiver(x1, y1, u1, v1)
+fig.show()
+```
+
+### Make subplots
+The `plotly.subplots.make_subplots` function produces a graph object figure that is preconfigured with a grid of subplots that traces can be added to.  The `add_trace` function will be discussed more below.
+
+```python
+from plotly.subplots import make_subplots
+fig = make_subplots(rows=1, cols=2)
+fig.add_trace(go.Scatter(y=[4, 2, 1], mode="lines"), row=1, col=1)
+fig.add_trace(go.Bar(y=[2, 1, 3]), row=1, col=2)
+fig.show()
+```
+
+# Updating figures
+Regardless of how a graph object figure was constructed, it can be updated by adding additional traces and modifying its properties. 
+
+### Adding traces
+New traces can be added to a graph object figure using the `add_trace` method.  This method accepts a graph object trace (an instance of `go.Scatter`, `go.Bar`, etc.) and adds it to the figure.  This allows you to start with an empty figure, and add traces to it sequentially.
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure()
+fig.add_trace(go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
+fig.show()
+```
+
+You can also add traces to a figure produced by a figure factory or plotly express.
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species")
+fig.add_trace(
+    go.Scatter(
+        x=[2, 4],
+        y=[4, 8],
+        mode="lines",
+        line=go.scatter.Line(color="gray"),
+        showlegend=False)
+)
+fig.show()
+```
+
+### Adding traces to subplots
+If a figure was created using `plotly.subplots.make_subplots`, then the `row` and `col` argument to `add_trace` can be used to add a trace to a particular subplot.
+
+```python
+from plotly.subplots import make_subplots
+fig = make_subplots(rows=1, cols=2)
+fig.add_trace(go.Scatter(y=[4, 2, 1], mode="lines"), row=1, col=1)
+fig.add_trace(go.Bar(y=[2, 1, 3]), row=1, col=2)
+fig.show()
+```
+
+This also works for figures created by plotly express using the `facet_row` and or `facet_col` arguments.
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", facet_col="species")
+reference_line = go.Scatter(x=[2, 4],
+                            y=[4, 8],
+                            mode="lines",
+                            line=go.scatter.Line(color="gray"),
+                            showlegend=False)
+fig.add_trace(reference_line, row=1, col=1)
+fig.add_trace(reference_line, row=1, col=2)
+fig.add_trace(reference_line, row=1, col=3)
+fig.show()
+```
+
+### Add trace convenience methods
+As an alternative to the `add_trace` method, graph object figures have a family of methods of the form `add_{trace}`, where `{trace}` is the name of a trace type, for constructing and adding traces of each trace type. Here is the previous subplot example, adapted to add the scatter trace using `fig.add_scatter` and to add the bar trace using `fig.add_bar`.
+
+```python
+from plotly.subplots import make_subplots
+fig = make_subplots(rows=1, cols=2)
+fig.add_scatter(y=[4, 2, 1], mode="lines", row=1, col=1)
+fig.add_bar(y=[2, 1, 3], row=1, col=2)
+fig.show()
+```
+
+### Magic underscore notation
+To make it easier to work with nested properties graph object constructors, and many graph object methods, support magic underscore notation. This allows you to reference nested properties by joining together multiple nested property names with underscores.
+
+For example, specifying the figure title in the figure constructor *without* magic underscore notation requires setting the `layout` argument to `dict(title=dict(text="A Chart"))`. Similarly, setting the line color of a scatter trace requires setting the `marker` property to `dict(color="crimson")`.
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure(
+    data=[go.Scatter(y=[1, 3, 2], line=dict(color="crimson"))],
+    layout=dict(title=dict(text="A Chart"))
+)
+fig.show()
+```
+
+With magic underscore notation, you can accomplish the same thing by passing the figure constructor a keyword argument named `layout_title_text`, and by passing the `go.Scatter` constructor a keyword argument named `line_color`.
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure(
+    data=[go.Scatter(y=[1, 3, 2], line_color="crimson")],
+    layout_title_text="A Chart"
+)
+fig.show()
+```
+
+Magic underscore notation is supported throughout the graph objects API, and it can often significantly simplify operations involving deeply nested properties.
+
+> Note: When you see keyword arguments with underscores passed to a graph object constructor or method, it is almost always safe to assume that it is an application of magic underscore notation. We have to say "almost always" rather than "always" because there are a few property names in the plotly schema that contain underscores: error_x, error_y, error_z, copy_xstyle, copy_ystyle, copy_zstyle, paper_bgcolor, and plot_bgcolor.  These were added back in the early days of the library (2012-2013) before we standardized on banning underscores from property names.
+
+### The update layout method
+Graph object figures support an `update_layout` method that may be used to update multiple nested properties of a figure's layout.  Here is an example of updating the text and font size of a figure's title using `update_layout`.
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
+fig.update_layout(title_text="A Bar Chart",
+                  title_font_size=30)
+fig.show()
+```
+
+Note that the following `update_layout` operations are equivalent:
+
+```python
+fig.update_layout(title_text="A Bar Chart",
+                  title_font_size=30)
+                  
+fig.update_layout(title_text="A Bar Chart",
+                  title_font=dict(size=30))
+                  
+      
+fig.update_layout(title=dict(text="A Bar Chart"),
+                             font=dict(size=30))
+                            
+fig.update_layout({"title": {"text": "A Bar Chart",
+                             "font": {"size": 30}}})
+
+fig.update_layout(
+    title=go.layout.Title(text="A Bar Chart",
+                          font=go.layout.title.Font(size=30)));
+```
+
+
+### The update traces method
+Graph object figures support an `update_traces` method that may be used to update multiple nested properties of one or more of a figure's traces.  To show some examples, we will start with a figure that contains bar and scatter traces across two subplots.
+
+```python
+from plotly.subplots import make_subplots
+fig = make_subplots(rows=1, cols=2)
+
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
+                name="a", row=1, col=1)
+
+fig.add_bar(y=[2, 1, 3],
+            marker=dict(color="MediumPurple"),
+            name="b", row=1, col=1)
+
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
+                name="c", row=1, col=2)
+
+fig.add_bar(y=[1, 3, 2],
+            marker=dict(color="LightSeaGreen"),
+            name="d", row=1, col=2)
+
+fig.show()
+```
+
+Note that both `scatter` and `bar` traces have a `marker.color` property to control their coloring. Here is an example of using `update_traces` to modify the color of all traces.
+
+```python
+from plotly.subplots import make_subplots
+fig = make_subplots(rows=1, cols=2)
+
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
+                name="a", row=1, col=1)
+
+fig.add_bar(y=[2, 1, 3],
+            marker=dict(color="MediumPurple"),
+            name="b", row=1, col=1)
+
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
+                name="c", row=1, col=2)
+
+fig.add_bar(y=[1, 3, 2],
+            marker=dict(color="LightSeaGreen"),
+            name="d", row=1, col=2)
+
+fig.update_traces(marker=dict(color="RoyalBlue"))
+
+fig.show()
+```
+
+The `update_traces` method supports a `selector` argument to control which traces should be updated.  Only traces with properties that match the selector will be updated. Here is an example of using a selector to only update the color of the `bar` traces
+
+```python
+from plotly.subplots import make_subplots
+fig = make_subplots(rows=1, cols=2)
+
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
+                name="a", row=1, col=1)
+
+fig.add_bar(y=[2, 1, 3],
+            marker=dict(color="MediumPurple"),
+            name="b", row=1, col=1)
+
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
+                name="c", row=1, col=2)
+
+fig.add_bar(y=[1, 3, 2],
+            marker=dict(color="LightSeaGreen"),
+            name="d", row=1, col=2)
+
+fig.update_traces(marker=dict(color="RoyalBlue"),
+                  selector=dict(type="bar"))
+
+fig.show()
+```
+
+Magic underscore notation can be used in the selector to match nested properties.  Here is an example of updating the color of all traces that were formally colored `"MediumPurple"`.
+
+```python
+from plotly.subplots import make_subplots
+fig = make_subplots(rows=1, cols=2)
+
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
+                name="a", row=1, col=1)
+
+fig.add_bar(y=[2, 1, 3],
+            marker=dict(color="MediumPurple"),
+            name="b", row=1, col=1)
+
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
+                name="c", row=1, col=2)
+
+fig.add_bar(y=[1, 3, 2],
+            marker=dict(color="LightSeaGreen"),
+            name="d", row=1, col=2)
+
+fig.update_traces(marker_color="RoyalBlue",
+                  selector=dict(marker_color="MediumPurple"))
+
+fig.show()
+```
+
+For figures with subplots, the `update_traces` method also supports `row` and `col` arguments to control which traces should be updated.  Only traces in the specified subplot row and column will be updated.  Here is an example of updating the color of all traces in the second subplot column
+
+```python
+from plotly.subplots import make_subplots
+fig = make_subplots(rows=1, cols=2)
+
+fig.add_scatter(y=[4, 2, 3.5], mode="markers",
+                marker=dict(size=20, color="LightSeaGreen"),
+                name="a", row=1, col=1)
+
+fig.add_bar(y=[2, 1, 3],
+            marker=dict(color="MediumPurple"),
+            name="b", row=1, col=1)
+
+fig.add_scatter(y=[2, 3.5, 4], mode="markers",
+                marker=dict(size=20, color="MediumPurple"),
+                name="c", row=1, col=2)
+
+fig.add_bar(y=[1, 3, 2],
+            marker=dict(color="LightSeaGreen"),
+            name="d", row=1, col=2)
+
+fig.update_traces(marker=dict(color="RoyalBlue"),
+                  col=2)
+
+fig.show()
+```
+
+The `update_traces` method can also be used on figures produced by figure factories or plotly express. Here's an example of updating the regression lines produced by plotly express to be dotted.
 
 ```python
 import pandas as pd
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", facet_col="species", trendline="ols")
+fig.update_traces(
+    line=dict(dash="dot", width=4),
+    selector=dict(type="scatter", mode="lines"))
+fig.show()
+```
 
-df = pd.read_csv('https://raw.githubusercontent.com/yankev/test/master/life-expectancy-per-GDP-2007.csv')
+### The for each trace method
+Suppose the updates that you want to make to a collection of traces depend on the current values of certain trace properties.  The `update_traces` method cannot handle this situation, but the `for_each_trace` method can.  
 
-americas = df[(df.continent=='Americas')]
-europe = df[(df.continent=='Europe')]
+As its first argument, the `for_each_trace` method accepts a function that accepts and updates one trace at a time.  Like `update_traces`, `for_each_trace` also accepts `selector`, `row`, and `col` arguments to control which traces should be considered. 
 
-trace_comp0 = go.Scatter(
-    x=americas.gdp_percap,
-    y=americas.life_exp,
-    mode='markers',
-    marker=dict(size=12,
-                line=dict(width=1),
-                color="navy"
-               ),
-    name='Americas',
-    text=americas.country,
-    )
+Here is an example of using `for_each_trace` to replace the equal-sign with a colon in the legend name of each trace in a figure produced by plotly express.
 
-trace_comp1 = go.Scatter(
-    x=europe.gdp_percap,
-    y=europe.life_exp,
-    mode='markers',
-    marker=dict(size=12,
-                line=dict(width=1),
-                color="red"
-               ),
-    name='Europe',
-    text=europe.country,
-        )
+```python
+import pandas as pd
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species")
 
-data_comp = [trace_comp0, trace_comp1]
-layout_comp = go.Layout(
-    title='Life Expectancy v. Per Capita GDP, 2007',
-    hovermode='closest',
-    xaxis=dict(
-        title='GDP per capita (2000 dollars)',
-        ticklen=5,
-        zeroline=False,
-        gridwidth=2,
-    ),
-    yaxis=dict(
-        title='Life Expectancy (years)',
-        ticklen=5,
-        gridwidth=2,
-    ),
+fig.for_each_trace(
+    lambda trace: trace.update(name=trace.name.replace("=", ": ")),
 )
-fig_comp = go.Figure(data=data_comp, layout=layout_comp)
-py.iplot(fig_comp, filename='life-expectancy-per-GDP-2007')
+
+fig.show()
 ```
 
-Hopefully this gives you an idea how plots are created with the Plotly Python Library. We'll go into more detail regarding the different parts that make up the plot in later sections. But for now, I hope you can see the customizability that's possible, and how we can define these graphs programmatically.
-
-
-#### The Source of Plotly's Power
-
-All the graphs and plots which Plotly generates are actually the product of our javascript library [`plotly.js`](https://plot.ly/javascript). Whether you see Plotly graphs in a browser, or an IPython notebook, all the visualizations and interactiveness is made possible by [`plotly.js`](https://plot.ly/javascript). Built on top of `d3.js` and `stack.gl`, [`plotly.js`](https://plot.ly/javascript) is a high-level, declarative charting library. [`plotly.js`](https://plot.ly/javascript) ships with 20 chart types, including 3D charts, statistical graphs, and SVG maps.
-
-
-### Working with the Python API
-
-
-The Python API is a package designed to interact with the `Plotly.js` library in order to allow Python users to create plots in their preferred environment. This way, the package will provide functions and graph objects that will simplify the process of generating plots, which would amount to properly defining keywords in a JSON object (as seen above). To this end, the Python API provides functions and graph objects which will allow us to create our plots functionally. So let's break this down.
+### The update axis methods
+Graph object figures support `update_xaxes` and `update_yaxes` methods that may be used to update multiple nested properties of one or more of a figure's axes.  Here is an example of using `update_xaxes` to disable the vertical grid lines across all subplots in a figure produced by plotly express.
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import pandas as pd
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", facet_col="species")
+fig.update_xaxes(showgrid=False)
+fig.show()
 ```
 
-These are the two main modules that we will need in order to generate our Plotly graphs.
-
-- `plotly.plotly` contains the functions that will help us communicate with the Plotly servers
-- `plotly.graph_objs` contains the functions that will generate graph objects for us.
-
-**Note:** If we examine the code from the example in the previous section, we can see these parts in action.
+There are also `for_each_xaxis` and `for_each_yaxis` methods that are analogous to the `for_each_trace` method described above. For non-cartesian subplot types (e.g. polar), there are additional `update_{type}` and `for_each_{type}` methods (e.g. `update_polar`, `for_each_polar`).
 
 
-Below we will examine the different aspects/objects that define a plot in Plotly. These are:
-- Data
-- Layout
-- Figure
+### Chaining figure operations
+All of the figure update operations described above are methods that return a reference to the figure being modified.  This makes it possible the chain multiple figure modification operations together into a single expression.
 
-
-#### Data
+Here is an example of a chained expression that creates a faceted scatter plot with OLS trend lines using plotly express, sets the title font size using `update_layout`, disables vertical grid lines using `update_xaxes`, updates the width and dash pattern of the trend lines using `update_traces`, and then displays the figure using `show`.
 
 ```python
-data
+import plotly.express as px
+iris = px.data.iris()
+(px.scatter(iris, x="sepal_width", y="sepal_length", color="species",
+            facet_col="species", trendline="ols", title="Iris Dataset")
+ .update_layout(title_font_size=24)
+ .update_xaxes(showgrid=False)
+ .update_traces(
+     line=dict(dash="dot", width=4),
+     selector=dict(type="scatter", mode="lines"))
+).show()
 ```
 
-We see that data is actually a list object in Python. Data will actually contain all the traces that you wish to plot. Now the question may be, what is a trace? A trace is just the name we give a collection of data and the specifications of which we want that data plotted. Notice that a trace will also be an object itself, and these will be named according to how you want the data displayed on the plotting surface.
-Hence,
+### Property assignment
+Trace and layout properties can be updated using property assignment syntax.  Here is an example of setting the figure title using property assignment.
 
 ```python
-go.Scatter(x=[1,2,3], y=[4,5,6], marker={'color': 'red', 'symbol': 104, 'size': "10"},
-                                               mode="markers+lines",  text=["one","two","three"])
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
+fig.layout.title.text = "A Bar Chart"
+fig.show()
 ```
 
-defines a trace producing a scatter plot. Moreover it defines the data that we want plotted, which are 3 data points (1,4), (2,5), (3,6), as well as a miriad of specifications related to plotting this data. In this example we wanted the points to be plotted as hollow x's with lines joining them, all in red.
-
-In addition, we can add another Scatter object to our data list. We can do this by defining a new Scatter object, and including this in our definition of our data object.
-
-
+And here is an example of updating the bar outline using property assignment
 
 ```python
-#First let's make up some cool data to plot:
-import numpy as np
-x = np.arange(1,3.2,0.2)
-y = 6*np.sin(x)
-y
-```
-
-```python
-trace2 = go.Scatter(x=x, y=y, marker={'color': 'blue', 'symbol': 'star', 'size': 10}, mode='markers', name='2nd trace')
-data = go.Data([trace1, trace2])
-data
-```
-
-```python
-plot2 = py.iplot(go.Figure(data=data, layout=layout), filename='pyguide_3')
-plot2
-```
-
-#### Layout
-
-
-The Layout object will define the look of the plot, and plot features which are unrelated to the data. So we will be able to change things like the title, axis titles, spacing, font and even draw shapes on top of your plot! In our case,
-
-```python
-layout=go.Layout(title="First Plot", xaxis={'title':'x1'}, yaxis={'title':'x2'})
-layout
-```
-
-##### Annotations
-
-
-We added a plot title as well as titles for all the axes.
-For fun we could add some text annotation as well in order to indicate the maximum point that's been plotted on the current plotting surface.
-
-```python
-layout.update(dict(annotations=[go.Annotation(text="Highest Point", x=3, y=6)]))
-py.iplot(go.Figure(data=data, layout=layout), filename='pyguide_4')
-```
-
-##### Shapes
-
-Let's add a rectangular block to highlight the section where trace 1 is above trace2.
-
-```python
-layout.update(dict(shapes = [
-        # 1st highlight during Feb 4 - Feb 6
-        {
-            'type': 'rect',
-            # x-reference is assigned to the x-values
-            'xref': 'x',
-            # y-reference is assigned to the plot paper [0,1]
-            'yref': 'y',
-            'x0': '1',
-            'y0': 0,
-            'x1': '2',
-            'y1': 7,
-            'fillcolor': '#d3d3d3',
-            'opacity': 0.2,
-            'line': {
-                'width': 0,
-            }
-        }]
-        ))
-
-py.iplot(go.Figure(data=data, layout=layout), filename='pyguide_5')
-```
-
-Of course, all this can be found in the `Layout` section of the [Reference Page](https://www.plot.ly/python/referece).
-
-
-#### Figure
-
-
-Finally, we get to the figure object. `go.Figure` just creates the final object to be plotted, and simply just creates a dictionary-like object that contains both the data object and the layout object.
-
-```python
-go.Figure(data=data, layout=layout)
-```
-
-#### Why `graph_objs`?
-
-
-After viewing the outputs of these functions (ie: the objects), we can see that they are just lists or dictionaries. But they're a little more than that. Though they do inherit properties from dictionaries (traces, and layout) and lists (figure), they provide a bit more functionality as we'll soon see. Not to mention the fact that it's much simpler to create plots in this functional fashion compared to manually writing up a dictionary.
-
-
-The first neat option about using graph_objs is that you can call help on them.
-
-```python
-help(go.Figure)
-```
-
-
-
-```python
-help(go.Scatter)
-```
-
-As you can see, calling help shows us all the attributes that the Scatter object takes as paremeters. Also because the scatter object is based off of a dictionary, you can see all the different methods that are attached to this object as well. For example, we've seen the use of the `update` method above.
-
-
-Focussing more on the parameters, we can see that the objects have key-word/name validation. What this means is that it'll raise an exception that provides us some detail of where we went wrong.
-
-```python
-go.Scatter(markers=dict(color='blue'))
-```
-
-As you can see, it tells us that `markers` is not a key in `scatter`. Instead as we browse the list, we see that what we wanted was actually `marker` (singular, without the s), which is a keyword. Thus this little feature makes for much easier debugging and correction.
-
-
-
-Now let's talk about the methods that come along with these objects. The one of most importance would be the `update` method. The difference here between the regular update method for dictionaries is that it allows for `nested updates`.
-Let me show you what that means.
-
-```python
-#Here we have a scatter object:
-scatter_trace = go.Scatter(marker=dict(color='blue'))
-```
-
-```python
-#We can add some information to it like data (x, and y), as well as update the sybmol we want the markers to be
-scatter_trace.update(dict(x=[1,2,3],y=[4,5,6], marker=dict(symbol='star')))
-scatter_trace
-```
-
-```python
-figure = go.Figure(data=[scatter_trace], layout=layout)
-py.iplot(figure, filename='pyguide_5')
-```
-
-Notice that we were able to add the data as well as add the extra feature for the markers. However if we let `scatter_trace` be just a standard dictionary then we will not be able to just add another feature for the marker in this way. Instead, the value for marker will be replaced with the dictionary we choose to update with.
-
-```python
-scatter_trace = {'marker': {'color': 'blue'},
-                 'type': 'scatter',
-                 ''}
-```
-
-### Looking at Examples
-
-
-Examples are one of the best ways to get started and get your feet wet. Through the examples you can get a good idea of what a certain type of plot is used for, and what can be possible with it.
-
-Moreover, the code in the examples are self-contained, meaning you can just copy and paste the code block and run it in your Python script or Ipython Notebook. But if you happen to run into an issue running the example, please let us know at our [Community Forums](http://community.plot.ly). By examining the code, you can further understand and experience the procedure in which Plotly plots are created. Something important to look at would be the data used in these examples; Because certain plots are only able to handle certain types of data (e.g: histograms are only useful for quantitative data), you will get an idea of the limitations and purpose of different plot types. In addition, you can see the effect certain parameters have on the data visualization and hopefully give you a sense of what's possible beyond the standard/default.
-
-It's a good place to look for what's possible in Plotly. A brief look at the page you can find sections and examples on types of plots you didn't know existed, or layout options that you had no idea were possible and within reach. Just take a look at all these guys:
-
-[![Scientific Charts](https://cloud.githubusercontent.com/assets/12302455/14262495/cd45bc98-fa83-11e5-9d4b-7a49acd37252.png)](https://plot.ly/python)
-
-
-
-What's more you can find layout options that will allow you to create plots with multiple axes and plots.
-Check this out:
-[![Layout Options](https://cloud.githubusercontent.com/assets/12302455/14262589/51792702-fa84-11e5-8e3a-b606a0211838.png)](https://plot.ly/python/#layout-options)
-
-
-
-
-As an example, say we looked at two different types of plots in the `heatmap` and the `box plots`, now equipped with the knowledge of subplots, we can easily two and two together in order to put both these on the same plotting surface (for no other reason than that we can). Let's first load the packages, and then set up the data for our heatmap trace.
-
-```python
-from plotly import tools
-import numpy as np
-import plotly.plotly as py
-import plotly.graph_objs as go
-
-heatmap = go.Heatmap(
-        z=[[1, 20, 30],
-           [20, 1, 60],
-           [30, 60, 1]],
-        showscale=False
-        )
-
-```
-
-Next we'll set up the trace object for our wind rose chart, and note I'm just copying code from the example pages for each of these plot types.
-
-```python
-y0 = np.random.randn(50)
-y1 = np.random.randn(50)+1
-
-box_1 = go.Box(
-    y=y0
-)
-box_2 = go.Box(
-    y=y1
-)
-data = [heatmap, box_1, box_2]
-
-```
-
-```python
-fig = tools.make_subplots(rows=2, cols=2, specs=[[{}, {}], [{'colspan': 2}, None]],
-                          subplot_titles=('First Subplot','Second Subplot', 'Third Subplot'))
-
-fig.append_trace(box_1, 1, 1)
-fig.append_trace(box_2, 1, 2)
-fig.append_trace(heatmap, 2, 1)
-
-fig['layout'].update(height=600, width=600, title='i <3 subplots')
-
-py.iplot(fig, filename='box_heatmap1')
-
-```
-
-This looks great, however we'd like for our subplots to be on the same plotting surface. So let's take a look at the dictionary representation of our figure, and customize it using what we've learned before.
-
-```python
-fig
-```
-
-We actually see that the second boxplot has its own xaxis and yaxis. Thus we should unify it with the same axis as the first subplot. Then from the layout section, we should remove the additional xaxis and yaxis that are drawn for us. You can perform these steps seperately to see what I mean, but in this guide, I'll just show you the result of this edit/customization.
-
-```python
-fig.data[1].yaxis = 'y1'
-fig.data[1].xaxis = 'x1'
-del fig.layout['xaxis2']
-del fig.layout['yaxis2']
-
-```
-
-Now we still have to remove the annotation for the `Second Subplot` title, asell as the `First Subplot` title, and then extend the range of xaxis1 to the entire plotting surface.
-
-```python
-del fig.layout.annotations[0]   #deletes annotation for `First Subplot`
-del fig.layout.annotations[0]   #deletes annotation for `Second Subplot` because of shift
-fig.layout.xaxis1.domain = [0.0, 1]
-```
-
-And voila! We just put together some examples that we've never seen before, and customized out plot using what we learned throughout the guide!
-
-```python
-py.iplot(fig, filename='box-heatmap-fixed')
-```
-
-### Using the Reference Page
-
-
-At this point you may have a good idea of how you want to visualize your data, and which type of plot you would like to use. You've taken a look at some examples of this plot type, but there are still some details that you would like to add or change. Now is the time for you to check out the **[Reference Page!](https://plot.ly/python/reference/)** The reference page details all the parameters that can be set for every type of plot that is possible in Plotly (ie: all the trace objects). In addition it also provides details on the possible parameters that are available to change in the `Layout` object as well.
-
-![something](https://cloud.githubusercontent.com/assets/12302455/14263600/681e8c54-fa89-11e5-8467-99e78e4f9135.png)
-
-When you first load the page you will see a menu on the left which is segregated into `Plot Objects` and `Layout`. This exemplifies the two components of every Plotly figure. So for example if you knew you wanted to change something related to the visualization of the data, then you would look at the first section. If instead you were interested in a general aesthetic feature of the graph then the Layout will probably be your best option.
-
-Now for example, if you decided to create a scatter plot, then you would choose `Scatter` under `Plot Objects`, and that will take you to the the section for `Scatter`. On your immediate right you will be able to see a breakdown of the Scatter section, which includes all the parameters and sub-parameters at your disposal.
-
-
-
-### Issues and Questions
-
-
-So you've developed a better understanding of Plotly now, and you're starting to create cooler plots and visualizations for different projects you're working on. If you ever happen to get stuck with certain use cases or features in Plotly, you can let us know at our **[Community Forums](http://community.plot.ly)**.
-![Community Support](https://cloud.githubusercontent.com/assets/12302455/14265774/71a43b4a-fa91-11e5-86f8-f069037c74ea.png)
-Moreover if you sign up for a Pro Plan, we also offer e-mail and intercom support as well. Finally if you think you've caught a bug or if something just doesn't function the way it should, you can create an issue on our **[GitHub Repo](https://github.com/plotly/plotly.py/issues)**.
-
-
-
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install publisher --upgrade
-import publisher
-publisher.publish(
-    'new_py_guide.ipynb', 'python/user-guide//', 'Plotly User Guide for Python',
-    'Plotly User Guide for Python',
-    name = 'Plotly User Guide',
-    thumbnail='', language='python',
-    layout='user-guide', has_thumbnail='false')
-```
-
-```python
-
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
+fig.data[0].marker.line.width = 4
+fig.data[0].marker.line.color = "black"
+fig.show()
 ```

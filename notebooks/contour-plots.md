@@ -86,7 +86,7 @@ fig = go.Figure(data =
            [2.5, 3.125, 5., 8.125, 12.5],
            [0.625, 1.25, 3.125, 6.25, 10.625],
            [0, 0.625, 2.5, 5.625, 10]],
-        colorscale='Jet',
+        colorscale='Electric',
     ))
 fig.show()
 ```
@@ -103,7 +103,7 @@ fig = go.Figure(data =
            [2.5, 3.125, 5., 8.125, 12.5],
            [0.625, 1.25, 3.125, 6.25, 10.625],
            [0, 0.625, 2.5, 5.625, 10]],
-        colorscale='Jet',
+        colorscale='Hot',
         contours=dict(
             start=0,
             end=8,

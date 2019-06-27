@@ -22,7 +22,7 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.6.7
   plotly:
-    description: How to makepolar charts in Python with Plotly.
+    description: How to make polar charts in Python with Plotly.
     display_as: scientific
     has_thumbnail: true
     ipynb: ~notebook_demo/200

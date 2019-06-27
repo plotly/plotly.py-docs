@@ -29,7 +29,7 @@ jupyter:
 # Displaying plotly figures
 This section covers the many ways to display plotly figures from Python.  At the highest level, there are three general approaches:
 
- 1. Using the renderers framework
+ 1. Using the renderers framework in the context of a script or notebook 
  2. Using Dash in a web app context
  3. Using a `FigureWidget` in an ipywidgets context
 
@@ -65,7 +65,7 @@ fig
 
 Next, we will show how to configure the default renderer.  After that, we will describe all of the built-in renderers and discuss why you might choose to use each one.
 
-> Note: The renderers framework is a generalization of the `plotly.offline.iplot` and `plotly.offline.plot` functions that were the recommended way to display figures prior to plotly.py version 4.  These functions are still supported for backward compatibility, but they will not be discussed here.
+> Note: The renderers framework is a generalization of the `plotly.offline.iplot` and `plotly.offline.plot` functions that were the recommended way to display figures prior to plotly.py version 4.  These functions have been reimplemented using the renderers framework and are still supported for backward compatibility, but they will not be discussed here.
 
 ## Setting the default renderer
 The current and available renderers are configured using the `plotly.io.renderers` configuration object.  Display this object to see the current default renderer and the list of all available renderers.

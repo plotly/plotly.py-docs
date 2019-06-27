@@ -55,7 +55,7 @@ $ conda install -c plotly plotly=4.0.0
 
 This package contains everything you need to write figures to standalone HTML files.
 
-> Note: No internet connection or account is required to use plotly.py. Prior to version 4, this library could operate in either an "online" or "offline" mode. The documentation tended to emphasize the online mode, where graphs get published to the Chart Studio web service.  In version 4, all "online" functionality was removed from the `plotly` package and is now available as the separate, optional, `chart-studio` package (See below).  plotly.py version 4 is "offline" only, and does not include any functionality for uploading figures to cloud services.  
+> Note: **No internet connection, account, or payment is required to use plotly.py.** Prior to version 4, this library could operate in either an "online" or "offline" mode. The documentation tended to emphasize the online mode, where graphs get published to the Chart Studio web service.  In version 4, all "online" functionality was removed from the `plotly` package and is now available as the separate, optional, `chart-studio` package (See below).  **plotly.py version 4 is "offline" only, and does not include any functionality for uploading figures or data to cloud services.** 
 
 ```python
 import plotly.graph_objects as go
@@ -169,6 +169,8 @@ functions in the `plotly.io` package. This functionality requires the
 installation of the plotly [orca](https://github.com/plotly/orca) command line utility and the
 [`psutil`](https://github.com/giampaolo/psutil) and [`requests`](https://2.python-requests.org/en/master/) Python packages.
 
+> Note: The `requests` library is used to communicate between the Python process and a local orca server process, it is not used to communicate with any external services.
+
 These dependencies can all be installed using conda:
 ```
 $ conda install -c plotly plotly-orca psutil requests
@@ -226,9 +228,9 @@ Now that you have everything installed, you are ready to start reading and runni
 
 For a complete overview of all of the ways that figures can be created and updated, see the [*Plotly User Guide for Python*](https://plot.ly/python/user-guide/).
 
-For information on configuring figure layout options (e.g. axes, titles, legends, etc) see [*Layout Options*](https://plot.ly/python/#layout-options).
+For information on configuring figure layout options (e.g. axes, titles, legends, etc) and styling figures (e.g. colors, fonts, annotations, images, shapes, etc.), see [*Plotly Fundamentals*](https://plot.ly/python/plotly-fundamentals/#fundamentals).
 
-For information on styling figures (e.g. colors, fonts, annotations, images, shapes, etc.), see [*Style Options*](https://plot.ly/python/#style-options). And for information on theming plotly figures, see [*Theming and templates with plotly for Python*](https://plot.ly/python/templates/).
+For information on theming plotly figures, see [*Theming and templates with plotly for Python*](https://plot.ly/python/templates/).
 
 For information on all of the ways that plotly figures can be displayed, see [*Displaying plotly figures with plotly for Python*](https://plot.ly/python/renderers/).
 

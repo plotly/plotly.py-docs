@@ -36,19 +36,18 @@ jupyter:
     redirect_from: ipython-notebooks/subplots/
     thumbnail: thumbnail/subplots.jpg
     title: Python Subplots | Examples | Plotly
+    v4upgrade: true
 ---
-
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
 
 #### Simple Subplot
 
+Figures with subplots are created using the `make_subplots` function from the `plotly.subplots` module.
+
+Here is an example of creating a figure with two scatter traces in side-by-side subplots.
+
 ```python
 from plotly.subplots import make_subplots
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = make_subplots(rows=1, cols=2)
 
@@ -62,81 +61,49 @@ fig.add_trace(
     row=1, col=2
 )
 
-fig['layout'].update(height=600, width=800, title_text='i <3 subplots')
+fig.update_layout(height=600, width=800, title_text="Subplots")
+fig.show()
+```
+
+#### Stacked Subplots
+
+Here is an example of creating a figure with two vertically stacked subplots.
+
+```python
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+fig = make_subplots(rows=3, cols=1)
+
+fig.append_trace(go.Scatter(
+    x=[3, 4, 5],
+    y=[1000, 1100, 1200],
+), row=1, col=1)
+
+fig.append_trace(go.Scatter(
+    x=[2, 3, 4],
+    y=[100, 110, 120],
+), row=2, col=1)
+
+fig.append_trace(go.Scatter(
+    x=[0, 1, 2],
+    y=[10, 11, 12]
+), row=3, col=1)
+
+
+fig.update_layout(height=600, width=600, title_text="Stacked subplots")
 fig.show()
 ```
 
 #### Multiple Subplots
 
-```python
-import plotly.graph_objs as go
-
-trace1 = go.Scatter(
-    x=[1, 2, 3],
-    y=[4, 5, 6]
-)
-trace2 = go.Scatter(
-    x=[20, 30, 40],
-    y=[50, 60, 70],
-    xaxis='x2',
-    yaxis='y2'
-)
-trace3 = go.Scatter(
-    x=[300, 400, 500],
-    y=[600, 700, 800],
-    xaxis='x3',
-    yaxis='y3'
-)
-trace4 = go.Scatter(
-    x=[4000, 5000, 6000],
-    y=[7000, 8000, 9000],
-    xaxis='x4',
-    yaxis='y4'
-)
-data = [trace1, trace2, trace3, trace4]
-layout = go.Layout(
-    xaxis=dict(
-        domain=[0, 0.45]
-    ),
-    yaxis=dict(
-        domain=[0, 0.45]
-    ),
-    xaxis2=dict(
-        domain=[0.55, 1]
-    ),
-    xaxis3=dict(
-        domain=[0, 0.45],
-        anchor='y3'
-    ),
-    xaxis4=dict(
-        domain=[0.55, 1],
-        anchor='y4'
-    ),
-    yaxis2=dict(
-        domain=[0, 0.45],
-        anchor='x2'
-    ),
-    yaxis3=dict(
-        domain=[0.55, 1]
-    ),
-    yaxis4=dict(
-        domain=[0.55, 1],
-        anchor='x4'
-    )
-)
-fig = go.Figure(data=data, layout=layout)
-fig.show()
-```
-
-#### Multiple Subplots with Titles
+Here is an example of creating a 2 x 2 subplot grid and populating each subplot with a single scatter trace.
 
 ```python
+import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import plotly.graph_objs as go
 
-fig = make_subplots(
-    rows=2, cols=2,
-    subplot_titles=('Plot 1', 'Plot 2', 'Plot 3', 'Plot 4'))
+fig = make_subplots(rows=2, cols=2, start_cell="bottom-left")
 
 fig.add_trace(go.Scatter(x=[1, 2, 3], y=[4, 5, 6]),
               row=1, col=1)
@@ -150,8 +117,36 @@ fig.add_trace(go.Scatter(x=[300, 400, 500], y=[600, 700, 800]),
 fig.add_trace(go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000]),
               row=2, col=2)
 
-fig.update_layout(height=600, width=600,
-                  title_text='Multiple Subplots with Titles')
+fig.show()
+```
+
+#### Multiple Subplots with Titles
+The `subplot_titles` argument to `make_subplots` can be used to position text annotations as titles for each subplot.
+
+Here is an example of adding subplot titles to a 2 x 2 subplot grid of scatter traces.
+
+```python
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=("Plot 1", "Plot 2", "Plot 3", "Plot 4"))
+
+fig.add_trace(go.Scatter(x=[1, 2, 3], y=[4, 5, 6]),
+              row=1, col=1)
+
+fig.add_trace(go.Scatter(x=[20, 30, 40], y=[50, 60, 70]),
+              row=1, col=2)
+
+fig.add_trace(go.Scatter(x=[300, 400, 500], y=[600, 700, 800]),
+              row=2, col=1)
+
+fig.add_trace(go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000]),
+              row=2, col=2)
+
+fig.update_layout(height=500, width=700,
+                  title_text="Multiple Subplots with Titles")
 
 fig.show()
 ```
@@ -160,7 +155,7 @@ fig.show()
 
 ```python
 from plotly.subplots import make_subplots
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = make_subplots(rows=1, cols=2)
 
@@ -168,9 +163,9 @@ fig.add_trace(
     go.Scatter(
         x=[1, 2, 3],
         y=[4, 5, 6],
-        mode='markers+text',
-        text=['Text A', 'Text B', 'Text C'],
-        textposition='bottom center'
+        mode="markers+text",
+        text=["Text A", "Text B", "Text C"],
+        textposition="bottom center"
     ),
     row=1, col=1
 )
@@ -179,22 +174,193 @@ fig.add_trace(
     go.Scatter(
         x=[20, 30, 40],
         y=[50, 60, 70],
-        mode='markers+text',
-        text=['Text D', 'Text E', 'Text F'],
-        textposition='bottom center'
+        mode="markers+text",
+        text=["Text D", "Text E", "Text F"],
+        textposition="bottom center"
     ),
     row=1, col=2
 )
 
-fig.update_layout(height=600, width=800, title_text='i <3 annotations and subplots')
+fig.update_layout(height=600, width=800, title_text="Annotations and subplots")
 
 fig.show()
 ```
 
 #### Side by Side Subplot
+The `column_widths` argument to `make_subplots` can be used to customize the relative widths of the columns in a subplot grid. It should be set to a list of numbers with a length that matches the `cols` argument.  These number will be normalized, so that they sum to 1, and used to compute the relative widths of the subplot grid columns. The `row_heights` argument serves the same purpose for controlling the relative heights of rows in the subplot grid.
+
+Here is an example of creating a figure with two scatter traces in side-by-side subplots, where the left subplot is wider that the right.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+fig = make_subplots(rows=1, row_heights= cols=2, column_widths=[0.7, 0.3])
+
+fig.add_trace(go.Scatter(x=[1, 2, 3], y=[4, 5, 6]),
+              row=1, col=1)
+
+fig.add_trace(go.Scatter(x=[20, 30, 40], y=[50, 60, 70]),
+              row=1, col=2)
+
+fig.show()
+```
+
+#### Customizing Subplot Axes
+After a figure with subplots is created using the `make_subplots` function, its axis properties (title, font, range, grid style, etc.) can be customized using the `update_xaxes` and `update_yaxes` graph object figure methods.  By default, these methods apply to all of the x axes or y axes in the figure. The `row` and `col` arguments can be used to control which axes are targeted by the update.
+
+Here is an example that creates a figure with a 2 x 2 subplot grid, populates each subplot with a scatter trace, and then updates the x and y axis titles for each subplot individually.
+
+```python
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+# Initialize figure with subplots
+fig = make_subplots(
+    rows=2, cols=2, subplot_titles=("Plot 1", "Plot 2", "Plot 3", "Plot 4")
+)
+
+# Add traces
+fig.add_trace(go.Scatter(x=[1, 2, 3], y=[4, 5, 6]), row=1, col=1)
+fig.add_trace(go.Scatter(x=[20, 30, 40], y=[50, 60, 70]), row=1, col=2)
+fig.add_trace(go.Scatter(x=[300, 400, 500], y=[600, 700, 800]), row=2, col=1)
+fig.add_trace(go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000]), row=2, col=2)
+
+# Update xaxis properties
+fig.update_xaxes(title_text="xaxis 1 title", row=1, col=1)
+fig.update_xaxes(title_text="xaxis 2 title", range=[10, 50], row=1, col=2)
+fig.update_xaxes(title_text="xaxis 3 title", showgrid=False, row=2, col=1)
+fig.update_xaxes(title_text="xaxis 4 title", type="log", row=2, col=2)
+
+# Update yaxis properties
+fig.update_yaxes(title_text="yaxis 1 title", row=1, col=1)
+fig.update_yaxes(title_text="yaxis 2 title", range=[40, 80], row=1, col=2)
+fig.update_yaxes(title_text="yaxis 3 title", showgrid=False, row=2, col=1)
+fig.update_yaxes(title_text="yaxis 4 title", row=2, col=2)
+
+# Update title and height
+fig.update_layout(title_text="Customizing Subplot Axes", height=700)
+
+fig.show()
+```
+
+#### Subplots with Shared X-Axes
+The `shared_xaxes` argument to `make_subplots` can be used to link the x axes of subplots in the resulting figure. The `vertical_spacing` argument is used to control the vertical spacing between rows in the subplot grid.
+
+Here is an example that creates a figure with 3 vertically stacked subplots with linked x axes. A small vertical spacing value is used to reduce the spacing between subplot rows.
+
+```python
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+fig = make_subplots(
+    rows=3, cols=1, shared_xaxes=True, vertical_spacing=0.02
+)
+
+fig.add_trace(go.Scatter(x=[0, 1, 2], y=[10, 11, 12]),
+              row=3, col=1)
+
+fig.add_trace(go.Scatter(x=[2, 3, 4], y=[100, 110, 120]),
+              row=2, col=1)
+
+fig.add_trace(go.Scatter(x=[3, 4, 5], y=[1000, 1100, 1200]),
+              row=1, col=1)
+
+fig.update_layout(height=600, width=600,
+                  title_text="Stacked Subplots with Shared X-Axes")
+fig.show()
+```
+
+#### Subplots with Shared Y-Axes
+The `shared_yaxes` argument to `make_subplots` can be used to link the y axes of subplots in the resulting figure.
+
+Here is an example that creates a figure with a 2 x 2 subplot grid, where the yaxes of each row are linked.
+
+
+```python
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+fig = make_subplots(rows=2, cols=2, shared_yaxes=True)
+
+fig.add_trace(go.Scatter(x=[1, 2, 3], y=[2, 3, 4]),
+              row=1, col=1)
+
+fig.add_trace(go.Scatter(x=[20, 30, 40], y=[5, 5, 5]),
+              row=1, col=2)
+
+fig.add_trace(go.Scatter(x=[2, 3, 4], y=[600, 700, 800]),
+              row=2, col=1)
+
+fig.add_trace(go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000]),
+              row=2, col=2)
+
+fig.update_layout(height=600, width=600,
+                  title_text="Multiple Subplots with Shared Y-Axes")
+fig.show()
+```
+
+#### Custom Sized Subplot with Subplot Titles
+The `specs` argument to `make_subplots` is used to configure per-subplot options.  `specs` must be a 2-dimension list with dimensions that match those provided as the `rows` and `cols` arguments. The elements of `specs` may either be `None`, indicating no subplot should be initialized starting with this grid cell, or a dictionary containing subplot options.  The `colspan` subplot option specifies the number of grid columns that the subplot starting in the given cell should occupy.  If unspecified, `colspan` defaults to 1.
+
+Here is an example that creates a 2 by 2 subplot grid containing 3 subplots.  The subplot `specs` element for position (2, 1) has a `colspan` value of 2, causing it to span the full figure width. The subplot `specs` element for position (2, 2) is `None` because no subplot begins at this location in the grid.
+
+```python
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+fig = make_subplots(
+    rows=2, cols=2,
+    specs=[[{}, {}],
+           [{"colspan": 2}, None]],
+    subplot_titles=("First Subplot","Second Subplot", "Third Subplot"))
+
+fig.add_trace(go.Scatter(x=[1, 2], y=[1, 2]),
+                 row=1, col=1)
+
+fig.add_trace(go.Scatter(x=[1, 2], y=[1, 2]),
+                 row=1, col=2)
+fig.add_trace(go.Scatter(x=[1, 2, 3], y=[2, 1, 2]),
+                 row=2, col=1)
+
+fig.update_layout(showlegend=False, title_text="Specs with Subplot Title")
+fig.show()
+```
+
+#### Multiple Custom Sized Subplots
+If the `print_grid` argument to `make_subplots` is set to `True`, then an text representation of the subplot grid will be printed.
+
+Here is an example that uses the `rowspan` and `colspan` subplot options to create a custom subplot layout with subplots of mixed sizes. The `print_grid` argument is set to `True` so that the subplot grid is printed to the screen.
+
+```python
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+fig = make_subplots(
+    rows=5, cols=2,
+    specs=[[{}, {"rowspan": 2}],
+           [{}, None],
+           [{"rowspan": 2, "colspan": 2}, None],
+           [None, None],
+           [{}, {}]],
+    print_grid=True)
+
+fig.add_trace(go.Scatter(x=[1, 2], y=[1, 2], name="(1,1)"),
+              row=1, col=1)
+fig.add_trace(go.Scatter(x=[1, 2], y=[1, 2], name="(1,2)"), row=1, col=2)
+fig.add_trace(go.Scatter(x=[1, 2], y=[1, 2], name="(2,1)"), row=2, col=1)
+fig.add_trace(go.Scatter(x=[1, 2], y=[1, 2], name="(3,1)"), row=3, col=1)
+fig.add_trace(go.Scatter(x=[1, 2], y=[1, 2], name="(5,1)"), row=5, col=1)
+fig.add_trace(go.Scatter(x=[1, 2], y=[1, 2], name="(5,2)"), row=5, col=2)
+
+fig.update_layout(height=600, width=600, title_text="specs examples")
+fig.show()
+```
+
+#### Side by Side Subplot (low-level API)
+
+```python
+import plotly.graph_objects as go
 
 trace1 = go.Scatter(
     x=[1, 2, 3],
@@ -203,8 +369,8 @@ trace1 = go.Scatter(
 trace2 = go.Scatter(
     x=[20, 30, 40],
     y=[50, 60, 70],
-    xaxis='x2',
-    yaxis='y2'
+    xaxis="x2",
+    yaxis="y2"
 )
 data = [trace1, trace2]
 layout = go.Layout(
@@ -215,116 +381,17 @@ layout = go.Layout(
         domain=[0.8, 1]
     ),
     yaxis2=dict(
-        anchor='x2'
+        anchor="x2"
     )
 )
 fig = go.Figure(data=data, layout=layout)
 fig.show()
 ```
 
-#### Customizing Subplot Axes
+#### Subplots with shared axes (low-level API)
 
 ```python
-from plotly.subplots import make_subplots
-import plotly.graph_objs as go
-
-# Initialize figure with subplots
-fig = make_subplots(
-    rows=2, cols=2, subplot_titles=('Plot 1', 'Plot 2', 'Plot 3', 'Plot 4')
-)
-
-# Add traces
-fig.add_trace(go.Scatter(x=[1, 2, 3], y=[4, 5, 6]), row=1, col=1)
-fig.add_trace(go.Scatter(x=[20, 30, 40], y=[50, 60, 70]), row=1, col=2)
-fig.add_trace(go.Scatter(x=[300, 400, 500], y=[600, 700, 800]), row=2, col=1)
-fig.add_trace(go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000]), row=2, col=2)
-
-# Update xaxis properties
-fig.update_xaxes(title='xaxis 1 title', row=1, col=1)
-fig.update_xaxes(title='xaxis 2 title', range=[10, 50], row=1, col=2)
-fig.update_xaxes(title='xaxis 3 title', showgrid=False, row=2, col=1)
-fig.update_xaxes(title='xaxis 4 title', type='log', row=2, col=2)
-
-# Update yaxis properties
-fig.update_yaxes(title='yaxis 1 title', row=1, col=1)
-fig.update_yaxes(title='yaxis 2 title', range=[40, 80], row=1, col=2)
-fig.update_yaxes(title='yaxis 3 title', showgrid=False, row=2, col=1)
-fig.update_yaxes(title='yaxis 4 title', row=2, col=2)
-
-# Update title and height
-fig.update_layout(title_text='Customizing Subplot Axes', height=800)
-
-fig.show()
-```
-
-#### Subplots with Shared X-Axes
-
-```python
-from plotly import tools
-import plotly.graph_objs as go
-
-trace1 = go.Scatter(
-    x=[0, 1, 2],
-    y=[10, 11, 12]
-)
-trace2 = go.Scatter(
-    x=[2, 3, 4],
-    y=[100, 110, 120],
-)
-trace3 = go.Scatter(
-    x=[3, 4, 5],
-    y=[1000, 1100, 1200],
-)
-fig = tools.make_subplots(rows=3, cols=1, specs=[[{}], [{}], [{}]],
-                          shared_xaxes=True, shared_yaxes=True,
-                          vertical_spacing=0.001)
-fig.append_trace(trace1, 3, 1)
-fig.append_trace(trace2, 2, 1)
-fig.append_trace(trace3, 1, 1)
-
-fig['layout'].update(height=600, width=600, title='Stacked Subplots with Shared X-Axes')
-fig.show()
-```
-
-#### Subplots with Shared Y-Axes
-
-```python
-from plotly import tools
-import plotly.graph_objs as go
-
-trace0 = go.Scatter(
-    x=[1, 2, 3],
-    y=[2, 3, 4]
-)
-trace1 = go.Scatter(
-    x=[20, 30, 40],
-    y=[5, 5, 5],
-)
-trace2 = go.Scatter(
-    x=[2, 3, 4],
-    y=[600, 700, 800],
-)
-trace3 = go.Scatter(
-    x=[4000, 5000, 6000],
-    y=[7000, 8000, 9000],
-)
-
-fig = tools.make_subplots(rows=2, cols=2, shared_yaxes=True)
-
-fig.append_trace(trace0, 1, 1)
-fig.append_trace(trace1, 1, 2)
-fig.append_trace(trace2, 2, 1)
-fig.append_trace(trace3, 2, 2)
-
-fig['layout'].update(height=600, width=600,
-                     title='Multiple Subplots with Shared Y-Axes')
-fig.show()
-```
-
-#### Subplots with Shared Axes
-
-```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 trace1 = go.Scatter(
     x=[1, 2, 3],
@@ -333,20 +400,20 @@ trace1 = go.Scatter(
 trace2 = go.Scatter(
     x=[20, 30, 40],
     y=[5, 5, 5],
-    xaxis='x2',
-    yaxis='y'
+    xaxis="x2",
+    yaxis="y"
 )
 trace3 = go.Scatter(
     x=[2, 3, 4],
     y=[600, 700, 800],
-    xaxis='x',
-    yaxis='y3'
+    xaxis="x",
+    yaxis="y3"
 )
 trace4 = go.Scatter(
     x=[4000, 5000, 6000],
     y=[7000, 8000, 9000],
-    xaxis='x4',
-    yaxis='y4'
+    xaxis="x4",
+    yaxis="y4"
 )
 data = [trace1, trace2, trace3, trace4]
 layout = go.Layout(
@@ -361,25 +428,24 @@ layout = go.Layout(
     ),
     xaxis4=dict(
         domain=[0.55, 1],
-        anchor='y4'
+        anchor="y4"
     ),
     yaxis3=dict(
         domain=[0.55, 1]
     ),
     yaxis4=dict(
         domain=[0.55, 1],
-        anchor='x4'
+        anchor="x4"
     )
 )
 fig = go.Figure(data=data, layout=layout)
 fig.show()
 ```
 
-#### Stacked Subplots
+#### Stacked Subplots with a Shared X-Axis (low-level API)
 
 ```python
-from plotly import tools
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 trace1 = go.Scatter(
     x=[0, 1, 2],
@@ -388,41 +454,12 @@ trace1 = go.Scatter(
 trace2 = go.Scatter(
     x=[2, 3, 4],
     y=[100, 110, 120],
+    yaxis="y2"
 )
 trace3 = go.Scatter(
     x=[3, 4, 5],
     y=[1000, 1100, 1200],
-)
-
-fig = tools.make_subplots(rows=3, cols=1)
-
-fig.append_trace(trace3, 1, 1)
-fig.append_trace(trace2, 2, 1)
-fig.append_trace(trace1, 3, 1)
-
-
-fig['layout'].update(height=600, width=600, title='Stacked subplots')
-fig.show()
-```
-
-#### Stacked Subplots with a Shared X-Axis
-
-```python
-import plotly.graph_objs as go
-
-trace1 = go.Scatter(
-    x=[0, 1, 2],
-    y=[10, 11, 12]
-)
-trace2 = go.Scatter(
-    x=[2, 3, 4],
-    y=[100, 110, 120],
-    yaxis='y2'
-)
-trace3 = go.Scatter(
-    x=[3, 4, 5],
-    y=[1000, 1100, 1200],
-    yaxis='y3'
+    yaxis="y3"
 )
 data = [trace1, trace2, trace3]
 layout = go.Layout(
@@ -430,7 +467,7 @@ layout = go.Layout(
         domain=[0, 0.33]
     ),
     legend=dict(
-        traceorder='reversed'
+        traceorder="reversed"
     ),
     yaxis2=dict(
         domain=[0.33, 0.66]
@@ -443,67 +480,6 @@ fig = go.Figure(data=data, layout=layout)
 fig.show()
 ```
 
-#### Custom Sized Subplot with Subplot Titles
-
-```python
-from plotly import tools
-import plotly.graph_objs as go
-
-trace0 = go.Scatter(
-    x=[1, 2],
-    y=[1, 2]
-)
-trace1 = go.Scatter(
-    x=[1, 2],
-    y=[1, 2]
-)
-trace2 = go.Scatter(
-    x=[1, 2, 3],
-    y=[2, 1, 2]
-)
-fig = tools.make_subplots(rows=2, cols=2, specs=[[{}, {}], [{'colspan': 2}, None]],
-                          subplot_titles=('First Subplot','Second Subplot', 'Third Subplot'))
-
-fig.append_trace(trace0, 1, 1)
-fig.append_trace(trace1, 1, 2)
-fig.append_trace(trace2, 2, 1)
-
-fig['layout'].update(showlegend=False, title='Specs with Subplot Title')
-fig.show()
-```
-
-#### Multiple Custom Sized Subplots
-
-```python
-from plotly import tools
-import plotly.graph_objs as go
-
-trace1 = go.Scatter(x=[1, 2], y=[1, 2], name='(1,1)')
-trace2 = go.Scatter(x=[1, 2], y=[1, 2], name='(1,2)')
-trace3 = go.Scatter(x=[1, 2], y=[1, 2], name='(2,1)')
-trace4 = go.Scatter(x=[1, 2], y=[1, 2], name='(3,1)')
-trace5 = go.Scatter(x=[1, 2], y=[1, 2], name='(5,1)')
-trace6 = go.Scatter(x=[1, 2], y=[1, 2], name='(5,2)')
-
-fig = tools.make_subplots(rows=5, cols=2,
-                          specs=[[{}, {'rowspan': 2}],
-                                 [{}, None],
-                                 [{'rowspan': 2, 'colspan': 2}, None],
-                                 [None, None],
-                                 [{}, {}]],
-                          print_grid=True)
-
-fig.append_trace(trace1, 1, 1)
-fig.append_trace(trace2, 1, 2)
-fig.append_trace(trace3, 2, 1)
-fig.append_trace(trace4, 3, 1)
-fig.append_trace(trace5, 5, 1)
-fig.append_trace(trace6, 5, 2)
-
-fig['layout'].update(height=600, width=600, title='specs examples')
-fig.show()
-```
-
 #### Reference
 All of the x-axis properties are found here: https://plot.ly/python/reference/#XAxis
 All of the y-axis properties are found here: https://plot.ly/python/reference/#YAxis
@@ -511,8 +487,4 @@ All of the y-axis properties are found here: https://plot.ly/python/reference/#Y
 ```python
 from plotly.subplots import make_subplots
 help(make_subplots)
-```
-
-```python
-
 ```

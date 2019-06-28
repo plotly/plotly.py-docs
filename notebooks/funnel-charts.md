@@ -8,9 +8,19 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.1.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make funnel charts in Python with Plotly.
     display_as: financial
@@ -24,19 +34,8 @@ jupyter:
     permalink: python/funnel-charts/
     thumbnail: thumbnail/funnel-chart.jpg
     title: Python Funnel Charts | plotly
+    v4upgrade: true
 ---
-
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-#### Version Check
-Plotly's Python API is updated frequently. Run `pip install plotly --upgrade` to update your Plotly version.
-
-```python
-import plotly
-plotly.__version__
-```
 
 #### Funnel Chart Outline
 
@@ -44,7 +43,7 @@ plotly.__version__
 It’s an important mechanism in Business Intelligence to identify potential problem areas of a process. For example, it’s used to observe the revenue or loss in a sales process for each stage. A funnel chart has multiple *phases* and *values* associated with them. Here is a table that represents a *user flow* funnel for a social media campaign. The column named 'Values' represents the total number of users at that *Phase*.
 
 ```python
-import plotly.plotly as py
+import plotly.graph_objects as go
 import plotly.figure_factory as ff
 
 data_table = [['Phases', 'Values'],
@@ -54,24 +53,20 @@ data_table = [['Phases', 'Values'],
                ['Purchase', 3703],
                ['Review', 1708]]
 
-table = ff.create_table(data_table)
-py.iplot(table)
+fig = go.Figure(data=ff.create_table(data_table))
+fig.show()
 ```
 
 #### Basic Funnel Chart
 
 ```python
-import plotly.plotly as py
-from plotly import graph_objs as go
-
-from __future__ import division
-
 # chart stages data
 values = [13873, 10553, 5443, 3703, 1708]
 phases = ['Visit', 'Sign-up', 'Selection', 'Purchase', 'Review']
 
 # color of each funnel section
-colors = ['rgb(32,155,160)', 'rgb(253,93,124)', 'rgb(28,119,139)', 'rgb(182,231,235)', 'rgb(35,154,160)']
+colors = ['rgb(32,155,160)', 'rgb(253,93,124)', 'rgb(28,119,139)', 'rgb(182,231,235)', 
+          'rgb(35,154,160)']
 ```
 
 A funnel section will be drawn using [Plotly shapes](https://plot.ly/python/shapes/), in the shape of a *Rectangle* or *Isosceles Trapezoid* depending on the value of the next phase. The phase having *maximum value* will have the width equal to the plot.
@@ -107,19 +102,15 @@ for i in range(n_phase):
         if (i == n_phase-1):
                 points = [phase_w[i] / 2, height, phase_w[i] / 2, height - section_h]
         else:
-                points = [phase_w[i] / 2, height, phase_w[i+1] / 2, height - section_h]
+                points = [phase_w[i] / 2, height, phase_w[i + 1] / 2, height - section_h]
 
         path = 'M {0} {1} L {2} {3} L -{2} {3} L -{0} {1} Z'.format(*points)
 
-        shape = {
-                'type': 'path',
-                'path': path,
-                'fillcolor': colors[i],
-                'line': {
-                    'width': 1,
-                    'color': colors[i]
-                }
-        }
+        shape = dict(
+                type='path',
+                path=path,
+                fillcolor=colors[i],
+                line=dict(width=1, color=colors[i]))
         shapes.append(shape)
 
         # Y-axis location for this section's details (text)
@@ -131,8 +122,12 @@ for i in range(n_phase):
 To draw the phase names and values, we are using the *text* mode in *scatter* plots. To style the plot, we are changing the background color of the plot and the plot paper, hiding the *legend* and *tick labels*, and removing the *zeroline*.
 
 ```python
+from plotly import graph_objects as go
+
+fig = go.Figure()
+
 # For phase names
-label_trace = go.Scatter(
+fig.add_trace(go.Scatter(
     x=[-350]*n_phase,
     y=label_y,
     mode='text',
@@ -141,10 +136,10 @@ label_trace = go.Scatter(
         color='rgb(200,200,200)',
         size=15
     )
-)
+))
 
 # For phase values
-value_trace = go.Scatter(
+fig.add_trace(go.Scatter(
     x=[350]*n_phase,
     y=label_y,
     mode='text',
@@ -153,45 +148,43 @@ value_trace = go.Scatter(
         color='rgb(200,200,200)',
         size=15
     )
-)
+))
 
-data = [label_trace, value_trace]
-
-layout = go.Layout(
+fig.update_layout(
     title="<b>Funnel Chart</b>",
     titlefont=dict(
         size=20,
         color='rgb(203,203,203)'
     ),
-    shapes=shapes,
+    shapes=shapes, # funnel geometry goes here
     height=560,
     width=800,
     showlegend=False,
-    paper_bgcolor='rgba(44,58,71,1)',
-    plot_bgcolor='rgba(44,58,71,1)',
+    paper_bgcolor='rgba(44, 58, 71, 1)',
+    plot_bgcolor='rgba(44, 58, 71, 1)',
     xaxis=dict(
         showticklabels=False,
         zeroline=False,
+        showgrid=False
     ),
     yaxis=dict(
         showticklabels=False,
-        zeroline=False
+        zeroline=False,
+        showgrid=False
     )
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig)
+fig.show()
 ```
 
 #### Segmented Funnel Chart
 Instead of having a single source of data like the *funnel charts*, the segmented funnel charts have multiple data sources.
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
-from __future__ import division
+import plotly.graph_objects as go
 import pandas as pd
+
+fig = go.Figure()
 
 # campaign data
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/segment-funnel-dataset.csv')
@@ -264,30 +257,25 @@ for i in range(n_phase):
         points = [xl, height, xl + seg_w[j], height, xl + seg_w[j], height - section_h, xl, height - section_h]
         path = 'M {0} {1} L {2} {3} L {4} {5} L {6} {7} Z'.format(*points)
 
-        shape = {
-                'type': 'path',
-                'path': path,
-                'fillcolor': colors[j],
-                'line': {
-                    'width': 1,
-                    'color': colors[j]
-                }
-        }
+        shape = dict(
+                type='path',
+                path=path,
+                fillcolor=colors[j],
+                line=dict(width=1, color=colors[j]))
         shapes.append(shape)
 
         # to support hover on shapes
-        hover_trace = go.Scatter(
+        fig.add_trace(go.Scatter(
             x=[xl + (seg_w[j] / 2)],
             y=[height - (section_h / 2)],
             mode='markers',
             marker=dict(
-                size=min(seg_w[j]/2, (section_h / 2)),
+                size=0.1,
                 color='rgba(255,255,255,1)'
             ),
             text="Segment : %s" % (seg_name),
             name="Value : %d" % (df[seg_name][row_name])
-        )
-        data.append(hover_trace)
+        ))
 
         xl = xl + seg_w[j]
 
@@ -298,9 +286,11 @@ for i in range(n_phase):
 
 We will use text mode to draw the name of phase and its value.
 
+We will style the plot by changing the background color of the plot and the plot paper, hiding the legend and tick labels, and removing the zeroline.
+
 ```python
 # For phase names
-label_trace = go.Scatter(
+fig.add_trace(go.Scatter(
     x=[-350]*n_phase,
     y=label_y,
     mode='text',
@@ -309,12 +299,11 @@ label_trace = go.Scatter(
         color='rgb(200,200,200)',
         size=15
     )
-)
+))
 
-data.append(label_trace)
 
 # For phase values (total)
-value_trace = go.Scatter(
+fig.add_trace(go.Scatter(
     x=[350]*n_phase,
     y=label_y,
     mode='text',
@@ -323,15 +312,9 @@ value_trace = go.Scatter(
         color='rgb(200,200,200)',
         size=15
     )
-)
+))
 
-data.append(value_trace)
-```
-
-We will style the plot by changing the background color of the plot and the plot paper, hiding the legend and tick labels, and removing the zeroline.
-
-```python
-layout = go.Layout(
+fig.update_layout(
     title="<b>Segmented Funnel Chart</b>",
     titlefont=dict(
         size=20,
@@ -340,49 +323,23 @@ layout = go.Layout(
     hovermode='closest',
     shapes=shapes,
     showlegend=False,
-    paper_bgcolor='rgba(44,58,71,1)',
-    plot_bgcolor='rgba(44,58,71,1)',
+    paper_bgcolor='rgba(44,58,71, 1)',
+    plot_bgcolor='rgba(44,58,71, 1)',
     xaxis=dict(
         showticklabels=False,
         zeroline=False,
+        showgrid=False
     ),
     yaxis=dict(
         showticklabels=False,
-        zeroline=False
+        zeroline=False,
+        showgrid=False
     )
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig)
+fig.show()
 ```
 
 #### Reference
 See https://plot.ly/python/reference/#layout-shapes for more information!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install --user git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'funnel-chart.ipynb',
-    'python/funnel-charts/',
-    'Funnel Charts | plotly',
-    'How to make funnel charts in Python with Plotly.',
-    title = 'Python Funnel Charts | plotly',
-    name = 'Funnel Charts',
-    has_thumbnail='true',
-    thumbnail='thumbnail/funnel-chart.jpg',
-    language='python',
-    page_type='example_index',
-    display_as='financial',
-    order=4,
-    ipynb= '~notebook_demo/140')
-```
-
-```python
-
-```

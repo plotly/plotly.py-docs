@@ -36,6 +36,33 @@ jupyter:
     v4upgrade: true
 ---
 
+### Bubble map with plotly express
+
+Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). With ``px.scatter_geo``, each line of the dataframe is represented as a marker point. The column set as the `size` argument gives the size of markers.
+
+```python
+import plotly.express as px
+gapminder = px.data.gapminder().query("year==2007")
+fig = px.scatter_geo(gapminder, locations="iso_alpha", color="continent", 
+                     hover_name="country", size="pop",
+                     projection="natural earth")
+fig.show()
+```
+
+### Bubble Map with animation
+
+```python
+import plotly.express as px
+gapminder = px.data.gapminder()
+fig = px.scatter_geo(gapminder, locations="iso_alpha", color="continent", 
+                     hover_name="country", size="pop",
+                     animation_frame="year",
+                     projection="natural earth")
+fig.show()
+```
+
+### Bubble Map with go.Scattergeo
+
 #### United States Bubble Map
 
 Note about `sizeref`:

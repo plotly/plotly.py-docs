@@ -24,133 +24,98 @@ jupyter:
     page_type: example_index
     permalink: python/ohlc-charts/
     thumbnail: thumbnail/ohlc.jpg
+    v4upgrade: true
+
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-#### Version Check
-Plotly's Python API is updated frequently. Run `pip install plotly --upgrade` to update your Plotly version.
+The [OHLC](https://en.wikipedia.org/wiki/Open-high-low-close_chart) chart (for open, high, low and close) is a style of financial chart describing open, high, low and close values for a given `x` coordinate (most likely time). The tip of the lines represent the `low` and `high` values and the horizontal segments represent the `open` and `close` values. Sample points where the close value is higher (lower) then the open value are called increasing (decreasing). By default, increasing items are drawn in green whereas decreasing are drawn in red.
+
+See also [Candlestick Charts](https://plot.ly/python/candlestick-charts/) and [other financial charts](https://plot.ly/python/#financial-charts).
+
+#### Simple OHLC Chart with Pandas
 
 ```python
-import plotly
-plotly.__version__
-```
-
-##### Simple OHLC Chart with Pandas
-
-```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
+import plotly.graph_objects as go
 import pandas as pd
-from datetime import datetime
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Ohlc(x=df['Date'],
-                open=df['AAPL.Open'],
-                high=df['AAPL.High'],
-                low=df['AAPL.Low'],
-                close=df['AAPL.Close'])
-data = [trace]
-py.iplot(data, filename='simple_ohlc')
+fig = go.Figure(data=go.Ohlc(x=df['Date'],
+                    open=df['AAPL.Open'],
+                    high=df['AAPL.High'],
+                    low=df['AAPL.Low'],
+                    close=df['AAPL.Close']))
+fig.show()
 ```
 
-##### OHLC Chart without Rangeslider
+#### OHLC Chart without Rangeslider
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
-from datetime import datetime
+
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Ohlc(x=df['Date'],
+fig = go.Figure(data=go.Ohlc(x=df['Date'],
                 open=df['AAPL.Open'],
                 high=df['AAPL.High'],
                 low=df['AAPL.Low'],
-                close=df['AAPL.Close'])
-
-layout = go.Layout(
-    xaxis = dict(
-        rangeslider = dict(
-            visible = False
-        )
-    )
-)
-
-data = [trace]
-
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='OHLC without Rangeslider')
+                close=df['AAPL.Close']))
+fig.update(layout_xaxis_rangeslider_visible=False)
+fig.show()
 ```
 
 #### Adding Customized Text and Annotations
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
-from datetime import datetime
+import plotly.graph_objects as go
 import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Ohlc(x=df['Date'],
+fig = go.Figure(data=go.Ohlc(x=df['Date'],
                 open=df['AAPL.Open'],
                 high=df['AAPL.High'],
                 low=df['AAPL.Low'],
-                close=df['AAPL.Close'])
-data = [trace]
-layout = {
-    'title': 'The Great Recession',
-    'yaxis': {'title': 'AAPL Stock'},
-    'shapes': [{
-        'x0': '2016-12-09', 'x1': '2016-12-09',
-        'y0': 0, 'y1': 1, 'xref': 'x', 'yref': 'paper',
-        'line': {'color': 'rgb(30,30,30)', 'width': 1}
-    }],
-    'annotations': [{
-        'x': '2016-12-09', 'y': 0.05, 'xref': 'x', 'yref': 'paper',
-        'showarrow': False, 'xanchor': 'left',
-        'text': 'Increase Period Begins'
-    }]
-}
-fig = dict(data=data, layout=layout)
-py.iplot(fig, filename='aapl-recession-ohlc')
+                close=df['AAPL.Close']))
+
+fig.update_layout(
+    title='The Great Recession',
+    yaxis_title='AAPL Stock',
+    shapes = [dict(
+        x0='2016-12-09', x1='2016-12-09', y0=0, y1=1, xref='x', yref='paper',
+        line_width=2)],
+    annotations=[dict(
+        x='2016-12-09', y=0.05, xref='x', yref='paper',
+        showarrow=False, xanchor='left', text='Increase Period Begins')]
+)
+
+fig.show()
 ```
 
 #### Custom OHLC Colors
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
+import plotly.graph_objects as go
 import pandas as pd
-from datetime import datetime
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Ohlc(x=df['Date'],
-                open=df['AAPL.Open'],
-                high=df['AAPL.High'],
-                low=df['AAPL.Low'],
-                close=df['AAPL.Close'],
-                increasing=dict(line=dict(color= '#17BECF')),
-                decreasing=dict(line=dict(color= '#7F7F7F')))
-data = [trace]
-py.iplot(data, filename='styled_ohlc')
+fig = go.Figure(data=[go.Ohlc(
+    x=df['Date'],
+    open=df['AAPL.Open'], high=df['AAPL.High'],
+    low=df['AAPL.Low'], close=df['AAPL.Close'],
+    increasing_line_color= 'cyan', decreasing_line_color= 'gray'
+)])
+fig.show()
 ```
 
-##### Simple OHLC with `datetime` Objects
+#### Simple OHLC with `datetime` Objects
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 from datetime import datetime
 
@@ -164,20 +129,16 @@ dates = [datetime(year=2013, month=10, day=10),
          datetime(year=2014, month=1, day=10),
          datetime(year=2014, month=2, day=10)]
 
-trace = go.Ohlc(x=dates,
-                open=open_data,
-                high=high_data,
-                low=low_data,
-                close=close_data)
-data = [trace]
-py.iplot(data, filename='ohlc_datetime')
+fig = go.Figure(data=[go.Ohlc(x=dates,
+                          open=open_data, high=high_data,
+                          low=low_data, close=close_data)])
+fig.show()
 ```
 
 ### Custom Hovertext
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 from datetime import datetime
@@ -188,38 +149,15 @@ for i in range(len(df['AAPL.Open'])):
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
-trace = go.Ohlc(x=df['Date'],
+fig = go.Figure(data=go.Ohlc(x=df['Date'],
                 open=df['AAPL.Open'],
                 high=df['AAPL.High'],
                 low=df['AAPL.Low'],
                 close=df['AAPL.Close'],
                 text=hovertext,
-                hoverinfo='text')
-data = [trace]
-py.iplot(data, filename='ohlc_custom_hover')
+                hoverinfo='text'))
+fig.show()
 ```
 
 #### Reference
 For more information on candlestick attributes, see: https://plot.ly/python/reference/#ohlc
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-!pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'ohlc-charts.ipynb', 'python/ohlc-charts/', 'Python OHLC Charts | plotly',
-    'How to make interactive OHLC charts in Python with Plotly. '
-    'Six examples of OHLC charts with Pandas, time series, and yahoo finance data.',
-    name = 'OHLC Charts',
-    thumbnail='thumbnail/ohlc.jpg', language='python',
-    page_type='example_index', has_thumbnail='true', display_as='financial', order=1,
-    ipynb= '~notebook_demo/53')
-```
-
-```python
-
-```

@@ -162,9 +162,7 @@ fig.update_layout(
         resolution = 50,
         projection = dict(
             type = 'conic conformal',
-            rotation = dict(
-                lon = -100
-            )
+            rotation_lon = -100
         ),
         lonaxis = dict(
             showgrid = True,
@@ -179,7 +177,7 @@ fig.update_layout(
             dtick = 5
         )
     ),
-    title = 'US Precipitation 06-30-2015<br>Source: <a href="http://water.weather.gov/precip/">NOAA</a>',
+    title='US Precipitation 06-30-2015<br>Source: <a href="http://water.weather.gov/precip/">NOAA</a>',
 )
 fig.show()
 ```

@@ -79,9 +79,9 @@ fig.show()
 ```
 
 <!-- #region -->
-### Scatter matrix (plom) with go.Splom
+### Scatter matrix (splom) with go.Splom
 
-When data are not available as a tidy dataframe, it is possible to use the more generic `go.Splom` function. **WHere is its API documentation??**
+When data are not available as a tidy dataframe, it is possible to use the more generic `go.Splom` function. All its parameters are documented in the reference page https://plot.ly/python/reference/#splom.
 
 The Plotly splom trace implementation for the scatterplot matrix does not require to set  $x=Xi$ , and  $y=Xj$, for each scatter plot. All arrays, $X_1,X_2,…,X_n$ , are passed once, through a list of dicts called dimensions, i.e. each array/variable represents a dimension.
 

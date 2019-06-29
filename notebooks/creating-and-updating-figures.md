@@ -22,15 +22,15 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.7.3
 plotly:
-    description: Plotly User Guide for Python
+    description: Creating and Updating Figures from Python
     has_thumbnail: false
     language: python
     layout: user-guide
     name: Plotly User Guide
     page_type: u-guide
-    permalink: python/user-guide/
+    permalink: python/creating-updating-figures/
     thumbnail: null
-    title: Plotly User Guide for Python
+    title: Creating and Updating Figures
     v4upgrade: true
 ---
 

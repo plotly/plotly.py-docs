@@ -195,7 +195,7 @@ Here is an example of creating a figure with two scatter traces in side-by-side 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-fig = make_subplots(rows=1, row_heights= cols=2, column_widths=[0.7, 0.3])
+fig = make_subplots(rows=1, cols=2, column_widths=[0.7, 0.3])
 
 fig.add_trace(go.Scatter(x=[1, 2, 3], y=[4, 5, 6]),
               row=1, col=1)

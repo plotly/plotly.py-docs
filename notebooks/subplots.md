@@ -357,6 +357,79 @@ fig.update_layout(height=600, width=600, title_text="specs examples")
 fig.show()
 ```
 
+#### Subplots Types
+By default, the `make_subplots` function assumes that the traces that will be added to all subplots are 2-dimensional cartesian traces (e.g. `scatter`, `bar`, `histogram`, `violin`, etc.).  Traces with other subplot types (e.g. `scatterpolar`, `scattergeo`, `parcoords`, etc.) are supporteed by specifying the `type` subplot option in the `specs` argument to `make_subplots`.
+
+Here are the possible values for the `type` option:
+
+ - `"xy"`: 2D Cartesian subplot type for scatter, bar, etc. This is the default if no `type` is specified.
+ - `"scene"`: 3D Cartesian subplot for scatter3d, cone, etc.
+ - `"polar"`: Polar subplot for scatterpolar, barpolar, etc.
+ - `"ternary"`: Ternary subplot for scatterternary.
+ - `"mapbox"`: Mapbox subplot for scattermapbox.
+ - `"domain"`: Subplot type for traces that are individually positioned. pie, parcoords, parcats, etc.
+ - trace type: A trace type name (e.g. `"bar"`, `"scattergeo"`, `"carpet"`, `"mesh"`, etc.) which will be used to determine the appropriate subplot type for that trace.
+
+Here is an example that creates and populates a 2 x 2 subplot grid containing 4 different subplot types.
+
+```python
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+fig = make_subplots(
+    rows=2, cols=2,
+    specs=[[{"type": "xy"}, {"type": "polar"}],
+           [{"type": "domain"}, {"type": "scene"}]],
+)
+
+fig.add_trace(go.Bar(y=[2, 3, 1]),
+              row=1, col=1)
+
+fig.add_trace(go.Barpolar(theta=[0, 45, 90], r=[2, 3, 1]),
+              row=1, col=2)
+
+fig.add_trace(go.Pie(values=[2, 3, 1]),
+              row=2, col=1)
+
+fig.add_trace(go.Scatter3d(x=[2, 3, 1], y=[0, 0, 0], z=[0.5, 1, 2], mode="lines"),
+              row=2, col=2)
+
+fig.update_layout(height=700, showlegend=False)
+
+fig.show()
+```
+
+As an alternative to providing the name of a subplot type (e.g. `"xy"`, `"polar"`, `"domain"`, `"scene"`, etc), the `type` option may also be set to a string containing the name of a trace type (e.g. `"bar"`, `"barpolar"`, `"pie"`, `"scatter3d"`, etc.), which will be used to determine the subplot type that is compatible with that trace.
+
+Here is the example above, modified to specify the subplot types using trace type names.
+
+```python
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+fig = make_subplots(
+    rows=2, cols=2,
+    specs=[[{"type": "bar"}, {"type": "barpolar"}],
+           [{"type": "pie"}, {"type": "scatter3d"}]],
+)
+
+fig.add_trace(go.Bar(y=[2, 3, 1]),
+              row=1, col=1)
+
+fig.add_trace(go.Barpolar(theta=[0, 45, 90], r=[2, 3, 1]),
+              row=1, col=2)
+
+fig.add_trace(go.Pie(values=[2, 3, 1]),
+              row=2, col=1)
+
+fig.add_trace(go.Scatter3d(x=[2, 3, 1], y=[0, 0, 0], z=[0.5, 1, 2], mode="lines"),
+              row=2, col=2)
+
+fig.update_layout(height=700, showlegend=False)
+
+fig.show()
+```
+
 #### Side by Side Subplot (low-level API)
 
 ```python

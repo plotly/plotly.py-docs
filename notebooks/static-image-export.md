@@ -74,7 +74,7 @@ $ pip install psutil requests
 Now let's create a simple scatter plot with 100 random points of variying color and size.
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import numpy as np
 
 N = 100

@@ -6,11 +6,21 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.6
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.7.3
   plotly:
     description: How to add images to charts as background images or logos.
     display_as: layout_opt
@@ -24,81 +34,48 @@ jupyter:
     permalink: python/horizontal-legend/
     thumbnail: thumbnail/your-tutorial-chart.jpg
     title: Horizontal legend | plotly
+    v4upgrade: true
 ---
-
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
 
 ###  Horizontal Legend
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
-import numpy as np
 
-trace1 = go.Scatter(
-                x=np.random.randn(75),
-                mode='markers',
-                name="Plot1",
-                marker=dict(
-                size=16,
-                color='rgba(152, 0, 0, .8)'
-                ))
-trace2 = go.Scatter(
-                x=np.random.randn(75),
-                mode='markers',
-                name="Plot2",
-                marker=dict(
-                size=16,
-                color='rgba(0, 152, 0, .8)'
-                ))
-trace3 = go.Scatter(
-                x=np.random.randn(75),
-                mode='markers',
-                name="Plot3",
-                marker=dict(
-                size=16,
-                color='rgba(0, 0, 152, .8)'
-                ))
+fig = go.Figure()
 
-data = [trace1, trace2, trace3]
-layout = go.Layout(
-                legend=dict(
-                orientation="h")
-                )
-figure=go.Figure(data=data, layout=layout)
+fig.add_trace(go.Scatter(
+    name="First",
+    y=[1, 2, 3],
+    mode="markers",
+    marker=dict(
+        size=16,
+        color="Crimson"
+    ))
+)
 
-py.iplot(figure)
+fig.add_trace(go.Bar(
+    name="Second",
+    y=[1, 3, 2],
+    marker=dict(
+        color="LightSeaGreen"
+    ))
+)
+
+fig.add_trace(go.Scatter(
+    name="Third",
+    y=[4, 3, 1],
+    mode="lines",
+    line=dict(
+        width=4,
+        color="MediumPurple"
+    ))
+)
+
+fig.update_layout(legend_orientation="h")
+
+fig.show()
 ```
 
 #### Reference
 See https://plot.ly/python/reference/#layout-legend-orientation for more information and chart attribute options!
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/csshref="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-
-import publisher
-publisher.publish(
-    'horizontal-legends.ipynb', 'python/horizontal-legend/', 'Horizontal legend | plotly',
-    'How to add images to charts as background images or logos.',
-    title = 'Horizontal legend | plotly',
-    name = 'Horizontal Legends',
-    has_thumbnail='false', thumbnail='thumbnail/your-tutorial-chart.jpg',
-    language='python', page_type='example_index',
-    display_as='layout_opt', order=12,
-    ipynb= '~notebook_demo/94')
-
-```
-
-```python
-
-```

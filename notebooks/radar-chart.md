@@ -37,11 +37,41 @@ jupyter:
     v4upgrade: true
 ---
 
-#### Basic Radar Chart
+A [Radar Chart](https://en.wikipedia.org/wiki/Radar_chart) (also known as a spider plot or star plot) displays multivariate data in the form of a two-dimensional chart of quantitative variables represented on axes originating from the center. The relative position and angle of the axes is typically uninformative.  It is equivalent to a [parallel coordinates plot](../parallel-coordinates-plot/) with the axes arranged radially.
 
-A [Radar Chart](https://en.wikipedia.org/wiki/Radar_chart) (also known as a spider plot or star plot) displays multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes originating from the center. The relative position and angle of the axes is typically uninformative.  It is equivalent to a [parallel coordinates plot](../parallel-coordinates-plot/) with the axes arranged radially.
+For a Radar Chart, use a [polar chart](../polar-chart/) with categorical angular variables, with `px.line_polar` for data available as a tidy pandas DataFrame, or with `go.Scatterpolar` in the general case. See more examples of [polar charts here](../polar-chart/).
 
-For a Radar Chart, use a [polar chart](../polar-chart/) `go.Scatterpolar` with categorical angular variables. See more examples of [polar charts here](../polar-chart/).
+#### Radar Chart with plotly express
+
+Use `line_close=True` for closed lines.
+
+```python
+import plotly.express as px
+import pandas as pd
+df = pd.DataFrame(dict(
+    r=[1, 5, 2, 2, 3],
+    theta=['processing cost','mechanical properties','chemical stability', 
+           'thermal stability', 'device integration']))
+fig = px.line_polar(df, r='r', theta='theta', line_close=True)
+fig.show()
+```
+
+For a filled line in a Radar Chart, update the figure created with `px.line_polar` with `fig.update_traces`.
+
+```python
+import plotly.express as px
+import pandas as pd
+df = pd.DataFrame(dict(
+    r=[1, 5, 2, 2, 3],
+    theta=['processing cost','mechanical properties','chemical stability', 
+           'thermal stability', 'device integration']))
+fig = px.line_polar(df, r='r', theta='theta', line_close=True)
+fig.update_traces(fill='toself')
+fig.show()
+```
+
+### Basic Radar Chart with go.Scatterpolar
+
 
 ```python
 import plotly.graph_objects as go

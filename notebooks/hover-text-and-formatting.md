@@ -40,7 +40,7 @@ jupyter:
 #### Add Hover Text
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 
@@ -61,7 +61,7 @@ fig.show()
 #### Format Hover Text
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 
 fig = go.Figure(go.Scatter(

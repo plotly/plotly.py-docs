@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.6
+      jupytext_version: 1.1.7
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.7.2
   plotly:
     description: How to set colorscales and heatmap colorscales in Python and Plotly.
       Divergent, sequential, and qualitative colorscales.
@@ -37,6 +37,31 @@ jupyter:
     title: Colorscales in Python | Plotly
     v4upgrade: true
 ---
+
+### Predefined colorscales in plotly express
+A collection of predefined sequential colorscales is provided in the `plotly.express.colors.sequential` module.
+
+Here is an example that creates a scatter plot using plotly express, with points colored using the Viridis colorscale.
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length",
+                 color="sepal_length", color_continuous_scale=px.colors.sequential.Viridis)
+
+fig.show()
+```
+
+It is also possible to specify colorscales by name. Here is an example that specifies the Magma colorscale by name, as a string
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length",
+                 color="sepal_length", color_continuous_scale='Magma')
+
+fig.show()
+```
 
 ### Custom Discretized Heatmap Colorscale
 

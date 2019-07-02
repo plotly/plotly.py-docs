@@ -6,11 +6,21 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.7
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.5
   plotly:
     description: Comparing WebGL with Scattergl() to SVG with Scatter() in Python
       with Plotly.
@@ -22,6 +32,7 @@ jupyter:
     permalink: python/compare-webgl-svg/
     thumbnail: /images/static-image
     title: Comparing WebGL vs SVG | plotly
+    v4upgrade: true
 ---
 
 ### Comparing Scatter Plots with 75,000 Random Points
@@ -34,51 +45,57 @@ for increased speed, improved interactivity, and the ability to plot even more d
 ### WebGL
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 import numpy as np
 
 N = 75000
-trace = go.Scattergl(
-    x = np.random.randn(N),
-    y = np.random.randn(N),
-    mode = 'markers',
-    marker = dict(
-        line = dict(
-            width = 1,
-            color = '#404040')
+
+fig = go.Figure()
+fig.add_trace(
+    go.Scattergl(
+        x = np.random.randn(N),
+        y = np.random.randn(N),
+        mode = 'markers',
+        marker = dict(
+            line = dict(
+                width = 1,
+                color = 'DarkSlateGrey')
+        )
     )
 )
-data = [trace]
-layout = dict(title = 'WEBGL')
-fig = dict(data=data, layout=layout)
-py.iplot(data, filename='webgl75')
+
+fig.update_layout(title_text = 'WebGL')
+
+fig.show()
 ```
 
 ### SVG
 
 ```python
-import plotly.plotly as py
 import plotly.graph_objs as go
 
 import numpy as np
 
 N = 75000
-trace = go.Scatter(
-    x = np.random.randn(N),
-    y = np.random.randn(N),
-    mode = 'markers',
-    marker = dict(
-        line = dict(
-            width = 1,
-            color = '#404040')
+
+fig = go.Figure()
+fig.add_trace(
+    go.Scatter(
+        x = np.random.randn(N),
+        y = np.random.randn(N),
+        mode = 'markers',
+        marker = dict(
+            line = dict(
+                width = 1,
+                color = 'DarkSlateGrey')
+        )
     )
 )
-data = [trace]
-layout = dict(title = 'SVG')
-fig = dict(data=data, layout=layout)
-py.iplot(fig, filename='svg75')
+
+fig.update_layout(title_text = 'SVG')
+
+fig.show()
 ```
 
 ### References
@@ -87,24 +104,3 @@ py.iplot(fig, filename='svg75')
 For more information see <br>
 `Scattergl()` : https://plot.ly/python/reference/#scattergl <br>
 `Scatter()` : https://plot.ly/python/reference/#scatter
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'comparewebgl.ipynb', 'python/compare-webgl-svg/', 'Python Comparing WebGL vs SVG | plotly',
-    'Comparing WebGL with Scattergl() to SVG with Scatter() in Python with Plotly.',
-    title = 'Comparing WebGL vs SVG | plotly',
-    name = 'Comparing WebGL vs SVG',
-    language='python')
-
-```
-
-```python
-
-```

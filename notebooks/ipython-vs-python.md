@@ -6,11 +6,21 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.7
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.5
   plotly:
     description: Discussion of key differences between IPython and Python
     display_as: file_settings
@@ -57,25 +67,3 @@ In 2015, the IPython developers made a major code reorganization of their ever-g
 In conclusion, IPython and Jupyter are great interfaces to the Python language. If you're learning Python, using the IPython terminal or the Jupyter Notebook is highly recommended.<br>
 <br>
 This was a guest article written by Cyrille Rossant, author of Learning IPython for Interactive Computing and Data Visualization, second edition and IPython Interactive Computing and Visualization Cookbook.
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'ipython-vs-python.ipynb', 'python/ipython-vs-python/', 'IPython vs Python | plotly',
-    'Discussion of key differences between IPython and Python',
-    title = 'IPython vs Python | plotly',
-    name = 'IPython vs Python',
-    thumbnail='thumbnail/venn.jpg', language='python',
-    has_thumbnail='true', display_as='file_settings', order=12,
-    ipynb='~notebook_demo/17')
-```
-
-```python
-
-```

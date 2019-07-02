@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -44,7 +45,7 @@ plotly.__version__
 The [updatemenu method](https://plot.ly/python/reference/#layout-updatemenus-buttons-method) determines which [plotly.js function](https://plot.ly/javascript/plotlyjs-function-reference/) will be used to modify the chart. There are 4 possible methods:
 - `"restyle"`: modify data or data attributes
 - `"relayout"`: modify layout attributes
-- `"update"`: modify data **and** layout attributes 
+- `"update"`: modify data **and** layout attributes
 - `"animate"`: start or pause an [animation](https://plot.ly/python/#animations))
 
 
@@ -97,7 +98,7 @@ layout = go.Layout(
 
 updatemenus=list([
     dict(
-        buttons=list([   
+        buttons=list([
             dict(
                 args=['type', 'surface'],
                 label='3D Surface',
@@ -107,7 +108,7 @@ updatemenus=list([
                 args=['type', 'heatmap'],
                 label='Heatmap',
                 method='restyle'
-            )             
+            )
         ]),
         direction = 'down',
         pad = {'r': 10, 't': 10},
@@ -115,7 +116,7 @@ updatemenus=list([
         x = 0.1,
         xanchor = 'left',
         y = 1.1,
-        yanchor = 'top' 
+        yanchor = 'top'
     ),
 ])
 
@@ -146,11 +147,11 @@ import pandas as pd
 def cmocean_to_plotly(cmap, pl_entries=100):
     h = 1.0/(pl_entries-1)
     pl_colorscale = []
-    
+
     for k in range(pl_entries):
         C = map(np.uint8, np.array(cmap(k*h)[:3])*255)
         pl_colorscale.append([k*h, 'rgb'+str((C[0], C[1], C[2]))])
-        
+
     return pl_colorscale
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/volcano.csv')
@@ -221,7 +222,7 @@ updatemenus=list([
                 args=['colorscale', json.dumps(cmocean_to_plotly(cmocean.cm.phase))],
                 label='Phase',
                 method='restyle'
-            ),  
+            ),
             dict(
                 args=['colorscale', json.dumps(cmocean_to_plotly(cmocean.cm.balance)) ],
                 label='Balance',
@@ -236,7 +237,7 @@ updatemenus=list([
                 args=['colorscale', json.dumps(cmocean_to_plotly(cmocean.cm.curl))],
                 label='Curl',
                 method='restyle'
-            ),                       
+            ),
         ]),
         direction = 'down',
         pad = {'r': 10, 't': 10},
@@ -244,10 +245,10 @@ updatemenus=list([
         x = 0.1,
         xanchor = 'left',
         y = button_layer_1_height,
-        yanchor = 'top'            
+        yanchor = 'top'
     ),
     dict(
-        buttons=list([   
+        buttons=list([
             dict(
                 args=['reversescale', True],
                 label='Reverse',
@@ -257,7 +258,7 @@ updatemenus=list([
                 args=['reversescale', False],
                 label='Undo',
                 method='restyle'
-            )                    
+            )
         ]),
         direction = 'down',
         pad = {'r': 10, 't': 10},
@@ -265,10 +266,10 @@ updatemenus=list([
         x = 0.55,
         xanchor = 'left',
         y = button_layer_1_height,
-        yanchor = 'top'            
+        yanchor = 'top'
     ),
     dict(
-        buttons=list([   
+        buttons=list([
             dict(
                 args=[{'contours.showlines':False, 'type':'contour'}],
                 label='Hide lines',
@@ -278,7 +279,7 @@ updatemenus=list([
                 args=[{'contours.showlines':True, 'type':'contour'}],
                 label='Show lines',
                 method='restyle'
-            ),                    
+            ),
         ]),
         direction = 'down',
         pad = {'r': 10, 't': 10},
@@ -286,10 +287,10 @@ updatemenus=list([
         x = 0.775,
         xanchor = 'left',
         y = button_layer_1_height,
-        yanchor = 'top'            
-    ),        
+        yanchor = 'top'
+    ),
     dict(
-        buttons=list([   
+        buttons=list([
             dict(
                 args=['type', 'surface'],
                 label='3d Surface',
@@ -299,12 +300,12 @@ updatemenus=list([
                 args=['type', 'heatmap'],
                 label='Heatmap',
                 method='restyle'
-            ),  
+            ),
             dict(
                 args=['type', 'contour'],
                 label='Contour',
                 method='restyle'
-            )                     
+            )
         ]),
         direction = 'down',
         pad = {'r': 10, 't': 10},
@@ -312,7 +313,7 @@ updatemenus=list([
         x = 0.3,
         xanchor = 'left',
         y = button_layer_1_height,
-        yanchor = 'top' 
+        yanchor = 'top'
     ),
 ])
 
@@ -369,28 +370,28 @@ data = [trace0, trace1, trace2]
 
 cluster0 = [dict(type='circle',
                  xref='x', yref='y',
-                 x0=min(x0), y0=min(y0), 
-                 x1=max(x0), y1=max(y0), 
+                 x0=min(x0), y0=min(y0),
+                 x1=max(x0), y1=max(y0),
                  opacity=.25,
                  line=dict(color='#835AF1'),
                  fillcolor='#835AF1')]
 cluster1 = [dict(type='circle',
                  xref='x', yref='y',
-                 x0=min(x1), y0=min(y1), 
-                 x1=max(x1), y1=max(y1), 
+                 x0=min(x1), y0=min(y1),
+                 x1=max(x1), y1=max(y1),
                  opacity=.25,
                  line=dict(color='#7FA6EE'),
                  fillcolor='#7FA6EE')]
 cluster2 = [dict(type='circle',
                  xref='x', yref='y',
-                 x0=min(x2), y0=min(y2), 
-                 x1=max(x2), y1=max(y2), 
+                 x0=min(x2), y0=min(y2),
+                 x1=max(x2), y1=max(y2),
                  opacity=.25,
                  line=dict(color='#B8F7D4'),
                  fillcolor='#B8F7D4')]
 
 updatemenus = list([
-    dict(buttons=list([   
+    dict(buttons=list([
             dict(label = 'None',
                  method = 'relayout',
                  args = ['shapes', []]),
@@ -424,7 +425,7 @@ This example demonstrates how to update which traces are displayed while simulan
 
 ```python
 import plotly.plotly as py
-import plotly.graph_objs as go 
+import plotly.graph_objs as go
 
 from datetime import datetime
 import pandas as pd
@@ -479,7 +480,7 @@ low_annotations=[dict(x='2015-05-01',
 
 updatemenus = list([
     dict(active=-1,
-         buttons=list([   
+         buttons=list([
             dict(label = 'High',
                  method = 'update',
                  args = [{'visible': [True, True, False, False]},
@@ -525,7 +526,7 @@ df_farms.set_index('Wind Farm', inplace=True)
 
 wind_farms=list([
     dict(
-        args=[ { 
+        args=[ {
             'mapbox.center.lat':38,
             'mapbox.center.lon':-94,
             'mapbox.zoom':3,
@@ -540,14 +541,14 @@ for farm, row in df_farms.iterrows():
     desc = []
     for col in df_farms.columns:
         if col not in ['DegMinSec','Latitude','Longitude']:
-            if str(row[col]) not in ['None','nan','']: 
+            if str(row[col]) not in ['None','nan','']:
                 desc.append( col + ': ' + str(row[col]).strip("'") )
     desc.insert(0, farm)
-    wind_farms.append( 
+    wind_farms.append(
         dict(
-            args=[ { 
-                'mapbox.center.lat':row['Latitude'], 
-                'mapbox.center.lon':float(str(row['Longitude']).strip("'")), 
+            args=[ {
+                'mapbox.center.lat':row['Latitude'],
+                'mapbox.center.lon':float(str(row['Longitude']).strip("'")),
                 'mapbox.zoom':9,
                 'annotations[0].text': '<br>'.join(desc)
             } ],
@@ -607,7 +608,7 @@ updatemenus=list([
                 args=['mapbox.style', 'dark'],
                 label='Dark',
                 method='relayout'
-            ),                    
+            ),
             dict(
                 args=['mapbox.style', 'light'],
                 label='Light',
@@ -622,7 +623,7 @@ updatemenus=list([
                 args=['mapbox.style', 'satellite-streets'],
                 label='Satellite with Streets',
                 method='relayout'
-            )                    
+            )
         ]),
         direction = 'up',
         x = 0.75,
@@ -632,11 +633,11 @@ updatemenus=list([
         bgcolor = '#000000',
         bordercolor = '#FFFFFF',
         font = dict(size=11)
-    ),        
+    ),
 ])
 
 annotations = list([
-    dict(text='All US wind turbines (scroll to zoom)', font=dict(color='magenta',size=14), borderpad=10, 
+    dict(text='All US wind turbines (scroll to zoom)', font=dict(color='magenta',size=14), borderpad=10,
          x=0.05, y=0.05, xref='paper', yref='paper', align='left', showarrow=False, bgcolor='black'),
     dict(text='Wind<br>Farms', x=0.01, y=0.99, yref='paper', align='left', showarrow=False,font=dict(size=14))
 ])

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -44,10 +45,10 @@ plotly.__version__
 ### 2D Histogram with Slider Control ###
 
 
-Add slider controls to 2d histograms with the [postMessage API](https://github.com/plotly/postMessage-API).        
-                                                                                                                   See the [code on JSFiddle](https://jsfiddle.net/plotlygraphs/y9sdy76h/4/).                                        
-                                                                                                                  Watch [the 5 second video](https://raw.githubusercontent.com/plotly/documentation/gh-pages/all_static/images      
-/flight_conflicts.gif) of how it works.                                                                           
+Add slider controls to 2d histograms with the [postMessage API](https://github.com/plotly/postMessage-API).
+                                                                                                                   See the [code on JSFiddle](https://jsfiddle.net/plotlygraphs/y9sdy76h/4/).
+                                                                                                                  Watch [the 5 second video](https://raw.githubusercontent.com/plotly/documentation/gh-pages/all_static/images
+/flight_conflicts.gif) of how it works.
 
 ```python
 from IPython.core.display import display,HTML
@@ -181,9 +182,9 @@ publisher.publish(
     'How to make 2D Histograms in Python with Plotly.',
     title = 'Python 2D Histograms | plotly',
     name = '2D Histograms',
-    has_thumbnail='true', thumbnail='thumbnail/histogram2d.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/histogram2d.jpg',
     language='python', display_as='statistical', order=6,
-    ipynb= '~notebook_demo/24')  
+    ipynb= '~notebook_demo/24')
 ```
 
 ```python

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -222,17 +223,17 @@ display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,30
 display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
 
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
-    
+
 import publisher
 publisher.publish(
     'trisurf.ipynb', 'python/trisurf/', 'Trisurf Plots',
     'How to make tri-surf plots in Python with Plotly. Trisurfs are formed by replacing the boundaries of a compact surface by touching triangles.',
     title = 'Python Trisurf Plots | plotly',
     name = 'Trisurf Plots',
-    has_thumbnail='true', thumbnail='thumbnail/tri-surf2.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/tri-surf2.jpg',
     language='python',
     display_as='3d_charts', order=10,
-    ipynb= '~notebook_demo/70')  
+    ipynb= '~notebook_demo/70')
 ```
 
 ```python

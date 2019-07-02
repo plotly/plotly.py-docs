@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -229,7 +230,7 @@ publisher.publish(
     'multiple-transforms.ipynb', 'python/multiple-transforms/', 'Multiple Transforms',
     'How to use multiple transforms (filter, group by, and aggregates) in Python with Plotly.',
     title = 'Multiple Transforms | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/multiple-transforms.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/multiple-transforms.jpg',
     language='python', uses_plotly_offline=True,
     page_type='example_index',
     display_as='transforms', order=4,

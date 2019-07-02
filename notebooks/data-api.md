@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -35,7 +36,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 You can instantiate a grid with data by either uploading tabular data to Plotly or by creating a Plotly `grid` using the API. To upload the grid we will use `plotly.plotly.grid_ops.upload()`. It takes the following arguments:
 - `grid` (Grid Object): the actual grid object that you are uploading.
 - `filename` (str): name of the grid in your plotly account,
-- `world_readable` (bool): if `True`, the grid is `public` and can be viewed by anyone in your files. If `False`, it is private and can only be viewed by you. 
+- `world_readable` (bool): if `True`, the grid is `public` and can be viewed by anyone in your files. If `False`, it is private and can only be viewed by you.
 - `auto_open` (bool): if determines if the grid is opened in the browser or not.
 
 You can run `help(py.grid_ops.upload)` for a more detailed description of these and all the arguments.
@@ -54,9 +55,9 @@ from IPython.display import Image
 column_1 = Column(['a', 'b', 'c'], 'column 1')
 column_2 = Column([1, 2, 3], 'column 2') # Tabular data can be numbers, strings, or dates
 grid = Grid([column_1, column_2])
-url = py.grid_ops.upload(grid, 
-                         filename='grid_ex_'+str(dt.now()), 
-                         world_readable=True, 
+url = py.grid_ops.upload(grid,
+                         filename='grid_ex_'+str(dt.now()),
+                         world_readable=True,
                          auto_open=False)
 print(url)
 ```

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -42,7 +43,7 @@ This notebook will go over one of the easiest ways to graph data from your [Amaz
 
 [Plotly's Enterprise platform](https://plot.ly/product/enterprise/) allows for an easy way for your company to build and share graphs without the data leaving your servers.
 
-#### Imports 
+#### Imports
 In this notebook we'll be using [Amazon's Sample Redshift Data](http://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-create-sample-db.html) for this notebook. Although we won't be connecting through a JDBC/ODBC connection we'll be using the [psycopg2 package](http://initd.org/psycopg/docs/index.html) with [SQLAlchemy](http://www.sqlalchemy.org/)  and [pandas](http://pandas.pydata.org/) to make it simple to query and analyze our data.
 
 ```python
@@ -69,7 +70,7 @@ port = 5439
 dbname = 'dev'
 ```
 
-As I mentioned there are numerous ways to connect to a Redshift databause and I've included two below. We can use either the SQLAlchemy package or we can use the psycopg2 package for a more direct access. 
+As I mentioned there are numerous ways to connect to a Redshift databause and I've included two below. We can use either the SQLAlchemy package or we can use the psycopg2 package for a more direct access.
 
 Both will allow us to execute SQL queries and get results however the SQLAlchemy engine makes it a bit easier to directly return our data as a dataframe using pandas. Plotly has a tight integration with pandas as well, making it extremely easy to make interactive graphs to share with your company.
 
@@ -88,10 +89,10 @@ engine = create_engine(engine_string)
 ```python
 import psycopg2
 conn = psycopg2.connect(
-    host="datawarehouse.cm4z2iunjfsc.us-west-2.redshift.amazonaws.com", 
-    user=redshift_user, 
-    port=port, 
-    password=redshift_pass, 
+    host="datawarehouse.cm4z2iunjfsc.us-west-2.redshift.amazonaws.com",
+    user=redshift_user,
+    port=port,
+    password=redshift_pass,
     dbname=dbname)
 cur = conn.cursor() # create a cursor for executing queries
 ```
@@ -123,8 +124,8 @@ conn.commit()
 aws_key = os.getenv("AWS_ACCESS_KEY_ID") # needed to access S3 Sample Data
 aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
 
-base_copy_string = """copy %s from 's3://awssampledbuswest2/tickit/%s.txt' 
-credentials 'aws_access_key_id=%s;aws_secret_access_key=%s' 
+base_copy_string = """copy %s from 's3://awssampledbuswest2/tickit/%s.txt'
+credentials 'aws_access_key_id=%s;aws_secret_access_key=%s'
 delimiter '%s';""" # the base COPY string that we'll be using
 
 #easily generate each table that we'll need to COPY data from
@@ -138,8 +139,8 @@ for tab, f, delim in zip(tables, data_files, delimiters):
     copy_statements.append(base_copy_string % (tab, f, aws_key, aws_secret, delim))
 
 # add in Sales data, delimited by '\t'
-copy_statements.append("""copy sales from 's3://awssampledbuswest2/tickit/sales_tab.txt' 
-credentials 'aws_access_key_id=%s;aws_secret_access_key=%s' 
+copy_statements.append("""copy sales from 's3://awssampledbuswest2/tickit/sales_tab.txt'
+credentials 'aws_access_key_id=%s;aws_secret_access_key=%s'
 delimiter '\t' timeformat 'MM/DD/YYYY HH:MI:SS';""" % (aws_key, aws_secret))
 ```
 
@@ -228,7 +229,7 @@ conn.commit()
 
 ```python
 for table in tables + ["sales"]:
-    cur.execute("select count(*) from %s;" % (table,))    
+    cur.execute("select count(*) from %s;" % (table,))
     print(cur.fetchone())
 conn.commit() # make sure data went through and commit our statements permanently.
 ```
@@ -242,13 +243,13 @@ We're going to start off by exploring and presenting some of our user's tastes a
 
 ```python
 df = pd.read_sql_query("""
-SELECT sum(likesports::int) as sports, sum(liketheatre::int) as theatre,  
-sum(likeconcerts::int) as concerts, sum(likejazz::int) as jazz, 
-sum(likeclassical::int) as classical, sum(likeopera::int) as opera,  
-sum(likerock::int) as rock, sum(likevegas::int) as vegas,  
-sum(likebroadway::int) as broadway, sum(likemusicals::int) as musical, 
+SELECT sum(likesports::int) as sports, sum(liketheatre::int) as theatre,
+sum(likeconcerts::int) as concerts, sum(likejazz::int) as jazz,
+sum(likeclassical::int) as classical, sum(likeopera::int) as opera,
+sum(likerock::int) as rock, sum(likevegas::int) as vegas,
+sum(likebroadway::int) as broadway, sum(likemusicals::int) as musical,
 state
-FROM users 
+FROM users
 GROUP BY state
 ORDER BY state asc;
 """, engine)
@@ -279,14 +280,14 @@ Looking at this particular one we can easily get a sense of popularity. We can s
 A common next step might be to create some box plots of these user preferences.
 
 ```python
-layout = go.Layout(title="Declared User Preference Box Plots", 
+layout = go.Layout(title="Declared User Preference Box Plots",
                 yaxis=dict())
 
 data = []
 for pref in df.drop('state', axis=1).columns:
     # for every preference type, make a box plot
-    data.append(go.Box(y=df[pref], name=pref)) 
-    
+    data.append(go.Box(y=df[pref], name=pref))
+
 py.iplot(go.Figure(data=data, layout=layout), filename='redshift/user preference box plots')
 ```
 
@@ -296,7 +297,7 @@ py.iplot(go.Figure(data=data, layout=layout), filename='redshift/user preference
 It seems to be that sports are just a bit more compressed than the rest. This may be because there's simply fewer people interested in sports or our company doesn't have many sporting events.
 
 
-Now that we've explored a little bit about some of our customers we've stumbled upon this sports anomoly. Are we listing less sports events? Do we sell approximately the same amount of all event types and our users just aren't drawn to sports events? 
+Now that we've explored a little bit about some of our customers we've stumbled upon this sports anomoly. Are we listing less sports events? Do we sell approximately the same amount of all event types and our users just aren't drawn to sports events?
 
 We've got to understand a bit more and to do so we'll be plotting a simple bar graph of our event information.
 
@@ -321,10 +322,10 @@ However for our report, let's dive a bit deeper into the events that we're listi
 
 ```python
 df = pd.read_sql_query("""
-SELECT sum(sales.qtysold) as quantity_sold, date.caldate  
+SELECT sum(sales.qtysold) as quantity_sold, date.caldate
 FROM sales, date
-WHERE sales.dateid = date.dateid 
-GROUP BY date.caldate 
+WHERE sales.dateid = date.dateid
+GROUP BY date.caldate
 ORDER BY date.caldate asc;
 """, engine)
 ```
@@ -341,9 +342,9 @@ Overall it seems inconclusive except that our events seem to be seasonal. This a
 
 ```python
 df = pd.read_sql_query("""
-SELECT sum(sales.qtysold) as quantity_sold, date.caldate, category.catname as category_name  
+SELECT sum(sales.qtysold) as quantity_sold, date.caldate, category.catname as category_name
 FROM sales, date, event, category
-WHERE sales.dateid = date.dateid 
+WHERE sales.dateid = date.dateid
 AND sales.eventid = event.eventid
 AND event.catid = category.catid
 GROUP BY date.caldate, category_name
@@ -387,7 +388,7 @@ fig['data'] += data
 py.iplot(fig, filename='redshift/Event Sales Per Day by Category')
 ```
 
-This looks much better and explains the story perfectly. It seems that all of our events are fairly regular through the year except for a spike in musicals and plays around March. This might be of interest to so I'm going to mark up this graph and share it with some of the relevant sales representatives in my company. 
+This looks much better and explains the story perfectly. It seems that all of our events are fairly regular through the year except for a spike in musicals and plays around March. This might be of interest to so I'm going to mark up this graph and share it with some of the relevant sales representatives in my company.
 
 The rest of my team can edit the graph with me in a web app. Collaborating does not require coding, emailing, or downloading software. I can even fit a function to the data in the web app.
 
@@ -425,7 +426,7 @@ publisher.publish(
     'A tutorial showing how to plot Amazon AWS Redshift data with Plotly.',
     title = 'Plot Data from Amazon Redshift | plotly',
     has_thumbnail='false', redirect_from='ipython-notebooks/amazon-redshift/',
-    language='python', page_type='example_index', 
+    language='python', page_type='example_index',
     display_as='databases', order=3,
     ipynb= '~notebook_demo/1')
 ```

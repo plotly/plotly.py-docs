@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -45,7 +46,7 @@ trace = go.Scattergl(
     mode = 'markers',
     marker = dict(
         line = dict(
-            width = 1, 
+            width = 1,
             color = '#404040')
     )
 )
@@ -70,7 +71,7 @@ trace = go.Scatter(
     mode = 'markers',
     marker = dict(
         line = dict(
-            width = 1, 
+            width = 1,
             color = '#404040')
     )
 )

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -79,7 +80,7 @@ A funnel section will be drawn using [Plotly shapes](https://plot.ly/python/shap
 n_phase = len(phases)
 plot_width = 400
 
-# height of a section and difference between sections 
+# height of a section and difference between sections
 section_h = 100
 section_d = 10
 
@@ -120,7 +121,7 @@ for i in range(n_phase):
                 }
         }
         shapes.append(shape)
-        
+
         # Y-axis location for this section's details (text)
         label_y.append(height - (section_h / 2))
 
@@ -141,7 +142,7 @@ label_trace = go.Scatter(
         size=15
     )
 )
- 
+
 # For phase values
 value_trace = go.Scatter(
     x=[350]*n_phase,
@@ -155,7 +156,7 @@ value_trace = go.Scatter(
 )
 
 data = [label_trace, value_trace]
- 
+
 layout = go.Layout(
     title="<b>Funnel Chart</b>",
     titlefont=dict(
@@ -177,7 +178,7 @@ layout = go.Layout(
         zeroline=False
     )
 )
- 
+
 fig = go.Figure(data=data, layout=layout)
 py.iplot(fig)
 ```
@@ -191,10 +192,10 @@ import plotly.graph_objs as go
 
 from __future__ import division
 import pandas as pd
- 
+
 # campaign data
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/segment-funnel-dataset.csv')
- 
+
 # color for each segment
 colors = ['rgb(63,92,128)', 'rgb(90,131,182)', 'rgb(255,255,255)', 'rgb(127,127,127)', 'rgb(84,73,75)']
 ```
@@ -216,19 +217,19 @@ We are using a fixed width for the plot and the width of each phase will be calc
 ```python
 plot_width = 600
 unit_width = plot_width / total[0]
- 
+
 phase_w = [int(value * unit_width) for value in total]
- 
-# height of a section and difference between sections 
+
+# height of a section and difference between sections
 section_h = 100
 section_d = 10
 
 # shapes of the plot
 shapes = []
- 
+
 # plot traces data
 data = []
- 
+
 # height of the phase labels
 label_y = []
 ```
@@ -245,24 +246,24 @@ df_rows = list(df.iterrows())
 for i in range(n_phase):
     # phase name
     row_name = df.index[i]
-    
+
     # width of each segment (smaller rectangles) will be calculated
     # according to their contribution in the total users of phase
     seg_unit_width = phase_w[i] / total[i]
     seg_w = [int(df_rows[i][1][j] * seg_unit_width) for j in range(n_seg)]
-    
+
     # starting point of segment (the rectangle shape) on the X-axis
     xl = -1 * (phase_w[i] / 2)
-    
+
     # iteration over all the segments
     for j in range(n_seg):
         # name of the segment
         seg_name = df.columns[j]
-        
+
         # corner points of a segment used in the SVG path
         points = [xl, height, xl + seg_w[j], height, xl + seg_w[j], height - section_h, xl, height - section_h]
         path = 'M {0} {1} L {2} {3} L {4} {5} L {6} {7} Z'.format(*points)
-        
+
         shape = {
                 'type': 'path',
                 'path': path,
@@ -273,7 +274,7 @@ for i in range(n_phase):
                 }
         }
         shapes.append(shape)
-        
+
         # to support hover on shapes
         hover_trace = go.Scatter(
             x=[xl + (seg_w[j] / 2)],
@@ -287,7 +288,7 @@ for i in range(n_phase):
             name="Value : %d" % (df[seg_name][row_name])
         )
         data.append(hover_trace)
-        
+
         xl = xl + seg_w[j]
 
     label_y.append(height - (section_h / 2))
@@ -311,7 +312,7 @@ label_trace = go.Scatter(
 )
 
 data.append(label_trace)
- 
+
 # For phase values (total)
 value_trace = go.Scatter(
     x=[350]*n_phase,
@@ -374,8 +375,8 @@ publisher.publish(
     title = 'Python Funnel Charts | plotly',
     name = 'Funnel Charts',
     has_thumbnail='true',
-    thumbnail='thumbnail/funnel-chart.jpg', 
-    language='python', 
+    thumbnail='thumbnail/funnel-chart.jpg',
+    language='python',
     page_type='example_index',
     display_as='financial',
     order=4,

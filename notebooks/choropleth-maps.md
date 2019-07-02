@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -10,6 +11,20 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  plotly:
+    description: How to make choropleth maps in Python with Plotly.
+    display_as: maps
+    has_thumbnail: true
+    ipynb: ~notebook_demo/55
+    language: python
+    layout: user-guide
+    name: Choropleth Maps
+    order: 1
+    page_type: u-guide
+    permalink: python/choropleth-maps/
+    thumbnail: thumbnail/choropleth.jpg
+    title: Python Choropleth Maps | Plotly
+    v4upgrade: true
 ---
 
 A [Choropleth Map](https://en.wikipedia.org/wiki/Choropleth_map) is a heatmap using geographical boundaries. It is used to represent spatial variations of a quantity. See also the [index of other geographical charts](../maps/).
@@ -259,4 +274,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-choroplethplot/code", wid
 
 #### Reference
 See https://plot.ly/python/reference/#choropleth for more information and chart attribute options!
-

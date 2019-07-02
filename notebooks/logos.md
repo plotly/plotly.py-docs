@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -201,10 +202,10 @@ publisher.publish(
     'How to add images as logos to Plotly charts.',
     title = 'Add Logos to Charts | plotly',
     name = 'Logos',
-    has_thumbnail='false', thumbnail='thumbnail/your-tutorial-chart.jpg', 
+    has_thumbnail='false', thumbnail='thumbnail/your-tutorial-chart.jpg',
     language='python', page_type='example_index',
     display_as='style_opt', order=6,
-    ipynb= '~notebook_demo/92') 
+    ipynb= '~notebook_demo/92')
 ```
 
 ```python

@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -95,14 +96,14 @@ trace1= go.Surface(
 
 ```python
 axis = dict(
-showbackground=True, 
-backgroundcolor="rgb(230, 230,230)", 
-showgrid=False,    
-zeroline=False,  
+showbackground=True,
+backgroundcolor="rgb(230, 230,230)",
+showgrid=False,
+zeroline=False,
 showline=False)
 
 ztickvals=list(range(-6,4))
-layout = go.Layout(title="Projections of a surface onto coordinate planes" , 
+layout = go.Layout(title="Projections of a surface onto coordinate planes" ,
                 autosize=False,
                 width=700,
                 height=600,
@@ -127,8 +128,8 @@ y_offset=np.min(yy)*np.ones(z.shape)
 ```
 
 Define the color functions and the color numpy arrays, `C_z`, `C_x`, `C_y`, corresponding to each plane:<br>
-Define the 3-tuples of coordinates to be displayed at hovering the mouse over the projections. 
-The first two coordinates give the position in the projection plane, whereas the third one  is used 
+Define the 3-tuples of coordinates to be displayed at hovering the mouse over the projections.
+The first two coordinates give the position in the projection plane, whereas the third one  is used
 for assigning the color, just in the same way the coordinate z is used for the z-direction projection.
 
 ```python
@@ -142,7 +143,7 @@ colorsurfy=proj_z(x,y,z)
 textx=[['y: '+'{:0.5f}'.format(y[i][j])+'<br>z: '+'{:0.5f}'.format(z[i][j])+
         '<br>x: '+'{:0.5f}'.format(x[i][j]) for j in range(z.shape[1])]  for i in range(z.shape[0])]
 texty=[['x: '+'{:0.5f}'.format(x[i][j])+'<br>z: '+'{:0.5f}'.format(z[i][j]) +
-        '<br>y: '+'{:0.5f}'.format(y[i][j]) for j in range(z.shape[1])] for i in range(z.shape[0])]  
+        '<br>y: '+'{:0.5f}'.format(y[i][j]) for j in range(z.shape[1])] for i in range(z.shape[0])]
 
 tracex = go.Surface(z=list(z),
                 x=list(x_offset),
@@ -193,7 +194,7 @@ publisher.publish(
     'Plotly-project-3d-onto-a-plane.ipynb', 'python/2d-projection-of-3d-surface/', 'Projection of 3D Surface',
     'How to project 3D Surface plots in 2D with Plotly.',
     title = '2D Projection of 3D surface | plotly',
-    has_thumbnail='true', thumbnail='thumbnail/projection-3d.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/projection-3d.jpg',
     language='python',
     display_as='3d_charts', order=19,
     ipynb= '~notebook_demo/79')

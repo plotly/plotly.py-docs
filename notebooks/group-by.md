@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -83,7 +84,7 @@ publisher.publish(
     'groupby.ipynb', 'python/group-by/', 'Group By',
     'How to use group by in Python with Plotly.',
     title = 'Group By | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/groupby.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/groupby.jpg',
     language='python', uses_plotly_offline=True,
     page_type='example_index',
     display_as='transforms', order=2,

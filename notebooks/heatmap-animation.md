@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -52,7 +53,7 @@ import numpy as np
 from scipy.stats import multivariate_normal as Nd
 
 colorscale = [
-    [0.0, 'rgb(25, 23, 10)'], 
+    [0.0, 'rgb(25, 23, 10)'],
     [0.05, 'rgb(69, 48, 44)'],
     [0.1, 'rgb(114, 52, 47)'],
     [0.15, 'rgb(155, 58, 49)'],
@@ -78,7 +79,7 @@ colorscale = [
 # returns V=(X,Y)~N(m, Sigma)
 def bivariate_N(m=[0., 0.], stdev=[1.0, 1.0], rho=0):
     cov = rho*stdev[0] * stdev[1] # covariance(X,Y)
-    Sigma = np.array([[stdev[0]**2, cov], [cov, stdev[1]**2]]) # covariance  matrix 
+    Sigma = np.array([[stdev[0]**2, cov], [cov, stdev[1]**2]]) # covariance  matrix
     return Nd(mean=m, cov=Sigma) # joint distribution of (X,Y), of mean  vector, m, and cov matrix, Sigma
 
 # returns the pdf of the bivariate normal distribution
@@ -114,12 +115,12 @@ Make the `Figure` which references columns from the grid we made. The `Figure` t
 ```python
 data=[dict(type='heatmap',
            xsrc=grid.get_column_reference('x'),
-           ysrc=grid.get_column_reference('y'), 
-           zsrc=grid.get_column_reference('z1'), 
+           ysrc=grid.get_column_reference('y'),
+           zsrc=grid.get_column_reference('z1'),
            zmin=0,
            zmax=zvmax[6],
-           zsmooth='best', 
-           colorscale=colorscale, 
+           zsmooth='best',
+           colorscale=colorscale,
            colorbar=dict(thickness=20, ticklen=4))]
 
 title='Contour plot for bivariate normal distribution'+\
@@ -139,7 +140,7 @@ layout = dict(title=title,
                                 buttons=[dict(label='Play',
                                               method='animate',
                                               args=[None,
-                                                    dict(frame=dict(duration=100, 
+                                                    dict(frame=dict(duration=100,
                                                                     redraw=True),
                                                     transition=dict(duration=0),
                                                     fromcurrent=True,
@@ -150,9 +151,9 @@ frames=[dict(data=[dict(zsrc=grid.get_column_reference('z{}'.format(k + 1)),
                         traces=[0],
                         name='frame{}'.format(k),
                         ) for k in range(len(correls))]
-          
-          
-fig=dict(data=data, layout=layout, frames=frames)  
+
+
+fig=dict(data=data, layout=layout, frames=frames)
 py.icreate_animations(fig, filename='animheatmap'+str(time.time()))
 ```
 

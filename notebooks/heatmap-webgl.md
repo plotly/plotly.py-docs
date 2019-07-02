@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -47,7 +48,7 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### Create a HeatmapGL from an Image 
+### Create a HeatmapGL from an Image
 Process the image for generating heatmap:
 
 ```python
@@ -80,7 +81,7 @@ fig = dict(data=data, layout=layout)
 py.iplot(fig, filename='basic heatmapgl')
 ```
 
-#### Reference 
+#### Reference
 See https://plot.ly/python/reference/#heatmapgl for more information and chart attribute options!
 
 
@@ -96,7 +97,7 @@ publisher.publish(
     'How to make webGL based heatmaps in Python with Plotly.',
     title = 'Python Heatmaps WebGL | plotly',
     name = 'WebGL Heatmaps',
-    has_thumbnail='true', thumbnail='thumbnail/heatmap-webgl.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/heatmap-webgl.jpg',
     language='python',
     display_as='scientific', order=4,
     ipynb= '~notebook_demo/34')

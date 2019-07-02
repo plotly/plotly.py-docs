@@ -44,7 +44,7 @@ Now you can pass a `config` dictionary with all configurations options such as `
 Enable Scroll Zoom
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 
@@ -59,7 +59,7 @@ fig.show(config={'scrollZoom': True})
 Display ModeBar
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 
@@ -74,7 +74,7 @@ fig.show(config={'displayModeBar': True})
 Edit Mode - change the title and axis titles
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 
@@ -89,7 +89,7 @@ fig.show(config={'editable': True})
 Multiple Config Options at Once!
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 
@@ -108,7 +108,7 @@ fig.show(config={
 Remove Modebar Buttons
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 fig = go.Figure()
 

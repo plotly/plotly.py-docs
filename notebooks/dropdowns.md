@@ -70,6 +70,7 @@ fig.update_layout(
     height=900,
     autosize=False,
     margin=dict(t=0, b=0, l=0, r=0),
+    template="plotly_white",
 )
 
 # Update 3D scene options

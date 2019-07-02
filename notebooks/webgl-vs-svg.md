@@ -43,7 +43,7 @@ Checkout [this notebook](https://plot.ly/python/compare-webgl-svg) to compare We
 #### WebGL with 100,000  points
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -71,7 +71,7 @@ fig.show()
 #### WebGL with 1 Million Points
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -99,7 +99,7 @@ fig.show()
 #### WebGL with many traces
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 

@@ -45,7 +45,7 @@ for increased speed, improved interactivity, and the ability to plot even more d
 ### WebGL
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
@@ -73,7 +73,7 @@ fig.show()
 ### SVG
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 

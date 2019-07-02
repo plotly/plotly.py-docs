@@ -70,7 +70,7 @@ for edge in G.edges():
     edge_y.append(y0)
     edge_y.append(y1)
     edge_y.append(None)
-    
+
 edge_trace = go.Scatter(
     x=edge_x, y=edge_y,
     line=dict(width=0.5, color='#888'),
@@ -83,7 +83,7 @@ for node in G.nodes():
     x, y = G.node[node]['pos']
     node_x.append(x)
     node_y.append(y)
-    
+
 node_trace = go.Scatter(
     x=node_x, y=node_y,
     mode='markers',
@@ -109,10 +109,10 @@ node_trace = go.Scatter(
 ```
 
 #### Color Node Points
-Color node points by the number of connections. 
+Color node points by the number of connections.
 
-Another option would be to size points by the number of connections 
-i.e. ```node_trace.marker.size = node_adjacencies``` 
+Another option would be to size points by the number of connections
+i.e. ```node_trace.marker.size = node_adjacencies```
 
 ```python
 node_adjacencies = []
@@ -121,7 +121,7 @@ for node, adjacencies in enumerate(G.adjacency()):
     node_adjacencies.append(len(adjacencies[1]))
     node_text.append('# of connections: '+str(len(adjacencies[1])))
 
-node_trace.marker.size = node_adjacencies
+node_trace.marker.color = node_adjacencies
 node_trace.text = node_text
 ```
 
@@ -143,7 +143,7 @@ fig = go.Figure(data=[edge_trace, node_trace],
                 xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
                 yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
                 )
-fig.show()      
+fig.show()
 ```
 
 ### Dash Example

@@ -12,6 +12,8 @@ jupyter:
     name: python3
 ---
 
+A [Choropleth Map](https://en.wikipedia.org/wiki/Choropleth_map) is a heatmap using geographical boundaries. It is used to represent spatial variations of a quantity. See also the [index of other geographical charts](../maps/).
+
 #### United States Choropleth Map
 
 ```python
@@ -20,23 +22,20 @@ import plotly.graph_objs as go
 # Load data frame and tidy it.
 import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv')
-for col in df.columns:
-    df[col] = df[col].astype(str)
-
-data = [go.Choropleth(  
+    
+fig = go.Figure(data=go.Choropleth(  
     locations=df['code'], # Spatial coordinates
     z = df['total exports'].astype(float), # Data to be color-coded
     locationmode = 'USA-states', # set of locations match entries in `locations`
     colorscale = 'Reds',
     colorbar_title = "Millions USD",
-)]
+))
 
-layout = go.Layout(
+fig.update_layout(
     title_text = '2011 US Agriculture Exports by State',
     geo_scope='usa', # limite map scope to USA
 )
 
-fig = go.Figure(data=data, layout=layout)
 fig.show()
 ```
 
@@ -47,6 +46,7 @@ import plotly.graph_objs as go
 
 import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv')
+
 for col in df.columns:
     df[col] = df[col].astype(str)
 
@@ -55,7 +55,7 @@ df['text'] = df['state'] + '<br>' + \
     'Fruits ' + df['total fruits'] + ' Veggies ' + df['total veggies'] + '<br>' + \
     'Wheat ' + df['wheat'] + ' Corn ' + df['corn']
 
-data = [go.Choropleth(
+fig = go.Figure(data=go.Choropleth(  
     locations=df['code'],
     z=df['total exports'].astype(float),
     locationmode='USA-states',
@@ -64,9 +64,9 @@ data = [go.Choropleth(
     text=df['text'], # hover text
     marker_line_color='white', # line markers between states
     colorbar_title="Millions USD"
-)]
+))
 
-layout = go.Layout(
+fig.update_layout(
     title_text='2011 US Agriculture Exports by State<br>(Hover for breakdown)',
     geo = dict(
         scope='usa',
@@ -75,7 +75,6 @@ layout = go.Layout(
         lakecolor='rgb(255, 255, 255)'),
 )
 
-fig = go.Figure(data = data, layout = layout)
 fig.show()
 ```
 
@@ -86,7 +85,7 @@ import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv')
 
-data = [go.Choropleth(
+fig = go.Figure(data=go.Choropleth( 
     locations = df['CODE'],
     z = df['GDP (BILLIONS)'],
     text = df['COUNTRY'],
@@ -97,9 +96,9 @@ data = [go.Choropleth(
     marker_line_width=0.5,
     colorbar_tickprefix = '$',
     colorbar_title = 'GDP<br>Billions US$',
-)]
+))
 
-layout = go.Layout(
+fig.update_layout(
     title_text='2014 Global GDP',
     geo=dict(
         showframe=False,
@@ -117,7 +116,6 @@ layout = go.Layout(
     )]
 )
 
-fig = go.Figure(data=data, layout=layout)
 fig.show()
 ```
 
@@ -130,51 +128,53 @@ import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_ebola.csv')
 df.head()
 
-cases = []
 colors = ['rgb(239,243,255)', 'rgb(189,215,231)', 'rgb(107,174,214)', 'rgb(33,113,181)']
 months = {6:'June', 7:'July', 8:'Aug', 9:'Sept'}
 
+fig = go.Figure()
+
 # scatter chart for outbreak size
 for i in range(6,10)[::-1]:
-    cases.append(go.Scattergeo(
-        lon = df[ df['Month'] == i ]['Lon'], #-(max(range(6,10))-i),
-        lat = df[ df['Month'] == i ]['Lat'],
-        text = df[ df['Month'] == i ]['Value'],
+    df_month = df.query('Month == %d' %i)
+    fig.add_trace(go.Scattergeo(
+        lon = df_month['Lon'],
+        lat = df_month['Lat'],
+        text = df_month['Value'],
         name = months[i],
         marker = dict(
-            size=df[ df['Month'] == i ]['Value']/50,
+            size=df_month['Value']/50,
             color=colors[i-6],
             line_width=0)
         )
     ) 
 
-cases[0]['text'] = df[ df['Month'] == 9 ]['Value'].map('{:.0f}'.format).astype(str)+' '+\
-    df[ df['Month'] == 9 ]['Country']
-cases[0]['mode'] = 'markers+text'
-cases[0]['textposition'] = 'bottom center'
+df_sept = df.query('Month == 9')
+fig.data[0].update(text = df_sept['Value'].map('{:.0f}'.format).astype(str)+' '+\
+                        df_sept['Country'],
+                     mode = 'markers+text',
+                     textposition = 'bottom center')
 
-inset = [
-    go.Choropleth(
+
+fig.add_trace(go.Choropleth(
         locationmode='country names',
-        locations=df[ df['Month'] == 9 ]['Country'],
-        z=df[ df['Month'] == 9 ]['Value'],
-        text=df[ df['Month'] == 9 ]['Country'],
+        locations=df_sept['Country'],
+        z=df_sept['Value'],
+        text=df_sept['Country'],
         colorscale = [[0,'rgb(0, 0, 0)'],[1,'rgb(0, 0, 0)']],
         autocolorscale = False,
         showscale = False,
         geo = 'geo2'
-    ),
-    go.Scattergeo(
+    ))
+fig.add_trace(go.Scattergeo(
         lon = [21.0936],
         lat = [7.1881],
         text = ['Africa'],
         mode = 'text',
         showlegend = False,
         geo = 'geo2'
-    )
-]
+    ))
 
-layout = go.Layout(
+fig.update_layout(
     title_text = 'Ebola cases reported by month in West Africa 2014<br> \
 Source: <a href="https://data.hdx.rwlabs.org/dataset/rowca-ebola-cases">\
 HDX</a>',
@@ -204,7 +204,6 @@ HDX</a>',
     legend_traceorder = 'reversed'
 )
 
-fig = go.Figure(layout=layout, data=cases+inset)
 fig.show()
 ```
 
@@ -230,15 +229,14 @@ endpts = list(np.linspace(1, 12, len(colorscale) - 1))
 fips = df_sample['FIPS'].tolist()
 values = df_sample['Unemployment Rate (%)'].tolist()
 
+
 fig = ff.create_choropleth(
     fips=fips, values=values, scope=['usa'],
     binning_endpoints=endpts, colorscale=colorscale,
     show_state_data=False,
-    show_hover=True, centroid_marker = {
-        'opacity': 0
-    },
+    show_hover=True,
     asp = 2.9,
-    title = 'USA by Unemployment %',
+    title_text = 'USA by Unemployment %',
     legend_title = '% unemployed'
 )
 fig.show()

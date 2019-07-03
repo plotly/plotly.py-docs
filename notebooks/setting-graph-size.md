@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.6
+      jupytext_version: 1.1.7
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.5
   plotly:
     description: How to manipulate the graph size in Python with Plotly.
     display_as: layout_opt
@@ -36,7 +36,25 @@ jupyter:
     v4upgrade: true
 ---
 
-### Adjusting Height, Width, & Margins###
+### Adjusting Height, Width, & Margins with Plotly Express
+
+```python
+import plotly.express as px
+
+tips = px.data.tips()
+fig = px.scatter(tips, x="total_bill", y="tip", facet_col="sex")
+
+fig.update_layout(
+    width=800,
+    height=400,
+    margin=dict(l=20, r=20, t=20, b=20),
+    paper_bgcolor="LightSteelBlue",
+)
+
+fig.show()
+```
+
+### Adjusting Height, Width, & Margins ###
 
 ```python
 import plotly.graph_objects as go
@@ -60,7 +78,6 @@ fig.update_layout(
         pad=4
     ),
     paper_bgcolor="LightSteelBlue",
-    plot_bgcolor="PaleTurquoise"
 )
 
 fig.show()

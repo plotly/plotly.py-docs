@@ -59,22 +59,33 @@ G = nx.random_geometric_graph(200, 0.125)
 Add edges as disconnected lines in a single trace and nodes as a scatter trace
 
 ```python
+edge_x = []
+edge_y = []
+for edge in G.edges():
+    x0, y0 = G.node[edge[0]]['pos']
+    x1, y1 = G.node[edge[1]]['pos']
+    edge_x.append(x0)
+    edge_x.append(x1)
+    edge_x.append(None)
+    edge_y.append(y0)
+    edge_y.append(y1)
+    edge_y.append(None)
+
 edge_trace = go.Scatter(
-    x=[], y=[],
+    x=edge_x, y=edge_y,
     line=dict(width=0.5, color='#888'),
     hoverinfo='none',
     mode='lines')
 
-for edge in G.edges():
-    x0, y0 = G.node[edge[0]]['pos']
-    x1, y1 = G.node[edge[1]]['pos']
-    edge_trace['x'] += tuple([x0, x1, None])
-    edge_trace['y'] += tuple([y0, y1, None])
+node_x = []
+node_y = []
+for node in G.nodes():
+    x, y = G.node[node]['pos']
+    node_x.append(x)
+    node_y.append(y)
 
 node_trace = go.Scatter(
-    x=[],
-    y=[],
-    text=[],
+    x=node_x, y=node_y,
     mode='markers',
     hoverinfo='text',
     marker=dict(
@@ -95,23 +106,23 @@ node_trace = go.Scatter(
         ),
         line_width=2))
 
-for node in G.nodes():
-    x, y = G.node[node]['pos']
-    node_trace['x'] += tuple([x])
-    node_trace['y'] += tuple([y])
 ```
 
 #### Color Node Points
-Color node points by the number of connections. 
+Color node points by the number of connections.
 
-Another option would be to size points by the number of connections 
-i.e. ```node_trace['marker']['size'].append(len(adjacencies))``` 
+Another option would be to size points by the number of connections
+i.e. ```node_trace.marker.size = node_adjacencies```
 
 ```python
+node_adjacencies = []
+node_text = []
 for node, adjacencies in enumerate(G.adjacency()):
-    node_trace['marker']['color'] += tuple([len(adjacencies[1])])
-    node_info = '# of connections: '+str(len(adjacencies[1]))
-    node_trace['text'] += tuple([node_info])
+    node_adjacencies.append(len(adjacencies[1]))
+    node_text.append('# of connections: '+str(len(adjacencies[1])))
+
+node_trace.marker.color = node_adjacencies
+node_trace.text = node_text
 ```
 
 #### Create Network Graph
@@ -132,7 +143,7 @@ fig = go.Figure(data=[edge_trace, node_trace],
                 xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
                 yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
                 )
-fig.show()      
+fig.show()
 ```
 
 ### Dash Example

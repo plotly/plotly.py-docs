@@ -42,11 +42,10 @@ jupyter:
 import plotly.express as px
 
 tips = px.data.tips()
-fig = px.scatter(tips, x="total_bill", y="tip", facet_col="sex")
+fig = px.scatter(tips, x="total_bill", y="tip", facet_col="sex",
+                 width=800, height=400)
 
 fig.update_layout(
-    width=800,
-    height=400,
     margin=dict(l=20, r=20, t=20, b=20),
     paper_bgcolor="LightSteelBlue",
 )

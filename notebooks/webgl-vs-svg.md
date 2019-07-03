@@ -34,13 +34,39 @@ jupyter:
     permalink: python/webgl-vs-svg/
     thumbnail: thumbnail/webgl.jpg
     title: Python WebGL vs SVG | plotly
-    v4upgrade: True
+    v4upgrade: true
 ---
 
 #### Compare WebGL and SVG
 Checkout [this notebook](https://plot.ly/python/compare-webgl-svg) to compare WebGL and SVG scatter plots with 75,000 random data points
 
-#### WebGL with 100,000  points
+#### WebGL with plotly express
+
+The `rendermode` argument to supported plotly express functions can be used to enable WebGL rendering.
+
+Here is an example that creates a 100,000 point scatter plot using plotly express with WebGL rendering enabled.
+
+```python
+import plotly.express as px
+
+import pandas as pd
+import numpy as np
+
+N = 100000
+
+df = pd.DataFrame(dict(x=np.random.randn(N),
+                       y=np.random.randn(N)))
+
+fig = px.scatter(df, x="x", y="y", render_mode='webgl')
+
+fig.update_traces(marker_line=dict(width=1, color='DarkSlateGray'))
+
+fig.show()
+```
+
+#### WebGL with 100,000 points
+
+The `Scattergl` trace type can be used to create a WebGL enabled scatter plot.
 
 ```python
 import plotly.graph_objects as go

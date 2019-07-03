@@ -41,7 +41,7 @@ jupyter:
 #### Offline Configuration Options
 Now you can pass a `config` dictionary with all configurations options such as `scrollZoom`, `editable`, and `displayModeBar`. For the complete list of config options check out: https://github.com/plotly/plotly.js/blob/master/src/plot_api/plot_config.js
 
-Enable Scroll Zoom
+##### Enable Scroll Zoom
 
 ```python
 import plotly.graph_objects as go
@@ -56,7 +56,7 @@ fig.add_trace(
 fig.show(config={'scrollZoom': True})
 ```
 
-Display ModeBar
+##### Display ModeBar
 
 ```python
 import plotly.graph_objects as go
@@ -71,7 +71,7 @@ fig.add_trace(
 fig.show(config={'displayModeBar': True})
 ```
 
-Edit Mode - change the title and axis titles
+##### Edit Mode - change the title and axis titles
 
 ```python
 import plotly.graph_objects as go
@@ -86,7 +86,7 @@ fig.add_trace(
 fig.show(config={'editable': True})
 ```
 
-Multiple Config Options at Once!
+##### Multiple Config Options at Once!
 
 ```python
 import plotly.graph_objects as go
@@ -105,7 +105,7 @@ fig.show(config={
 })
 ```
 
-Remove Modebar Buttons
+##### Remove Modebar Buttons
 
 ```python
 import plotly.graph_objects as go

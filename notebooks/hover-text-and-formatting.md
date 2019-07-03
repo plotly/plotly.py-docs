@@ -37,6 +37,22 @@ jupyter:
     v4upgrade: true
 ---
 
+#### Hover text with plotly express
+Many plotly express functions support configurable hover text. The `hover_data` argument accepts a list of column names to be added to the hover tooltip. The `hover_name` property controls which column is displayed in bold as the tooltip title.
+
+Here is an example that creates a scatter plot using plotly express with custom hover data and a custom hover name.
+
+```python
+import plotly.express as px
+
+gapminder_2007 = px.data.gapminder().query("year==2007")
+
+fig = px.scatter(gapminder_2007, x="gdpPercap", y="lifeExp", log_x=True,
+                 hover_name="country", hover_data=["continent"])
+
+fig.show()
+```
+
 #### Add Hover Text
 
 ```python

@@ -33,6 +33,7 @@ jupyter:
     permalink: python/ipython-vs-python/
     thumbnail: thumbnail/venn.jpg
     title: IPython vs Python | plotly
+    v4upgrade: true
 ---
 
 #### What is the difference between IPython and Python?

@@ -37,6 +37,27 @@ jupyter:
     v4upgrade: true
 ---
 
+### Text scatter plot with Plotly Express
+
+Here is an example that creates a scatter plot with text labels using plotly express.
+
+```python
+import plotly.express as px
+
+gapminder = px.data.gapminder().query("year==2007 and continent=='Americas'")
+
+fig = px.scatter(gapminder, x="gdpPercap", y="lifeExp", text="country", log_x=True, size_max=60)
+
+fig.update_traces(textposition='top center')
+
+fig.update_layout(
+    height=800,
+    title_text='GDP and Life Expectancy (Americas, 2007)'
+)
+
+fig.show()
+```
+
 ### Adding Text to Data in Line and Scatter Plots
 
 ```python

@@ -229,4 +229,4 @@ fig.show()
 ```
 
 #### Reference
-All of the y-axis properties are found here: https://plot.ly/python/reference/#YAxis
+All of the y-axis properties are found here: https://plot.ly/python/reference/#YAxis.  For more information on creating subplots see the [Subplots in Python](../subplots/) section.

@@ -6,11 +6,21 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.6
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.7.3
   plotly:
     description: How to make SVG shapes in python. Examples of lines, circle, rectangle,
       and path.
@@ -25,453 +35,436 @@ jupyter:
     permalink: python/shapes/
     thumbnail: thumbnail/shape.jpg
     title: Shapes | plotly
+    v4upgrade: true
 ---
-
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
 
 #### Vertical and Horizontal Lines Positioned Relative to the Axes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Scatter(
+fig = go.Figure()
+
+# Create scatter trace of text labels
+fig.add_trace(go.Scatter(
     x=[2, 3.5, 6],
     y=[1, 1.5, 1],
-    text=['Vertical Line', 'Horizontal Dashed Line', 'Diagonal dotted Line'],
-    mode='text',
-)
-data = [trace0]
-layout = {
-    'xaxis': {
-        'range': [0, 7]
-    },
-    'yaxis': {
-        'range': [0, 2.5]
-    },
-    'shapes': [
+    text=["Vertical Line",
+          "Horizontal Dashed Line",
+          "Diagonal dotted Line"],
+    mode="text",
+))
+
+# Set axes ranges
+fig.update_xaxes(range=[0, 7])
+fig.update_yaxes(range=[0, 2.5])
+
+# Add shapes
+fig.update_layout(
+    shapes=[
         # Line Vertical
-        {
-            'type': 'line',
-            'x0': 1,
-            'y0': 0,
-            'x1': 1,
-            'y1': 2,
-            'line': {
-                'color': 'rgb(55, 128, 191)',
-                'width': 3,
-            },
-        },
+        go.layout.Shape(
+            type="line",
+            x0=1,
+            y0=0,
+            x1=1,
+            y1=2,
+            line=dict(
+                color="RoyalBlue",
+                width=3
+            )
+        ),
         # Line Horizontal
-        {
-            'type': 'line',
-            'x0': 2,
-            'y0': 2,
-            'x1': 5,
-            'y1': 2,
-            'line': {
-                'color': 'rgb(50, 171, 96)',
-                'width': 4,
-                'dash': 'dashdot',
-            },
-        },
+        go.layout.Shape(
+            type="line",
+            x0=2,
+            y0=2,
+            x1=5,
+            y1=2,
+            line=dict(
+                color="LightSeaGreen",
+                width=4,
+                dash="dashdot",
+            ),
+        ),
         # Line Diagonal
-        {
-            'type': 'line',
-            'x0': 4,
-            'y0': 0,
-            'x1': 6,
-            'y1': 2,
-            'line': {
-                'color': 'rgb(128, 0, 128)',
-                'width': 4,
-                'dash': 'dot',
-            },
-        },
+        go.layout.Shape(
+            type="line",
+            x0=4,
+            y0=0,
+            x1=6,
+            y1=2,
+            line=dict(
+                color="MediumPurple",
+                width=4,
+                dash="dot",
+            ),
+        ),
     ]
-}
+)
 
-fig = {
-    'data': data,
-    'layout': layout,
-}
-
-py.iplot(fig, filename='shapes-lines')
+fig.show()
 ```
 
 #### Lines Positioned Relative to the Plot & to the Axes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Scatter(
+fig = go.Figure()
+
+# Create scatter trace of text labels
+fig.add_trace(go.Scatter(
     x=[2, 6],
     y=[1, 1],
-    text=['Line positioned relative to the plot',
-          'Line positioned relative to the axes'],
-    mode='text',
-)
-data = [trace0]
-layout = {
-    'xaxis': {
-        'range': [0, 8]
-    },
-    'yaxis': {
-        'range': [0, 2]
-    },
-    'shapes': [
+    text=["Line positioned relative to the plot",
+          "Line positioned relative to the axes"],
+    mode="text",
+))
+
+# Set axes ranges
+fig.update_xaxes(range=[0, 8])
+fig.update_yaxes(range=[0, 2])
+
+# Add shapes
+fig.update_layout(
+    shapes=[
         # Line reference to the axes
-        {
-            'type': 'line',
-            'xref': 'x',
-            'yref': 'y',
-            'x0': 4,
-            'y0': 0,
-            'x1': 8,
-            'y1': 1,
-            'line': {
-                'color': 'rgb(55, 128, 191)',
-                'width': 3,
-            },
-        },
+        go.layout.Shape(
+            type="line",
+            xref="x",
+            yref="y",
+            x0=4,
+            y0=0,
+            x1=8,
+            y1=1,
+            line=dict(
+                color="LightSeaGreen",
+                width=3,
+            ),
+        ),
         # Line reference to the plot
-        {
-            'type': 'line',
-            'xref': 'paper',
-            'yref': 'paper',
-            'x0': 0,
-            'y0': 0,
-            'x1': 0.5,
-            'y1': 0.5,
-            'line': {
-                'color': 'rgb(50, 171, 96)',
-                'width': 3,
-            },
-        },
+        go.layout.Shape(
+            type="line",
+            xref="paper",
+            yref="paper",
+            x0=0,
+            y0=0,
+            x1=0.5,
+            y1=0.5,
+            line=dict(
+                color="DarkOrange",
+                width=3,
+            ),
+        ),
     ]
-}
-fig = {
-    'data': data,
-    'layout': layout,
-}
-py.iplot(fig, filename='shapes-line-ref')
+)
+
+fig.show()
 ```
 
 #### Creating Tangent Lines with Shapes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
+# Generate date
 x0 = np.linspace(1, 3, 200)
 y0 = x0 * np.sin(np.power(x0, 2)) + 1
 
-trace0 = go.Scatter(
+# Create figure with scatter trace
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
     x=x0,
     y=y0,
+))
+
+# Set title text
+fig.update_layout(
+    title_text="$f(x)=x\\sin(x^2)+1\\\\ f\'(x)=\\sin(x^2)+2x^2\\cos(x^2)$"
 )
-data = [trace0]
-layout = {
-    'title': "$f(x)=x\\sin(x^2)+1\\\\ f\'(x)=\\sin(x^2)+2x^2\\cos(x^2)$",
-    'shapes': [
-        {
-            'type': 'line',
-            'x0': 1,
-            'y0': 2.30756,
-            'x1': 1.75,
-            'y1': 2.30756,
-            'opacity': 0.7,
-            'line': {
-                'color': 'red',
-                'width': 2.5,
-            },
-        },
-        {
-            'type': 'line',
-            'x0': 2.5,
-            'y0': 3.80796,
-            'x1': 3.05,
-            'y1': 3.80796,
-            'opacity': 0.7,
-            'line': {
-                'color': 'red',
-                'width': 2.5,
-            },
-        },
-        {
-            'type': 'line',
-            'x0': 1.90,
-            'y0': -1.1827,
-            'x1': 2.50,
-            'y1': -1.1827,
-            'opacity': 0.7,
-            'line': {
-                'color': 'red',
-                'width': 2.5,
-            },
-        },
+
+# Add tangent line shapes
+fig.update_layout(
+    shapes=[
+        go.layout.Shape(
+            type="line",
+            x0=1,
+            y0=2.30756,
+            x1=1.75,
+            y1=2.30756,
+            opacity=0.7,
+            line=dict(
+                color="Crimson",
+                width=2.5,
+            ),
+        ),
+        go.layout.Shape(
+            type="line",
+            x0=2.5,
+            y0=3.80796,
+            x1=3.05,
+            y1=3.80796,
+            opacity=0.7,
+            line=dict(
+                color="Crimson",
+                width=2.5,
+            ),
+        ),
+        go.layout.Shape(
+            type="line",
+            x0=1.90,
+            y0=-1.1827,
+            x1=2.50,
+            y1=-1.1827,
+            opacity=0.7,
+            line=dict(
+                color="Crimson",
+                width=2.5,
+            ),
+        ),
     ]
-}
-fig = {
-    'data': data,
-    'layout': layout,
-}
-py.iplot(fig, filename='tangent-line')
+)
+
+fig.show()
 ```
 
 #### Rectangles Positioned Relative to the Axes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Scatter(
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
     x=[1.5, 4.5],
     y=[0.75, 0.75],
-    text=['Unfilled Rectangle', 'Filled Rectangle'],
-    mode='text',
-)
-data = [trace0]
-layout = {
-    'xaxis': {
-        'range': [0, 7],
-        'showgrid': False,
-    },
-    'yaxis': {
-        'range': [0, 3.5]
-    },
-    'shapes': [
+    text=["Unfilled Rectangle", "Filled Rectangle"],
+    mode="text",
+))
+
+# Set axes properties
+fig.update_xaxes(range=[0, 7], showgrid=False)
+fig.update_yaxes(range=[0, 3.5])
+
+# Add shapes
+fig.update_layout(
+    shapes=[
         # unfilled Rectangle
-        {
-            'type': 'rect',
-            'x0': 1,
-            'y0': 1,
-            'x1': 2,
-            'y1': 3,
-            'line': {
-                'color': 'rgba(128, 0, 128, 1)',
-            },
-        },
+        go.layout.Shape(
+            type="rect",
+            x0=1,
+            y0=1,
+            x1=2,
+            y1=3,
+            line=dict(
+                color="RoyalBlue",
+            ),
+        ),
         # filled Rectangle
-        {
-            'type': 'rect',
-            'x0': 3,
-            'y0': 1,
-            'x1': 6,
-            'y1': 2,
-            'line': {
-                'color': 'rgba(128, 0, 128, 1)',
-                'width': 2,
-            },
-            'fillcolor': 'rgba(128, 0, 128, 0.7)',
-        },
+        go.layout.Shape(
+            type="rect",
+            x0=3,
+            y0=1,
+            x1=6,
+            y1=2,
+            line=dict(
+                color="RoyalBlue",
+                width=2,
+            ),
+            fillcolor="LightSkyBlue",
+        ),
     ]
-}
-fig = {
-    'data': data,
-    'layout': layout,
-}
-py.iplot(fig, filename='shapes-rectangle')
+)
+
+fig.show()
 ```
 
 #### Rectangle Positioned Relative to the Plot & to the Axes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Scatter(
+fig = go.Figure()
+
+# Create scatter trace of text labels
+fig.add_trace(go.Scatter(
     x=[1.5, 3],
     y=[2.5, 2.5],
-    text=['Rectangle reference to the plot',
-          'Rectangle reference to the axes'],
-    mode='text',
-)
-data = [trace0]
-layout = {
-    'xaxis': {
-        'range': [0, 4],
-        'showgrid': False,
-    },
-    'yaxis': {
-        'range': [0, 4]
-    },
-    'shapes': [
+    text=["Rectangle reference to the plot",
+          "Rectangle reference to the axes"],
+    mode="text",
+))
+
+# Set axes properties
+fig.update_xaxes(range=[0, 4], showgrid=False)
+fig.update_yaxes(range=[0, 4])
+
+# Add shapes
+fig.update_layout(
+    shapes=[
         # Rectangle reference to the axes
-        {
-            'type': 'rect',
-            'xref': 'x',
-            'yref': 'y',
-            'x0': 2.5,
-            'y0': 0,
-            'x1': 3.5,
-            'y1': 2,
-            'line': {
-                'color': 'rgb(55, 128, 191)',
-                'width': 3,
-            },
-            'fillcolor': 'rgba(55, 128, 191, 0.6)',
-        },
+        go.layout.Shape(
+            type="rect",
+            xref="x",
+            yref="y",
+            x0=2.5,
+            y0=0,
+            x1=3.5,
+            y1=2,
+            line=dict(
+                color="RoyalBlue",
+                width=3,
+            ),
+            fillcolor="LightSkyBlue",
+        ),
         # Rectangle reference to the plot
-        {
-            'type': 'rect',
-            'xref': 'paper',
-            'yref': 'paper',
-            'x0': 0.25,
-            'y0': 0,
-            'x1': 0.5,
-            'y1': 0.5,
-            'line': {
-                'color': 'rgb(50, 171, 96)',
-                'width': 3,
-            },
-            'fillcolor': 'rgba(50, 171, 96, 0.6)',
-        },
+        go.layout.Shape(
+            type="rect",
+            xref="paper",
+            yref="paper",
+            x0=0.25,
+            y0=0,
+            x1=0.5,
+            y1=0.5,
+            line=dict(
+                color="LightSeaGreen",
+                width=3,
+            ),
+            fillcolor="PaleTurquoise",
+        ),
     ]
-}
-fig = {
-    'data': data,
-    'layout': layout,
-}
-py.iplot(fig, filename='shapes-rectangle-ref')
+)
+
+fig.show()
 ```
 
 #### Highlighting Time Series Regions with Rectangle Shapes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Scatter(
-    x=['2015-02-01', '2015-02-02', '2015-02-03', '2015-02-04', '2015-02-05',
-        '2015-02-06', '2015-02-07', '2015-02-08', '2015-02-09', '2015-02-10',
-        '2015-02-11', '2015-02-12', '2015-02-13', '2015-02-14', '2015-02-15',
-        '2015-02-16', '2015-02-17', '2015-02-18', '2015-02-19', '2015-02-20',
-        '2015-02-21', '2015-02-22', '2015-02-23', '2015-02-24', '2015-02-25',
-        '2015-02-26', '2015-02-27', '2015-02-28'],
+fig = go.Figure()
+
+# Add scatter trace for line
+fig.add_trace(go.Scatter(
+    x=["2015-02-01", "2015-02-02", "2015-02-03", "2015-02-04", "2015-02-05",
+       "2015-02-06", "2015-02-07", "2015-02-08", "2015-02-09", "2015-02-10",
+       "2015-02-11", "2015-02-12", "2015-02-13", "2015-02-14", "2015-02-15",
+       "2015-02-16", "2015-02-17", "2015-02-18", "2015-02-19", "2015-02-20",
+       "2015-02-21", "2015-02-22", "2015-02-23", "2015-02-24", "2015-02-25",
+       "2015-02-26", "2015-02-27", "2015-02-28"],
     y=[-14, -17, -8, -4, -7, -10, -12, -14, -12, -7, -11, -7, -18, -14, -14,
-        -16, -13, -7, -8, -14, -8, -3, -9, -9, -4, -13, -9, -6],
-    mode='lines',
-    name='temperature'
-)
-data = [trace0]
-layout = {
-    # to highlight the timestamp we use shapes and create a rectangular
-    'shapes': [
+       -16, -13, -7, -8, -14, -8, -3, -9, -9, -4, -13, -9, -6],
+    mode="lines",
+    name="temperature"
+))
+
+# Add shape regions
+fig.update_layout(
+    shapes=[
         # 1st highlight during Feb 4 - Feb 6
-        {
-            'type': 'rect',
+        go.layout.Shape(
+            type="rect",
             # x-reference is assigned to the x-values
-            'xref': 'x',
+            xref="x",
             # y-reference is assigned to the plot paper [0,1]
-            'yref': 'paper',
-            'x0': '2015-02-04',
-            'y0': 0,
-            'x1': '2015-02-06',
-            'y1': 1,
-            'fillcolor': '#d3d3d3',
-            'opacity': 0.2,
-            'line': {
-                'width': 0,
-            }
-        },
+            yref="paper",
+            x0="2015-02-04",
+            y0=0,
+            x1="2015-02-06",
+            y1=1,
+            fillcolor="LightSalmon",
+            opacity=0.5,
+            layer="below",
+            line_width=0,
+        ),
         # 2nd highlight during Feb 20 - Feb 23
-        {
-            'type': 'rect',
-            'xref': 'x',
-            'yref': 'paper',
-            'x0': '2015-02-20',
-            'y0': 0,
-            'x1': '2015-02-22',
-            'y1': 1,
-            'fillcolor': '#d3d3d3',
-            'opacity': 0.2,
-            'line': {
-                'width': 0,
-            }
-        }
+        go.layout.Shape(
+            type="rect",
+            xref="x",
+            yref="paper",
+            x0="2015-02-20",
+            y0=0,
+            x1="2015-02-22",
+            y1=1,
+            fillcolor="LightSalmon",
+            opacity=0.5,
+            layer="below",
+            line_width=0,
+        )
     ]
-}
-py.iplot({'data': data, 'layout': layout}, filename='timestamp-highlight')
+)
+
+fig.show()
 ```
 
 #### Circles Positioned Relative to the Axes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Scatter(
+fig = go.Figure()
+
+# Create scatter trace of text labels
+fig.add_trace(go.Scatter(
     x=[1.5, 3.5],
     y=[0.75, 2.5],
-    text=['Unfilled Circle',
-          'Filled Circle'],
-    mode='text',
-)
-data = [trace0]
+    text=["Unfilled Circle",
+          "Filled Circle"],
+    mode="text",
+))
 
-layout = {
-    'xaxis': {
-        'range': [0, 4.5],
-        'zeroline': False,
-    },
-    'yaxis': {
-        'range': [0, 4.5]
-    },
-    'width': 800,
-    'height': 800,
-    'shapes': [
+# Set axes properties
+fig.update_xaxes(range=[0, 4.5], zeroline=False)
+fig.update_yaxes(range=[0, 4.5])
+
+# Add circles
+fig.update_layout(
+    shapes=[
         # unfilled circle
-        {
-            'type': 'circle',
-            'xref': 'x',
-            'yref': 'y',
-            'x0': 1,
-            'y0': 1,
-            'x1': 3,
-            'y1': 3,
-            'line': {
-                'color': 'rgba(50, 171, 96, 1)',
-            },
-        },
+        go.layout.Shape(
+            type="circle",
+            xref="x",
+            yref="y",
+            x0=1,
+            y0=1,
+            x1=3,
+            y1=3,
+            line_color="LightSeaGreen",
+        ),
         # filled circle
-        {
-            'type': 'circle',
-            'xref': 'x',
-            'yref': 'y',
-            'fillcolor': 'rgba(50, 171, 96, 0.7)',
-            'x0': 3,
-            'y0': 3,
-            'x1': 4,
-            'y1': 4,
-            'line': {
-                'color': 'rgba(50, 171, 96, 1)',
-            },
-        },
+        go.layout.Shape(
+            type="circle",
+            xref="x",
+            yref="y",
+            fillcolor="PaleTurquoise",
+            x0=3,
+            y0=3,
+            x1=4,
+            y1=4,
+            line_color="LightSeaGreen",
+        ),
     ]
-}
-fig = {
-    'data': data,
-    'layout': layout,
-}
-py.iplot(fig, filename='shapes-circle')
+)
+
+# Set figure size
+fig.update_layout(width=800, height=800)
+
+fig.show()
 ```
 
 #### Highlighting Clusters of Scatter Points with Circle Shapes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 
+# Generate data
 x0 = np.random.normal(2, 0.45, 300)
 y0 = np.random.normal(2, 0.45, 300)
 
@@ -481,276 +474,237 @@ y1 = np.random.normal(6, 0.4, 200)
 x2 = np.random.normal(4, 0.3, 200)
 y2 = np.random.normal(4, 0.3, 200)
 
-trace0 = go.Scatter(
+# Create figure
+fig = go.Figure()
+
+# Add scatter traces
+fig.add_trace(go.Scatter(
     x=x0,
     y=y0,
-    mode='markers',
-)
-trace1 = go.Scatter(
+    mode="markers",
+))
+
+fig.add_trace(go.Scatter(
     x=x1,
     y=y1,
-    mode='markers'
-)
-trace2 = go.Scatter(
+    mode="markers"
+))
+
+fig.add_trace(go.Scatter(
     x=x2,
     y=y2,
-    mode='markers'
-)
-trace3 = go.Scatter(
+    mode="markers"
+))
+
+fig.add_trace(go.Scatter(
     x=x1,
     y=y0,
-    mode='markers'
-)
-layout = {
-    'shapes': [
-        {
-            'type': 'circle',
-            'xref': 'x',
-            'yref': 'y',
-            'x0': min(x0),
-            'y0': min(y0),
-            'x1': max(x0),
-            'y1': max(y0),
-            'opacity': 0.2,
-            'fillcolor': 'blue',
-            'line': {
-                'color': 'blue',
-            },
-        },
-        {
-            'type': 'circle',
-            'xref': 'x',
-            'yref': 'y',
-            'x0': min(x1),
-            'y0': min(y1),
-            'x1': max(x1),
-            'y1': max(y1),
-            'opacity': 0.2,
-            'fillcolor': 'orange',
-            'line': {
-                'color': 'orange',
-            },
-        },
-        {
-            'type': 'circle',
-            'xref': 'x',
-            'yref': 'y',
-            'x0': min(x2),
-            'y0': min(y2),
-            'x1': max(x2),
-            'y1': max(y2),
-            'opacity': 0.2,
-            'fillcolor': 'green',
-            'line': {
-                'color': 'green',
-            },
-        },
-        {
-            'type': 'circle',
-            'xref': 'x',
-            'yref': 'y',
-            'x0': min(x1),
-            'y0': min(y0),
-            'x1': max(x1),
-            'y1': max(y0),
-            'opacity': 0.2,
-            'fillcolor': 'red',
-            'line': {
-                'color': 'red',
-            },
-        },
+    mode="markers"
+))
+
+# Add shapes
+fig.update_layout(
+    shapes=[
+        go.layout.Shape(
+            type="circle",
+            xref="x",
+            yref="y",
+            x0=min(x0),
+            y0=min(y0),
+            x1=max(x0),
+            y1=max(y0),
+            opacity=0.2,
+            fillcolor="blue",
+            line_color="blue",
+        ),
+        go.layout.Shape(
+            type="circle",
+            xref="x",
+            yref="y",
+            x0=min(x1),
+            y0=min(y1),
+            x1=max(x1),
+            y1=max(y1),
+            opacity=0.2,
+            fillcolor="orange",
+            line_color="orange",
+        ),
+        go.layout.Shape(
+            type="circle",
+            xref="x",
+            yref="y",
+            x0=min(x2),
+            y0=min(y2),
+            x1=max(x2),
+            y1=max(y2),
+            opacity=0.2,
+            fillcolor="green",
+            line_color="green",
+        ),
+        go.layout.Shape(
+            type="circle",
+            xref="x",
+            yref="y",
+            x0=min(x1),
+            y0=min(y0),
+            x1=max(x1),
+            y1=max(y0),
+            opacity=0.2,
+            fillcolor="red",
+            line_color="red",
+        ),
     ],
-    'showlegend': False,
-}
-data = [trace0, trace1, trace2, trace3]
-fig = {
-    'data': data,
-    'layout': layout,
-}
-py.iplot(fig, filename='clusters')
+)
+
+# Hide legend
+fig.update_layout(showlegend=False)
+
+fig.show()
 ```
 
 #### Venn Diagram with Circle Shapes
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Scatter(
+fig = go.Figure()
+
+# Create scatter trace of text labels
+fig.add_trace(go.Scatter(
     x=[1, 1.75, 2.5],
     y=[1, 1, 1],
-    text=['$A$', '$A+B$', '$B$'],
-    mode='text',
+    text=["$A$", "$A+B$", "$B$"],
+    mode="text",
     textfont=dict(
-        color='black',
+        color="black",
         size=18,
-        family='Arail',
+        family="Arail",
     )
+))
+
+# Update axes properties
+fig.update_xaxes(
+    showticklabels=False,
+    showgrid=False,
+    zeroline=False,
 )
 
-data = [trace0]
+fig.update_yaxes(
+    showticklabels=False,
+    showgrid=False,
+    zeroline=False,
+)
 
-layout = {
-    'xaxis': {
-        'showticklabels': False,
-        'showgrid': False,
-        'zeroline': False,
-    },
-    'yaxis': {
-        'showticklabels': False,
-        'showgrid': False,
-        'zeroline': False,
-    },
-    'shapes': [
-        {
-            'opacity': 0.3,
-            'xref': 'x',
-            'yref': 'y',
-            'fillcolor': 'blue',
-            'x0': 0,
-            'y0': 0,
-            'x1': 2,
-            'y1': 2,
-            'type': 'circle',
-            'line': {
-                'color': 'blue',
-            },
-        },
-        {
-            'opacity': 0.3,
-            'xref': 'x',
-            'yref': 'y',
-            'fillcolor': 'gray',
-            'x0': 1.5,
-            'y0': 0,
-            'x1': 3.5,
-            'y1': 2,
-            'type': 'circle',
-            'line': {
-                'color': 'gray',
-            },
-        }
+# Add circles
+fig.update_layout(
+    shapes=[
+        go.layout.Shape(
+            opacity=0.3,
+            xref="x",
+            yref="y",
+            fillcolor="blue",
+            x0=0,
+            y0=0,
+            x1=2,
+            y1=2,
+            type="circle",
+            line_color="blue",
+            layer="below"
+        ),
+        go.layout.Shape(
+            opacity=0.3,
+            xref="x",
+            yref="y",
+            fillcolor="gray",
+            x0=1.5,
+            y0=0,
+            x1=3.5,
+            y1=2,
+            type="circle",
+            line_color="gray",
+            layer="below"
+        )
     ],
-    'margin': {
-        'l': 20,
-        'r': 20,
-        'b': 100
-    },
-    'height': 600,
-    'width': 800,
-}
-fig = {
-    'data': data,
-    'layout': layout,
-}
-py.iplot(fig, filename='venn-diagram')
+)
+
+# Update figure dimensions
+fig.update_layout(
+    margin=dict(
+        l=20,
+        r=20,
+        b=100
+    ),
+    height=600,
+    width=800,
+    plot_bgcolor="white"
+)
+
+fig.show()
 ```
 
 #### SVG Paths
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-trace0 = go.Scatter(
+fig = go.Figure()
+
+# Create scatter trace of text labels
+fig.add_trace(go.Scatter(
     x=[2, 1, 8, 8],
     y=[0.25, 9, 2, 6],
-    text=['Filled Triangle',
-          'Filled Polygon',
-          'Quadratic Bezier Curves',
-          'Cubic Bezier Curves'],
-    mode='text',
+    text=["Filled Triangle",
+          "Filled Polygon",
+          "Quadratic Bezier Curves",
+          "Cubic Bezier Curves"],
+    mode="text",
+))
+
+# Update axes properties
+fig.update_xaxes(
+    range=[0, 9],
+    zeroline=False,
 )
-data = [trace0]
-layout = {
 
-    'xaxis': {
-        'range': [0, 9],
-        'zeroline': False,
-    },
-    'yaxis': {
-        'range': [0, 11],
-        'showgrid': False,
-    },
-    'shapes': [
+fig.update_yaxes(
+    range=[0, 11],
+    zeroline=False,
+)
+
+# Add shapes
+fig.update_layout(
+    shapes=[
         # Quadratic Bezier Curves
-        {
-            'type': 'path',
-            'path': 'M 4,4 Q 6,0 8,4',
-            'line': {
-                'color': 'rgb(93, 164, 214)',
-            },
-        },
+        go.layout.Shape(
+            type="path",
+            path="M 4,4 Q 6,0 8,4",
+            line_color="RoyalBlue",
+        ),
         # Cubic Bezier Curves
-        {
-            'type': 'path',
-            'path': 'M 1,4 C 2,8 6,4 8,8',
-            'line': {
-                'color': 'rgb(207, 114, 255)',
-            },
-        },
+        go.layout.Shape(
+            type="path",
+            path="M 1,4 C 2,8 6,4 8,8",
+            line_color="MediumPurple",
+        ),
         # filled Triangle
-        {
-            'type': 'path',
-            'path': ' M 1 1 L 1 3 L 4 1 Z',
-            'fillcolor': 'rgba(44, 160, 101, 0.5)',
-            'line': {
-                'color': 'rgb(44, 160, 101)',
-            },
-        },
+        go.layout.Shape(
+            type="path",
+            path=" M 1 1 L 1 3 L 4 1 Z",
+            fillcolor="LightPink",
+            line_color="Crimson",
+        ),
         # filled Polygon
-        {
-            'type': 'path',
-            'path': ' M 3,7 L2,8 L2,9 L3,10, L4,10 L5,9 L5,8 L4,7 Z',
-            'fillcolor': 'rgba(255, 140, 184, 0.5)',
-            'line': {
-                'color': 'rgb(255, 140, 184)',
-            },
-        },
-
+        go.layout.Shape(
+            type="path",
+            path=" M 3,7 L2,8 L2,9 L3,10, L4,10 L5,9 L5,8 L4,7 Z",
+            fillcolor="PaleTurquoise",
+            line_color="LightSeaGreen",
+        ),
     ]
-}
-fig = {
-    'data': data,
-    'layout': layout,
-}
-py.iplot(fig, filename='shapes-path')
+)
+
+fig.show()
 ```
 
-### Dash Example
-
-
-[Dash](https://plot.ly/products/dash/) is an Open Source Python library which can help you convert plotly figures into a reactive, web-based application. Below is a simple example of a dashboard created using Dash. Its [source code](https://github.com/plotly/simple-example-chart-apps/tree/master/dash-shapesplot) can easily be deployed to a PaaS.
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-shapesplot/", width="100%", height="650px", frameBorder="0")
-
-```
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-shapesplot/code", width="100%", height=500, frameBorder="0")
-
-```
-
-#### Reference
+### Reference
 See https://plot.ly/python/reference/#layout-shapes for more information and chart attribute options!
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'shapes.ipynb', 'python/shapes/', 'Shapes | plotly',
-    'How to make SVG shapes in python. Examples of lines, circle, rectangle, and path.',
-    title = 'Shapes | plotly',
-    name = 'Shapes',
-    thumbnail='thumbnail/shape.jpg', language='python',
-    page_type='example_index', has_thumbnail='true', display_as='style_opt', order=5,
-    ipynb='~notebook_demo/14')
-```

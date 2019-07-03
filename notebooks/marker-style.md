@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.2
+    version: 3.6.5
   plotly:
     description: How to style markers in Python with Plotly.
     display_as: style_opt
@@ -39,7 +39,24 @@ jupyter:
 
 ### Add Marker Border
 
-In order to make markers distinct, you can add a border to the markers. This can be achieved by adding the line dict to the marker dict. For example, `marker:{..., line: {...}}`.
+In order to make markers look more distinct, you can add a border to the markers. This can be achieved by adding the line property to the marker object.
+
+Here is an example of adding a marker border to a faceted scatter plot created using plotly express.
+
+```python
+import plotly.express as px
+
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species")
+
+fig.update_traces(marker=dict(size=12,
+                              line=dict(width=2,
+                                        color='DarkSlateGrey')),
+                  selector=dict(mode='markers'))
+fig.show()
+```
+
+Here is an example that creates an empty graph object figure, and then adds two scatter traces with a marker border.
 
 ```python
 import plotly.graph_objects as go
@@ -90,65 +107,10 @@ fig.add_trace(
 )
 
 fig.show()
-
 ```
-
-### Fully Opaque
-
 
 Fully opaque, the default setting, is useful for non-overlapping markers. When many points overlap it can be hard to observe density.
 
-```python
-import plotly.graph_objects as go
-
-# Generate example data
-import numpy as np
-
-x = np.random.uniform(low=3, high=6, size=(500,))
-y = np.random.uniform(low=3, high=6, size=(500,))
-
-# Build figure
-fig = go.Figure()
-
-# Add scatter trace with medium sized markers
-fig.add_trace(
-    go.Scatter(
-        mode='markers',
-        x=x,
-        y=y,
-        marker=dict(
-            color='LightSkyBlue',
-            size=20,
-            line=dict(
-                color='MediumPurple',
-                width=2
-            )
-        ),
-        showlegend=False
-    )
-)
-
-# Add trace with large markers
-fig.add_trace(
-    go.Scatter(
-        mode='markers',
-        x=[2, 2],
-        y=[4.25, 4.75],
-        marker=dict(
-            color='LightSkyBlue',
-            size=80,
-            line=dict(
-                color='MediumPurple',
-                width=8
-            )
-        ),
-        showlegend=False
-    )
-)
-
-fig.show()
-
-```
 
 ### Opacity
 

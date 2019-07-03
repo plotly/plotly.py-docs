@@ -6,11 +6,21 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.7
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.5
   plotly:
     description: Interactive Data Analysis with Plotly
     display_as: chart_events
@@ -24,21 +34,8 @@ jupyter:
     permalink: python/figurewidget-app/
     thumbnail: thumbnail/multi-widget.jpg
     title: Interactive Data Analysis with FigureWidget ipywidgets
+    v4upgrade: true
 ---
-
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-#### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
-
-```python
-import plotly
-plotly.__version__
-```
 
 #### NYC Flights Database
 
@@ -46,9 +43,8 @@ plotly.__version__
 import datetime
 import numpy as np
 import pandas as pd
-import plotly.graph_objs as go
-import plotly.plotly as py
 
+import plotly.graph_objects as go
 from ipywidgets import widgets
 ```
 
@@ -169,28 +165,4 @@ widgets.VBox([container,
 
 ```python
 help(go.FigureWidget)
-```
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-!pip install git+https://github.com/plotly/publisher.git --upgrade
-
-import publisher
-publisher.publish(
-    'figurewidget_app.ipynb', 'python/figurewidget-app/', 'IPython FigureWidget',
-    'Interactive Data Analysis with Plotly',
-    title='Interactive Data Analysis with FigureWidget ipywidgets',
-    name='Interactive Data Analysis with FigureWidget ipywidgets',
-    has_thumbnail='true', thumbnail='thumbnail/multi-widget.jpg',
-    language='python', page_type='example_index',
-    display_as='chart_events', order=23,
-    ipynb='~notebook_demo/231')
-```
-
-```python
-
 ```

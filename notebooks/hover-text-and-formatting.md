@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.2
+    version: 3.6.5
   plotly:
     description: How to use hover text and formatting in Python with Plotly.
     display_as: layout_opt
@@ -47,7 +47,7 @@ fig = go.Figure()
 fig.add_trace(go.Scatter(
     x=[1, 2, 3, 4, 5],
     y=[2, 1, 6, 4, 4],
-    text=["Text A", "Text B", "Text C", "Text D", "Text E"],
+    hovertext=["Text A", "Text B", "Text C", "Text D", "Text E"],
     hoverinfo="text",
     marker=dict(
         color="green"

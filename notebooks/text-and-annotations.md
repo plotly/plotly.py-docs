@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.6
+      jupytext_version: 1.1.7
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.5
   plotly:
     description: How to add text labels and annotations to plots in python.
     display_as: style_opt
@@ -71,9 +71,6 @@ fig.add_trace(go.Scatter(
     textposition="bottom center"
 ))
 
-fig.update_layout(showlegend=False)
-
-fig = go.Figure(data=data, layout=layout)
 fig.show()
 ```
 
@@ -88,7 +85,7 @@ fig.add_trace(go.Scatter(
     x=[0, 1, 2],
     y=[1, 3, 2],
     mode="markers",
-    text=["Text A", "Text B", "Text C"]
+    hovertext=["Text A", "Text B", "Text C"]
 ))
 
 fig.update_layout(title_text="Hover over the points to see the text")

@@ -55,9 +55,9 @@ The "strength" column corresponds to strength categories of the wind, and there 
 ```python
 import plotly.express as px
 wind = px.data.wind()
-fig = px.scatter_polar(wind, r="frequency", theta="direction", 
+fig = px.scatter_polar(wind, r="frequency", theta="direction",
                        color="strength", symbol="strength", size="frequency",
-                       color_discrete_sequence=px.colors.sequential.Plotly[-2::-1])
+                       color_discrete_sequence=px.colors.sequential.Plasma[-2::-1])
 fig.show()
 ```
 
@@ -67,7 +67,7 @@ For a line polar plot, use `px.line_polar`:
 import plotly.express as px
 wind = px.data.wind()
 fig = px.line_polar(wind, r="frequency", theta="direction", color="strength", line_close=True,
-                    color_discrete_sequence=px.colors.sequential.Plotly[-2::-1],
+                    color_discrete_sequence=px.colors.sequential.Plasma[-2::-1],
                     template="plotly_dark",)
 fig.show()
 ```
@@ -287,7 +287,7 @@ r = [1,2,3,4,5]
 theta = [0,90,180,360,0]
 
 fig.add_trace(go.Scatterpolar(), 1, 1)
-fig.add_trace(go.Scatterpolar(), 1, 2) 
+fig.add_trace(go.Scatterpolar(), 1, 2)
 
 # Same data for the two Scatterpolar plots, we will only change the direction in the layout
 fig.update_traces(r= r, theta=theta,
@@ -296,7 +296,7 @@ fig.update_traces(r= r, theta=theta,
 fig.update_layout(
     showlegend = False,
     polar = dict(
-      radialaxis_tickfont_size = 8,     
+      radialaxis_tickfont_size = 8,
       angularaxis = dict(
         tickfont_size=8,
         rotation=90, # start position of angular axis

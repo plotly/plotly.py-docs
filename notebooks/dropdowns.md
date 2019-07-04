@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.7
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.2
+    version: 3.6.7
   plotly:
     description: How to add dropdowns to update Plotly chart attributes in Python.
     display_as: controls
@@ -45,9 +45,11 @@ The [updatemenu method](https://plot.ly/python/reference/#layout-updatemenus-but
 - `"animate"`: start or pause an [animation](https://plot.ly/python/#animations)
 
 
-#### Restyle Dropdown
-The `"restyle"` method should be used when modifying the data and data attributes of the graph.<br>
-**Update One Data Attribute**<br>
+## Restyle Dropdown
+The `"restyle"` method should be used when modifying the data and data attributes of the graph.
+
+### Update One Data Attribute
+
 This example demonstrates how to update a single data attribute: chart `type` with the `"restyle"` method.
 
 ```python
@@ -117,7 +119,8 @@ fig.update_layout(
 fig.show()
 ```
 
-**Update Several Data Attributes**<br>
+### Update Several Data Attributes
+
 This example demonstrates how to update several data attributes: colorscale, colorscale direction, and line display with the "restyle" method.
 
 ```python
@@ -241,9 +244,11 @@ fig.update_layout(
 fig.show()
 ```
 
-#### Relayout Dropdown
+## Relayout Dropdown
 The `"relayout"` method should be used when modifying the layout attributes of the graph.<br>
-**Update One Layout Attribute**<br>
+
+### Update One Layout Attribute
+
 This example demonstrates how to update a layout attribute: chart `type` with the `"relayout"` method.
 
 ```python
@@ -339,7 +344,8 @@ fig.update_layout(
 fig.show()
 ```
 
-#### Update Dropdown
+### Update Dropdown
+
 The `"update"` method should be used when modifying the data and layout sections of the graph.<br>
 This example demonstrates how to update which traces are displayed while simulaneously updating layout attributes such as the chart title and annotations.
 
@@ -437,159 +443,6 @@ fig.update_layout(
 
 # Set title
 fig.update_layout(title_text="Yahoo")
-
-fig.show()
-```
-
-#### Style Dropdown
-When adding dropdowns to Plotly charts, users have the option of styling the color, font, padding, and position of the dropdown menus. The example below demonstrates how to apply different styling options. See all updatemenu styling attributes here: https://plot.ly/python/reference/#layout-updatemenus.
-
-```python
-import plotly.graph_objects as go
-
-# Set mapbox access token
-# mapbox_access_token = "pk..."
-
-# Load data and process data
-df_wind = pd.read_csv("https://plot.ly/~datasets/2805.csv")
-df_known_capacity = df_wind[df_wind["total_cpcy"] != -99999.000]
-df_sum = df_known_capacity.groupby("manufac")["total_cpcy"].sum().sort_values(
-    ascending=False).to_frame()
-df_farms = pd.read_csv("https://plot.ly/~jackp/17256.csv")
-df_farms.set_index("Wind Farm", inplace=True)
-
-# Initialize figure
-fig = go.Figure()
-
-# Add trace
-data = []
-for mfr in list(df_sum.index):
-    if mfr != "unknown":
-        trace = dict(
-            lat=df_wind[df_wind["manufac"] == mfr]["lat_DD"],
-            lon=df_wind[df_wind["manufac"] == mfr]["long_DD"],
-            name=mfr,
-            marker=dict(size=4),
-            type="scattermapbox"
-        )
-        fig.add_trace(go.Scattermapbox(
-            lat=df_wind[df_wind["manufac"] == mfr]["lat_DD"],
-            lon=df_wind[df_wind["manufac"] == mfr]["long_DD"],
-            name=mfr,
-            marker=dict(size=4)))
-
-# Add dropdowns
-wind_farm_buttons = [
-    dict(
-        args=[{
-            "mapbox.center.lat": 38,
-            "mapbox.center.lon": -94,
-            "mapbox.zoom": 3,
-            "annotations[0].text": "All US wind turbines (scroll to zoom)"
-        }],
-        label="USA",
-        method="relayout"
-    )
-]
-
-for farm, row in df_farms.iterrows():
-    desc = []
-    for col in df_farms.columns:
-        if col not in ["DegMinSec", "Latitude", "Longitude"]:
-            if str(row[col]) not in ["None", "nan", ""]:
-                desc.append(col + ": " + str(row[col]).strip("'"))
-    desc.insert(0, farm)
-    wind_farm_buttons.append(
-        dict(
-            args=[{
-                "mapbox.center.lat": row["Latitude"],
-                "mapbox.center.lon": float(str(row["Longitude"]).strip("'")),
-                "mapbox.zoom": 9,
-                "annotations[0].text": "<br>".join(desc)
-            }],
-            label=" ".join(farm.split(" ")[0:2]),
-            method="relayout"
-        )
-    )
-    
-fig.update_layout(
-    updatemenus=[
-        go.layout.Updatemenu(
-            buttons=wind_farm_buttons[0:10],
-            pad={"r": 0, "t": 10},
-            x=0.1,
-            xanchor="left",
-            y=1.0,
-            yanchor="top",
-            bgcolor="#AAAAAA",
-            active=0,
-            bordercolor="#FFFFFF",
-            font=dict(size=11, color="#000000")
-        ),
-        go.layout.Updatemenu(
-            buttons=list([
-                dict(
-                    args=["mapbox.style", "dark"],
-                    label="Dark",
-                    method="relayout"
-                ),
-                dict(
-                    args=["mapbox.style", "light"],
-                    label="Light",
-                    method="relayout"
-                ),
-                dict(
-                    args=["mapbox.style", "satellite"],
-                    label="Satellite",
-                    method="relayout"
-                ),
-                dict(
-                    args=["mapbox.style", "satellite-streets"],
-                    label="Satellite with Streets",
-                    method="relayout"
-                )
-            ]),
-            direction="up",
-            x=0.75,
-            xanchor="left",
-            y=0.05,
-            yanchor="bottom",
-            bgcolor="#000000",
-            bordercolor="#FFFFFF",
-            font=dict(size=11)
-        ),
-    ]
-)
-
-# Update layout
-fig.update_layout(
-    height=800,
-    margin=dict(t=0, b=0, l=0, r=0),
-    font=dict(color="#FFFFFF", size=11),
-    paper_bgcolor="#000000",
-    mapbox=dict(
-        accesstoken=mapbox_access_token,
-        bearing=0,
-        center=dict(
-            lat=38,
-            lon=-94
-        ),
-        pitch=0,
-        zoom=3,
-        style="dark"
-    ),
-)
-
-# Add annotations
-fig.update_layout(
-    annotations=[
-        dict(text="All US wind turbines (scroll to zoom)",
-             font=dict(color="magenta", size=14), borderpad=10,
-             x=0.05, y=0.05, xref="paper", yref="paper", align="left", showarrow=False,
-             bgcolor="black"),
-        dict(text="Wind<br>Farms", x=0.01, y=0.99, yref="paper", align="left",
-             showarrow=False, font=dict(size=14))
-    ])
 
 fig.show()
 ```

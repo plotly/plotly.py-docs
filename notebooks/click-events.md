@@ -82,5 +82,7 @@ f
 See [these Jupyter notebooks](https://github.com/jonmmease/plotly_ipywidget_notebooks) for even more FigureWidget examples.
 
 ```python
-help(scatter.on_click)
+import plotly.graph_objects as go
+f = go.FigureWidget([go.Scatter()])
+help(f.data[0].on_click)
 ```

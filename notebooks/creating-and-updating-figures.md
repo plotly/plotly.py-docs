@@ -21,7 +21,7 @@ jupyter:
     nbconvert_exporter: python
     pygments_lexer: ipython3
     version: 3.7.3
-plotly:
+  plotly:
     description: Creating and Updating Figures from Python
     has_thumbnail: false
     language: python
@@ -123,7 +123,7 @@ import plotly.express as px
 iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species")
 
-# If you print fig, you'll see that it's just a regular figure with data and layout 
+# If you print fig, you'll see that it's just a regular figure with data and layout
 # print(fig)
 
 fig.show()
@@ -155,7 +155,7 @@ fig.show()
 ```
 
 # Updating figures
-Regardless of how a graph object figure was constructed, it can be updated by adding additional traces and modifying its properties. 
+Regardless of how a graph object figure was constructed, it can be updated by adding additional traces and modifying its properties.
 
 ### Adding traces
 New traces can be added to a graph object figure using the `add_trace` method.  This method accepts a graph object trace (an instance of `go.Scatter`, `go.Bar`, etc.) and adds it to the figure.  This allows you to start with an empty figure, and add traces to it sequentially.
@@ -268,14 +268,14 @@ Note that the following `update_layout` operations are equivalent:
 ```python
 fig.update_layout(title_text="A Bar Chart",
                   title_font_size=30)
-                  
+
 fig.update_layout(title_text="A Bar Chart",
                   title_font=dict(size=30))
-                  
-      
+
+
 fig.update_layout(title=dict(text="A Bar Chart"),
                              font=dict(size=30))
-                            
+
 fig.update_layout({"title": {"text": "A Bar Chart",
                              "font": {"size": 30}}})
 
@@ -436,9 +436,9 @@ fig.show()
 ```
 
 ### The for each trace method
-Suppose the updates that you want to make to a collection of traces depend on the current values of certain trace properties.  The `update_traces` method cannot handle this situation, but the `for_each_trace` method can.  
+Suppose the updates that you want to make to a collection of traces depend on the current values of certain trace properties.  The `update_traces` method cannot handle this situation, but the `for_each_trace` method can.
 
-As its first argument, the `for_each_trace` method accepts a function that accepts and updates one trace at a time.  Like `update_traces`, `for_each_trace` also accepts `selector`, `row`, and `col` arguments to control which traces should be considered. 
+As its first argument, the `for_each_trace` method accepts a function that accepts and updates one trace at a time.  Like `update_traces`, `for_each_trace` also accepts `selector`, `row`, and `col` arguments to control which traces should be considered.
 
 Here is an example of using `for_each_trace` to replace the equal-sign with a colon in the legend name of each trace in a figure produced by plotly express.
 

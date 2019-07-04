@@ -207,5 +207,5 @@ fig.show()
 For more info on Plotly heatmaps, see: https://plot.ly/python/reference/#heatmap.<br> For more info on using colorscales with Plotly see: https://plot.ly/python/heatmap-and-contour-colorscales/ <br>For more info on annotated_heatmaps, see:
 
 ```python
-help(FF.create_annotated_heatmap)
+help(ff.create_annotated_heatmap)
 ```

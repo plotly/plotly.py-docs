@@ -10,9 +10,19 @@ jupyter:
   kernel_info:
     name: python2
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make parallel coorindates plots in Python with Plotly.
     display_as: scientific
@@ -26,35 +36,51 @@ jupyter:
     permalink: python/parallel-coordinates-plot/
     thumbnail: thumbnail/parcoords.jpg
     title: Parallel Coordinates Plot | plotly
+    v4upgrade: true
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
+## Parallel Coordinates plot with plotly express
 
-
-#### Version Check
-Note: Parallel Coordinates Plots are available in version <b>2.0.6+</b><br>
-Run  `pip install plotly --upgrade` to update your Plotly version
+Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). In a parallel coordinates plot with `px.parallel_coordinates`, each row of the DataFrame is represented by a polyline mark which traverses a set of parallel axes, one for each of the dimensions. For other representations of multivariate data, also see [radar charts](../radar-chart/) and [scatterplot matrix (SPLOM)](../splom/).
 
 ```python
-import plotly
-plotly.__version__
+import plotly.express as px
+iris = px.data.iris()
+fig = px.parallel_coordinates(iris, color="species_id", labels={"species_id": "Species",
+                "sepal_width": "Sepal Width", "sepal_length": "Sepal Length",
+                "petal_width": "Petal Width", "petal_length": "Petal Length", },
+                             color_continuous_scale=px.colors.diverging.Tealrose, 
+                             color_continuous_midpoint=2)
+fig.show()
 ```
 
-### Adding Dimensions
+Parallel coordinates are richly interactive by default. Drag the lines along the axes to filter regions.
+
+Select the columns to be represented with the `dimensions` parameter.
+
+```python
+import plotly.express as px
+iris = px.data.iris()
+fig = px.parallel_coordinates(iris, color="species_id", 
+                              dimensions=['sepal_width', 'sepal_length', 'petal_width',
+                                          'petal_length'],
+                              color_continuous_scale=px.colors.diverging.Tealrose, 
+                              color_continuous_midpoint=2)
+fig.show()
+```
+
+## Parallel Coordinates Chart with go.Parcoords
+
 
 ```python inputHidden=false outputHidden=false
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-data = [
+fig = go.Figure(data=
     go.Parcoords(
-        line = dict(color = 'blue'),
+        line_color='blue',
         dimensions = list([
             dict(range = [1,5],
-                 constraintrange = [1,2],
+                 constraintrange = [1,2], # change this range by dragging the pink line
                  label = 'A', values = [1,4]),
             dict(range = [1.5,5],
                  tickvals = [1.5,3,4.5],
@@ -67,9 +93,8 @@ data = [
                  label = 'D', values = [4,2])
         ])
     )
-]
-
-py.iplot(data, filename = 'parcoord-dimensions')
+)
+fig.show()
 ```
 
 Parallel coordinates are richly interactive by default. Drag the lines along the axes to filter regions and drag the axis names across the plot to rearrange variables.
@@ -81,17 +106,16 @@ Parallel coordinates are richly interactive by default. Drag the lines along the
 ### Basic Parallel Coordinates Plot
 
 ```python inputHidden=false outputHidden=false
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/bcdunbar/datasets/master/iris.csv")
 
-data = [
+fig = go.Figure(data=
     go.Parcoords(
         line = dict(color = df['species_id'],
-                   colorscale = [[0,'#D7C16B'],[0.5,'#23D8C3'],[1,'#F3F10F']]),
+                   colorscale = [[0,'purple'],[0.5,'lightseagreen'],[1,'gold']]),
         dimensions = list([
             dict(range = [0,8],
                 constraintrange = [4,8],
@@ -104,39 +128,36 @@ data = [
                 label = 'Petal Width', values = df['petal_width'])
         ])
     )
-]
-
-layout = go.Layout(
-    plot_bgcolor = '#E5E5E5',
-    paper_bgcolor = '#E5E5E5'
 )
 
-fig = go.Figure(data = data, layout = layout)
-py.iplot(fig, filename = 'parcoords-basic')
+fig.update_layout(
+    plot_bgcolor = 'white',
+    paper_bgcolor = 'white'
+)
+
+fig.show()
 ```
 
 ### Advanced Parallel Coordinates Plot
 
 ```python inputHidden=false outputHidden=false
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/bcdunbar/datasets/master/parcoords_data.csv")
 
-data = [
+fig = go.Figure(data=
     go.Parcoords(
         line = dict(color = df['colorVal'],
-                   colorscale = 'Jet',
+                   colorscale = 'Electric',
                    showscale = True,
-                   reversescale = True,
                    cmin = -4000,
                    cmax = -100),
         dimensions = list([
             dict(range = [32000,227900],
                  constraintrange = [100000,150000],
-                 label = 'Block Height', values = df['blockHeight']),
+                 label = "Block Height", values = df['blockHeight']),
             dict(range = [0,700000],
                  label = 'Block Width', values = df['blockWidth']),
             dict(tickvals = [0,0.5,1,2,3],
@@ -149,45 +170,14 @@ data = [
                  visible = True,
                  label = 'Total Weight', values = df['totalWeight']),
             dict(range = [9,19984],
-                 label = 'Assembly Penalty Weight', values = df['assemblyPW']),
+                 label = 'Assembly Penalty Wt', values = df['assemblyPW']),
             dict(range = [49000,568000],
-                 label = 'Height st Width', values = df['HstW']),
-            dict(range = [-28000,196430],
-                 label = 'Min Height Width', values = df['minHW']),
-            dict(range = [98453,501789],
-                 label = 'Min Width Diameter', values = df['minWD']),
-            dict(range = [1417,107154],
-                 label = 'RF Block', values = df['rfBlock'])
-        ])
+                 label = 'Height st Width', values = df['HstW'])])
     )
-]
-
-py.iplot(data, filename = 'parcoords-advanced')
+)
+fig.show()
 ```
 
 #### Reference
 See https://plot.ly/python/reference/#parcoords for more information and chart attribute options!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'parcoords.ipynb', 'python/parallel-coordinates-plot/', 'Parallel Coordinates Plot | plotly',
-    'How to make parallel coorindates plots in Python with Plotly.',
-    title = 'Parallel Coordinates Plot | plotly',
-    name = 'Parallel Coordinates Plot',
-    has_thumbnail='true', thumbnail='thumbnail/parcoords.jpg',
-    language='python',
-    # page_type='example_index', // note this is only if you want the tutorial to appear on the main page: plot.ly/python
-    display_as='scientific', order=11.5,
-    ipynb= '~notebook_demo/142')
-```
-
-```python
-
-```

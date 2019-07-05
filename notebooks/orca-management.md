@@ -6,11 +6,21 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.6
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.7.3
   plotly:
     description: This section covers the low-level details of how plotly.py uses orca
       to perform static image generation.
@@ -24,23 +34,8 @@ jupyter:
     permalink: python/orca-management/
     thumbnail: thumbnail/orca-management.png
     title: Orca Management | Plotly
+    v4upgrade: true
 ---
-
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-### Version Check
-Note: The static image export API is available in version <b>3.2.0.+</b><br>
-
-```python
-import plotly
-import plotly.graph_objs as go
-from plotly.offline import iplot, init_notebook_mode
-
-plotly.__version__
-```
 
 ### Overview
 This section covers the lower-level details of how plotly.py uses orca to perform static image generation. Please refer to the [Static Image Export](../static-image-export/) section for general information on creating static images from plotly.py figures.
@@ -55,42 +50,38 @@ By default, plotly.py launches the orca server process the first time an image e
 Now let's create a simple scatter plot with 100 random points of variying color and size.
 
 ```python
-import plotly.graph_objs as go
-import plotly.io as pio
+import plotly.graph_objects as go
 
-import os
 import numpy as np
-```
 
-We'll configure the notebook for use in [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode
-
-```python
-init_notebook_mode(connected=True)
-```
-
-```python
+# Generate scatter plot data
 N = 100
 x = np.random.rand(N)
 y = np.random.rand(N)
 colors = np.random.rand(N)
-sz = np.random.rand(N)*30
+sz = np.random.rand(N) * 30
 
+# Build and display figure
 fig = go.Figure()
-fig.add_scatter(x=x,
-                y=y,
-                mode='markers',
-                marker={'size': sz,
-                        'color': colors,
-                        'opacity': 0.6,
-                        'colorscale': 'Viridis'
-                       });
-iplot(fig)
+fig.add_trace(go.Scatter(
+    x=x,
+    y=y,
+    mode="markers",
+    marker={"size": sz,
+            "color": colors,
+            "opacity": 0.6,
+            "colorscale": "Viridis"
+            }
+))
+
+fig.show()
 ```
 
 ### config
 We can use the `plotly.io.orca.config` object to view the current orca configuration settings.
 
 ```python
+import plotly.io as pio
 pio.orca.config
 ```
 
@@ -98,6 +89,7 @@ pio.orca.config
 We can use the `plotly.io.orca.status` object to see the current status of the orca server
 
 ```python
+import plotly.io as pio
 pio.orca.status
 ```
 
@@ -107,14 +99,16 @@ Let's export this figure as an SVG image, and record the runtime.
 
 ```python
 %%time
-img_bytes = pio.to_image(fig, format='svg')
+import plotly.io as pio
 from IPython.display import SVG, display
+img_bytes = pio.to_image(fig, format="svg")
 display(SVG(img_bytes))
 ```
 
 By checking the `status` object again, we see that the orca server is now running
 
 ```python
+import plotly.io as pio
 pio.orca.status
 ```
 
@@ -122,7 +116,9 @@ Let's perform this same export operation again, now that the server is already r
 
 ```python
 %%time
-img_bytes = pio.to_image(fig, format='svg')
+import plotly.io as pio
+from IPython.display import SVG, display
+img_bytes = pio.to_image(fig, format="svg")
 display(SVG(img_bytes))
 ```
 
@@ -135,16 +131,19 @@ By default, the orca server will continue to run until the main Python process e
 Regardless of how the server is shut down, it will start back up automatically the next time an image export operation is performed.
 
 ```python
+import plotly.io as pio
 pio.orca.shutdown_server()
 pio.orca.status
 ```
 
 ```python
-img_bytes = pio.to_image(fig, format='svg')
+import plotly.io as pio
+img_bytes = pio.to_image(fig, format="svg")
 display(SVG(img_bytes))
 ```
 
 ```python
+import plotly.io as pio
 pio.orca.status
 ```
 
@@ -202,35 +201,12 @@ In addition to the `executable` property, the `plotly.io.orca.config` object can
  - **`default_width`**: The default pixel width to use on image export.
  - **`default_height`**: The default pixel height to use on image export.
  - **`default_scale`**: The default image scale facor applied on image export.
- - **`default_format`**: The default image format used on export. One of `'png'`, `'jpeg'`, `'webp'`, `'svg'`, `'pdf'`, or `'eps'`.
+ - **`default_format`**: The default image format used on export. One of `"png"`, `"jpeg"`, `"webp"`, `"svg"`, `"pdf"`, or `"eps"`.
  - **`mathjax`**: Location of the MathJax bundle needed to render LaTeX characters. Defaults to a CDN location. If fully offline export is required, set this to a local MathJax bundle.
  - **`topojson`**: Location of the topojson files needed to render choropleth traces. Defaults to a CDN location. If fully offline export is required, set this to a local directory containing the [Plotly.js topojson files](https://github.com/plotly/plotly.js/tree/master/dist/topojson).
  - **`mapbox_access_token`**: Mapbox access token required to render `scattermapbox` traces.
+ - **`use_xvfb`**: Whether to call orca using [Xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml) on Linux. Xvfb is needed for orca to work in a Linux environment if an X11 display server is not available.  By default, plotly.py will automatically use Xvfb if it is installed, and no active X11 display server is detected.  This can be set to `True` to force the use of Xvfb, or it can be set to `False` to disable the use of Xvfb.
 
 
 ### Saving Configuration Settings
 Configuration options can optionally be saved to the `~/.plotly/` directory by calling the `plotly.io.config.save()` method.  Saved setting will be automatically loaded at the start of future sessions.
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'orca-management.ipynb', 'python/orca-management/', 'Orca Management | plotly',
-    'This section covers the low-level details of how plotly.py uses orca to perform static image generation.',
-    title = 'Orca Management | Plotly',
-    name = 'Orca Management',
-    thumbnail='thumbnail/orca-management.png',
-    language='python',
-    uses_plotly_offline=True,
-    has_thumbnail='true', display_as='file_settings', order=1.5,
-    ipynb='~notebook_demo/253')
-```
-
-```python
-
-```

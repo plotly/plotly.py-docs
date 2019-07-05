@@ -6,13 +6,23 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.1.6
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.7.3
   plotly:
-    description: Installation and Initialization Steps for Using Plotly in Python.
+    description: Getting Started with Plotly for Python.
     has_thumbnail: false
     ipynb: ~notebook_demo/123/installation
     language: python
@@ -20,306 +30,209 @@ jupyter:
     name: Getting Started with Plotly for Python
     page_type: u-guide
     permalink: python/getting-started/
-    thumbnail: /images/static-image
     title: Getting Started with Plotly for Python | plotly
+    v4upgrade: true
 ---
 
-### Installation
+## Overview
+The plotly Python library ([plotly.py](https://plot.ly/python/)) is an interactive, [open-source](https://github.com/plotly/plotly.py) plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic, scientific, and 3-dimensional use-cases.
 
+Built on top of the Plotly JavaScript library ([plotly.js](https://plot.ly/javascript/)), plotly.py enables Python users to create beautiful interactive web-based visualizations that can be displayed in Jupyter notebooks, saved to standalone HTML files, or served as part of pure Python-built web applications using Dash.
 
-To install Plotly's python package, use the package manager **pip** inside your terminal.<br>
-If you don't have **pip** installed on your machine, [click here](https://pip.pypa.io/en/latest/installing.html) for pip's installation instructions.
-<br>
-<br>
-`$ pip install plotly`
-<br>or
-<br>`$ sudo pip install plotly`
-<br>
-<br>
-Plotly's Python package is [updated frequently](https://github.com/plotly/plotly.py/blob/master/CHANGELOG.md)! To upgrade, run:
-<br>
-<br>
-`$ pip install plotly --upgrade`
+Thanks to deep integration with the [orca](https://github.com/plotly/orca) image export utility, plotly.py also provides great support for non-web contexts including desktop editors (e.g. QtConsole, Spyder, PyCharm) and static document publishing (e.g. exporting notebooks to PDF with high-quality vector images).
 
+## Installation
+plotly.py may be installed using pip...
+```
+$ pip install plotly==4.0.0
+```
 
-### Initialization for Online Plotting
-Plotly provides a web-service for hosting graphs! Create a [free account](https://plot.ly/api_signup) to get started. Graphs are saved inside your online Plotly account and you control the privacy. Public hosting is free, for private hosting, check out our [paid plans](https://plot.ly/products/cloud/).
-<br>
-<br>
-After installing the Plotly package, you're ready to fire up python:
-<br>
-<br>
-`$ python`
-<br>
-<br>
-and set your credentials:
+or conda.
+```
+$ conda install -c plotly plotly=4.0.0
+```
+
+This package contains everything you need to write figures to standalone HTML files.
+
+> Note: **No internet connection, account, or payment is required to use plotly.py.** Prior to version 4, this library could operate in either an "online" or "offline" mode. The documentation tended to emphasize the online mode, where graphs get published to the Chart Studio web service.  In version 4, all "online" functionality was removed from the `plotly` package and is now available as the separate, optional, `chart-studio` package (See below).  **plotly.py version 4 is "offline" only, and does not include any functionality for uploading figures or data to cloud services.**
 
 ```python
-import plotly
-plotly.tools.set_credentials_file(username='DemoAccount', api_key='lr1c37zw81')
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Bar(y=[2, 3, 1]))
+fig.write_html('first_figure.html', auto_open=True)
 ```
 
-<!-- #region -->
-You'll need to replace **'DemoAccount'** and **'lr1c37zw81'** with *your* Plotly username and [API key](https://plot.ly/settings/api).<br>
-Find your API key [here](https://plot.ly/settings/api).
-<br>
-<br>
-The initialization step places a special **.plotly/.credentials** file in your home directory. Your **~/.plotly/.credentials** file should look something like this:
-<br>
+### Jupyter Notebook Support
+For use in the classic [Jupyter Notebook](https://jupyter.org/), install the `notebook` and `ipywidgets`
+packages using pip...
+
 ```
-{
-    "username": "DemoAccount",
-    "stream_ids": ["ylosqsyet5", "h2ct8btk1s", "oxz4fm883b"],
-    "api_key": "lr1c37zw81"
-}
+$ pip install "notebook>=5.3" "ipywidgets>=7.2"
 ```
-<!-- #endregion -->
 
-### Online Plot Privacy
+or conda.
 
-Plot can be set to three different type of privacies: public, private or secret.
-- **public**: Anyone can view this graph. It will appear in your profile and can appear in search engines. You do not need to be logged in to Plotly to view this chart.
-- **private**: Only you can view this plot. It will not appear in the Plotly feed, your profile, or search engines. You must be logged in to Plotly to view this graph. You can privately share this graph with other Plotly users in your online Plotly account and they will need to be logged in to view this plot.
-- **secret**: Anyone with this secret link can view this chart. It will not appear in the Plotly feed, your profile, or search engines. If it is embedded inside a webpage or an IPython notebook, anybody who is viewing that page will be able to view the graph. You do not need to be logged in to view this plot.
+```
+$ conda install "notebook>=5.3" "ipywidgets>=7.2"
+```
 
-By default all plots are set to **public**.  Users with free account have the permission to keep one private plot. If you need to save private plots, [upgrade to a pro account](https://plot.ly/plans). If you're a [Personal or Professional user](https://plot.ly/settings/subscription/?modal=true&utm_source=api-docs&utm_medium=support-oss) and would like the default setting for your plots to be private, you can edit your Plotly configuration:
+These packages contain everything you need to run a Jupyter notebook...
+
+```
+$ jupyter notebook
+```
+
+and display plotly figures inline using the notebook renderer...
+```python
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Bar(y=[2, 3, 1]))
+fig.show()
+```
+
+or using `FigureWidget` objects.
 
 ```python
-import plotly
-plotly.tools.set_config_file(world_readable=False,
-                             sharing='private')
+import plotly.graph_objects as go
+fig = go.FigureWidget(data=go.Bar(y=[2, 3, 1]))
+fig
 ```
 
-For more examples on privacy settings please visit [Python privacy documentation](https://plot.ly/python/privacy/)
+See [*Displaying Figures in Python*](https://plot.ly/python/renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](https://plot.ly/python/figurewidget/) for more information on using `FigureWidget`.
 
+### JupyterLab Support (Python 3.5+)
+For use in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), install the `jupyterlab` and `ipywidgets`
+packages using pip...
 
-### Special Instructions for [Chart Studio Enterprise](https://plot.ly/product/enterprise/) Users
+```
+$ pip install jupyterlab==1.0.0 "ipywidgets>=7.2"
+```
 
+or conda.
 
-Your API key for account on the public cloud will be different than the API key in Chart Studio Enterprise. Visit https://plotly.your-company.com/settings/api/ to find your Chart Studio Enterprise API key. Remember to replace "your-company.com" with the URL of your Chart Studio Enterprise server.
-If your company has a Chart Studio Enterprise server, change the Python API endpoint so that it points to your company's Plotly server instead of Plotly's cloud.
-<br>
-<br>
-In python, enter:
+```
+$ conda install jupyterlab=1.0.0 "ipywidgets>=7.2"
+```
+
+Then run the following commands to install the required JupyterLab extensions:
+```
+# Avoid "JavaScript heap out of memory" errors during extension installation
+# (OS X/Linux)
+export NODE_OPTIONS=--max-old-space-size=4096
+# (Windows)
+set NODE_OPTIONS=--max-old-space-size=4096
+
+# Jupyter widgets extension
+jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.38 --no-build
+
+# FigureWidget support and jupyterlab renderer support
+jupyter labextension install jupyterlab-plotly@1.0.0 --no-build
+
+# JupyterLab chart editor support (optional)
+jupyter labextension install jupyterlab-chart-editor@1.1 --no-build
+
+# Build extensions (must be done to activate extensions since --no-build is used above)
+jupyter lab build
+
+# Unset NODE_OPTIONS environment variable
+# (OS X/Linux)
+unset NODE_OPTIONS
+# (Windows)
+set NODE_OPTIONS=
+```
+
+These packages contain everything you need to run JupyterLab...
+
+```
+$ jupyter lab
+```
+
+and display plotly figures inline using the `plotly_mimetype` renderer...
+```python
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Bar(y=[2, 3, 1]))
+fig.show()
+```
+
+or using `FigureWidget` objects.
+```python
+import plotly.graph_objects as go
+fig = go.FigureWidget(data=go.Bar(y=[2, 3, 1]))
+fig
+```
+
+See [*Displaying Figures in Python*](https://plot.ly/python/renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](https://plot.ly/python/figurewidget/) for more information on using `FigureWidget`.
+
+### Static Image Export Support
+plotly.py supports static image export using the `to_image` and `write_image`
+functions in the `plotly.io` package. This functionality requires the
+installation of the plotly [orca](https://github.com/plotly/orca) command line utility and the
+[`psutil`](https://github.com/giampaolo/psutil) and [`requests`](https://2.python-requests.org/en/master/) Python packages.
+
+> Note: The `requests` library is used to communicate between the Python process and a local orca server process, it is not used to communicate with any external services.
+
+These dependencies can all be installed using conda:
+```
+$ conda install -c plotly plotly-orca psutil requests
+```
+
+Or, `psutil` and `requests` can be installed using pip...
+```
+$ pip install psutil requests
+```
+
+and orca can be installed according to the instructions in the [orca README](https://github.com/plotly/orca).
+
+These packages contain everything you need to save figures as static images.
 
 ```python
-import plotly
-plotly.tools.set_config_file(plotly_domain='https://plotly.your-company.com',
-                             plotly_streaming_domain='https://stream-plotly.your-company.com')
+import plotly.graph_objects as go
+fig = go.FigureWidget(data=go.Bar(y=[2, 3, 1]))
+fig.write_image('figure.png')
 ```
+See [*Static Image Export in Python*](https://plot.ly/python/static-image-export/) for more information on static image export.
 
-Make sure to replace **"your-company.com"** with the URL of *your* Chart Studio Enterprise server.
-
-
-Additionally, you can set your configuration so that you generate **private plots by default**. For more information on privacy settings see: https://plot.ly/python/privacy/<br>
-<br>
-In python, enter:
-
-```python
-import plotly
-plotly.tools.set_config_file(plotly_domain='https://plotly.your-company.com',
-                             plotly_streaming_domain='https://stream-plotly.your-company.com',
-                             world_readable=False,
-                             sharing='private')
-```
-
-### Plotly Using virtualenv
-Python's `virtualenv` allows us create multiple working Python environments which can each use different versions of packages. We can use `virtualenv` from the command line to create an environment using plotly.py version 3.3.0 and a separate one using plotly.py version 2.7.0. See [the virtualenv documentation](https://virtualenv.pypa.io/en/stable) for more info.
-
-**Install virtualenv globally**
-<br>`$ sudo pip install virtualenv`
-
-**Create your virtualenvs**
-<br>`$ mkdir ~/.virtualenvs`
-<br>`$ cd ~/.virtualenvs`
-<br>`$ python -m venv plotly2.7`
-<br>`$ python -m venv plotly3.3`
-
-**Activate the virtualenv.**
-You will see the name of your virtualenv in parenthesis next to the input promt.
-<br>`$ source ~/.virtualenvs/plotly2.7/bin/activate`
-<br>`(plotly2.7) $`
-
-**Install plotly locally to virtualenv** (note that we don't use sudo).
-<br>`(plotly2.7) $ pip install plotly==2.7`
-
-**Deactivate to exit**
-<br>
-`(plotly2.7) $ deactivate`
-<br>`$`
-
-
-### Jupyter Setup
-**Install Jupyter into a virtualenv**
-<br>`$ source ~/.virtualenvs/plotly3.3/bin/activate`
-<br>`(plotly3.3) $ pip install notebook`
-
-**Start the Jupyter kernel from a virtualenv**
-<br>`(plotly3.3) $ jupyter notebook`
-
-
-
-
-### Start Plotting Online
-When plotting online, the plot and data will be saved to your cloud account. There are two methods for plotting online: `py.plot()` and `py.iplot()`. Both options create a unique url for the plot and save it in your Plotly account.
-- Use `py.plot()` to return the unique url and optionally open the url.
-- Use `py.iplot()` when working in a Jupyter Notebook to display the plot in the notebook.
-
-Copy and paste one of the following examples to create your first hosted Plotly graph using the Plotly Python library:
-
-```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
-trace0 = go.Scatter(
-    x=[1, 2, 3, 4],
-    y=[10, 15, 13, 17]
-)
-trace1 = go.Scatter(
-    x=[1, 2, 3, 4],
-    y=[16, 5, 11, 9]
-)
-data = [trace0, trace1]
-
-py.plot(data, filename = 'basic-line', auto_open=True)
-```
-
-Checkout the docstrings for more information:
-
-```python
-import plotly.plotly as py
-help(py.plot)
-```
-
-```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
-trace0 = go.Scatter(
-    x=[1, 2, 3, 4],
-    y=[10, 15, 13, 17]
-)
-trace1 = go.Scatter(
-    x=[1, 2, 3, 4],
-    y=[16, 5, 11, 9]
-)
-data = [trace0, trace1]
-
-py.iplot(data, filename = 'basic-line')
-```
-
-See more examples in our [IPython notebook documentation](https://plot.ly/ipython-notebooks/) or check out the `py.iplot()` docstring for more information.
-
-```python
-import plotly.plotly as py
-help(py.iplot)
-```
-
-You can also create plotly graphs with **matplotlib** syntax. Learn more in our [matplotlib documentation](https://plot.ly/matplotlib/).
-
-
-### Initialization for Offline Plotting
-Plotly Offline allows you to create graphs offline and save them locally. There are also two methods for plotting offline: `plotly.offline.plot()` and `plotly.offline.iplot()`.
-- Use `plotly.offline.plot()` to create and standalone HTML that is saved locally and opened inside your web browser.
-- Use `plotly.offline.iplot()` when working offline in a Jupyter Notebook to display the plot in the notebook.
-
-Check your Plotly version, <b>version 1.9.4+ is needed for offline plotting:</b>
-
-```python
-import plotly
-plotly.__version__
-```
-
-Copy and paste one of the following examples to create your first offline Plotly graph using the Plotly Python library:
-
-```python
-import plotly
-import plotly.graph_objs as go
-
-plotly.offline.plot({
-    "data": [go.Scatter(x=[1, 2, 3, 4], y=[4, 3, 2, 1])],
-    "layout": go.Layout(title="hello world")
-}, auto_open=True)
-```
-
-Learn more by calling `help()`:
-
-```python
-import plotly
-help(plotly.offline.plot)
-```
-
-When using `plotly.offline.iplot` to plot offline in Jupyter Notebooks, there is an additional initialization step of running: `plotly.offline.init_notebook_mode()` at the start of each notebook session. <br>See the example below:
-
-```python
-import plotly
-import plotly.graph_objs as go
-
-plotly.offline.init_notebook_mode(connected=True)
-
-plotly.offline.iplot({
-    "data": [go.Scatter(x=[1, 2, 3, 4], y=[4, 3, 2, 1])],
-    "layout": go.Layout(title="hello world")
-})
-```
-
-```python
-import plotly
-help(plotly.offline.iplot)
-```
-
-For more examples on plotting offline with Plotly in python please visit our [offline documentation](https://plot.ly/python/offline/).
-
-
-### Using Plotly with Pandas
-
-To use Plotly with Pandas first `$ pip install pandas` and then import pandas in your code like in the example below.
-
-```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-import pandas as pd
-
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
-
-fig = {
-    'data': [
-          {
-          'x': df.gdpPercap,
-            'y': df.lifeExp,
-            'text': df.country,
-            'mode': 'markers',
-            'name': '2007'},
-    ],
-    'layout': {
-        'xaxis': {'title': 'GDP per Capita', 'type': 'log'},
-        'yaxis': {'title': "Life Expectancy"}
-    }
-}
-
-py.iplot(fig, filename='pandas-multiple-scatter')
-```
-
-### [MORE EXAMPLES](https://plot.ly/python/)
-Check out more examples and tutorials for using Plotly in python [here](https://plot.ly/python)!
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-#!pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'getting-started.ipynb', 'python/getting-started/', 'Getting Started Plotly for Python',
-    'Installation and Initialization Steps for Using Plotly in Python.',
-    title = 'Getting Started with Plotly for Python | plotly',
-    name = 'Getting Started with Plotly for Python',
-    language='python', layout='getstart', has_thumbnail='false',
-    ipynb= '~notebook_demo/123/installation', uses_plotly_offline=True)
-```
-
-```python
+### Extended Geo Support
+Some plotly.py features rely on fairly large geographic shape files. The county
+choropleth figure factory is one such example. These shape files are distributed as a
+separate `plotly-geo` package.  This package can be installed using pip...
 
 ```
+$ pip install plotly-geo==1.0.0
+```
+
+or conda.
+```
+$ conda install -c plotly plotly-geo=1.0.0
+```
+
+See [*USA County Choropleth Maps in Python*](https://plot.ly/python/county-choropleth/) for more information on the county choropleth figure factory.
+
+### Chart Studio Support
+The `chart-studio` package can be used to upload plotly figures to Plotly's Chart
+Studio Cloud or On-Prem services.  This package can be installed using pip...
+
+```
+$ pip install chart-studio==1.0.0
+```
+
+or conda.
+```
+$ conda install -c plotly chart-studio=1.0.0
+```
+
+> **Note:** This package is optional, and if it is not installed it is not possible for figures to be uploaded to the Chart Studio cloud service.
+
+## Where to next?
+Now that you have everything installed, you are ready to start reading and running examples of [basic charts](https://plot.ly/python/basic-charts/), [statistical charts](https://plot.ly/python/statistical-charts/), [scientific charts](https://plot.ly/python/scientific-charts/), [financial charts](https://plot.ly/python/#financial-charts), [geographic charts](https://plot.ly/python/maps/), and [3-dimensional charts](https://plot.ly/python/3d-charts/).
+
+For a complete overview of all of the ways that figures can be created and updated, see the [*Plotly User Guide for Python*](https://plot.ly/python/user-guide/).
+
+For information on configuring figure layout options (e.g. axes, titles, legends, etc) and styling figures (e.g. colors, fonts, annotations, images, shapes, etc.), see [*Plotly Fundamentals*](https://plot.ly/python/plotly-fundamentals/#fundamentals).
+
+For information on theming plotly figures, see [*Theming and templates with plotly for Python*](https://plot.ly/python/templates/).
+
+For information on all of the ways that plotly figures can be displayed, see [*Displaying plotly figures with plotly for Python*](https://plot.ly/python/renderers/).
+
+For the full searchable reference of every figure property, see the [*Python figure reference*](https://plot.ly/python/reference/).
+
+For information on using Python to build web applications containing plotly figures, see the [*Dash User Guide*](https://dash.plot.ly/).

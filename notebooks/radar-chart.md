@@ -8,9 +8,19 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.1.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make radar charts in Python with Plotly.
     display_as: scientific
@@ -24,105 +34,102 @@ jupyter:
     permalink: python/radar-chart/
     thumbnail: thumbnail/radar.gif
     title: Radar Charts | Plotly
+    v4upgrade: true
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
+A [Radar Chart](https://en.wikipedia.org/wiki/Radar_chart) (also known as a spider plot or star plot) displays multivariate data in the form of a two-dimensional chart of quantitative variables represented on axes originating from the center. The relative position and angle of the axes is typically uninformative.  It is equivalent to a [parallel coordinates plot](../parallel-coordinates-plot/) with the axes arranged radially.
 
+For a Radar Chart, use a [polar chart](../polar-chart/) with categorical angular variables, with `px.line_polar` for data available as a tidy pandas DataFrame, or with `go.Scatterpolar` in the general case. See more examples of [polar charts here](../polar-chart/).
 
-#### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
+#### Radar Chart with plotly express
+
+Use `line_close=True` for closed lines.
 
 ```python
-import plotly
-plotly.__version__
+import plotly.express as px
+import pandas as pd
+df = pd.DataFrame(dict(
+    r=[1, 5, 2, 2, 3],
+    theta=['processing cost','mechanical properties','chemical stability', 
+           'thermal stability', 'device integration']))
+fig = px.line_polar(df, r='r', theta='theta', line_close=True)
+fig.show()
 ```
 
-#### Basic Radar Chart
+For a filled line in a Radar Chart, update the figure created with `px.line_polar` with `fig.update_traces`.
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.express as px
+import pandas as pd
+df = pd.DataFrame(dict(
+    r=[1, 5, 2, 2, 3],
+    theta=['processing cost','mechanical properties','chemical stability', 
+           'thermal stability', 'device integration']))
+fig = px.line_polar(df, r='r', theta='theta', line_close=True)
+fig.update_traces(fill='toself')
+fig.show()
+```
 
-data = [go.Scatterpolar(
-  r = [39, 28, 8, 7, 28, 39],
-  theta = ['A','B','C', 'D', 'E', 'A'],
-  fill = 'toself'
-)]
+### Basic Radar Chart with go.Scatterpolar
 
-layout = go.Layout(
-  polar = dict(
-    radialaxis = dict(
-      visible = True,
-      range = [0, 50]
-    )
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(data=go.Scatterpolar(
+  r=[1, 5, 2, 2, 3],
+  theta=['processing cost','mechanical properties','chemical stability', 'thermal stability',
+           'device integration'],
+  fill='toself'
+))
+
+fig.update_layout(
+  polar=dict(
+    radialaxis=dict(
+      visible=True
+    ),
   ),
-  showlegend = False
+  showlegend=False
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename = "radar/basic")
+fig.show()
 ```
 
 #### Multiple Trace Radar Chart
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-data = [
-    go.Scatterpolar(
-      r = [39, 28, 8, 7, 28, 39],
-      theta = ['A','B','C', 'D', 'E', 'A'],
-      fill = 'toself',
-      name = 'Group A'
-    ),
-    go.Scatterpolar(
-      r = [1.5, 10, 39, 31, 15, 1.5],
-      theta = ['A','B','C', 'D', 'E', 'A'],
-      fill = 'toself',
-      name = 'Group B'
-    )
-]
+categories = ['processing cost','mechanical properties','chemical stability',
+              'thermal stability', 'device integration']
 
-layout = go.Layout(
-  polar = dict(
-    radialaxis = dict(
-      visible = True,
-      range = [0, 50]
-    )
-  ),
-  showlegend = False
+fig = go.Figure()
+
+fig.add_trace(go.Scatterpolar(
+      r=[1, 5, 2, 2, 3],
+      theta=categories,
+      fill='toself',
+      name='Product A'
+))
+fig.add_trace(go.Scatterpolar(
+      r=[4, 3, 2.5, 1, 2],
+      theta=categories,
+      fill='toself',
+      name='Product B'
+))
+
+fig.update_layout(
+  polar=dict(
+    radialaxis=dict(
+      visible=True,
+      range=[0, 5]
+    )),
+  showlegend=False
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename = "radar/multiple")
+fig.show()
 ```
 
 #### Reference
 See https://plot.ly/python/reference/#scatterpolar for more information and chart attribute options!
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'radar.ipynb', 'python/radar-chart/', 'Radar Charts',
-    'How to make radar charts in Python with Plotly.',
-    title = 'Radar Charts | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/radar.gif',
-    language='python',
-    display_as='scientific',
-    order=30,
-    ipynb='~notebook_demo/202')
-```
-
-```python
-
-```

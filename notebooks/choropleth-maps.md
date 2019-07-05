@@ -14,10 +14,27 @@ jupyter:
 
 A [Choropleth Map](https://en.wikipedia.org/wiki/Choropleth_map) is a heatmap using geographical boundaries. It is used to represent spatial variations of a quantity. See also the [index of other geographical charts](../maps/).
 
+Below we show how to create Choropleth Maps using either `px.choropleth` (one-liner function call for data as tidy pandas DataFrame) or for the more generic case `go.Choropleth`.
+
+### Choropleth Map with plotly.express
+
+```python
+import plotly.express as px
+
+gapminder = px.data.gapminder().query("year==2007")
+fig = px.choropleth(gapminder, locations="iso_alpha", 
+                    color="lifeExp", # lifeExp is a column of gapminder 
+                    hover_name="country", # column to add to hover information
+                    color_continuous_scale=px.colors.sequential.Plasma)
+fig.show()
+```
+
+### Choropleth Maps with go.Choropleth
+
 #### United States Choropleth Map
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 # Load data frame and tidy it.
 import pandas as pd
@@ -42,7 +59,7 @@ fig.show()
 #### Customize choropleth chart
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv')
@@ -81,6 +98,7 @@ fig.show()
 #### World Choropleth Map
 
 ```python
+import plotly.graph_objects as go
 import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv')
@@ -122,7 +140,7 @@ fig.show()
 #### Choropleth Inset Map
 
 ```python
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_ebola.csv')

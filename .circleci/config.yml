@@ -35,10 +35,12 @@ jobs:
             . venv/bin/activate
             npm install electron@1.8.4 orca
             pip install -r requirements.txt
+            cd venv/bin && ln -s ../../node_modules/orca/bin/orca
 
       - save_cache:
           paths:
             - ./venv
+            - ./node_modules
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:

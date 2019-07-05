@@ -30,7 +30,6 @@ jupyter:
     name: Getting Started with Plotly for Python
     page_type: u-guide
     permalink: python/getting-started/
-    thumbnail: /images/static-image
     title: Getting Started with Plotly for Python | plotly
     v4upgrade: true
 ---
@@ -41,7 +40,7 @@ The plotly Python library ([plotly.py](https://plot.ly/python/)) is an interacti
 Built on top of the Plotly JavaScript library ([plotly.js](https://plot.ly/javascript/)), plotly.py enables Python users to create beautiful interactive web-based visualizations that can be displayed in Jupyter notebooks, saved to standalone HTML files, or served as part of pure Python-built web applications using Dash.
 
 Thanks to deep integration with the [orca](https://github.com/plotly/orca) image export utility, plotly.py also provides great support for non-web contexts including desktop editors (e.g. QtConsole, Spyder, PyCharm) and static document publishing (e.g. exporting notebooks to PDF with high-quality vector images).
- 
+
 ## Installation
 plotly.py may be installed using pip...
 ```
@@ -55,7 +54,7 @@ $ conda install -c plotly plotly=4.0.0
 
 This package contains everything you need to write figures to standalone HTML files.
 
-> Note: **No internet connection, account, or payment is required to use plotly.py.** Prior to version 4, this library could operate in either an "online" or "offline" mode. The documentation tended to emphasize the online mode, where graphs get published to the Chart Studio web service.  In version 4, all "online" functionality was removed from the `plotly` package and is now available as the separate, optional, `chart-studio` package (See below).  **plotly.py version 4 is "offline" only, and does not include any functionality for uploading figures or data to cloud services.** 
+> Note: **No internet connection, account, or payment is required to use plotly.py.** Prior to version 4, this library could operate in either an "online" or "offline" mode. The documentation tended to emphasize the online mode, where graphs get published to the Chart Studio web service.  In version 4, all "online" functionality was removed from the `plotly` package and is now available as the separate, optional, `chart-studio` package (See below).  **plotly.py version 4 is "offline" only, and does not include any functionality for uploading figures or data to cloud services.**
 
 ```python
 import plotly.graph_objects as go
@@ -102,7 +101,7 @@ See [*Displaying Figures in Python*](https://plot.ly/python/renderers/) for more
 
 ### JupyterLab Support (Python 3.5+)
 For use in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), install the `jupyterlab` and `ipywidgets`
-packages using pip... 
+packages using pip...
 
 ```
 $ pip install jupyterlab==1.0.0 "ipywidgets>=7.2"
@@ -234,6 +233,6 @@ For information on theming plotly figures, see [*Theming and templates with plot
 
 For information on all of the ways that plotly figures can be displayed, see [*Displaying plotly figures with plotly for Python*](https://plot.ly/python/renderers/).
 
-For the full searchable reference of every figure property, see the [*Python figure reference*](https://plot.ly/python/reference/). 
+For the full searchable reference of every figure property, see the [*Python figure reference*](https://plot.ly/python/reference/).
 
 For information on using Python to build web applications containing plotly figures, see the [*Dash User Guide*](https://dash.plot.ly/).

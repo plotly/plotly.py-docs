@@ -5,10 +5,11 @@
 version: 2
 jobs:
   build:
+    resource_class: xlarge
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.1
+      - image: circleci/python:3.6.8-node
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -32,29 +33,24 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
+            npm install electron@1.8.4 orca
             pip install -r requirements.txt
+            echo 'export PATH="/home/circleci/repo/node_modules/.bin:$PATH"' >> $BASH_ENV
+            sudo apt-get install -y poppler-utils libxtst6 xvfb libgtk2.0-0 libgconf-2-4 libnss3 libasound2
 
       - save_cache:
           paths:
             - ./venv
+            - ./node_modules
           key: v1-dependencies-{{ checksum "requirements.txt" }}
-
-      - restore_cache:
-          keys:
-            - build-output
 
       - run:
           name: make html
           command: |
             . venv/bin/activate
-            rm build/failures/*
-            make -i
+            rm -f build/failures/*
+            make -kj8
 
       - store_artifacts:
-          path: ./build/failures
+          path: build/failures
           destination: failures
-
-      - save_cache:
-          paths:
-            - ./build
-          key: build-output

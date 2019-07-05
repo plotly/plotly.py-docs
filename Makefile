@@ -22,7 +22,7 @@ $(HTML_DIR)/2019-07-03-%.html: $(IPYNB_DIR)/%.ipynb
 	@mkdir -p $(HTML_DIR)
 	@mkdir -p $(FAIL_DIR)
 	@echo "[nbconvert] $<"
-	jupyter nbconvert $< --to html --template nb.tpl \
+	@jupyter nbconvert $< --to html --template nb.tpl \
 	  	--output-dir $(HTML_DIR) --output 2019-07-03-$*.html \
-	  	--execute
+	  	--execute > $(FAIL_DIR)/$* 2>&1  && rm -f $(FAIL_DIR)/$*
 

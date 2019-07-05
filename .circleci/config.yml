@@ -32,9 +32,7 @@ jobs:
           name: install dependencies
           command: |
             npm install electron@1.8.4 orca
-            ls -l node_modules
-            ls -l node_modules/orca
-            ls -l node_modules/orca/bin
+            cat node_modules/orca/bin/orca*
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt

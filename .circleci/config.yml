@@ -31,8 +31,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            npm install electron@1.8.4 orca
-            cat node_modules/orca/bin/orca*
+            wget https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O venv/orca
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt

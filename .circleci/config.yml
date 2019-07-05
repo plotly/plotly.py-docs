@@ -47,6 +47,7 @@ jobs:
           name: make html
           command: |
             . venv/bin/activate
+            rm -f ./build/failures/*
             make -i
 
       - store_artifacts:

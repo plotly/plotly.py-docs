@@ -36,7 +36,7 @@ jobs:
             npm install electron@1.8.4 orca
             pip install -r requirements.txt
             echo 'export PATH="/home/circleci/repo/node_modules/.bin:$PATH"' >> $BASH_ENV
-            apt-get install libxtst6
+            sudo apt-get install libxtst6
 
       - save_cache:
           paths:

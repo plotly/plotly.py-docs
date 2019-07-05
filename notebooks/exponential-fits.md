@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -69,16 +70,16 @@ yy = exponenial_func(xx, *popt)
 
 # Creating the dataset, and generating the plot
 trace1 = go.Scatter(
-                  x=x, 
-                  y=y, 
+                  x=x,
+                  y=y,
                   mode='markers',
                   marker=go.Marker(color='rgb(255, 127, 14)'),
                   name='Data'
                   )
 
 trace2 = go.Scatter(
-                  x=xx, 
-                  y=yy, 
+                  x=xx,
+                  y=yy,
                   mode='lines',
                   marker=go.Marker(color='rgb(31, 119, 180)'),
                   name='Fit'
@@ -117,7 +118,7 @@ publisher.publish(
     'Create a exponential fit / regression in Python and add a line of best fit to your chart.',
     title = 'Exponential Fit',
     name = 'Exponential Fit',
-    has_thumbnail='true', thumbnail='thumbnail/exponential_fit.jpg', 
+    has_thumbnail='true', thumbnail='thumbnail/exponential_fit.jpg',
     language='python', page_type='example_index',
     display_as='statistics', order=11,
     ipynb= '~notebook_demo/135')

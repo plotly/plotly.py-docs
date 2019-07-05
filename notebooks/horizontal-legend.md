@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -48,7 +49,7 @@ trace1 = go.Scatter(
                 color='rgba(152, 0, 0, .8)'
                 ))
 trace2 = go.Scatter(
-                x=np.random.randn(75), 
+                x=np.random.randn(75),
                 mode='markers',
                 name="Plot2",
                 marker=dict(
@@ -56,7 +57,7 @@ trace2 = go.Scatter(
                 color='rgba(0, 152, 0, .8)'
                 ))
 trace3 = go.Scatter(
-                x=np.random.randn(75), 
+                x=np.random.randn(75),
                 mode='markers',
                 name="Plot3",
                 marker=dict(
@@ -91,10 +92,10 @@ publisher.publish(
     'How to add images to charts as background images or logos.',
     title = 'Horizontal legend | plotly',
     name = 'Horizontal Legends',
-    has_thumbnail='false', thumbnail='thumbnail/your-tutorial-chart.jpg', 
+    has_thumbnail='false', thumbnail='thumbnail/your-tutorial-chart.jpg',
     language='python', page_type='example_index',
     display_as='layout_opt', order=12,
-    ipynb= '~notebook_demo/94')  
+    ipynb= '~notebook_demo/94')
 
 ```
 

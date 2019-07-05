@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -79,7 +80,7 @@ The up vector determines the up direction on the page. The default is $(x=0, y=0
 
 The center vector determines the translation about the center of the scene. By default, there is no translation: the center vector is $(x=0, y=0, z=0)$.
 
-The eye vector determines the camera view point about the origin. The default is $(x=1.25, y=1.25, z=1.25)$. 
+The eye vector determines the camera view point about the origin. The default is $(x=1.25, y=1.25, z=1.25)$.
 <!-- #endregion -->
 
 ```python deletable=true editable=true
@@ -211,8 +212,8 @@ publisher.publish(
     'How to Control the Camera in your 3D Charts in Python with Plotly.',
     title= 'Python 3D Camera Controls | plotly',
     name = '3D Camera Controls',
-    has_thumbnail='true', thumbnail='thumbnail/3d-camera-controls.jpg', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/3d-camera-controls.jpg',
+    language='python',
     display_as='layout_opts', order=18,
     ipynb= '~notebook_demo/78')
 ```

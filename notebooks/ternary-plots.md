@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -35,7 +36,7 @@ Note: Ternary Plots are available in version 1.9.10+
 Run pip install plotly --upgrade to update your Plotly version
 
 ```python
-import plotly 
+import plotly
 plotly.__version__
 ```
 
@@ -59,7 +60,7 @@ rawData = [
     {'journalist':20,'developer':10,'designer':70,'label':'point 11'},
 ];
 
-def makeAxis(title, tickangle): 
+def makeAxis(title, tickangle):
     return {
       'title': title,
       'titlefont': { 'size': 20 },
@@ -71,7 +72,7 @@ def makeAxis(title, tickangle):
       'showgrid': True
     }
 
-data = [{ 
+data = [{
     'type': 'scatterternary',
     'mode': 'markers',
     'a': [i for i in map(lambda x: x['journalist'], rawData)],
@@ -123,7 +124,7 @@ publisher.publish(
     name = 'Ternary Plots',
     thumbnail='thumbnail/ternary.jpg', language='python',
     page_type='example_index', has_thumbnail='true', display_as='scientific', order=9,
-    ipynb= '~notebook_demo/39')  
+    ipynb= '~notebook_demo/39')
 ```
 
 ```python

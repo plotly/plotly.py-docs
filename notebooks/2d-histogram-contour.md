@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -108,7 +109,7 @@ trace = [go.Histogram2dContour(
                 color = 'black'
             )
         )
-        
+
 )]
 
 py.iplot(trace, filename = "Histogram2dContour Styled")
@@ -212,11 +213,11 @@ publisher.publish(
     'histogram2dcontour.ipynb', 'python/2d-histogram-contour/', '2D Histogram Contour',
     'How to make 2D Histogram Contour plots in Python with Plotly.',
     title = '2D Histogram Contour | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/hist2dcontour.png', 
-    language='python', 
+    has_thumbnail='true', thumbnail='thumbnail/hist2dcontour.png',
+    language='python',
     # page_type='example_index', // note this is only if you want the tutorial to appear on the main page: plot.ly/python
-    display_as='statistical', 
-    order=30, 
+    display_as='statistical',
+    order=30,
     ipynb='~notebook_demo/199',
     uses_plotly_offline=False)
 ```

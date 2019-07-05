@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    notebook_metadata_filter: all
     text_representation:
       extension: .md
       format_name: markdown
@@ -72,7 +73,7 @@ publisher.publish(
     name = 'IPython vs Python',
     thumbnail='thumbnail/venn.jpg', language='python',
     has_thumbnail='true', display_as='file_settings', order=12,
-    ipynb='~notebook_demo/17') 
+    ipynb='~notebook_demo/17')
 ```
 
 ```python

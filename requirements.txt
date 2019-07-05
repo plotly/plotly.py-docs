@@ -1,11 +1,10 @@
 plotly==4.0.0a9
 jupytext==1.1.7
-nbconvert==5.5.0
-jupyter_client
+jupyter
+notebook
 pandas>=0.20.0
 statsmodels>=0.9.0
 scipy>=0.18
 patsy>=0.5
 numpy>=1.11
-ipykernel
 plotly-geo

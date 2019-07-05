@@ -31,7 +31,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            wget https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O venv/orca
+            wget https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O venv/bin/orca
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt

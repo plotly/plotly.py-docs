@@ -41,7 +41,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - build-output
+            - build-output-
 
       - run:
           name: make html
@@ -49,7 +49,8 @@ jobs:
             . venv/bin/activate
             rm -f build/failures/*
             make -i
-            ls -al
+            ls -al build/failures
+            ls -al build/html
 
       - store_artifacts:
           path: build/failures
@@ -58,4 +59,4 @@ jobs:
       - save_cache:
           paths:
             - ./build
-          key: build-output
+          key: build-output-{{ .Revision }}

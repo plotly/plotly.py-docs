@@ -50,7 +50,6 @@ jobs:
             rm -f build/failures/*
             make -i
             ls -al build/failures
-            ls -al build/html
 
       - store_artifacts:
           path: build/failures

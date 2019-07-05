@@ -22,12 +22,11 @@ $(HTML_DIR)/2019-07-03-%.html: $(IPYNB_DIR)/%.ipynb
 	@mkdir -p $(HTML_DIR)
 	@mkdir -p $(FAIL_DIR)
 	@echo "[nbconvert] $<"
-	@touch $@ && grep -q `shasum $<` $@ || ( \
+	@touch $@ && grep -q `shasum $<` $@ || \
 		jupyter nbconvert $< --to html --template nb.tpl \
 	  	--output-dir $(HTML_DIR) --output 2019-07-03-$*.html \
 	  	--execute > $(FAIL_DIR)/$* 2>&1  \
 		&& rm -f $(FAIL_DIR)/$* \
 		&& echo "" >> $@ \
-		&& echo \<\!-- `shasum $<` --\> >> $@ \
-	)
+		&& echo \<\!-- `shasum $<` --\> >> $@
 

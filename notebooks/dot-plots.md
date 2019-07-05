@@ -41,6 +41,32 @@ jupyter:
 
 Dot plots (also known as [Cleveland dot plots](https://en.wikipedia.org/wiki/Dot_plot_(statistics))) show changes between two (or more) points in time or between two (or more) conditions. Compared to a [bar chart](../bar-charts/), dot plots can be less cluttered and allow for an easier comparison between conditions. 
 
+For the same data, we show below how to create a dot plot using either `px.scatter` (for a tidy pandas DataFrame) or `go.Scatter`.
+
+```python
+import plotly.express as px
+import pandas as pd
+
+schools = ["Brown", "NYU", "Notre Dame", "Cornell", "Tufts", "Yale",
+           "Dartmouth", "Chicago", "Columbia", "Duke", "Georgetown",
+           "Princeton", "U.Penn", "Stanford", "MIT", "Harvard"]
+n_schools = len(schools)
+
+men_salary = [72, 67, 73, 80, 76, 79, 84, 78, 86, 93, 94, 90, 92, 96, 94, 112]
+women_salary = [92, 94, 100, 107, 112, 114, 114, 118, 119, 124, 131, 137, 141, 151, 152, 165]
+
+df = pd.DataFrame(dict(school=schools*2, salary=men_salary + women_salary,
+                       gender=["Men"]*n_schools + ["Women"]*n_schools))
+
+# Use column names of df for the different parameters x, y, color, ...
+fig = px.scatter(df, x="salary", y="school", color="gender",
+                 title="Gender Earnings Disparity",
+                 labels={"salary":"Annual Salary (in thousands)"} # customize axis label
+                )
+
+fig.show()
+```
+
 ```python
 import plotly.graph_objects as go
 

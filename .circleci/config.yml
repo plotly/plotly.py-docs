@@ -47,11 +47,12 @@ jobs:
           name: make html
           command: |
             . venv/bin/activate
-            rm -f ./build/failures/*
+            rm -f build/failures/*
             make -i
+            ls -al
 
       - store_artifacts:
-          path: ./build/failures
+          path: build/failures
           destination: failures
 
       - save_cache:

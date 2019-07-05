@@ -38,7 +38,35 @@ jupyter:
     v4upgrade: true
 ---
 
+### Geographical Scatter Plot with px.scatter_geo
+
+For data available as a tidy pandas DataFrame, use `px.scatter_geo` for a geographical scatter plot. The `size` argument is used to set the size of markers from a given column of the DataFrame.
+
+```python
+import plotly.express as px
+gapminder = px.data.gapminder().query("year == 2007")
+fig = px.scatter_geo(gapminder, locations="iso_alpha",
+                     size="pop", # size of markers, "pop" is one of the columns of gapminder
+                     )
+fig.show()
+```
+
+#### Customize geographical scatter plot
+
+```python
+import plotly.express as px
+gapminder = px.data.gapminder().query("year == 2007")
+fig = px.scatter_geo(gapminder, locations="iso_alpha", 
+                     color="continent", # which column to use to set the color of markers 
+                     hover_name="country", # column added to hover information
+                     size="pop", # size of markers
+                     projection="natural earth")
+fig.show()
+```
+
 ### U.S. Airports Map
+
+Here we show how to use `go.Scattergeo` from `plotly.graph_objects`.
 
 #### Simple U.S. Airports Map
 

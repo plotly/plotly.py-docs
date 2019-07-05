@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.6
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -34,6 +34,7 @@ jupyter:
     v4upgrade: true
 ---
 
+<!-- #region -->
 ## Overview
 The plotly Python library ([plotly.py](https://plot.ly/python/)) is an interactive, [open-source](https://github.com/plotly/plotly.py) plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic, scientific, and 3-dimensional use-cases.
 
@@ -43,18 +44,19 @@ Thanks to deep integration with the [orca](https://github.com/plotly/orca) image
 
 ## Installation
 plotly.py may be installed using pip...
+
 ```
 $ pip install plotly==4.0.0
 ```
-
 or conda.
+
 ```
 $ conda install -c plotly plotly=4.0.0
 ```
-
 This package contains everything you need to write figures to standalone HTML files.
 
-> Note: **No internet connection, account, or payment is required to use plotly.py.** Prior to version 4, this library could operate in either an "online" or "offline" mode. The documentation tended to emphasize the online mode, where graphs get published to the Chart Studio web service.  In version 4, all "online" functionality was removed from the `plotly` package and is now available as the separate, optional, `chart-studio` package (See below).  **plotly.py version 4 is "offline" only, and does not include any functionality for uploading figures or data to cloud services.**
+> Note: **No internet connection, account, or payment is required to use plotly.py.** Prior to version 4, this library could operate in either an "online" or "offline" mode. The documentation tended to emphasize the online mode, where graphs get published to the Chart Studio web service.  In version 4, all "online" functionality was removed from the `plotly` package and is now available as the separate, optional, `chart-studio` package (See below).  **plotly.py version 4 is "offline" only, and does not include any functionality for uploading figures or data to cloud services.** 
+<!-- #endregion -->
 
 ```python
 import plotly.graph_objects as go
@@ -62,6 +64,7 @@ fig = go.Figure(data=go.Bar(y=[2, 3, 1]))
 fig.write_html('first_figure.html', auto_open=True)
 ```
 
+<!-- #region -->
 ### Jupyter Notebook Support
 For use in the classic [Jupyter Notebook](https://jupyter.org/), install the `notebook` and `ipywidgets`
 packages using pip...
@@ -83,6 +86,7 @@ $ jupyter notebook
 ```
 
 and display plotly figures inline using the notebook renderer...
+<!-- #endregion -->
 ```python
 import plotly.graph_objects as go
 fig = go.Figure(data=go.Bar(y=[2, 3, 1]))
@@ -97,6 +101,7 @@ fig = go.FigureWidget(data=go.Bar(y=[2, 3, 1]))
 fig
 ```
 
+<!-- #region -->
 See [*Displaying Figures in Python*](https://plot.ly/python/renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](https://plot.ly/python/figurewidget/) for more information on using `FigureWidget`.
 
 ### JupyterLab Support (Python 3.5+)
@@ -114,6 +119,7 @@ $ conda install jupyterlab=1.0.0 "ipywidgets>=7.2"
 ```
 
 Then run the following commands to install the required JupyterLab extensions:
+
 ```
 # Avoid "JavaScript heap out of memory" errors during extension installation
 # (OS X/Linux)
@@ -147,6 +153,7 @@ $ jupyter lab
 ```
 
 and display plotly figures inline using the `plotly_mimetype` renderer...
+<!-- #endregion -->
 ```python
 import plotly.graph_objects as go
 fig = go.Figure(data=go.Bar(y=[2, 3, 1]))
@@ -160,6 +167,7 @@ fig = go.FigureWidget(data=go.Bar(y=[2, 3, 1]))
 fig
 ```
 
+<!-- #region -->
 See [*Displaying Figures in Python*](https://plot.ly/python/renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](https://plot.ly/python/figurewidget/) for more information on using `FigureWidget`.
 
 ### Static Image Export Support
@@ -171,11 +179,13 @@ installation of the plotly [orca](https://github.com/plotly/orca) command line u
 > Note: The `requests` library is used to communicate between the Python process and a local orca server process, it is not used to communicate with any external services.
 
 These dependencies can all be installed using conda:
+
 ```
 $ conda install -c plotly plotly-orca psutil requests
 ```
 
 Or, `psutil` and `requests` can be installed using pip...
+
 ```
 $ pip install psutil requests
 ```
@@ -183,12 +193,14 @@ $ pip install psutil requests
 and orca can be installed according to the instructions in the [orca README](https://github.com/plotly/orca).
 
 These packages contain everything you need to save figures as static images.
+<!-- #endregion -->
 
 ```python
 import plotly.graph_objects as go
 fig = go.FigureWidget(data=go.Bar(y=[2, 3, 1]))
 fig.write_image('figure.png')
 ```
+<!-- #region -->
 See [*Static Image Export in Python*](https://plot.ly/python/static-image-export/) for more information on static image export.
 
 ### Extended Geo Support
@@ -201,6 +213,7 @@ $ pip install plotly-geo==1.0.0
 ```
 
 or conda.
+
 ```
 $ conda install -c plotly plotly-geo=1.0.0
 ```
@@ -216,6 +229,7 @@ $ pip install chart-studio==1.0.0
 ```
 
 or conda.
+
 ```
 $ conda install -c plotly chart-studio=1.0.0
 ```
@@ -236,3 +250,4 @@ For information on all of the ways that plotly figures can be displayed, see [*D
 For the full searchable reference of every figure property, see the [*Python figure reference*](https://plot.ly/python/reference/).
 
 For information on using Python to build web applications containing plotly figures, see the [*Dash User Guide*](https://dash.plot.ly/).
+<!-- #endregion -->

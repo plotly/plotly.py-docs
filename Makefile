@@ -16,13 +16,14 @@ all: $(HTML_FILES)
 $(IPYNB_DIR)/%.ipynb: $(MD_DIR)/%.md
 	@mkdir -p $(IPYNB_DIR)
 	@echo "[jupytext]  $<"
-	@jupytext $< --to notebook --quiet --output $@
+	jupytext $< --to notebook --quiet --output $@
 
 $(HTML_DIR)/2019-07-03-%.html: $(IPYNB_DIR)/%.ipynb
 	@mkdir -p $(HTML_DIR)
 	@mkdir -p $(FAIL_DIR)
 	@echo "[nbconvert] $<"
-	@touch $@ && grep -q `shasum $<` $@ || ( \
+	shasum $<
+	touch $@ && grep -q `shasum $<` $@ || ( \
 		jupyter nbconvert $< --to html --template nb.tpl \
 	  	--output-dir $(HTML_DIR) --output 2019-07-03-$*.html \
 	  	--execute &> $(FAIL_DIR)/$* \

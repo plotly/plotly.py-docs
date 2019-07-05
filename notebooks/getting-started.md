@@ -109,13 +109,13 @@ For use in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), install t
 packages using pip...
 
 ```
-$ pip install jupyterlab==1.0.0 "ipywidgets>=7.2"
+$ pip install jupyterlab==1.0.0 "ipywidgets>=7.5"
 ```
 
 or conda.
 
 ```
-$ conda install jupyterlab=1.0.0 "ipywidgets>=7.2"
+$ conda install jupyterlab=1.0.0 "ipywidgets>=7.5"
 ```
 
 Then run the following commands to install the required JupyterLab extensions:
@@ -128,13 +128,16 @@ export NODE_OPTIONS=--max-old-space-size=4096
 set NODE_OPTIONS=--max-old-space-size=4096
 
 # Jupyter widgets extension
-jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.38 --no-build
+jupyter labextension install @jupyter-widgets/jupyterlab-manager@1.0.0 --no-build
 
-# FigureWidget support and jupyterlab renderer support
+# jupyterlab renderer support
 jupyter labextension install jupyterlab-plotly@1.0.0 --no-build
 
+# FigureWidget support
+jupyter labextension install plotlywidget@1.0.0 --no-build
+
 # JupyterLab chart editor support (optional)
-jupyter labextension install jupyterlab-chart-editor@1.1 --no-build
+jupyter labextension install jupyterlab-chart-editor@1.2 --no-build
 
 # Build extensions (must be done to activate extensions since --no-build is used above)
 jupyter lab build

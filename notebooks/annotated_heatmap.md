@@ -8,9 +8,19 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.1.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make Annotated Heatmaps in Python with Plotly.
     display_as: scientific
@@ -24,29 +34,14 @@ jupyter:
     permalink: python/annotated_heatmap/
     thumbnail: thumbnail/ann_heat.jpg
     title: Python Annotated Heatmaps | plotly
+    v4upgrade: true
 ---
 
-<!-- #region {"deletable": true, "editable": true} -->
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
+#### Simple Annotated Heatmap
 
-#### Version Check
-Plotly's python package is updated frequently. To upgrade, run `pip install plotly --upgrade`.
-<!-- #endregion -->
+For more examples with Heatmaps, see [this page](../heatmaps/).
 
 ```python
-import plotly
-plotly.__version__
-```
-
-<!-- #region {"deletable": true, "editable": true} -->
-#### Simple Annotated Heatmap
-<!-- #endregion -->
-
-```python deletable=true editable=true
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 z = [[.1, .3, .5, .7, .9],
@@ -56,15 +51,12 @@ z = [[.1, .3, .5, .7, .9],
      [.3, .4, .5, .7, 1]]
 
 fig = ff.create_annotated_heatmap(z)
-py.iplot(fig, filename='annotated_heatmap')
+fig.show()
 ```
 
-<!-- #region {"deletable": true, "editable": true} -->
 #### Defined Colorscale
-<!-- #endregion -->
 
-```python deletable=true editable=true
-import plotly.plotly as py
+```python
 import plotly.figure_factory as ff
 
 z = [[.1, .3, .5, .7],
@@ -73,15 +65,12 @@ z = [[.1, .3, .5, .7],
      [.9, .7, .5, .3]]
 
 fig = ff.create_annotated_heatmap(z, colorscale='Viridis')
-py.iplot(fig, filename='annotated_heatmap_color')
+fig.show()
 ```
 
-<!-- #region {"deletable": true, "editable": true} -->
 #### Custom Colorscale
-<!-- #endregion -->
 
-```python deletable=true editable=true
-import plotly.plotly as py
+```python
 import plotly.figure_factory as ff
 
 z = [[.1, .3, .5, .7],
@@ -89,19 +78,16 @@ z = [[.1, .3, .5, .7],
      [.6, .4, .2, 0.0],
      [.9, .7, .5, .3]]
 
-colorscale = [[0, '#66475e'], [1, '#ecbfe0']]
-font_colors = ['#efecee', '#3c3636']
+colorscale = [[0, 'navy'], [1, 'plum']]
+font_colors = ['white', 'black']
 fig = ff.create_annotated_heatmap(z, colorscale=colorscale, font_colors=font_colors)
-py.iplot(fig, filename='annotated_heatmap_custom_color')
+fig.show()
 ```
 
-<!-- #region {"deletable": true, "editable": true} -->
 #### Custom Text and X & Y Labels
 set `annotation_text` to a matrix with the same dimmensions as `z`
-<!-- #endregion -->
 
-```python deletable=true editable=true
-import plotly.plotly as py
+```python
 import plotly.figure_factory as ff
 
 z = [[.1, .3, .5],
@@ -116,35 +102,31 @@ z_text = [['Win', 'Lose', 'Win'],
           ['Win', 'Win', 'Lose']]
 
 fig = ff.create_annotated_heatmap(z, x=x, y=y, annotation_text=z_text, colorscale='Viridis')
-py.iplot(fig, filename='annotated_heatmap_text')
+fig.show()
 ```
 
-<!-- #region {"deletable": true, "editable": true} -->
 #### Annotated Heatmap with numpy
-<!-- #endregion -->
 
-```python deletable=true editable=true
-import plotly.plotly as py
+```python
 import plotly.figure_factory as ff
 import numpy as np
 
 z = np.random.randn(20, 20)
 z_text = np.around(z, decimals=2) # Only show rounded value (full value on hover)
 
-fig = ff.create_annotated_heatmap(z, annotation_text=z_text, colorscale='Greys', hoverinfo='z')
+fig = ff.create_annotated_heatmap(z, annotation_text=z_text, colorscale='Greys', 
+                                  hoverinfo='z')
 
 # Make text size smaller
 for i in range(len(fig.layout.annotations)):
     fig.layout.annotations[i].font.size = 8
 
-py.iplot(fig, filename='annotated_heatmap_numpy')
+fig.show()
 ```
 
-<!-- #region {"deletable": true, "editable": true} -->
 #### Custom Hovertext
-<!-- #endregion -->
 
-```python deletable=true editable=true
+```python
 # Add Periodic Table Data
 symbol = [['H', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'He'],
          ['Li', 'Be', '', '', '', '', '', '', '', '', '', '', 'B', 'C', 'N', 'O', 'F', 'Ne'],
@@ -199,9 +181,10 @@ z = [[.8, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, 1.],
      [.2, .2, .2, .4, .4, .4, .6, .6, .6, .8, .8, .8, 1., 1., 1., .0, .0, .0]]
 
 # Display element name and atomic mass on hover
-hover=range(len(symbol))
+hover=[]
 for x in range(len(symbol)):
-    hover[x] = [i + '<br>' + 'Atomic Mass: ' + str(j) for i, j in zip(element[x], atomic_mass[x])]
+    hover.append([i + '<br>' + 'Atomic Mass: ' + str(j) 
+                      for i, j in zip(element[x], atomic_mass[x])])
 
 # Invert Matrices
 symbol = symbol[::-1]
@@ -214,40 +197,15 @@ colorscale=[[0.0, 'rgb(255,255,255)'], [.2, 'rgb(255, 255, 153)'],
             [.8, 'rgb(240, 179, 255)'],[1.0, 'rgb(255, 77, 148)']]
 
 # Make Annotated Heatmap
-pt = ff.create_annotated_heatmap(z, annotation_text=symbol, text=hover,
+fig = ff.create_annotated_heatmap(z, annotation_text=symbol, text=hover,
                                  colorscale=colorscale, font_colors=['black'], hoverinfo='text')
-pt.layout.title = 'Periodic Table'
-
-py.iplot(pt, filename='periodic_table')
+fig.update_layout(title_text='Periodic Table')
+fig.show()
 ```
 
-<!-- #region {"deletable": true, "editable": true} -->
 #### Reference
 For more info on Plotly heatmaps, see: https://plot.ly/python/reference/#heatmap.<br> For more info on using colorscales with Plotly see: https://plot.ly/python/heatmap-and-contour-colorscales/ <br>For more info on annotated_heatmaps, see:
-<!-- #endregion -->
 
-```python deletable=true editable=true
-help(FF.create_annotated_heatmap)
-```
-
-```python deletable=true editable=true
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'annotated_heatmap.ipynb', 'python/annotated_heatmap/', 'Python Annotated Heatmaps | plotly',
-    'How to make Annotated Heatmaps in Python with Plotly.',
-    title = 'Python Annotated Heatmaps | plotly',
-    name = 'Annotated Heatmaps',
-    thumbnail='thumbnail/ann_heat.jpg', language='python',
-    has_thumbnail='true', display_as='scientific', order=4,
-    ipynb= '~notebook_demo/35')
-```
-
-```python deletable=true editable=true
-
+```python
+help(ff.create_annotated_heatmap)
 ```

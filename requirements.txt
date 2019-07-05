@@ -14,3 +14,5 @@ pyshp
 shapely
 psutil
 requests
+networkx
+squarify

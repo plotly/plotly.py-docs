@@ -31,11 +31,11 @@ jobs:
       - run:
           name: install dependencies
           command: |
+            echo 'export PATH="/home/circleci/repo/node_modules/orca/bin:$PATH"' >> $BASH_ENV
+            npm install electron@1.8.4 orca
             python3 -m venv venv
             . venv/bin/activate
-            npm install electron@1.8.4 orca
             pip install -r requirements.txt
-            cd venv/bin && ln -s ../../node_modules/orca/bin/orca
 
       - save_cache:
           paths:

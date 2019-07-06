@@ -217,4 +217,3 @@ fig.show()
 See https://plot.ly/python/reference/#scatter-line
 and https://plot.ly/python/reference/#scatter-fill 
 for more information and attribute options!
-

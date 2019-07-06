@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: user-guide
     name: IPython vs Python
-    order: 12
+    order: 41
     permalink: python/ipython-vs-python/
     thumbnail: thumbnail/venn.jpg
     title: IPython vs Python | plotly

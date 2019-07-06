@@ -13,7 +13,7 @@ jupyter:
     name: python3
   plotly:
     description: How to update your graphs in Python with the fileopt parameter.
-    display_as: file_settings
+    display_as: chart_studio
     has_thumbnail: true
     language: python
     layout: user-guide

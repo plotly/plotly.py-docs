@@ -32,7 +32,7 @@ jupyter:
     order: 0
     page_type: example_index
     permalink: python/figurewidget/
-    thumbnail: thumbnail/ipython_widgets.jpg
+    thumbnail: thumbnail/figurewidget-overview.gif
     title: Plotly FigureWidget Overview
     v4upgrade: true
 ---

@@ -276,4 +276,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-linescatterplot/code", wi
 
 ### Reference
 See https://plot.ly/python/reference/#scatter or https://plot.ly/python/reference/#scattergl for more information and chart attribute options!
-

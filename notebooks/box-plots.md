@@ -421,4 +421,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-boxplot/code", width="100
 
 #### Reference
 See https://plot.ly/python/reference/#box for more information and chart attribute options!
-

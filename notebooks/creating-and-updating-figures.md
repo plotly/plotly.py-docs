@@ -23,14 +23,15 @@ jupyter:
     version: 3.7.3
   plotly:
     description: Creating and Updating Figures from Python
-    has_thumbnail: false
+    display_as: file_settings
+    has_thumbnail: true
     language: python
     layout: user-guide
-    name: Plotly User Guide
-    page_type: u-guide
-    permalink: python/creating-updating-figures/
-    thumbnail: null
-    title: Creating and Updating Figures
+    name: Creating and Updating Figures
+    page_type: example_index
+    permalink: python/creating-and-updating-figures/
+    thumbnail: thumbnail/static-image-export.png
+    title: Creating and Updating Figures | plotly
     v4upgrade: true
 ---
 

@@ -23,10 +23,17 @@ jupyter:
     version: 3.7.3
   plotly:
     description: Version 4 migration guide
-    display_as: style_opt
+    v4upgrade: true
+    display_as: file_settings
+    has_thumbnail: true
     language: python
+    name: Version 4 Migration Guide
+    page_type: example_index
+    layout: user-guide
     permalink: python/v4-migration/
-    title: Version 4 Migration Guide | plotly
+    thumbnail: thumbnail/static-image-export.png
+    title: Displaying Figures | plotly
+    order: 1
 ---
 
 <!-- #region -->

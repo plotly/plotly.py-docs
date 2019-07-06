@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.6
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -29,6 +29,7 @@ jupyter:
     title: Version 4 Migration Guide | plotly
 ---
 
+<!-- #region -->
 This section contains guidance for migrating from plotly.py version 3 to version 4.
 
 ### Online features moved to chart-studio package.
@@ -46,7 +47,6 @@ of conda.
 $ conda install -c plotly chart-studio
 ```
 
-<!-- #region -->
 Then, update your Python import statements to import "online" functionality from the top-level `chart_studio` package, rather than the top-level `plotly` package.  For example. replace
 
 ```python

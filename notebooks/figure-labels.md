@@ -23,16 +23,15 @@ jupyter:
     version: 3.7.3
   plotly:
     description: How to set the title, legend-entries, and axis-titles in python.
-    display_as: layout_opt
-    has_thumbnail: false
+    display_as: file_settings
+    has_thumbnail: true
     ipynb: ~notebook_demo/271
     language: python
     layout: user-guide
     name: Setting the Title, Legend Entries, and Axis Titles
-    order: 0.5
-    page_type: example_index
+    order: 11
     permalink: python/figure-labels/
-    thumbnail: thumbnail/labels.jpg
+    thumbnail: thumbnail/figure-labels.png
     title: Setting the Title, Legend Entries, and Axis Titles in Python | Examples
       | Plotly
     v4upgrade: true

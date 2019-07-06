@@ -215,4 +215,3 @@ fig.show()
 
 #### Reference
 See https://plot.ly/python/reference/#scattergeo for more information and chart attribute options!
-

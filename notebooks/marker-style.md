@@ -23,14 +23,13 @@ jupyter:
     version: 3.6.5
   plotly:
     description: How to style markers in Python with Plotly.
-    display_as: style_opt
-    has_thumbnail: false
+    display_as: file_settings
+    has_thumbnail: true
     ipynb: ~notebook_demo/203
     language: python
     layout: user-guide
     name: Styling Markers
-    order: 8
-    page_type: example_index
+    order: 21
     permalink: python/marker-style/
     thumbnail: thumbnail/marker-style.gif
     title: Styling Markers | Plotly

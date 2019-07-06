@@ -428,4 +428,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-lineplot/code", width="10
 
 #### Reference
 See https://plot.ly/python/reference/#scatter for more information and chart attribute options!
-

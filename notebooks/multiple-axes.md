@@ -23,14 +23,13 @@ jupyter:
     version: 3.7.2
   plotly:
     description: How to make a graph with multiple axes in python.
-    display_as: multiple_axes
+    display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/270
     language: python
     layout: user-guide
     name: Multiple Axes
-    order: 1
-    page_type: example_index
+    order: 14
     permalink: python/multiple-axes/
     thumbnail: thumbnail/multiple-axes.jpg
     title: Python Mulitple Axes | Examples | Plotly

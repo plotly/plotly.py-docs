@@ -23,16 +23,16 @@ jupyter:
     version: 3.6.7
   plotly:
     description: How to format axes of 3d plots in Python with Plotly.
-    display_as: layout_opt
-    has_thumbnail: false
+    display_as: 3d_charts
+    has_thumbnail: true
     ipynb: ~notebook_demo/96
     language: python
     layout: user-guide
     name: 3D Axes
-    order: 1
+    order: 0.101
     page_type: example_index
     permalink: python/3d-axes/
-    thumbnail: thumbnail/your-tutorial-chart.jpg
+    thumbnail: thumbnail/3d-axes.png
     title: Format 3d Axes | plotly
     v4upgrade: true
 ---

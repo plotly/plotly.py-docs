@@ -20,6 +20,7 @@ jupyter:
     layout: user-guide
     name: Map Subplots
     order: 5
+    page_type: example_index
     permalink: python/map-subplots-and-small-multiples/
     thumbnail: thumbnail/map-subplots.jpg
     title: Python Map Subplots | plotly

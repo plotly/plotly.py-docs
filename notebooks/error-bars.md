@@ -217,4 +217,3 @@ fig.show()
 
 #### Reference
 See https://plot.ly/python/reference/#scatter for more information and chart attribute options!
-

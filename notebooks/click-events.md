@@ -32,7 +32,7 @@ jupyter:
     order: 24
     page_type: example_index
     permalink: python/click-events/
-    thumbnail: thumbnail/zoom.jpg
+    thumbnail: thumbnail/figurewidget-click-events.gif
     title: Click Events
     v4upgrade: true
 ---

@@ -353,4 +353,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-histogramplot/code", widt
 
 #### Reference
 See https://plot.ly/python/reference/#histogram for more information and chart attribute options!
-

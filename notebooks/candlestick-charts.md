@@ -164,4 +164,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-candlestickplot/code", wi
 
 #### Reference
 For more information on candlestick attributes, see: https://plot.ly/python/reference/#candlestick
-

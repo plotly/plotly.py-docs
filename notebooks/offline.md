@@ -13,14 +13,15 @@ jupyter:
     name: python3
   plotly:
     description: How to use Plotly offline inside IPython notebooks
-    has_thumbnail: false
+    display_as: chart_studio
+    has_thumbnail: true
     ipynb: ~notebook_demo/267
     language: python
     layout: user-guide
     name: Offline Plots in Plotly
     page_type: example_index
     permalink: python/offline/
-    thumbnail: /images/static-image
+    thumbnail: thumbnail/offline.png
     title: Plotly Offline for IPython Notebooks
 ---
 

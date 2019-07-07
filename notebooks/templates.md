@@ -24,6 +24,15 @@ jupyter:
   plotly:
     description: Theming and templates with plotly with Python
     v4upgrade: true
+    language: python
+    display_as: file_settings
+    has_thumbnail: true
+    name: Theming and templates
+    page_type: example_index
+    layout: user-guide
+    permalink: python/templates/
+    thumbnail: thumbnail/static-image-export.png
+    title: Theming and templates | plotly
 ---
 
 # Theming and templates
@@ -439,7 +448,7 @@ pio.templates.default = "draft"
 ...
 ```
 
-> Note: In order for the import to succeed, the `my_themes.py` file must be on Python's module search path. See https://docs.python.org/3/tutorial/modules.html#the-module-search-path for more information. 
+> Note: In order for the import to succeed, the `my_themes.py` file must be on Python's module search path. See https://docs.python.org/3/tutorial/modules.html#the-module-search-path for more information.
 <!-- #endregion -->
 
 ### Examining built-in themes

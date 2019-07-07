@@ -23,15 +23,15 @@ jupyter:
     version: 3.6.5
   plotly:
     description: How to manipulate the graph size in Python with Plotly.
-    display_as: layout_opt
+    display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/133
     language: python
     layout: user-guide
     name: Setting Graph Size
-    page_type: example_index
+    order: 2
     permalink: python/setting-graph-size/
-    thumbnail: thumbnail/sizing.jpg
+    thumbnail: thumbnail/sizing.png
     title: Setting Graph Size
     v4upgrade: true
 ---

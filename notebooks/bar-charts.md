@@ -348,4 +348,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-barplot/code", width="80%
 
 ### Reference
 See https://plot.ly/python/reference/#bar for more information and chart attribute options!
-

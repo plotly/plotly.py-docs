@@ -25,16 +25,15 @@ jupyter:
     description: How to adjust axes properties in python. Includes examples of linear
       and logarithmic axes, axes titles, styling and coloring axes and grid lines, and
       more.
-    display_as: layout_opt
+    display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/95
     language: python
     layout: user-guide
     name: Axes
-    order: 3
-    page_type: example_index
+    order: 12
     permalink: python/axes/
-    thumbnail: thumbnail/your-tutorial-chart.jpg
+    thumbnail: thumbnail/axes.png
     title: Axes | plotly
     v4upgrade: true
 ---

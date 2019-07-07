@@ -29,9 +29,8 @@ jupyter:
     layout: user-guide
     name: Jupyter Lab with FigureWidget
     order: 2
-    page_type: example_index
     permalink: python/jupyter-lab-tools/
-    thumbnail: thumbnail/ipython_widgets.jpg
+    thumbnail: thumbnail/figurewidget-jupyterlab.png
     title: Jupyter Lab with FigureWidget
     v4upgrade: true
 ---

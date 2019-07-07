@@ -23,16 +23,15 @@ jupyter:
     version: 3.7.3
   plotly:
     description: How to configure and style the legend in Plotly with Python.
-    display_as: layout_opt
-    has_thumbnail: false
+    display_as: file_settings
+    has_thumbnail: true
     ipynb: ~notebook_demo/14
     language: python
     layout: user-guide
     name: Legends
-    order: 14
-    page_type: example_index
+    order: 13
     permalink: python/legend/
-    thumbnail: thumbnail/legend.jpg
+    thumbnail: thumbnail/legends.gif
     title: Legends | plotly
     v4upgrade: true
 ---

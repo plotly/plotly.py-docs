@@ -20,9 +20,8 @@ jupyter:
     layout: user-guide
     name: DataShader Case Study
     order: 24
-    page_type: example_index
     permalink: python/change-callbacks-datashader/
-    thumbnail: thumbnail/ipython_widgets.jpg
+    thumbnail: thumbnail/figurewidget-datashader.gif
     title: DataShader Case Study
 ---
 

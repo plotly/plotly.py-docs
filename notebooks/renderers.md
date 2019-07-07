@@ -22,14 +22,23 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.7.3
   plotly:
-    description: Displaying plotly figures from Python
+    description: Displaying Figures from Python
     v4upgrade: true
+    display_as: file_settings
+    has_thumbnail: true
+    language: python
+    name: Displaying Figures
+    page_type: example_index
+    layout: user-guide
+    permalink: python/renderers/
+    thumbnail: thumbnail/static-image-export.png
+    title: Displaying Figures | plotly
 ---
 
 # Displaying plotly figures
 This section covers the many ways to display plotly figures from Python.  At the highest level, there are three general approaches:
 
- 1. Using the renderers framework in the context of a script or notebook 
+ 1. Using the renderers framework in the context of a script or notebook
  2. Using Dash in a web app context
  3. Using a `FigureWidget` in an ipywidgets context
 
@@ -105,7 +114,7 @@ In this section, we will describe the built-in renderers so that you can choose 
 Interactive renderers display figures using the Plotly.js JavaScript library and are fully interactive, supporting pan, zoom, hover tooltips, etc.
 
 #### `notebook`
-This renderer is intended for use in the classic [Jupyter Notebook](https://jupyter.org/install.html) (not JupyterLab).  The full Plotly.js JavaScript library bundle is added to the notebook the first time a figure is rendered, so this renderer will work without an internet connection.  
+This renderer is intended for use in the classic [Jupyter Notebook](https://jupyter.org/install.html) (not JupyterLab).  The full Plotly.js JavaScript library bundle is added to the notebook the first time a figure is rendered, so this renderer will work without an internet connection.
 
 This renderer is a good choice for notebooks that will be exported to HTML files (Either using [nbconvert](https://nbconvert.readthedocs.io/en/latest/) or the "Download as HTML" menu action) because the exported HTML files will work without an internet connection.
 
@@ -123,14 +132,14 @@ These are aliases for `notebook_connected` because this renderer is a good choic
 This is a custom renderer for use with [Google Colab](https://colab.research.google.com).
 
 #### `browser`
-This renderer will open a figure in a browser tab using the default web browser.  This renderer can only be used when the Python kernel is running locally on the same machine as the web browser, so it is not compatible with Jupyter Hub or online notebook services. 
+This renderer will open a figure in a browser tab using the default web browser.  This renderer can only be used when the Python kernel is running locally on the same machine as the web browser, so it is not compatible with Jupyter Hub or online notebook services.
 
 > Implementation Note 1: The "default browser" is the browser that is chosen by the Python [`webbrowser`](https://docs.python.org/3.7/library/webbrowser.html) module.
 
 > Implementation Note 2: The `browser` renderer works by setting up a single use local webserver on a local port. Since the webserver is shut down as soon as the figure is served to the browser, the figure will not be restored if the browser is refreshed.
 
 #### `firefox`, `chrome`, and `chromium`
-These renderers are the same as the `browser` renderer, but they force the use of a particular browser. 
+These renderers are the same as the `browser` renderer, but they force the use of a particular browser.
 
 #### `iframe` and `iframe_connected`
 These renderers write figures out as standalone HTML files and then display [`iframe`](https://www.w3schools.com/html/html_iframe.asp) elements that reference these HTML files. The `iframe` renderer will include the Plotly.js JavaScript bundle in each HTML file that is written, while the `iframe_connected` renderer includes only a reference to an online CDN location from which to load Plotly.js.  Consequently, the `iframe_connected` renderer outputs files that are smaller than the `iframe` renderer, but it requires an internet connection while the `iframe` renderer can operate offline.
@@ -146,7 +155,7 @@ The `plotly_mimetype` renderer creates a specification of the plotly figure (cal
 
 #### `jupyterlab`, `nteract`, and `vscode`
 These are aliases for `plotly_mimetype` since this renderer is a good choice when working in JupyterLab, nteract, and the Visual Studio Code notebook interface.
- 
+
 ### Static image renderers
 A set of renderers is provided for displaying figures as static images.  These renderers all rely on the orca static image export utility. See the [Static Image Export](https://plot.ly/python/static-image-export/) page for more information on getting set up with orca.
 
@@ -169,10 +178,10 @@ This renderer displays figures as static PDF files. This is especially useful fo
 Other miscellaneous renderers
 
 #### `json`
-In editors that support it (JupyterLab, nteract, and the Visual Studio Code notebook interface), this renderer displays the JSON representation of a figure in a collapsible interactive tree structure.  This can be very useful for examining the structure of complex figures 
+In editors that support it (JupyterLab, nteract, and the Visual Studio Code notebook interface), this renderer displays the JSON representation of a figure in a collapsible interactive tree structure.  This can be very useful for examining the structure of complex figures
 
 ### Multiple renderers
-You can specify that multiple renderers should be used by joining their names on `"+"` characters.  This is useful when writing code that needs to support multiple contexts.  For example, if a notebook specifies a default renderer string of  `"notebook+plotly_mimetype+pdf"`then this notebook would be able to run in the classic Jupyter Notebook, in JupyterLab, and it would support being exported to PDF using nbconvert.   
+You can specify that multiple renderers should be used by joining their names on `"+"` characters.  This is useful when writing code that needs to support multiple contexts.  For example, if a notebook specifies a default renderer string of  `"notebook+plotly_mimetype+pdf"`then this notebook would be able to run in the classic Jupyter Notebook, in JupyterLab, and it would support being exported to PDF using nbconvert.
 
 ## Customizing built-in renderers
 Most built-in renderers have configuration options to customize their behavior.  To view a description of a renderer, including its configuration options, access the renderer object using dictionary-style key lookup on the `plotly.io.renderers` configuration object and then display it.  Here is an example of accessing and displaying the `png` renderer.
@@ -216,7 +225,7 @@ fig.show(renderer="png", width=800, height=300)
 ```
 
 # Displaying figures using Dash
-Dash is a Python framework for building web applications, and it provides built-in support for displaying Plotly figures. See the [Dash User Guide](https://dash.plot.ly/) for more information. 
+Dash is a Python framework for building web applications, and it provides built-in support for displaying Plotly figures. See the [Dash User Guide](https://dash.plot.ly/) for more information.
 
 It is important to note that Dash does not use the renderers framework discussed above, so you should not use the `.show` figure method or the `plotly.io.show` function inside Dash applications.
 

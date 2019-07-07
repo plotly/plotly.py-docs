@@ -12,18 +12,18 @@ jupyter:
     language: python
     name: python2
   plotly:
-    description: How to make funnel charts in Python with Plotly.
-    display_as: financial
+    description: How to make funnel-chart plots in Python with Plotly.
+    display_as: basic
     has_thumbnail: true
-    ipynb: ~notebook_demo/140
+    ipynb: ~notebook_demo/293
     language: python
     layout: user-guide
-    name: Funnel Charts
-    order: 4
-    page_type: example_index
+    name: Funnel Chart
+    order: 6.3
+    page_type: u-guide
     permalink: python/funnel-charts/
-    thumbnail: thumbnail/funnel-chart.jpg
-    title: Python Funnel Charts | plotly
+    thumbnail: thumbnail/funnel.jpg
+    title: Python Funnel Chart | Plotly
 ---
 
 #### New to Plotly?

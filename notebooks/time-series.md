@@ -148,4 +148,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-timeseriesplot/code", wid
 
 #### Reference
 See https://plot.ly/python/reference/#layout-xaxis-rangeslider and<br> https://plot.ly/python/reference/#layout-xaxis-rangeselector for more information and chart attribute options!
-

@@ -13,15 +13,15 @@ jupyter:
     name: python3
   plotly:
     description: How to format axes ticks in Python with Plotly.
-    display_as: layout_opt
-    has_thumbnail: false
+    display_as: file_settings
+    has_thumbnail: true
     ipynb: ~notebook_demo/1
     language: python
     layout: user-guide
     name: Formatting Ticks
-    page_type: example_index
+    order: 10
     permalink: python/tick-formatting/
-    thumbnail: /images/static-image
+    thumbnail: thumbnail/tick-formatting.gif
     title: Formatting Ticks | Plotly
 ---
 

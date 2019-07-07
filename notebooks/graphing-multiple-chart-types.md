@@ -23,19 +23,18 @@ jupyter:
     version: 3.7.2
   plotly:
     description: How to design figures with multiple chart types in python.
-    display_as: basic
+    display_as: file_settings
     has_thumbnail: true
     language: python
     layout: user-guide
     name: Multiple Chart Types
-    order: 13
+    order: 16
     page_type: u-guide
     permalink: python/graphing-multiple-chart-types/
     thumbnail: thumbnail/multiple-chart-type.jpg
     title: Python Mulitple Chart Types | plotly
     v4upgrade: true
 ---
-
 
 #### Line Chart and a Bar Chart
 

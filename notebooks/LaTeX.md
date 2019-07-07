@@ -13,7 +13,7 @@ jupyter:
     name: python3
   plotly:
     description: How to add LaTeX to python graphs.
-    display_as: style_opt
+    display_as: advanced_opt
     has_thumbnail: true
     ipynb: ~notebook_demo/268
     language: python

@@ -35,7 +35,6 @@ jupyter:
     permalink: python/network-graphs/
     redirect_from: ipython-notebooks/networks/
     thumbnail: thumbnail/net.jpg
-    title: Network Graphs | plotly
     v4upgrade: true
 ---
 
@@ -163,4 +162,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-networkplot/code", width=
 
 #### Reference
 See https://plot.ly/python/reference/#scatter for more information and chart attribute options!
-

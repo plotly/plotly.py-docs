@@ -139,4 +139,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-3dscatterplot/code", widt
 
 #### Reference
 See https://plot.ly/python/reference/#scatter3d for more information and chart attribute options!
-

@@ -20,9 +20,8 @@ jupyter:
     layout: user-guide
     name: Use Interact decorator with FigureWidget
     order: 4
-    page_type: example_index
     permalink: python/interact-decorator/
-    thumbnail: thumbnail/zoom.jpg
+    thumbnail: thumbnail/figurewidget-interact.gif
     title: Use Interact decorator with FigureWidget
 ---
 

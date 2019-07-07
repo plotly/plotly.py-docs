@@ -23,13 +23,13 @@ jupyter:
     version: 3.7.3
   plotly:
     description: 3D Subplots in Plotly
-    display_as: multiple_axes
+    display_as: 3d_charts
     has_thumbnail: true
     ipynb: ~notebook_demo/75
     language: python
     layout: user-guide
     name: 3D Subplots
-    order: 4
+    order: 0.104
     page_type: u-guide
     permalink: python/3d-subplots/
     thumbnail: thumbnail/3d-subplots.jpg

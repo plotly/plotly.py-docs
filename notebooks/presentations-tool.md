@@ -14,7 +14,7 @@ jupyter:
   plotly:
     description: How to create and publish a spectacle-presentation with the Python
       API.
-    display_as: file_settings
+    display_as: chart_studio
     has_thumbnail: true
     language: python
     layout: user-guide

@@ -20,9 +20,8 @@ jupyter:
     layout: user-guide
     name: Car Exploration with Hover Events
     order: 26
-    page_type: example_index
     permalink: python/cars-exploration/
-    thumbnail: thumbnail/zoom.jpg
+    thumbnail: thumbnail/figurewidget-cars.gif
     title: Car Exploration with Hover Events
 ---
 

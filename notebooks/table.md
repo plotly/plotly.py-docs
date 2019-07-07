@@ -230,4 +230,3 @@ IFrame(src= "https://dash-simple-apps.plotly.host/dash-tableplot/code", width="1
 
 #### Reference
 For more information on tables and table attributes see: https://plot.ly/python/reference/#table.
-

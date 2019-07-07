@@ -14,7 +14,7 @@ jupyter:
   plotly:
     description: Jupyter notebook tutorial on how to install, run, and use Jupyter
       for interactive matplotlib plotting, data analysis, and publishing code
-    display_as: file_settings
+    display_as: chart_studio
     has_thumbnail: true
     ipynb: ~chelsea_lyn/14070
     language: python

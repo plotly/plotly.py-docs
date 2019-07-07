@@ -20,7 +20,6 @@ jupyter:
     layout: user-guide
     name: Ribbon Plots
     order: 4
-    page_type: example_index
     permalink: python/ribbon-plots/
     thumbnail: thumbnail/ribbon-plot.jpg
     title: Python Ribbon Plots | plotly

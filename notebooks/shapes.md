@@ -24,14 +24,13 @@ jupyter:
   plotly:
     description: How to make SVG shapes in python. Examples of lines, circle, rectangle,
       and path.
-    display_as: style_opt
+    display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/14
     language: python
     layout: user-guide
     name: Shapes
-    order: 5
-    page_type: example_index
+    order: 32
     permalink: python/shapes/
     thumbnail: thumbnail/shape.jpg
     title: Shapes | plotly

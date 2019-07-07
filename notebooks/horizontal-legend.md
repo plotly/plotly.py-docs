@@ -23,7 +23,7 @@ jupyter:
     version: 3.7.3
   plotly:
     description: How to add images to charts as background images or logos.
-    display_as: layout_opt
+    display_as: advanced_opt
     has_thumbnail: false
     ipynb: ~notebook_demo/94
     language: python

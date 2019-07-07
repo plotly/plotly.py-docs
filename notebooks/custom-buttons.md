@@ -463,4 +463,3 @@ Refer to our animation docs: https://plot.ly/python/#animations for examples on 
 
 #### Reference
 See https://plot.ly/python/reference/#layout-updatemenus for more information about `updatemenu` buttons.
-

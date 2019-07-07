@@ -29,7 +29,7 @@ jupyter:
     layout: user-guide
     name: Table and Chart Subplots
     order: 11
-    page_type: u-guide
+    page_type: example_index
     permalink: python/table-subplots/
     thumbnail: thumbnail/table_subplots.jpg
     title: Table and Chart Subplots | plotly

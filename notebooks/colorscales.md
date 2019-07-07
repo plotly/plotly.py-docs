@@ -24,14 +24,13 @@ jupyter:
   plotly:
     description: How to set colorscales and heatmap colorscales in Python and Plotly.
       Divergent, sequential, and qualitative colorscales.
-    display_as: style_opt
+    display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/187
     language: python
     layout: user-guide
     name: Colorscales
-    order: 11
-    page_type: example_index
+    order: 22
     permalink: python/colorscales/
     thumbnail: thumbnail/heatmap_colorscale.jpg
     title: Colorscales in Python | Plotly

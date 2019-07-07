@@ -24,13 +24,13 @@ jupyter:
   plotly:
     description: How to make subplots in python. Examples of stacked, custom-sized,
       gridded, and annotated subplts.
-    display_as: multiple_axes
+    display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/269
     language: python
     layout: user-guide
     name: Subplots
-    order: 2
+    order: 15
     page_type: example_index
     permalink: python/subplots/
     redirect_from: ipython-notebooks/subplots/

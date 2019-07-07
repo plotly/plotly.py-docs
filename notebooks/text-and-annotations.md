@@ -23,16 +23,15 @@ jupyter:
     version: 3.6.5
   plotly:
     description: How to add text labels and annotations to plots in python.
-    display_as: style_opt
-    has_thumbnail: false
+    display_as: file_settings
+    has_thumbnail: true
     ipynb: ~notebook_demo/204
     language: python
     layout: user-guide
     name: Text and Annotations
-    order: 1
-    page_type: example_index
+    order: 30
     permalink: python/text-and-annotations/
-    thumbnail: thumbnail/annotations.jpg
+    thumbnail: thumbnail/text-and-annotations.png
     title: Text and Annotations | plotly
     v4upgrade: true
 ---

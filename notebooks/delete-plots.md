@@ -13,7 +13,7 @@ jupyter:
     name: python2
   plotly:
     description: How to delete plotly graphs in python.
-    display_as: file_settings
+    display_as: chart_studio
     has_thumbnail: true
     ipynb: ~notebook_demo/98
     language: python

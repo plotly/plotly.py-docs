@@ -35,14 +35,14 @@ jupyter:
 ---
 
 <!-- #region -->
-## Overview
+### Overview
 The plotly Python library ([plotly.py](https://plot.ly/python/)) is an interactive, [open-source](https://github.com/plotly/plotly.py) plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic, scientific, and 3-dimensional use-cases.
 
 Built on top of the Plotly JavaScript library ([plotly.js](https://plot.ly/javascript/)), plotly.py enables Python users to create beautiful interactive web-based visualizations that can be displayed in Jupyter notebooks, saved to standalone HTML files, or served as part of pure Python-built web applications using Dash.
 
 Thanks to deep integration with the [orca](https://github.com/plotly/orca) image export utility, plotly.py also provides great support for non-web contexts including desktop editors (e.g. QtConsole, Spyder, PyCharm) and static document publishing (e.g. exporting notebooks to PDF with high-quality vector images).
 
-## Installation
+### Installation
 plotly.py may be installed using pip...
 
 ```
@@ -65,7 +65,7 @@ fig.write_html('first_figure.html', auto_open=True)
 ```
 
 <!-- #region -->
-### Jupyter Notebook Support
+#### Jupyter Notebook Support
 For use in the classic [Jupyter Notebook](https://jupyter.org/), install the `notebook` and `ipywidgets`
 packages using pip...
 
@@ -104,7 +104,7 @@ fig
 <!-- #region -->
 See [*Displaying Figures in Python*](https://plot.ly/python/renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](https://plot.ly/python/figurewidget/) for more information on using `FigureWidget`.
 
-### JupyterLab Support (Python 3.5+)
+#### JupyterLab Support (Python 3.5+)
 For use in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), install the `jupyterlab` and `ipywidgets`
 packages using pip...
 
@@ -173,7 +173,7 @@ fig
 <!-- #region -->
 See [*Displaying Figures in Python*](https://plot.ly/python/renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](https://plot.ly/python/figurewidget/) for more information on using `FigureWidget`.
 
-### Static Image Export Support
+#### Static Image Export Support
 plotly.py supports static image export using the `to_image` and `write_image`
 functions in the `plotly.io` package. This functionality requires the
 installation of the plotly [orca](https://github.com/plotly/orca) command line utility and the
@@ -206,7 +206,7 @@ fig.write_image('figure.png')
 <!-- #region -->
 See [*Static Image Export in Python*](https://plot.ly/python/static-image-export/) for more information on static image export.
 
-### Extended Geo Support
+#### Extended Geo Support
 Some plotly.py features rely on fairly large geographic shape files. The county
 choropleth figure factory is one such example. These shape files are distributed as a
 separate `plotly-geo` package.  This package can be installed using pip...
@@ -223,7 +223,7 @@ $ conda install -c plotly plotly-geo=1.0.0
 
 See [*USA County Choropleth Maps in Python*](https://plot.ly/python/county-choropleth/) for more information on the county choropleth figure factory.
 
-### Chart Studio Support
+#### Chart Studio Support
 The `chart-studio` package can be used to upload plotly figures to Plotly's Chart
 Studio Cloud or On-Prem services.  This package can be installed using pip...
 
@@ -239,7 +239,7 @@ $ conda install -c plotly chart-studio=1.0.0
 
 > **Note:** This package is optional, and if it is not installed it is not possible for figures to be uploaded to the Chart Studio cloud service.
 
-## Where to next?
+### Where to next?
 Now that you have everything installed, you are ready to start reading and running examples of [basic charts](https://plot.ly/python/basic-charts/), [statistical charts](https://plot.ly/python/statistical-charts/), [scientific charts](https://plot.ly/python/scientific-charts/), [financial charts](https://plot.ly/python/#financial-charts), [geographic charts](https://plot.ly/python/maps/), and [3-dimensional charts](https://plot.ly/python/3d-charts/).
 
 For a complete overview of all of the ways that figures can be created and updated, see the [*Plotly User Guide for Python*](https://plot.ly/python/user-guide/).

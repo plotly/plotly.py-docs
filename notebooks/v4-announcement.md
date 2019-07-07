@@ -18,7 +18,7 @@ We have been very encouraged by the positive response that Plotly Express has re
 ## New figure update methods
 One of our goals for the integration of Plotly Express was to make it easy for users to start with Plotly Express for data exploration, and then tweak and refine the resulting figures with all of the customization support built into plotly.py. 
 
-To this end, version 4 introduces a suite of new figure methods for updating figures after they have been constructed. These functions all return a reference to the calling figure, and are designed to support being chained together. We've also introduced "magic underscore notation" to make it easier to update nested figure properties. See the new [Creating and Updating Figures]() page for full details.
+To this end, version 4 introduces a suite of new figure methods for updating figures after they have been constructed. These functions all return a reference to the calling figure, and are designed to support being chained together. We've also introduced "magic underscore notation" to make it easier to update nested figure properties. See the new [Creating and Updating Figures](https://plotly.github.io/python-next/creating-and-updating-figures/) page for full details.
 
 Here is an example that creates a faceted scatter plot with OLS regression lines using the Plotly Express `scatter` function and then:
  - Updates the title font size using the new `update_layout` method with magic underscore notation (Without this notation, the `title_font_size=24` argument would be replaced by `title=dict(font=dict(size=24))`).
@@ -63,7 +63,7 @@ fig
 
 **In many contexts, an appropriate renderer will be chosen automatically and you will not need to perform any additional configuration.** These contexts include the classic Jupyter Notebook, JupyterLab (provided the `jupyterlab-plotly` JupyterLab extension is installed), Visual Studio Code notebooks, Nteract notebooks, Colab, Kaggle notebooks, Azure notebooks, and the Python interactive shell. Additional contexts are supported by choosing a compatible renderer including the IPython console, QtConsole, Spyder, Sphinx Gallery, and more.
 
-See the new [Displaying plotly figures]() documentation page for information on how to configure the default renderer, and for descriptions of all of the available renderers and why you might choose each one.
+See the new [Displaying plotly figures](https://plotly.github.io/python-next/renderers/) documentation page for information on how to configure the default renderer, and for descriptions of all of the available renderers and why you might choose each one.
 
 > Note: The legacy `init_notebook_mode` and `iplot` functions have been reimplemented on top of the renderers framework and are still supported for backward compatibility.
 
@@ -117,7 +117,7 @@ fig.layout.title.text = 'Version 3 Default Theme'
 fig.show()
 ```
 
-See the new [Theming and templates]() documentation page for information on configuring the default theme.
+See the new [Theming and templates](https://plotly.github.io/python-next/templates/) documentation page for information on configuring the default theme.
 
 ## Consistent figure export API
 In version 4, we have completed a long-running effort to clean up and simplify the various ways to export figures.  A figure can now be written to a file as an image, as html, or as json using the `.write_image`, `.write_html`, and `.write_json` figure methods respectively.  The corresponding `.to_image`, `.to_html`, and `.to_json` figure methods can also be used to convert a figure into an in-memory representation of an image, html, or json without writing to a file.  Finally, all of these methods are also available as standalone functions in the `plotly.io` module.
@@ -189,7 +189,7 @@ fig.update_yaxes(title_text="<b>secondary</b> yaxis title", secondary_y=True)
 fig.show()
 ```
 
-See the updated [Multiple Axes]() documentation page for more examples of creating figures with multiple y-axes, and see the update [Subplots]() page for more subplot examples.
+See the updated [Multiple Axes](https://plotly.github.io/python-next/multiple-axes) documentation page for more examples of creating figures with multiple y-axes, and see the update [Subplots](https://plotly.github.io/python-next/subplots) page for more subplot examples.
 
 > Note: The new preferred location to import `make_subplots` from is `plotly.subplots`.  It is also available as `plotly.tools.make_subplots` for backward compatibility.
 

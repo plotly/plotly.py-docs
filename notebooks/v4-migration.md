@@ -32,7 +32,7 @@ jupyter:
     layout: user-guide
     permalink: python/v4-migration/
     thumbnail: thumbnail/static-image-export.png
-    title: Displaying Figures | plotly
+    title: Version 4 migration guide | plotly
     order: 1
 ---
 

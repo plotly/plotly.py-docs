@@ -1,7 +1,19 @@
 # Introducing plotly.py 4.0.0rc1
-I'm happy to announce the availability of the first release candidate of plotly.py version 4. This is a major release that includes many features and changes that we're really excited about. For installation instructions see the [Getting Started](https://plot.ly/python/next/getting-started/) page.
+I'm happy to announce the availability of the first release candidate of plotly.py version 4. This is a major release that includes many features and changes that we're really excited about. For installation instructions, see the [Getting Started](https://plot.ly/python/next/getting-started/) page. Here are some of the highlights that will be discussed in more detail below:
 
-## "offline" only
+ - "offline" only (`chart-studio` package split)
+ - Plotly Express integration
+ - New figure update methods
+ - New renderers framework (or plotly.py everywhere)
+ - New default theme
+ - Consistent figure export API
+ - More flexible subplots
+ - Reduced package size (`plotly-geo` package split)
+ - `graph_objs` to `graph_objects`
+ - jupyterlab-plotly extension and JupyterLab 1.0 support
+ - How you can help
+
+## "offline" only (`chart-studio` package split)
 Prior versions of plotly.py contained functionality for creating figures in both "online" and "offline" modes.  In "online" mode, figures were uploaded to the Chart Studio cloud (or on-premise) service, whereas in "offline" mode figures were rendered locally.  This duality has been a common source of confusion for several years, and so in version 4 we are making some important changes to help clear this up.
 
 First, all functionality for interacting with Chart Studio has been moved from the top-level `plotly` module (e.g. `plotly.plotly.plot`) to a new top-level `chart_studio` module (e.g. `chart_studio.plotly.plot`).
@@ -82,7 +94,7 @@ See the new [Displaying plotly figures](https://plot.ly/python/next/renderers/) 
 
 > Note: The legacy `init_notebook_mode` and `iplot` functions have been reimplemented on top of the renderers framework and are still supported for backward compatibility.
 
-## Default theme
+## New default theme
 Plotly.py introduced theming support in version 3.4.  Since that release, we have iterated on the design of the built-in `'plotly'` theme, and we made this theme the default in the tech preview of Plotly Express. In version 4, we are making this theme the default for all figures created with Plotly.py. See the new [Theming and templates](https://plot.ly/python/next/templates/) documentation page for information on configuring the default theme.
 
 ```python
@@ -206,7 +218,7 @@ See the updated [Multiple Axes](https://plot.ly/python/next/multiple-axes/) docu
 
 > Note: The new preferred location to import `make_subplots` from is `plotly.subplots`.  It is also available as `plotly.tools.make_subplots` for backward compatibility.
 
-## plotly-geo package split
+## Reduced package size (plotly-geo package split)
 In order to reduce the size of the core `plotly` distribution package, the bundled geographic shape files used by the `create_choropleth` figure factory have been moved to a new optional `plotly-geo` distribution package. This change reduces the size of the `plotly` source package from 27.4 MB down to 4.7 MB.
 
 ## `graph_objs` to `graph_objects`

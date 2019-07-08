@@ -31,7 +31,7 @@ jupyter:
     page_type: example_index
     layout: user-guide
     permalink: python/v4-migration/
-    thumbnail: thumbnail/static-image-export.png
+    thumbnail: thumbnail/v4-migration.png
     title: Version 4 migration guide | plotly
     order: 1
 ---

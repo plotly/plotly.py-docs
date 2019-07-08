@@ -13,7 +13,7 @@ Using our legacy terminology, both the `plotly` distribution package and the top
 ## Plotly Express integration
 In March, we released a tech preview of Plotly Express: a wrapper for plotly.py that provides a simple syntax for creating complex charts. See the announcement at https://medium.com/@plotlygraphs/introducing-plotly-express-808df010143d for more background.
 
-We have been very encouraged by the positive response that Plotly Express has received, and so for version 4 we are integrating Plotly Express into the main plotly.py distribution package. The top-level `plotly_express` module is now included as the `plotly.express` module.
+We have been very encouraged by the positive response that Plotly Express has received, and so for version 4 we are integrating Plotly Express into the main plotly.py distribution package. The top-level `plotly_express` module is now included as the `plotly.express` module. See the new documentation page for Plotly Express at https://plot.ly/python/next/plotly-express/ for more information. 
 
 ## New figure update methods
 One of our goals for the integration of Plotly Express was to make it easy for users to start with Plotly Express for data exploration, and then tweak and refine the resulting figures with all of the customization support built into plotly.py. 

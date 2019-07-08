@@ -39,7 +39,7 @@ jupyter:
 
 ### Bar chart with plotly express
 
-Plotly express functions (here needs link to stable px doc entry) take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). 
+Plotly express functions (here needs link to stable px doc entry) take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
 
 In a bar plot, each row of the DataFrame is represented as a rectangular mark.
 
@@ -56,15 +56,15 @@ data_canada
 
 ### Customize bar chart with plotly express
 
-The bar plot can be customized using keyword arguments *TODO here link to meta doc page on customizing plotly plots?*.
+The bar plot can be customized using keyword arguments.
 
 ```python
 import plotly.express as px
 data = px.data.gapminder()
 
 data_canada = data[data.country == 'Canada']
-fig = px.bar(data_canada, x='year', y='pop', 
-             hover_data=['lifeExp', 'gdpPercap'], color='lifeExp', 
+fig = px.bar(data_canada, x='year', y='pop',
+             hover_data=['lifeExp', 'gdpPercap'], color='lifeExp',
              labels={'pop':'population of Canada'}, height=400)
 fig.show()
 ```
@@ -88,11 +88,11 @@ fig.show()
 
 #### Facetted subplots
 
-Use the keyword arguments `facet_row` (resp. `facet_col`) to create facetted subplots, where different rows (resp. columns) correspond to different values of the dataframe column specified in `facet_row`. 
+Use the keyword arguments `facet_row` (resp. `facet_col`) to create facetted subplots, where different rows (resp. columns) correspond to different values of the dataframe column specified in `facet_row`.
 
 ```python
 import plotly.express as px
-fig = px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group", 
+fig = px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group",
              facet_row="time", facet_col="day",
              category_orders={"day": ["Thur", "Fri", "Sat", "Sun"],
                               "time": ["Lunch", "Dinner"]})
@@ -253,7 +253,7 @@ fig.add_trace(go.Bar(x=years, y=[500, 600, 700],
                 base=[-500,-600,-700],
                 marker_color='crimson',
                 name='expenses'))
-fig.add_trace(go.Bar(x=years, y=[300, 400, 700], 
+fig.add_trace(go.Bar(x=years, y=[300, 400, 700],
                 base=0,
                 marker_color='lightslategrey',
                 name='revenue'
@@ -264,7 +264,7 @@ fig.show()
 
 ### Colored and Styled Bar Chart
 
-In this example several parameters of the layout as customized, hence it is convenient to use directly the `go.Layout(...)` constructor instead of calling `fig.update`. 
+In this example several parameters of the layout as customized, hence it is convenient to use directly the `go.Layout(...)` constructor instead of calling `fig.update`.
 
 ```python
 import plotly.graph_objects as go
@@ -318,7 +318,7 @@ x = [1, 2, 3, 4]
 
 fig = go.Figure()
 fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16]))
-fig.add_trace(go.Bar(x=x, y=[6, -8, -4.5, 8])) 
+fig.add_trace(go.Bar(x=x, y=[6, -8, -4.5, 8]))
 fig.add_trace(go.Bar(x=x, y=[-15, -3, 4.5, -8]))
 fig.add_trace(go.Bar(x=x, y=[-1, 3, -3, -4]))
 

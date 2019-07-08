@@ -3,9 +3,9 @@
 ---
 {% for k in nb.metadata.get("plotly") -%}
 {%- if k == "permalink" -%}
-permalink: {{ nb.metadata.get("plotly")[k].replace("python/", "python-next/") }}
+permalink: {{ nb.metadata.get("plotly")[k].replace("python/", "python/next/") }}
 {% elif k == "language" -%}
-language: python-next
+language: python/next
 {% else -%}
 {{ k }}: {{ nb.metadata.get("plotly")[k] }}
 {% endif -%}

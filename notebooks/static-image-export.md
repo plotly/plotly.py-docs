@@ -32,7 +32,7 @@ jupyter:
     layout: user-guide
     name: Static Image Export
     order: 1
-    page_type: example_index
+    page_type: u-guide
     permalink: python/static-image-export/
     thumbnail: thumbnail/static-image-export.png
     title: Static Image Export | plotly

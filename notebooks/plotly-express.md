@@ -11,6 +11,20 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  plotly:
+    description: Plotly Express is a terse, consistent, high-level wrapper around `plotly.graph_objs` for rapid data exploration and figure generation.
+    display_as: file_settings
+    has_thumbnail: true
+    ipynb: ~notebook_demo/252
+    language: python
+    layout: user-guide
+    name: Plotly Express
+    order: 1
+    page_type: example_index
+    permalink: python/plotly-express/
+    thumbnail: thumbnail/static-image-export.png
+    title: Plotly Express
+    v4upgrade: true
 ---
 
 ### Plotly Express
@@ -189,32 +203,21 @@ px.line_3d(election, x="Joly", y="Coderre", z="Bergeron", color="winner", line_d
 #### Polar Coordinates
 
 ```python
-px.scatter_polar(wind, r="value", theta="direction", color="strength", symbol="strength",
-            color_discrete_sequence=px.colors.sequential.Plotly[-2::-1])
+px.scatter_polar(wind, r="frequency", theta="direction", color="strength", symbol="strength",
+            color_discrete_sequence=px.colors.sequential.Plasma[-2::-1])
 ```
 
 ```python
-px.line_polar(wind, r="value", theta="direction", color="strength", line_close=True,
-            color_discrete_sequence=px.colors.sequential.Plotly[-2::-1])
+px.line_polar(wind, r="frequency", theta="direction", color="strength", line_close=True,
+            color_discrete_sequence=px.colors.sequential.Plasma[-2::-1])
 ```
 
 ```python
-px.bar_polar(wind, r="value", theta="direction", color="strength", template="plotly_dark",
-            color_discrete_sequence= px.colors.sequential.Plotly[-2::-1])
+px.bar_polar(wind, r="frequency", theta="direction", color="strength", template="plotly_dark",
+            color_discrete_sequence= px.colors.sequential.Plasma[-2::-1])
 ```
 
 #### Maps
-
-```python
-px.set_mapbox_access_token(open(".mapbox_token").read())
-px.scatter_mapbox(carshare, lat="centroid_lat", lon="centroid_lon", color="peak_hour", size="car_hours",
-                  color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10)
-```
-
-```python
-px.set_mapbox_access_token(open(".mapbox_token").read())
-px.line_mapbox(carshare, lat="centroid_lat", lon="centroid_lon", color="peak_hour")
-```
 
 ```python
 px.scatter_geo(gapminder, locations="iso_alpha", color="continent", hover_name="country", size="pop",
@@ -226,8 +229,7 @@ px.line_geo(gapminder.query("year==2007"), locations="iso_alpha", color="contine
 ```
 
 ```python
-px.choropleth(gapminder, locations="iso_alpha", color="lifeExp", hover_name="country", animation_frame="year",
-             color_continuous_scale=px.colors.sequential.Plasma, range_color=[20,80])
+px.choropleth(gapminder, locations="iso_alpha", color="lifeExp", hover_name="country", animation_frame="year", range_color=[20,80])
 ```
 
 #### Built-in Color Scales and Sequences (and a way to see them!)

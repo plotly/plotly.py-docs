@@ -52,9 +52,9 @@ jobs:
             make -kj8 || make -kj8
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cd build/html
+              git init
               git config user.name nicolaskruchten
               git config user.email nicolas@plot.ly
-              git init
               git add *html
               git commit -m build
               git push --force git@github.com:plotly/plotly.py-docs.git master:built

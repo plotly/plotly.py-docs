@@ -32,8 +32,7 @@ jupyter:
     order: 11
     permalink: python/figure-labels/
     thumbnail: thumbnail/figure-labels.png
-    title: Setting the Title, Legend Entries, and Axis Titles in Python | Examples
-      | Plotly
+    title: Setting the Title, Legend Entries, and Axis Titles in Python
     v4upgrade: true
 ---
 

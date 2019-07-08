@@ -50,6 +50,13 @@ jobs:
             . venv/bin/activate
             rm -f build/failures/*
             make -kj8 || make -kj8
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              cd build/html
+              git init
+              git add *html
+              git commit -m build
+              git push --force git@github.com:plotly/plotly.py-docs.git master:built
+            fi
 
       - store_artifacts:
           path: build/failures

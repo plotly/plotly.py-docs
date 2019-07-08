@@ -31,7 +31,7 @@ jupyter:
     layout: user-guide
     name: Subplots
     order: 15
-    page_type: example_index
+    page_type: u-guide
     permalink: python/subplots/
     redirect_from: ipython-notebooks/subplots/
     thumbnail: thumbnail/subplots.jpg

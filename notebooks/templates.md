@@ -31,7 +31,7 @@ jupyter:
     page_type: example_index
     layout: user-guide
     permalink: python/templates/
-    thumbnail: thumbnail/static-image-export.png
+    thumbnail: thumbnail/theming-and-templates.png
     title: Theming and templates | plotly
 ---
 

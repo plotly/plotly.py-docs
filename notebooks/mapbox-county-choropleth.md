@@ -152,7 +152,7 @@ with open('florida-blue-data.json', 'w') as f:
     f.write(json.dumps(blue_data))
 ```
 
-and we can now plot our choropleth using Python. Make sure to have a [Mapbox Access Tolken](https://www.mapbox.com/studio) for the generation of the plot. For more information on plotting Mapbox maps in Python, checkout the [documentation](https://plot.ly/python/scattermapbox/)
+and we can now plot our choropleth using Python. Make sure to have a [Mapbox Access Tolken](https://www.mapbox.com/studio) for the generation of the plot. For more information on plotting Mapbox maps in Python, checkout the [documentation](https://plot.ly/python/next/scattermapbox/)
 
 ```python
 import plotly.plotly as py

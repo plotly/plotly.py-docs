@@ -94,7 +94,7 @@ import plotly.plotly as py
 ```
 
 #### Import Data
-You can use pandas `read_csv()` function to import data. In the example below, we import a csv [hosted on github](https://github.com/plotly/datasets/) and display it in a [table using Plotly](https://plot.ly/python/table/):
+You can use pandas `read_csv()` function to import data. In the example below, we import a csv [hosted on github](https://github.com/plotly/datasets/) and display it in a [table using Plotly](https://plot.ly/python/next/table/):
 
 ```python
 import plotly.plotly as py
@@ -121,7 +121,7 @@ df.std()
 ```
 
 #### Plotting Inline
-You can use [Plotly's python API](https://plot.ly/python) to plot inside your Jupyter Notebook by calling ```plotly.plotly.iplot()``` or ```plotly.offline.iplot()``` if working offline. Plotting in the notebook gives you the advantage of keeping your data analysis and plots in one place. Now we can do a bit of interactive plotting. Head to the [Plotly getting started](https://plot.ly/python/) page to learn how to set your credentials. Calling the plot with ```iplot``` automaticallly generates an interactive version of the plot inside the Notebook in an iframe. See below:
+You can use [Plotly's python API](https://plot.ly/python) to plot inside your Jupyter Notebook by calling ```plotly.plotly.iplot()``` or ```plotly.offline.iplot()``` if working offline. Plotting in the notebook gives you the advantage of keeping your data analysis and plots in one place. Now we can do a bit of interactive plotting. Head to the [Plotly getting started](https://plot.ly/python/next/) page to learn how to set your credentials. Calling the plot with ```iplot``` automaticallly generates an interactive version of the plot inside the Notebook in an iframe. See below:
 
 ```python
 import plotly.plotly as py
@@ -133,7 +133,7 @@ data = [go.Bar(x=df.School,
 py.iplot(data, filename='jupyter-basic_bar')
 ```
 
-Plotting multiple traces and styling the chart with custom colors and titles is simple with Plotly syntax. Additionally, you can control the privacy with [```sharing```](https://plot.ly/python/privacy/) set to ```public```, ```private```, or ```secret```.
+Plotting multiple traces and styling the chart with custom colors and titles is simple with Plotly syntax. Additionally, you can control the privacy with [```sharing```](https://plot.ly/python/next/privacy/) set to ```public```, ```private```, or ```secret```.
 
 ```python
 import plotly.plotly as py
@@ -234,7 +234,7 @@ py.iplot(fig, filename='jupyter-Nuclear Waste Sites on American Campuses')
 ```
 
 #### 3D Plotting
-Using Numpy and Plotly, we can make interactive [3D plots](https://plot.ly/python/#3d) in the Notebook as well.
+Using Numpy and Plotly, we can make interactive [3D plots](https://plot.ly/python/next/#3d) in the Notebook as well.
 
 ```python
 import plotly.plotly as py
@@ -283,7 +283,7 @@ py.iplot(fig, filename='jupyter-parametric_plot')
 ```
 
 #### Animated Plots
-Checkout Plotly's [animation documentation](https://plot.ly/python/#animations) to see how to create animated plots inline in Jupyter notebooks like the Gapminder plot displayed below:
+Checkout Plotly's [animation documentation](https://plot.ly/python/next/#animations) to see how to create animated plots inline in Jupyter notebooks like the Gapminder plot displayed below:
 ![https://plot.ly/~PythonPlotBot/231/](https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/anim.gif)
 
 
@@ -382,7 +382,7 @@ For users looking to ship and productionize Python apps, [dash](https://github.c
 
 
 ### Jupyter Gallery
-For more Jupyter tutorials, checkout [Plotly's python documentation](https://plot.ly/python/): all documentation is written in jupyter notebooks that you can download and run yourself or checkout these [user submitted examples](https://plot.ly/ipython-notebooks/)!
+For more Jupyter tutorials, checkout [Plotly's python documentation](https://plot.ly/python/next/): all documentation is written in jupyter notebooks that you can download and run yourself or checkout these [user submitted examples](https://plot.ly/ipython-notebooks/)!
 
 [![IPython Notebook Gallery](http://i.imgur.com/AdElJQx.png)](https://plot.ly/ipython-notebooks/)
 

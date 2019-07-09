@@ -48,7 +48,7 @@ import scipy
 #### Import Data
 
 
-In order to start performing outlier tests, we will import some data of average wind speed sampled every 10 minutes, also used in the [Normality Test Tutorial](https://plot.ly/python/normality-test/).
+In order to start performing outlier tests, we will import some data of average wind speed sampled every 10 minutes, also used in the [Normality Test Tutorial](https://plot.ly/python/next/normality-test/).
 
 ```python
 data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/wind_speed_laurel_nebraska.csv')
@@ -64,7 +64,7 @@ In any set of data, an `outlier` is a a datum point that is not consistent with 
 #### Q Test
 
 
-Dixon's Q-Test is used to help determine whether there is evidence for a given point to be an outlier of a 1D dataset. It is assumed that the dataset is normally distributed. Since we have very strong evidence that our dataset above is normal from all our [normality tests](https://plot.ly/python/normality-test/), we can use the Q-Test here. As with the normality tests, we are assuming a significance level of $0.05$ and for simplicity, we are only considering the smallest datum point in the set.
+Dixon's Q-Test is used to help determine whether there is evidence for a given point to be an outlier of a 1D dataset. It is assumed that the dataset is normally distributed. Since we have very strong evidence that our dataset above is normal from all our [normality tests](https://plot.ly/python/next/normality-test/), we can use the Q-Test here. As with the normality tests, we are assuming a significance level of $0.05$ and for simplicity, we are only considering the smallest datum point in the set.
 
 For more information on the choice of 0.05 for a significance level, check out [this page](http://www.investopedia.com/exam-guide/cfa-level-1/quantitative-methods/hypothesis-testing.asp).
 

@@ -40,7 +40,7 @@ jupyter:
 
 A [Gantt chart](https://en.wikipedia.org/wiki/Gantt_chart) is a type of bar chart that illustrates a project schedule. The chart lists the tasks to be performed on the vertical axis, and time intervals on the horizontal axis. The width of the horizontal bars in the graph shows the duration of each activity.
 
-See also the [bar charts examples](https://plot.ly/python/bar-charts/).
+See also the [bar charts examples](https://plot.ly/python/next/bar-charts/).
 
 
 #### Simple Gantt Chart
@@ -80,7 +80,7 @@ df = [dict(Task="Job A", Start='2009-01-01', Finish='2009-02-01', Resource='Appl
 
 colors = ['#7a0504', (0.2, 0.7, 0.3), 'rgb(210, 60, 180)']
 
-fig = ff.create_gantt(df, colors=colors, index_col='Resource', reverse_colors=True, 
+fig = ff.create_gantt(df, colors=colors, index_col='Resource', reverse_colors=True,
                       show_colorbar=True)
 fig.show()
 ```
@@ -125,7 +125,7 @@ df = [
     dict(Task='Break', Start='2016-01-01 11:30:00', Finish='2016-01-01 12:00:00', Resource='Rest'),
     dict(Task='Lunch', Start='2016-01-01 12:00:00', Finish='2016-01-01 13:00:00', Resource='Food'),
     dict(Task='Work', Start='2016-01-01 13:00:00', Finish='2016-01-01 17:00:00', Resource='Brain'),
-    dict(Task='Exercise', Start='2016-01-01 17:30:00', Finish='2016-01-01 18:30:00', Resource='Cardio'), 
+    dict(Task='Exercise', Start='2016-01-01 17:30:00', Finish='2016-01-01 18:30:00', Resource='Cardio'),
     dict(Task='Post Workout Rest', Start='2016-01-01 18:30:00', Finish='2016-01-01 19:00:00', Resource='Rest'),
     dict(Task='Dinner', Start='2016-01-01 19:00:00', Finish='2016-01-01 20:00:00', Resource='Food'),
     dict(Task='Evening Sleep', Start='2016-01-01 21:00:00', Finish='2016-01-01 23:59:00', Resource='Sleep')

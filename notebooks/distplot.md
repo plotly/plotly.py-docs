@@ -38,14 +38,14 @@ jupyter:
 
 ## Combined statistical representations with px.histogram
 
-Several representations of statistical distributions are available in plotly, such as [histograms](https://plot.ly/python/histograms/), [violin plots](https://plot.ly/python/violin/), [box plots](https://plot.ly/python/box-plots/) (see [the complete list here](https://plot.ly/python/statistical-charts/)). It is also possible to combine several representations in the same plot. 
+Several representations of statistical distributions are available in plotly, such as [histograms](https://plot.ly/python/next/histograms/), [violin plots](https://plot.ly/python/next/violin/), [box plots](https://plot.ly/python/next/box-plots/) (see [the complete list here](https://plot.ly/python/next/statistical-charts/)). It is also possible to combine several representations in the same plot.
 
 For example, the `plotly.express` function `px.histogram` can add a subplot with a different statistical representation than the histogram, given by the parameter `marginal`. Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
 
 ```python
 import plotly.express as px
 tips = px.data.tips()
-fig = px.histogram(tips, x="total_bill", y="tip", color="sex", marginal="rug", 
+fig = px.histogram(tips, x="total_bill", y="tip", color="sex", marginal="rug",
                    hover_data=tips.columns)
 fig.show()
 ```
@@ -64,7 +64,7 @@ fig.show()
 The distplot figure factory displays a combination of statistical representations of numerical data, such as histogram, kernel density estimation or normal curve, and rug plot.
 
 
-#### Basic Distplot 
+#### Basic Distplot
 
 A histogram, a kde plot and a rug plot are displayed.
 
@@ -72,7 +72,7 @@ A histogram, a kde plot and a rug plot are displayed.
 import plotly.figure_factory as ff
 import numpy as np
 
-x = np.random.randn(1000)  
+x = np.random.randn(1000)
 hist_data = [x]
 group_labels = ['distplot'] # name of the dataset
 
@@ -87,10 +87,10 @@ import plotly.figure_factory as ff
 import numpy as np
 
 # Add histogram data
-x1 = np.random.randn(200) - 2  
-x2 = np.random.randn(200)  
-x3 = np.random.randn(200) + 2  
-x4 = np.random.randn(200) + 4  
+x1 = np.random.randn(200) - 2
+x2 = np.random.randn(200)
+x3 = np.random.randn(200) + 2
+x4 = np.random.randn(200) + 4
 
 # Group data together
 hist_data = [x1, x2, x3, x4]
@@ -111,10 +111,10 @@ import plotly.figure_factory as ff
 import numpy as np
 
 # Add histogram data
-x1 = np.random.randn(200)-2  
-x2 = np.random.randn(200)  
-x3 = np.random.randn(200)+2  
-x4 = np.random.randn(200)+4  
+x1 = np.random.randn(200)-2
+x2 = np.random.randn(200)
+x3 = np.random.randn(200)+2
+x4 = np.random.randn(200)+4
 
 # Group data together
 hist_data = [x1, x2, x3, x4]
@@ -132,18 +132,18 @@ fig.show()
 import plotly.figure_factory as ff
 import numpy as np
 
-x1 = np.random.randn(26)  
-x2 = np.random.randn(26) + .5  
+x1 = np.random.randn(26)
+x2 = np.random.randn(26) + .5
 
 group_labels = ['2014', '2015']
 
-rug_text_one = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
-                'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 
-                'u', 'v', 'w', 'x', 'y', 'z'] 
+rug_text_one = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+                'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+                'u', 'v', 'w', 'x', 'y', 'z']
 
-rug_text_two = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'hh', 'ii', 'jj', 
-                'kk', 'll', 'mm', 'nn', 'oo', 'pp', 'qq', 'rr', 'ss', 'tt', 
-                'uu', 'vv', 'ww', 'xx', 'yy', 'zz'] 
+rug_text_two = ['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'hh', 'ii', 'jj',
+                'kk', 'll', 'mm', 'nn', 'oo', 'pp', 'qq', 'rr', 'ss', 'tt',
+                'uu', 'vv', 'ww', 'xx', 'yy', 'zz']
 
 rug_text = [rug_text_one, rug_text_two] # for hover in rug plot
 colors = ['rgb(0, 0, 100)', 'rgb(0, 200, 200)']
@@ -157,21 +157,21 @@ fig.update_layout(title_text='Customized Distplot')
 fig.show()
 ```
 
-#### Plot Normal Curve 
+#### Plot Normal Curve
 
 ```python
 import plotly.figure_factory as ff
 import numpy as np
 
-x1 = np.random.randn(200)  
-x2 = np.random.randn(200) + 2    
+x1 = np.random.randn(200)
+x2 = np.random.randn(200) + 2
 
 group_labels = ['Group 1', 'Group 2']
 
 colors = ['slategray', 'magenta']
 
 # Create distplot with curve_type set to 'normal'
-fig = ff.create_distplot([x1, x2], group_labels, bin_size=.5, 
+fig = ff.create_distplot([x1, x2], group_labels, bin_size=.5,
                          curve_type='normal', # override default 'kde'
                          colors=colors)
 
@@ -186,9 +186,9 @@ fig.show()
 import plotly.figure_factory as ff
 import numpy as np
 
-x1 = np.random.randn(200) - 1 
+x1 = np.random.randn(200) - 1
 x2 = np.random.randn(200)
-x3 = np.random.randn(200) + 1 
+x3 = np.random.randn(200) + 1
 
 hist_data = [x1, x2, x3]
 
@@ -209,9 +209,9 @@ fig.show()
 import plotly.figure_factory as ff
 import numpy as np
 
-x1 = np.random.randn(200) - 1 
+x1 = np.random.randn(200) - 1
 x2 = np.random.randn(200)
-x3 = np.random.randn(200) + 1 
+x3 = np.random.randn(200) + 1
 
 hist_data = [x1, x2, x3]
 
@@ -219,7 +219,7 @@ group_labels = ['Group 1', 'Group 2', 'Group 3']
 colors = ['#835AF1', '#7FA6EE', '#B8F7D4']
 
 # Create distplot with curve_type set to 'normal'
-fig = ff.create_distplot(hist_data, group_labels, colors=colors, bin_size=.25, 
+fig = ff.create_distplot(hist_data, group_labels, colors=colors, bin_size=.25,
                          show_curve=False)
 
 # Add title
@@ -233,16 +233,16 @@ fig.show()
 import plotly.figure_factory as ff
 import numpy as np
 
-x1 = np.random.randn(200) - 2 
+x1 = np.random.randn(200) - 2
 x2 = np.random.randn(200)
-x3 = np.random.randn(200) + 2 
+x3 = np.random.randn(200) + 2
 
 hist_data = [x1, x2, x3]
 
 group_labels = ['Group 1', 'Group 2', 'Group 3']
 colors = ['#393E46', '#2BCDC1', '#F66095']
 
-fig = ff.create_distplot(hist_data, group_labels, colors=colors, 
+fig = ff.create_distplot(hist_data, group_labels, colors=colors,
                          bin_size=[0.3, 0.2, 0.1], show_curve=False)
 
 # Add title
@@ -256,9 +256,9 @@ fig.show()
 import plotly.figure_factory as ff
 import numpy as np
 
-x1 = np.random.randn(200) - 2 
+x1 = np.random.randn(200) - 2
 x2 = np.random.randn(200)
-x3 = np.random.randn(200) + 2 
+x3 = np.random.randn(200) + 2
 
 hist_data = [x1, x2, x3]
 
@@ -287,7 +287,7 @@ fig = ff.create_distplot([df[c] for c in df.columns], df.columns, bin_size=.25)
 fig.show()
 ```
 
-#### Reference 
+#### Reference
 
 ```python
 help(ff.create_distplot)

@@ -25,7 +25,7 @@ jupyter:
 ---
 
 Since Plotly graphs can be embedded in HTML or exported as a static image, you can embed Plotly graphs in reports suited for print and for the web. This notebook is a primer on creating PDF reports with Python from HTML with Plotly graphs. This notebook uses:
-- [Plotly](https://plot.ly/python/) for interactive, web native graphs
+- [Plotly](https://plot.ly/python/next/) for interactive, web native graphs
 - [IPython Notebook](https://plot.ly/ipython-notebooks) to create this notebook, combining text, HTML, and Python code
 - [xhtml2pdf](https://github.com/chrisglass/xhtml2pdf/tree/master/doc) to convert HTML to PDF in Python
 
@@ -170,9 +170,9 @@ convert_html_to_pdf(report_html, 'report-2.pdf')
 - Questions? <support@plot.ly>
 - [Getting started with Plotly and Python](https://plot.ly/python/getting-started)
 - [Updating Plotly graphs with Python and cron jobs](http://moderndata.plot.ly/update-plotly-charts-with-cron-jobs-and-python/)
-- [Using Plotly offline in IPython notebooks](https://plot.ly/python/offline)
+- [Using Plotly offline in IPython notebooks](https://plot.ly/python/next/offline)
 - [Generate HTML reports with Python, Pandas, and Plotly](http://moderndata.plot.ly/generate-html-reports-with-python-pandas-and-plotly/)
-- [Emailing Plotly graphs with Python](https://plot.ly/python/email-reports/)
+- [Emailing Plotly graphs with Python](https://plot.ly/python/next/email-reports/)
 - [Edit this tutorial](https://github.com/plotly/documentation/tree/gh-pages)
 
 ```python

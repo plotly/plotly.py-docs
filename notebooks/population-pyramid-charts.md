@@ -172,7 +172,7 @@ py.iplot(dict(data=data, layout=layout), filename='EXAMPLES/histogram_pyramid')
 ```
 
 ### More Bar and Histogram Examples
-See more examples of [horizontal bar charts](https://plot.ly/python/horizontal-bar-charts/), [bar charts](https://plot.ly/python/bar-charts/) and [histograms](https://plot.ly/python/histograms/).
+See more examples of [horizontal bar charts](https://plot.ly/python/next/horizontal-bar-charts/), [bar charts](https://plot.ly/python/next/bar-charts/) and [histograms](https://plot.ly/python/next/histograms/).
 
 
 ### Reference

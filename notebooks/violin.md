@@ -39,9 +39,9 @@ jupyter:
 
 ## Violin Plot with plotly express
 
-A [violin plot](https://en.wikipedia.org/wiki/Violin_plot) is a statistical representation of numerical data. It is similar to a [box plot](https://plot.ly/python/box-plots/), with the addition of a rotated [kernel density](https://en.wikipedia.org/wiki/Kernel_density_estimation) plot on each side. 
+A [violin plot](https://en.wikipedia.org/wiki/Violin_plot) is a statistical representation of numerical data. It is similar to a [box plot](https://plot.ly/python/next/box-plots/), with the addition of a rotated [kernel density](https://en.wikipedia.org/wiki/Kernel_density_estimation) plot on each side.
 
-See also the [list of other statistical charts](https://plot.ly/python/statistical-charts/).
+See also the [list of other statistical charts](https://plot.ly/python/next/statistical-charts/).
 
 ### Basic Violin Plot with plotly express
 
@@ -67,13 +67,13 @@ fig = px.violin(tips, y="total_bill", box=True, # draw box plot inside the violi
 fig.show()
 ```
 
-### Multiple Violin Plots 
+### Multiple Violin Plots
 
 ```python
 import plotly.express as px
 
 tips = px.data.tips()
-fig = px.violin(tips, y="tip", x="smoker", color="sex", box=True, points="all", 
+fig = px.violin(tips, y="tip", x="smoker", color="sex", box=True, points="all",
           hover_data=tips.columns)
 fig.show()
 ```
@@ -82,7 +82,7 @@ fig.show()
 import plotly.express as px
 
 tips = px.data.tips()
-fig = px.violin(tips, y="tip", color="sex", 
+fig = px.violin(tips, y="tip", color="sex",
                 violinmode='overlay', # draw violins on top of each other
                 # default violinmode is 'group' as in example above
                 hover_data=tips.columns)
@@ -104,7 +104,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/violi
 
 fig = go.Figure(data=go.Violin(y=df['total_bill'], box_visible=True, line_color='black',
                                meanline_visible=True, fillcolor='lightseagreen', opacity=0.6,
-                               x0='Total Bill')) 
+                               x0='Total Bill'))
 
 fig.update_layout(yaxis_zeroline=False)
 fig.show()
@@ -129,7 +129,7 @@ for day in days:
                             name=day,
                             box_visible=True,
                             meanline_visible=True))
-        
+
 fig.show()
 ```
 
@@ -144,12 +144,12 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/violi
 
 fig = go.Figure()
 
-fig.add_trace(go.Violin(x=df['day'][ df['sex'] == 'Male' ], 
+fig.add_trace(go.Violin(x=df['day'][ df['sex'] == 'Male' ],
                         y=df['total_bill'][ df['sex'] == 'Male' ],
                         legendgroup='M', scalegroup='M', name='M',
                         line_color='blue')
              )
-fig.add_trace(go.Violin(x=df['day'][ df['sex'] == 'Female' ], 
+fig.add_trace(go.Violin(x=df['day'][ df['sex'] == 'Female' ],
                         y=df['total_bill'][ df['sex'] == 'Female' ],
                         legendgroup='F', scalegroup='F', name='F',
                         line_color='orange')
@@ -171,13 +171,13 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/violi
 
 fig = go.Figure()
 
-fig.add_trace(go.Violin(x=df['day'][ df['smoker'] == 'Yes' ], 
+fig.add_trace(go.Violin(x=df['day'][ df['smoker'] == 'Yes' ],
                         y=df['total_bill'][ df['smoker'] == 'Yes' ],
                         legendgroup='Yes', scalegroup='Yes', name='Yes',
                         side='negative',
                         line_color='blue')
              )
-fig.add_trace(go.Violin(x=df['day'][ df['smoker'] == 'No' ], 
+fig.add_trace(go.Violin(x=df['day'][ df['smoker'] == 'No' ],
                         y=df['total_bill'][ df['smoker'] == 'No' ],
                         legendgroup='No', scalegroup='No', name='No',
                         side='positive',
@@ -204,7 +204,7 @@ show_legend = [True,False,False,False]
 fig = go.Figure()
 
 for i in range(0,len(pd.unique(df['day']))):
-    fig.add_trace(go.Violin(x=df['day'][(df['sex'] == 'Male') & 
+    fig.add_trace(go.Violin(x=df['day'][(df['sex'] == 'Male') &
                                         (df['day'] == pd.unique(df['day'])[i])],
                             y=df['total_bill'][(df['sex'] == 'Male')&
                                                (df['day'] == pd.unique(df['day'])[i])],
@@ -214,7 +214,7 @@ for i in range(0,len(pd.unique(df['day']))):
                             line_color='lightseagreen',
                             showlegend=show_legend[i])
              )
-    fig.add_trace(go.Violin(x=df['day'][(df['sex'] == 'Female') & 
+    fig.add_trace(go.Violin(x=df['day'][(df['sex'] == 'Female') &
                                         (df['day'] == pd.unique(df['day'])[i])],
                             y=df['total_bill'][(df['sex'] == 'Female')&
                                                (df['day'] == pd.unique(df['day'])[i])],
@@ -226,8 +226,8 @@ for i in range(0,len(pd.unique(df['day']))):
              )
 
 # update characteristics shared by all traces
-fig.update_traces(meanline_visible=True, 
-                  points='all', # show all points 
+fig.update_traces(meanline_visible=True,
+                  points='all', # show all points
                   jitter=0.05,  # add some jitter on points for better visibility
                   scalemode='count') #scale violin plot area with total count
 fig.update_layout(
@@ -246,7 +246,7 @@ from plotly.colors import n_colors
 import numpy as np
 
 # 12 sets of normal distributed random data, with increasing mean and standard deviation
-data = (np.linspace(1, 2, 12)[:, np.newaxis] * np.random.randn(12, 200) + 
+data = (np.linspace(1, 2, 12)[:, np.newaxis] * np.random.randn(12, 200) +
             (np.arange(12) + 2 * np.random.random(12))[:, np.newaxis])
 
 colors = n_colors('rgb(5, 200, 200)', 'rgb(200, 10, 10)', 12, colortype='rgb')

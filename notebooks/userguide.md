@@ -49,14 +49,14 @@ As you may know, Plotly is software written to enable users to easily create bea
 The user guide is split into the following sections:
 
 - Section 0. [Getting Started with Plotly](https://plot.ly/python/getting_started)
-- Section 1. [Line and Scatter Plots](https://plot.ly/python/line-and-scatter-plots-tutorial)
-- Section 2. [Bar Charts](https://plot.ly/python/bar-charts-tutorial)
-- Section 3. [Bubble Charts](https://plot.ly/python/bubble-charts-tutorial)
-- Section 4. [Histograms and Box Plots](https://plot.ly/python/histograms-and-box-plots-tutorial)
-- Section 5. [Heatmaps, Contours and 2D Histograms](https://plot.ly/python/heatmaps-contours-and-2dhistograms-tutorial)
-- Section 6. [Converting Matplotlib Figures to Plotly](https://plot.ly/python/matplotlib-to-plotly-tutorial)
-- Section 7. [Streaming API](https://plot.ly/python/intro_streaming)
-- [Appendix A: Getting Started with Python](https://plot.ly/python/python-tutorial)
+- Section 1. [Line and Scatter Plots](https://plot.ly/python/next/line-and-scatter-plots-tutorial)
+- Section 2. [Bar Charts](https://plot.ly/python/next/bar-charts-tutorial)
+- Section 3. [Bubble Charts](https://plot.ly/python/next/bubble-charts-tutorial)
+- Section 4. [Histograms and Box Plots](https://plot.ly/python/next/histograms-and-box-plots-tutorial)
+- Section 5. [Heatmaps, Contours and 2D Histograms](https://plot.ly/python/next/heatmaps-contours-and-2dhistograms-tutorial)
+- Section 6. [Converting Matplotlib Figures to Plotly](https://plot.ly/python/next/matplotlib-to-plotly-tutorial)
+- Section 7. [Streaming API](https://plot.ly/python/next/intro_streaming)
+- [Appendix A: Getting Started with Python](https://plot.ly/python/next/python-tutorial)
 
 
 ### Want to know what's going on at Plotly?

@@ -48,7 +48,7 @@ Plotly express functions take as argument a tidy [pandas DataFrame](https://pand
 import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill")
-fig.show()      
+fig.show()
 ```
 
 ```python
@@ -67,7 +67,7 @@ By default, the number of bins is chosen so that this number is comparable to th
 import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", nbins=20)
-fig.show()  
+fig.show()
 ```
 
 #### Type of normalization
@@ -78,10 +78,10 @@ The default mode is to represent the count of samples in each bin. With the `his
 import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", histnorm='probability density')
-fig.show()  
+fig.show()
 ```
 
-#### Aspect of the histogram plot 
+#### Aspect of the histogram plot
 
 ```python
 import plotly.express as px
@@ -93,7 +93,7 @@ fig = px.histogram(tips, x="total_bill",
                    log_y=True, # represent bars with log scale
                    color_discrete_sequence=['indianred'] # color of histogram bars
                    )
-fig.show()  
+fig.show()
 ```
 
 #### Several histograms for the different values of one column
@@ -102,7 +102,7 @@ fig.show()
 import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", color="sex")
-fig.show()  
+fig.show()
 ```
 
 #### Using histfunc
@@ -113,12 +113,12 @@ For each bin of `x`, one can compute a function of data using `histfunc`. The ar
 import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", y="tip", histfunc='avg')
-fig.show()  
+fig.show()
 ```
 
 #### Visualizing the distribution
 
-With the `marginal` keyword, a subplot is drawn alongside the histogram, visualizing the distribution. See [the distplot page](https://plot.ly/python/distplot/)for more examples of combined statistical representations.
+With the `marginal` keyword, a subplot is drawn alongside the histogram, visualizing the distribution. See [the distplot page](https://plot.ly/python/next/distplot/)for more examples of combined statistical representations.
 
 ```python
 import plotly.express as px
@@ -194,7 +194,7 @@ fig.update_traces(opacity=0.75)
 fig.show()
 ```
 
-### Stacked Histograms 
+### Stacked Histograms
 
 ```python
 import plotly.graph_objects as go
@@ -259,7 +259,7 @@ fig.update_layout(
 fig.show()
 ```
 
-### Cumulative Histogram 
+### Cumulative Histogram
 
 ```python
 import plotly.graph_objects as go
@@ -294,7 +294,7 @@ For custom binning along x-axis, use the attribute [`nbinsx`](https://plot.ly/py
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-x = ['1970-01-01', '1970-01-01', '1970-02-01', '1970-04-01', '1970-01-02', 
+x = ['1970-01-01', '1970-01-01', '1970-02-01', '1970-04-01', '1970-01-02',
      '1972-01-31', '1970-02-13', '1971-04-19']
 
 fig = make_subplots(rows=3, cols=2)
@@ -323,7 +323,7 @@ trace5 = go.Histogram(x=x,
                       size= 'M2'), # 2 months
                       autobinx = False
                       )
-  
+
 fig.append_trace(trace0, 1, 1)
 fig.append_trace(trace1, 1, 2)
 fig.append_trace(trace2, 2, 1)

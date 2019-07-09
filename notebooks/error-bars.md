@@ -39,13 +39,13 @@ jupyter:
 
 ### Error Bars with plotly express
 
-Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). For functions representing 2D data points such as [`px.scatter`](https://plot.ly/python/line-and-scatter/), [`px.line`](https://plot.ly/python/line-charts/), [`px.bar`](https://plot.ly/python/bar-charts/) etc., error bars are given as a column name which is the value of the `error_x` (for the error on x position) and `error_y` (for the error on y position). 
+Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). For functions representing 2D data points such as [`px.scatter`](https://plot.ly/python/next/line-and-scatter/), [`px.line`](https://plot.ly/python/next/line-charts/), [`px.bar`](https://plot.ly/python/next/bar-charts/) etc., error bars are given as a column name which is the value of the `error_x` (for the error on x position) and `error_y` (for the error on y position).
 
 ```python
 import plotly.express as px
 iris = px.data.iris()
 iris["e"] = iris["sepal_width"]/100
-fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", 
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species",
                  error_x="e", error_y="e")
 fig.show()
 ```
@@ -57,7 +57,7 @@ import plotly.express as px
 iris = px.data.iris()
 iris["e_plus"] = iris["sepal_width"]/100
 iris["e_minus"] = iris["sepal_width"]/40
-fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", 
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species",
                  error_y="e_plus", error_y_minus="e_minus")
 fig.show()
 ```

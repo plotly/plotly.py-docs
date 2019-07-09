@@ -40,7 +40,7 @@ jupyter:
 
 ## Bubble chart with plotly.express
 
-A [bubble chart](https://en.wikipedia.org/wiki/Bubble_chart) is a scatter plot in which a third dimension of the data is shown through the size of markers. For other types of scatter plot, see the [line and scatter page](https://plot.ly/python/line-and-scatter/).
+A [bubble chart](https://en.wikipedia.org/wiki/Bubble_chart) is a scatter plot in which a third dimension of the data is shown through the size of markers. For other types of scatter plot, see the [line and scatter page](https://plot.ly/python/next/line-and-scatter/).
 
 We first show a bubble chart example using plotly express. Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). The size of markers is set from the dataframe column given as the `size` parameter.
 
@@ -48,7 +48,7 @@ We first show a bubble chart example using plotly express. Plotly express functi
 import plotly.express as px
 gapminder = px.data.gapminder()
 
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", 
+fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp",
 	         size="pop", color="continent",
                  hover_name="country", log_x=True, size_max=60)
 fig.show()
@@ -68,7 +68,7 @@ fig = go.Figure(data=[go.Scatter(
     mode='markers',
     marker_size=[40, 60, 80, 100])
 ])
-                      
+
 fig.show()
 ```
 
@@ -187,12 +187,12 @@ sizeref = 2.*max(df_2007['size'])/(100**2)
 
 # Dictionary with dataframes for each continent
 continent_names = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
-continent_data = {continent:df_2007.query("continent == '%s'" %continent) 
+continent_data = {continent:df_2007.query("continent == '%s'" %continent)
                               for continent in continent_names}
 
 # Create figure
 fig = go.Figure()
-        
+
 for continent_name, continent in continent_data.items():
     fig.add_trace(go.Scatter(
         x=continent['gdpPercap'], y=continent['lifeExp'],
@@ -201,9 +201,9 @@ for continent_name, continent in continent_data.items():
         ))
 
 # Tune marker appearance and layout
-fig.update_traces(mode='markers', marker=dict(sizemode='area', 
+fig.update_traces(mode='markers', marker=dict(sizemode='area',
                                               sizeref=sizeref, line_width=2))
-                       
+
 fig.update_layout(
     title='Life Expectancy v. Per Capita GDP, 2007',
     xaxis=dict(

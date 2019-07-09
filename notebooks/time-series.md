@@ -39,7 +39,7 @@ jupyter:
 
 ### Time Series Plot with `datetime` Objects ###
 
-Time series can be represented using either `plotly.express` functions (`px.line`, `px.scatter`) or `plotly.graph_objects` charts objects (`go.Scatter`). For more examples of such charts, see the documentation of [line and scatter plots](https://plot.ly/python/line-and-scatter/).
+Time series can be represented using either `plotly.express` functions (`px.line`, `px.scatter`) or `plotly.graph_objects` charts objects (`go.Scatter`). For more examples of such charts, see the documentation of [line and scatter plots](https://plot.ly/python/next/line-and-scatter/).
 
 Plotly auto-sets the axis type to a date format when the corresponding data are either ISO-formatted date strings or if they're a [date pandas column](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html) or [datetime NumPy array](https://docs.scipy.org/doc/numpy/reference/arrays.datetime.html).
 
@@ -65,7 +65,7 @@ fig = go.Figure([go.Scatter(x=df['Date'], y=df['AAPL.High'])])
 fig.show()
 ```
 
-### Time Series Plot with Custom Date Range 
+### Time Series Plot with Custom Date Range
 
 The data range can be set manually using either `datetime.datetime` objects, or date strings.
 
@@ -126,7 +126,7 @@ fig.add_trace(go.Scatter(x=df.Date, y=df['AAPL.High'], name="AAPL High",
 fig.add_trace(go.Scatter(x=df.Date, y=df['AAPL.Low'], name="AAPL Low",
                          line_color='dimgray'))
 
-fig.update_layout(title_text='Time Series with Rangeslider', 
+fig.update_layout(title_text='Time Series with Rangeslider',
                   xaxis_rangeslider_visible=True)
 fig.show()
 ```

@@ -272,7 +272,7 @@ fig = ff.create_choropleth(
 py.iplot(fig, filename='choropleth_full_usa')
 ```
 
-Also see Mapbox county choropleths made in Python: [https://plot.ly/python/mapbox-county-choropleth/](https://plot.ly/python/mapbox-county-choropleth/)
+Also see Mapbox county choropleths made in Python: [https://plot.ly/python/mapbox-county-choropleth/](https://plot.ly/python/next/mapbox-county-choropleth/)
 
 
 #### Reference

@@ -172,7 +172,7 @@ def make_ideogram_arc(R, phi, a=50):
 ```
 
 The real and imaginary parts of these complex numbers will be used to define the ideogram as a [Plotly
-shape](https://plot.ly/python/shapes/) bounded by a SVG path.
+shape](https://plot.ly/python/next/shapes/) bounded by a SVG path.
 
 ```python
 z=make_ideogram_arc(1.3, [11*PI/6, PI/17])

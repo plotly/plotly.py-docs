@@ -42,7 +42,7 @@ jupyter:
 
 Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). With ``px.line``, each data point is represented as a vertex (which location is given by the `x` and `y` columns) of a **polyline mark** in 2D space.
 
-For more examples of line plots, see the [line and scatter notebook](https://plot.ly/python/line-and-scatter/).
+For more examples of line plots, see the [line and scatter notebook](https://plot.ly/python/next/line-and-scatter/).
 
 #### Simple Line Plot with plotly.express
 
@@ -68,7 +68,7 @@ fig.show()
 import plotly.express as px
 
 gapminder = px.data.gapminder().query("continent != 'Asia'") # remove Asia for visibility
-fig = px.line(gapminder, x="year", y="lifeExp", color="continent", 
+fig = px.line(gapminder, x="year", y="lifeExp", color="continent",
               line_group="country", hover_name="country")
 fig.show()
 ```
@@ -120,7 +120,7 @@ fig.show()
 
 #### Style Line Plots
 
-This example styles the color and dash of the traces, adds trace names, 
+This example styles the color and dash of the traces, adds trace names,
 modifies line width, and adds plot and axes titles.
 
 

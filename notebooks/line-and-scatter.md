@@ -92,7 +92,7 @@ fig.show()
 
 #### Line and Scatter Plots
 
-Use `mode` argument to choose between markers, lines, or a combination of both. For more options about line plots, see also the [line charts notebook](https://plot.ly/python/line-charts/) and the [filled area plots notebook](https://plot.ly/python/filled-area-plots/).
+Use `mode` argument to choose between markers, lines, or a combination of both. For more options about line plots, see also the [line charts notebook](https://plot.ly/python/next/line-charts/) and the [filled area plots notebook](https://plot.ly/python/next/filled-area-plots/).
 
 ```python
 import plotly.graph_objects as go
@@ -124,7 +124,7 @@ fig.show()
 
 #### Bubble Scatter Plots
 
-In [bubble charts](https://en.wikipedia.org/wiki/Bubble_chart), a third dimension of the data is shown through the size of markers. For more examples, see the [bubble chart notebook](https://plot.ly/python/bubble-charts/)  
+In [bubble charts](https://en.wikipedia.org/wiki/Bubble_chart), a third dimension of the data is shown through the size of markers. For more examples, see the [bubble chart notebook](https://plot.ly/python/next/bubble-charts/)
 
 ```python
 import plotly.graph_objects as go
@@ -133,7 +133,7 @@ fig = go.Figure(data=go.Scatter(
     x=[1, 2, 3, 4],
     y=[10, 11, 12, 13],
     mode='markers',
-    marker=dict(size=[40, 60, 80, 100], 
+    marker=dict(size=[40, 60, 80, 100],
                 color=[0, 1, 2, 3])
 ))
 
@@ -181,12 +181,12 @@ import pandas as pd
 
 data= pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv")
 
-fig = go.Figure(data=go.Scatter(x=data['Postal'], 
-                                y=data['Population'], 
+fig = go.Figure(data=go.Scatter(x=data['Postal'],
+                                y=data['Population'],
                                 mode='markers',
                                 marker_color=data['Population'],
                                 text=data['State'])) # hover text goes here
-    
+
 fig.update_layout(title='Population of USA States')
 fig.show()
 
@@ -245,7 +245,7 @@ r = np.random.uniform(0, 1, N)
 theta = np.random.uniform(0, 2*np.pi, N)
 
 fig = go.Figure(data=go.Scattergl(
-    x = r * np.cos(theta), # non-uniform distribution 
+    x = r * np.cos(theta), # non-uniform distribution
     y = r * np.sin(theta), # zoom to see more points at the center
     mode='markers',
     marker=dict(

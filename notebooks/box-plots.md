@@ -37,14 +37,14 @@ jupyter:
     v4upgrade: true
 ---
 
-A [box plot](https://en.wikipedia.org/wiki/Box_plot) is a statistical representation of numerical data through their quartiles. The ends of the box represent the lower and upper quartiles, while the median (second quartile) is marked by a line inside the box. For other statistical representations of numerical data, see [other statistical charts](https://plot.ly/python/statistical-charts/). 
+A [box plot](https://en.wikipedia.org/wiki/Box_plot) is a statistical representation of numerical data through their quartiles. The ends of the box represent the lower and upper quartiles, while the median (second quartile) is marked by a line inside the box. For other statistical representations of numerical data, see [other statistical charts](https://plot.ly/python/next/statistical-charts/).
 
 
 ## Box Plot with plotly express
 
-Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). In a box plot created by `px.box`, the distribution of the column given as `y` argument is represented. 
+Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). In a box plot created by `px.box`, the distribution of the column given as `y` argument is represented.
 
-If your data are not available as a tidy dataframe, you can use ``go.Box`` as [described below](https://plot.ly/python/box-plots/#box-plot-with-go.Box).
+If your data are not available as a tidy dataframe, you can use ``go.Box`` as [described below](https://plot.ly/python/next/box-plots/#box-plot-with-go.Box).
 
 ```python
 import plotly.express as px
@@ -131,7 +131,7 @@ fig.show()
 import plotly.graph_objects as go
 
 fig = go.Figure(data=[go.Box(y=[0, 1, 1, 2, 3, 5, 8, 13, 21],
-            boxpoints='all', # can also be outliers, or suspectedoutliers, or False 
+            boxpoints='all', # can also be outliers, or suspectedoutliers, or False
             jitter=0.3, # add some jitter for a better separation between points
             pointpos=-1.8 # relative position of points wrt box
               )])
@@ -188,7 +188,7 @@ import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Box(
-    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
+    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15,
        8.15, 8.65, 8.93, 9.2, 9.5, 10, 10.25, 11.5, 12, 16, 20.90, 22.3, 23.25],
     name="All Points",
     jitter=0.3,
@@ -199,7 +199,7 @@ fig.add_trace(go.Box(
 ))
 
 fig.add_trace(go.Box(
-    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
+    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15,
         8.15, 8.65, 8.93, 9.2, 9.5, 10, 10.25, 11.5, 12, 16, 20.90, 22.3, 23.25],
     name="Only Whiskers",
     boxpoints=False, # no data points
@@ -208,7 +208,7 @@ fig.add_trace(go.Box(
 ))
 
 fig.add_trace(go.Box(
-    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
+    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15,
         8.15, 8.65, 8.93, 9.2, 9.5, 10, 10.25, 11.5, 12, 16, 20.90, 22.3, 23.25],
     name="Suspected Outliers",
     boxpoints='suspectedoutliers', # only suspected outliers
@@ -222,7 +222,7 @@ fig.add_trace(go.Box(
 ))
 
 fig.add_trace(go.Box(
-    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 
+    y=[0.75, 5.25, 5.5, 6, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15,
         8.15, 8.65, 8.93, 9.2, 9.5, 10, 10.25, 11.5, 12, 16, 20.90, 22.3, 23.25],
     name="Whiskers and Outliers",
     boxpoints='outliers', # only outliers
@@ -317,14 +317,14 @@ import numpy as np
 N = 30     # Number of boxes
 
 # generate an array of rainbow colors by fixing the saturation and lightness of the HSL
-# representation of colour and marching around the hue. 
+# representation of colour and marching around the hue.
 # Plotly accepts any CSS color format, see e.g. http://www.w3schools.com/cssref/css_colors_legal.asp.
 c = ['hsl('+str(h)+',50%'+',50%)' for h in np.linspace(0, 360, N)]
 
-# Each box is represented by a dict that contains the data, the type, and the colour. 
+# Each box is represented by a dict that contains the data, the type, and the colour.
 # Use list comprehension to describe N boxes, each with a different colour and with different randomly generated data:
 fig = go.Figure(data=[go.Box(
-    y=3.5 * np.sin(np.pi * i/N) + i/N + (1.5 + 0.5 * np.cos(np.pi*i/N)) * np.random.rand(10), 
+    y=3.5 * np.sin(np.pi * i/N) + i/N + (1.5 + 0.5 * np.cos(np.pi*i/N)) * np.random.rand(10),
     marker_color=c[i]
     ) for i in range(int(N))])
 
@@ -360,7 +360,7 @@ y5 = (12 * np.random.randn(N) + 40).astype(np.int)
 
 y_data = [y0, y1, y2, y3, y4, y5]
 
-colors = ['rgba(93, 164, 214, 0.5)', 'rgba(255, 144, 14, 0.5)', 'rgba(44, 160, 101, 0.5)', 
+colors = ['rgba(93, 164, 214, 0.5)', 'rgba(255, 144, 14, 0.5)', 'rgba(44, 160, 101, 0.5)',
           'rgba(255, 65, 54, 0.5)', 'rgba(207, 114, 255, 0.5)', 'rgba(127, 96, 0, 0.5)']
 
 fig = go.Figure()

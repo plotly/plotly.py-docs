@@ -327,7 +327,7 @@ fig.show()
 ```
 
 ### Horizontal Bar Charts
-See examples of horizontal bar charts [here](https://plot.ly/python/horizontal-bar-charts/).
+See examples of horizontal bar charts [here](https://plot.ly/python/next/horizontal-bar-charts/).
 
 
 ### Dash Example

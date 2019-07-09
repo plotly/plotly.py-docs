@@ -41,9 +41,9 @@ jupyter:
 
 3D figures have an attribute in `layout` called `scene`, which contains
 attributes such as `xaxis`, `yaxis` and `zaxis` parameters, in order to
-set the range, title, ticks, color etc. of the axes. 
+set the range, title, ticks, color etc. of the axes.
 
-For creating 3D charts, see [this page](https://plot.ly/python/3d-charts/).
+For creating 3D charts, see [this page](https://plot.ly/python/next/3d-charts/).
 
 ```python
 import plotly.graph_objects as go
@@ -89,7 +89,7 @@ for i in [1,2]:
                 y=(25*np.random.randn(N)),
                 z=(40*np.random.randn(N)),
                 opacity=0.5,
-              ), 
+              ),
             row=i, col=j)
 
 fig.update_layout(width=700, margin=dict(r=10, l=10, b=10, t=10))

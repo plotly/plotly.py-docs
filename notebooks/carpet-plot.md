@@ -216,7 +216,7 @@ py.iplot(fig, filename = "carpet/styled")
 
 ### Add Points and Contours
 
-To add points and lines see [Carpet Scatter Plots](https://plot.ly/python/carpet-scatter) or to add contours see [Carpet Contour Plots](https://plot.ly/python/carpet-contour)
+To add points and lines see [Carpet Scatter Plots](https://plot.ly/python/next/carpet-scatter) or to add contours see [Carpet Contour Plots](https://plot.ly/python/next/carpet-contour)
 
 
 ### Reference

@@ -35,7 +35,7 @@ Plotly's Python library is free and open source! [Get started](https://plot.ly/p
 #### Legacy Plot
 
 
-These polar charts are legacy and will likely be deprecated in [Plotly 2.0](https://github.com/plotly/plotly.js/issues/420). Please see the new `scatterpolar` and `scatterpolargl` [trace types](https://plot.ly/python/polar-chart/) for latest and greatest in Plotly polar coordinates.
+These polar charts are legacy and will likely be deprecated in [Plotly 2.0](https://github.com/plotly/plotly.js/issues/420). Please see the new `scatterpolar` and `scatterpolargl` [trace types](https://plot.ly/python/next/polar-chart/) for latest and greatest in Plotly polar coordinates.
 
 
 #### Basic Polar Chart

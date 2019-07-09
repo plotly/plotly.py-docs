@@ -74,7 +74,7 @@ phases = ['Visit', 'Sign-up', 'Selection', 'Purchase', 'Review']
 colors = ['rgb(32,155,160)', 'rgb(253,93,124)', 'rgb(28,119,139)', 'rgb(182,231,235)', 'rgb(35,154,160)']
 ```
 
-A funnel section will be drawn using [Plotly shapes](https://plot.ly/python/shapes/), in the shape of a *Rectangle* or *Isosceles Trapezoid* depending on the value of the next phase. The phase having *maximum value* will have the width equal to the plot.
+A funnel section will be drawn using [Plotly shapes](https://plot.ly/python/next/shapes/), in the shape of a *Rectangle* or *Isosceles Trapezoid* depending on the value of the next phase. The phase having *maximum value* will have the width equal to the plot.
 
 ```python
 n_phase = len(phases)

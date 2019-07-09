@@ -45,7 +45,7 @@ See also the [list of other statistical charts](https://plot.ly/python/next/stat
 
 ### Basic Violin Plot with plotly express
 
-Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
+[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html).
 
 ```python
 import plotly.express as px

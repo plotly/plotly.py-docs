@@ -38,12 +38,12 @@ jupyter:
 
 ### Bubble map with plotly express
 
-Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). With ``px.scatter_geo``, each line of the dataframe is represented as a marker point. The column set as the `size` argument gives the size of markers.
+[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). With ``px.scatter_geo``, each line of the dataframe is represented as a marker point. The column set as the `size` argument gives the size of markers.
 
 ```python
 import plotly.express as px
 gapminder = px.data.gapminder().query("year==2007")
-fig = px.scatter_geo(gapminder, locations="iso_alpha", color="continent", 
+fig = px.scatter_geo(gapminder, locations="iso_alpha", color="continent",
                      hover_name="country", size="pop",
                      projection="natural earth")
 fig.show()
@@ -54,7 +54,7 @@ fig.show()
 ```python
 import plotly.express as px
 gapminder = px.data.gapminder()
-fig = px.scatter_geo(gapminder, locations="iso_alpha", color="continent", 
+fig = px.scatter_geo(gapminder, locations="iso_alpha", color="continent",
                      hover_name="country", size="pop",
                      animation_frame="year",
                      projection="natural earth")
@@ -149,7 +149,7 @@ for i in range(6,10)[::-1]:
             )))
 
 df_sept = df.query('Month == 9')
-fig['data'][0].update(mode='markers+text', textposition='bottom center', 
+fig['data'][0].update(mode='markers+text', textposition='bottom center',
                       text=df_sept['Value'].map('{:.0f}'.format).astype(str)+' '+\
                       df_sept['Country'])
 

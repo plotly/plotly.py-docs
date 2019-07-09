@@ -40,7 +40,7 @@ jupyter:
 
 ## Scatter plot with plotly express
 
-Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). With ``px.scatter``, each data point is represented as a marker point, which location is given by the `x` and `y` columns.
+[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). With ``px.scatter``, each data point is represented as a marker point, which location is given by the `x` and `y` columns.
 
 ```python
 import plotly.express as px

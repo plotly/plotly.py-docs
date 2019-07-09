@@ -41,7 +41,7 @@ jupyter:
 
 ## Parallel Coordinates plot with plotly express
 
-Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). In a parallel coordinates plot with `px.parallel_coordinates`, each row of the DataFrame is represented by a polyline mark which traverses a set of parallel axes, one for each of the dimensions. For other representations of multivariate data, also see [radar charts](../radar-chart/) and [scatterplot matrix (SPLOM)](../splom/).
+[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). In a parallel coordinates plot with `px.parallel_coordinates`, each row of the DataFrame is represented by a polyline mark which traverses a set of parallel axes, one for each of the dimensions. For other representations of multivariate data, also see [radar charts](../radar-chart/) and [scatterplot matrix (SPLOM)](../splom/).
 
 ```python
 import plotly.express as px
@@ -49,7 +49,7 @@ iris = px.data.iris()
 fig = px.parallel_coordinates(iris, color="species_id", labels={"species_id": "Species",
                 "sepal_width": "Sepal Width", "sepal_length": "Sepal Length",
                 "petal_width": "Petal Width", "petal_length": "Petal Length", },
-                             color_continuous_scale=px.colors.diverging.Tealrose, 
+                             color_continuous_scale=px.colors.diverging.Tealrose,
                              color_continuous_midpoint=2)
 fig.show()
 ```
@@ -61,10 +61,10 @@ Select the columns to be represented with the `dimensions` parameter.
 ```python
 import plotly.express as px
 iris = px.data.iris()
-fig = px.parallel_coordinates(iris, color="species_id", 
+fig = px.parallel_coordinates(iris, color="species_id",
                               dimensions=['sepal_width', 'sepal_length', 'petal_width',
                                           'petal_length'],
-                              color_continuous_scale=px.colors.diverging.Tealrose, 
+                              color_continuous_scale=px.colors.diverging.Tealrose,
                               color_continuous_midpoint=2)
 fig.show()
 ```

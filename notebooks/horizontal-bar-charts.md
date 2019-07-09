@@ -42,7 +42,7 @@ See more examples of bar charts (including vertical bar charts) and styling opti
 
 ### Horizontal Bar Chart with plotly express
 
-Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html). For a horizontal bar char, use the `px.bar` function with `orientation='h'`.
+[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). For a horizontal bar char, use the `px.bar` function with `orientation='h'`.
 
 
 #### Basic Horizontal Bar Chart with plotly express

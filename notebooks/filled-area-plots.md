@@ -37,12 +37,12 @@ jupyter:
     v4upgrade: true
 ---
 
-This example shows how to fill the area enclosed by traces. 
+This example shows how to fill the area enclosed by traces.
 
 
 ## Filled area plot with plotly.express
 
-Plotly express functions take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
+[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html).
 
 `px.area` creates a stacked area plot. Each filled area corresponds to one value of the column given by the `line_group` parameter.
 
@@ -63,7 +63,7 @@ import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[0, 2, 3, 5], fill='tozeroy')) # fill down to xaxis
-fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[3, 5, 1, 7], fill='tonexty')) # fill to trace0 y 
+fig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[3, 5, 1, 7], fill='tonexty')) # fill to trace0 y
 
 fig.show()
 ```
@@ -215,5 +215,5 @@ fig.show()
 
 #### Reference
 See https://plot.ly/python/reference/#scatter-line
-and https://plot.ly/python/reference/#scatter-fill 
+and https://plot.ly/python/reference/#scatter-fill
 for more information and attribute options!

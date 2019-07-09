@@ -39,7 +39,7 @@ jupyter:
 
 ### Bar chart with plotly express
 
-Plotly express functions (here needs link to stable px doc entry) take as argument a tidy [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html).
+[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html).
 
 In a bar plot, each row of the DataFrame is represented as a rectangular mark.
 

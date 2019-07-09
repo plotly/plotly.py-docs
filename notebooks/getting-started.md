@@ -102,7 +102,7 @@ fig
 ```
 
 <!-- #region -->
-See [*Displaying Figures in Python*](https://plot.ly/python/renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](https://plot.ly/python/figurewidget/) for more information on using `FigureWidget`.
+See [*Displaying Figures in Python*](../renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](../figurewidget/) for more information on using `FigureWidget`.
 
 #### JupyterLab Support (Python 3.5+)
 For use in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), install the `jupyterlab` and `ipywidgets`
@@ -171,7 +171,7 @@ fig
 ```
 
 <!-- #region -->
-See [*Displaying Figures in Python*](https://plot.ly/python/renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](https://plot.ly/python/figurewidget/) for more information on using `FigureWidget`.
+See [*Displaying Figures in Python*](../renderers/) for more information on the renderers framework, and see [*Plotly FigureWidget Overview*](../figurewidget/) for more information on using `FigureWidget`.
 
 #### Static Image Export Support
 plotly.py supports static image export using the `to_image` and `write_image`
@@ -204,7 +204,7 @@ fig = go.FigureWidget(data=go.Bar(y=[2, 3, 1]))
 fig.write_image('figure.png')
 ```
 <!-- #region -->
-See [*Static Image Export in Python*](https://plot.ly/python/static-image-export/) for more information on static image export.
+See [*Static Image Export in Python*](../static-image-export/) for more information on static image export.
 
 #### Extended Geo Support
 Some plotly.py features rely on fairly large geographic shape files. The county
@@ -240,15 +240,15 @@ $ conda install -c plotly/label/test chart-studio=1.0.0rc1
 > **Note:** This package is optional, and if it is not installed it is not possible for figures to be uploaded to the Chart Studio cloud service.
 
 ### Where to next?
-Now that you have everything installed, you are ready to start reading and running examples of [basic charts](https://plot.ly/python/basic-charts/), [statistical charts](https://plot.ly/python/statistical-charts/), [scientific charts](https://plot.ly/python/scientific-charts/), [financial charts](https://plot.ly/python/#financial-charts), [geographic charts](https://plot.ly/python/maps/), and [3-dimensional charts](https://plot.ly/python/3d-charts/).
+Now that you have everything installed, you are ready to start reading and running examples of [basic charts](../basic-charts/), [statistical charts](../statistical-charts/), [scientific charts](../scientific-charts/), [financial charts](../#financial-charts), [geographic charts](../maps/), and [3-dimensional charts](../3d-charts/).
 
-For a complete overview of all of the ways that figures can be created and updated, see the [*Plotly User Guide for Python*](https://plot.ly/python/user-guide/).
+For a complete overview of all of the ways that figures can be created and updated, see the [*Plotly User Guide for Python*](../user-guide/).
 
-For information on configuring figure layout options (e.g. axes, titles, legends, etc) and styling figures (e.g. colors, fonts, annotations, images, shapes, etc.), see [*Plotly Fundamentals*](https://plot.ly/python/plotly-fundamentals/#fundamentals).
+For information on configuring figure layout options (e.g. axes, titles, legends, etc) and styling figures (e.g. colors, fonts, annotations, images, shapes, etc.), see [*Plotly Fundamentals*](../plotly-fundamentals).
 
-For information on theming plotly figures, see [*Theming and templates with plotly for Python*](https://plot.ly/python/templates/).
+For information on theming plotly figures, see [*Theming and templates with plotly for Python*](../templates/).
 
-For information on all of the ways that plotly figures can be displayed, see [*Displaying plotly figures with plotly for Python*](https://plot.ly/python/renderers/).
+For information on all of the ways that plotly figures can be displayed, see [*Displaying plotly figures with plotly for Python*](../renderers/).
 
 For the full searchable reference of every figure property, see the [*Python figure reference*](https://plot.ly/python/reference/).
 

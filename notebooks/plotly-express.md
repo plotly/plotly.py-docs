@@ -12,7 +12,7 @@ jupyter:
     language: python
     name: python3
   plotly:
-    description: Plotly Express is a terse, consistent, high-level wrapper around `plotly.graph_objs` for rapid data exploration and figure generation.
+    description: Plotly Express is a terse, consistent, high-level API for rapid data exploration and figure generation.
     display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/252
@@ -29,7 +29,7 @@ jupyter:
 
 ### Plotly Express
 
-Plotly Express is a terse, consistent, high-level wrapper around `plotly.graph_objs` for rapid data exploration and figure generation.
+Plotly Express is a terse, consistent, high-level wrapper around `plotly.graph_objects` for rapid data exploration and figure generation.
 
 This notebook demonstrates various `plotly.express` features. [Reference documentation](https://plotly.github.io/plotly_express/plotly_express/) is also available.
 

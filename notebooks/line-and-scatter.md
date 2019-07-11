@@ -43,7 +43,7 @@ jupyter:
 [Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). With ``px.scatter``, each data point is represented as a marker point, which location is given by the `x` and `y` columns.
 
 ```python
-import plotly.express as px
+import plot ly.express as px
 iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length")
 fig.show()

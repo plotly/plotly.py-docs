@@ -1,11 +1,11 @@
 
 export PLOTLY_RENDERER=notebook_connected
 
-MD_DIR ?= notebooks
+MD_DIR ?= python
 IPYNB_DIR ?= build/ipynb
 HTML_DIR ?= build/html
 FAIL_DIR ?= build/failures
-MD_FILES := $(shell grep -l v4upgrade $(MD_DIR)/*)
+MD_FILES := $(shell ls $(MD_DIR)/*)
 IPYNB_FILES := $(patsubst $(MD_DIR)/%.md,$(IPYNB_DIR)/%.ipynb,$(MD_FILES))
 HTML_FILES := $(patsubst $(MD_DIR)/%.md,$(HTML_DIR)/2019-07-03-%.html,$(MD_FILES))
 

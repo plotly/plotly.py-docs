@@ -4,6 +4,8 @@
 {% for k in nb.metadata.get("plotly") -%}
 {%- if k == "permalink" -%}
 permalink: {{ nb.metadata.get("plotly")[k].replace("python/", "python/next/") }}
+{% elif k == "redirect_from" -%}
+redirect_from: {{ nb.metadata.get("plotly")[k].replace("python/", "python/next/") }}
 {% elif k == "language" -%}
 language: python/next
 {% else -%}

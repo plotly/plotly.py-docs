@@ -55,7 +55,7 @@ jobs:
             rm -f build/failures/*
             echo ${mapbox_token} > .mapbox_token
             mkdir -p build/ipynb
-            ln -s .mapbox_token build/ipynb/.mapbox_token
+            cd build/ipynb && ln -s ../../.mapbox_token && cd ../..
             make -kj8 || make -kj8
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cd build/html

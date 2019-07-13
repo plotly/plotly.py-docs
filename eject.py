@@ -9,7 +9,7 @@ for html_path in Path("../documentation/_posts/python").glob("**/*.html"):
         metadata, content = frontmatter.parse(open(html_path).read())
         if "permalink" in metadata:
             try:
-                md_path = re.sub("python/(.*)/", "eject/\g<1>.md", metadata["permalink"])
+                md_path = re.sub("matplotlib/(.*)/", "eject/\g<1>.md", metadata["permalink"])
                 jt.writef(jt.readf(ipynb_path), md_path, fmt=".md")
                 nb_fm = frontmatter.load(md_path)
                 nb_fm["jupyter"]["plotly"] = metadata

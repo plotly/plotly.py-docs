@@ -11,8 +11,19 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
-    description: Plotly Express is a terse, consistent, high-level API for rapid data exploration and figure generation.
+    description: Plotly Express is a terse, consistent, high-level API for rapid data
+      exploration and figure generation.
     display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/252
@@ -35,201 +46,306 @@ This notebook demonstrates various `plotly.express` features. [Reference documen
 
 You can also read our [Medium announcement article](https://medium.com/@plotlygraphs/introducing-plotly-express-808df010143d) for more information on this library.
 
-#### A single import
+#### A single import, with built-in datasets
 
 ```python
 import plotly.express as px
-```
-
-#### Built-in sample datasets
-
-```python
 print(px.data.iris.__doc__)
-iris = px.data.iris()
-```
-
-```python
-tips = px.data.tips()
-gapminder = px.data.gapminder()
-election = px.data.election()
-wind = px.data.wind()
-carshare = px.data.carshare()
+px.data.iris().head()
 ```
 
 #### Scatter and Line plots
 
 ```python
-px.scatter(iris, x="sepal_width", y="sepal_length")
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length")
+fig.show()
 ```
 
 ```python
-px.scatter(iris, x="sepal_width", y="sepal_length", color="species")
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species")
+fig.show()
 ```
 
 ```python
-px.scatter(iris, x="sepal_width", y="sepal_length", color="species", marginal_y="rug", marginal_x="histogram")
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", marginal_y="rug", marginal_x="histogram")
+fig.show()
 ```
 
 ```python
-px.scatter(iris, x="sepal_width", y="sepal_length", color="species", marginal_y="violin",
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", marginal_y="violin",
            marginal_x="box", trendline="ols")
+fig.show()
 ```
 
 ```python
+import plotly.express as px
+iris = px.data.iris()
 iris["e"] = iris["sepal_width"]/100
-px.scatter(iris, x="sepal_width", y="sepal_length", color="species", error_x="e", error_y="e")
+fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", error_x="e", error_y="e")
+fig.show()
 ```
 
 ```python
-del iris["e"]
-```
-
-```python
-px.scatter(tips, x="total_bill", y="tip", facet_row="time", facet_col="day", color="smoker", trendline="ols",
+import plotly.express as px
+tips = px.data.tips()
+fig = px.scatter(tips, x="total_bill", y="tip", facet_row="time", facet_col="day", color="smoker", trendline="ols",
           category_orders={"day": ["Thur", "Fri", "Sat", "Sun"], "time": ["Lunch", "Dinner"]})
+fig.show()
 ```
 
 ```python
-px.scatter_matrix(iris)
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter_matrix(iris)
+fig.show()
 ```
 
 ```python
-px.scatter_matrix(iris, dimensions=["sepal_width", "sepal_length", "petal_width", "petal_length"], color="species")
+import plotly.express as px
+iris = px.data.iris()
+fig = px.scatter_matrix(iris, dimensions=["sepal_width", "sepal_length", "petal_width", "petal_length"], color="species")
+fig.show()
 ```
 
 ```python
-px.parallel_coordinates(iris, color="species_id", labels={"species_id": "Species",
+import plotly.express as px
+iris = px.data.iris()
+fig = px.parallel_coordinates(iris, color="species_id", labels={"species_id": "Species",
                   "sepal_width": "Sepal Width", "sepal_length": "Sepal Length",
                   "petal_width": "Petal Width", "petal_length": "Petal Length", },
                     color_continuous_scale=px.colors.diverging.Tealrose, color_continuous_midpoint=2)
+fig.show()
 ```
 
 ```python
-px.parallel_categories(tips, color="size", color_continuous_scale=px.colors.sequential.Inferno)
+import plotly.express as px
+tips = px.data.tips()
+fig = px.parallel_categories(tips, color="size", color_continuous_scale=px.colors.sequential.Inferno)
+fig.show()
 ```
 
 ```python
-px.scatter(tips, x="total_bill", y="tip", color="size", facet_col="sex",
+import plotly.express as px
+tips = px.data.tips()
+fig = px.scatter(tips, x="total_bill", y="tip", color="size", facet_col="sex",
            color_continuous_scale=px.colors.sequential.Viridis, render_mode="webgl")
+fig.show()
 ```
 
 ```python
-px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
+import plotly.express as px
+gapminder = px.data.gapminder()
+fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
            hover_name="country", log_x=True, size_max=60)
+fig.show()
 ```
 
 ```python
-px.scatter(gapminder, x="gdpPercap", y="lifeExp", animation_frame="year", animation_group="country",
+import plotly.express as px
+gapminder = px.data.gapminder()
+fig = px.scatter(gapminder, x="gdpPercap", y="lifeExp", animation_frame="year", animation_group="country",
            size="pop", color="continent", hover_name="country", facet_col="continent",
            log_x=True, size_max=45, range_x=[100,100000], range_y=[25,90])
+fig.show()
 ```
 
 ```python
-px.line(gapminder, x="year", y="lifeExp", color="continent", line_group="country", hover_name="country",
+import plotly.express as px
+gapminder = px.data.gapminder()
+fig = px.line(gapminder, x="year", y="lifeExp", color="continent", line_group="country", hover_name="country",
         line_shape="spline", render_mode="svg")
+fig.show()
 ```
 
 ```python
-px.area(gapminder, x="year", y="pop", color="continent", line_group="country")
+import plotly.express as px
+gapminder = px.data.gapminder()
+fig = px.area(gapminder, x="year", y="pop", color="continent", line_group="country")
+fig.show()
 ```
 
 #### Visualize Distributions
 
 ```python
-px.density_contour(iris, x="sepal_width", y="sepal_length")
+import plotly.express as px
+iris = px.data.iris()
+fig = px.density_contour(iris, x="sepal_width", y="sepal_length")
+fig.show()
 ```
 
 ```python
-px.density_contour(iris, x="sepal_width", y="sepal_length", color="species", marginal_x="rug", marginal_y="histogram")
+import plotly.express as px
+iris = px.data.iris()
+fig = px.density_contour(iris, x="sepal_width", y="sepal_length", color="species", marginal_x="rug", marginal_y="histogram")
+fig.show()
 ```
 
 ```python
-px.density_heatmap(iris, x="sepal_width", y="sepal_length", marginal_x="rug", marginal_y="histogram")
+import plotly.express as px
+iris = px.data.iris()
+fig = px.density_heatmap(iris, x="sepal_width", y="sepal_length", marginal_x="rug", marginal_y="histogram")
+fig.show()
 ```
 
 ```python
-px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group")
+import plotly.express as px
+tips = px.data.tips()
+fig = px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group")
+fig.show()
 ```
 
 ```python
-px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group", facet_row="time", facet_col="day",
+import plotly.express as px
+tips = px.data.tips()
+fig = px.bar(tips, x="sex", y="total_bill", color="smoker", barmode="group", facet_row="time", facet_col="day",
        category_orders={"day": ["Thur", "Fri", "Sat", "Sun"], "time": ["Lunch", "Dinner"]})
+fig.show()
 ```
 
 ```python
-px.histogram(tips, x="total_bill", y="tip", color="sex", marginal="rug", hover_data=tips.columns)
+import plotly.express as px
+tips = px.data.tips()
+fig = px.histogram(tips, x="total_bill", y="tip", color="sex", marginal="rug", hover_data=tips.columns)
+fig.show()
 ```
 
 ```python
-px.histogram(tips, x="sex", y="tip", histfunc="avg", color="smoker", barmode="group",
+import plotly.express as px
+tips = px.data.tips()
+fig = px.histogram(tips, x="sex", y="tip", histfunc="avg", color="smoker", barmode="group",
              facet_row="time", facet_col="day", category_orders={"day": ["Thur", "Fri", "Sat", "Sun"],
                                                                 "time": ["Lunch", "Dinner"]})
+fig.show()
 ```
 
 ```python
-px.strip(tips, x="total_bill", y="time", orientation="h", color="smoker")
+import plotly.express as px
+tips = px.data.tips()
+fig = px.strip(tips, x="total_bill", y="time", orientation="h", color="smoker")
+fig.show()
 ```
 
 ```python
-px.box(tips, x="day", y="total_bill", color="smoker", notched=True)
+import plotly.express as px
+tips = px.data.tips()
+fig = px.box(tips, x="day", y="total_bill", color="smoker", notched=True)
+fig.show()
 ```
 
 ```python
-px.violin(tips, y="tip", x="smoker", color="sex", box=True, points="all", hover_data=tips.columns)
+import plotly.express as px
+tips = px.data.tips()
+fig = px.violin(tips, y="tip", x="smoker", color="sex", box=True, points="all", hover_data=tips.columns)
+fig.show()
 ```
 
 #### Ternary Coordinates
 
 ```python
-px.scatter_ternary(election, a="Joly", b="Coderre", c="Bergeron", color="winner", size="total", hover_name="district",
+import plotly.express as px
+election = px.data.election()
+fig = px.scatter_ternary(election, a="Joly", b="Coderre", c="Bergeron", color="winner", size="total", hover_name="district",
                    size_max=15, color_discrete_map = {"Joly": "blue", "Bergeron": "green", "Coderre":"red"} )
+fig.show()
 ```
 
 ```python
-px.line_ternary(election, a="Joly", b="Coderre", c="Bergeron", color="winner", line_dash="winner")
+import plotly.express as px
+election = px.data.election()
+fig = px.line_ternary(election, a="Joly", b="Coderre", c="Bergeron", color="winner", line_dash="winner")
+fig.show()
 ```
 
 #### 3D Coordinates
 
 ```python
-px.scatter_3d(election, x="Joly", y="Coderre", z="Bergeron", color="winner", size="total", hover_name="district",
+import plotly.express as px
+election = px.data.election()
+fig = px.scatter_3d(election, x="Joly", y="Coderre", z="Bergeron", color="winner", size="total", hover_name="district",
                   symbol="result", color_discrete_map = {"Joly": "blue", "Bergeron": "green", "Coderre":"red"})
+fig.show()
 ```
 
 ```python
-px.line_3d(election, x="Joly", y="Coderre", z="Bergeron", color="winner", line_dash="winner")
+import plotly.express as px
+election = px.data.election()
+fig = px.line_3d(election, x="Joly", y="Coderre", z="Bergeron", color="winner", line_dash="winner")
+fig.show()
 ```
 
 #### Polar Coordinates
 
 ```python
-px.scatter_polar(wind, r="frequency", theta="direction", color="strength", symbol="strength",
+import plotly.express as px
+wind = px.data.wind()
+fig = px.scatter_polar(wind, r="frequency", theta="direction", color="strength", symbol="strength",
             color_discrete_sequence=px.colors.sequential.Plasma[-2::-1])
+fig.show()
 ```
 
 ```python
-px.line_polar(wind, r="frequency", theta="direction", color="strength", line_close=True,
+import plotly.express as px
+wind = px.data.wind()
+fig = px.line_polar(wind, r="frequency", theta="direction", color="strength", line_close=True,
             color_discrete_sequence=px.colors.sequential.Plasma[-2::-1])
+fig.show()
 ```
 
 ```python
-px.bar_polar(wind, r="frequency", theta="direction", color="strength", template="plotly_dark",
+import plotly.express as px
+wind = px.data.wind()
+fig = px.bar_polar(wind, r="frequency", theta="direction", color="strength", template="plotly_dark",
             color_discrete_sequence= px.colors.sequential.Plasma[-2::-1])
+fig.show()
 ```
 
 #### Maps
 
 ```python
-px.scatter_geo(gapminder, locations="iso_alpha", color="continent", hover_name="country", size="pop",
+import plotly.express as px
+px.set_mapbox_access_token(open(".mapbox_token").read())
+carshare = px.data.carshare()
+fig = px.scatter_mapbox(carshare, lat="centroid_lat", lon="centroid_lon",     color="peak_hour", size="car_hours",
+                  color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10)
+fig.show()
+```
+
+```python
+import plotly.express as px
+px.set_mapbox_access_token(open(".mapbox_token").read())
+carshare = px.data.carshare()
+fig = px.line_mapbox(carshare, lat="centroid_lat", lon="centroid_lon", color="peak_hour")
+fig.show()
+```
+
+```python
+import plotly.express as px
+gapminder = px.data.gapminder()
+fig = px.scatter_geo(gapminder, locations="iso_alpha", color="continent", hover_name="country", size="pop",
                animation_frame="year", projection="natural earth")
+fig.show()
 ```
 
 ```python
-px.line_geo(gapminder.query("year==2007"), locations="iso_alpha", color="continent", projection="orthographic")
+import plotly.express as px
+gapminder = px.data.gapminder()
+fig = px.line_geo(gapminder.query("year==2007"), locations="iso_alpha", color="continent", projection="orthographic")
+fig.show()
 ```
 
 ```python
-px.choropleth(gapminder, locations="iso_alpha", color="lifeExp", hover_name="country", animation_frame="year", range_color=[20,80])
+import plotly.express as px
+gapminder = px.data.gapminder()
+fig = px.choropleth(gapminder, locations="iso_alpha", color="lifeExp", hover_name="country", animation_frame="year", range_color=[20,80])
+fig.show()
 ```
 
 #### Built-in Color Scales and Sequences (and a way to see them!)

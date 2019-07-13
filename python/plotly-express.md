@@ -311,6 +311,23 @@ fig.show()
 
 ```python
 import plotly.express as px
+px.set_mapbox_access_token(open(".mapbox_token").read())
+carshare = px.data.carshare()
+fig = px.scatter_mapbox(carshare, lat="centroid_lat", lon="centroid_lon",     color="peak_hour", size="car_hours",
+                  color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10)
+fig.show()
+```
+
+```python
+import plotly.express as px
+px.set_mapbox_access_token(open(".mapbox_token").read())
+carshare = px.data.carshare()
+fig = px.line_mapbox(carshare, lat="centroid_lat", lon="centroid_lon", color="peak_hour")
+fig.show()
+```
+
+```python
+import plotly.express as px
 gapminder = px.data.gapminder()
 fig = px.scatter_geo(gapminder, locations="iso_alpha", color="continent", hover_name="country", size="pop",
                animation_frame="year", projection="natural earth")

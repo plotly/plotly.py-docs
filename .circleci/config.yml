@@ -53,6 +53,7 @@ jobs:
           command: |
             . venv/bin/activate
             rm -f build/failures/*
+            echo ${mapbox_token} > .mapbox_token
             make -kj8 || make -kj8
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cd build/html

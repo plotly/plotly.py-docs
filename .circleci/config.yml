@@ -54,7 +54,8 @@ jobs:
             . venv/bin/activate
             rm -f build/failures/*
             echo ${mapbox_token} > .mapbox_token
-            cat .mapbox_token
+            mkdir -p build/ipynb
+            ln -s .mapbox_token build/ipynb/.mapbox_token
             make -kj8 || make -kj8
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cd build/html

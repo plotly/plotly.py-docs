@@ -180,7 +180,7 @@ fig = ff.create_choropleth(
 
 )
 fig.update_layout(
-    legend_x = 0
+    legend_x = 0,
     annotations = {'x': -0.12, 'xanchor': 'left'}
 )
 

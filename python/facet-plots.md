@@ -94,25 +94,6 @@ fig = ff.create_facet_grid(
 fig.show()
 ```
 
-#### Color by Categorical Variable
-
-```python
-import plotly.figure_factory as ff
-
-import pandas as pd
-mtcars = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/mtcars.csv')
-
-fig = ff.create_facet_grid(
-    mtcars,
-    x='mpg',
-    y='wt',
-    facet_col='cyl',
-    color_name='cyl',
-    color_is_cat=True,
-)
-fig.show()
-```
-
 #### Custom Colormap
 
 ```python

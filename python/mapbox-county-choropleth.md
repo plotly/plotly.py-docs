@@ -68,7 +68,7 @@ for county in florida_data['features']:
             county_names.append(county['properties']['name'][0:m-1])
             county_names_dict[county['properties']['name'][0:m-1]] = county['properties']['name']
 
-print county_names
+print(county_names)
 ```
 
 Since we want to separate the counties into Republican and Democratic for the seperate coloring, and since the county names in the GeoJSON are fuller text descriptions of each county on the website, we need to parse through and convert the names in the GeoJSON to the website format

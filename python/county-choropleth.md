@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to create colormaped representations of USA counties by FIPS
       values in Python.
@@ -26,21 +36,6 @@ jupyter:
     thumbnail: thumbnail/county-choropleth-usa-greybkgd.jpg
     title: Python USA County Choropleth Maps | Plotly
 ---
-
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-#### Version Check
-Note: `United States County Choropleths` are available in version <b>2.5.1+</b><br>
-Run  `pip install plotly --upgrade` to update your Plotly version
-
-```python
-import plotly
-plotly.__version__
-```
 
 <!-- #region -->
 #### Required Packages
@@ -74,7 +69,6 @@ Combine a state FIPS code (eg. `06` for California) with a county FIPS code of t
 A simple example of this is a choropleth a few counties in California:
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 fips = ['06021', '06023', '06027',
@@ -84,7 +78,7 @@ fips = ['06021', '06023', '06027',
 values = range(len(fips))
 
 fig = ff.create_choropleth(fips=fips, values=values)
-py.iplot(fig, filename='choropleth of some cali counties - full usa scope')
+fig.show()
 ```
 
 #### Change the Scope
@@ -99,7 +93,6 @@ State abbreviations (eg. `CA`) or the proper names (eg. `California`) as strings
 Another param used in the example below is `binning_endpoints`. If your `values` is a list of numbers, you can bin your values into half-open intervals on the real line.
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import numpy as np
@@ -126,13 +119,12 @@ fig = ff.create_choropleth(
     county_outline={'color': 'rgb(255,255,255)', 'width': 0.5}, round_legend_values=True,
     legend_title='Population by County', title='California and Nearby States'
 )
-py.iplot(fig, filename='choropleth_california_and_surr_states_outlines')
+fig.show()
 ```
 
 #### Single State
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import numpy as np
@@ -156,13 +148,12 @@ fig = ff.create_choropleth(
     county_outline={'color': 'rgb(255,255,255)', 'width': 0.5},
     exponent_format=True,
 )
-py.iplot(fig, filename='choropleth_florida')
+fig.show()
 ```
 
 #### Multiple States
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -188,9 +179,12 @@ fig = ff.create_choropleth(
     legend_title='Population per county'
 
 )
-fig['layout']['legend'].update({'x': 0})
-fig['layout']['annotations'][0].update({'x': -0.12, 'xanchor': 'left'})
-py.iplot(fig, filename='choropleth_new_england')
+fig.update_layout(
+    legend_x = 0,
+    annotations = {'x': -0.12, 'xanchor': 'left'}
+)
+
+fig.show()
 ```
 
 #### Simplify County, State Lines
@@ -236,13 +230,12 @@ fig = ff.create_choropleth(
     title='Oregon'
 )
 
-py.iplot(fig, filename='choropleth_oregon_ono_simplification_factor')
+fig.show()
 ```
 
 #### The Entire USA
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import numpy as np
@@ -269,7 +262,8 @@ fig = ff.create_choropleth(
     asp=2.9, title='USA by Unemployment %',
     legend_title='% unemployed'
 )
-py.iplot(fig, filename='choropleth_full_usa')
+
+fig.show()
 ```
 
 Also see Mapbox county choropleths made in Python: [https://plot.ly/python/mapbox-county-choropleth/](https://plot.ly/python/next/mapbox-county-choropleth/)
@@ -279,26 +273,4 @@ Also see Mapbox county choropleths made in Python: [https://plot.ly/python/mapbo
 
 ```python
 help(ff.create_choropleth)
-```
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'county_choropleth.ipynb', 'python/county-choropleth/', 'USA County Choropleth Maps',
-    'How to create colormaped representations of USA counties by FIPS values in Python.',
-    title = 'Python USA County Choropleth Maps | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/county-choropleth-usa-greybkgd.jpg',
-    language='python', page_type='example_index',
-    display_as='maps', order=0,
-    uses_plotly_offline=False,ipynb='~notebook_demo/212')
-```
-
-```python
-
 ```

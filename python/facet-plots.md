@@ -8,9 +8,19 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.1.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make Facet and Trellis Plots in Python with Plotly.
     display_as: statistical
@@ -26,26 +36,10 @@ jupyter:
     title: Python Facet and Trellis Plots | plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-#### Version Check
-Note: `Facet Grids and Trellis Plots` are available in version <b>2.0.12+</b><br>
-Run  `pip install plotly --upgrade` to update your Plotly version
-
-```python
-import plotly
-plotly.__version__
-```
-
 #### Facet by Column
 A `facet grid` is a generalization of a scatterplot matrix where we can "facet" a row and/or column by another variable. Given some tabular data, stored in a `pandas.DataFrame`, we can plot one variable against another to form a regular scatter plot, _and_ we can pick a third faceting variable to form panels along the rows and/or columns to segment the data even further, forming a bunch of panels. We can also assign a coloring rule or a heatmap based on a color variable to color the plot.
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -58,13 +52,12 @@ fig = ff.create_facet_grid(
     facet_col='cyl',
 )
 
-py.iplot(fig, filename='facet by col')
+fig.show()
 ```
 
 #### Facet by Row
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -78,13 +71,12 @@ fig = ff.create_facet_grid(
     marker={'color': 'rgb(86, 7, 100)'},
 )
 
-py.iplot(fig, filename='facet by row')
+fig.show()
 ```
 
 #### Facet by Row and Column
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -99,33 +91,12 @@ fig = ff.create_facet_grid(
     marker={'color': 'rgb(234, 239, 155)'},
 )
 
-py.iplot(fig, filename='facet by row and col')
-```
-
-#### Color by Categorical Variable
-
-```python
-import plotly.plotly as py
-import plotly.figure_factory as ff
-
-import pandas as pd
-mtcars = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/mtcars.csv')
-
-fig = ff.create_facet_grid(
-    mtcars,
-    x='mpg',
-    y='wt',
-    facet_col='cyl',
-    color_name='cyl',
-    color_is_cat=True,
-)
-py.iplot(fig, filename='facet - color by categorical variable')
+fig.show()
 ```
 
 #### Custom Colormap
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -140,13 +111,12 @@ fig = ff.create_facet_grid(
     marker={'size': 10, 'opacity': 1.0},
     colormap={'Male': 'rgb(165, 242, 242)', 'Female': 'rgb(253, 174, 216)'}
 )
-py.iplot(fig, filename='facet - custom colormap')
+fig.show()
 ```
 
 #### Label Variable Name:Value
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -160,13 +130,12 @@ fig = ff.create_facet_grid(
     facet_col_labels='name',
     facet_row_labels='name',
 )
-py.iplot(fig, filename='facet - label variable name')
+fig.show()
 ```
 
 #### Custom Labels
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -181,14 +150,13 @@ fig = ff.create_facet_grid(
     marker={'color': 'rgb(240, 100, 2)'},
 )
 
-py.iplot(fig, filename='facet - custom labels')
+fig.show()
 ```
 
 #### Plot in 'ggplot2' style
 To learn more about ggplot2, check out http://ggplot2.tidyverse.org/reference/facet_grid.html
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -203,13 +171,12 @@ fig = ff.create_facet_grid(
     marker={'symbol': 'circle-open', 'size': 10},
     ggplot2=True
 )
-py.iplot(fig, filename='facet - ggplot2 style')
+fig.show()
 ```
 
 #### Plot with 'scattergl' traces
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -222,13 +189,12 @@ grid = ff.create_facet_grid(
     trace_type='scattergl',
 )
 
-py.iplot(grid, filename='facet - scattergl')
+fig.show()
 ```
 
 #### Plot with Histogram Traces
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -243,14 +209,13 @@ fig = ff.create_facet_grid(
     trace_type='histogram',
 )
 
-py.iplot(fig, filename='facet - histogram traces')
+fig.show()
 ```
 
 #### Other Trace Types
-Facet Grids support `scatter`, `scattergl`, `histogram`, `bar` and `box` trace types. More trace types coming in the future.
+Facet Grids support `scatter`, `scattergl`, `histogram`, `bar` and `box` trace types.
 
 ```python
-import plotly.plotly as py
 import plotly.figure_factory as ff
 
 import pandas as pd
@@ -264,28 +229,11 @@ fig = ff.create_facet_grid(
     trace_type='box',
 )
 
-py.iplot(fig, filename='facet - box traces')
+fig.show()
 ```
 
 #### Reference
 
 ```python
 help(ff.create_facet_grid)
-```
-
-```python
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'facet-and-trellis-plots.ipynb', 'python/facet-plots/', 'Facet and Trellis Plots',
-    'How to make Facet and Trellis Plots in Python with Plotly.',
-    title = 'Python Facet and Trellis Plots | plotly',
-    redirect_from ='python/trellis-plots/',
-    has_thumbnail='true', thumbnail='thumbnail/facet-trellis-thumbnail.jpg',
-    language='python',
-    display_as='statistical', order=10.2)
-```
-
-```python
-
 ```

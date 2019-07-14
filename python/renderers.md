@@ -31,6 +31,7 @@ jupyter:
     page_type: example_index
     layout: user-guide
     permalink: python/renderers/
+    redirect_from: python/offline/
     thumbnail: thumbnail/displaying-figures.png
     title: Displaying Figures | plotly
 ---

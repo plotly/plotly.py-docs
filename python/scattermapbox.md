@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make scatter plots on Mapbox maps in Python.
     display_as: maps
@@ -27,20 +37,6 @@ jupyter:
     title: Python Scatter Plots with Mapbox | Plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-#### Version Check
-Plotly's Python package is updated frequently. Run `pip install plotly --upgrade` to make sure you're using the latest version.
-
-```python
-import plotly
-plotly.__version__
-```
-
 #### Mapbox Access Token
 
 To plot on Mapbox maps with Plotly you'll need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/.
@@ -49,13 +45,11 @@ To plot on Mapbox maps with Plotly you'll need a Mapbox account and a public [Ma
 #### Basic Example
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-# mapbox_access_token = 'ADD_YOUR_TOKEN_HERE'
+mapbox_access_token = open(".mapbox_token").read()
 
-data = [
-    go.Scattermapbox(
+fig = go.Figure(go.Scattermapbox(
         lat=['45.5017'],
         lon=['-73.5673'],
         mode='markers',
@@ -63,11 +57,9 @@ data = [
             size=14
         ),
         text=['Montreal'],
-    )
-]
+    ))
 
-layout = go.Layout(
-    autosize=True,
+fig.update_layout(
     hovermode='closest',
     mapbox=go.layout.Mapbox(
         accesstoken=mapbox_access_token,
@@ -78,23 +70,20 @@ layout = go.Layout(
         ),
         pitch=0,
         zoom=5
-    ),
+    )
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='Montreal Mapbox')
+fig.show()
 ```
 
 #### Multiple Markers
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
-# mapbox_access_token = 'ADD_YOUR_TOKEN_HERE'
+mapbox_access_token = open(".mapbox_token").read()
 
-data = [
-    go.Scattermapbox(
+fig = go.Figure(go.Scattermapbox(
         lat=['38.91427','38.91538','38.91458',
              '38.92239','38.93222','38.90842',
              '38.91931','38.93260','38.91368',
@@ -114,10 +103,9 @@ data = [
              "Blind Dog Cafe","Le Caprice","Filter",
              "Peregrine","Tryst","The Coupe",
              "Big Bear Cafe"],
-    )
-]
+    ))
 
-layout = go.Layout(
+fig.update_layout(
     autosize=True,
     hovermode='closest',
     mapbox=go.layout.Mapbox(
@@ -132,27 +120,25 @@ layout = go.Layout(
     ),
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='Multiple Mapbox')
+fig.show()
 ```
 
 #### Nuclear Waste Sites on Campuses
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-
+import plotly.graph_objects as go
 import pandas as pd
 
-# mapbox_access_token = 'ADD_YOUR_TOKEN_HERE'
+mapbox_access_token = open(".mapbox_token").read()
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/Nuclear%20Waste%20Sites%20on%20American%20Campuses.csv')
 site_lat = df.lat
 site_lon = df.lon
 locations_name = df.text
 
-data = [
-    go.Scattermapbox(
+fig = go.Figure()
+
+fig.add_trace(go.Scattermapbox(
         lat=site_lat,
         lon=site_lon,
         mode='markers',
@@ -163,8 +149,9 @@ data = [
         ),
         text=locations_name,
         hoverinfo='text'
-    ),
-    go.Scattermapbox(
+    ))
+
+fig.add_trace(go.Scattermapbox(
         lat=site_lat,
         lon=site_lon,
         mode='markers',
@@ -174,9 +161,9 @@ data = [
             opacity=0.7
         ),
         hoverinfo='none'
-    )]
+    ))
 
-layout = go.Layout(
+fig.update_layout(
     title='Nuclear Waste Sites on Campus',
     autosize=True,
     hovermode='closest',
@@ -194,49 +181,8 @@ layout = go.Layout(
     ),
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='Nuclear Waste Sites on American Campuses')
-```
-
-### Dash Example
-
-
-[Dash](https://plot.ly/products/dash/) is an Open Source Python library which can help you convert plotly figures into a reactive, web-based application. Below is a simple example of a dashboard created using Dash. Its [source code](https://github.com/plotly/simple-example-chart-apps/tree/master/dash-scattermapboxplot) can easily be deployed to a PaaS.
-
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-scattermapboxplot/", width="100%", height="850px", frameBorder="0")
-
-```
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-scattermapboxplot/code", width="100%", height=500, frameBorder="0")
+fig.show()
 ```
 
 #### Reference
 See https://plot.ly/python/reference/#scattermapbox for more information and options!
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'mapbox.ipynb', 'python/scattermapbox/', 'Python Scatter Plots with Mapbox',
-    'How to make scatter plots on Mapbox maps in Python.',
-    title = 'Python Scatter Plots with Mapbox | Plotly',
-    name = 'Scatter Plots on Mapbox',
-    has_thumbnail='true', thumbnail='thumbnail/scatter-mapbox.jpg',
-    language='python', page_type='example_index', ipynb='~notebook_demo/261',
-    display_as='maps', order=7, mapbox_access_token = 'pk.eyJ1IjoicHJpeWF0aGFyc2FuIiwiYSI6ImNqbGRyMGQ5YTBhcmkzcXF6YWZldnVvZXoifQ.sN7gyyHTIq1BSfHQRBZdHA'
-)
-```
-
-```python
-
-```

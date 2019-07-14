@@ -146,7 +146,3 @@ fig.show()
 
 #### Reference
 See https://plot.ly/python/reference/#funnel and https://plot.ly/python/reference/#funnelarea for more information and chart attribute options!
-
-```python
-
-```

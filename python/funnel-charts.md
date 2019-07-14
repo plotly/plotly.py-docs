@@ -19,11 +19,11 @@ jupyter:
     title: Python Funnel Chart | Plotly
     has_thumbnail: true
     language: python
-    display_as: basic
+    display_as: financial
     order: 6.3
     ipynb: ~notebook_demo/293
     layout: user-guide
-    page_type: u-guide
+    page_type: example_index
 ---
 
 

@@ -8,9 +8,19 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.1.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: How to make a Mapbox Choropleth Map of the Florida Counties in Python
       with Plotly.
@@ -26,23 +36,6 @@ jupyter:
     thumbnail: thumbnail/county-level-choropleth.jpg
     title: Python Mapbox Choropleth Maps | plotly
 ---
-
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by dowloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-#### Version Check
-Run  `pip install plotly --upgrade` to update your Plotly version
-
-```python
-import plotly
-plotly.__version__
-```
-
-In this tutorial, we will be creating a choropleth of Florida's counties with the Republican and Democratic counties colored red and blue respectively.
-
 
 #### Mapbox Access Token
 
@@ -155,19 +148,17 @@ with open('florida-blue-data.json', 'w') as f:
 and we can now plot our choropleth using Python. Make sure to have a [Mapbox Access Tolken](https://www.mapbox.com/studio) for the generation of the plot. For more information on plotting Mapbox maps in Python, checkout the [documentation](https://plot.ly/python/next/scattermapbox/)
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as graph_objs
+import plotly.graph_objects as go
 
-mapbox_access_token = "ADD_YOUR_TOKEN_HERE"
+mapbox_access_token = open(".mapbox_token").read()
 
-data = graph_objs.Data([
-    graph_objs.Scattermapbox(
+fig = go.Figure(go.Scattermapbox(
         lat=['45.5017'],
         lon=['-73.5673'],
         mode='markers',
-    )
-])
-layout = graph_objs.Layout(
+    ))
+
+fig.update_layout(
     height=600,
     autosize=True,
     hovermode='closest',
@@ -198,30 +189,8 @@ layout = graph_objs.Layout(
     ),
 )
 
-fig = dict(data=data, layout=layout)
-py.iplot(fig, filename='county-level-choropleths-python')
+fig.show()
 ```
 
 #### Reference
 See https://plot.ly/python/reference/#scattermapbox for more information about mapbox and their attribute options.
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-import publisher
-publisher.publish(
-    'mapbox-county-choropleth.ipynb', 'python/mapbox-county-choropleth/', 'Python Mapbox Choropleth Maps | plotly',
-    'How to make a Mapbox Choropleth Map of the Florida Counties in Python with Plotly.',
-    title='Python Mapbox Choropleth Maps | plotly',
-    name='Mapbox Choropleth Maps',
-    thumbnail='thumbnail/county-level-choropleth.jpg', language='python',
-    has_thumbnail='true', display_as='maps', order=1.5,
-    ipynb= '~notebook_demo/56')
-```
-
-```python
-
-```

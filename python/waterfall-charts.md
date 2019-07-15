@@ -23,7 +23,7 @@ jupyter:
     version: 3.6.7
   plotly:
     description: How to make waterfall plots in Python with Plotly.
-    display_as: basic
+    display_as: financial
     has_thumbnail: true
     ipynb: /~notebook_demo/276
     language: python

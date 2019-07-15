@@ -37,10 +37,24 @@ jupyter:
     title: Python Scatter Plots with Mapbox | Plotly
 ---
 
+GOTTA PX
+
 #### Mapbox Access Token
 
 To plot on Mapbox maps with Plotly you'll need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/.
 
+### Basic example with Plotly Express
+
+For data available as a tidy pandas DataFrame, use the [Plotly Express](/python/next/plotly-express/) function `px.scatter_mapbox` for a scatter plot on a tile map.
+
+```python
+import plotly.express as px
+px.set_mapbox_access_token(open(".mapbox_token").read())
+carshare = px.data.carshare()
+fig = px.scatter_mapbox(carshare, lat="centroid_lat", lon="centroid_lon",     color="peak_hour", size="car_hours",
+                  color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10)
+fig.show()
+```
 
 #### Basic Example
 

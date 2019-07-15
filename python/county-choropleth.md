@@ -78,6 +78,7 @@ fips = ['06021', '06023', '06027',
 values = range(len(fips))
 
 fig = ff.create_choropleth(fips=fips, values=values)
+fig.layout.template = None
 fig.show()
 ```
 
@@ -119,6 +120,7 @@ fig = ff.create_choropleth(
     county_outline={'color': 'rgb(255,255,255)', 'width': 0.5}, round_legend_values=True,
     legend_title='Population by County', title='California and Nearby States'
 )
+fig.layout.template = None
 fig.show()
 ```
 
@@ -148,6 +150,7 @@ fig = ff.create_choropleth(
     county_outline={'color': 'rgb(255,255,255)', 'width': 0.5},
     exponent_format=True,
 )
+fig.layout.template = None
 fig.show()
 ```
 
@@ -184,6 +187,7 @@ fig.update_layout(
     annotations = {'x': -0.12, 'xanchor': 'left'}
 )
 
+fig.layout.template = None
 fig.show()
 ```
 
@@ -230,6 +234,7 @@ fig = ff.create_choropleth(
     title='Oregon'
 )
 
+fig.layout.template = None
 fig.show()
 ```
 
@@ -263,6 +268,7 @@ fig = ff.create_choropleth(
     legend_title='% unemployed'
 )
 
+fig.layout.template = None
 fig.show()
 ```
 

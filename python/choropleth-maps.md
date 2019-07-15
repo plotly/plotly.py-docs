@@ -37,8 +37,8 @@ Below we show how to create Choropleth Maps using either `px.choropleth` (one-li
 import plotly.express as px
 
 gapminder = px.data.gapminder().query("year==2007")
-fig = px.choropleth(gapminder, locations="iso_alpha", 
-                    color="lifeExp", # lifeExp is a column of gapminder 
+fig = px.choropleth(gapminder, locations="iso_alpha",
+                    color="lifeExp", # lifeExp is a column of gapminder
                     hover_name="country", # column to add to hover information
                     color_continuous_scale=px.colors.sequential.Plasma)
 fig.show()
@@ -54,8 +54,8 @@ import plotly.graph_objects as go
 # Load data frame and tidy it.
 import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv')
-    
-fig = go.Figure(data=go.Choropleth(  
+
+fig = go.Figure(data=go.Choropleth(
     locations=df['code'], # Spatial coordinates
     z = df['total exports'].astype(float), # Data to be color-coded
     locationmode = 'USA-states', # set of locations match entries in `locations`
@@ -87,7 +87,7 @@ df['text'] = df['state'] + '<br>' + \
     'Fruits ' + df['total fruits'] + ' Veggies ' + df['total veggies'] + '<br>' + \
     'Wheat ' + df['wheat'] + ' Corn ' + df['corn']
 
-fig = go.Figure(data=go.Choropleth(  
+fig = go.Figure(data=go.Choropleth(
     locations=df['code'],
     z=df['total exports'].astype(float),
     locationmode='USA-states',
@@ -118,7 +118,7 @@ import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv')
 
-fig = go.Figure(data=go.Choropleth( 
+fig = go.Figure(data=go.Choropleth(
     locations = df['CODE'],
     z = df['GDP (BILLIONS)'],
     text = df['COUNTRY'],
@@ -179,7 +179,7 @@ for i in range(6,10)[::-1]:
             color=colors[i-6],
             line_width=0)
         )
-    ) 
+    )
 
 df_sept = df.query('Month == 9')
 fig.data[0].update(text = df_sept['Value'].map('{:.0f}'.format).astype(str)+' '+\
@@ -272,6 +272,7 @@ fig = ff.create_choropleth(
     title_text = 'USA by Unemployment %',
     legend_title = '% unemployed'
 )
+fig.layout.template = None
 fig.show()
 ```
 

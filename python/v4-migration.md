@@ -20,27 +20,34 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.7
   plotly:
-    description: Version 4 migration guide
-    v4upgrade: true
+    description: Migration guide for upgrading from version 3 to version 4
     display_as: file_settings
     has_thumbnail: true
     language: python
-    name: Version 4 Migration Guide
-    page_type: example_index
     layout: user-guide
+    name: Version 4 Migration Guide
+    order: 1
+    page_type: example_index
     permalink: python/v4-migration/
     thumbnail: thumbnail/v4-migration.png
     title: Version 4 migration guide | plotly
-    order: 1
+    v4upgrade: true
 ---
 
-<!-- #region -->
-This section contains guidance for migrating from plotly.py version 3 to version 4.
+### Upgrading to Version 4
 
-### Online features moved to chart-studio package.
-Prior versions of plotly.py contained functionality for creating figures in both "online" and "offline" modes.  In "online" mode figures were uploaded to the Chart Studio cloud (or on-premise) service, whereas in "offline" mode figures were rendered locally.  In version 4, all "online" functionality has been removed from the main `plotly` distribution package and moved to the new `chart-studio` distribution package.
+Upgrading to version 4 of `plotly` is a matter of following the instructions in the [Getting Started](/python/getting-started/) guide and reinstalling the packages, subject to the notices below.
+
+### Getting Help
+
+If you encounter issues in upgrading from version 3 to version 4, please reach out in our [Community Forum](https://community.plot.ly/c/api/python) or if you've found an issue or regression in version 4, please report a [Github Issue](https://github.com/plotly/plotly.py/issues/new)
+
+<!-- #region -->
+### Online features (`plotly.plotly`) moved to `chart-studio` package
+
+Prior versions of plotly.py contained functionality for creating figures in both "online" and "offline" modes.  In "online" mode figures were uploaded to the Chart Studio cloud (or on-premise) service, whereas in "offline" mode figures were rendered locally.  **Version 4 of `plotly` is "offline"-only: all "online" functionality has been removed from the main `plotly` distribution package and moved to the new `chart-studio` distribution package.**
 
 To migrate version 3 "online" functionality, first install the `chart-studio` package using pip...
 
@@ -72,6 +79,15 @@ Similarly,
  - Replace **`plotly.grid_objs`** with **`chart_studio.grid_objs`**
  - Replace **`plotly.presentation_objs`** with **`chart_studio.presentation_objs`**
  - Replace **`plotly.widgets`** with **`chart_studio.widgets`**
+<!-- #endregion -->
+
+<!-- #region -->
+### Offline features (`plotly.offline`) replaced by Renderers framework & HTML export
+
+Version 4 introduces a new renderers framework that is a generalization of version 3's `plotly.offline.init_notebook_mode` and `plotly.offline.iplot` functions for displaying figures.  *This is a non-breaking change*: the `plotly.offline.iplot` function is still available and has been reimplemented on top of the renderers framework, so no changes are required when porting to version 4.  Going forward, we recommend using the renderers framework directly. See [Displaying plotly figures](../renderers) for more information.
+
+
+In version 3, the `plotly.offline.plot` function was used to export figures to HTML files.  In version 4, this function has been reimplemented on top of the new `to_html` and `write_html` functions from the `plotly.io` module.  These functions have a slightly more consistent API (see docstrings for details), and going forward we recommend using them directly when performing HTML export. When working with a graph object figure, these functions are also available as the `.to_html` and `.write_html` figure methods.
 <!-- #endregion -->
 
 ### New default theme
@@ -277,11 +293,6 @@ The legacy online-only `GraphWidget` class has been removed.  Please use the `pl
 
 ### Recommended style updates
 
-#### Renderers framework
-Version 4 introduces a new renderers framework that is a generalization of the `plotly.offline.init_notebook_mode` and `plotly.offline.iplot` functions for displaying figures.  The `plotly.offline.iplot` function is still available and has been reimplemented on top of the renderers framework, so no changes are required when porting to version 4.  Going forward, we recommend using the renderers framework directly. See [Displaying plotly figures](../renderers) for more information.
-
 #### Import from `graph_objects` instead of `graph_objs`
 The legacy `plotly.graph_objs` package has been aliased as `plotly.graph_objects` because the latter is much easier to communicate verbally. The `plotly.graph_objs` package is still available for backward compatibility.
 
-#### HTML export
-In version 3, the `plotly.offline.plot` function was used to export figures to HTML files.  In version 4, this function has been reimplemented on top of the new `to_html` and `write_html` functions from the `plotly.io` module.  These functions have a slightly more consistent API (see docstrings for details), and going forward we recommend using them directly when performing HTML export. When working with a graph object figure, these functions are also available as the `.to_html` and `.write_html` figure methods.

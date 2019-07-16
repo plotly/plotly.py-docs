@@ -115,7 +115,7 @@ $ pip install jupyterlab==1.0 "ipywidgets>=7.5"
 or conda.
 
 ```
-$ conda install -c defaults -c conda-forge jupyterlab=1.0 "ipywidgets>=7.5"
+$ conda install jupyterlab=1.0 "ipywidgets>=7.5"
 ```
 
 Then run the following commands to install the required JupyterLab extensions:

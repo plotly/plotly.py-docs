@@ -46,12 +46,12 @@ Thanks to deep integration with the [orca](https://github.com/plotly/orca) image
 plotly.py may be installed using pip...
 
 ```
-$ pip install plotly==4.0.0rc1
+$ pip install plotly==4.0.0
 ```
 or conda.
 
 ```
-$ conda install -c plotly/label/test plotly=4.0.0rc1
+$ conda install -c plotly plotly=4.0.0
 ```
 This package contains everything you need to write figures to standalone HTML files.
 
@@ -131,10 +131,10 @@ set NODE_OPTIONS=--max-old-space-size=4096
 jupyter labextension install @jupyter-widgets/jupyterlab-manager@1.0 --no-build
 
 # jupyterlab renderer support
-jupyter labextension install jupyterlab-plotly@1.0.0-rc.1 --no-build
+jupyter labextension install jupyterlab-plotly@1.0.0 --no-build
 
 # FigureWidget support
-jupyter labextension install plotlywidget@1.0.0-rc.1 --no-build
+jupyter labextension install plotlywidget@1.0.0 --no-build
 
 # JupyterLab chart editor support (optional)
 jupyter labextension install jupyterlab-chart-editor@1.2 --no-build
@@ -212,13 +212,13 @@ choropleth figure factory is one such example. These shape files are distributed
 separate `plotly-geo` package.  This package can be installed using pip...
 
 ```
-$ pip install plotly-geo==1.0.0rc1
+$ pip install plotly-geo==1.0.0
 ```
 
 or conda.
 
 ```
-$ conda install -c plotly/label/test plotly-geo=1.0.0rc1
+$ conda install -c plotly plotly-geo=1.0.0
 ```
 
 See [*USA County Choropleth Maps in Python*](https://plot.ly/python/county-choropleth/) for more information on the county choropleth figure factory.
@@ -228,13 +228,13 @@ The `chart-studio` package can be used to upload plotly figures to Plotly's Char
 Studio Cloud or On-Prem services.  This package can be installed using pip...
 
 ```
-$ pip install chart-studio==1.0.0rc1
+$ pip install chart-studio==1.0.0
 ```
 
 or conda.
 
 ```
-$ conda install -c plotly/label/test chart-studio=1.0.0rc1
+$ conda install -c plotly chart-studio=1.0.0
 ```
 
 > **Note:** This package is optional, and if it is not installed it is not possible for figures to be uploaded to the Chart Studio cloud service.

@@ -45,7 +45,7 @@ To plot on Mapbox maps with Plotly you'll need a Mapbox account and a public [Ma
 
 ### Basic example with Plotly Express
 
-For data available as a tidy pandas DataFrame, use the [Plotly Express](/python/next/plotly-express/) function `px.scatter_mapbox` for a scatter plot on a tile map.
+For data available as a tidy pandas DataFrame, use the [Plotly Express](/python/plotly-express/) function `px.scatter_mapbox` for a scatter plot on a tile map.
 
 ```python
 import plotly.express as px

@@ -38,7 +38,7 @@ jupyter:
 ---
 
 #### Compare WebGL and SVG
-Checkout [this notebook](https://plot.ly/python/next/compare-webgl-svg) to compare WebGL and SVG scatter plots with 75,000 random data points
+Checkout [this notebook](https://plot.ly/python/compare-webgl-svg) to compare WebGL and SVG scatter plots with 75,000 random data points
 
 #### WebGL with plotly express
 

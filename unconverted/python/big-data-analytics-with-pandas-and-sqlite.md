@@ -45,7 +45,7 @@ This notebook explores a 3.9Gb CSV file containing NYC's 311 complaints since 20
 - [pandas](http://pandas.pydata.org/): A library with easy-to-use data structures and data analysis tools. Also, interfaces to out-of-memory databases like SQLite.
 - [IPython notebook](ipython.org/notebook.html): An interface for writing and sharing python code, text, and plots.
 - [SQLite](https://www.sqlite.org/): An self-contained, server-less database that's easy to set-up and query from Pandas.
-- [Plotly](https://plot.ly/python/next/): A platform for publishing beautiful, interactive graphs from Python to the web.
+- [Plotly](https://plot.ly/python/): A platform for publishing beautiful, interactive graphs from Python to the web.
 
 The dataset is too large to load into a Pandas dataframe. So, instead we'll perform out-of-memory aggregations with SQLite and load the result directly into a dataframe with Panda's `iotools`. It's pretty easy to stream a CSV into SQLite and SQLite requires no setup. The SQL query language is pretty intuitive coming from a Pandas mindset.
 
@@ -447,7 +447,7 @@ py.iplot(
 - Learn how to setup [MySql with Pandas and Plotly](http://moderndata.plot.ly/graph-data-from-mysql-database-in-python/)
 - Add [interactive widgets to IPython notebooks](http://moderndata.plot.ly/widgets-in-ipython-notebook-and-plotly/) for customized data exploration
 - Big data workflows with [HDF5 and Pandas](http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas)
-- [Interactive graphing with Plotly](https://plot.ly/python/next/)
+- [Interactive graphing with Plotly](https://plot.ly/python/)
 
 ```python
 from IPython.display import display, HTML

@@ -118,7 +118,7 @@ fig.show()
 
 #### Visualizing the distribution
 
-With the `marginal` keyword, a subplot is drawn alongside the histogram, visualizing the distribution. See [the distplot page](https://plot.ly/python/next/distplot/)for more examples of combined statistical representations.
+With the `marginal` keyword, a subplot is drawn alongside the histogram, visualizing the distribution. See [the distplot page](https://plot.ly/python/distplot/)for more examples of combined statistical representations.
 
 ```python
 import plotly.express as px

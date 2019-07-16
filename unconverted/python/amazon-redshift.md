@@ -410,7 +410,7 @@ Plotly makes it easier for data analysts and data scientists to share data in me
 Learn more about:
 - [Amazon Redshift Data Warehouse](http://aws.amazon.com/redshift/)
 - [Chart Studio Enterprise - Plotly Hosted on your servers](https://plot.ly/product/enterprise/)
-- [Subplots in Plotly](https://plot.ly/python/next/subplots/)
+- [Subplots in Plotly](https://plot.ly/python/subplots/)
 - [Creating a plot of best fit](https://plot.ly/online-graphing/tutorials/create-a-line-of-best-fit-online/)
 
 ```python

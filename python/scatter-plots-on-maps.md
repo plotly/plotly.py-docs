@@ -40,7 +40,7 @@ jupyter:
 
 ### Geographical Scatter Plot with px.scatter_geo
 
-For data available as a tidy pandas DataFrame, use the [Plotly Express](/python/next/plotly-express/) function `px.scatter_geo` for a geographical scatter plot. The `size` argument is used to set the size of markers from a given column of the DataFrame.
+For data available as a tidy pandas DataFrame, use the [Plotly Express](/python/plotly-express/) function `px.scatter_geo` for a geographical scatter plot. The `size` argument is used to set the size of markers from a given column of the DataFrame.
 
 ```python
 import plotly.express as px

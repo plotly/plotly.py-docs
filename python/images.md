@@ -73,7 +73,7 @@ fig.show()
 ```
 
 #### Add a Logo
-See more examples of [adding logos to charts](https://plot.ly/python/next/logos/)!
+See more examples of [adding logos to charts](https://plot.ly/python/logos/)!
 
 ```python
 import plotly.graph_objects as go

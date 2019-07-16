@@ -92,7 +92,7 @@ fig.show()
 
 #### Line and Scatter Plots
 
-Use `mode` argument to choose between markers, lines, or a combination of both. For more options about line plots, see also the [line charts notebook](https://plot.ly/python/next/line-charts/) and the [filled area plots notebook](https://plot.ly/python/next/filled-area-plots/).
+Use `mode` argument to choose between markers, lines, or a combination of both. For more options about line plots, see also the [line charts notebook](https://plot.ly/python/line-charts/) and the [filled area plots notebook](https://plot.ly/python/filled-area-plots/).
 
 ```python
 import plotly.graph_objects as go
@@ -124,7 +124,7 @@ fig.show()
 
 #### Bubble Scatter Plots
 
-In [bubble charts](https://en.wikipedia.org/wiki/Bubble_chart), a third dimension of the data is shown through the size of markers. For more examples, see the [bubble chart notebook](https://plot.ly/python/next/bubble-charts/)
+In [bubble charts](https://en.wikipedia.org/wiki/Bubble_chart), a third dimension of the data is shown through the size of markers. For more examples, see the [bubble chart notebook](https://plot.ly/python/bubble-charts/)
 
 ```python
 import plotly.graph_objects as go

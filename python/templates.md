@@ -28,7 +28,7 @@ jupyter:
     display_as: file_settings
     has_thumbnail: true
     name: Theming and templates
-    page_type: example_index
+    page_type: u-guide
     layout: user-guide
     permalink: python/templates/
     thumbnail: thumbnail/theming-and-templates.png

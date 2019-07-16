@@ -72,7 +72,7 @@ fig = px.line_polar(wind, r="frequency", theta="direction", color="strength", li
 fig.show()
 ```
 
-See also the [wind rose page](https://plot.ly/python/next/wind-rose-charts/) for more wind rose visualizations in polar coordinates.
+See also the [wind rose page](https://plot.ly/python/wind-rose-charts/) for more wind rose visualizations in polar coordinates.
 
 
 ## Polar Scatter Plot with go.Scatterpolar

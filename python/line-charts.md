@@ -42,7 +42,7 @@ jupyter:
 
 [Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). With ``px.line``, each data point is represented as a vertex (which location is given by the `x` and `y` columns) of a **polyline mark** in 2D space.
 
-For more examples of line plots, see the [line and scatter notebook](https://plot.ly/python/next/line-and-scatter/).
+For more examples of line plots, see the [line and scatter notebook](https://plot.ly/python/line-and-scatter/).
 
 #### Simple Line Plot with plotly.express
 

@@ -225,7 +225,7 @@ py.iplot(colorscale_plot(colorscale=curl, title='Curl'))
 ```
 
 ### Reference
-Learn more about Plotly colorscales here: [https://plot.ly/python/colorscales/](https://plot.ly/python/next/colorscales/)
+Learn more about Plotly colorscales here: [https://plot.ly/python/colorscales/](https://plot.ly/python/colorscales/)
 
 
 ### Acknowledgment

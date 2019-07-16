@@ -222,7 +222,7 @@ One of the benefits of Plotly is the availability of features.
 
 - [Live update Plotly graphs in Python with cron jobs](http://moderndata.plot.ly/update-plotly-charts-with-cron-jobs-and-python/)
 - [Graph mysql data with Plotly and Python](http://moderndata.plot.ly/graph-data-from-mysql-database-in-python/)
-- [More on creating web-based visualizations in Python with Plotly](https://plot.ly/python/next/)
+- [More on creating web-based visualizations in Python with Plotly](https://plot.ly/python/)
 
 ```python
 from IPython.display import display, HTML

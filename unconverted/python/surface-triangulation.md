@@ -44,7 +44,7 @@ The triangulation of a surface defined as the graph of a continuous function, $z
 $$x=x(u,v), y=y(u,v), z=z(u,v), (u,v)\in U\subset\mathbb{R}^2,$$
 is the image through $f$,respectively through the parameterization, of the Delaunay triangulation or an user defined triangulation of the planar domain $D$, respectively $U$.
 
-The Delaunay triangulation of a planar region is defined and illustrated in a Python Plotly tutorial posted [here](https://plot.ly/python/next/alpha-shapes/).
+The Delaunay triangulation of a planar region is defined and illustrated in a Python Plotly tutorial posted [here](https://plot.ly/python/alpha-shapes/).
 
 If the planar region $D$  ($U$) is rectangular, then one defines a meshgrid on it, and the points
 of the grid are the input  points for the `scipy.spatial.Delaunay` function that defines the planar triangulation of $D$, respectively $U$.
@@ -104,7 +104,7 @@ The images  of the `points2D` through the surface parameterization are 3D points
 
 Setting   a combination of  keys in `Mesh3d` leads to generating and plotting of a tri-surface, in the same way as `plot_trisurf` in matplotlib  or `trisurf` in Matlab does.
 
-We note that `Mesh3d` with different combination of keys can generate  [alpha-shapes](https://plot.ly/python/next/alpha-shapes/).
+We note that `Mesh3d` with different combination of keys can generate  [alpha-shapes](https://plot.ly/python/alpha-shapes/).
 
 
 In order to plot a tri-surface, we choose a colormap, and associate to each triangle on the surface,  the  color in colormap, corresponding to  the normalized mean value of z-coordinates of the triangle vertices.

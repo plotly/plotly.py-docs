@@ -42,7 +42,7 @@ The [updatemenu method](https://plot.ly/python/reference/#layout-updatemenus-but
 - `"restyle"`: modify data or data attributes
 - `"relayout"`: modify layout attributes
 - `"update"`: modify data **and** layout attributes
-- `"animate"`: start or pause an [animation](https://plot.ly/python/next/#animations)
+- `"animate"`: start or pause an [animation](https://plot.ly/python/#animations)
 
 
 ## Restyle Dropdown

@@ -36,7 +36,7 @@ jupyter:
 
 <!-- #region -->
 ### Overview
-The plotly Python library ([plotly.py](https://plot.ly/python/next/)) is an interactive, [open-source](https://github.com/plotly/plotly.py) plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic, scientific, and 3-dimensional use-cases.
+The plotly Python library ([plotly.py](https://plot.ly/python/)) is an interactive, [open-source](https://github.com/plotly/plotly.py) plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic, scientific, and 3-dimensional use-cases.
 
 Built on top of the Plotly JavaScript library ([plotly.js](https://plot.ly/javascript/)), plotly.py enables Python users to create beautiful interactive web-based visualizations that can be displayed in Jupyter notebooks, saved to standalone HTML files, or served as part of pure Python-built web applications using Dash.
 
@@ -221,7 +221,7 @@ or conda.
 $ conda install -c plotly/label/test plotly-geo=1.0.0rc1
 ```
 
-See [*USA County Choropleth Maps in Python*](https://plot.ly/python/next/county-choropleth/) for more information on the county choropleth figure factory.
+See [*USA County Choropleth Maps in Python*](https://plot.ly/python/county-choropleth/) for more information on the county choropleth figure factory.
 
 #### Chart Studio Support
 The `chart-studio` package can be used to upload plotly figures to Plotly's Chart

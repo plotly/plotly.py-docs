@@ -272,7 +272,7 @@ fig.layout.template = None
 fig.show()
 ```
 
-Also see Mapbox county choropleths made in Python: [https://plot.ly/python/mapbox-county-choropleth/](https://plot.ly/python/next/mapbox-county-choropleth/)
+Also see Mapbox county choropleths made in Python: [https://plot.ly/python/mapbox-county-choropleth/](https://plot.ly/python/mapbox-county-choropleth/)
 
 
 #### Reference

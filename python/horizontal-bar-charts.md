@@ -37,7 +37,7 @@ jupyter:
     v4upgrade: true
 ---
 
-See more examples of bar charts (including vertical bar charts) and styling options [here](https://plot.ly/python/next/bar-charts/).
+See more examples of bar charts (including vertical bar charts) and styling options [here](https://plot.ly/python/bar-charts/).
 
 
 ### Horizontal Bar Chart with plotly express
@@ -342,4 +342,4 @@ fig.show()
 ```
 
 ### Reference
-See more examples of bar charts and styling options [here](https://plot.ly/python/next/bar-charts/).<br> See https://plot.ly/python/reference/#bar for more information and chart attribute options!
+See more examples of bar charts and styling options [here](https://plot.ly/python/bar-charts/).<br> See https://plot.ly/python/reference/#bar for more information and chart attribute options!

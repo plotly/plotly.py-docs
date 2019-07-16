@@ -61,7 +61,7 @@ py.iplot(table, filename='wind-data-sample')
 #### Histogram
 
 
-We will be producing a `histogram` with the "10 Min Std Dev" column of our data. For more info on the histogram charts, you can checkout the [documentation page](https://plot.ly/python/next/histograms/).
+We will be producing a `histogram` with the "10 Min Std Dev" column of our data. For more info on the histogram charts, you can checkout the [documentation page](https://plot.ly/python/histograms/).
 
 ```python
 data = [
@@ -76,7 +76,7 @@ py.iplot(data, filename='wind-data-histogram')
 #### Box Plots
 
 
-We will be producing a `box plot` with the "10 Min Std Dev" column of our data again. For more info on the histogram charts, you can checkout the [documentation page](https://plot.ly/python/next/box-plots/).
+We will be producing a `box plot` with the "10 Min Std Dev" column of our data again. For more info on the histogram charts, you can checkout the [documentation page](https://plot.ly/python/box-plots/).
 
 ```python
 data = [
@@ -91,7 +91,7 @@ py.iplot(data, filename='wind-data-box-plot')
 #### Scatterplot Matrix
 
 
-We will be producing a `scatterplot matrix` with all the columns of our data. For more info on the histogram charts, you can checkout the [documentation page](https://plot.ly/python/next/scatterplot-matrix/).
+We will be producing a `scatterplot matrix` with all the columns of our data. For more info on the histogram charts, you can checkout the [documentation page](https://plot.ly/python/scatterplot-matrix/).
 
 ```python
 fig = FF.create_scatterplotmatrix(wind_data,

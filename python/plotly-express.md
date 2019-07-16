@@ -40,7 +40,9 @@ jupyter:
 
 ### Plotly Express
 
-Plotly Express is a terse, consistent, high-level wrapper around `plotly.graph_objects` for rapid data exploration and figure generation. **Note**: Plotly Express was previously its own `plotly_express` package but is now part of `plotly`!
+Plotly Express is a terse, consistent, high-level wrapper around `plotly.graph_objects` for rapid data exploration and figure generation. 
+
+**Note**: Plotly Express was previously its own `plotly_express` package but is now part of `plotly`!
 
 This notebook demonstrates various `plotly.express` features. [Reference documentation](https://plotly.github.io/plotly_express/plotly_express/) is also available.
 

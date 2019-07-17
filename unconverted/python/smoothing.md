@@ -8,9 +8,19 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.1.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: Learn how to perform smoothing using various methods in Python.
     display_as: signal-analysis
@@ -25,18 +35,12 @@ jupyter:
     title: Smoothing in Python | plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
 
 #### Imports
 The tutorial below imports [NumPy](http://www.numpy.org/), [Pandas](https://plot.ly/pandas/intro-to-pandas-tutorial/), [SciPy](https://www.scipy.org/) and [Plotly](https://plot.ly/python/getting-started/).
 
 ```python
-import plotly.plotly as py
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 
 import numpy as np
 import pandas as pd
@@ -50,53 +54,59 @@ from scipy import signal
 
 There is reason to smooth data if there is little to no small-scale structure in the data. The danger to this thinking is that one may skew the representation of the data enough to change its percieved meaning, so for the sake of scientific honesty it is an imperative to at the very minimum explain one's reason's for using a smoothing algorithm to their dataset.
 
+In this example we use the [Savitzky-Golay Filter](https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter), which fits subsequents windows of adjacent data with a low-order polynomial.
+
 ```python
+import plotly.graph_objects as go
+
+import numpy as np
+import pandas as pd
+import scipy
+
+from scipy import signal
+
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
-y_noise = [y_item + np.random.choice([-1, 1])*np.random.random() for y_item in y]
+noise = 2 * np.random.random(len(x)) - 1 # uniformly distributed between -1 and 1
+y_noise = y + noise
 
-trace1 = go.Scatter(
+fig = go.Figure()
+fig.add_trace(go.Scatter(
     x=x,
     y=y,
     mode='markers',
-    marker=dict(
-        size=2,
-        color='rgb(0, 0, 0)',
-    ),
+    marker=dict(size=2, color='black'),
     name='Sine'
-)
+))
 
-trace2 = go.Scatter(
+fig.add_trace(go.Scatter(
     x=x,
     y=y_noise,
     mode='markers',
     marker=dict(
         size=6,
-        color='#5E88FC',
+        color='royalblue',
         symbol='circle-open'
     ),
     name='Noisy Sine'
-)
+))
 
-trace3 = go.Scatter(
+fig.add_trace(go.Scatter(
     x=x,
-    y=signal.savgol_filter(y, 53, 3),
+    y=signal.savgol_filter(y, 
+                           53, # window size used for filtering 
+                           3), # order of fitted polynomial
     mode='markers',
     marker=dict(
         size=6,
-        color='#C190F0',
+        color='mediumpurple',
         symbol='triangle-up'
     ),
     name='Savitzky-Golay'
-)
+))
 
-layout = go.Layout(
-    showlegend=True
-)
 
-data = [trace1, trace2, trace3]
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='smoothing-savitzky-golay-filter')
+fig.show()
 ```
 
 #### Triangular Moving Average
@@ -111,7 +121,7 @@ SMA_i = \frac{y_i + ... + y_{i+n}}{n}
 \end{align*}
 $$
 
-In the `Triangular Moving Average`, two simple moving averages are computed on top of each other. This means that our $SMA_i$ are computed then a Triangular Moving Average $TMA_i$ is computed as:
+In the `Triangular Moving Average`, two simple moving averages are computed on top of each other, in order to give more weight to closer (adjacent) points. This means that our $SMA_i$ are computed then a Triangular Moving Average $TMA_i$ is computed as:
 
 $$
 \begin{align*}
@@ -120,25 +130,21 @@ TMA_i = \frac{SMA_i + ... + SMA_{i+n}}{n}
 $$
 
 ```python
-np.array(list(range(5)) + [5] + list(range(5)[::-1]))
-```
-
-```python
-def smoothTriangle(data, degree, dropVals=False):
-    triangle=np.array(list(range(degree)) + [degree] + list(range(degree)[::-1])) + 1
+def smoothTriangle(data, degree):
+    triangle=np.concatenate((np.arange(degree + 1), np.arange(degree)[::-1])) # up then down
     smoothed=[]
 
     for i in range(degree, len(data) - degree * 2):
         point=data[i:i + len(triangle)] * triangle
-        smoothed.append(sum(point)/sum(triangle))
-    if dropVals:
-        return smoothed
+        smoothed.append(np.sum(point)/np.sum(triangle))
+    # Handle boundaries
     smoothed=[smoothed[0]]*int(degree + degree/2) + smoothed
     while len(smoothed) < len(data):
         smoothed.append(smoothed[-1])
     return smoothed
 
-trace1 = go.Scatter(
+fig = go.Figure()
+fig.add_trace(go.Scatter(
     x=x,
     y=y,
     mode='markers',
@@ -147,9 +153,9 @@ trace1 = go.Scatter(
         color='rgb(0, 0, 0)',
     ),
     name='Sine'
-)
+))
 
-trace2 = go.Scatter(
+fig.add_trace(go.Scatter(
     x=x,
     y=y_noise,
     mode='markers',
@@ -159,9 +165,9 @@ trace2 = go.Scatter(
         symbol='circle-open'
     ),
     name='Noisy Sine'
-)
+))
 
-trace3 = go.Scatter(
+fig.add_trace(go.Scatter(
     x=x,
     y=smoothTriangle(y_noise, 10),  # setting degree to 10
     mode='markers',
@@ -171,34 +177,7 @@ trace3 = go.Scatter(
         symbol='triangle-up'
     ),
     name='Moving Triangle - Degree 10'
-)
+))
 
-layout = go.Layout(
-    showlegend=True
-)
-
-data = [trace1, trace2, trace3]
-fig = go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='smoothing-triangular-moving-average-degree-10')
-```
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'python-Smoothing.ipynb', 'python/smoothing/', 'Smoothing | plotly',
-    'Learn how to perform smoothing using various methods in Python.',
-    title='Smoothing in Python | plotly',
-    name='Smoothing',
-    language='python',
-    page_type='example_index', has_thumbnail='false', display_as='signal-analysis', order=1)
-```
-
-```python
-
+fig.show()
 ```

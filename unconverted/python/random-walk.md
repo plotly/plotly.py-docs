@@ -8,9 +8,19 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.1.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.7
   plotly:
     description: Learn how to use Python to make a Random Walk
     display_as: statistics
@@ -26,28 +36,7 @@ jupyter:
     title: Random Walk in Python. | plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by dowloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-#### Imports
-The tutorial below imports [NumPy](http://www.numpy.org/), [Pandas](https://plot.ly/pandas/intro-to-pandas-tutorial/), [SciPy](https://www.scipy.org/), and [Random](https://docs.python.org/2/library/random.html).
-
-```python
-import plotly.plotly as py
-import plotly.graph_objs as go
-from plotly.tools import FigureFactory as FF
-
-import numpy as np
-import pandas as pd
-import scipy
-import random
-```
-
-####Tips
-A `random walk` can be thought of as a random process in which a tolken or a marker is randomly moved around some space, that is, a space with a metric used to compute distance. It is more commonly conceptualized in one dimension ($\mathbb{Z}$), two dimensions ($\mathbb{Z}^2$) or three dimensions ($\mathbb{Z}^3$) in Cartesian space, where $\mathbb{Z}$ represents the set of integers. In the visualizations below, we will be using [scatter plots](https://plot.ly/python/line-and-scatter/) as well as a colorscale to denote the time sequence of the walk.
+A [random walk](https://en.wikipedia.org/wiki/Random_walk) can be thought of as a random process in which a token or a marker is randomly moved around some space, that is, a space with a metric used to compute distance. It is more commonly conceptualized in one dimension ($\mathbb{Z}$), two dimensions ($\mathbb{Z}^2$) or three dimensions ($\mathbb{Z}^3$) in Cartesian space, where $\mathbb{Z}$ represents the set of integers. In the visualizations below, we will be using [scatter plots](https://plot.ly/python/line-and-scatter/) as well as a colorscale to denote the time sequence of the walk.
 
 
 #### Random Walk in 1D
@@ -56,76 +45,96 @@ A `random walk` can be thought of as a random process in which a tolken or a mar
 The jitter in the data points along the x and y axes are meant to illuminate where the points are being drawn and what the tendancy of the random walk is.
 
 ```python
-x = [0]
+import plotly.graph_objects as go
+import numpy as np
 
-for j in range(100):
-    step_x = random.randint(0,1)
-    if step_x == 1:
-        x.append(x[j] + 1 + 0.05*np.random.normal())
-    else:
-        x.append(x[j] - 1 + 0.05*np.random.normal())
+l = 100
+steps = np.random.choice([-1, 1], size=l) + 0.05 * np.random.randn(l) # l steps
+position = np.cumsum(steps) # integrate the position by summing steps values
+y = 0.05 * np.random.randn(l)
 
-y = [0.05*np.random.normal() for j in range(len(x))]
-
-trace1 = go.Scatter(
-    x=x,
+fig = go.Figure(data=go.Scatter(
+    x=position,
     y=y,
     mode='markers',
     name='Random Walk in 1D',
     marker=dict(
-        color=[i for i in range(len(x))],
+        color=np.arange(l),
         size=7,
-        colorscale=[[0, 'rgb(178,10,28)'], [0.50, 'rgb(245,160,105)'],
-                    [0.66, 'rgb(245,195,157)'], [1, 'rgb(220,220,220)']],
+        colorscale='Reds',
         showscale=True,
     )
-)
+))
 
-layout = go.Layout(
-    yaxis=dict(
-        range=[-1, 1]
-    )
-)
-
-data = [trace1]
-fig= go.Figure(data=data, layout=layout)
-py.iplot(fig, filename='random-walk-1d')
+fig.update_layout(yaxis_range=[-1, 1])
+fig.show()
 ```
 
 #### Random Walk in 2D
 
 ```python
-x = [0]
-y = [0]
+import plotly.graph_objects as go
+import numpy as np
 
-for j in range(1000):
-    step_x = random.randint(0,1)
-    if step_x == 1:
-        x.append(x[j] + 1 + np.random.normal())
-    else:
-        x.append(x[j] - 1 + np.random.normal())
+l = 1000
+x_steps = np.random.choice([-1, 1], size=l) + 0.2 * np.random.randn(l) # l steps
+y_steps = np.random.choice([-1, 1], size=l) + 0.2 * np.random.randn(l) # l steps
+x_position = np.cumsum(x_steps) # integrate the position by summing steps values
+y_position = np.cumsum(y_steps) # integrate the position by summing steps values
 
-    step_y = random.randint(0,1)
-    if step_y == 1:
-        y.append(y[j] + 1 + np.random.normal())
-    else:
-        y.append(y[j] - 1 + np.random.normal())
-
-trace1 = go.Scatter(
-    x=x,
-    y=y,
+fig = go.Figure(data=go.Scatter(
+    x=x_position,
+    y=y_position,
     mode='markers',
     name='Random Walk',
     marker=dict(
-        color=[i for i in range(len(x))],
+        color=np.arange(l),
         size=8,
         colorscale='Greens',
         showscale=True
     )
-)
+))
 
-data = [trace1]
-py.iplot(data, filename='random-walk-2d')
+fig.show()
+```
+
+#### Random walk and diffusion
+
+In the two following charts we show the link between random walks and diffusion. We compute a large number `N` of random walks representing for examples molecules in a small drop of chemical. While all trajectories start at 0, after some time the spatial distribution of points is a Gaussian distribution. Also, the average distance to the origin grows as $\sqrt(t)$.
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+l = 1000
+N = 10000
+steps = np.random.choice([-1, 1], size=(N, l)) + 0.05 * np.random.standard_normal((N, l)) # l steps
+position = np.cumsum(steps, axis=1) # integrate all positions by summing steps values along time axis
+
+fig = go.Figure(data=go.Histogram(x=position[:, -1])) # positions at final time step
+fig.show()                                                                        
+```
+
+```python
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import numpy as np
+
+l = 1000
+N = 10000
+t = np.arange(l)
+steps = np.random.choice([-1, 1], size=(N, l)) + 0.05 * np.random.standard_normal((N, l)) # l steps
+position = np.cumsum(steps, axis=1) # integrate the position by summing steps values
+average_distance = np.std(position, axis=0) # average distance
+
+fig = make_subplots(1, 2)
+fig.add_trace(go.Scatter(x=t, y=average_distance, name='mean distance'), 1, 1)
+fig.add_trace(go.Scatter(x=t, y=average_distance**2, name='mean squared distance'), 1, 2)
+fig.update_xaxes(title_text='$t$')
+fig.update_yaxes(title_text='$l$', col=1)
+fig.update_yaxes(title_text='$l^2$', col=2)
+fig.update_layout(showlegend=False)
+fig.show()                                                                        
 ```
 
 #### Advanced Tip
@@ -157,24 +166,3 @@ $$
 
 Therefore, we expect our random walk to hover around $0$ regardless of how many steps we take in our walk.
 
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'python-Random-Walk.ipynb', 'python/random-walk/', 'Random Walk | plotly',
-    'Learn how to use Python to make a Random Walk',
-    title='Random Walk in Python. | plotly',
-    name='Random Walk',
-    language='python',
-    page_type='example_index', has_thumbnail='false', display_as='statistics', order=10,
-    ipynb= '~notebook_demo/114')
-```
-
-```python
-
-```

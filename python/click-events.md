@@ -39,7 +39,7 @@ jupyter:
 
 #### Update Points Using a Click Callback
 
-```
+```python
 import plotly.graph_objects as go
 
 import numpy as np

@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.0
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.6.8
   plotly:
     description: How to add error-bars to charts in Python with Plotly.
     display_as: statistical
@@ -152,25 +152,14 @@ import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Bar(
-    x=['Trial 1', 'Trial 2', 'Trial 3'],
-    y=[3, 6, 4],
     name='Control',
-    error_y=dict(
-        type='data',
-        array=[1, 0.5, 1.5],
-        visible=True,
-        color='white')
+    x=['Trial 1', 'Trial 2', 'Trial 3'], y=[3, 6, 4],
+    error_y=dict(type='data', array=[1, 0.5, 1.5])
 ))
 fig.add_trace(go.Bar(
-    x=['Trial 1', 'Trial 2', 'Trial 3'],
-    y=[4, 7, 3],
     name='Experimental',
-    error_y=dict(
-        type='data',
-        array=[0.5, 1, 2],
-        visible=True,
-        color='white'
-    )
+    x=['Trial 1', 'Trial 2', 'Trial 3'], y=[4, 7, 3],
+    error_y=dict(type='data', array=[0.5, 1, 2])
 ))
 fig.update_layout(barmode='group')
 fig.show()

@@ -6,11 +6,21 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.1
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.8
   plotly:
     description: How to make parallel categories diagrams in Python with Plotly.
     display_as: statistical
@@ -26,66 +36,64 @@ jupyter:
     title: Python Parallel Categories | Plotly
 ---
 
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-
-
-#### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
-
-```python
-import plotly
-plotly.__version__
-```
-
-```python
-from plotly.offline import iplot, init_notebook_mode
-import plotly.graph_objs as go
-
-import pandas as pd
-import numpy as np
-import ipywidgets as widgets
-```
-
-We'll configure the notebook for use in [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode
-
-```python
-init_notebook_mode(connected=True)
-```
-
 #### Parallel Categories Diagram
 The parallel categories diagram is a visualization of multi-dimensional categorical data sets.  Each variable in the data set is represented by a column of rectangles, where each rectangle corresponds to a discrete value taken on by that variable.  The relative heights of the rectangles reflect the relative frequency of occurrence of the corresponding value.
 
 Combinations of category rectangles across dimensions are connected by ribbons, where the height of the ribbon corresponds to the relative frequency of occurrence of the combination of categories in the data set.
 
-#### Basic Parallel Categories Diagram
-In this first example, we visualize the hair color, eye color, and sex of a sample of 8 people.  Hovering over a category rectangle displays a tooltip with the number of people with that single trait. Hovering over a ribbon in the diagram displays a tooltip with the number of people with a particular combination of the three traits connected by the ribbon.
 
-The dimension labels can be dragged horizontally to reorder the dimensions and the category rectangles can be dragged vertically to reorder the categories within a dimension.
+#### Basic Parallel Category Diagram with plotly.express
+
+This example visualizes the resturant bills of a sample of 244 people.  Hovering over a category rectangle (sex, smoker, etc) displays a tooltip with the number of people with that single trait. Hovering over a ribbon in the diagram displays a tooltip with the number of people with a particular combination of the five traits connected by the ribbon.
+
 
 ```python
+import plotly.express as px
+
+tips = px.data.tips()
+fig = px.parallel_categories(tips)
+
+fig.show()
+```
+
+#### Style Diagram
+In this example `dimensions` represents a list of stings or the columns of data frame, and `labels` is a dictionary with string keys (column name) and string values ('desired label to be displayed'). See [Plotly express reference page](https://www.plotly.express/plotly_express/#plotly_express.parallel_categories) for more information.
+
+```python
+import plotly.express as px
+
+tips = px.data.tips()
+fig = px.parallel_categories(tips, dimensions=['sex', 'smoker', 'day'], 
+                color="size", color_continuous_scale=px.colors.sequential.Inferno,
+                labels={'sex':'SEX', 'smoker':'SMOKER', 'day':'DAY'})
+fig.show()
+```
+
+#### Basic Parallel Categories Diagram
+This example illustartes the hair color, eye color, and sex of a sample of 8 people. The dimension labels can be dragged horizontally to reorder the dimensions and the category rectangles can be dragged vertically to reorder the categories within a dimension.
+
+```python
+import plotly.graph_objects as go
 parcats = go.Parcats(
     dimensions=[
         {'label': 'Hair',
-         'values': ['Black', 'Black', 'Black', 'Brown',
-                    'Brown', 'Brown', 'Red', 'Brown']},
+         'values': ['Black', 'Black', 'Black', 'Brown', 'Brown', 'Brown', 'Red', 'Brown']},
         {'label': 'Eye',
-         'values': ['Brown', 'Brown', 'Brown', 'Brown',
-                    'Brown', 'Blue', 'Blue', 'Blue']},
+         'values': ['Brown', 'Brown', 'Brown', 'Brown', 'Brown', 'Blue', 'Blue', 'Blue']},
         {'label': 'Sex',
-         'values': ['Female', 'Female', 'Female', 'Male',
-                    'Female', 'Male', 'Male', 'Male']}]
+         'values': ['Female', 'Female', 'Female', 'Male', 'Female', 'Male', 'Male', 'Male']}]
 )
 
-iplot([parcats])
+fig = go.Figure(parcats)
+fig.show()
 ```
 
 #### Basic Parallel Categories Diagram with Counts
 If the frequency of occurrence for each combination of attributes is known in advance, this can be specified using the `counts` property
 
 ```python
+import plotly.graph_objects as go
+
 parcats = go.Parcats(
     dimensions=[
         {'label': 'Hair',
@@ -97,7 +105,8 @@ parcats = go.Parcats(
     counts=[6, 10, 40, 23, 7]
 )
 
-iplot([parcats])
+fig = go.Figure(parcats)
+fig.show()
 ```
 
 #### Mutli-Color Parallel Categories Diagram
@@ -110,47 +119,36 @@ By setting the `hoveron` property to `'color'` and the `hoverinfo` property to `
 By setting the `arrangement` property to `'freeform'` it is now possible to drag categories horizontally to reorder dimensions as well as vertically to reorder categories within the dimension.
 
 ```python
-titanic_df = pd.read_csv(
-    "https://raw.githubusercontent.com/plotly/datasets/master/titanic.csv")
+import plotly.graph_objects as go
+import pandas as pd
+
+titanic_df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/titanic.csv")
 
 # Create dimensions
 class_dim = go.parcats.Dimension(
     values=titanic_df.Pclass,
-    categoryorder='category ascending',
-    label="Class"
+    categoryorder='category ascending', label="Class"
 )
 
-gender_dim = go.parcats.Dimension(
-    values=titanic_df.Sex,
-    label="Gender"
-)
+gender_dim = go.parcats.Dimension(values=titanic_df.Sex, label="Gender")
 
 survival_dim = go.parcats.Dimension(
-  values=titanic_df.Survived,
-  label="Outcome",
-  categoryarray=[0, 1],
-  ticktext=['perished', 'survived'],
+    values=titanic_df.Survived, label="Outcome", categoryarray=[0, 1], 
+    ticktext=['perished', 'survived']
 )
 
 # Create parcats trace
 color = titanic_df.Survived;
 colorscale = [[0, 'lightsteelblue'], [1, 'mediumseagreen']];
 
-data = [
-    go.Parcats(
-        dimensions=[class_dim, gender_dim, survival_dim],
-        line={'color': color,
-              'colorscale': colorscale},
-        hoveron='color',
-        hoverinfo='count+probability',
+fig = go.Figure(data = [go.Parcats(dimensions=[class_dim, gender_dim, survival_dim],
+        line={'color': color, 'colorscale': colorscale},
+        hoveron='color', hoverinfo='count+probability',
         labelfont={'size': 18, 'family': 'Times'},
         tickfont={'size': 16, 'family': 'Times'},
-        arrangement='freeform'
-    )
-]
+        arrangement='freeform')])
 
-# Display figure
-iplot(data)
+fig.show()
 ```
 
 #### Parallel Categories Linked Brushing
@@ -158,23 +156,20 @@ This example demonstrates how the `on_selection` and `on_click` callbacks can be
 
 This example also sets the `line.shape` property to `hspline` to cause the ribbons to curve between categories.
 
-**Note:** In order for the callback functions to be executed the figure must be a `FigureWidget`, and the figure should display itself. In particular the `plot` and `iplot` functions should not be used.
+**Note:** In order for the callback functions to be executed the figure must be a `FigureWidget`, and the figure should display itself. 
 
 ```python
-cars_df = pd.read_csv(
-    'https://raw.githubusercontent.com/plotly/datasets/master/imports-85.csv')
+import plotly.graph_objects as go
+from ipywidgets import widgets
+import pandas as pd
+import numpy as np
+
+cars_df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/imports-85.csv')
 
 # Build parcats dimensions
-categorical_dimensions = [
-  'body-style',
-  'drive-wheels',
-  'fuel-type'
-];
+categorical_dimensions = ['body-style', 'drive-wheels', 'fuel-type'];
 
-dimensions = [
-    dict(values=cars_df[label], label=label)
-    for label in categorical_dimensions
-]
+dimensions = [dict(values=cars_df[label], label=label) for label in categorical_dimensions]
 
 # Build colorscale
 color = np.zeros(len(cars_df), dtype='uint8')
@@ -182,33 +177,18 @@ colorscale = [[0, 'gray'], [1, 'firebrick']]
 
 # Build figure as FigureWidget
 fig = go.FigureWidget(
-    data=[
-        go.Scatter(
-            x=cars_df.horsepower,
-            y=cars_df['highway-mpg'],
-            marker={'color': 'gray'},
-            mode='markers',
-            selected={'marker': {'color': 'firebrick'}},
-            unselected={'marker': {'opacity': 0.3}}),
+    data=[go.Scatter(x=cars_df.horsepower, y=cars_df['highway-mpg'],
+    marker={'color': 'gray'}, mode='markers', selected={'marker': {'color': 'firebrick'}},
+    unselected={'marker': {'opacity': 0.3}}), go.Parcats(
+        domain={'y': [0, 0.4]}, dimensions=dimensions,
+        line={'colorscale': colorscale, 'cmin': 0,
+              'cmax': 1, 'color': color, 'shape': 'hspline'})
+    ])
 
-        go.Parcats(
-            domain={'y': [0, 0.4]},
-            dimensions=dimensions,
-            line={
-                'colorscale': colorscale,
-                'cmin': 0,
-                'cmax': 1,
-                'color': color,
-                'shape': 'hspline'})
-    ],
-    layout=go.Layout(
-        height=800,
-        xaxis={'title': 'Horsepower'},
-        yaxis={'title': 'MPG',
-               'domain': [0.6, 1]},
-        dragmode='lasso',
-        hovermode='closest')
-)
+fig.update_layout(
+        height=800, xaxis={'title': 'Horsepower'},
+        yaxis={'title': 'MPG', 'domain': [0.6, 1]},
+        dragmode='lasso', hovermode='closest')
 
 # Update color callback
 def update_color(trace, points, state):
@@ -225,7 +205,6 @@ fig.data[0].on_selection(update_color)
 # and parcats click
 fig.data[1].on_click(update_color)
 
-# Display figure
 fig
 ```
 
@@ -236,8 +215,12 @@ fig
 This example extends the previous example to support brushing with multiple colors.  The toggle buttons above may be used to select the active color, and this color will be applied when points are selected in the `scatter` trace and when categories or ribbons are clicked in the `parcats` trace.
 
 ```python
-cars_df = pd.read_csv(
-    'https://raw.githubusercontent.com/plotly/datasets/master/imports-85.csv')
+import plotly.graph_objects as go
+import ipywidgets as widgets
+import pandas as pd
+import numpy as np
+
+cars_df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/imports-85.csv')
 
 # Build parcats dimensions
 categorical_dimensions = [
@@ -328,27 +311,4 @@ widgets.VBox([color_toggle, fig])
 
 
 #### Reference
-See https://plot.ly/python/reference/#parcats for more information and chart attribute options!
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'parcats.ipynb', 'python/parallel-categories-diagram/', 'Parallel Categories Diagram',
-    'How to make parallel categories diagrams in Python with Plotly.',
-    title = 'Python Parallel Categories | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/parcats.jpg',
-    language='python',
-    display_as='statistical', order=10.3,
-    uses_plotly_offline=True,
-    ipynb= '~notebook_demo/258')
-```
-
-```python
-
-```
+See [reference page](https://plot.ly/python/reference/#parcats) for more information and chart attribute options!

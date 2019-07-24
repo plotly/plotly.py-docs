@@ -74,7 +74,8 @@ This example illustartes the hair color, eye color, and sex of a sample of 8 peo
 
 ```python
 import plotly.graph_objects as go
-parcats = go.Parcats(
+
+fig = go.Figure(go.Parcats(
     dimensions=[
         {'label': 'Hair',
          'values': ['Black', 'Black', 'Black', 'Brown', 'Brown', 'Brown', 'Red', 'Brown']},
@@ -82,9 +83,8 @@ parcats = go.Parcats(
          'values': ['Brown', 'Brown', 'Brown', 'Brown', 'Brown', 'Blue', 'Blue', 'Blue']},
         {'label': 'Sex',
          'values': ['Female', 'Female', 'Female', 'Male', 'Female', 'Male', 'Male', 'Male']}]
-)
+))
 
-fig = go.Figure(parcats)
 fig.show()
 ```
 
@@ -223,67 +223,39 @@ import numpy as np
 cars_df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/imports-85.csv')
 
 # Build parcats dimensions
-categorical_dimensions = [
-  'body-style',
-  'drive-wheels',
-  'fuel-type'
-];
+categorical_dimensions = ['body-style', 'drive-wheels', 'fuel-type']
 
-dimensions = [
-    dict(values=cars_df[label], label=label)
-    for label in categorical_dimensions
-]
+dimensions = [dict(values=cars_df[label], label=label) for label in categorical_dimensions]
 
 # Build colorscale
 color = np.zeros(len(cars_df), dtype='uint8')
 colorscale = [[0, 'gray'], [0.33, 'gray'],
               [0.33, 'firebrick'], [0.66, 'firebrick'],
-              [0.66, 'blue'], [1.0, 'blue']];
+              [0.66, 'blue'], [1.0, 'blue']]
 cmin = -0.5
 cmax = 2.5
 
 # Build figure as FigureWidget
 fig = go.FigureWidget(
-    data=[
-        go.Scatter(
-            x=cars_df.horsepower,
-            y=cars_df['highway-mpg'],
-            marker={'color': color,
-                    'cmin': cmin,
-                    'cmax': cmax,
-                    'colorscale': colorscale,
-                    'showscale': True,
-                    'colorbar': {'tickvals': [0, 1, 2],
-                                 'ticktext': ['None', 'Red', 'Blue']}
-                   },
-            mode='markers'),
+    data=[go.Scatter(x=cars_df.horsepower, y=cars_df['highway-mpg'],
+                marker={'color': color, 'cmin': cmin, 'cmax': cmax,
+                        'colorscale': colorscale, 'showscale': True,
+                        'colorbar': {'tickvals': [0, 1, 2], 'ticktext': ['None', 'Red', 'Blue']}},
+                     mode='markers'),
 
-        go.Parcats(
-            domain={'y': [0, 0.4]},
-            dimensions=dimensions,
-            line={
-                'colorscale': colorscale,
-                'cmin': cmin,
-                'cmax': cmax,
-                'color': color,
-                'shape': 'hspline'})
-    ],
-    layout=go.Layout(
-        height=800,
-        xaxis={'title': 'Horsepower'},
-        yaxis={'title': 'MPG',
-               'domain': [0.6, 1]},
-        dragmode='lasso',
-        hovermode='closest')
+      go.Parcats(domain={'y': [0, 0.4]}, dimensions=dimensions,
+                   line={'colorscale': colorscale, 'cmin': cmin,
+                   'cmax': cmax, 'color': color, 'shape': 'hspline'})]
 )
+
+fig.update_layout(height=800, xaxis={'title': 'Horsepower'}, 
+                  yaxis={'title': 'MPG', 'domain': [0.6, 1]},
+                  dragmode='lasso', hovermode='closest')
 
 # Build color selection widget
 color_toggle = widgets.ToggleButtons(
     options=['None', 'Red', 'Blue'],
-    index=1,
-    description='Brush Color:',
-    disabled=False,
-)
+    index=1, description='Brush Color:', disabled=False)
 
 # Update color callback
 def update_color(trace, points, state):

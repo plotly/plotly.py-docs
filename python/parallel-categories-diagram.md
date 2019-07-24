@@ -65,7 +65,7 @@ import plotly.express as px
 tips = px.data.tips()
 fig = px.parallel_categories(tips, dimensions=['sex', 'smoker', 'day'], 
                 color="size", color_continuous_scale=px.colors.sequential.Inferno,
-                labels={'sex':'SEX', 'smoker':'SMOKER', 'day':'DAY'})
+                labels={'sex':'Payer sex', 'smoker':'Smokers at the table', 'day':'Day of week'})
 fig.show()
 ```
 
@@ -94,7 +94,7 @@ If the frequency of occurrence for each combination of attributes is known in ad
 ```python
 import plotly.graph_objects as go
 
-parcats = go.Parcats(
+fig = go.Figure(go.Parcats(
     dimensions=[
         {'label': 'Hair',
          'values': ['Black', 'Brown', 'Brown', 'Brown', 'Red']},
@@ -103,9 +103,9 @@ parcats = go.Parcats(
         {'label': 'Sex',
          'values': ['Female', 'Male', 'Female', 'Male', 'Male']}],
     counts=[6, 10, 40, 23, 7]
-)
+))
 
-fig = go.Figure(parcats)
+
 fig.show()
 ```
 

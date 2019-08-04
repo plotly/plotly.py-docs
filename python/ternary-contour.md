@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     language: python
     layout: user-guide
-    name: Surface Triangulation
+    name: Ternary contours
     page_type: u-guide
     permalink: python/ternary-contours/
     thumbnail: thumbnail/trisurf.jpg

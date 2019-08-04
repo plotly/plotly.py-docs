@@ -30,7 +30,7 @@ jupyter:
     name: Ternary contours
     page_type: u-guide
     permalink: python/ternary-contours/
-    thumbnail: thumbnail/trisurf.jpg
+    thumbnail: thumbnail/ternary-contour.jpg
     title: Python Ternary contours | plotly
 ---
 

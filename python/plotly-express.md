@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.7
   plotly:
     description: Plotly Express is a terse, consistent, high-level API for rapid data
       exploration and figure generation.
@@ -137,8 +137,8 @@ fig.show()
 ```python
 import plotly.express as px
 tips = px.data.tips()
-fig = px.scatter(tips, x="total_bill", y="tip", color="size", facet_row="sex",
-           color_continuous_scale=px.colors.sequential.Viridis, render_mode="webgl", marginal_y='histogram')
+fig = px.scatter(tips, x="total_bill", y="tip", color="size", facet_col="sex",
+           color_continuous_scale=px.colors.sequential.Viridis, render_mode="webgl")
 fig.show()
 ```
 
@@ -186,7 +186,7 @@ fig.show()
 ```python
 import plotly.express as px
 iris = px.data.iris()
-fig = px.density_contour(iris, x="sepal_width", y="sepal_length", color="species", marginal_x="rug", marginal_y=None)
+fig = px.density_contour(iris, x="sepal_width", y="sepal_length", color="species", marginal_x="rug", marginal_y="histogram")
 fig.show()
 ```
 

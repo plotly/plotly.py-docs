@@ -31,9 +31,9 @@ jupyter:
     layout: user-guide
     name: Mapbox Map Layers
     order: 7
-    page_type: example_index
+    page_type: u-guide
     permalink: python/mapbox-layers/
-    thumbnail: thumbnail/scatter-mapbox.jpg
+    thumbnail: thumbnail/mapbox-layers.png
     title: Mapbox Map Layers in Python | Plotly
 ---
 

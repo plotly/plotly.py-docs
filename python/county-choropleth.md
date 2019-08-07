@@ -30,8 +30,8 @@ jupyter:
     language: python
     layout: user-guide
     name: USA County Choropleth Maps
-    order: 0
-    page_type: example_index
+    order: 20
+    page_type: u-guide
     permalink: python/county-choropleth/
     thumbnail: thumbnail/county-choropleth-usa-greybkgd.jpg
     title: Python USA County Choropleth Maps | Plotly

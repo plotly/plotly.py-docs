@@ -30,8 +30,8 @@ jupyter:
     layout: user-guide
     mapbox_access_token: pk.eyJ1IjoicHJpeWF0aGFyc2FuIiwiYSI6ImNqbGRyMGQ5YTBhcmkzcXF6YWZldnVvZXoifQ.sN7gyyHTIq1BSfHQRBZdHA
     name: Scatter Plots on Mapbox
-    order: 7
-    page_type: example_index
+    order: 8
+    page_type: u-guide
     permalink: python/scattermapbox/
     thumbnail: thumbnail/scatter-mapbox.jpg
     title: Python Scatter Plots with Mapbox | Plotly

@@ -30,10 +30,10 @@ jupyter:
     language: python
     layout: user-guide
     name: Mapbox Density Heatmap
-    order: 1.5
-    page_type: u-guide
+    order: 3
+    page_type: example_index
     permalink: python/mapbox-density-heatmaps/
-    thumbnail: thumbnail/county-level-choropleth.jpg
+    thumbnail: thumbnail/mapbox-density.png
     title: Python Density Heatmap | plotly
 ---
 

@@ -22,7 +22,7 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.6.7
   plotly:
-    description: How to make a Mapbox Choropleth Map of the Florida Counties in Python
+    description: How to make a Mapbox Choropleth Map of US Counties in Python
       with Plotly.
     display_as: maps
     has_thumbnail: true
@@ -37,55 +37,60 @@ jupyter:
     title: Python Mapbox Choropleth Maps | plotly
 ---
 
+
 #### Mapbox Access Token
 
+To plot on Mapbox maps with Plotly you *may* need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio). See our [Mapbox Map Layers](/python/mapbox-layers/) documentation for more information.
 
-To plot on Mapbox maps with Plotly you'll need a Mapbox account and a [Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/.
+
+#### Mapbox Light base map: free token needed
 
 ```python
+token = open(".mapbox_token").read() # you will need your own token
+
+
+from urllib.request import urlopen
+import json
+with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
+
+import pandas as pd
+unemp = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+                   dtype={"fips": str})
+
 import plotly.graph_objects as go
 
-mapbox_access_token = open(".mapbox_token").read()
+fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=unemp.fips, z=unemp.unemp,
+                                    colorscale="Viridis", zmin=0, zmax=12))
+fig.update_layout(mapbox_style="light", mapbox_accesstoken=token,
+                  mapbox_zoom=3, mapbox_center = {"lat": 37.0902, "lon": -95.7129})
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+fig.show()
+```
 
-fig = go.Figure(go.Scattermapbox(
-        lat=['45.5017'],
-        lon=['-73.5673'],
-        mode='markers',
-    ))
 
-fig.update_layout(
-    height=600,
-    autosize=True,
-    hovermode='closest',
-    mapbox=dict(
-        layers=[
-            dict(
-                sourcetype = 'geojson',
-                source = 'https://raw.githubusercontent.com/plotly/datasets/master/florida-red-data.json',
-                type = 'fill',
-                color = 'rgba(163,22,19,0.8)'
-            ),
-            dict(
-                sourcetype = 'geojson',
-                source = 'https://raw.githubusercontent.com/plotly/datasets/master/florida-blue-data.json',
-                type = 'fill',
-                color = 'rgba(40,0,113,0.8)'
-            )
-        ],
-        accesstoken=mapbox_access_token,
-        bearing=0,
-        center=dict(
-            lat=27.8,
-            lon=-83
-        ),
-        pitch=0,
-        zoom=5.2,
-        style='light'
-    ),
-)
+#### Carto base map: no token needed
 
+```python
+from urllib.request import urlopen
+import json
+with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
+
+import pandas as pd
+unemp = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+                   dtype={"fips": str})
+
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=unemp.fips, z=unemp.unemp,
+                                    colorscale="Viridis", zmin=0, zmax=12,
+                                    marker_opacity=0.5, marker_line_width=0))
+fig.update_layout(mapbox_style="carto-positron",
+                  mapbox_zoom=3, mapbox_center = {"lat": 37.0902, "lon": -95.7129})
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 fig.show()
 ```
 
 #### Reference
-See https://plot.ly/python/reference/#scattermapbox for more information about mapbox and their attribute options.
+See https://plot.ly/python/reference/#choroplethmapbox for more information about mapbox and their attribute options.

@@ -81,27 +81,6 @@ fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 fig.show()
 ```
 
-<!-- #region -->
-#### Dark tiles from Mapbox service: free token needed
-
-
-Here is the same map rendered with the `"dark"` style from the Mapbox service, which requires an Access Token:
-<!-- #endregion -->
-
-```python
-token = open(".mapbox_token").read() # you will need your own token
-
-import pandas as pd
-us_cities = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/us-cities-top-1k.csv")
-
-import plotly.express as px
-
-fig = px.scatter_mapbox(us_cities, lat="lat", lon="lon", hover_name="City", hover_data=["State", "Population"],
-                        color_discrete_sequence=["fuchsia"], zoom=3, height=300)
-fig.update_layout(mapbox_style="dark", mapbox_accesstoken=token)
-fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-fig.show()
-```
 
 <!-- #region -->
 #### Using `layout.mapbox.layers` to Specify a Base Map
@@ -123,7 +102,7 @@ us_cities = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/maste
 import plotly.express as px
 
 fig = px.scatter_mapbox(us_cities, lat="lat", lon="lon", hover_name="City", hover_data=["State", "Population"],
-                        color_discrete_sequence=["fuchsia"], zoom=3)
+                        color_discrete_sequence=["fuchsia"], zoom=3, height=300)
 fig.update_layout(
     mapbox_style="white-bg",
     mapbox_layers=[
@@ -153,7 +132,7 @@ us_cities = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/maste
 import plotly.express as px
 
 fig = px.scatter_mapbox(us_cities, lat="lat", lon="lon", hover_name="City", hover_data=["State", "Population"],
-                        color_discrete_sequence=["fuchsia"], zoom=3)
+                        color_discrete_sequence=["fuchsia"], zoom=3, height=300)
 fig.update_layout(
     mapbox_style="white-bg",
     mapbox_layers=[
@@ -171,6 +150,30 @@ fig.update_layout(
                        "&WIDTH=1000&HEIGHT=1000&LAYERS=RADAR_1KM_RDBR&TILED=true&FORMAT=image/png"],
         }
       ])
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+fig.show()
+```
+
+
+<!-- #region -->
+#### Dark tiles from Mapbox service: free token needed
+
+
+Here is a map rendered with the `"dark"` style from the Mapbox service, which requires an Access Token:
+
+<!-- #endregion -->
+
+```python
+token = open(".mapbox_token").read() # you will need your own token
+
+import pandas as pd
+us_cities = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/us-cities-top-1k.csv")
+
+import plotly.express as px
+
+fig = px.scatter_mapbox(us_cities, lat="lat", lon="lon", hover_name="City", hover_data=["State", "Population"],
+                        color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+fig.update_layout(mapbox_style="dark", mapbox_accesstoken=token)
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 fig.show()
 ```

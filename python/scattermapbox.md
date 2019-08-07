@@ -37,8 +37,6 @@ jupyter:
     title: Python Scatter Plots with Mapbox | Plotly
 ---
 
-GOTTA PX
-
 #### Mapbox Access Token
 
 To plot on Mapbox maps with Plotly you'll need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio) which you can add to your [Plotly settings](https://plot.ly/settings/mapbox). If you're using a Chart Studio Enterprise server, please see additional instructions here: https://help.plot.ly/mapbox-atlas/.

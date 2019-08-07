@@ -68,5 +68,5 @@ jobs:
             fi
 
       - store_artifacts:
-          path: build/failures
-          destination: failures
+          path: build
+          destination: build

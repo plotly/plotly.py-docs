@@ -30,6 +30,7 @@ jupyter:
     name: Getting Started with Plotly for Python
     page_type: u-guide
     permalink: python/getting-started/
+    redirect_from: python/getting_started/
     title: Getting Started with Plotly for Python | plotly
     v4upgrade: true
 ---

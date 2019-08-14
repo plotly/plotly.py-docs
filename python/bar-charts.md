@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to make Bar Charts in Python with Plotly.
     display_as: basic
@@ -323,6 +323,36 @@ fig.add_trace(go.Bar(x=x, y=[-15, -3, 4.5, -8]))
 fig.add_trace(go.Bar(x=x, y=[-1, 3, -3, -4]))
 
 fig.update_layout(barmode='relative', title_text='Relative Barmode')
+fig.show()
+```
+
+#### Ordering Categorical Variables
+
+Set `categoryorder` to "category ascendin/descending" for the alphanumerical order of the category names or "total ascending/descending" for numerical order of values. [categoryorder](https://plot.ly/python/reference/#layout-xaxis-categoryorder) for more information. 
+
+```python
+import plotly.graph_objects as go
+
+x=['a','b','c','d']
+fig = go.Figure(go.Bar(x =x, y=[2,5,1,9], name='Montreal'))
+fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16], name='Ottawa'))
+fig.add_trace(go.Bar(x=x, y=[6, 8, 4.5, 8], name='Toronto'))
+
+fig.update_layout(barmode='stack', xaxis={'categoryorder':'category ascending'})
+fig.show()
+```
+
+This example shows how to customise ordering by defining `categoryorder` to "array" to derive the ordering from the attribute `categoryarray`.
+
+```python
+import plotly.graph_objects as go
+
+x=['a','b','c','d']
+fig = go.Figure(go.Bar(x =x, y=[2,5,1,9], name='Montreal'))
+fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16], name='Ottawa'))
+fig.add_trace(go.Bar(x=x, y=[6, 8, 4.5, 8], name='Toronto'))
+
+fig.update_layout(barmode='stack', xaxis={'categoryorder':'array', 'categoryarray':['d','a','c','b']})
 fig.show()
 ```
 

@@ -326,9 +326,9 @@ fig.update_layout(barmode='relative', title_text='Relative Barmode')
 fig.show()
 ```
 
-#### Ordering Categorical Variables
+### Ordering Categorical Variables
 
-Set `categoryorder` to "category ascendin/descending" for the alphanumerical order of the category names or "total ascending/descending" for numerical order of values. [categoryorder](https://plot.ly/python/reference/#layout-xaxis-categoryorder) for more information. 
+Set `categoryorder` to "category ascending/descending" for the alphanumerical order of the category names or "total ascending/descending" for numerical order of values. [categoryorder](https://plot.ly/python/reference/#layout-xaxis-categoryorder) for more information. 
 
 ```python
 import plotly.graph_objects as go

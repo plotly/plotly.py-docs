@@ -110,11 +110,12 @@ fig.show()
 ```python
 import plotly.figure_factory as ff
 import numpy as np
+np.random.seed(1)
 
 z = np.random.randn(20, 20)
 z_text = np.around(z, decimals=2) # Only show rounded value (full value on hover)
 
-fig = ff.create_annotated_heatmap(z, annotation_text=z_text, colorscale='Greys', 
+fig = ff.create_annotated_heatmap(z, annotation_text=z_text, colorscale='Greys',
                                   hoverinfo='z')
 
 # Make text size smaller
@@ -183,7 +184,7 @@ z = [[.8, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, .0, 1.],
 # Display element name and atomic mass on hover
 hover=[]
 for x in range(len(symbol)):
-    hover.append([i + '<br>' + 'Atomic Mass: ' + str(j) 
+    hover.append([i + '<br>' + 'Atomic Mass: ' + str(j)
                       for i, j in zip(element[x], atomic_mass[x])])
 
 # Invert Matrices

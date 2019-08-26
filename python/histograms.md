@@ -138,6 +138,7 @@ When data are not available as tidy dataframes, it is also possible to use the m
 import plotly.graph_objects as go
 
 import numpy as np
+np.random.seed(1)
 
 x = np.random.randn(500)
 

@@ -65,6 +65,8 @@ import scipy
 
 from scipy import signal
 
+np.random.seed(1)
+
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
 noise = 2 * np.random.random(len(x)) - 1 # uniformly distributed between -1 and 1
@@ -93,8 +95,8 @@ fig.add_trace(go.Scatter(
 
 fig.add_trace(go.Scatter(
     x=x,
-    y=signal.savgol_filter(y, 
-                           53, # window size used for filtering 
+    y=signal.savgol_filter(y,
+                           53, # window size used for filtering
                            3), # order of fitted polynomial
     mode='markers',
     marker=dict(

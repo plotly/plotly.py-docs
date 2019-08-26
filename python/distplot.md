@@ -71,6 +71,7 @@ A histogram, a kde plot and a rug plot are displayed.
 ```python
 import plotly.figure_factory as ff
 import numpy as np
+np.random.seed(1)
 
 x = np.random.randn(1000)
 hist_data = [x]

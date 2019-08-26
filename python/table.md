@@ -121,7 +121,7 @@ fig = go.Figure(data=[go.Table(
 fig.show()
 ```
 
-#### Alternating Row Colors 
+#### Alternating Row Colors
 
 ```python
 import plotly.graph_objects as go
@@ -190,6 +190,7 @@ fig.show()
 import plotly.graph_objects as go
 from plotly.colors import n_colors
 import numpy as np
+np.random.seed(1)
 
 colors = n_colors('rgb(255, 200, 200)', 'rgb(200, 0, 0)', 9, colortype='rgb')
 a = np.random.randint(low=0, high=9, size=10)

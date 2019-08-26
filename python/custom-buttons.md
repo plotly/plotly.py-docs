@@ -258,6 +258,7 @@ import plotly.graph_objects as go
 
 # Generate dataset
 import numpy as np
+np.random.seed(1)
 
 x0 = np.random.normal(2, 0.4, 400)
 y0 = np.random.normal(2, 0.4, 400)

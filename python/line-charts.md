@@ -97,6 +97,7 @@ import plotly.graph_objects as go
 
 # Create random data with numpy
 import numpy as np
+np.random.seed(1)
 
 N = 100
 random_x = np.linspace(0, 1, N)

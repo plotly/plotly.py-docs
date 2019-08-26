@@ -1,5 +1,6 @@
 Doc upgrade checklist:
 
+- [ ] random seed is set if using random data
 - [ ] file has been moved from `unconverted/x/y.md` to `x/y.md`
 - [ ] old boilerplate at top and bottom of file has been removed
 - [ ] Every example is independently runnable and is optimized for short line count

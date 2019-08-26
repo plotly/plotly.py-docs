@@ -48,6 +48,7 @@ for increased speed, improved interactivity, and the ability to plot even more d
 import plotly.graph_objects as go
 
 import numpy as np
+np.random.seed(1)
 
 N = 75000
 

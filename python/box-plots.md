@@ -97,6 +97,7 @@ When data are not available as tidy dataframes, it is also possible to use the m
 ```python
 import plotly.graph_objects as go
 import numpy as np
+np.random.seed(1)
 
 y0 = np.random.randn(50) - 1
 y1 = np.random.randn(50) + 1

@@ -43,6 +43,7 @@ jupyter:
 import plotly.graph_objects as go
 
 import numpy as np
+np.random.seed(1)
 
 x = np.random.rand(100)
 y = np.random.rand(100)

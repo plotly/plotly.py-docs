@@ -244,6 +244,7 @@ A ridgeline plot ([previously known as Joy Plot](https://serialmentor.com/blog/2
 import plotly.graph_objects as go
 from plotly.colors import n_colors
 import numpy as np
+np.random.seed(1)
 
 # 12 sets of normal distributed random data, with increasing mean and standard deviation
 data = (np.linspace(1, 2, 12)[:, np.newaxis] * np.random.randn(12, 200) +

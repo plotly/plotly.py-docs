@@ -462,6 +462,7 @@ fig.show()
 import plotly.graph_objects as go
 
 import numpy as np
+np.random.seed(1)
 
 # Generate data
 x0 = np.random.normal(2, 0.45, 300)

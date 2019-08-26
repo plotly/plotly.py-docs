@@ -62,6 +62,7 @@ import plotly.graph_objects as go
 
 # Generate example data
 import numpy as np
+np.random.seed(1)
 
 x = np.random.uniform(low=3, high=6, size=(500,))
 y = np.random.uniform(low=3, high=6, size=(500,))

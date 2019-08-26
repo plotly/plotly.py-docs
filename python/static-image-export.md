@@ -76,6 +76,7 @@ Now let's create a simple scatter plot with 100 random points of variying color 
 ```python
 import plotly.graph_objects as go
 import numpy as np
+np.random.seed(1)
 
 N = 100
 x = np.random.rand(N)

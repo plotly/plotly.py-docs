@@ -47,6 +47,7 @@ The jitter in the data points along the x and y axes are meant to illuminate whe
 ```python
 import plotly.graph_objects as go
 import numpy as np
+np.random.seed(1)
 
 l = 100
 steps = np.random.choice([-1, 1], size=l) + 0.05 * np.random.randn(l) # l steps
@@ -112,7 +113,7 @@ steps = np.random.choice([-1, 1], size=(N, l)) + 0.05 * np.random.standard_norma
 position = np.cumsum(steps, axis=1) # integrate all positions by summing steps values along time axis
 
 fig = go.Figure(data=go.Histogram(x=position[:, -1])) # positions at final time step
-fig.show()                                                                        
+fig.show()
 ```
 
 ```python
@@ -134,7 +135,7 @@ fig.update_xaxes(title_text='$t$')
 fig.update_yaxes(title_text='$l$', col=1)
 fig.update_yaxes(title_text='$l^2$', col=2)
 fig.update_layout(showlegend=False)
-fig.show()                                                                        
+fig.show()
 ```
 
 #### Advanced Tip

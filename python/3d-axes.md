@@ -48,6 +48,7 @@ For creating 3D charts, see [this page](https://plot.ly/python/3d-charts/).
 ```python
 import plotly.graph_objects as go
 import numpy as np
+np.random.seed(1)
 
 N = 70
 

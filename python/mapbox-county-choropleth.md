@@ -43,6 +43,33 @@ jupyter:
 To plot on Mapbox maps with Plotly you *may* need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio). See our [Mapbox Map Layers](/python/mapbox-layers/) documentation for more information.
 
 
+Making choropleth maps with `go.Choroplethmapbox` requires two main types of input: GeoJSON-formatted geometry information *where each `feature` has an `id`* and a list of values indexed by feature id. The GeoJSON data is passed to the `geojson` attribute, and the data is passed into the `z` attribute, in the same order as the IDs are passed into the `location` attribute.
+
+
+#### GeoJSON with `feature.id`
+
+Here we load a GeoJSON file containing the geometry information for US counties, where `feature.id` is a [FIPS code](https://en.wikipedia.org/wiki/FIPS_county_code).
+
+```python
+from urllib.request import urlopen
+import json
+with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
+    
+counties["features"][0]
+```
+
+#### Data indexed by `id`
+
+Here we load unemployment data by county, also indexed by [FIPS code](https://en.wikipedia.org/wiki/FIPS_county_code).
+
+```python
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+                   dtype={"fips": str})
+df.head()
+```
+
 #### Carto base map: no token needed
 
 ```python
@@ -52,12 +79,12 @@ with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-c
     counties = json.load(response)
 
 import pandas as pd
-unemp = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
                    dtype={"fips": str})
 
 import plotly.graph_objects as go
 
-fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=unemp.fips, z=unemp.unemp,
+fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=df.fips, z=df.unemp,
                                     colorscale="Viridis", zmin=0, zmax=12,
                                     marker_opacity=0.5, marker_line_width=0))
 fig.update_layout(mapbox_style="carto-positron",
@@ -78,12 +105,12 @@ with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-c
     counties = json.load(response)
 
 import pandas as pd
-unemp = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
                    dtype={"fips": str})
 
 import plotly.graph_objects as go
 
-fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=unemp.fips, z=unemp.unemp,
+fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=df.fips, z=df.unemp,
                                     colorscale="Viridis", zmin=0, zmax=12, marker_line_width=0))
 fig.update_layout(mapbox_style="light", mapbox_accesstoken=token,
                   mapbox_zoom=3, mapbox_center = {"lat": 37.0902, "lon": -95.7129})

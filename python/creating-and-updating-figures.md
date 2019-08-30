@@ -30,7 +30,9 @@ jupyter:
     name: Creating and Updating Figures
     page_type: example_index
     permalink: python/creating-and-updating-figures/
-    redirect_from: python/user-guide/
+    redirect_from: 
+      - python/user-guide/
+      - python/user-g/
     thumbnail: thumbnail/creating-and-updating-figures.png
     title: Creating and Updating Figures | plotly
     v4upgrade: true

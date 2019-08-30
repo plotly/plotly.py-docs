@@ -33,7 +33,9 @@ jupyter:
     order: 14
     page_type: u-guide
     permalink: python/network-graphs/
-    redirect_from: ipython-notebooks/networks/
+    redirect_from: 
+      - ipython-notebooks/networks/
+      - ipython-notebooks/network-graphs/
     thumbnail: thumbnail/net.jpg
     v4upgrade: true
 ---

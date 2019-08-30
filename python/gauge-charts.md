@@ -32,6 +32,9 @@ jupyter:
     order: 11
     page_type: u-guide
     permalink: python/gauge-charts/
+    redirect_from:
+      - python/gauge-chart/
+      - python/gauge-meter/
     thumbnail: thumbnail/gauge.jpg
     title: Python Gauge Chart | plotly
     v4upgrade: true

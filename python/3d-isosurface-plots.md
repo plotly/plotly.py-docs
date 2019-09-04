@@ -52,7 +52,7 @@ fig= go.Figure(data=go.Isosurface(
     z=[1,1,0,0,1,1,0,0],
     value=[1,2,3,4,5,6,7,8],
     isomin=2,
-    isomax=6
+    isomax=6,
 ))
 
 fig.show()
@@ -103,6 +103,31 @@ fig = go.Figure(data=go.Isosurface(
     isomax=50,
     surface_count=5, # number of isosurfaces, 2 by default: only min and max
     colorbar_nticks=5, # colorbar ticks correspond to isosurface values
+    caps=dict(x_show=False, y_show=False)
+    ))
+fig.show()
+```
+
+### Changing the opacity of isosurfaces
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+X, Y, Z = np.mgrid[-5:5:40j, -5:5:40j, -5:5:40j]
+
+# ellipsoid 
+values = X * X * 0.5 + Y * Y + Z * Z * 2
+
+fig = go.Figure(data=go.Isosurface(
+    x=X.flatten(),
+    y=Y.flatten(),
+    z=Z.flatten(),
+    value=values.flatten(),
+    opacity=0.6,
+    isomin=10,
+    isomax=50,
+    surface_count=3,
     caps=dict(x_show=False, y_show=False)
     ))
 fig.show()

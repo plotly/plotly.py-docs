@@ -22,14 +22,14 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.6.7
   plotly:
-    description: How to make ternary contour plots with plotly
-    display_as: 3d_charts
+    description: How to make Ternary Contour Plots in Python with plotly
+    display_as: scientific
     has_thumbnail: true
     language: python
     layout: user-guide
     name: Ternary contours
     page_type: u-guide
-    permalink: python/ternary-contours/
+    permalink: python/ternary-contour/
     thumbnail: thumbnail/ternary-contour.jpg
     title: Python Ternary contours | plotly
 ---

@@ -20,7 +20,7 @@ jupyter:
     has_thumbnail: true
     language: python
     display_as: financial
-    order: 6.3
+    order: 4
     ipynb: ~notebook_demo/293
     layout: user-guide
     page_type: example_index

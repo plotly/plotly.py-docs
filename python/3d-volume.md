@@ -28,7 +28,7 @@ jupyter:
     language: python
     layout: user-guide
     name: 3D Volume Plots
-    order: 12.1.1
+    order: 12.2
     page_type: u-guide
     permalink: python/3d-volume-plots/
     thumbnail: thumbnail/3d-volume-plots.jpg
@@ -100,8 +100,11 @@ fig = go.Figure(data=go.Volume(
     isomin=0.2,
     isomax=0.7,
     opacity=0.1,
-    surface_count=21,
+    surface_count=25,
     ))
+fig.update_layout(scene_xaxis_showticklabels=False,
+                  scene_yaxis_showticklabels=False,
+                  scene_zaxis_showticklabels=False)
 fig.show()
 ```
 

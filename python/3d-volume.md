@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.3
   kernelspec:
     display_name: Python 3
     language: python
@@ -44,7 +44,7 @@ In the three examples below, note that the default colormap is different whether
 ```python
 import plotly.graph_objects as go
 import numpy as np
-X, Y, Z = np.mgrid[-8:8:50j, -8:8:50j, -8:8:50j]
+X, Y, Z = np.mgrid[-8:8:40j, -8:8:40j, -8:8:40j]
 values =    np.sin(X*Y*Z) / (X*Y*Z)
 
 fig = go.Figure(data=go.Volume(
@@ -63,7 +63,7 @@ fig.show()
 ```python
 import plotly.graph_objects as go
 import numpy as np
-X, Y, Z = np.mgrid[-1:1:50j, -1:1:50j, -1:1:50j]
+X, Y, Z = np.mgrid[-1:1:30j, -1:1:30j, -1:1:30j]
 values =    np.sin(np.pi*X) * np.cos(np.pi*Z) * np.sin(np.pi*Y)
 
 fig = go.Figure(data=go.Volume(
@@ -85,13 +85,13 @@ import plotly.graph_objects as go
 
 # Generate nicely looking random 3D-field
 np.random.seed(0)
-l = 50
+l = 30
 X, Y, Z = np.mgrid[:l, :l, :l]
 vol = np.zeros((l, l, l))
 pts = (l * np.random.rand(3, 15)).astype(np.int)
 vol[tuple(indices for indices in pts)] = 1
 from scipy import ndimage
-vol = ndimage.gaussian_filter(vol, 7)
+vol = ndimage.gaussian_filter(vol, 4)
 vol /= vol.max()
 
 fig = go.Figure(data=go.Volume(
@@ -122,7 +122,7 @@ fig = make_subplots(
 
 import numpy as np
 
-X, Y, Z = np.mgrid[-8:8:50j, -8:8:50j, -8:8:50j]
+X, Y, Z = np.mgrid[-8:8:30j, -8:8:30j, -8:8:30j]
 values =    np.sin(X*Y*Z) / (X*Y*Z)
 
 
@@ -150,7 +150,7 @@ It is also possible to define a custom opacity scale, mapping scalar values to r
 ```python
 import plotly.graph_objects as go
 import numpy as np
-X, Y, Z = np.mgrid[-1:1:50j, -1:1:50j, -1:1:50j]
+X, Y, Z = np.mgrid[-1:1:30j, -1:1:30j, -1:1:30j]
 values =    np.sin(np.pi*X) * np.cos(np.pi*Z) * np.sin(np.pi*Y)
 
 fig = go.Figure(data=go.Volume(

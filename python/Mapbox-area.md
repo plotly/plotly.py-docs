@@ -22,18 +22,18 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.7.3
   plotly:
-    description: How to make a Mapbox Choropleth Map of US Counties in Python with
+    description: How to make an area on Map in Python with
       Plotly.
     display_as: maps
     has_thumbnail: true
     ipynb: ~notebook_demo/56
     language: python
     layout: user-guide
-    name: Mapbox Choropleth Maps
+    name: Filled Area on Maps
     order: 1
     page_type: example_index
-    permalink: python/mapbox-county-choropleth/
-    thumbnail: thumbnail/mapbox-choropleth.png
+    permalink: python/filled-area-on-mapbox/
+    thumbnail: thumbnail/area.jpg
     title: Python Mapbox Choropleth Maps | plotly
 ---
 

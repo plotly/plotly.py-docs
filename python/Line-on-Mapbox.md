@@ -13,7 +13,7 @@ jupyter:
     name: python3
   language_info:
     codemirror_mode:
-      name: ipython
+      name: ipython 
       version: 3
     file_extension: .py
     mimetype: text/x-python
@@ -22,19 +22,19 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.7.3
   plotly:
-    description: How to make a Mapbox Choropleth Map of US Counties in Python with
+    description: How to draw a line on Map in Python with
       Plotly.
     display_as: maps
     has_thumbnail: true
     ipynb: ~notebook_demo/56
     language: python
     layout: user-guide
-    name: Mapbox Choropleth Maps
+    name: Lines on Maps
     order: 1
     page_type: example_index
-    permalink: python/mapbox-county-choropleth/
-    thumbnail: thumbnail/mapbox-choropleth.png
-    title: Python Mapbox Choropleth Maps | plotly
+    permalink: python/lines-on-maps/
+    thumbnail: thumbnail/fill-area.jpg
+    title: Lines on Maps | plotly
 ---
 
 
@@ -45,7 +45,8 @@ To plot on Mapbox maps with Plotly you *may* need a Mapbox account and a public 
 
 ### How to draw a Line on a Map 
 
-To draw a line on your map, you either can use [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) or [scattergeo](https://plot.ly/python/reference/#scattergeo) trace type. Then . In this example uses scattermapbox and define the drawing [mode](https://plot.ly/python/reference/#scattermapbox-mode) to the combination of markers and line. 
+To draw a line on your map, you either can use [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) or [scattergeo](https://plot.ly/python/reference/#scattergeo) trace type. This example uses scattermapbox and defines
+the drawing [mode](https://plot.ly/python/reference/#scattermapbox-mode) to the combination of markers and line. 
 
 ```python
 import plotly.graph_objects as go

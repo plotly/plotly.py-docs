@@ -53,12 +53,13 @@ r, c = volume[0].shape
 # Visualize data
 import plotly.graph_objects as go
 
-nb_frames = 68
+nb_frames = 10
 
 # Define frames
 fig = go.Figure(frames=[go.Frame(data=go.Surface(
     z=(6.7 - k * 0.1) * np.ones((r, c)),
-    surfacecolor=np.flipud(volume[67 - k])
+    surfacecolor=np.flipud(volume[67 - k]),
+    cmin=0, cmax=200
     ))
     for k in range(nb_frames)])
 
@@ -67,6 +68,7 @@ fig.add_trace(go.Surface(
     z=6.7 * np.ones((r, c)),
     surfacecolor=np.flipud(volume[67]),
     colorscale='Gray',
+    cmin=0, cmax=200,
     colorbar=dict(thickness=20, ticklen=4)
     ))
 
@@ -110,6 +112,10 @@ Here's where you can find her:
 - Her [Twitter](https://twitter.com/mathinpython) under the handle `@mathinpython`
 - Her [GitHub Page](https://github.com/empet) with Username `empet`
 
+```python
+from scipy import stats
+stats.scoreatpercentile(volume, 99.5)
+```
 
 #### Reference
 For additional information and help setting up a slider in an animation, see https://plot.ly/python/gapminder-example/. For more documentation on creating animations with Plotly, see https://plot.ly/python/#animations.

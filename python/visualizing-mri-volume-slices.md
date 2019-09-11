@@ -50,17 +50,17 @@ vol = io.imread("https://s3.amazonaws.com/assets.datacamp.com/blog_assets/attent
 volume = vol.T
 r, c = volume[0].shape
 
-# Visualize data
-import plotly.graph_objects as go
-
-nb_frames = 10
-
 # Define frames
+import plotly.graph_objects as go
+nb_frames = 68
+
 fig = go.Figure(frames=[go.Frame(data=go.Surface(
     z=(6.7 - k * 0.1) * np.ones((r, c)),
     surfacecolor=np.flipud(volume[67 - k]),
     cmin=0, cmax=200
-    ))
+    ), 
+    name=str(k) # you need to name the frame for the animation to behave properly
+    )
     for k in range(nb_frames)])
 
 # Add data to be displayed before animation starts
@@ -72,17 +72,31 @@ fig.add_trace(go.Surface(
     colorbar=dict(thickness=20, ticklen=4)
     ))
 
-# Sliders
-sliders=[
-    dict(
-        steps=[dict(method='animate',
-                    args= [None, dict(fromcurrent=True, mode='immediate', transition=dict(duration=0))
-                          ],
-                    label='{:d}'.format(k+1)) 
-               for k in range(nb_frames)],
-        transition= dict(duration=0),
-    )
-]
+
+def frame_args(duration):
+    return {
+            "frame": {"duration": duration},
+            "mode": "immediate",
+            "fromcurrent": True,
+            "transition": {"duration": duration, "easing": "linear"},
+        }
+
+sliders = [
+            {
+                "pad": {"b": 10, "t": 60},
+                "len": 0.9,
+                "x": 0.1,
+                "y": 0,
+                "steps": [
+                    {
+                        "args": [[f.name], frame_args(0)],
+                        "label": str(k),
+                        "method": "animate",
+                    }
+                    for k, f in enumerate(fig.frames)
+                ],
+            }
+        ]
 
 # Layout
 fig.update_layout(
@@ -93,11 +107,26 @@ fig.update_layout(
                     zaxis=dict(range=[-0.1, 6.8], autorange=False),
                     aspectratio=dict(x=1, y=1, z=1),
                     ),
-         updatemenus=[
-             dict(type='buttons',
-                  buttons=[dict(label='Play',
-                                method='animate',
-                                args=[None])])
+         updatemenus = [
+            {
+                "buttons": [
+                    {
+                        "args": [None, frame_args(50)],
+                        "label": "&#9654;", # play symbol
+                        "method": "animate",
+                    },
+                    {
+                        "args": [[None], frame_args(0)],
+                        "label": "&#9724;", # pause symbol
+                        "method": "animate",
+                    },
+                ],
+                "direction": "left",
+                "pad": {"r": 10, "t": 70},
+                "type": "buttons",
+                "x": 0.1,
+                "y": 0,
+            }
          ],
          sliders=sliders
 )
@@ -112,10 +141,6 @@ Here's where you can find her:
 - Her [Twitter](https://twitter.com/mathinpython) under the handle `@mathinpython`
 - Her [GitHub Page](https://github.com/empet) with Username `empet`
 
-```python
-from scipy import stats
-stats.scoreatpercentile(volume, 99.5)
-```
 
 #### Reference
 For additional information and help setting up a slider in an animation, see https://plot.ly/python/gapminder-example/. For more documentation on creating animations with Plotly, see https://plot.ly/python/#animations.

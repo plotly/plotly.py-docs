@@ -35,13 +35,12 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python3 -m venv venv2
-            . venv2/bin/activate
+            python3 -m venv venv
+            . venv/bin/activate
             npm install electron@1.8.4 orca
+            pip install -r requirements.txt
             echo 'export PATH="/home/circleci/repo/node_modules/.bin:$PATH"' >> $BASH_ENV
             sudo apt-get install -y poppler-utils libxtst6 xvfb libgtk2.0-0 libgconf-2-4 libnss3 libasound2
-            pip install plotly==4.1.1  --no-cache-dir
-            pip install -r requirements.txt
 
       - save_cache:
           paths:

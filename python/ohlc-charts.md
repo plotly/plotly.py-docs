@@ -21,7 +21,6 @@ jupyter:
     layout: user-guide
     name: OHLC Charts
     order: 1
-    page_type: example_index
     permalink: python/ohlc-charts/
     thumbnail: thumbnail/ohlc.jpg
     v4upgrade: true

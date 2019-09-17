@@ -98,7 +98,7 @@ origin = widgets.Dropdown(
 )
 
 
-# Assign an emptry figure widget with two traces
+# Assign an empty figure widget with two traces
 trace1 = go.Histogram(x=df['arr_delay'], opacity=0.75, name='Arrival Delays')
 trace2 = go.Histogram(x=df['dep_delay'], opacity=0.75, name='Departure Delays')
 g = go.FigureWidget(data=[trace1, trace2],

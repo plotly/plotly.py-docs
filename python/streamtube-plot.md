@@ -82,12 +82,39 @@ fig.show()
 ```
 
 ```python
+import plotly.graph_objects as go
+
+fig = go.Figure(data=go.Streamtube(x=[0, 0, 0], y=[0, 1, 2], z=[0, 0, 0], u=[0, 0, 0], v=[1, 2, 3], w=[0, 0, 0]))
+fig.show()
+```
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(data=go.Streamtube(x=[0, 1, 2], y=[0, 0, 0], z=[0, 0, 0], u=[1, 2, 3], v=[0, 0, 0], w=[0, 0, 0],
+                                  starts=dict(x=[0],
+                             y=[0],
+                             z=[0],)))
+fig.show()
+```
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(data=go.Streamtube(x=[0, 0, 0], y=[0, 0, 0], z=[0, 1, 2], u=[0, 0, 0], v=[0, 0, 0], w=[1, 2, 3],
+                                  starts=dict(x=[0],
+                             y=[0],
+                             z=[0],)))
+fig.show()
+```
+
+```python
 import numpy as np
 import plotly.graph_objects as go
 
 x, y, z = np.mgrid[1:4:10j, 1:4:10j, 1:4:10j] 
-u = 0.0001 * x**2
-v = 0.005 * np.random.random(y.shape)
+u = 0.001 * x
+v = 0.001 * y
 w = 0.1 * z
 
 sx=np.linspace(1, 4, 10, endpoint=True)
@@ -105,7 +132,37 @@ fig = go.Figure(data=go.Streamtube(
     starts=dict(x=sx.flatten(),
                              y=sy.flatten(),
                              z=sz.flatten()),
-    hovertext='w',
+    hoverinfo='x+y+z+u+v+w+norm',
+    #sizeref=0.3
+))
+fig.show()
+```
+
+```python
+import numpy as np
+import plotly.graph_objects as go
+
+x, y, z = np.mgrid[1:4:10j, 1:4:10j, 1:4:10j] 
+u = 0.000 * x**2
+v = 0.00 * np.random.random(y.shape)
+w = 0.1 * y
+
+sx=np.linspace(1, 4, 10, endpoint=True)
+sx, sy=np.meshgrid(sx, sx)
+sz=np.ones(sx.shape)
+
+
+fig = go.Figure(data=go.Streamtube(
+    x=x.ravel(), 
+    y=y.ravel(), 
+    z=z.ravel(), 
+    u=u.ravel(), 
+    v=v.ravel(), 
+    w=w.ravel(), 
+    starts=dict(x=sx.flatten(),
+                             y=sy.flatten(),
+                             z=sz.flatten()),
+    hoverinfo='x+y+z+u+v+w+norm',
     sizeref=0.3
 ))
 fig.show()

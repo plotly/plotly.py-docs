@@ -37,7 +37,7 @@ jupyter:
     title: 3D Cone Plots | Plotly
 ---
 
-A cone plot is the 3D equivalent of a 2D [quiver plot](./quiver-plots/), i.e., it represents a 3D vector field using cones to represent the direction and norm of the vectors. 3-D coordinates are given by `x`, `y` and `z`, and the coordinates of the vector field by `u`, `v` and `w`.
+A cone plot is the 3D equivalent of a 2D [quiver plot](./quiver-plots/), i.e., it represents a 3D vector field using cones to represent the direction and norm of the vectors. 3-D coordinates are given by `x`, `y` and `z`, and the coordinates of the vector field by `u`, `v` and `w`. The color of the cones correspond to the local value of the vector norm.
 
 ### Basic 3D Cone
 
@@ -47,6 +47,7 @@ import plotly.graph_objects as go
 
 fig = go.Figure(data=go.Cone(x=[1], y=[1], z=[1], u=[1], v=[1], w=[0]))
 
+# Move camera for clearer view of cone
 fig.update_layout(scene_camera_eye=dict(x=-0.76, y=1.8, z=0.92))
    
 fig.show()

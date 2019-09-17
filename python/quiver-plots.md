@@ -38,6 +38,8 @@ jupyter:
 
 #### Basic Quiver Plot
 
+A quiver plot is a representation of a 2-D vector field. Coordinates are given by `x` and `y`, and vector coordinates by `u` and `v`.
+
 ```python
 import plotly.figure_factory as ff
 

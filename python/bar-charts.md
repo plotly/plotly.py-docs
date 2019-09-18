@@ -326,7 +326,7 @@ fig.update_layout(barmode='relative', title_text='Relative Barmode')
 fig.show()
 ```
 
-### Bar Chart Sorting
+### Bar Chart with Sorted or Ordered Categories
 
 Set `categoryorder` to "category ascending/descending" for the alphanumerical order of the category names or "total ascending/descending" for numerical order of values. [categoryorder](https://plot.ly/python/reference/#layout-xaxis-categoryorder) for more information. 
 
@@ -342,7 +342,7 @@ fig.update_layout(barmode='stack', xaxis={'categoryorder':'category ascending'})
 fig.show()
 ```
 
-This example shows how to customise ordering by defining `categoryorder` to "array" to derive the ordering from the attribute `categoryarray`.
+This example shows how to customise sort ordering by defining `categoryorder` to "array" to derive the ordering from the attribute `categoryarray`.
 
 ```python
 import plotly.graph_objects as go
@@ -357,6 +357,7 @@ fig.show()
 ```
 
 ### Horizontal Bar Charts
+
 See examples of horizontal bar charts [here](https://plot.ly/python/horizontal-bar-charts/).
 
 

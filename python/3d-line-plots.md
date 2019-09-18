@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.3
   kernelspec:
     display_name: Python 3
     language: python
@@ -35,6 +35,24 @@ jupyter:
     thumbnail: thumbnail/3d-line.jpg
     title: 3D Line Plots in Python | plotly
 ---
+
+### 3D Line plot with plotly express
+
+```python
+import plotly.express as px
+import plotly.express as px
+gapminder = px.data.gapminder().query("country=='Brazil'")
+fig = px.line_3d(gapminder, x="gdpPercap", y="pop", z="year")
+fig.show()
+```
+
+```python
+import plotly.express as px
+import plotly.express as px
+gapminder = px.data.gapminder().query("continent=='Europe'")
+fig = px.line_3d(gapminder, x="gdpPercap", y="pop", z="year", color='country')
+fig.show()
+```
 
 
 #### 3D Line Plot of Brownian Motion

@@ -32,7 +32,7 @@ jupyter:
     order: 7
     page_type: u-guide
     permalink: python/bullet-charts/
-    thumbnail: thumbnail/bullet.jpg
+    thumbnail: thumbnail/bullet.png
     title: Python Bullet Chart | plotly
     v4upgrade: true
 ---
@@ -51,6 +51,7 @@ fig = go.Figure(go.Indicator(
     delta = {'reference': 300}, 
     domain = {'x': [0, 1], 'y': [0, 1]},
     title = {'text': "Profit"}))
+fig.update_layout(height = 250)
 
 fig.show()
 ```
@@ -76,7 +77,7 @@ fig = go.Figure(go.Indicator(
         'steps': [
             {'range': [0, 150], 'color': "lightgray"}, 
             {'range': [150, 250], 'color': "gray"}]}))
-
+fig.update_layout(height = 250)
 fig.show()
 ```
 
@@ -102,7 +103,7 @@ fig = go.Figure(go.Indicator(
             {'range': [0, 150], 'color': "cyan"},
             {'range': [150, 250], 'color': "royalblue"}],
         'bar': {'color': "darkblue"}}))
-
+fig.update_layout(height = 250)
 fig.show()
 ```
 
@@ -164,9 +165,14 @@ fig.add_trace(go.Indicator(
             {'range': [0, 150], 'color': "gray"},
             {'range': [150, 250], 'color': "lightgray"}],
         'bar': {'color': "black"}}))
+fig.update_layout(height = 400 , margin = {'t':0, 'b':0, 'l':0})
 
 fig.show()
 ```
 
 #### Reference
-See https://plot.ly/python/reference/ for more information and chart attribute options!
+See https://plot.ly/python/reference/#indicator for more information and chart attribute options!
+
+```python
+
+```

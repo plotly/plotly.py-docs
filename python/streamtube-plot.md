@@ -40,7 +40,7 @@ jupyter:
 ### Introduction
 
 
-In streamtube plots, attributes inlcude `x`, `y`, and `z`, which set the coordinates of the vector field, and `u`, `v`, and `w`, which sets the x, y, and z components of the vector field. Additionally, you can use `starts` to determine the streamtube's starting position. Lastly, `maxdisplayed` determines the maximum segments displayed in a streamtube.
+In streamtube plots, attributes include `x`, `y`, and `z`, which set the coordinates of the vector field, and `u`, `v`, and `w`, which set the x, y, and z components of the vector field. Additionally, you can use `starts` to determine the streamtube's starting position. 
 
 
 ### Basic Streamtube Plot
@@ -48,186 +48,14 @@ In streamtube plots, attributes inlcude `x`, `y`, and `z`, which set the coordin
 ```python
 import plotly.graph_objects as go
 
-import pandas as pd
-
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/streamtube-basic.csv')
-
-fig = go.Figure(data=go.Streamtube(
-    x = df['x'],
-    y = df['y'],
-    z = df['z'],
-    u = df['u'],
-    v = df['v'],
-    w = df['w'],
-    sizeref = 0.5,
-    colorscale = 'Blues',
-    cmin = 0,
-    cmax = 3
-))
-
-
-fig.update_layout(
-    scene = dict(
-      camera = dict(
-        eye = dict(
-          x = -0.7243612458865182,
-          y = 1.9269804254717962,
-          z = 0.6704828299861716
-        )
-      )
-    )
-)
-
+fig = go.Figure(data=go.Streamtube(x=[0, 0, 0], y=[0, 1, 2], z=[0, 0, 0], 
+                                   u=[0, 0, 0], v=[1, 1, 1], w=[0, 0, 0]))
 fig.show()
-```
-
-```python
-import plotly.graph_objects as go
-
-fig = go.Figure(data=go.Streamtube(x=[0, 0, 0], y=[0, 1, 2], z=[0, 0, 0], u=[0, 0, 0], v=[1, 2, 3], w=[0, 0, 0]))
-fig.show()
-```
-
-```python
-import plotly.graph_objects as go
-
-fig = go.Figure(data=go.Streamtube(x=[0, 1, 2], y=[0, 0, 0], z=[0, 0, 0], u=[1, 2, 3], v=[0, 0, 0], w=[0, 0, 0],
-                                  starts=dict(x=[0],
-                             y=[0],
-                             z=[0],)))
-fig.show()
-```
-
-```python
-import plotly.graph_objects as go
-
-fig = go.Figure(data=go.Streamtube(x=[0, 0, 0], y=[0, 0, 0], z=[0, 1, 2], u=[0, 0, 0], v=[0, 0, 0], w=[1, 2, 3],
-                                  starts=dict(x=[0],
-                             y=[0],
-                             z=[0],)))
-fig.show()
-```
-
-```python
-import numpy as np
-import plotly.graph_objects as go
-
-x, y, z = np.mgrid[1:4:10j, 1:4:10j, 1:4:10j] 
-u = 0.001 * x
-v = 0.001 * y
-w = 0.1 * z
-
-sx=np.linspace(1, 4, 10, endpoint=True)
-sx, sy=np.meshgrid(sx, sx)
-sz=np.ones(sx.shape)
-
-
-fig = go.Figure(data=go.Streamtube(
-    x=x.ravel(), 
-    y=y.ravel(), 
-    z=z.ravel(), 
-    u=u.ravel(), 
-    v=v.ravel(), 
-    w=w.ravel(), 
-    starts=dict(x=sx.flatten(),
-                             y=sy.flatten(),
-                             z=sz.flatten()),
-    hoverinfo='x+y+z+u+v+w+norm',
-    #sizeref=0.3
-))
-fig.show()
-```
-
-```python
-import numpy as np
-import plotly.graph_objects as go
-
-x, y, z = np.mgrid[1:4:10j, 1:4:10j, 1:4:10j] 
-u = 0.000 * x**2
-v = 0.00 * np.random.random(y.shape)
-w = 0.1 * y
-
-sx=np.linspace(1, 4, 10, endpoint=True)
-sx, sy=np.meshgrid(sx, sx)
-sz=np.ones(sx.shape)
-
-
-fig = go.Figure(data=go.Streamtube(
-    x=x.ravel(), 
-    y=y.ravel(), 
-    z=z.ravel(), 
-    u=u.ravel(), 
-    v=v.ravel(), 
-    w=w.ravel(), 
-    starts=dict(x=sx.flatten(),
-                             y=sy.flatten(),
-                             z=sz.flatten()),
-    hoverinfo='x+y+z+u+v+w+norm',
-    sizeref=0.3
-))
-fig.show()
-```
-
-```python
-import numpy as np
-import plotly.graph_objects as go
-
-x, y, z = np.mgrid[1:2:4j, 1:2:4j, 1:2:4j]
-u = np.zeros_like(x)
-v = x.copy()
-w = np.zeros_like(z)
-
-fig = go.Figure(data=go.Streamtube(x=x.ravel(), y=y.ravel(), z=z.ravel(),
-                                   u=u.ravel(), v=v.ravel(), w=w.ravel(),
-                                   hoverinfo=['x', 'y']
-))
-fig.show()
-```
-
-```python
-x.ravel(), y.ravel(), z.ravel(), v.ravel()
-```
-
-```python
-v.ravel()
-```
-
-```
-fig.data
-
-```
-
-```python
-import numpy as np
-import plotly.graph_objects as go
-
-x, y, z = np.mgrid[-4:4:20j, -4:4:20j, 0:4:20j] 
-r = np.sqrt(x ** 2 + y ** 2 + z ** 2 + 0.1) 
-#u = 0.1 * y * np.sin(r) / r 
-u = 0.005 * np.random.random(x.shape)
-v = 0.005 * np.random.random(y.shape)
-#v = -0.1 * x * np.sin(r) / r 
-w = 0.1 * z
-
-sx=np.linspace(-4, 4, 10)
-sx, sy=np.meshgrid(sx, sx)
-sz=np.ones(sx.shape)
-
-
-fig = go.Figure(data=go.Streamtube(
-    x=x.ravel(), y=y.ravel(), z=z.ravel(), u=u.ravel(), v=v.ravel(), w=w.ravel(), 
-    starts=dict(x=sx.flatten(),
-                             y=sy.flatten(),
-                             z=sz.flatten()),
-))
-fig.show()
-```
-
-```python
-df
 ```
 
 ### Starting Position and Segments
+
+By default, streamlines are initialized in the x-z plane of minimal y value. You can change this behaviour by providing directly the starting points of streamtubes.
 
 ```python
 import plotly.graph_objects as go
@@ -273,8 +101,36 @@ fig.update_layout(
 fig.show()
 ```
 
+### Tube color and diameter
+
+The color of tubes is determined by their local norm, and the diameter of the field by the local [divergence](https://en.wikipedia.org/wiki/Divergence) of the vector field. 
+
+In all cases below the norm is proportional to `z**2` but the direction of the vector is different, resulting in a different divergence field. 
+
 ```python
-df
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import numpy as np
+
+x, y, z = np.mgrid[0:10, 0:10, 0:10] 
+x = x.T.flatten() 
+y = y.T.flatten()
+z = z.T.flatten()
+
+u = np.zeros_like(x)
+v = np.zeros_like(y)
+w = z**2
+
+fig = make_subplots(rows=1, cols=3, specs=[[{'is_3d': True}, {'is_3d': True}, {'is_3d':True}]])
+
+fig.add_trace(go.Streamtube(x=x, y=y, z=z, u=u, v=v, w=w), 1, 1)
+fig.add_trace(go.Streamtube(x=x, y=y, z=z, u=w, v=v, w=u), 1, 2)
+fig.add_trace(go.Streamtube(x=x, y=y, z=z, u=u, v=w, w=v), 1, 3)
+
+fig.update_layout(scene_camera_eye=dict(x=2, y=2, z=2),
+                  scene2_camera_eye=dict(x=2, y=2, z=2),
+                  scene3_camera_eye=dict(x=2, y=2, z=2))
+fig.show()
 ```
 
 #### Reference

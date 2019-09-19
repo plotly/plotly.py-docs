@@ -112,5 +112,6 @@ fig.update_layout(paper_bgcolor = "lavender", font = {'color': "darkblue", 'fami
 fig.show()
 ```
 
+
 #### Reference
 See https://plot.ly/python/reference/ for more information and chart attribute options!

@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.3
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to make scatter plots in Python with Plotly.
     display_as: basic
@@ -40,11 +40,19 @@ jupyter:
 
 ## Scatter plot with plotly express
 
-[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). With ``px.scatter``, each data point is represented as a marker point, which location is given by the `x` and `y` columns.
+With ``px.scatter``, each data point is represented as a marker point, which location is given by the `x` and `y` columns.
 
 ```python
+# x and y given as array_like objects
 import plotly.express as px
-iris = px.data.iris()
+fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])
+fig.show()
+```
+
+```python
+# x and y given as DataFrame columns
+import plotly.express as px
+iris = px.data.iris() # iris is a pandas DataFrame
 fig = px.scatter(iris, x="sepal_width", y="sepal_length")
 fig.show()
 ```
@@ -62,6 +70,16 @@ fig.show()
 ```
 
 ## Line plot with plotly express
+
+```python
+import plotly.express as px
+import numpy as np
+
+t = np.linspace(0, 2*np.pi, 100)
+
+fig = px.line(x=t, y=np.cos(t), labels={'x':'t', 'y':'cos(t)'})
+fig.show()
+```
 
 ```python
 import plotly.express as px

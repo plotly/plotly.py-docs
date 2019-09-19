@@ -28,7 +28,7 @@ jupyter:
     ipynb: ~notebook_demo/11
     language: python
     layout: user-guide
-    name: Indicators 
+    name: Indicators
     order: 5
     page_type: u-guide
     permalink: python/indicator/
@@ -206,4 +206,8 @@ fig.show()
 ```
 
 #### Reference
-See https://plot.ly/python/reference/ for more information and chart attribute options!
+See https://plot.ly/python/reference/#indicator for more information and chart attribute options!
+
+```python
+
+```

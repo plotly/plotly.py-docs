@@ -33,8 +33,8 @@ jupyter:
     page_type: u-guide
     permalink: python/gauge-charts/
     redirect_from:
-      - python/gauge-chart/
-      - python/gauge-meter/
+    - python/gauge-chart/
+    - python/gauge-meter/
     thumbnail: thumbnail/gauge.jpg
     title: Python Gauge Chart | plotly
     v4upgrade: true
@@ -114,4 +114,4 @@ fig.show()
 
 
 #### Reference
-See https://plot.ly/python/reference/ for more information and chart attribute options!
+See https://plot.ly/python/reference/#indicator for more information and chart attribute options!

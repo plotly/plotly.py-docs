@@ -134,5 +134,5 @@ fig.show()
 ```
 
 #### Reference
-See https://plot.ly/python/reference/ for more information and chart attribute options!
+See https://plot.ly/python/reference/#streamtube for more information and chart attribute options!
 

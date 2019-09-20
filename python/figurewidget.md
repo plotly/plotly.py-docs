@@ -41,7 +41,7 @@ jupyter:
 Create an empty FigureWidget and then view it.
 
 ```python
-import plotly.graph_objects as go
+import plotly.graph_objs as go
 
 f = go.FigureWidget()
 f
@@ -91,7 +91,7 @@ f.layout.title.text = 'This is a new title'
 A standard `Figure` object can be passed to the `FigureWidget` constructor.
 
 ```python
-import plotly.graph_objects as go
+import plotly.graph_objs as go
 
 trace = go.Heatmap(z=[[1, 20, 30, 50, 1], [20, 1, 60, 80, 30], [30, 60, 1, -10, 20]],
                    x=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],

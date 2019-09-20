@@ -11,6 +11,16 @@ jupyter:
     display_name: Python 3
     language: python
     name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.8
   plotly:
     description: How to make Sunburst Charts.
     display_as: basic
@@ -103,11 +113,7 @@ fig.add_trace(go.Sunburst(
 
 fig.update_layout(
     grid= dict(columns=2, rows=1),
-    margin = dict(t=0, l=0, r=0, b=0),
-    sunburstcolorway=[
-    "#636efa","#EF553B","#00cc96","#ab63fa","#19d3f3",
-    "#e763fa", "#FECB52","#FFA15A","#FF6692","#B6E880"],
-    extendsunburstcolors=True
+    margin = dict(t=0, l=0, r=0, b=0)
 )
 
 fig.show()

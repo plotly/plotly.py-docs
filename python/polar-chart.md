@@ -136,47 +136,28 @@ fig.update_layout(
 fig.show()
 ```
 
-#### Area Polar Chart
+#### Polar Bar Chart
 
 a.k.a matplotlib logo in a few lines of code
 
 ```python
 import plotly.graph_objects as go
 
-fig = go.Figure()
+fig = go.Figure(go.Barpolar(
+    r=[3.5, 1.5, 2.5, 4.5, 4.5, 4, 3],
+    theta=[65, 15, 210, 110, 312.5, 180, 270],
+    width=[20,15,10,20,15,30,15,],
+    marker_color=["#E4FF87", '#709BFF', '#709BFF', '#FFAA70', '#FFAA70', '#FFDF70', '#B6FFB4'],
+    marker_line_color="black",
+    marker_line_width=2,
+))
 
-fig.add_trace(go.Scatterpolar(
-        r = [0, 1.5, 1.5, 0, 2.5, 2.5, 0],
-        theta = [0, 10, 25, 0, 205, 215, 0],
-        fillcolor = '#709BFF',
-    ))
-fig.add_trace(go.Scatterpolar(
-        r = [0, 3.5, 3.5, 0],
-        theta = [0, 55, 75, 0],
-        fillcolor = '#E4FF87',
-    ))
-fig.add_trace(go.Scatterpolar(
-        r = [0, 4.5, 4.5, 0, 4.5, 4.5, 0],
-        theta = [0, 100, 120, 0, 305, 320, 0],
-        fillcolor = '#FFAA70',
-    ))
-fig.add_trace(go.Scatterpolar(
-        r = [0, 4, 4, 0],
-        theta = [0, 165, 195, 0],
-        fillcolor = '#FFDF70',
-    ))
-fig.add_trace(go.Scatterpolar(
-        r = [0, 3, 3, 0],
-        theta = [0, 262.5, 277.5, 0],
-        fillcolor = '#B6FFB4',
-    ))
-
-fig.update_traces(mode='lines', fill='toself', line_color='black')
 fig.update_layout(
+    template=None,
     polar = dict(
-        radialaxis = dict(visible=True, range=[0, 5])
-    ),
-    showlegend = False,
+        radialaxis = dict(range=[0, 5], showticklabels=False, ticks=''),
+        angularaxis = dict(showticklabels=False, ticks='')
+    )
 )
 
 fig.show()

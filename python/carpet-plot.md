@@ -10,9 +10,19 @@ jupyter:
   kernel_info:
     name: python3
   kernelspec:
-    display_name: Python 2
+    display_name: Python 3
     language: python
-    name: python2
+    name: python3
+  language_info:
+    codemirror_mode:
+      name: ipython
+      version: 3
+    file_extension: .py
+    mimetype: text/x-python
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
+    version: 3.6.8
   plotly:
     description: How to make carpet plots in Python with Plotly.
     display_as: scientific
@@ -27,21 +37,6 @@ jupyter:
     thumbnail: thumbnail/carpet.jpg
     title: Carpet Plots | Plotly
 ---
-
-<!-- #region {"inputHidden": false, "outputHidden": false} -->
-#### New to Plotly?
-Plotly's Python library is free and open source! [Get started](https://plot.ly/python/getting-started/) by downloading the client and [reading the primer](https://plot.ly/python/getting-started/).
-<br>You can set up Plotly to work in [online](https://plot.ly/python/getting-started/#initialization-for-online-plotting) or [offline](https://plot.ly/python/getting-started/#initialization-for-offline-plotting) mode, or in [jupyter notebooks](https://plot.ly/python/getting-started/#start-plotting-online).
-<br>We also have a quick-reference [cheatsheet](https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf) (new!) to help you get started!
-<!-- #endregion -->
-
-#### Version Check
-Plotly's python package is updated frequently. Run `pip install plotly --upgrade` to use the latest version.
-
-```python inputHidden=false outputHidden=false
-import plotly
-plotly.__version__
-```
 
 <!-- #region -->
 ### Set X and Y Coordinates
@@ -221,28 +216,4 @@ To add points and lines see [Carpet Scatter Plots](https://plot.ly/python/carpet
 
 ### Reference
 
-
 See https://plot.ly/python/reference/#carpet for more information and chart attribute options!
-
-```python
-from IPython.display import display, HTML
-
-display(HTML('<link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700" rel="stylesheet" type="text/css" />'))
-display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css">'))
-
-! pip install git+https://github.com/plotly/publisher.git --upgrade
-import publisher
-publisher.publish(
-    'carpet_plot.ipynb', 'python/carpet-plot/', 'Carpet Plots',
-    'How to make carpet plots in Python with Plotly.',
-    title = 'Carpet Plots | Plotly',
-    has_thumbnail='true', thumbnail='thumbnail/carpet.jpg',
-    language='python',
-    # page_type='example_index', // note this is only if you want the tutorial to appear on the main page: plot.ly/python
-    display_as='scientific', order=26,
-    ipynb= '~notebook_demo/144')
-```
-
-```python
-
-```

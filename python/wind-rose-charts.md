@@ -29,7 +29,7 @@ jupyter:
     ipynb: ~notebook_demo/38
     language: python
     layout: user-guide
-    name: Wind Rose Charts
+    name: Wind Rose and Polar Bar Charts
     order: 8
     page_type: example_index
     permalink: python/wind-rose-charts/
@@ -40,12 +40,12 @@ jupyter:
 
 ### Wind Rose Chart with plotly express
 
-A [wind rose chart](https://en.wikipedia.org/wiki/Wind_rose) is a graphical tool used to visualize how wind speed and direction are typically distributed at a given location. For data stored in a tidy pandas dataframe, use the `px.bar_polar` function from plotly express as below, otherwise use `go.Barpolar` as explained in the next section.
+A [wind rose chart](https://en.wikipedia.org/wiki/Wind_rose) (also known as a polar bar chart) is a graphical tool used to visualize how wind speed and direction are typically distributed at a given location. For data stored in a tidy pandas dataframe, use the `px.bar_polar` function from plotly express as below, otherwise use `go.Barpolar` as explained in the next section.
 
 ```python
 import plotly.express as px
 wind = px.data.wind()
-fig = px.bar_polar(wind, r="frequency", theta="direction", 
+fig = px.bar_polar(wind, r="frequency", theta="direction",
                    color="strength", template="plotly_dark",
                    color_discrete_sequence= px.colors.sequential.Plasma[-2::-1])
 fig.show()
@@ -86,7 +86,7 @@ fig.update_layout(
     legend_font_size=16,
     polar_radialaxis_ticksuffix='%',
     polar_angularaxis_rotation=90,
-    
+
 )
 fig.show()
 ```

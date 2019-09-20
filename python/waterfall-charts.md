@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: user-guide
     name: Waterfall Charts
-    order: 6.2
+    order: 3
     page_type: example_index
     permalink: python/waterfall-charts/
     thumbnail: thumbnail/waterfall-charts.jpg

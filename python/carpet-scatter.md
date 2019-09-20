@@ -42,10 +42,9 @@ jupyter:
 ### Basic Carpet Plot
 
 ```python inputHidden=false outputHidden=false
-import plotly.graph_objs as go
-import plotly.plotly as py
+import plotly.graph_objects as go
 
-trace1 = go.Carpet(
+fig = go.Figure(go.Carpet(
     a = [4, 4, 4, 4.5, 4.5, 4.5, 5, 5, 5, 6, 6, 6],
     b = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],
     y = [2, 3.5, 4, 3, 4.5, 5, 5.5, 6.5, 7.5, 8, 8.5, 10],
@@ -61,21 +60,19 @@ trace1 = go.Carpet(
       smoothing = 1,
       minorgridcount = 9
       )
-    )
+))
 
-data = [trace1]
-
-fig = go.Figure(data = data)
-py.iplot(fig, filename = "scattercarpet/basic")
+fig.show()
 ```
 
 ### Add Carpet Scatter Trace
 
 ```python inputHidden=false outputHidden=false
-import plotly.graph_objs as go
-import plotly.plotly as py
+import plotly.graph_objects as go
 
-trace1 = go.Carpet(
+fig = go.Figure()
+
+fig.add_trace(go.Carpet(
     a = [4, 4, 4, 4.5, 4.5, 4.5, 5, 5, 5, 6, 6, 6],
     b = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],
     y = [2, 3.5, 4, 3, 4.5, 5, 5.5, 6.5, 7.5, 8, 8.5, 10],
@@ -91,9 +88,9 @@ trace1 = go.Carpet(
       smoothing = 1,
       minorgridcount = 9
       )
-    )
+))
 
-trace2 = go.Scattercarpet(
+fig.add_trace(go.Scattercarpet(
     a = [4, 4.5, 5, 6],
     b = [2.5, 2.5, 2.5, 2.5],
     line = dict(
@@ -101,21 +98,19 @@ trace2 = go.Scattercarpet(
       smoothing = 1,
       color = 'blue'
     )
-  )
+))
 
-data = [trace1,trace2]
-
-fig = go.Figure(data = data)
-py.iplot(fig, filename = "scattercarpet/add-scattercarpet")
+fig.show()
 ```
 
 ### Add Multiple Scatter Traces
 
 ```python inputHidden=false outputHidden=false
-import plotly.graph_objs as go
-import plotly.plotly as py
+import plotly.graph_objects as go
 
-trace1 = go.Carpet(
+fig = go.Figure()
+
+fig.add_trace(go.Carpet(
     a = [0.1,0.2,0.3],
     b = [1,2,3],
     y = [[1,2.2,3],[1.5,2.7,3.5],[1.7,2.9,3.7]],
@@ -130,27 +125,27 @@ trace1 = go.Carpet(
         tickmode = "linear",
         dtick = 0.05
     )
-)
+))
 
-trace2 = go.Scattercarpet(
+fig.add_trace(go.Scattercarpet(
     name = "b = 1.5",
     a = [0.05, 0.15, 0.25, 0.35],
     b = [1.5, 1.5, 1.5, 1.5]
-)
+))
 
-trace3 = go.Scattercarpet(
+fig.add_trace(go.Scattercarpet(
     name = "b = 2",
     a = [0.05, 0.15, 0.25, 0.35],
     b = [2, 2, 2, 2]
-)
+))
 
-trace4 = go.Scattercarpet(
+fig.add_trace(go.Scattercarpet(
     name = "b = 2.5",
     a = [0.05, 0.15, 0.25, 0.35],
     b = [2.5, 2.5, 2.5, 2.5]
-)
+))
 
-trace5 = go.Scattercarpet(
+fig.add_trace(go.Scattercarpet(
     name = "a = 0.15",
     a = [0.15, 0.15, 0.15, 0.15],
     b = [0.5, 1.5, 2.5, 3.5],
@@ -158,9 +153,9 @@ trace5 = go.Scattercarpet(
         smoothing = 1,
         shape = "spline"
     )
-)
+))
 
-trace6 = go.Scattercarpet(
+fig.add_trace(go.Scattercarpet(
     name = "a = 0.2",
     a = [0.2, 0.2, 0.2, 0.2],
     b = [0.5, 1.5, 2.5, 3.5],
@@ -172,9 +167,9 @@ trace6 = go.Scattercarpet(
         size = [10, 20, 30, 40],
         color = ["#000", "#f00", "#ff0", "#fff"]
       )
-)
+))
 
-trace7 = go.Scattercarpet(
+fig.add_trace(go.Scattercarpet(
     name = "a = 0.25",
     a = [0.25, 0.25, 0.25, 0.25],
     b = [0.5, 1.5, 2.5, 3.5],
@@ -182,17 +177,14 @@ trace7 = go.Scattercarpet(
         smoothing = 1,
         shape = "spline"
     )
-)
+))
 
-layout = go.Layout(
+fig.update_layout(
     title = "scattercarpet extrapolation, clipping, and smoothing",
     hovermode = "closest"
 )
 
-data = [trace1,trace2,trace3,trace4,trace5,trace6,trace7]
-
-fig = go.Figure(data = data, layout = layout)
-py.iplot(fig, filename = "scattercarpet/multiple")
+fig.show()
 ```
 
 ### Reference

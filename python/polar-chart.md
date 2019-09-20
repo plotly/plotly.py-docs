@@ -150,6 +150,7 @@ fig = go.Figure(go.Barpolar(
     marker_color=["#E4FF87", '#709BFF', '#709BFF', '#FFAA70', '#FFAA70', '#FFDF70', '#B6FFB4'],
     marker_line_color="black",
     marker_line_width=2,
+    opacity=0.8
 ))
 
 fig.update_layout(

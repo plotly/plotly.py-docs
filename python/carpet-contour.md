@@ -43,10 +43,9 @@ jupyter:
 Set the `x` and `y` coorindates, using `x` and `y` attributes. If `x` coorindate values are ommitted a cheater plot will be created. To save parameter values use `a` and `b` attributes. To make changes to the axes, use `aaxis` or `baxis` attributes. For a more detailed list of axes attributes refer to [python reference](https://plot.ly/python/reference/#carpet-aaxis).
 
 ```python
-import plotly.graph_objs as go
-import plotly.plotly as py
+import plotly.graph_objects as go
 
-trace1 = go.Carpet(
+fig = go.Figure(go.Carpet(
     a = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3],
     b = [4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
     x = [2, 3, 4, 5, 2.2, 3.1, 4.1, 5.1, 1.5, 2.5, 3.5, 4.5],
@@ -63,56 +62,39 @@ trace1 = go.Carpet(
         minorgridcount = 9,
         type = 'linear'
     )
-)
+))
 
-data = [trace1]
-
-layout = go.Layout(
-    margin = dict(
-    	t = 40,
-        r = 30,
-        b = 30,
-        l = 30
-    ),
-    yaxis = dict(
-        range = [0.388,4.361]
-    ),
-    xaxis = dict(
-    	range = [0.667,5.932]
-    )
-)
-
-fig = go.Figure(data = data, layout = layout)
-py.iplot(fig, filename = "contourcarpet/basic")
+fig.show()
 ```
 
 ### Add Contours
 
 ```python inputHidden=false outputHidden=false
-import plotly.graph_objs as go
-import plotly.plotly as py
+import plotly.graph_objects as go
 
-trace1 = go.Contourcarpet(
+fig = go.Figure()
+
+fig.add_trace(go.Contourcarpet(
     a = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3],
     b = [4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
     z = [1, 1.96, 2.56, 3.0625, 4, 5.0625, 1, 7.5625, 9, 12.25, 15.21, 14.0625],
     autocontour = False,
     contours = dict(
-    	start = 1,
+        start = 1,
         end = 14,
         size = 1
     ),
     line = dict(
-    	width = 2,
-    	smoothing = 0
+        width = 2,
+        smoothing = 0
     ),
     colorbar = dict(
-    	len = 0.4,
+       len = 0.4,
         y = 0.25
     )
-)
+))
 
-trace2 = go.Carpet(
+fig.add_trace(go.Carpet(
     a = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3],
     b = [4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
     x = [2, 3, 4, 5, 2.2, 3.1, 4.1, 5.1, 1.5, 2.5, 3.5, 4.5],
@@ -129,42 +111,25 @@ trace2 = go.Carpet(
         minorgridcount = 9,
         type = 'linear'
     )
-)
+))
 
-data = [trace1, trace2]
-
-layout = go.Layout(
-    margin = dict(
-    	t = 40,
-        r = 30,
-        b = 30,
-        l = 30
-    ),
-    yaxis = dict(
-        range = [0.388,4.361]
-    ),
-    xaxis = dict(
-    	range = [0.667,5.932]
-    )
-)
-
-fig = go.Figure(data = data, layout = layout)
-py.iplot(fig, filename = "contourcarpet/add-contours")
+fig.show()
 ```
 
 ### Add Multiple Traces
 
 ```python inputHidden=false outputHidden=false
-import plotly.graph_objs as go
-import plotly.plotly as py
-
-import urllib, json
+import plotly.graph_objects as go
+import json
+from urllib.request import urlopen
 
 url = "https://raw.githubusercontent.com/bcdunbar/datasets/master/airfoil_data.json"
-response = urllib.urlopen(url)
-data = json.loads(response.read())
+data = json.load(urlopen(url))
 
-trace1 = go.Carpet(
+
+fig=go.Figure()
+
+fig.add_trace(go.Carpet(
     a = data[0]['a'],
     b = data[0]['b'],
     x = data[0]['x'],
@@ -185,9 +150,9 @@ trace1 = go.Carpet(
       endlinewidth = 2,
       smoothing = 0
     )
-)
+))
 
-trace2 = go.Contourcarpet(
+fig.add_trace(go.Contourcarpet(
     z = data[1]['z'],
     autocolorscale = False,
     zmax = 1,
@@ -212,9 +177,9 @@ trace2 = go.Contourcarpet(
     ),
     autocontour = False,
     zauto = False
-)
+))
 
-trace3 = go.Contourcarpet(
+fig.add_trace(go.Contourcarpet(
     z = data[2]['z'],
     opacity = 0.300,
     showlegend = True,
@@ -228,9 +193,9 @@ trace3 = go.Contourcarpet(
       color = "white",
       width = 1
     )
-)
+))
 
-trace4 = go.Contourcarpet(
+fig.add_trace(go.Contourcarpet(
     z = data[3]['z'],
     showlegend = True,
     name = "Pressure<br>contours",
@@ -246,9 +211,9 @@ trace4 = go.Contourcarpet(
         end = 1.000,
         showlines = True
       )
-)
+))
 
-trace5 = go.Scatter(
+fig.add_trace(go.Scatter(
     x = data[4]['x'],
     y = data[4]['y'],
     legendgroup = "g1",
@@ -263,9 +228,9 @@ trace5 = go.Scatter(
     ),
     fill = "toself",
     fillcolor = "rgba(255, 0, 0, 0.2)"
-)
+))
 
-trace6 = go.Scatter(
+fig.add_trace(go.Scatter(
     x = data[5]['x'],
     y = data[5]['y'],
     showlegend = False,
@@ -276,9 +241,9 @@ trace6 = go.Scatter(
       color = "rgba(255, 0, 0, 0.3)",
       width = 1
     )
-)
+))
 
-trace7 = go.Scatter(
+fig.add_trace(go.Scatter(
     x = data[6]['x'],
     y = data[6]['y'],
     showlegend = False,
@@ -291,11 +256,9 @@ trace7 = go.Scatter(
       color = "rgba(255, 0, 0, 0.2)",
       width = 0
     )
-)
+))
 
-data = [trace1,trace2,trace3,trace4,trace5,trace6,trace7]
-
-layout = go.Layout(
+fig.update_layout(
     yaxis = dict(
       zeroline = False,
       range = [-1.800,1.800],
@@ -321,8 +284,7 @@ layout = go.Layout(
     width = 900
 )
 
-fig = go.Figure(data=data,layout=layout)
-py.iplot(fig, filename = "contourcarpet/airfoil")
+fig.show()
 ```
 
 ### Reference

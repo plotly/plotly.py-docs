@@ -82,6 +82,26 @@ fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
 fig.show()
 ```
 
+### Branchvalues
+
+With branchvalues "total", the value of the parent represents the width of its wedge. In the example below, "Enoch" is 4 and "Awan" is 6 and so Enoch's width is 4/6ths of Awans. With branchvalues "remainder", the parent's width is determined by its own value plus those of its children. So, Enoch's width is 4/10ths of Awan's (4 / (6 + 4)).
+
+Note that this means that the sum of the values of the children cannot exceed the value of their parent when branchvalues "total". When branchvalues "relative" (the default), children will not take up all of the space below their parent (unless the parent is the root and it has a value of 0).
+
+```python
+import plotly.graph_objects as go
+
+fig =go.Figure(go.Sunburst(
+    labels=[ "Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+    parents=["",    "Eve",  "Eve",  "Seth", "Seth", "Eve",  "Eve",  "Awan",  "Eve" ],
+    values=[  65,    14,     12,     10,     2,      6,      6,      4,       4],
+    branchvalues="total",
+))
+fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
+
+fig.show()
+```
+
 ### Large Number of Slices
 
 This example uses a [plotly grid attribute](https://plot.ly/python/reference/#layout-grid) for the suplots. Reference the row and column destination using the [domain](https://plot.ly/python/reference/#sunburst-domain) attribute.

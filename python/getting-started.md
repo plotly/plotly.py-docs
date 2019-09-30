@@ -27,7 +27,7 @@ jupyter:
     ipynb: ~notebook_demo/123/installation
     language: python
     layout: getstart
-    name: Getting Started with Plotly for Python
+    name: Getting Started with Plotly
     page_type: u-guide
     permalink: python/getting-started/
     redirect_from: python/getting_started/

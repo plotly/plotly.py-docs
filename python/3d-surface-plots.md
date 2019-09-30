@@ -28,7 +28,7 @@ jupyter:
     ipynb: ~notebook_demo/66
     language: python
     layout: user-guide
-    name: 3D Surface Plots in Python
+    name: 3D Surface Plots
     order: 6
     page_type: example_index
     permalink: python/3d-surface-plots/

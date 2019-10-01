@@ -176,6 +176,26 @@ fig.update_layout(
 fig.show()
 ```
 
+#### Placing ticks and gridlines between categories
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Bar(
+    x = ["apples", "oranges", "pears"],
+    y = [1, 2, 3]
+))
+
+fig.update_xaxes(
+    showgrid=True,
+    ticks="outside",
+    tickson="boundaries",
+    ticklen=20
+)
+
+fig.show()
+```
+
 #### Reference
 See https://plot.ly/python/reference/#layout-xaxis for more information and chart attribute options!
 

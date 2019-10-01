@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/118
     language: python
-    layout: user-guide
+    layout: base
     name: Baseline Subtraction
     order: 2
     page_type: example_index

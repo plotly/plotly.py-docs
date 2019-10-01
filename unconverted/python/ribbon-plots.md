@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/64
     language: python
-    layout: user-guide
+    layout: base
     name: Ribbon Plots
     order: 4
     permalink: python/ribbon-plots/

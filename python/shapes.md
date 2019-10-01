@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/14
     language: python
-    layout: user-guide
+    layout: base
     name: Shapes
     order: 32
     permalink: python/shapes/

@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/139
     language: python
-    layout: user-guide
+    layout: base
     name: Linear Fit
     order: 10
     page_type: example_index

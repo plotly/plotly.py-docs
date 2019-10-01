@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/274/
     language: python
-    layout: user-guide
+    layout: base
     name: Sunburst Charts
     order: 6.1
     page_type: u-guide

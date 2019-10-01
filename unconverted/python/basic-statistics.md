@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/109
     language: python
-    layout: user-guide
+    layout: base
     name: Basic Statistics
     order: 1
     page_type: example_index

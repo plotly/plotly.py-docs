@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/2
     language: python
-    layout: user-guide
+    layout: base
     name: Dot Plots
     order: 3.1
     page_type: u-guide

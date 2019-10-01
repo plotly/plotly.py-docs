@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/262
     language: python
-    layout: user-guide
+    layout: base
     name: Dendrograms
     order: 6
     page_type: u-guide

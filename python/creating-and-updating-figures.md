@@ -26,7 +26,7 @@ jupyter:
     display_as: file_settings
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Creating and Updating Figures
     page_type: example_index
     permalink: python/creating-and-updating-figures/

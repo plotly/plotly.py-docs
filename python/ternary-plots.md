@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/39
     language: python
-    layout: user-guide
+    layout: base
     name: Ternary Plots
     order: 9
     page_type: example_index

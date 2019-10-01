@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/11
     language: python
-    layout: user-guide
+    layout: base
     name: Gauge Charts
     order: 6
     page_type: u-guide

@@ -29,7 +29,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/252
     language: python
-    layout: user-guide
+    layout: base
     name: Static Image Export
     order: 1
     page_type: u-guide

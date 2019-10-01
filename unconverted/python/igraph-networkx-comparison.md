@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/222
     language: python
-    layout: user-guide
+    layout: base
     name: Network Graphs Comparison
     order: 14
     page_type: u-guide

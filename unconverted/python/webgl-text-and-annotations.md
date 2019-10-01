@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/219
     language: python
-    layout: user-guide
+    layout: base
     name: WebGL Text and Annotations
     order: 2
     page_type: example_index

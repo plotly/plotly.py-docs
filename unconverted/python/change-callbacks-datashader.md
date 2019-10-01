@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/239
     language: python
-    layout: user-guide
+    layout: base
     name: DataShader Case Study
     order: 24
     permalink: python/change-callbacks-datashader/

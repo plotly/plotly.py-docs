@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/254
     language: python
-    layout: user-guide
+    layout: base
     name: Use Interact decorator with FigureWidget
     order: 4
     permalink: python/interact-decorator/

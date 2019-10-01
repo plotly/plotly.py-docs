@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/8
     language: python
-    layout: user-guide
+    layout: base
     name: Filled Area Plots
     order: 3.5
     page_type: u-guide

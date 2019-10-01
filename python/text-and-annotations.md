@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/204
     language: python
-    layout: user-guide
+    layout: base
     name: Text and Annotations
     order: 30
     permalink: python/text-and-annotations/

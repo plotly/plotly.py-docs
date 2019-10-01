@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/37
     language: python
-    layout: user-guide
+    layout: base
     name: Polar Charts [Legacy]
     order: 1
     page_type: u-guide

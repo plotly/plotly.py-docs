@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/33
     language: python
-    layout: user-guide
+    layout: base
     name: Heatmaps
     order: 3
     page_type: example_index

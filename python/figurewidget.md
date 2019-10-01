@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/235
     language: python
-    layout: user-guide
+    layout: base
     name: Plotly FigureWidget Overview
     order: 0
     page_type: example_index

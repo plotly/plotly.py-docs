@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/272
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Isosurface Plots
     order: 12.1
     page_type: u-guide

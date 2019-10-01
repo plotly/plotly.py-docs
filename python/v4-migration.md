@@ -26,7 +26,7 @@ jupyter:
     display_as: file_settings
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Version 4 Migration Guide
     order: 1
     page_type: example_index

@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/70
     language: python
-    layout: user-guide
+    layout: base
     name: Trisurf Plots
     order: 10
     page_type: u-guide

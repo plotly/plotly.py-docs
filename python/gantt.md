@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/6
     language: python
-    layout: user-guide
+    layout: base
     name: Gantt Charts
     order: 5.5
     page_type: u-guide

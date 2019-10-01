@@ -26,7 +26,7 @@ jupyter:
     display_as: multiple_axes
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Table and Chart Subplots
     order: 11
     page_type: example_index

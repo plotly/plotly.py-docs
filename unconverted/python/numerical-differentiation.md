@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/102
     language: python
-    layout: user-guide
+    layout: base
     name: Numerical Differentiation
     order: 6
     page_type: example_index

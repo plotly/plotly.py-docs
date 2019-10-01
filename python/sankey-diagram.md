@@ -29,7 +29,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/151
     language: python
-    layout: user-guide
+    layout: base
     name: Sankey Diagram
     order: 11
     page_type: u-guide

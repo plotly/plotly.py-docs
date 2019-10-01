@@ -26,7 +26,7 @@ jupyter:
     display_as: maps
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Bubble Maps
     order: 2
     page_type: example_index

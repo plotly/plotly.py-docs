@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/223
     language: python
-    layout: user-guide
+    layout: base
     name: Network Graphs
     order: 14
     page_type: u-guide

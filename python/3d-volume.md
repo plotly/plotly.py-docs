@@ -26,7 +26,7 @@ jupyter:
     display_as: 3d_charts
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Volume Plots
     order: 12.2
     page_type: u-guide

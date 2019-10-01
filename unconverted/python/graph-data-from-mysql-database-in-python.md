@@ -16,7 +16,7 @@ jupyter:
     display_as: databases
     has_thumbnail: false
     language: python
-    layout: user-guide
+    layout: base
     name: Plot Data from MySQL
     order: 1
     page_type: example_index

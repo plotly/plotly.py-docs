@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~PythonPlotBot/1828
     language: python
-    layout: user-guide
+    layout: base
     name: Figure Factory Subplots
     order: 10
     page_type: u-guide

@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/131
     language: python
-    layout: user-guide
+    layout: base
     name: Heatmap Animation
     order: 4
     page_type: example_index

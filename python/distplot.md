@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/23
     language: python
-    layout: user-guide
+    layout: base
     name: Distplots
     order: 5
     page_type: example_index

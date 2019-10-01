@@ -22,7 +22,7 @@ jupyter:
     display_as: financial
     order: 4
     ipynb: ~notebook_demo/293
-    layout: user-guide
+    layout: base
     page_type: example_index
 ---
 

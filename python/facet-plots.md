@@ -26,7 +26,7 @@ jupyter:
     display_as: statistical
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Facet and Trellis Plots
     order: 10.2
     page_type: u-guide

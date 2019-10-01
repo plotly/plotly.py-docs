@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/69
     language: python
-    layout: user-guide
+    layout: base
     name: Parametric Plots
     order: 9
     permalink: python/3d-parametric-plots/

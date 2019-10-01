@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/117
     language: python
-    layout: user-guide
+    layout: base
     name: Baseline Detection
     order: 1
     page_type: example_index

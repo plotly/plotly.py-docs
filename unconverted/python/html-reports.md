@@ -16,7 +16,7 @@ jupyter:
     display_as: report_generation
     has_thumbnail: false
     language: python
-    layout: user-guide
+    layout: base
     name: Python HTML Reports
     order: 1
     page_type: example_index

@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/116
     language: python
-    layout: user-guide
+    layout: base
     name: Statistics Charts
     order: 5
     page_type: example_index

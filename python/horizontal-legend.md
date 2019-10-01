@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/94
     language: python
-    layout: user-guide
+    layout: base
     name: Horizontal Legends
     order: 12
     page_type: example_index

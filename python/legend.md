@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/14
     language: python
-    layout: user-guide
+    layout: base
     name: Legends
     order: 13
     permalink: python/legend/

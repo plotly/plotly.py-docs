@@ -26,7 +26,7 @@ jupyter:
     display_as: chart_events
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Jupyter Lab with FigureWidget
     order: 2
     permalink: python/jupyter-lab-tools/

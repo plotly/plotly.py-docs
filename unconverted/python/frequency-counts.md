@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/111
     language: python
-    layout: user-guide
+    layout: base
     name: Frequency Counts
     order: 2
     page_type: example_index

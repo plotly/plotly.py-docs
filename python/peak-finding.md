@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/120
     language: python
-    layout: user-guide
+    layout: base
     name: Peak Finding
     order: 3
     page_type: example_index

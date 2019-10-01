@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/101
     language: python
-    layout: user-guide
+    layout: base
     name: Numerical Integration
     order: 7
     page_type: example_index

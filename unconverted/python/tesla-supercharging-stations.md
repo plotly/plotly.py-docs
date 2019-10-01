@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/124
     language: python
-    layout: user-guide
+    layout: base
     name: Tesla Supercharging Stations
     order: 10
     page_type: u-guide

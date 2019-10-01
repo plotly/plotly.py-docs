@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/55
     language: python
-    layout: user-guide
+    layout: base
     name: Choropleth Maps
     order: 5
     page_type: u-guide

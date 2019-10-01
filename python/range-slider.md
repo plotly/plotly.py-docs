@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/211
     language: python
-    layout: user-guide
+    layout: base
     name: Range Slider and Selector
     order: 3
     page_type: example_index

@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/131
     language: python
-    layout: user-guide
+    layout: base
     name: Intro to Animations
     order: 1
     page_type: example_index

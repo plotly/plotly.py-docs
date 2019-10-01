@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/202
     language: python
-    layout: user-guide
+    layout: base
     name: Radar Charts
     order: 30
     page_type: u-guide

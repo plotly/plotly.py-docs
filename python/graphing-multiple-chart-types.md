@@ -26,7 +26,7 @@ jupyter:
     display_as: file_settings
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Multiple Chart Types
     order: 16
     page_type: u-guide

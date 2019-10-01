@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/7/
     language: python
-    layout: user-guide
+    layout: base
     name: Pie Charts
     order: 6
     page_type: example_index

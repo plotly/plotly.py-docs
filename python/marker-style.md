@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/203
     language: python
-    layout: user-guide
+    layout: base
     name: Styling Markers
     order: 21
     permalink: python/marker-style/

@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/190
     language: python
-    layout: user-guide
+    layout: base
     name: Visualizing MRI Volume Slices
     order: 4
     page_type: example_index

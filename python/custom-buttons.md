@@ -26,7 +26,7 @@ jupyter:
     display_as: controls
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Custom Buttons
     order: 1
     page_type: example_index

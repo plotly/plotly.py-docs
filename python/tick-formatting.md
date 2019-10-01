@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/1
     language: python
-    layout: user-guide
+    layout: base
     name: Formatting Ticks
     order: 10
     permalink: python/tick-formatting/

@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/198
     language: python
-    layout: user-guide
+    layout: base
     name: Hover Text and Formatting
     order: 30.5
     permalink: python/hover-text-and-formatting/

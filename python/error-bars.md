@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/18
     language: python
-    layout: user-guide
+    layout: base
     name: Error Bars
     order: 1
     page_type: example_index

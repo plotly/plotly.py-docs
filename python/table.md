@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/197
     language: python
-    layout: user-guide
+    layout: base
     name: Tables
     order: 7
     page_type: u-guide

@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/84
     language: python
-    layout: user-guide
+    layout: base
     name: Plot CSV Data
     order: 1
     page_type: example_index

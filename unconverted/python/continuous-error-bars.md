@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/19
     language: python
-    layout: user-guide
+    layout: base
     name: Continuous Error Bars
     order: 2
     page_type: u-guide

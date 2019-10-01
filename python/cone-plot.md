@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/206
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Cone Plots
     order: 20
     page_type: u-guide

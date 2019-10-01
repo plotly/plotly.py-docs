@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/1
     language: python
-    layout: user-guide
+    layout: base
     name: Big Data Analytics with Pandas and SQLite
     order: 4
     page_type: example_index

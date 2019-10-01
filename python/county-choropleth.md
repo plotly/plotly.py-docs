@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/212
     language: python
-    layout: user-guide
+    layout: base
     name: USA County Choropleth Maps
     order: 20
     page_type: u-guide

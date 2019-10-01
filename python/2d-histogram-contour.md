@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/199
     language: python
-    layout: user-guide
+    layout: base
     name: 2D Histogram Contour
     order: 30
     page_type: u-guide

@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/258
     language: python
-    layout: user-guide
+    layout: base
     name: Parallel Categories Diagram
     order: 10.3
     page_type: u-guide

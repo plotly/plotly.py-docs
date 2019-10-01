@@ -29,7 +29,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/146
     language: python
-    layout: user-guide
+    layout: base
     name: Carpet Scatter Plot
     order: 28
     page_type: u-guide

@@ -29,7 +29,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/95
     language: python
-    layout: user-guide
+    layout: base
     name: Axes
     order: 12
     permalink: python/axes/

@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/266
     language: python
-    layout: user-guide
+    layout: base
     name: Normality Tests
     order: 2
     page_type: u-guide

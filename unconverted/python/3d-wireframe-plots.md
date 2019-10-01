@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/68
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Wireframe Plots
     order: 8
     permalink: python/3d-wireframe-plots/

@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/48
     language: python
-    layout: user-guide
+    layout: base
     name: Matplotlib Colorscales
     order: 8
     page_type: example_index

@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/52
     language: python
-    layout: user-guide
+    layout: base
     name: Cmocean Colorscales
     order: 22
     page_type: example_index

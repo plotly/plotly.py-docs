@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/104
     language: python
-    layout: user-guide
+    layout: base
     name: Linear Algebra
     order: 10
     page_type: example_index

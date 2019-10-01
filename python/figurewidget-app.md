@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/231
     language: python
-    layout: user-guide
+    layout: base
     name: Interactive Data Analysis with FigureWidget ipywidgets
     order: 23
     page_type: example_index

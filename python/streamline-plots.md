@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/43
     language: python
-    layout: user-guide
+    layout: base
     name: Streamline Plots
     order: 13
     permalink: python/streamline-plots/

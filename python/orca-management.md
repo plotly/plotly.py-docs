@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/253
     language: python
-    layout: user-guide
+    layout: base
     name: Orca Management
     order: 1.5
     permalink: python/orca-management/

@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/270
     language: python
-    layout: user-guide
+    layout: base
     name: Multiple Axes
     order: 14
     permalink: python/multiple-axes/

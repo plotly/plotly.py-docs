@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/17
     language: python
-    layout: user-guide
+    layout: base
     name: IPython vs Python
     order: 41
     permalink: python/ipython-vs-python/

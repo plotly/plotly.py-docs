@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/187
     language: python
-    layout: user-guide
+    layout: base
     name: Colorscales
     order: 22
     permalink: python/colorscales/

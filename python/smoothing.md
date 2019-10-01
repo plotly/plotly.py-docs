@@ -26,7 +26,7 @@ jupyter:
     display_as: signal-analysis
     has_thumbnail: false
     language: python
-    layout: user-guide
+    layout: base
     name: Smoothing
     order: 1
     page_type: example_index

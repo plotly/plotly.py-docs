@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/207
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Streamtube Plots
     order: 21
     page_type: u-guide

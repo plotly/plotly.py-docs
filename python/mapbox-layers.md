@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/261
     language: python
-    layout: user-guide
+    layout: base
     name: Mapbox Map Layers
     order: 7
     page_type: u-guide

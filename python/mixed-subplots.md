@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/132
     language: python
-    layout: user-guide
+    layout: base
     name: Mixed Subplots
     order: 5
     page_type: example_index

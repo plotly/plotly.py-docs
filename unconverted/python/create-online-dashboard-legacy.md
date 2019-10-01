@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/148
     language: python
-    layout: user-guide
+    layout: base
     name: Dashboard API
     order: 0
     page_type: u-guide

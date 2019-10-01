@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/1/new-to-plotly-plotlys-python-library-i
     language: python
-    layout: user-guide
+    layout: base
     name: Bubble Charts
     order: 3
     page_type: u-guide

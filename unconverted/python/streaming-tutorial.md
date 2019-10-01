@@ -16,7 +16,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/80
     language: python
-    layout: user-guide
+    layout: base
     name: Plotly Streaming
     page_type: u-guide
     permalink: python/streaming-tutorial/

@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/271
     language: python
-    layout: user-guide
+    layout: base
     name: Setting the Title, Legend Entries, and Axis Titles
     order: 11
     permalink: python/figure-labels/

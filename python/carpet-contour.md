@@ -29,7 +29,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/145
     language: python
-    layout: user-guide
+    layout: base
     name: Carpet Contour Plot
     order: 27
     page_type: u-guide

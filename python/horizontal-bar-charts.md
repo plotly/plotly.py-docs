@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/5
     language: python
-    layout: user-guide
+    layout: base
     name: Horizontal Bar Charts
     order: 5
     page_type: u-guide

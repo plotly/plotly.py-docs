@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/76
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Surface Coloring
     order: 7
     permalink: python/3d-surface-coloring/

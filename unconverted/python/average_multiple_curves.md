@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/107
     language: python
-    layout: user-guide
+    layout: base
     name: Average Multiple Curves
     order: 9
     page_type: example_index

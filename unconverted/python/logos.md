@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/92
     language: python
-    layout: user-guide
+    layout: base
     name: Logos
     order: 6
     page_type: example_index

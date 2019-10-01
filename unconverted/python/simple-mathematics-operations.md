@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/99
     language: python
-    layout: user-guide
+    layout: base
     name: Simple Mathematics Operations
     order: 1
     page_type: example_index

@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/242
     language: python
-    layout: user-guide
+    layout: base
     name: Car Exploration with Hover Events
     order: 26
     permalink: python/cars-exploration/

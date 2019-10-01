@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/1
     language: python
-    layout: user-guide
+    layout: base
     name: Plot Data From Amazon Redshift
     order: 3
     page_type: example_index

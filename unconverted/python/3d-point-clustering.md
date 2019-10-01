@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/74
     language: python
-    layout: user-guide
+    layout: base
     name: 3d Clustering
     order: 14
     permalink: python/3d-point-clustering/

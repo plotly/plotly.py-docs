@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/114
     language: python
-    layout: user-guide
+    layout: base
     name: Random Walk
     order: 10
     page_type: example_index

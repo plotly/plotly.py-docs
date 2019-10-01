@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/96
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Axes
     order: 0.101
     page_type: example_index

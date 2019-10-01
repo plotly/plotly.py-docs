@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/108
     language: python
-    layout: user-guide
+    layout: base
     name: Anova
     order: 8
     page_type: example_index

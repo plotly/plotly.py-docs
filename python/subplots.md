@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/269
     language: python
-    layout: user-guide
+    layout: base
     name: Subplots
     order: 15
     page_type: u-guide

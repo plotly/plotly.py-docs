@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/193
     language: python
-    layout: user-guide
+    layout: base
     name: Multiple Transforms
     order: 4
     page_type: example_index

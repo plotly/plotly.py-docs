@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/12
     language: python
-    layout: user-guide
+    layout: base
     name: Linear-Gauge Chart
     order: 12
     page_type: u-guide

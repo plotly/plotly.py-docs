@@ -26,7 +26,7 @@ jupyter:
       with Plotly.
     has_thumbnail: false
     language: python
-    layout: user-guide
+    layout: base
     name: Comparing WebGL vs SVG
     page_type: example_index
     permalink: python/compare-webgl-svg/

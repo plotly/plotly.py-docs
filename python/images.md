@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/216
     language: python
-    layout: user-guide
+    layout: base
     name: Images
     order: 31
     permalink: python/images/

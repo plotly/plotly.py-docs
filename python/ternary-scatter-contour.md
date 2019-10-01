@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/41
     language: python
-    layout: user-guide
+    layout: base
     name: Ternary Overlay
     order: 11
     page_type: u-guide

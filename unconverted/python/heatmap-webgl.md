@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/34
     language: python
-    layout: user-guide
+    layout: base
     name: WebGL Heatmaps
     order: 4
     page_type: u-guide

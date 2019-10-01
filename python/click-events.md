@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/240
     language: python
-    layout: user-guide
+    layout: base
     name: Click Events
     order: 24
     page_type: example_index

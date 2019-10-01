@@ -17,7 +17,7 @@ jupyter:
     display_as: signal-analysis
     has_thumbnail: false
     language: python
-    layout: user-guide
+    layout: base
     name: 1D Correlation
     order: 5
     page_type: example_index

@@ -26,7 +26,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/123/installation
     language: python
-    layout: getstart
+    layout: base
     name: Getting Started with Plotly
     page_type: u-guide
     permalink: python/getting-started/

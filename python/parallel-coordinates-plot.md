@@ -29,7 +29,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/142
     language: python
-    layout: user-guide
+    layout: base
     name: Parallel Coordinates Plot
     order: 11.5
     page_type: u-guide

@@ -16,7 +16,7 @@ jupyter:
     display_as: signal-analysis
     has_thumbnail: false
     language: python
-    layout: user-guide
+    layout: base
     name: Convolution
     order: 4
     page_type: example_index

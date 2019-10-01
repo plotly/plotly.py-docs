@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/57
     language: python
-    layout: user-guide
+    layout: base
     name: Scatter Plots on Maps
     order: 2
     page_type: u-guide

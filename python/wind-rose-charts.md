@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/38
     language: python
-    layout: user-guide
+    layout: base
     name: Wind Rose and Polar Bar Charts
     order: 8
     page_type: example_index

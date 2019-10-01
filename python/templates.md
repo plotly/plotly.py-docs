@@ -29,7 +29,7 @@ jupyter:
     has_thumbnail: true
     name: Theming and templates
     page_type: u-guide
-    layout: user-guide
+    layout: base
     permalink: python/templates/
     thumbnail: thumbnail/theming-and-templates.png
     title: Theming and templates | plotly

@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/31
     language: python
-    layout: user-guide
+    layout: base
     name: Log Plots
     order: 1
     permalink: python/log-plot/

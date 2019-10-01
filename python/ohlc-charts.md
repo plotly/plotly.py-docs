@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/53
     language: python
-    layout: user-guide
+    layout: base
     name: OHLC Charts
     order: 1
     permalink: python/ohlc-charts/

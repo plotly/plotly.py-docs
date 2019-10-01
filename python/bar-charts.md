@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/186
     language: python
-    layout: user-guide
+    layout: base
     name: Bar Charts
     order: 4
     page_type: example_index

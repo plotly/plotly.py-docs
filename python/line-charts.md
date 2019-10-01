@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/3
     language: python
-    layout: user-guide
+    layout: base
     name: Line Charts
     order: 3.3
     page_type: example_index

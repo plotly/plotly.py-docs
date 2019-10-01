@@ -16,7 +16,7 @@ jupyter:
     display_as: databases
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Google Big-Query
     order: 7
     page_type: example_index

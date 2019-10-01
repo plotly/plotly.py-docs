@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/71
     language: python
-    layout: user-guide
+    layout: base
     name: Surface Triangulation
     order: 11
     page_type: u-guide

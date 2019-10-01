@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: false
     ipynb: ~notebook_demo/105
     language: python
-    layout: user-guide
+    layout: base
     name: Interpolation and Extrapolation in 2D
     order: 4
     page_type: example_index

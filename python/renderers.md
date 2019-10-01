@@ -29,7 +29,7 @@ jupyter:
     language: python
     name: Displaying Figures
     page_type: example_index
-    layout: user-guide
+    layout: base
     permalink: python/renderers/
     redirect_from: python/offline/
     thumbnail: thumbnail/displaying-figures.png

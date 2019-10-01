@@ -26,7 +26,7 @@ jupyter:
     display_as: scientific
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Ternary contours
     page_type: u-guide
     permalink: python/ternary-contour/

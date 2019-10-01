@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/128
     language: python
-    layout: user-guide
+    layout: base
     name: Filled-Area Animation
     order: 3
     page_type: example_index

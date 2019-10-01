@@ -29,7 +29,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/275
     language: python
-    layout: user-guide
+    layout: base
     name: Candlestick Charts
     order: 2
     page_type: example_index

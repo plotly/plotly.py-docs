@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/226
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Network Graphs
     order: 13
     page_type: example_index

@@ -15,7 +15,7 @@ jupyter:
     description: Getting Started with Plotly for Python
     has_thumbnail: false
     language: python
-    layout: user-guide
+    layout: base
     page_type: u-guide
     permalink: python/userguide/
     thumbnail: null

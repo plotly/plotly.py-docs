@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/133
     language: python
-    layout: user-guide
+    layout: base
     name: Setting Graph Size
     order: 2
     permalink: python/setting-graph-size/

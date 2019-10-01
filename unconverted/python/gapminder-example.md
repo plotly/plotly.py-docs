@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/129
     language: python
-    layout: user-guide
+    layout: base
     name: Adding Sliders to Animations
     order: 2
     page_type: example_index

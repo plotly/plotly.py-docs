@@ -28,7 +28,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/28
     language: python
-    layout: user-guide
+    layout: base
     name: Tree-plots
     order: 10.5
     permalink: python/tree-plots/

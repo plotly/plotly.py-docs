@@ -18,7 +18,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/225
     language: python
-    layout: user-guide
+    layout: base
     name: Python Chord Diagram
     order: 24
     page_type: u-guide

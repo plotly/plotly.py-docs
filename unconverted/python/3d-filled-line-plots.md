@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/65
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Filled Line Plots
     order: 5
     permalink: python/3d-filled-line-plots/

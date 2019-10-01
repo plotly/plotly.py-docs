@@ -16,7 +16,7 @@ jupyter:
     display_as: multiple_axes
     has_thumbnail: true
     language: python
-    layout: user-guide
+    layout: base
     name: Inset Plots
     order: 3
     page_type: example_index

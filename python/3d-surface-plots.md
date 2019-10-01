@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/66
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Surface Plots
     order: 6
     page_type: example_index

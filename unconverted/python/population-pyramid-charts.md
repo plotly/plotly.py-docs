@@ -17,7 +17,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/221
     language: python
-    layout: user-guide
+    layout: base
     name: Population Pyramid Charts
     order: 5.01
     page_type: u-guide

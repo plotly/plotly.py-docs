@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/24
     language: python
-    layout: user-guide
+    layout: base
     name: 2D Histograms
     order: 6
     page_type: u-guide

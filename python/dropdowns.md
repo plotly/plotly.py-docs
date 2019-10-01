@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/85
     language: python
-    layout: user-guide
+    layout: base
     name: Dropdown Menus
     order: 2
     page_type: example_index

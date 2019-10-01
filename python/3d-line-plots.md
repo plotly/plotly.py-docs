@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/63
     language: python
-    layout: user-guide
+    layout: base
     name: 3D Line Plots
     order: 3
     page_type: u-guide

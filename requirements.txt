@@ -17,3 +17,5 @@ requests
 networkx
 squarify
 scikit-image
+sphinx
+recommonmark

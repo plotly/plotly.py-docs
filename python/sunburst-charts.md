@@ -37,6 +37,14 @@ jupyter:
 ---
 
 ### Basic Sunburst Plot ###
+Sunburst plot visualizes hierarchal data spanning outward radially from root to leaves. The sunburst sectors are determined by the entries in "labels" and in "parents". The root starts from the center and childs are added to the outer rings.
+
+Attributes used:
+1. **labels**: sets the labels of each of the sunburst sectors.
+2. **parents**: sets the parent sectors for each of the sunburst sectors. Empty string items '' are understood to reference the root node in the hierarchy. In this case, "Eve" is the root in the sunburst plot.
+3. **values**: sets the values associated with each of the sunburst sectors. It Uses with `branchvalues` to determine how the values are summed. See "Branchvalues" section below explains the details.
+
+update_layout() method is used to update the figure's margin. You can update more layouts. See [plotly update layout method](https://plot.ly/python/creating-and-updating-figures/)
 
 ```python
 import plotly.graph_objects as go

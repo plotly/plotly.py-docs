@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.8
+    version: 3.7.3
   plotly:
     description: How to make Sunburst Charts.
     display_as: basic
@@ -37,6 +37,13 @@ jupyter:
 ---
 
 ### Basic Sunburst Plot ###
+Sunburst plot visualizes hierarchical data spanning outwards radially from root to leaves. The sunburst sectors are determined by the entries in "labels" and in "parents". The root starts from the center and children are added to the outer rings.
+
+Main arguments:
+1. **labels**: sets the labels of sunburst sectors.
+2. **parents**: sets the parent sectors of sunburst sectors. An empty string '' is used for the root node in the hierarchy. In this example, the root is "Eve".
+3. **values**: sets the values associated with sunburst sectors, determining their width (See the "Branchvalues" section below for different modes for setting the width).
+
 
 ```python
 import plotly.graph_objects as go
@@ -46,6 +53,8 @@ fig =go.Figure(go.Sunburst(
     parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
     values=[10, 14, 12, 10, 2, 6, 6, 4, 4],
 ))
+# Update layout for tight margin
+# See https://plot.ly/python/creating-and-updating-figures/
 fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
 
 fig.show()

@@ -68,6 +68,13 @@ jobs:
             tar -zcf build/html.tgz build/html
             rm -rf build/html build/ipynb
 
+      - run:
+          name: make doc
+          command: |
+            cd apidoc
+            make html
+            cd ..
+
 
       - store_artifacts:
           path: build

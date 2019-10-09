@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.6.8
   plotly:
     description: How to make scatter plots on Mapbox maps in Python.
     display_as: maps
@@ -198,7 +198,7 @@ fig.show()
 
 ### Set Marker Symbols 
 
-You can define a symbol on your map by setting [symbol](https://plot.ly/python/reference/#scattermapbox-marker-symbol) attribute. This attribute only works on mapbox tiles (not work on raster tiles): 
+You can define a symbol on your map by setting [symbol](https://plot.ly/python/reference/#scattermapbox-marker-symbol) attribute. This attribute only works on Mapbox-provided `style`s: 
 - basic
 - streets
 - outdoors

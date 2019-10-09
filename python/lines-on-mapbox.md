@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.2.1
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.8
   plotly:
     description: How to draw a line on Map in Python with Plotly.
     display_as: maps
@@ -40,39 +40,30 @@ jupyter:
 
 To plot on Mapbox maps with Plotly you *may* need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio). See our [Mapbox Map Layers](/python/mapbox-layers/) documentation for more information.
 
-### How to draw a Line on a Map 
+To draw a line on your map, you either can use [`px.line_mapbox()`](https://www.plotly.express/plotly_express/#plotly_express.line_mapbox) in plotly express, or [`Scattermapbox`](https://plot.ly/python/reference/#scattermapbox) traces. Below we show you how to draw a line on Mapbox using plotly express.
 
-To draw a line on your map, you either can use [line_mapbox](https://www.plotly.express/plotly_express/#plotly_express.line_mapbox) in plotly express, or [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) and [scattergeo](https://plot.ly/python/reference/#scattergeo) trace type in plotly. Below we show you how to draw a line on Mapbox using plotly express.
+### Lines on Mapbox maps using Plotly Express
 
 ```python
 import pandas as pd
 
-us_cities1 = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/us-cities-top-1k.csv")
-States = ['New York', 'Ohio']
-us_cities = us_cities1[us_cities1.State.isin(States)]
+us_cities = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/us-cities-top-1k.csv")
+us_cities = us_cities.query("State in ['New York', 'Ohio']")
 
 import plotly.express as px
 
-fig = px.line_mapbox(
-    us_cities, 
-    lat="lat", 
-    lon="lon", 
-    line_group='State', 
-    hover_name="City", 
-    hover_data=["State", "Population"],
-    color_discrete_sequence=["fuchsia"], 
-    zoom=3, 
-    height=300)
+fig = px.line_mapbox(us_cities, lat="lat", lon="lon", color="State", zoom=3, height=300)
 
-fig.update_layout(
-    mapbox_style="stamen-terrain", mapbox_zoom=4, mapbox_center_lat = 41,
+fig.update_layout(mapbox_style="stamen-terrain", mapbox_zoom=4, mapbox_center_lat = 41,
     margin={"r":0,"t":0,"l":0,"b":0})
 
 fig.show()
 ```
 
-This example uses scattermapbox and defines
-the drawing [mode](https://plot.ly/python/reference/#scattermapbox-mode) to the combination of markers and line.
+### Lines on Mapbox maps using `Scattermapbox` traces
+
+This example uses `go.Scattermapbox` and sets
+the [mode](https://plot.ly/python/reference/#scattermapbox-mode) attribute to a combination of markers and line.
 
 ```python
 import plotly.graph_objects as go
@@ -98,33 +89,6 @@ fig.update_layout(
         'zoom': 1})
 
 fig.show()
-```
-
-This example uses scattermapbox trace and shows how to customize hoverinfo in Mapbox.
-
-```python
-import pandas as pd
-
-us_cities1 = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/us-cities-top-1k.csv")
-States = ['Washington']
-us_cities = us_cities1[us_cities1.State.isin(States)]
-
-import plotly.graph_objects as go
-
-fig = go.Figure(go.Scattermapbox(   
-    lat=us_cities.lat, 
-    lon=us_cities.lon, 
-    mode='markers+lines',
-    marker={'color':'fuchsia', 'size':10, 'opacity':0.8},
-    hovertext=us_cities['City'],
-    hoverinfo='lat+lon+text'))
-
-fig.update_layout(
-    mapbox={'style': 'stamen-terrain', 'center':{'lat':47, 'lon':-117}, 'zoom':5},
-    margin={"r":0,"t":0,"l":0,"b":0})
-
-fig.show()
-
 ```
 
 #### Reference

@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.2.1
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.8
   plotly:
     description: How to make an area on Map in Python with Plotly.
     display_as: maps
@@ -36,18 +36,20 @@ jupyter:
     title: Python Mapbox Choropleth Maps | plotly
 ---
 
+<!-- #region -->
 
 ### Mapbox Access Token
 
 To plot on Mapbox maps with Plotly you *may* need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio). See our [Mapbox Map Layers](/python/mapbox-layers/) documentation for more information.
 
 
-### How to Show an Area on a Map 
+There are three different ways to show a filled area in a Mapbox map: 
+1. Use a [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) trace and set `fill` attribute to 'toself' 
+2. Use a Mapbox layout (i.e. by minimally using an empty [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) trace) and add a GeoJSON layer
+3. Use the [Choroplethmapbox](https://plot.ly/python/mapbox-county-choropleth/) trace type
+<!-- #endregion -->
 
-There are three different ways to show an area in a mapbox: 
-- Use [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) trace and set `fill` attribute to 'toself' 
-- Use [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) trace and define the corresponding geojson
-- Use the new trace type: [Choroplethmapbox](https://plot.ly/python/mapbox-county-choropleth/) for mapbox cases, or [Choropleth](https://plot.ly/python/choropleth-maps/) trace for non-mapbox ones.
+### Filled `Scattermapbox` Trace
 
 The following example uses `Scattermapbox` and sets `fill = 'toself'` 
 
@@ -69,16 +71,17 @@ fig.update_layout(
 fig.show()
 ```
 
-### Provide Gaps on Map
+### Multiple Filled Areas with a `Scattermapbox` trace
 
-The following example shows how to use missing values in your data to provide gap in your graph. To ignore the gap on your plot, take benefit of [connectorgaps](https://plot.ly/python/reference/#scattermapbox-connectgaps) attribute.
+The following example shows how to use `None` in your data to draw multiple filled areas. Such gaps in trace data are unconnected by default, but this can be controlled via the [connectgaps](https://plot.ly/python/reference/#scattermapbox-connectgaps) attribute.
 
 ```python
 import plotly.graph_objects as go
 
 fig = go.Figure(go.Scattermapbox(
     mode = "lines", fill = "toself",
-    lon = [-10, -10, 8, 8, None, 30, 30, 50, 50, None, 100, 100, 80, 80], lat = [30, 6, 6, 30, None, 20, 30, 30, 20, None, 40, 50, 50, 40]))
+    lon = [-10, -10, 8, 8, -10, None, 30, 30, 50, 50, 30, None, 100, 100, 80, 80, 100], 
+    lat = [30, 6, 6, 30, 30,    None, 20, 30, 30, 20, 20, None, 40, 50, 50, 40, 40]))
 
 fig.update_layout(
     mapbox = {'style': "stamen-terrain", 'center': {'lon': 30, 'lat': 30}, 'zoom': 2},
@@ -88,9 +91,9 @@ fig.update_layout(
 fig.show()
 ```
 
-### Use the Corresponding Geojson
+### GeoJSON Layers
 
-The second way is using Scattermapbox trace with the corresponding geojson.
+In this map we add a GeoJSON layer.
 
 ```python
 import plotly.graph_objects as go

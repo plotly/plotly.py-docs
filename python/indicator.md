@@ -67,7 +67,7 @@ In this tutorial we introduce a new trace named "Indicator". The purpose of "ind
       <li> position: position relative to `number` (either top, left, bottom, right)</li>
     </ol>
     Finally, we can have a simple title for the indicator via `title` with 'text' attribute which is a string, and 'align' which can be set to left, center, and right.
-    There are two gauge types: [angular](https://plot.ly/javascript/gauge-charts/) and [bullet](https://plot.ly/javascript/bullet-charts/). Here is a combination of both shapes (angular, bullet), and different modes (guage, delta, and value):
+    There are two gauge types: [angular](https://plot.ly/python/gauge-charts/) and [bullet](https://plot.ly/python/bullet-charts/). Here is a combination of both shapes (angular, bullet), and different modes (guage, delta, and value):
 
 ```python
 import plotly.graph_objects as go
@@ -75,33 +75,33 @@ import plotly.graph_objects as go
 fig = go.Figure()
 
 fig.add_trace(go.Indicator(
-    value = 200, 
+    value = 200,
     delta = {'reference': 160},
     gauge = {
-        'axis': {'visible': False}}, 
+        'axis': {'visible': False}},
     domain = {'row': 0, 'column': 0}))
-   
+
 fig.add_trace(go.Indicator(
-    value = 120, 
+    value = 120,
     gauge = {
-        'shape': "bullet", 
-        'axis' : {'visible': False}}, 
+        'shape': "bullet",
+        'axis' : {'visible': False}},
     domain = {'x': [0.05, 0.5], 'y': [0.15, 0.35]}))
 
 fig.add_trace(go.Indicator(
-    mode = "number+delta", 
-    value = 300, 
+    mode = "number+delta",
+    value = 300,
     domain = {'row': 0, 'column': 1}))
 
 fig.add_trace(go.Indicator(
-    mode = "delta", 
-    value = 40, 
+    mode = "delta",
+    value = 40,
     domain = {'row': 1, 'column': 1}))
 
 fig.update_layout(
-    grid = {'rows': 2, 'columns': 2, 'pattern': "independent"}, 
+    grid = {'rows': 2, 'columns': 2, 'pattern': "independent"},
     template = {'data' : {'indicator': [{
-        'title': {'text': "Speed"}, 
+        'title': {'text': "Speed"},
         'mode' : "number+delta+gauge",
         'delta' : {'reference': 90}}]
                          }})
@@ -113,9 +113,9 @@ fig.update_layout(
 import plotly.graph_objects as go
 
 fig = go.Figure(go.Indicator(
-    mode = "gauge+number", 
+    mode = "gauge+number",
     value = 450,
-    title = {'text': "Speed"}, 
+    title = {'text': "Speed"},
     domain = {'x': [0, 1], 'y': [0, 1]}
 ))
 
@@ -126,14 +126,14 @@ fig.show()
 The equivalent of above "angular gauge":
 
 ```python
-import plotly.graph_objects as go 
+import plotly.graph_objects as go
 
 fig = go.Figure(go.Indicator(
-    mode = "number+gauge+delta", 
-    gauge = {'shape': "bullet"}, 
+    mode = "number+gauge+delta",
+    gauge = {'shape': "bullet"},
     delta = {'reference': 300},
-    value = 220, 
-    domain = {'x': [0.1, 1], 'y': [0.2, 0.9]}, 
+    value = 220,
+    domain = {'x': [0.1, 1], 'y': [0.2, 0.9]},
     title = {'text': "Avg order size"}))
 
 fig.show()
@@ -143,10 +143,10 @@ fig.show()
 Another interesting feature is that indicator trace sits above the other traces (even the 3d ones). This way, it can be easily used as an overlay as demonstrated below
 
 ```python
-import plotly.graph_objects as go 
+import plotly.graph_objects as go
 
 fig = go.Figure(go.Indicator(
-    mode = "number+delta", 
+    mode = "number+delta",
     value = 492,
     delta = {"reference": 512, "valueformat": ".0f"},
     title = {"text": "Users online"},
@@ -166,9 +166,9 @@ import plotly.graph_objects as go
 
 fig = go.Figure(go.Indicator(
     mode = "number+delta",
-    value = 400, 
+    value = 400,
     number = {'prefix': "$"},
-    delta = {'position': "top", 'reference': 320}, 
+    delta = {'position': "top", 'reference': 320},
     domain = {'x': [0, 1], 'y': [0, 1]}))
 
 fig.update_layout(paper_bgcolor = "lightgray")
@@ -184,22 +184,22 @@ import plotly.graph_objects as go
 fig = go.Figure()
 
 fig.add_trace(go.Indicator(
-    mode = "number+delta", 
-    value = 200, 
-    domain = {'x': [0, 0.5], 'y': [0, 0.5]}, 
+    mode = "number+delta",
+    value = 200,
+    domain = {'x': [0, 0.5], 'y': [0, 0.5]},
     delta = {'reference': 400, 'relative': True, 'position' : "top"}))
 
 fig.add_trace(go.Indicator(
-    mode = "number+delta", 
-    value = 350, 
-    delta = {'reference': 400, 'relative': True},  
+    mode = "number+delta",
+    value = 350,
+    delta = {'reference': 400, 'relative': True},
     domain = {'x': [0, 0.5], 'y': [0.5, 1]}))
 
 fig.add_trace(go.Indicator(
-    mode = "number+delta", 
-    value = 450, 
+    mode = "number+delta",
+    value = 450,
     title = {"text": "Accounts<br><span style='font-size:0.8em;color:gray'>Subtitle</span><br><span style='font-size:0.8em;color:gray'>Subsubtitle</span>"},
-    delta = {'reference': 400, 'relative': True}, 
+    delta = {'reference': 400, 'relative': True},
     domain = {'x': [0.6, 1], 'y': [0, 1]}))
 
 fig.show()

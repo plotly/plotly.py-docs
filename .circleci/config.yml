@@ -71,6 +71,7 @@ jobs:
       - run:
           name: make doc
           command: |
+            . venv/bin/activate
             cd apidoc
             make html
             cd ..

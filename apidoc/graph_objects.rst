@@ -3,6 +3,13 @@ Graph objects: figures, traces and layout
 
 .. currentmodule:: plotly.graph_objects
 
+:mod:`plotly.graph_objects` contains the building blocks of plotly :class:`Figure`: traces
+(:class:`Scatter`, :class:`Bar`, ...) and :class:`Layout`
+::
+
+   >>> import plotly.graph_objects as go
+
+
 Classes
 
 .. autosummary::

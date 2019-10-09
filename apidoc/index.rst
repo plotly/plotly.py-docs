@@ -3,8 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to plotly's documentation!
-==================================
+plotly API reference
+====================
+
+This is the reference of plotly's API. Also see `plotly's documentation website <https://plot.ly/python>`_.
 
 .. toctree::
    :maxdepth: 2
@@ -12,6 +14,7 @@ Welcome to plotly's documentation!
 
    px.rst
    graph_objects.rst
+   subplots.rst
    figure_factory.rst
    io.rst
    colors.rst

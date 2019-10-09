@@ -1,5 +1,10 @@
-Plotly express
-==============
+Plotly express: `plotly.express`
+================================
+
+The `plotly.express <https://plot.ly/python/plotly-express/>`_ module is
+plotly's high-level API for rapid figure generation. ::
+
+   >>> import plotly.express as px
 
 .. currentmodule:: plotly.express
 

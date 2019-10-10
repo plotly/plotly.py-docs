@@ -72,10 +72,13 @@ jobs:
           name: make doc
           command: |
             . venv/bin/activate
-            pip install git+https://github.com/plotly/plotly.py#egg=plotly.py
-            cd apidoc
+            git clone https://github.com/plotly/plotly.py.git plotly-master
+            cd plotly-master/packages/python/plotly
+            pip install -e .
+            cd ../../../../apidoc
             make html
             cd ..
+            rm -rf plotly-master
 
 
       - store_artifacts:

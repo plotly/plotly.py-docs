@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/56
     language: python
-    layout: user-guide
+    layout: base
     name: Lines on Mapbox
     order: 1
     page_type: example_index

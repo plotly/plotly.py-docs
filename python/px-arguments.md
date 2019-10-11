@@ -39,7 +39,9 @@ jupyter:
 
 ## The different ways to call plotly express functions
 
-### Working with pandas DataFrame
+See also the [introduction to plotly express](./plotly-express).
+
+### pandas DataFrame input data
 
 `px` functions supports natively pandas DataFrame. Arguments can either be passed as dataframe columns, or as column names if the `data_frame` argument is provided.
 
@@ -69,7 +71,8 @@ In addition to columns, it is also possible to pass the index of a DataFrame as 
 ```python
 import plotly.express as px
 iris = px.data.iris()
-fig = px.scatter(iris, x=iris.sepal_length, y=iris.sepal_width, size=iris.petal_length, hover_data=[iris.index])
+fig = px.scatter(iris, x=iris.sepal_length, y=iris.sepal_width, size=iris.petal_length,
+                 hover_data=[iris.index])
 fig.show()
 ```
 
@@ -77,7 +80,7 @@ fig.show()
 
 In the addition to columns from the `data_frame` argument, one may also pass columns from a different DataFrame, *as long as all columns have the same width*. It is also possible to pass columns without passing the `data_frame` argument.
 
-However, column names are used only if they correspond to columns in the `data_frame` argument, in other cases, the name of the keyword argument is used.
+However, column names are used only if they correspond to columns in the `data_frame` argument, in other cases, the name of the keyword argument is used. As explained below, the `labels` argument can be used to set names.
 
 ```python
 import plotly.express as px
@@ -135,14 +138,15 @@ import plotly.express as px
 import numpy as np
 N = 10000
 np.random.seed(0)
-fig = px.density_contour(dict(effect_size=5 + np.random.randn(N), waiting_time=np.random.poisson(size=N)),
+fig = px.density_contour(dict(effect_size=5 + np.random.randn(N), 
+                              waiting_time=np.random.poisson(size=N)),
                          x="effect_size", y="waiting_time")
 fig.show()
 ```
 
 #### Integer column names
 
-When the `data_frame` argument is an array, column names are integer corresponding to the columns of the array. In this case, keyword names are used in axis, legend and hovers. This is also the case for a pandas DataFrame with integer column names. Use the `labels` argument to override these names.
+When the `data_frame` argument is a NumPy array, column names are integer corresponding to the columns of the array. In this case, keyword names are used in axis, legend and hovers. This is also the case for a pandas DataFrame with integer column names. Use the `labels` argument to override these names.
 
 ```python
 import numpy as np

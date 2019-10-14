@@ -40,7 +40,7 @@ jupyter:
 CSV or comma-delimited-values is a very popular format for storing structured data. In this tutorial, we will see how to plot beautiful graphs using csv data, and Pandas. We will learn how to import csv data from an external source (a url), and plot it using Plotly and pandas.
 
 First we import the data and look at it.
-
+In order to use ```pandas``` you need to install it on your machine. [Insruction on how to install Pandas] (https://pandas.pydata.org/pandas-docs/stable/install.html)
 ```python
 import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv')

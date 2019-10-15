@@ -22,17 +22,17 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.7.3
   plotly:
-    description: How to make Sunburst Charts.
+    description: How to make Treemap Charts.
     display_as: basic
     has_thumbnail: true
     language: python
     layout: base
-    name: Sunburst Charts
-    order: 6.1
+    name: Treemap Charts
+    order: 14
     page_type: u-guide
-    permalink: python/sunburst-charts/
-    thumbnail: thumbnail/sunburst.gif
-    title: Sunburst in Python | plotly
+    permalink: python/treemap-charts/
+    thumbnail: thumbnail/treemap.png
+    title: Treemap in Python | plotly
 ---
 
 ### Basic Treemap

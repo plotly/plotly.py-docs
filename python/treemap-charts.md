@@ -25,6 +25,7 @@ jupyter:
     description: How to make Treemap Charts.
     display_as: basic
     has_thumbnail: true
+    ipynb: ~notebook_demo/280/
     language: python
     layout: base
     name: Treemap Charts

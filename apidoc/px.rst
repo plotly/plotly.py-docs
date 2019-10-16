@@ -9,6 +9,9 @@ plotly's high-level API for rapid figure generation. ::
 .. currentmodule:: plotly.express
 
 .. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
     scatter
     scatter_3d
     scatter_polar
@@ -36,6 +39,4 @@ plotly's high-level API for rapid figure generation. ::
     density_heatmap
 
 
-.. automodule:: plotly.express
-   :members:
 

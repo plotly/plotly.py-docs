@@ -4,6 +4,8 @@ I/O
 .. currentmodule:: plotly.io
 
 .. autosummary::
+    :toctree: generated/
+    :template: function.rst
 
     to_image
     write_image

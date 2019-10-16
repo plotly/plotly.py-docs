@@ -4,6 +4,8 @@ Subplots: `plotly.subplots`
 .. currentmodule:: plotly.subplots
 
 .. autosummary::
+    :toctree: generated/
+    :template: function.rst
 
     make_subplots
 

@@ -4,6 +4,8 @@ Figure Factory
 .. currentmodule:: plotly.figure_factory
 
 .. autosummary::
+   :toctree: generated/
+   :template: function.rst
 
    create_2d_density
    create_annotated_heatmap
@@ -21,7 +23,4 @@ Figure Factory
    create_ternary_contour
    create_trisurf           
    create_violin
-
-.. automodule:: plotly.figure_factory
-   :members:
 

@@ -72,10 +72,7 @@ jobs:
           name: make doc
           command: |
             . venv/bin/activate
-            git clone https://github.com/plotly/plotly.py.git plotly-master
-            cd plotly-master/packages/python/plotly
-            pip install -e .
-            cd ../../../../apidoc
+            cd apidoc
             make html
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cd _build/html
@@ -90,7 +87,6 @@ jobs:
             fi
 
             cd ..
-            rm -rf plotly-master
 
 
       - store_artifacts:

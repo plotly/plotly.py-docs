@@ -68,7 +68,32 @@ jobs:
             tar -zcf build/html.tgz build/html
             rm -rf build/html build/ipynb
 
+      - run:
+          name: make doc
+          command: |
+            . venv/bin/activate
+            cd apidoc
+            make html
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              cd _build/html
+              git init
+              git config user.name nicolaskruchten
+              git config user.email nicolas@plot.ly
+              git add *
+              git commit -m build
+              git push --force git@github.com:plotly/plotly.py-docs.git master:gh-pages
+              rm -rf .git
+              cd ../..
+            fi
+
+            cd ..
+
 
       - store_artifacts:
           path: build
           destination: build
+     
+ 
+      - store_artifacts:
+          path: apidoc/_build/html
+          destination: apidoc

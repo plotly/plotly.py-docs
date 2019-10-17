@@ -97,7 +97,7 @@ fig.add_trace(go.Treemap(
 fig.show()
 ```
 
-### Set Color of Sectors
+### Set Color of Treemap Sectors
 
 There are three different ways to change the color of the sectors in Treemap:
  1) [marker.colors](https://plot.ly/javascript/reference/#treemap-marker-colors), 2) [colorway](https://plot.ly/javascript/reference/#treemap-colorway), 3) [colorscale](https://plot.ly/javascript/reference/#treemap-colorscale). The following examples show how to use each of them. 
@@ -111,7 +111,7 @@ parents = ["", "A1", "A2", "A3", "A4", "", "B1"]
 fig = go.Figure(go.Treemap(
     labels = labels,
     parents = parents,
-    marker = {'colors': ["pink", "royalblue", "lightgray", "purple", "cyan", "lightgray", "lightblue"]}))
+    marker_colors = ["pink", "royalblue", "lightgray", "purple", "cyan", "lightgray", "lightblue"]))
 
 fig.show()
 ```
@@ -145,14 +145,14 @@ fig = go.Figure(go.Treemap(
     labels = labels,
     values = values,
     parents = parents,
-    marker = {"colorscale": "Blues"}))
+    marker_colorscale = 'Blues'))
 
 fig.show()
 ```
 
 ### Nested Layers in Treemap
 
-The following example uses hierarchical data that includes layers and grouping. Treemap and [Sunburst](https://plot.ly/python/sunburst-charts/) charts reveal insights into the data, and the format of your hierarchical data. 
+The following example uses hierarchical data that includes layers and grouping. Treemap and [Sunburst](https://plot.ly/python/sunburst-charts/) charts reveal insights into the data, and the format of your hierarchical data. [maxdepth](https://plot.ly/python/reference/#treemap-maxdepth) attribute sets the number of rendered sectors from the given level. 
 
 ```python
 import plotly.graph_objects as go 
@@ -181,7 +181,7 @@ fig.add_trace(
         ids = df2.ids,
         labels = df2.labels,
         parents = df2.parents,
-        maxdepth = 2),
+        maxdepth = 3),
     col = 2, row = 1)
 
 fig.update_layout(

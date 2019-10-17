@@ -1,3 +1,5 @@
+.. _subplots:
+
 Subplots: `plotly.subplots`
 ===========================
 

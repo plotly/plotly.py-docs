@@ -1,3 +1,5 @@
+.. _ff:
+
 Figure Factory
 ==============
 

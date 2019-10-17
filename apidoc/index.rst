@@ -11,22 +11,18 @@ This is the reference of plotly's API. Also see `plotly's documentation website 
 Submodules
 ----------
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Contents:
 
-   px.rst
-   graph_objects.rst
-   subplots.rst
-   figure_factory.rst
-   io.rst
+* :ref:`Plotly express <px>`
+* :ref:`Graph objects: figures, traces and layout <graph-objects>`
+* :ref:`Subplots <subplots>`
+* :ref:`Figure Factory <ff>`
+* :ref:`I/O <io>`
 
 Full reference list
 -------------------
 
 .. toctree::
    :maxdepth: 3
-   :caption: Contents:
 
    px.rst
    graph_objects.rst

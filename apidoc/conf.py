@@ -93,7 +93,11 @@ html_theme = "alabaster"
 # documentation.
 #
 html_theme_options = {
-        'analytics_id':'UA-39373211-1'
+        #'nosidebar': True,
+        'analytics_id':'UA-39373211-1',
+        'logo':'logo.png',
+        'page_width': '70%',
+        'sidebar_width':'15%'
         }
 
 # Add any paths that contain custom static files (such as style sheets) here,

@@ -1,3 +1,5 @@
+.. _px:
+
 Plotly express: `plotly.express`
 ================================
 

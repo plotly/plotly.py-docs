@@ -1,3 +1,5 @@
+.. _graph-objects:
+
 Graph objects: figures, traces and layout
 =========================================
 

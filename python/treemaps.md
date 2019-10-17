@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,93 +20,176 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
-    description: How to make interactive treemap in Python with Plotly and Squarify.
-      An examples of a treemap in Plotly using Squarify.
-    display_as: statistical
+    description: How to make Treemap Charts with Plotly
+    display_as: basic
     has_thumbnail: true
-    ipynb: ~notebook_demo/29
+    ipynb: ~notebook_demo/280/
     language: python
     layout: base
-    name: Treemaps
-    order: 11
+    name: Treemap Charts
+    order: 14
     page_type: u-guide
     permalink: python/treemaps/
-    thumbnail: thumbnail/treemap.jpg
-    title: Python Treemaps | plotly
-    v4upgrade: true
+    thumbnail: thumbnail/treemap.png
+    title: Treemap in Python | plotly
 ---
 
-#### Simple Example with Plotly and [Squarify](https://pypi.python.org/pypi/squarify)
-Define the coordinate system for the returned rectangles: these values will range from x to x + width and y to y + height.
-Then define your treemap values. The sum of the treemap values must equal the total area to be laid out (i.e. width `*` height). The values must be sorted in descending order and must be positive.
+### Basic Treemap
+
+[Treemap charts](https://en.wikipedia.org/wiki/Treemapping) visualize hierarchical data using nested rectangles. Same as [Sunburst](https://plot.ly/python/sunburst-charts/) the hierarchy is defined by [labels](https://plot.ly/python/reference/#treemap-labels) and [parents]((https://plot.ly/python/reference/#treemap-parents)) attributes. Click on one sector to zoom in/out, which also displays a pathbar in the upper-left corner of your treemap. To zoom out you can use the path bar as well.
 
 ```python
 import plotly.graph_objects as go
 
-import squarify
-
-fig = go.Figure()
-
-x = 0.
-y = 0.
-width = 100.
-height = 100.
-
-values = [500, 433, 78, 25, 25, 7]
-
-normed = squarify.normalize_sizes(values, width, height)
-rects = squarify.squarify(normed, x, y, width, height)
-
-# Choose colors from http://colorbrewer2.org/ under "Export"
-color_brewer = ['rgb(166,206,227)','rgb(31,120,180)','rgb(178,223,138)',
-                'rgb(51,160,44)','rgb(251,154,153)','rgb(227,26,28)']
-shapes = []
-annotations = []
-counter = 0
-
-for r, val, color in zip(rects, values, color_brewer):
-    shapes.append(
-        dict(
-            type = 'rect',
-            x0 = r['x'],
-            y0 = r['y'],
-            x1 = r['x']+r['dx'],
-            y1 = r['y']+r['dy'],
-            line = dict( width = 2 ),
-            fillcolor = color
-        )
-    )
-    annotations.append(
-        dict(
-            x = r['x']+(r['dx']/2),
-            y = r['y']+(r['dy']/2),
-            text = val,
-            showarrow = False
-        )
-    )
-
-# For hover text
-fig.add_trace(go.Scatter(
-    x = [ r['x']+(r['dx']/2) for r in rects ],
-    y = [ r['y']+(r['dy']/2) for r in rects ],
-    text = [ str(v) for v in values ],
-    mode = 'text',
+fig = go.Figure(go.Treemap(
+    labels = ["Eve","Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+    parents = ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"]
 ))
 
+fig.show()
+```
+
+### Set Different Attributes in Treemap
+
+This example uses the following attributes:
+
+ 1. [values](https://plot.ly/python/reference/#treemap-values): sets the values associated with each of the sectors.
+ 2. [textinfo](https://plot.ly/python/reference/#treemap-textinfo): determines which trace information appear on the graph that can be 'text', 'value', 'current path', 'percent root', 'percent entry', and 'percent parent', or any combination of them.  
+ 3. [pathbar](https://plot.ly/python/reference/#treemap-pathbar): a main extra feature of treemap to display the current path of the visible portion of the hierarchical map. It may also be useful for zooming out of the graph.
+ 4. [branchvalues](https://plot.ly/python/reference/#treemap-branchvalues): determines how the items in `values` are summed. When set to "total", items in `values` are taken to be value of all its descendants. In the example below Eva = 65, which is equal to 14 + 12 + 10 + 2 + 6 + 6 + 1 + 4. 
+When set to "remainder", items in `values` corresponding to the root and the branches sectors are taken to be the extra part not part of the sum of the values at their leaves.
+
+```python
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+labels = ["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"]
+parents = ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"]
+
+fig = make_subplots(
+    cols = 2, rows = 1,
+    column_widths = [0.4, 0.4],
+    subplot_titles = ('branchvalues: <b>remainder<br />&nbsp;<br />', 'branchvalues: <b>total<br />&nbsp;<br />'),
+    specs = [[{'type': 'treemap', 'rowspan': 1}, {'type': 'treemap'}]]    
+)
+
+fig.add_trace(go.Treemap(
+    labels = labels,
+    parents = parents,
+    values =  [10, 14, 12, 10, 2, 6, 6, 1, 4],
+    textinfo = "label+value+percent parent+percent entry+percent root",
+    ), 
+              row = 1, col = 1)
+
+fig.add_trace(go.Treemap(
+    branchvalues = "total",
+    labels = labels,
+    parents = parents,
+    values = [65, 14, 12, 10, 2, 6, 6, 1, 4],
+    textinfo = "label+value+percent parent+percent entry",
+    outsidetextfont = {"size": 20, "color": "darkblue"},
+    marker = {"line": {"width": 2}},
+    pathbar = {"visible": False}),
+              row = 1, col = 2)
+
+fig.show()
+```
+
+### Set Color of Treemap Sectors
+
+There are three different ways to change the color of the sectors in Treemap:
+ 1) [marker.colors](https://plot.ly/javascript/reference/#treemap-marker-colors), 2) [colorway](https://plot.ly/javascript/reference/#treemap-colorway), 3) [colorscale](https://plot.ly/javascript/reference/#treemap-colorscale). The following examples show how to use each of them. 
+
+```python
+import plotly.graph_objects as go
+
+labels = ["A1", "A2", "A3", "A4", "A5", "B1", "B2"]
+parents = ["", "A1", "A2", "A3", "A4", "", "B1"]
+
+fig = go.Figure(go.Treemap(
+    labels = labels,
+    parents = parents,
+    marker_colors = ["pink", "royalblue", "lightgray", "purple", "cyan", "lightgray", "lightblue"]))
+
+fig.show()
+```
+
+This example uses `treemapcolorway` attribute, which should be set in layout. 
+
+```python
+import plotly.graph_objects as go
+
+labels = ["A1", "A2", "A3", "A4", "A5", "B1", "B2"]
+parents = ["", "A1", "A2", "A3", "A4", "", "B1"]
+
+fig = go.Figure(go.Treemap(
+    labels = labels,
+    parents = parents
+))
+
+fig.update_layout(treemapcolorway = ["pink", "lightgray"])
+
+fig.show()
+```
+
+```python
+import plotly.graph_objects as go
+
+values = ["11", "12", "13", "14", "15", "20", "30"]
+labels = ["A1", "A2", "A3", "A4", "A5", "B1", "B2"]
+parents = ["", "A1", "A2", "A3", "A4", "", "B1"]
+
+fig = go.Figure(go.Treemap(
+    labels = labels,
+    values = values,
+    parents = parents,
+    marker_colorscale = 'Blues'))
+
+fig.show()
+```
+
+### Nested Layers in Treemap
+
+The following example uses hierarchical data that includes layers and grouping. Treemap and [Sunburst](https://plot.ly/python/sunburst-charts/) charts reveal insights into the data, and the format of your hierarchical data. [maxdepth](https://plot.ly/python/reference/#treemap-maxdepth) attribute sets the number of rendered sectors from the given level. 
+
+```python
+import plotly.graph_objects as go 
+from plotly.subplots import make_subplots
+
+import pandas as pd
+
+df1 = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/sunburst-coffee-flavors-complete.csv')
+df2 = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/coffee-flavors.csv')
+
+fig = make_subplots(
+    rows = 1, cols = 2,
+    column_widths = [0.4, 0.4],
+    specs = [[{'type': 'treemap', 'rowspan': 1}, {'type': 'treemap'}]]
+)
+
+fig.add_trace(
+    go.Treemap(
+        ids = df1.ids,
+        labels = df1.labels,
+        parents = df1.parents),
+    col = 1, row = 1)
+
+fig.add_trace(
+    go.Treemap(
+        ids = df2.ids,
+        labels = df2.labels,
+        parents = df2.parents,
+        maxdepth = 3),
+    col = 2, row = 1)
+
 fig.update_layout(
-    height=700,
-    width=700,
-    xaxis=dict(showgrid=False,zeroline=False),
-    yaxis=dict(showgrid=False,zeroline=False),
-    shapes=shapes,
-    annotations=annotations,
-    hovermode='closest'
+    margin = {'t':0, 'l':0, 'r':0, 'b':0}
 )
 
 fig.show()
 ```
 
 #### Reference
-See https://plot.ly/python/reference/ for more information and chart attribute options or https://pypi.python.org/pypi/squarify for more information about squarify!
+See https://plot.ly/python/reference/#treemap for more information and chart attribute options!

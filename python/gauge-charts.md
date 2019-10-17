@@ -45,15 +45,15 @@ A radial gauge chart has a circular arc, which displays a single value to estima
   The bar shows the target value, and the shading represents the progress toward that goal. Gauge charts, known as
   speedometer charts as well. This chart type is usually used to illustrate key business indicators.
 
-  The example below displays a basic gauge chart with default attributes. For more information about different added attributes check [indicator](https://plot.ly/javascript/indicator/) tutorial.
+  The example below displays a basic gauge chart with default attributes. For more information about different added attributes check [indicator](https://plot.ly/python/indicator/) tutorial.
 
 ```python
 import plotly.graph_objects as go
 
 fig = go.Figure(go.Indicator(
-    mode = "gauge+number", 
-    value = 270, 
-    domain = {'x': [0, 1], 'y': [0, 1]}, 
+    mode = "gauge+number",
+    value = 270,
+    domain = {'x': [0, 1], 'y': [0, 1]},
     title = {'text': "Speed"}))
 
 fig.show()
@@ -67,44 +67,44 @@ The following examples include "steps" attribute shown as shading inside the rad
 import plotly.graph_objects as go
 
 fig = go.Figure(go.Indicator(
-    domain = {'x': [0, 1], 'y': [0, 1]}, 
-    value = 450, 
+    domain = {'x': [0, 1], 'y': [0, 1]},
+    value = 450,
     mode = "gauge+number+delta",
     title = {'text': "Speed"},
-    delta = {'reference': 380}, 
-    gauge = {'axis': {'range': [None, 500]}, 
+    delta = {'reference': 380},
+    gauge = {'axis': {'range': [None, 500]},
              'steps' : [
-                 {'range': [0, 250], 'color': "lightgray"}, 
-                 {'range': [250, 400], 'color': "gray"}], 
+                 {'range': [0, 250], 'color': "lightgray"},
+                 {'range': [250, 400], 'color': "gray"}],
              'threshold' : {'line': {'color': "red", 'width': 4}, 'thickness': 0.75, 'value': 490}}))
 
 fig.show()
 ```
 
 #### Custom Gauge Chart
-The following example shows how to style your gauge charts. For more information about all possible options check our [reference page](https://plot.ly/javascript/reference/#indicator).
+The following example shows how to style your gauge charts. For more information about all possible options check our [reference page](https://plot.ly/python/reference/#indicator).
 
 ```python
 import plotly.graph_objects as go
 
 fig = go.Figure(go.Indicator(
-    mode = "gauge+number+delta", 
-    value = 420, 
-    domain = {'x': [0, 1], 'y': [0, 1]}, 
-    title = {'text': "Speed", 'font': {'size': 24}}, 
+    mode = "gauge+number+delta",
+    value = 420,
+    domain = {'x': [0, 1], 'y': [0, 1]},
+    title = {'text': "Speed", 'font': {'size': 24}},
     delta = {'reference': 400, 'increasing': {'color': "RebeccaPurple"}},
     gauge = {
         'axis': {'range': [None, 500], 'tickwidth': 1, 'tickcolor': "darkblue"},
-        'bar': {'color': "darkblue"}, 
-        'bgcolor': "white", 
-        'borderwidth': 2, 
-        'bordercolor': "gray", 
+        'bar': {'color': "darkblue"},
+        'bgcolor': "white",
+        'borderwidth': 2,
+        'bordercolor': "gray",
         'steps': [
-            {'range': [0, 250], 'color': 'cyan'}, 
+            {'range': [0, 250], 'color': 'cyan'},
             {'range': [250, 400], 'color': 'royalblue'}],
         'threshold': {
-            'line': {'color': "red", 'width': 4}, 
-            'thickness': 0.75, 
+            'line': {'color': "red", 'width': 4},
+            'thickness': 0.75,
             'value': 490}}))
 
 fig.update_layout(paper_bgcolor = "lavender", font = {'color': "darkblue", 'family': "Arial"})

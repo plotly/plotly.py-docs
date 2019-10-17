@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.6.8
   plotly:
     description: How to make scatter plots on Mapbox maps in Python.
     display_as: maps
@@ -192,6 +192,37 @@ fig.update_layout(
         style='light'
     ),
 )
+
+fig.show()
+```
+
+### Set Marker Symbols 
+
+You can define a symbol on your map by setting [symbol](https://plot.ly/python/reference/#scattermapbox-marker-symbol) attribute. This attribute only works on Mapbox-provided `style`s: 
+- basic
+- streets
+- outdoors
+- light
+- dark
+- satellite
+- satellite-streets
+
+```python
+import plotly.graph_objects as go
+
+token = open(".mapbox_token").read() # you need your own token
+
+fig = go.Figure(go.Scattermapbox(
+    mode = "markers+text+lines",
+    lon = [-75, -80, -50], lat = [45, 20, -20], 
+    marker = {'size': 20, 'symbol': ["bus", "harbor", "airport"]},
+    text = ["Bus", "Harbor", "airport"],textposition = "bottom right"))
+
+fig.update_layout(
+    mapbox = {
+        'accesstoken': token,
+        'style': "outdoors", 'zoom': 0.7},
+    showlegend = False)
 
 fig.show()
 ```

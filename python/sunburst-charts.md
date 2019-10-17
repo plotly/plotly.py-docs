@@ -45,6 +45,14 @@ Main arguments:
 3. **values**: sets the values associated with sunburst sectors, determining their width (See the "Branchvalues" section below for different modes for setting the width).
 
 
+Sunburst plots visualize hierarchical data spanning outwards radially from root to leaves. The sunburst sector hierarchy is determined by the entries in `labels` and in `parents`. The root starts from the center and children are added to the outer rings.
+
+Main arguments:
+1. `labels`: sets the labels of sunburst sectors.
+2. `parents`: sets the parent sectors of sunburst sectors. An empty string `''` is used for the root node in the hierarchy. In this example, the root is "Eve".
+3. `values`: sets the values associated with sunburst sectors, determining their width (See the `branchvalues` section below for different modes for setting the width).
+
+
 ```python
 import plotly.graph_objects as go
 

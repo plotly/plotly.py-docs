@@ -9,118 +9,111 @@ Graph objects: figures, traces and layout
 
    >>> import plotly.graph_objects as go
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Figure:
 
-Classes
+   figure.rst
+
+
+Layout
+------
 
 .. autosummary::
    :toctree: generated/
-   :template: class_figure.rst
-   
-   Figure
+   :template: trace.rst
+
+   Layout
+
+
+
+Simple charts
+--------------
 
 .. autosummary::
    :toctree: generated/
-   :template: class.rst
+   :template: trace.rst
 
-   Area
+   Scatter
+   Scattergl
    Bar
-   Barpolar
-   Box
-   Candlestick
-   Carpet
-   Choropleth
-   Choroplethmapbox
-   Cone
-   Contour
-   Contourcarpet
-   Densitymapbox
-   FigureWidget
-   Frame
-   Funnel
-   Funnelarea
+   Pie
    Heatmap
-   Heatmapgl
+   Contour
+   Table
+
+Distributions
+-------------
+
+.. autosummary::
+   :toctree: generated/
+   :template: trace.rst
+
+   Box
+   Violin
    Histogram
    Histogram2d
-   Histogram2dContour
-   Indicator
-   Isosurface
-   Layout
-   Mesh3d
-   Ohlc
-   Parcats
-   Parcoords
-   Pie
-   Pointcloud
-   Sankey
-   Scatter
-   Scatter3d
-   Scattercarpet
-   Scattergeo
-   Scattergl
-   Scattermapbox
-   Scatterpolar
-   Scatterpolargl
-   Scatterternary
-   Splom
-   Streamtube
-   Sunburst
-   Surface
-   Table
-   Violin
-   Volume
-   Waterfall
+   Histogram2dcontour
 
-
-Submodules
-
+Finance
+-------
 
 .. autosummary::
+   :toctree: generated/
+   :template: trace.rst
 
-   area
-   bar
-   barpolar
-   box
-   candlestick
-   carpet
-   choropleth
-   choroplethmapbox
-   cone
-   contour
-   contourcarpet
-   densitymapbox
-   funnel
-   funnelarea
-   heatmap
-   heatmapgl
-   histogram
-   histogram2d
-   histogram2dcontour
-   indicator
-   isosurface
-   layout
-   mesh3d
-   ohlc
-   parcats
-   parcoords
-   pie
-   pointcloud
-   sankey
-   scatter
-   scatter3d
-   scattercarpet
-   scattergeo
-   scattergl
-   scattermapbox
-   scatterpolar
-   scatterpolargl
-   scatterternary
-   splom
-   streamtube
-   sunburst
-   surface
-   table
-   violin
-   volume
-   waterfall
+   Ohlc
+   Candlestick
+   Waterfall
+   Funnel
+   Funnelarea
+   Indicator
 
+3D
+--
+
+.. autosummary::
+   :toctree: generated/
+   :template: trace.rst
+
+   Scatter3d
+   Surface
+   Mesh3d
+   Cone
+   Streamtube
+   Volume
+   Isosurface
+
+Maps
+----
+
+.. autosummary::
+   :toctree: generated/
+   :template: trace.rst
+
+   Scattergeo
+   Choropleth
+   Scattermapbox
+   Choroplethmapbox
+   Densitymapbox
+
+Specialized
+-----------
+
+.. autosummary::
+   :toctree: generated/
+   :template: trace.rst
+
+   Scatterpolar
+   Scatterpolargl
+   Barpolar
+   Scatterternary
+   Sunburst
+   Treemap
+   Sankey
+   Splom
+   Parcats
+   Parcoords
+   Carpet
+   Scattercarpet
+   Contourcarpet

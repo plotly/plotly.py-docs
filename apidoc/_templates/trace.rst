@@ -1,5 +1,5 @@
 :mod:`{{module}}`.{{objname}}
-{{ underline }}==============
+{{ underline }}
 
 
 .. currentmodule:: {{ module }}
@@ -8,18 +8,19 @@
 
    {% block methods %}
    .. automethod:: __init__
-   .. automethod:: show
-   .. automethod:: update_layout
-   .. automethod:: add_traces
    {% endblock %}
 
-Other methods
-{{ underline }}==============
+
+:mod:`{{module}}`.{{objname.lower()}}
+{{ underline }}
 
 .. autosummary::
    :toctree: generated/
    
-   plotly.graph_objects.{{ objname }}
+   plotly.graph_objects.{{ objname.lower() }}
+
+.. automodule:: plotly.graph_objects.{{ objname.lower() }}
+   :members:
 
 
 .. raw:: html

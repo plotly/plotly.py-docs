@@ -8,8 +8,11 @@ plotly API reference
 
 This is the reference of plotly's API. Also see `plotly's documentation website <https://plot.ly/python>`_.
 
+Submodules
+----------
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    px.rst
@@ -17,7 +20,19 @@ This is the reference of plotly's API. Also see `plotly's documentation website 
    subplots.rst
    figure_factory.rst
    io.rst
-   colors.rst
+
+Full reference list
+-------------------
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Contents:
+
+   px.rst
+   graph_objects.rst
+   subplots.rst
+   figure_factory.rst
+   io.rst
 
 
 

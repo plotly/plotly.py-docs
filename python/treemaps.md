@@ -38,7 +38,7 @@ jupyter:
 
 ### Basic Treemap
 
-[Treemap charts](https://en.wikipedia.org/wiki/Treemapping) visualize hierarchical data using nested rectangles. Same as [Sunburst](https://plot.ly/python/sunburst-charts/) the hierarchy is defined by [labels](https://plot.ly/python/reference/#treemap-labels) and [parents]((https://plot.ly/python/reference/#treemap-parents)) attributes. Click on one sector to zoom in, which also displays a pathbar in the upper-left corner of your treemap, and to zoom out click on the path bar.
+[Treemap charts](https://en.wikipedia.org/wiki/Treemapping) visualize hierarchical data using nested rectangles. Same as [Sunburst](https://plot.ly/python/sunburst-charts/) the hierarchy is defined by [labels](https://plot.ly/python/reference/#treemap-labels) and [parents]((https://plot.ly/python/reference/#treemap-parents)) attributes. Click on one sector to zoom in/out, which also displays a pathbar in the upper-left corner of your treemap. To zoom out you can use the path bar as well.
 
 ```python
 import plotly.graph_objects as go
@@ -71,7 +71,7 @@ parents = ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"]
 fig = make_subplots(
     cols = 2, rows = 1,
     column_widths = [0.4, 0.4],
-    subplot_titles = ('branchvalues: <b>remainder</b>', 'branchvalues: <b>total</b>'),
+    subplot_titles = ('branchvalues: <b>remainder<br />&nbsp;<br />', 'branchvalues: <b>total<br />&nbsp;<br />'),
     specs = [[{'type': 'treemap', 'rowspan': 1}, {'type': 'treemap'}]]    
 )
 
@@ -80,7 +80,7 @@ fig.add_trace(go.Treemap(
     parents = parents,
     values =  [10, 14, 12, 10, 2, 6, 6, 1, 4],
     textinfo = "label+value+percent parent+percent entry+percent root",
-    pathbar = {"visible": False}), 
+    ), 
               row = 1, col = 1)
 
 fig.add_trace(go.Treemap(

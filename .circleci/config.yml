@@ -77,6 +77,18 @@ jobs:
             pip install -e .
             cd ../../../../apidoc
             make html
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              cd _build/html
+              git init
+              git config user.name nicolaskruchten
+              git config user.email nicolas@plot.ly
+              git add *
+              git commit -m build
+              git push --force git@github.com:plotly/plotly.py-docs.git master:gh-pages
+              rm -rf .git
+              cd ../..
+            fi
+
             cd ..
             rm -rf plotly-master
 

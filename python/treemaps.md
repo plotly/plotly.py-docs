@@ -38,7 +38,7 @@ jupyter:
 
 ### Basic Treemap
 
-[Treemap charts](https://en.wikipedia.org/wiki/Treemapping) visualize hierarchical data using nested rectangles. Same as [Sunburst](https://plot.ly/python/sunburst-charts/) the hierarchy is defined by [labels](https://plot.ly/python/reference/#treemap-labels) and [parents]((https://plot.ly/python/reference/#treemap-parents)) attributes. Click on one sector to zoom in/out, which also displays a pathbar in the upper-left corner of your treemap. To zoom out you can use the path bar as well.
+[Treemap charts](https://en.wikipedia.org/wiki/Treemapping) visualize hierarchical data using nested rectangles. Same as [Sunburst](https://plot.ly/python/sunburst-charts/) the hierarchy is defined by [labels](https://plot.ly/python/reference/#treemap-labels) and [parents](https://plot.ly/python/reference/#treemap-parents) attributes. Click on one sector to zoom in/out, which also displays a pathbar in the upper-left corner of your treemap. To zoom out you can use the path bar as well.
 
 ```python
 import plotly.graph_objects as go
@@ -100,7 +100,7 @@ fig.show()
 ### Set Color of Treemap Sectors
 
 There are three different ways to change the color of the sectors in Treemap:
- 1) [marker.colors](https://plot.ly/javascript/reference/#treemap-marker-colors), 2) [colorway](https://plot.ly/javascript/reference/#treemap-colorway), 3) [colorscale](https://plot.ly/javascript/reference/#treemap-colorscale). The following examples show how to use each of them. 
+ 1) [marker.colors](https://plot.ly/python/reference/#treemap-marker-colors), 2) [colorway](https://plot.ly/python/reference/#treemap-colorway), 3) [colorscale](https://plot.ly/python/reference/#treemap-colorscale). The following examples show how to use each of them. 
 
 ```python
 import plotly.graph_objects as go

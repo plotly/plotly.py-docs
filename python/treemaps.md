@@ -50,6 +50,27 @@ fig = go.Figure(go.Treemap(
 
 fig.show()
 ```
+### Basic Treemap with values and adjusted text styles
+
+This example demonstrate how to add values to the treemap and adjusted the text font size and textinfo for displaying the results.
+The text will be larger and centered in the treemap. The next section explains the attributes you can use for Treemap.
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Treemap(
+    values = [0, 5, 20, 4, 2, 1], # treemap value for CS class
+    labels = ["CS Class", "A student","B student", "C student", "D student", "F student"],
+    parents = ["", "CS Class", "CS Class", "CS Class", "CS Class", "CS Class"],
+    textposition='middle center', # center the text
+    textinfo = "label+percent parent", # show label and its percentage among the whole treemap
+    textfont=dict(
+        size=15 # adjust small text to larger text
+    )
+))
+
+fig.show()
+```
 
 ### Set Different Attributes in Treemap
 

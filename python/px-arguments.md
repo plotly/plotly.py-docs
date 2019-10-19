@@ -29,8 +29,8 @@ jupyter:
     language: python
     layout: user-guide
     name: Plotly Express Arguments
-    order: 1
-    page_type: example_index
+    order: 17
+    page_type: u-guide
     permalink: python/px-arguments/
     thumbnail: thumbnail/plotly-express.png
     title: Plotly Express Arguments
@@ -78,7 +78,7 @@ fig.show()
 
 ### Columns not in the data_frame argument
 
-In the addition to columns from the `data_frame` argument, one may also pass columns from a different DataFrame, *as long as all columns have the same width*. It is also possible to pass columns without passing the `data_frame` argument.
+In the addition to columns from the `data_frame` argument, one may also pass columns from a different DataFrame, *as long as all columns have the same length*. It is also possible to pass columns without passing the `data_frame` argument.
 
 However, column names are used only if they correspond to columns in the `data_frame` argument, in other cases, the name of the keyword argument is used. As explained below, the `labels` argument can be used to set names.
 

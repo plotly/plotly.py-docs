@@ -39,7 +39,7 @@ jupyter:
 
 ## 3D scatter plot with plotly express
 
-Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `px.scatter`, the 3D function `px.scatter_3d` plots individual data in three-dimensional space. Note that [Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html) such as the ones defined in ``px.data``.
+Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `px.scatter`, the 3D function `px.scatter_3d` plots individual data in three-dimensional space. 
 
 ```python
 import plotly.express as px

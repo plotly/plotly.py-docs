@@ -42,9 +42,8 @@ A [box plot](https://en.wikipedia.org/wiki/Box_plot) is a statistical representa
 
 ## Box Plot with plotly express
 
-[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). In a box plot created by `px.box`, the distribution of the column given as `y` argument is represented.
+In a box plot created by `px.box`, the distribution of the column given as `y` argument is represented.
 
-If your data are not available as a tidy dataframe, you can use ``go.Box`` as [described below](https://plot.ly/python/box-plots/#box-plot-with-go.Box).
 
 ```python
 import plotly.express as px

@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: Plotly Express is a terse, consistent, high-level API for rapid data
       exploration and figure generation.
@@ -44,7 +44,7 @@ Plotly Express is a terse, consistent, high-level wrapper around `plotly.graph_o
 
 **Note**: Plotly Express was previously its own separately-installed `plotly_express` package but is now part of `plotly`!
 
-This notebook demonstrates various `plotly.express` features. [Reference documentation](https://plotly.github.io/plotly_express/plotly_express/) is also available.
+This notebook demonstrates various `plotly.express` features. [Reference documentation](https://plotly.github.io/plotly_express/plotly_express/) is also available, as well as a [tutorial on input argument types](./px-arguments).
 
 You can also read our original [Medium announcement article](https://medium.com/@plotlygraphs/introducing-plotly-express-808df010143d) for more information on this library.
 

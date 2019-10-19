@@ -80,6 +80,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
+default_role = "literal"
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -97,7 +98,7 @@ html_theme_options = {
         'analytics_id':'UA-39373211-1',
         'logo':'logo.png',
         'page_width': '70%',
-        'sidebar_width':'15%'
+        'sidebar_width':'20%'
         }
 
 # Add any paths that contain custom static files (such as style sheets) here,

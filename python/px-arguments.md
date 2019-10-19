@@ -27,7 +27,7 @@ jupyter:
     has_thumbnail: true
     ipynb: ~notebook_demo/253
     language: python
-    layout: user-guide
+    layout: base
     name: Plotly Express Arguments
     order: 17
     page_type: u-guide

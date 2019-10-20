@@ -17,3 +17,4 @@ requests
 networkx
 squarify
 scikit-image
+jupyterlab-jupytext

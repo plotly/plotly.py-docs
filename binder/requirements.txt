@@ -1,5 +1,4 @@
 jupytext
-jupyterlab>=1.0
 plotly==4.2.0
 jupyter
 notebook

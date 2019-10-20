@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Install a JupyterLab extension for demonstration purposes
-jupyter lab build
-jupyter labextension install jupyterlab-jupytext

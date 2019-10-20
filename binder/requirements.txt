@@ -13,4 +13,3 @@ psutil
 requests
 networkx
 scikit-image
-jupyterlab-jupytext

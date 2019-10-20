@@ -8,7 +8,6 @@ scipy==1.1.0
 patsy==0.5.1
 numpy==1.16.0
 plotly-geo
-python-igraph
 psutil
 requests
 networkx

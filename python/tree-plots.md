@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to make interactive tree-plot in Python with Plotly. An examples
       of a tree-plot in Plotly.
@@ -40,6 +40,10 @@ jupyter:
 #### Set Up Tree with [igraph](http://igraph.org/python/)
 
 Install igraph with `pip install python-igraph`.
+
+```python
+!pip install python-igraph
+```
 
 ```python
 import igraph

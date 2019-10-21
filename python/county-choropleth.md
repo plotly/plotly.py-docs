@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to create colormaped representations of USA counties by FIPS
       values in Python.
@@ -37,16 +37,15 @@ jupyter:
     title: Python USA County Choropleth Maps | Plotly
 ---
 
-<!-- #region -->
 #### Required Packages
 `geopandas`, `pyshp` and `shapely` must be installed for this figure factory.
 
 Run the following commands to install the correct versions of the following modules:
 
-```
-pip install geopandas==0.3.0
-pip install pyshp==1.2.10
-pip install shapely==1.6.3
+```python
+!pip install geopandas==0.3.0
+!pip install pyshp==1.2.10
+!pip install shapely==1.6.3
 ```
 
 If you are using Windows, follow this post to properly install geopandas and dependencies: http://geoffboeing.com/2014/09/using-geopandas-windows/. If you are using Anaconda, do not use PIP to install the packages above. Instead use conda to install them:
@@ -55,7 +54,6 @@ If you are using Windows, follow this post to properly install geopandas and dep
 conda install plotly
 conda install geopandas
 ```
-<!-- #endregion -->
 
 #### FIPS and Values
 Every US state and county has an assined ID regulated by the US Federal Government under the term FIPS (Federal Information Processing Standards) codes. There are state codes and county codes: the 2016 state and county FIPS codes can be found at the [US Census Website](https://www.census.gov/geographies/reference-files/2016/demo/popest/2016-fips.html).

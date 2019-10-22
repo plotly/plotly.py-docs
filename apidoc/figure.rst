@@ -15,3 +15,7 @@ Figure
 
 .. autoclass:: Figure
    :members:
+   :inherited-members:
+
+
+:ref:`base figure <base>`

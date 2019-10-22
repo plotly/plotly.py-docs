@@ -302,7 +302,9 @@ fig.update_layout(
     margin={"l": 0, "r": 0, "t": 0, "b": 0},
 )
 
-fig.show()
+# Disable the autosize on double click because it adds unwanted margins around the image
+# More detail: https://plot.ly/python/configuration-options/
+fig.show(config={'doubleClick': 'reset'})
 ```
 
 #### Reference

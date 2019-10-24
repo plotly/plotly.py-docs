@@ -104,5 +104,99 @@ fig.update_yaxes(hoverformat=".2f")
 fig.show()
 ```
 
+### Customize tooltip text with a hovertemplate
+
+To customize the tooltip on your graph you can use [hovertemplate](https://plot.ly/python/reference/#pie-hovertemplate), which is a template string used for rendering the information that appear on hoverbox. 
+This template string can include `variables` in %{variable} format, `numbers` in [d3-format's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_forma), and `date` in [d3-time-fomrat's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format).
+Hovertemplate customize the tooltip text vs. [texttemplate](https://plot.ly/python/reference/#pie-texttemplate) which customizes the text that appears on your chart. 
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Pie(
+    name = "", 
+    values = [2, 5, 3, 2.5],
+    labels = ["R", "Python", "Java Script", "Matlab"],
+    text = ["textA", "TextB", "TextC", "TextD"],
+    hovertemplate = "%{label}: <br>Popularity: %{percent} </br> %{text}"
+))
+
+fig.show()
+```
+
+### Format Hover Template
+
+```python
+import plotly.io as pio
+import plotly.express as px
+
+df = px.data.gapminder()
+A = []
+B = []
+
+for i in range(5):
+    A = {'target': df['continent'][[i]].unique()}
+    B.append(A)
+
+data = [{
+    'type': 'scatter',
+    'mode': 'markers',
+    'x': df['lifeExp'],
+    'y': df['gdpPercap'],
+    'text': df['continent'],
+    'hovertemplate':
+    "<b>%{text}</b><br><br>" +
+    "GDP per Capita: %{y:$,.0f}<br>" +
+    "Life Expectation: %{x:.0%}<br>" +
+    "Population: %{marker.size:,}" +
+    "<extra></extra>",
+    'marker': {
+      'size': df['pop'],
+      'sizemode': 'area',
+      'sizeref': 200000
+  },
+    'transforms': [{
+      'type': 'filter',
+      'target': df['year'],
+      'orientation': '=',
+      'value': 2002
+  },{
+      'type': 'groupby',
+      'groups': df['continent'],
+      'styles': B
+  }]
+}]
+
+layout = {'yaxis': {'type': 'log'}}
+
+pio.show({'data': data, 'layout': layout}, validate=False)
+```
+
+### Set Hover Template in Mapbox
+```python
+import plotly.graph_objects as go
+
+token = open(".mapbox_token").read() # you need your own token
+
+fig = go.Figure(go.Scattermapbox(
+    name = "",
+    mode = "markers+text+lines",
+    lon = [-75, -80, -50], 
+    lat = [45, 20, -20], 
+    marker = {'size': 20, 'symbol': ["bus", "harbor", "airport"]},
+    hovertemplate =
+    "<b>%{marker.symbol} </b><br><br>" +
+    "longitude: %{lon}<br>" +
+    "latitude: %{lat}<br>" ))
+
+fig.update_layout(
+    mapbox = {
+        'accesstoken': token,
+        'style': "outdoors", 'zoom': 1},
+    showlegend = False)
+
+fig.show()
+```
+
 #### Reference
 See https://plot.ly/python/reference/ for more information and chart attribute options!

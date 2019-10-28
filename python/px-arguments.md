@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.8
   plotly:
     description: Arguments accepted by plotly express functions
     display_as: file_settings
@@ -40,6 +40,38 @@ jupyter:
 ## The different ways to call plotly express functions
 
 See also the [introduction to plotly express](./plotly-express).
+
+
+### Tidy Data
+
+Plotly Express operates on "tidy" or "long" data rather than "wide" data. You may pass data in either as a Pandas `DataFrame` objects or as individual array-like objects which PX will assemble into a data frame internally, such as lists, `numpy` arrays or Pandas `Series` objects. 
+
+What follows is a very short example of the difference between wide and tidy/long data, and the excellent [Tidy Data in Python blog post](https://www.jeannicholashould.com/tidy-data-in-python.html) contains much more information about the tidy approach to structuring data. 
+
+```python
+import pandas as pd
+print("This is 'wide' data, unsuitable as-is for Plotly Express:")
+wide_df = pd.DataFrame(dict(Month=["Jan", "Feb", "Mar"], London=[1,2,3], Paris=[3,1,2]))
+wide_df
+```
+
+```python
+import pandas as pd
+print("This is the same data in 'long' format, ready for Plotly Express:")
+wide_df = pd.DataFrame(dict(Month=["Jan", "Feb", "Mar"], London=[1,2,3], Paris=[3,1,2]))
+tidy_df = wide_df.melt(id_vars="Month")
+```
+
+```python
+import plotly.express as px
+import pandas as pd
+
+wide_df = pd.DataFrame(dict(Month=["Jan", "Feb", "Mar"], London=[1,2,3], Paris=[3,1,2]))
+tidy_df = wide_df.melt(id_vars="Month")
+
+fig = px.bar(tidy_df, x="Month", y="value", color="variable", barmode="group")
+fig.show()
+```
 
 ### pandas DataFrame input data
 

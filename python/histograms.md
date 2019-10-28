@@ -42,7 +42,7 @@ jupyter:
 
 In statistics, a [histogram](https://en.wikipedia.org/wiki/Histogram) is representation of the distribution of numerical data, where the data are binned and the count for each bin is represented. More generally, in plotly a histogram is an aggregated bar chart, with several possible aggregation functions (e.g. sum, average, count...). Also, the data to be binned can be numerical data but also categorical or date data.
 
-[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html).
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 
 ```python
 import plotly.express as px
@@ -130,7 +130,7 @@ fig.show()
 
 ## Histograms with go.Histogram
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Histogram` from `plotly.graph_objects`. All of the available histogram options are described in the histogram section of the reference page: https://plot.ly/python/reference#histogram.
+If Plotly Express does not provide a good starting point, it is also possible to use the more generic `go.Histogram` from `plotly.graph_objects`. All of the available histogram options are described in the histogram section of the reference page: https://plot.ly/python/reference#histogram.
 
 ### Basic Histogram ###
 

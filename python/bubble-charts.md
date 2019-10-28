@@ -42,7 +42,7 @@ jupyter:
 
 A [bubble chart](https://en.wikipedia.org/wiki/Bubble_chart) is a scatter plot in which a third dimension of the data is shown through the size of markers. For other types of scatter plot, see the [line and scatter page](https://plot.ly/python/line-and-scatter/).
 
-We first show a bubble chart example using plotly express. [Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). The size of markers is set from the dataframe column given as the `size` parameter.
+We first show a bubble chart example using plotly express. [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/). The size of markers is set from the dataframe column given as the `size` parameter.
 
 ```python
 import plotly.express as px
@@ -56,7 +56,7 @@ fig.show()
 
 ## Bubble Chart with plotly.graph_objects
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Scatter` from `plotly.graph_objects`, and define the size of markers to create a bubble chart. All of the available options are described in the scatter section of the reference page: https://plot.ly/python/reference#scatter.
+If Plotly Express does not provide a good starting point, it is also possible to use the more generic `go.Scatter` from `plotly.graph_objects`, and define the size of markers to create a bubble chart. All of the available options are described in the scatter section of the reference page: https://plot.ly/python/reference#scatter.
 
 ### Simple Bubble Chart
 

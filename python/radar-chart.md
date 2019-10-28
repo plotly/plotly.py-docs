@@ -43,6 +43,8 @@ For a Radar Chart, use a [polar chart](../polar-chart/) with categorical angular
 
 #### Radar Chart with plotly express
 
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
+
 Use `line_close=True` for closed lines.
 
 ```python
@@ -50,7 +52,7 @@ import plotly.express as px
 import pandas as pd
 df = pd.DataFrame(dict(
     r=[1, 5, 2, 2, 3],
-    theta=['processing cost','mechanical properties','chemical stability', 
+    theta=['processing cost','mechanical properties','chemical stability',
            'thermal stability', 'device integration']))
 fig = px.line_polar(df, r='r', theta='theta', line_close=True)
 fig.show()
@@ -63,7 +65,7 @@ import plotly.express as px
 import pandas as pd
 df = pd.DataFrame(dict(
     r=[1, 5, 2, 2, 3],
-    theta=['processing cost','mechanical properties','chemical stability', 
+    theta=['processing cost','mechanical properties','chemical stability',
            'thermal stability', 'device integration']))
 fig = px.line_polar(df, r='r', theta='theta', line_close=True)
 fig.update_traces(fill='toself')

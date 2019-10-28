@@ -38,7 +38,7 @@ jupyter:
 
 ### Bubble map with plotly express
 
-[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). With ``px.scatter_geo``, each line of the dataframe is represented as a marker point. The column set as the `size` argument gives the size of markers.
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/). With ``px.scatter_geo``, each line of the dataframe is represented as a marker point. The column set as the `size` argument gives the size of markers.
 
 ```python
 import plotly.express as px

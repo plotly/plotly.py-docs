@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.6.8
   plotly:
     description: How to make Box Plots in Python with Plotly.
     display_as: statistical
@@ -41,6 +41,8 @@ A [box plot](https://en.wikipedia.org/wiki/Box_plot) is a statistical representa
 
 
 ## Box Plot with plotly express
+
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 
 In a box plot created by `px.box`, the distribution of the column given as `y` argument is represented.
 
@@ -89,7 +91,7 @@ fig.show()
 
 ## Box plot with go.Box
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Box` function from `plotly.graph_objects`. All available options for `go.Box` are described in the reference page https://plot.ly/python/reference/#box.
+If Plotly Express does not provide a good starting point, it is also possible to use the more generic `go.Box` function from `plotly.graph_objects`. All available options for `go.Box` are described in the reference page https://plot.ly/python/reference/#box.
 
 ### Basic Box Plot ###
 

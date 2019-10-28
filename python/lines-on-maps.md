@@ -39,15 +39,17 @@ jupyter:
 
 For other geographical and map charts see [the maps index page](../maps/).
 
-Below we show how to create geographical line plots using either plotly express with `px.line_geo` (for data available as tidy pandas DataFrame) or `go.Scattergeo` for the generic case.
+Below we show how to create geographical line plots using either plotly express with `px.line_geo` or the lower-level `go.Scattergeo`.
 
 ## Lines on Maps with plotly express
+
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 
 ```python
 import plotly.express as px
 gapminder = px.data.gapminder().query("year == 2007")
-fig = px.line_geo(gapminder, locations="iso_alpha", 
-                  color="continent", # "continent" is one of the columns of gapminder 
+fig = px.line_geo(gapminder, locations="iso_alpha",
+                  color="continent", # "continent" is one of the columns of gapminder
                   projection="orthographic")
 fig.show()
 ```

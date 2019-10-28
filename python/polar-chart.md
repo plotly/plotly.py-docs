@@ -37,9 +37,13 @@ jupyter:
     v4upgrade: true
 ---
 
-## Polar chart with plotly express
+## Polar chart with Plotly Express
 
-A polar chart represents data along radial and angular axes. With plotly express, it is possible to represent polar data as scatter markers with `px.scatter_polar`, and as lines with `px.line_polar`. [Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). For other types of arguments, see the section below using `go.Scatterpolar`.
+A polar chart represents data along radial and angular axes. With Plotly Express, it is possible to represent polar data as scatter markers with `px.scatter_polar`, and as lines with `px.line_polar`.
+
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
+
+ For other types of arguments, see the section below using `go.Scatterpolar`.
 
 The radial and angular coordinates are given with the `r` and `theta` arguments of `px.scatter_polar`. In the example below the `theta` data are categorical, but numerical data are possible too and the most common case.
 
@@ -77,7 +81,7 @@ See also the [wind rose page](https://plot.ly/python/wind-rose-charts/) for more
 
 ## Polar Scatter Plot with go.Scatterpolar
 
-When data is not in the form of a tidy dataframe, you can use the more generic `go.Scatterpolar`. All the options are documented in the [reference page](https://plot.ly/python/reference/#scatterpolar).
+If Plotly Express does not provide a good starting point, you can use the more generic `go.Scatterpolar`. All the options are documented in the [reference page](https://plot.ly/python/reference/#scatterpolar).
 
 #### Basic Polar Chart
 

@@ -40,7 +40,7 @@ jupyter:
 
 To plot on Mapbox maps with Plotly you *may* need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio). See our [Mapbox Map Layers](/python/mapbox-layers/) documentation for more information.
 
-To draw a line on your map, you either can use [`px.line_mapbox()`](https://www.plotly.express/plotly_express/#plotly_express.line_mapbox) in plotly express, or [`Scattermapbox`](https://plot.ly/python/reference/#scattermapbox) traces. Below we show you how to draw a line on Mapbox using plotly express.
+To draw a line on your map, you either can use [`px.line_mapbox()`](https://www.plotly.express/plotly_express/#plotly_express.line_mapbox) in Plotly Express, or [`Scattermapbox`](https://plot.ly/python/reference/#scattermapbox) traces. Below we show you how to draw a line on Mapbox using Plotly Express.
 
 ### Lines on Mapbox maps using Plotly Express
 
@@ -70,22 +70,22 @@ import plotly.graph_objects as go
 
 fig = go.Figure(go.Scattermapbox(
     mode = "markers+lines",
-    lon = [10, 20, 30], 
-    lat = [10, 20,30], 
+    lon = [10, 20, 30],
+    lat = [10, 20,30],
     marker = {'size': 10}))
 
 fig.add_trace(go.Scattermapbox(
-    mode = "markers+lines",      
-    lon = [-50, -60,40], 
-    lat = [30, 10, -20], 
+    mode = "markers+lines",
+    lon = [-50, -60,40],
+    lat = [30, 10, -20],
     marker = {'size': 10}))
 
 fig.update_layout(
     margin ={'l':0,'t':0,'b':0,'r':0},
     mapbox = {
         'center': {'lon': 10, 'lat': 10},
-        'style': "stamen-terrain", 
-        'center': {'lon': -20, 'lat': -20}, 
+        'style': "stamen-terrain",
+        'center': {'lon': -20, 'lat': -20},
         'zoom': 1})
 
 fig.show()

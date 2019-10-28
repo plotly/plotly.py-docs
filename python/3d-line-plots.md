@@ -36,7 +36,7 @@ jupyter:
     title: 3D Line Plots in Python | plotly
 ---
 
-### 3D Line plot with plotly express
+### 3D Line plot with Plotly Express
 
 ```python
 import plotly.express as px

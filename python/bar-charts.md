@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.2.1
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.8
   plotly:
     description: How to make Bar Charts in Python with Plotly.
     display_as: basic
@@ -37,10 +37,12 @@ jupyter:
     v4upgrade: true
 ---
 
-### Bar chart with plotly express
+### Bar chart with Plotly Express
 
 
-In a bar plot, each row of the DataFrame is represented as a rectangular mark.
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
+
+With `px.bar`, each row of the DataFrame is represented as a rectangular mark.
 
 ```python
 import plotly.express as px
@@ -53,7 +55,7 @@ fig.show()
 data_canada
 ```
 
-### Customize bar chart with plotly express
+### Customize bar chart with Plotly Express
 
 The bar plot can be customized using keyword arguments.
 
@@ -103,7 +105,7 @@ To learn more, see the *link to px.bar reference page*.
 
 #### Basic Bar Chart with plotly.graph_objects
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Bar` function from `plotly.graph_objects`.
+If Plotly Express does not provide a good starting point, it is also possible to use the more generic `go.Bar` function from `plotly.graph_objects`.
 
 ```python
 import plotly.graph_objects as go
@@ -327,7 +329,7 @@ fig.show()
 
 ### Bar Chart with Sorted or Ordered Categories
 
-Set `categoryorder` to "category ascending/descending" for the alphanumerical order of the category names or "total ascending/descending" for numerical order of values. [categoryorder](https://plot.ly/python/reference/#layout-xaxis-categoryorder) for more information. 
+Set `categoryorder` to "category ascending/descending" for the alphanumerical order of the category names or "total ascending/descending" for numerical order of values. [categoryorder](https://plot.ly/python/reference/#layout-xaxis-categoryorder) for more information.
 
 ```python
 import plotly.graph_objects as go

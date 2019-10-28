@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.6.8
   plotly:
     description: How to make violin plots in Python with Plotly.
     display_as: statistical
@@ -37,15 +37,15 @@ jupyter:
     v4upgrade: true
 ---
 
-## Violin Plot with plotly express
+## Violin Plot with Plotly Express
 
 A [violin plot](https://en.wikipedia.org/wiki/Violin_plot) is a statistical representation of numerical data. It is similar to a [box plot](https://plot.ly/python/box-plots/), with the addition of a rotated [kernel density](https://en.wikipedia.org/wiki/Kernel_density_estimation) plot on each side.
 
 See also the [list of other statistical charts](https://plot.ly/python/statistical-charts/).
 
-### Basic Violin Plot with plotly express
+### Basic Violin Plot with Plotly Express
 
-[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html).
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 
 ```python
 import plotly.express as px
@@ -91,7 +91,7 @@ fig.show()
 
 ## Violin Plot with go.Violin
 
-When data are not available as a tidy dataframe, you can use the more generic function `go.Violin` from `plotly.graph_objects`. All the options of `go.Violin` are documented in the reference https://plot.ly/python/reference/#violin
+If Plotly Express does not provide a good starting point, you can use the more generic function `go.Violin` from `plotly.graph_objects`. All the options of `go.Violin` are documented in the reference https://plot.ly/python/reference/#violin
 
 #### Basic Violin Plot
 

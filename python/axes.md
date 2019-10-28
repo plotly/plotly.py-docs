@@ -94,12 +94,12 @@ fig.update_yaxes(showgrid=False, zeroline=False)
 fig.show()
 ```
 
-##### Toggle grid and zerolines for figure created with plotly express
+##### Toggle grid and zerolines for figure created with Plotly Express
 
 
-An advantage of using the `update_xaxis` and `update_yaxis` methods is that these updates will (by default) apply to all axes in the figure.  This is especially useful when customizing figures created using plotly express, figure factories, or `make_subplots`.
+An advantage of using the `update_xaxis` and `update_yaxis` methods is that these updates will (by default) apply to all axes in the figure.  This is especially useful when customizing figures created using Plotly Express, figure factories, or `make_subplots`.
 
-Here is an example of disabling all grid and zero lines in a faceted figure created by plotly express.
+Here is an example of disabling all grid and zero lines in a faceted figure created by Plotly Express.
 
 ```python
 import plotly.express as px
@@ -115,7 +115,7 @@ fig.show()
 ##### Toggling axis tick marks
 Axis tick marks are disabled by default for the default `plotly` theme, but they can easily be turned on by setting the `ticks` axis property to `"inside"` (to place ticks inside plotting area) or `"outside"` (to place ticks outside the plotting area).
 
-Here is an example of turning on inside x-axis and y-axis ticks in a faceted figure created using plotly express. Note how the `col` argument to `update_yaxes` is used to only turn on the y-axis ticks for the left-most subplot.
+Here is an example of turning on inside x-axis and y-axis ticks in a faceted figure created using Plotly Express. Note how the `col` argument to `update_yaxes` is used to only turn on the y-axis ticks for the left-most subplot.
 
 ```python
 import plotly.express as px
@@ -131,7 +131,7 @@ fig.show()
 ##### Toggling axis labels
 The axis tick mark labels can be disabled by setting the `showticklabels` axis property to `False`.
 
-Here is an example of disabling tick labels in all subplots for a faceted figure created using plotly express.
+Here is an example of disabling tick labels in all subplots for a faceted figure created using Plotly Express.
 
 ```python
 import plotly.express as px
@@ -149,7 +149,7 @@ fig.show()
 ##### Set number of tick marks
 The approximate number of ticks displayed for an axis can be specified using the `nticks` axis property.
 
-Here is an example of updating the y-axes of a figure created using plotly express to display approximately 20 ticks.
+Here is an example of updating the y-axes of a figure created using Plotly Express to display approximately 20 ticks.
 
 ```python
 import plotly.express as px
@@ -164,7 +164,7 @@ fig.show()
 ##### Set start position and distance between ticks
 The `tick0` and `dtick` axis properties can be used to control to placement of axis ticks as follows:  If specified, a tick will fall exactly on the location of `tick0` and additional ticks will be added in both directions at intervals of `dtick`.
 
-Here is an example of updating the y axis of a figure created using plotly express to position the ticks at intervals of 0.5, starting at 0.25.
+Here is an example of updating the y axis of a figure created using Plotly Express to position the ticks at intervals of 0.5, starting at 0.25.
 
 ```python
 import plotly.express as px
@@ -179,7 +179,7 @@ fig.show()
 ##### Set exact location of axis ticks
 It is possible to configure an axis to display ticks at a set of predefined locations by setting the `tickvals` property to an array of positions.
 
-Here is an example of setting the exact location of ticks on the y axes of a figure created using plotly express.
+Here is an example of setting the exact location of ticks on the y axes of a figure created using Plotly Express.
 
 ```python
 import plotly.express as px
@@ -196,7 +196,7 @@ As discussed above, tick marks are disabled by default in the default `plotly` t
 
 The appearance of these tick marks can be customized by setting their length (`ticklen`), width (`tickwidth`), and color (`tickcolor`).
 
-Here is an example of enabling and styling the tick marks of a faceted figure created using plotly express.  Note how the `col` argument to `update_yaxes` is used to only turn on and style the y-axis ticks for the left-most subplot.
+Here is an example of enabling and styling the tick marks of a faceted figure created using Plotly Express.  Note how the `col` argument to `update_yaxes` is used to only turn on and style the y-axis ticks for the left-most subplot.
 
 ```python
 import plotly.express as px
@@ -227,7 +227,7 @@ fig.show()
 ```
 
 ##### Set axis title font
-Here is an example that configures the font family, size, and color for the axis titles in a figure created using plotly express.
+Here is an example that configures the font family, size, and color for the axis titles in a figure created using Plotly Express.
 
 ```python
 import plotly.express as px
@@ -243,7 +243,7 @@ fig.show()
 ##### Set axis label rotation and font
 The orientation of the axis tick mark labels is configured using the `tickangle` axis property. The value of `tickangle` is the angle of rotation, in the clockwise direction, of the labels from vertical in units of degrees.  The font family, size, and color for the tick labels are stored under the `tickfont` axis property.
 
-Here is an example of rotating the x-axis tick labels by 45 degrees, and customizing their font properties, in a faceted histogram figure created using plotly express.
+Here is an example of rotating the x-axis tick labels by 45 degrees, and customizing their font properties, in a faceted histogram figure created using Plotly Express.
 
 ```python
 import plotly.express as px
@@ -261,7 +261,7 @@ fig.show()
 ##### Styling axis lines
 The `showline` axis property controls the visibility of the axis line, and the `linecolor` and `linewidth` axis properties control the color and width of the axis line.
 
-Here is an example of enabling the x and y axis lines, and customizing their width and color, for a faceted histogram created with plotly express.
+Here is an example of enabling the x and y axis lines, and customizing their width and color, for a faceted histogram created with Plotly Express.
 
 ```python
 import plotly.express as px
@@ -277,7 +277,7 @@ fig.show()
 ##### Mirroring axis lines
 Axis lines can be mirrored to the opposite side of the plotting area by setting the `mirror` axis property to `True`.
 
-Here is an example of mirroring the x and y axis lines in a faceted histogram created using plotly express.
+Here is an example of mirroring the x and y axis lines in a faceted histogram created using Plotly Express.
 
 ```python
 import plotly.express as px
@@ -293,7 +293,7 @@ fig.show()
 ##### Styling grid lines
 The width and color of axis grid lines are controlled by the `gridwidth` and `gridcolor` axis properties.
 
-Here is an example of customizing the grid line width and color for a faceted scatter plot created with plotly express
+Here is an example of customizing the grid line width and color for a faceted scatter plot created with Plotly Express
 
 ```python
 import plotly.express as px
@@ -327,7 +327,7 @@ fig.show()
 #### Setting the Range of Axes Manually
 The visible x and y axis range can be configured manually by setting the `range` axis property  to a list of two values, the lower and upper boundary.
 
-Here's an example of manually specifying the x and y axis range for a faceted scatter plot created with plotly express.
+Here's an example of manually specifying the x and y axis range for a faceted scatter plot created with Plotly Express.
 
 ```python
 import plotly.express as px
@@ -444,7 +444,7 @@ fig.show()
 #### Reversed Axes
 You can tell plotly's automatic axis range calculation logic to reverse the direction of an axis by setting the `autorange` axis property to `"reversed"`.
 
-Here is an example of reversing the direction of the y axes for a faceted scatter plot created using plotly express.
+Here is an example of reversing the direction of the y axes for a faceted scatter plot created using Plotly Express.
 
 ```python
 import plotly.express as px
@@ -459,7 +459,7 @@ fig.show()
 #### Reversed Axes with Range ( Min/Max ) Specified
 The direction of an axis can be reversed when manually setting the range extents by specifying a list containing the upper bound followed by the lower bound (rather that the lower followed by the upper) as the `range` axis property.
 
-Here is an example of manually setting the reversed range of the y axes in a faceted scatter plot figure created using plotly express.
+Here is an example of manually setting the reversed range of the y axes in a faceted scatter plot figure created using Plotly Express.
 
 ```python
 import plotly.express as px
@@ -477,7 +477,7 @@ The axis auto-range calculation logic can be configured using the `rangemode` ax
 
 If `rangemode` is `"normal"` (the default), the range is computed based on the min and max values of the input data. If `"tozero"`, the the range will always include zero.  If `"nonnegative"`, the range will not extend below zero, regardless of the input data.
 
-Here is an example of configuring a faceted scatter plot created using plotly express to always include zero for both the x and y axes.
+Here is an example of configuring a faceted scatter plot created using Plotly Express to always include zero for both the x and y axes.
 
 ```python
 import plotly.express as px

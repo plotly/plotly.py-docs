@@ -43,7 +43,9 @@ To plot on Mapbox maps with Plotly you *may* need a Mapbox account and a public 
 
 ### Basic example with Plotly Express
 
-For data available as a tidy pandas DataFrame, use the [Plotly Express](/python/plotly-express/) function `px.scatter_mapbox` for a scatter plot on a tile map.
+Here we show the [Plotly Express](/python/plotly-express/) function `px.scatter_mapbox` for a scatter plot on a tile map.
+
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 
 ```python
 import plotly.express as px
@@ -196,9 +198,9 @@ fig.update_layout(
 fig.show()
 ```
 
-### Set Marker Symbols 
+### Set Marker Symbols
 
-You can define a symbol on your map by setting [symbol](https://plot.ly/python/reference/#scattermapbox-marker-symbol) attribute. This attribute only works on Mapbox-provided `style`s: 
+You can define a symbol on your map by setting [symbol](https://plot.ly/python/reference/#scattermapbox-marker-symbol) attribute. This attribute only works on Mapbox-provided `style`s:
 - basic
 - streets
 - outdoors
@@ -214,7 +216,7 @@ token = open(".mapbox_token").read() # you need your own token
 
 fig = go.Figure(go.Scattermapbox(
     mode = "markers+text+lines",
-    lon = [-75, -80, -50], lat = [45, 20, -20], 
+    lon = [-75, -80, -50], lat = [45, 20, -20],
     marker = {'size': 20, 'symbol': ["bus", "harbor", "airport"]},
     text = ["Bus", "Harbor", "airport"],textposition = "bottom right"))
 

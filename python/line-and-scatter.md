@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.2.3
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.8
   plotly:
     description: How to make scatter plots in Python with Plotly.
     display_as: basic
@@ -38,7 +38,9 @@ jupyter:
     v4upgrade: true
 ---
 
-## Scatter plot with plotly express
+## Scatter plot with Plotly Express
+
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 
 With ``px.scatter``, each data point is represented as a marker point, which location is given by the `x` and `y` columns.
 
@@ -69,7 +71,7 @@ fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species",
 fig.show()
 ```
 
-## Line plot with plotly express
+## Line plot with Plotly Express
 
 ```python
 import plotly.express as px
@@ -90,7 +92,7 @@ fig.show()
 
 ## Scatter and line plot with go.Scatter
 
-When data are not available as tidy dataframes, it is possible to use the more generic `go.Scatter` function from `plotly.graph_objects`. Whereas `plotly.express` has two functions `scatter` and `line`, `go.Scatter` can be used both for plotting points (makers) or lines, depending on the value of `mode`. The different options of `go.Scatter` are documented in its [reference page](https://plot.ly/python/reference/#scatter ).
+If Plotly Express does not provide a good starting point, it is possible to use the more generic `go.Scatter` function from `plotly.graph_objects`. Whereas `plotly.express` has two functions `scatter` and `line`, `go.Scatter` can be used both for plotting points (makers) or lines, depending on the value of `mode`. The different options of `go.Scatter` are documented in its [reference page](https://plot.ly/python/reference/#scatter ).
 
 
 #### Simple Scatter Plot

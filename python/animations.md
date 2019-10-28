@@ -27,10 +27,10 @@ jupyter:
     v4upgrade: true
 ---
 
-#### Animated figures with plotly express
-Several plotly express functions support the creation of animated figures through the `animation_frame` and `animation_group` arguments.
+#### Animated figures with Plotly Express
+Several Plotly Express functions support the creation of animated figures through the `animation_frame` and `animation_group` arguments.
 
-Here is an example of an animated scatter plot creating using plotly express
+Here is an example of an animated scatter plot creating using Plotly Express
 
 ```python
 import plotly.express as px

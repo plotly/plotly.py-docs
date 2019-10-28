@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.6.8
   plotly:
     description: How to make 3D scatter plots in Python with Plotly.
     display_as: 3d_charts
@@ -37,9 +37,11 @@ jupyter:
     v4upgrade: true
 ---
 
-## 3D scatter plot with plotly express
+## 3D scatter plot with Plotly Express
 
-Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `px.scatter`, the 3D function `px.scatter_3d` plots individual data in three-dimensional space. 
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
+
+Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `px.scatter`, the 3D function `px.scatter_3d` plots individual data in three-dimensional space.
 
 ```python
 import plotly.express as px
@@ -78,7 +80,7 @@ fig.update_layout(margin=dict(l=0, r=0, b=0, t=0))
 
 #### Basic 3D Scatter Plot
 
-When data are not available as tidy dataframes, it is also possible to use the more generic `go.Scatter3D` from `plotly.graph_objs`.
+If Plotly Express does not provide a good starting point, it is also possible to use the more generic `go.Scatter3D` from `plotly.graph_objs`.
 Like the [2D scatter plot](https://plot.ly/python/line-and-scatter/) `go.Scatter`, `go.Scatter3d` plots individual data in three-dimensional space.
 
 ```python

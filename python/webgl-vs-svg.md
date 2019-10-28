@@ -40,11 +40,11 @@ jupyter:
 #### Compare WebGL and SVG
 Checkout [this notebook](https://plot.ly/python/compare-webgl-svg) to compare WebGL and SVG scatter plots with 75,000 random data points
 
-#### WebGL with plotly express
+#### WebGL with Plotly Express
 
-The `rendermode` argument to supported plotly express functions can be used to enable WebGL rendering.
+The `rendermode` argument to supported Plotly Express functions can be used to enable WebGL rendering.
 
-Here is an example that creates a 100,000 point scatter plot using plotly express with WebGL rendering enabled.
+Here is an example that creates a 100,000 point scatter plot using Plotly Express with WebGL rendering enabled.
 
 ```python
 import plotly.express as px

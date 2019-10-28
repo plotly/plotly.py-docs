@@ -37,9 +37,9 @@ jupyter:
     v4upgrade: true
 ---
 
-### Error Bars with plotly express
+### Error Bars with Plotly Express
 
-[Plotly Express](../plotly-express/) functions take as a first argument a [tidy `pandas.DataFrame`](https://www.jeannicholashould.com/tidy-data-in-python.html). For functions representing 2D data points such as [`px.scatter`](https://plot.ly/python/line-and-scatter/), [`px.line`](https://plot.ly/python/line-charts/), [`px.bar`](https://plot.ly/python/bar-charts/) etc., error bars are given as a column name which is the value of the `error_x` (for the error on x position) and `error_y` (for the error on y position).
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/). For functions representing 2D data points such as [`px.scatter`](https://plot.ly/python/line-and-scatter/), [`px.line`](https://plot.ly/python/line-charts/), [`px.bar`](https://plot.ly/python/bar-charts/) etc., error bars are given as a column name which is the value of the `error_x` (for the error on x position) and `error_y` (for the error on y position).
 
 ```python
 import plotly.express as px
@@ -50,7 +50,7 @@ fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species",
 fig.show()
 ```
 
-#### Asymmetric Error Bars with plotly express
+#### Asymmetric Error Bars with Plotly Express
 
 ```python
 import plotly.express as px

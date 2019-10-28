@@ -22,7 +22,7 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.6.8
   plotly:
-    description: Arguments accepted by plotly express functions
+    description: Arguments accepted by Plotly Express functions
     display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/253

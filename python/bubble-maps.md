@@ -36,7 +36,7 @@ jupyter:
     v4upgrade: true
 ---
 
-### Bubble map with plotly express
+### Bubble map with Plotly Express
 
 [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/). With ``px.scatter_geo``, each line of the dataframe is represented as a marker point. The column set as the `size` argument gives the size of markers.
 

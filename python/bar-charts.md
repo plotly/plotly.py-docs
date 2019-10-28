@@ -37,7 +37,7 @@ jupyter:
     v4upgrade: true
 ---
 
-### Bar chart with plotly express
+### Bar chart with Plotly Express
 
 
 [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
@@ -55,7 +55,7 @@ fig.show()
 data_canada
 ```
 
-### Customize bar chart with plotly express
+### Customize bar chart with Plotly Express
 
 The bar plot can be customized using keyword arguments.
 

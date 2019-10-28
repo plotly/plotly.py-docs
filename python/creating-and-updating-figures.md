@@ -30,7 +30,7 @@ jupyter:
     name: Creating and Updating Figures
     page_type: example_index
     permalink: python/creating-and-updating-figures/
-    redirect_from: 
+    redirect_from:
       - python/user-guide/
       - python/user-g/
     thumbnail: thumbnail/creating-and-updating-figures.png
@@ -171,7 +171,7 @@ fig.add_trace(go.Bar(x=[1, 2, 3], y=[1, 3, 2]))
 fig.show()
 ```
 
-You can also add traces to a figure produced by a figure factory or plotly express.
+You can also add traces to a figure produced by a figure factory or Plotly Express.
 
 ```python
 import plotly.express as px
@@ -199,7 +199,7 @@ fig.add_trace(go.Bar(y=[2, 1, 3]), row=1, col=2)
 fig.show()
 ```
 
-This also works for figures created by plotly express using the `facet_row` and or `facet_col` arguments.
+This also works for figures created by Plotly Express using the `facet_row` and or `facet_col` arguments.
 
 ```python
 import plotly.express as px
@@ -426,7 +426,7 @@ fig.update_traces(marker=dict(color="RoyalBlue"),
 fig.show()
 ```
 
-The `update_traces` method can also be used on figures produced by figure factories or plotly express. Here's an example of updating the regression lines produced by plotly express to be dotted.
+The `update_traces` method can also be used on figures produced by figure factories or Plotly Express. Here's an example of updating the regression lines produced by Plotly Express to be dotted.
 
 ```python
 import pandas as pd
@@ -444,7 +444,7 @@ Suppose the updates that you want to make to a collection of traces depend on th
 
 As its first argument, the `for_each_trace` method accepts a function that accepts and updates one trace at a time.  Like `update_traces`, `for_each_trace` also accepts `selector`, `row`, and `col` arguments to control which traces should be considered.
 
-Here is an example of using `for_each_trace` to replace the equal-sign with a colon in the legend name of each trace in a figure produced by plotly express.
+Here is an example of using `for_each_trace` to replace the equal-sign with a colon in the legend name of each trace in a figure produced by Plotly Express.
 
 ```python
 import pandas as pd
@@ -460,7 +460,7 @@ fig.show()
 ```
 
 #### The update axis methods
-Graph object figures support `update_xaxes` and `update_yaxes` methods that may be used to update multiple nested properties of one or more of a figure's axes.  Here is an example of using `update_xaxes` to disable the vertical grid lines across all subplots in a figure produced by plotly express.
+Graph object figures support `update_xaxes` and `update_yaxes` methods that may be used to update multiple nested properties of one or more of a figure's axes.  Here is an example of using `update_xaxes` to disable the vertical grid lines across all subplots in a figure produced by Plotly Express.
 
 ```python
 import pandas as pd
@@ -477,7 +477,7 @@ There are also `for_each_xaxis` and `for_each_yaxis` methods that are analogous 
 #### Chaining figure operations
 All of the figure update operations described above are methods that return a reference to the figure being modified.  This makes it possible the chain multiple figure modification operations together into a single expression.
 
-Here is an example of a chained expression that creates a faceted scatter plot with OLS trend lines using plotly express, sets the title font size using `update_layout`, disables vertical grid lines using `update_xaxes`, updates the width and dash pattern of the trend lines using `update_traces`, and then displays the figure using `show`.
+Here is an example of a chained expression that creates a faceted scatter plot with OLS trend lines using Plotly Express, sets the title font size using `update_layout`, disables vertical grid lines using `update_xaxes`, updates the width and dash pattern of the trend lines using `update_traces`, and then displays the figure using `show`.
 
 ```python
 import plotly.express as px

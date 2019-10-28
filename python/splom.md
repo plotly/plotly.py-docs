@@ -38,11 +38,11 @@ jupyter:
     v4upgrade: true
 ---
 
-### Scatter matrix with plotly express
+### Scatter matrix with Plotly Express
 
 A scatterplot matrix is a matrix associated to n numerical arrays (data variables),  $X_1,X_2,…,X_n$ , of the same length. The cell (i,j) of such a matrix displays the scatter plot of the variable  Xi  versus  Xj.
 
-Here we show the plotly express function `px.scatter_matrix` to plot the scatter matrix for the columns of the dataframe. By default, all columns are considered.
+Here we show the Plotly Express function `px.scatter_matrix` to plot the scatter matrix for the columns of the dataframe. By default, all columns are considered.
 
 [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 
@@ -64,7 +64,7 @@ fig = px.scatter_matrix(iris,
 fig.show()
 ```
 
-#### Styled Scatter Matrix with plotly express
+#### Styled Scatter Matrix with Plotly Express
 
 The scatter matrix plot can be configured thanks to the parameters of `px.scatter_matrix`, but also thanks to `fig.update_traces` for fine tuning (see the next section to learn more about the options).
 

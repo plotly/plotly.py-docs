@@ -73,7 +73,7 @@ with
 from chart_studio.plotly import plot, iplot
 ```
 
-Similarly, 
+Similarly,
  - Replace **`plotly.api`** with **`chart_studio.api`**
  - Replace **`plotly.dashboard_objs`** with **`chart_studio.dashboard_objs`**
  - Replace **`plotly.grid_objs`** with **`chart_studio.grid_objs`**
@@ -204,13 +204,13 @@ scatter.marker.size = 20
 <!-- #endregion -->
 
 ### `make_subplots` updates
-The `make_subplots` function has been overhauled to support all trace types and to support the integration of plotly express.  Here are a few changes to be aware of when porting code that uses `make_subplots` to version 4.
+The `make_subplots` function has been overhauled to support all trace types and to support the integration of Plotly Express.  Here are a few changes to be aware of when porting code that uses `make_subplots` to version 4.
 
 #### New preferred import location
 The preferred import location of the `make_subplots` function is now `plotly.subplots.make_subplots`.  For compatibility, this function is still available as `plotly.tools.make_subplots`.
 
 #### Grid no longer printed by default
-When the `print_grid` argument to `make_subplots` is set to `True`, a text representation of the subplot grid is printed by the `make_subplots` function.  In version 3, the default value of `print_grid` was `True`. In version 4, the default value of `print_grid` is `False`. 
+When the `print_grid` argument to `make_subplots` is set to `True`, a text representation of the subplot grid is printed by the `make_subplots` function.  In version 3, the default value of `print_grid` was `True`. In version 4, the default value of `print_grid` is `False`.
 
 #### New `row_heights` argument to replace `row_width`
 The legacy argument for specifying the relative height of subplot rows was called `row_width`. A new `row_heights` argument has been introduced for this purpose.
@@ -252,7 +252,7 @@ fig.show()
 ```
 
 #### Implementation of shared axes with `make_subplots`
-The implementation of shared axis support in the `make_subplots` function has been simplified.  Prior to version 4, shared y-axes were implemented by associating a single `yaxis` object with multiple `xaxis` objects, and vica versa. 
+The implementation of shared axis support in the `make_subplots` function has been simplified.  Prior to version 4, shared y-axes were implemented by associating a single `yaxis` object with multiple `xaxis` objects, and vica versa.
 
 In version 4, every 2D Cartesian subplot has a dedicated x-axis and and a dedicated y-axis. Axes are now "shared" by being linked together using the `matches` axis property.
 

@@ -37,13 +37,13 @@ jupyter:
     v4upgrade: true
 ---
 
-## Violin Plot with plotly express
+## Violin Plot with Plotly Express
 
 A [violin plot](https://en.wikipedia.org/wiki/Violin_plot) is a statistical representation of numerical data. It is similar to a [box plot](https://plot.ly/python/box-plots/), with the addition of a rotated [kernel density](https://en.wikipedia.org/wiki/Kernel_density_estimation) plot on each side.
 
 See also the [list of other statistical charts](https://plot.ly/python/statistical-charts/).
 
-### Basic Violin Plot with plotly express
+### Basic Violin Plot with Plotly Express
 
 [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 

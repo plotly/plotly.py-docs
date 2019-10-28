@@ -37,9 +37,9 @@ jupyter:
     v4upgrade: true
 ---
 
-## Polar chart with plotly express
+## Polar chart with Plotly Express
 
-A polar chart represents data along radial and angular axes. With plotly express, it is possible to represent polar data as scatter markers with `px.scatter_polar`, and as lines with `px.line_polar`.
+A polar chart represents data along radial and angular axes. With Plotly Express, it is possible to represent polar data as scatter markers with `px.scatter_polar`, and as lines with `px.line_polar`.
 
 [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 

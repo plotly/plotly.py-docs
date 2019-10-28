@@ -38,7 +38,7 @@ jupyter:
     v4upgrade: true
 ---
 
-## Scatter plot with plotly express
+## Scatter plot with Plotly Express
 
 [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 
@@ -71,7 +71,7 @@ fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species",
 fig.show()
 ```
 
-## Line plot with plotly express
+## Line plot with Plotly Express
 
 ```python
 import plotly.express as px

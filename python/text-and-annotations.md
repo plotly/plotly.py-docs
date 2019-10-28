@@ -38,7 +38,7 @@ jupyter:
 
 ### Text scatter plot with Plotly Express
 
-Here is an example that creates a scatter plot with text labels using plotly express.
+Here is an example that creates a scatter plot with text labels using Plotly Express.
 
 ```python
 import plotly.express as px

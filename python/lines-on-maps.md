@@ -39,9 +39,9 @@ jupyter:
 
 For other geographical and map charts see [the maps index page](../maps/).
 
-Below we show how to create geographical line plots using either plotly express with `px.line_geo` or the lower-level `go.Scattergeo`.
+Below we show how to create geographical line plots using either Plotly Express with `px.line_geo` or the lower-level `go.Scattergeo`.
 
-## Lines on Maps with plotly express
+## Lines on Maps with Plotly Express
 
 [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 

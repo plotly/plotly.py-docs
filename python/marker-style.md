@@ -40,7 +40,7 @@ jupyter:
 
 In order to make markers look more distinct, you can add a border to the markers. This can be achieved by adding the line property to the marker object.
 
-Here is an example of adding a marker border to a faceted scatter plot created using plotly express.
+Here is an example of adding a marker border to a faceted scatter plot created using Plotly Express.
 
 ```python
 import plotly.express as px

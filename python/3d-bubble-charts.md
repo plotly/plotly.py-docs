@@ -37,7 +37,7 @@ jupyter:
     title: Python 3D Bubble Charts | plotly
 ---
 
-### 3d Bubble chart with plotly express
+### 3d Bubble chart with Plotly Express
 
 ```python
 import plotly.express as px

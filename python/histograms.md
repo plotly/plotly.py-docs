@@ -38,7 +38,7 @@ jupyter:
     v4upgrade: true
 ---
 
-## Histogram with plotly express
+## Histogram with Plotly Express
 
 In statistics, a [histogram](https://en.wikipedia.org/wiki/Histogram) is representation of the distribution of numerical data, where the data are binned and the count for each bin is represented. More generally, in plotly a histogram is an aggregated bar chart, with several possible aggregation functions (e.g. sum, average, count...). Also, the data to be binned can be numerical data but also categorical or date data.
 

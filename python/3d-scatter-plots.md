@@ -37,7 +37,7 @@ jupyter:
     v4upgrade: true
 ---
 
-## 3D scatter plot with plotly express
+## 3D scatter plot with Plotly Express
 
 [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/).
 

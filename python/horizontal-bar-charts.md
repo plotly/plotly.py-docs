@@ -40,12 +40,12 @@ jupyter:
 See more examples of bar charts (including vertical bar charts) and styling options [here](https://plot.ly/python/bar-charts/).
 
 
-### Horizontal Bar Chart with plotly express
+### Horizontal Bar Chart with Plotly Express
 
 [Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/). For a horizontal bar char, use the `px.bar` function with `orientation='h'`.
 
 
-#### Basic Horizontal Bar Chart with plotly express
+#### Basic Horizontal Bar Chart with Plotly Express
 
 
 ```python

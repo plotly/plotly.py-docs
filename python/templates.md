@@ -52,8 +52,8 @@ pio.templates
 From this, we can see that the default theme is `"plotly"`, and we can see the names of several additional themes that we can choose from.
 
 
-#### Specifying themes in plotly express
-All plotly express functions accept a `template` argument that can be set to the name of a registered theme (or to a `Template` object as discussed later in this section). Here is an example of using plotly express to build and display the same scatter plot with five different themes.
+#### Specifying themes in Plotly Express
+All Plotly Express functions accept a `template` argument that can be set to the name of a registered theme (or to a `Template` object as discussed later in this section). Here is an example of using Plotly Express to build and display the same scatter plot with five different themes.
 
 ```python
 import plotly.express as px
@@ -92,9 +92,9 @@ for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", 
 ```
 
 #### Specifying a default themes
-If a theme is not provided to a plotly express function or to a graph object figure, then the default theme is used.  The default theme starts out as `"plotly"`, but it can be changed by setting the `plotly.io.templates.default` property to the name of a registered theme.
+If a theme is not provided to a Plotly Express function or to a graph object figure, then the default theme is used.  The default theme starts out as `"plotly"`, but it can be changed by setting the `plotly.io.templates.default` property to the name of a registered theme.
 
-Here is an example of changing to default theme to `"plotly_white"` and then constructing a scatter plot with plotly express without providing a template.
+Here is an example of changing to default theme to `"plotly_white"` and then constructing a scatter plot with Plotly Express without providing a template.
 
 > Note: Default themes persist for the duration of a single session, but they do not persist across sessions. If you are working in an IPython kernel, this means that default themes will persist for the life of the kernel, but they will not persist across kernel restarts.
 
@@ -282,7 +282,7 @@ fig.show()
 ```
 
 #### Registering themes as named templates
-The examples above construct and configure a `Template` object and then pass that object as the template specification to graph object figures (as the `layout.template` property) or plotly express functions (as the `template` keyword argument).  It is also possible to register custom templates by name so that the name itself can be used to refer to the template.  To register a template, use dictionary-style assignment to associate the template object with a name in the `plotly.io.templates` configuration object.
+The examples above construct and configure a `Template` object and then pass that object as the template specification to graph object figures (as the `layout.template` property) or Plotly Express functions (as the `template` keyword argument).  It is also possible to register custom templates by name so that the name itself can be used to refer to the template.  To register a template, use dictionary-style assignment to associate the template object with a name in the `plotly.io.templates` configuration object.
 
 Here is an example of registering the draft watermark template from the previous sections as a template named `"draft"`.  Then a graph object figure is created with the draft template specified by name.
 
@@ -314,7 +314,7 @@ fig.show()
 
 > Note: this example uses magic underscore notation to write `go.layout.Template(layout=dict(annotations=[...]))` as ``go.layout.Template(layout_annotations=[...])`
 
-It is also possible to set your own custom template as the default so that you do not need to pass it by name when constructing graph object figures or calling plotly express functions.
+It is also possible to set your own custom template as the default so that you do not need to pass it by name when constructing graph object figures or calling Plotly Express functions.
 
 ```python
 import plotly.graph_objects as go
@@ -375,7 +375,7 @@ fig = go.Figure()
 fig.show()
 ```
 
-Combining themes is also supported by plotly express
+Combining themes is also supported by Plotly Express
 
 ```python
 import plotly.io as pio

@@ -24,7 +24,6 @@ jupyter:
     page_type: u-guide
     permalink: python/chord-diagram/
     thumbnail: thumbnail/chord.jpg
-    title: Chord Diagram | Plotly
 ---
 
 # Chord Diagrams with Plotly

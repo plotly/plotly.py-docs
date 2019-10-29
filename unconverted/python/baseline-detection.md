@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/baseline-detection/
     thumbnail: /images/static-image
-    title: Baseline Detection in Python | plotly
 ---
 
 #### New to Plotly?

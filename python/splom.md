@@ -34,7 +34,6 @@ jupyter:
     permalink: python/splom/
     redirect_from: python/scatterplot-matrix/
     thumbnail: thumbnail/splom_image.jpg
-    title: Python Scatterplot Matrix | Plotly
     v4upgrade: true
 ---
 

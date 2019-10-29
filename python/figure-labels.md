@@ -34,7 +34,6 @@ jupyter:
     permalink: python/figure-labels/
     redirect_from: python/font/
     thumbnail: thumbnail/figure-labels.png
-    title: Setting the Font, Title, Legend Entries, and Axis Titles in Python
     v4upgrade: true
 ---
 

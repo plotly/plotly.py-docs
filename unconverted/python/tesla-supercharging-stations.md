@@ -24,7 +24,6 @@ jupyter:
     page_type: u-guide
     permalink: python/tesla-supercharging-stations/
     thumbnail: thumbnail/tesla-stations.jpg
-    title: Tesla Supercharging Stations | Plotly
 ---
 
 #### New to Plotly?

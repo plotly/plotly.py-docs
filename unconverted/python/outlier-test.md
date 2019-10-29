@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/outlier-test/
     thumbnail: /images/static-image
-    title: Outlier Test in Python. | plotly
 ---
 
 #### New to Plotly?

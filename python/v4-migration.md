@@ -32,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/v4-migration/
     thumbnail: thumbnail/v4-migration.png
-    title: Version 4 migration guide | plotly
     v4upgrade: true
 ---
 

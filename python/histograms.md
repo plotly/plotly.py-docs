@@ -34,7 +34,6 @@ jupyter:
     permalink: python/histograms/
     redirect_from: /python/histogram-tutorial/
     thumbnail: thumbnail/histogram.jpg
-    title: Python Histograms | plotly
     v4upgrade: true
 ---
 

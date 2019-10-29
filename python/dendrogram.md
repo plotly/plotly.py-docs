@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/dendrogram/
     thumbnail: thumbnail/dendrogram.jpg
-    title: Dendrograms | Plotly
     v4upgrade: true
 ---
 

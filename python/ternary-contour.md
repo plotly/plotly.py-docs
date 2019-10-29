@@ -31,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/ternary-contour/
     thumbnail: thumbnail/ternary-contour.jpg
-    title: Python Ternary contours | plotly
 ---
 
 ## Ternary contour plots

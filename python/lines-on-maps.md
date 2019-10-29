@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/lines-on-maps/
     thumbnail: thumbnail/flight-paths.jpg
-    title: Lines on maps | plotly
     v4upgrade: true
 ---
 

@@ -32,7 +32,6 @@ jupyter:
     order: 1
     permalink: python/log-plot/
     thumbnail: thumbnail/log.jpg
-    title: Python Log Plots | plotly
 ---
 
 ### Logarithmic Axes ###

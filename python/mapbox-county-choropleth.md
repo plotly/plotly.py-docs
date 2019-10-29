@@ -34,7 +34,6 @@ jupyter:
     page_type: example_index
     permalink: python/mapbox-county-choropleth/
     thumbnail: thumbnail/mapbox-choropleth.png
-    title: Python Mapbox Choropleth Maps | plotly
 ---
 
 

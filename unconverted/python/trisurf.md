@@ -24,7 +24,6 @@ jupyter:
     page_type: u-guide
     permalink: python/trisurf/
     thumbnail: thumbnail/tri-surf2.jpg
-    title: Python Trisurf Plots | plotly
 ---
 
 #### New to Plotly?

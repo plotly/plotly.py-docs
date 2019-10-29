@@ -32,7 +32,6 @@ jupyter:
     order: 41
     permalink: python/ipython-vs-python/
     thumbnail: thumbnail/venn.jpg
-    title: IPython vs Python | plotly
     v4upgrade: true
 ---
 

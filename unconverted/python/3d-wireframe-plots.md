@@ -22,7 +22,6 @@ jupyter:
     order: 8
     permalink: python/3d-wireframe-plots/
     thumbnail: thumbnail/wireframe.jpg
-    title: 3D Wireframe Plots in Python | plotly
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

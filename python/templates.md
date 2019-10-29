@@ -32,7 +32,6 @@ jupyter:
     layout: base
     permalink: python/templates/
     thumbnail: thumbnail/theming-and-templates.png
-    title: Theming and templates | plotly
 ---
 
 ### Theming and templates

@@ -24,7 +24,6 @@ jupyter:
     page_type: example_index
     permalink: python/simple-mathematics-operations/
     thumbnail: /images/static-image
-    title: Simple Mathematics Operations in Python. | plotly
 ---
 
 #### New to Plotly?

@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/annotated_heatmap/
     thumbnail: thumbnail/ann_heat.jpg
-    title: Python Annotated Heatmaps | plotly
     v4upgrade: true
 ---
 

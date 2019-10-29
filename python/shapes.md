@@ -33,7 +33,6 @@ jupyter:
     order: 32
     permalink: python/shapes/
     thumbnail: thumbnail/shape.jpg
-    title: Shapes | plotly
     v4upgrade: true
 ---
 

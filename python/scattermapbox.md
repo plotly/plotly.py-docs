@@ -34,7 +34,6 @@ jupyter:
     page_type: u-guide
     permalink: python/scattermapbox/
     thumbnail: thumbnail/scatter-mapbox.jpg
-    title: Python Scatter Plots with Mapbox | Plotly
 ---
 
 #### Mapbox Access Token

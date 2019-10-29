@@ -34,7 +34,6 @@ jupyter:
     order: 12
     permalink: python/axes/
     thumbnail: thumbnail/axes.png
-    title: Axes | plotly
     v4upgrade: true
 ---
 

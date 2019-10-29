@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/discrete-frequency/
     thumbnail: /images/static-image
-    title: Discrete Frequency in Python. | plotly
 ---
 
 #### New to Plotly?

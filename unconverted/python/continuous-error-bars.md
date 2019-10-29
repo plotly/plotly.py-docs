@@ -23,7 +23,6 @@ jupyter:
     page_type: u-guide
     permalink: python/continuous-error-bars/
     thumbnail: thumbnail/error-cont.jpg
-    title: Continuous Error Bars | plotly
 ---
 
 #### New to Plotly?

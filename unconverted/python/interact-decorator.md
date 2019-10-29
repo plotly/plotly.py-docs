@@ -22,7 +22,6 @@ jupyter:
     order: 4
     permalink: python/interact-decorator/
     thumbnail: thumbnail/figurewidget-interact.gif
-    title: Use Interact decorator with FigureWidget
 ---
 
 #### New to Plotly?

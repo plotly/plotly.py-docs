@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-subplots/
     thumbnail: thumbnail/3d-subplots.jpg
-    title: 3D Subplots in Python | plotly
     v4upgrade: true
 ---
 

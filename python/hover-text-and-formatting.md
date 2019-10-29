@@ -32,7 +32,6 @@ jupyter:
     order: 30.5
     permalink: python/hover-text-and-formatting/
     thumbnail: thumbnail/hover-text.png
-    title: Hover Text and Formatting | Plotly
     v4upgrade: true
 ---
 

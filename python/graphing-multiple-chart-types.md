@@ -32,7 +32,6 @@ jupyter:
     page_type: u-guide
     permalink: python/graphing-multiple-chart-types/
     thumbnail: thumbnail/multiple-chart-type.jpg
-    title: Python Mulitple Chart Types | plotly
     v4upgrade: true
 ---
 

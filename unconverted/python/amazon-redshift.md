@@ -24,7 +24,6 @@ jupyter:
     permalink: python/amazon-redshift/
     redirect_from: ipython-notebooks/amazon-redshift/
     thumbnail: /images/static-image
-    title: Plot Data from Amazon Redshift | plotly
 ---
 
 #### New to Plotly?

@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/average_multiple_curves/
     thumbnail: /images/static-image
-    title: Average Multiple Curves in Python | plotly
 ---
 
 #### New to Plotly?

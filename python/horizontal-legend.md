@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/horizontal-legend/
     thumbnail: thumbnail/your-tutorial-chart.jpg
-    title: Horizontal legend | plotly
     v4upgrade: true
 ---
 

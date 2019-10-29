@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/treemaps/
     thumbnail: thumbnail/treemap.png
-    title: Treemap in Python | plotly
 ---
 
 ### Basic Treemap

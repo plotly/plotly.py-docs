@@ -24,7 +24,6 @@ jupyter:
     page_type: example_index
     permalink: python/linear-fits/
     thumbnail: thumbnail/linear_fit.jpg
-    title: Linear Fit
 ---
 
 #### New to Plotly?

@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/figurewidget/
     thumbnail: thumbnail/figurewidget-overview.gif
-    title: Plotly FigureWidget Overview
     v4upgrade: true
 ---
 

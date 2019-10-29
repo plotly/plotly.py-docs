@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/webgl-text-and-annotations/
     thumbnail: thumbnail/webgl-text-and-annotations.jpg
-    title: WebGL Text and Annotations | plotly
 ---
 
 #### New to Plotly?

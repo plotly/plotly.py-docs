@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/peak-integration/
     thumbnail: /images/static-image
-    title: Peak Integration in Python | plotly
 ---
 
 #### New to Plotly?

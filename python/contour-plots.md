@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/contour-plots/
     thumbnail: thumbnail/contour.jpg
-    title: Contour Plots | plotly
     v4upgrade: true
 ---
 

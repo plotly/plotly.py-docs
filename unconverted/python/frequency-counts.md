@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/frequency-counts/
     thumbnail: /images/static-image
-    title: Frequency Counts in Python. | plotly
 ---
 
 #### New to Plotly?

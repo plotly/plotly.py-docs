@@ -34,7 +34,6 @@ jupyter:
     page_type: example_index
     permalink: python/visualizing-mri-volume-slices/
     thumbnail: thumbnail/brain-mri-animation_square.gif
-    title: Visualizing MRI Volume Slices | plotly
 ---
 
 #### Visualization of MRI volume slices

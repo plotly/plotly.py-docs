@@ -32,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/smoothing/
     thumbnail: /images/static-image
-    title: Smoothing in Python | plotly
 ---
 
 

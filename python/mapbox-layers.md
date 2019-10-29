@@ -34,7 +34,6 @@ jupyter:
     page_type: u-guide
     permalink: python/mapbox-layers/
     thumbnail: thumbnail/mapbox-layers.png
-    title: Mapbox Map Layers in Python | Plotly
 ---
 
 <!-- #region -->

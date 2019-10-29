@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/group-by/
     thumbnail: thumbnail/groupby.jpg
-    title: Group By | Plotly
     v4upgrade: true
 ---
 

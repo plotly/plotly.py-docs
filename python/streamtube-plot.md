@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/streamtube-plot/
     thumbnail: thumbnail/streamtube.jpg
-    title: 3D Streamtube Plots | Plotly
 ---
 
 

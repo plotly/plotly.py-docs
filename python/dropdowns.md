@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/dropdowns/
     thumbnail: thumbnail/dropdown.jpg
-    title: Dropdown Menus | plotly
     v4upgrade: true
 ---
 

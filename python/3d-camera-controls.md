@@ -32,7 +32,6 @@ jupyter:
     order: 0.108
     permalink: python/3d-camera-controls/
     thumbnail: thumbnail/3d-camera-controls.jpg
-    title: Python 3D Camera Controls | plotly
 ---
 
 ### How camera controls work

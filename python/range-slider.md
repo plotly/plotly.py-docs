@@ -34,7 +34,6 @@ jupyter:
     page_type: example_index
     permalink: python/range-slider/
     thumbnail: thumbnail/sliders.jpg
-    title: Python Range Slider and Selectors | plotly
     v4upgrade: true
 ---
 

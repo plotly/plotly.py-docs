@@ -22,7 +22,6 @@ jupyter:
     permalink: python/streaming-tutorial/
     redirect_from: python/streaming-line-tutorial/
     thumbnail: /images/static-image
-    title: Plotly Streaming
 ---
 
 ### Streaming Support

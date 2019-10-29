@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-line-plots/
     thumbnail: thumbnail/3d-line.jpg
-    title: 3D Line Plots in Python | plotly
 ---
 
 ### 3D Line plot with Plotly Express

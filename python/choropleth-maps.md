@@ -23,7 +23,6 @@ jupyter:
     page_type: u-guide
     permalink: python/choropleth-maps/
     thumbnail: thumbnail/choropleth.jpg
-    title: Python Choropleth Maps | Plotly
     v4upgrade: true
 ---
 

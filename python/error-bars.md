@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/error-bars/
     thumbnail: thumbnail/error-bar.jpg
-    title: Error Bars | plotly
     v4upgrade: true
 ---
 

@@ -34,7 +34,6 @@ jupyter:
     page_type: example_index
     permalink: python/mapbox-density-heatmaps/
     thumbnail: thumbnail/mapbox-density.png
-    title: Python Density Heatmap | plotly
 ---
 
 

@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/statistics-charts/
     thumbnail: /images/static-image
-    title: Statistics Charts in Python. | plotly
 ---
 
 #### New to Plotly?

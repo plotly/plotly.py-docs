@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/sunburst-charts/
     thumbnail: thumbnail/sunburst.gif
-    title: Sunburst in Python | plotly
 ---
 
 ### Basic Sunburst Plot ###

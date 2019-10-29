@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/peak-fitting/
     thumbnail: /images/static-image
-    title: Peak Fitting in Python | plotly
 ---
 
 #### New to Plotly?

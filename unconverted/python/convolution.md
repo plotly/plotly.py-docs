@@ -22,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/convolution/
     thumbnail: /images/static-image
-    title: Convolution in Python | plotly
 ---
 
 #### New to Plotly?

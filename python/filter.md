@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/filter/
     thumbnail: thumbnail/filter.jpg
-    title: Filter | Plotly
     v4upgrade: true
 ---
 

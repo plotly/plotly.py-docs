@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/filled-area-on-mapbox/
     thumbnail: thumbnail/area.jpg
-    title: Python Mapbox Choropleth Maps | plotly
 ---
 
 <!-- #region -->

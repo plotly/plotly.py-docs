@@ -41,12 +41,19 @@ jobs:
             pip install -r requirements.txt
             echo 'export PATH="/home/circleci/repo/node_modules/.bin:$PATH"' >> $BASH_ENV
             sudo apt-get install -y poppler-utils libxtst6 xvfb libgtk2.0-0 libgconf-2-4 libnss3 libasound2
+          
 
       - save_cache:
           paths:
             - ./venv
             - ./node_modules
           key: v1-dependencies-{{ checksum "requirements.txt" }}
+
+      - run:
+          name: front-matter-ci
+          command: |
+            . venv/bin/activate
+            python front-matter-ci.py
 
       - run:
           name: make html

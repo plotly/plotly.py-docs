@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.6
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,25 +20,26 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.8
   plotly:
-    description: How to set the title, legend-entries, and axis-titles in python.
+    description: How to set the global font, title, legend-entries, and axis-titles
+      in python.
     display_as: file_settings
     has_thumbnail: true
     ipynb: ~notebook_demo/271
     language: python
     layout: base
-    name: Setting the Title, Legend Entries, and Axis Titles
+    name: Setting the Font, Title, Legend Entries, and Axis Titles
     order: 11
     permalink: python/figure-labels/
+    redirect_from: python/font/
     thumbnail: thumbnail/figure-labels.png
-    title: Setting the Title, Legend Entries, and Axis Titles in Python
+    title: Setting the Font, Title, Legend Entries, and Axis Titles in Python
     v4upgrade: true
 ---
 
 ```python
 import plotly.graph_objects as go
-
 
 fig = go.Figure()
 
@@ -56,30 +57,13 @@ fig.add_trace(go.Scatter(
 ))
 
 fig.update_layout(
-    title=go.layout.Title(
-        text="Plot Title",
-        xref="paper",
-        x=0
-    ),
-    xaxis=go.layout.XAxis(
-        title=go.layout.xaxis.Title(
-            text="x Axis",
-            font=dict(
-                family="Courier New, monospace",
-                size=18,
-                color="#7f7f7f"
-            )
-        )
-    ),
-    yaxis=go.layout.YAxis(
-        title=go.layout.yaxis.Title(
-            text="y Axis",
-            font=dict(
-                family="Courier New, monospace",
-                size=18,
-                color="#7f7f7f"
-            )
-        )
+    title="Plot Title",
+    xaxis_title="x Axis Title",
+    yaxis_title="y Axis Title",
+    font=dict(
+        family="Courier New, monospace",
+        size=18,
+        color="#7f7f7f"
     )
 )
 

@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.7
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.2
+    version: 3.6.8
   plotly:
     description: How to set colorscales and heatmap colorscales in Python and Plotly.
       Divergent, sequential, and qualitative colorscales.
@@ -33,6 +33,7 @@ jupyter:
     order: 22
     permalink: python/colorscales/
     thumbnail: thumbnail/heatmap_colorscale.jpg
+    redirect_from: python/logarithmic-color-scale/
     title: Colorscales in Python | Plotly
     v4upgrade: true
 ---
@@ -245,6 +246,36 @@ fig.add_trace(go.Heatmap(
         tickvals=[2, 50, 100],
         ticktext=["Cool", "Mild", "Hot"],
         ticks="outside"
+    )
+))
+
+fig.show()
+```
+
+### Logarithmic Colorscale
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Heatmap(
+    z= [[10, 100.625, 1200.5, 150.625, 2000],
+       [5000.625, 60.25, 8.125, 100000, 150.625],
+       [2000.5, 300.125, 50., 8.125, 12.5],
+       [10.625, 1.25, 3.125, 6000.25, 100.625],
+       [0, 0.625, 2.5, 50000.625, 10]],
+    colorscale= [
+        [0, 'rgb(250, 250, 250)'],        #0
+        [1./10000, 'rgb(200, 200, 200)'], #10
+        [1./1000, 'rgb(150, 150, 150)'],  #100
+        [1./100, 'rgb(100, 100, 100)'],   #1000
+        [1./10, 'rgb(50, 50, 50)'],       #10000
+        [1., 'rgb(0, 0, 0)'],             #100000
+
+    ],
+    colorbar = dict(
+        tick0= 0,
+        tickmode= 'array',
+        tickvals= [0, 1000, 10000, 100000]
     )
 ))
 

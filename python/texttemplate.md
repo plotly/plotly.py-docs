@@ -103,20 +103,3 @@ fig.update_layout(yaxis = {'type': 'date'})
 
 fig.show()
 ```
-
-```python
-import plotly.express as px
-import plotly.graph_objects as go
-
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
-
-fig.update_traces(go.Scatter(texttemplate = '%{y}'))
-
-fig.show()
-```
-
-```python
-
-```

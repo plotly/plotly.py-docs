@@ -40,7 +40,7 @@ jupyter:
 ### Customize Displayed Text with a Text Template
 To show an arbitrary text in your chart you can use [texttemplate](https://plot.ly/python/reference/#pie-texttemplate), which is a template string used for rendering the information, and will override [textinfo](https://plot.ly/python/reference/#treemap-textinfo). 
 This template string can include `variables` in %{variable} format, `numbers` in [d3-format's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_forma), and `date` in [d3-time-fomrat's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format).
-`texttemplate` customizes the text that appears on your plot vs. [hovertemplate](https://plot.ly/python/reference/#pie-hovertemplate) customize the tooltip text. 
+`texttemplate` customizes the text that appears on your plot vs. [hovertemplate](https://plot.ly/python/reference/#pie-hovertemplate) that customizes the tooltip text. 
 
 ```python
 import plotly.graph_objects as go
@@ -76,6 +76,7 @@ fig.show()
 ```
 ### Set Date in Text Template
 The following example shows how to show date by setting [axis.type](https://plot.ly/python/reference/#layout-yaxis-type) in [funnel charts](https://plot.ly/python/funnel-charts/).
+As you can see [textinfo](https://plot.ly/python/reference/#funnel-textinfo) and [texttemplate](https://plot.ly/python/reference/#funnel-texttemplate) have the same functionality when you want to determine 'just' the trace information on the graph.
 
 ```python
 from plotly import graph_objects as go
@@ -101,4 +102,21 @@ fig.add_trace(go.Funnel(
 fig.update_layout(yaxis = {'type': 'date'})
 
 fig.show()
+```
+
+```python
+import plotly.express as px
+import plotly.graph_objects as go
+
+gapminder = px.data.gapminder()
+fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
+           hover_name="country", log_x=True, size_max=60)
+
+fig.update_traces(go.Scatter(texttemplate = '%{y}'))
+
+fig.show()
+```
+
+```python
+
 ```

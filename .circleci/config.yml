@@ -49,17 +49,13 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
-          name: front-matter-ci
-          command: |
-            . venv/bin/activate
-            python front-matter-ci.py
-
-      - run:
           name: make html
           command: |
             . venv/bin/activate
             echo ${mapbox_token} > python/.mapbox_token
             make -kj8 || make -kj8
+            curl https://raw.githubusercontent.com/plotly/documentation/front-matter-update/front-matter-ci.py > front-matter-ci.py
+            python front-matter-ci.py build/html
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cd build/html
               git init

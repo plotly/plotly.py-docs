@@ -140,6 +140,18 @@ fig.update_layout(xaxis = {'type': 'date'})
 fig.show(config = {'doubleClickDelay': 1000})
 ```
 
+### `Edit in Chart Studio` Modebar Button
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Scatter(y = [1, 2, 1, 3, 4, 2]))
+
+fig.update_layout()
+
+fig.show(config = {'showEditInChartStudio': True})
+```
+
 #### Reference
 
 

@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/2D-Histogram/
     thumbnail: thumbnail/histogram2d.jpg
-    title: Python 2D Histograms | plotly
+    
 ---
 
 ### 2D Histogram of a Bivariate Normal Distribution ###

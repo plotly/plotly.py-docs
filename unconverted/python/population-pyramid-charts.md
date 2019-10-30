@@ -23,7 +23,7 @@ jupyter:
     page_type: u-guide
     permalink: python/population-pyramid-charts/
     thumbnail: thumbnail/pyramid.jpg
-    title: Population Pyramid Charts | Plotly
+    
 ---
 
 #### New to Plotly?

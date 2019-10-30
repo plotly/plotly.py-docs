@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/numerical-integration/
     thumbnail: /images/static-image
-    title: Numerical Integration in Python. | plotly
+    
 ---
 
 #### New to Plotly?

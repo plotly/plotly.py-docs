@@ -23,7 +23,7 @@ jupyter:
     page_type: u-guide
     permalink: python/legacy-polar-chart/
     thumbnail: thumbnail/polar-scatter.jpg
-    title: Python Polar Charts | plotly
+    
 ---
 
 #### New to Plotly?

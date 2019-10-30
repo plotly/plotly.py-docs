@@ -24,7 +24,7 @@ jupyter:
     page_type: example_index
     permalink: python/exponential-fits/
     thumbnail: thumbnail/exponential_fit.jpg
-    title: Exponential Fit
+    
 ---
 
 #### New to Plotly?

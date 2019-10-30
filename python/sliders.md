@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/sliders/
     thumbnail: thumbnail/slider2017.gif
-    title: Python Slider Controls | plotly
+    
     v4upgrade: true
 ---
 

@@ -32,7 +32,7 @@ jupyter:
     order: 21
     permalink: python/marker-style/
     thumbnail: thumbnail/marker-style.gif
-    title: Styling Markers | Plotly
+    
     v4upgrade: true
 ---
 

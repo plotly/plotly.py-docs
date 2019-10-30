@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/interpolation-and-extrapolation-in-2d/
     thumbnail: /images/static-image
-    title: Interpolation and Extrapolation in 2D in Python. | plotly
+    
 ---
 
 #### New to Plotly?

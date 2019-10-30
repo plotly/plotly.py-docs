@@ -34,7 +34,7 @@ jupyter:
     page_type: example_index
     permalink: python/plotly-express/
     thumbnail: thumbnail/plotly-express.png
-    title: Plotly Express
+    
     v4upgrade: true
 ---
 

@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-mesh/
     thumbnail: thumbnail/3d-mesh.jpg
-    title: 3D Mesh Plots in Python | plotly
+    
     v4upgrade: true
 ---
 

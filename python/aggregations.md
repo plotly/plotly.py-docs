@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/aggregations/
     thumbnail: thumbnail/aggregations.jpg
-    title: Aggregations | Plotly
+    
     v4upgrade: true
 ---
 

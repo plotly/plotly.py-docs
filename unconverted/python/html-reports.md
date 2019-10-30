@@ -22,7 +22,7 @@ jupyter:
     page_type: example_index
     permalink: python/html-reports/
     thumbnail: thumbnail/ipython_10_html_report.jpg
-    title: Python HTML Reports
+    
 ---
 
 ## Generate HTML reports with D3 graphs<br>using Python, Plotly, and Pandas

@@ -34,7 +34,7 @@ jupyter:
     page_type: example_index
     permalink: python/wind-rose-charts/
     thumbnail: thumbnail/wind-rose.jpg
-    title: Python Wind Rose Charts | plotly
+    
     v4upgrade: true
 ---
 

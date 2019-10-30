@@ -34,7 +34,7 @@ jupyter:
     page_type: u-guide
     permalink: python/gantt/
     thumbnail: thumbnail/gantt.jpg
-    title: Python Gantt Charts | plotly
+    
     v4upgrade: true
 ---
 

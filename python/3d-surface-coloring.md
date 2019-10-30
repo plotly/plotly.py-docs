@@ -32,7 +32,7 @@ jupyter:
     order: 7
     permalink: python/3d-surface-coloring/
     thumbnail: thumbnail/3d-surface-color.jpg
-    title: 3D Surface Coloring in Python | plotly
+    
 ---
 
 ```python

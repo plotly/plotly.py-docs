@@ -23,7 +23,7 @@ jupyter:
     page_type: u-guide
     permalink: python/LaTeX/
     thumbnail: thumbnail/latex.jpg
-    title: Python LaTeX | Examples | Plotly
+    
 ---
 
 #### New to Plotly?

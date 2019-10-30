@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/animations/
     thumbnail: thumbnail/animations.gif
-    title: Intro to Animations in Python | plotly
+    
     v4upgrade: true
 ---
 

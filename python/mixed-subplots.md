@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/mixed-subplots/
     thumbnail: thumbnail/mixed_subplot.JPG
-    title: Mixed Subplots | plotly
+    
     v4upgrade: true
 ---
 

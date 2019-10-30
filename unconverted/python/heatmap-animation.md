@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/heatmap-animation/
     thumbnail: thumbnail/heatmap_animation.gif
-    title: Heatmap Animation | plotly
+    
 ---
 
 #### New to Plotly?

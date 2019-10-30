@@ -32,7 +32,7 @@ jupyter:
     order: 2
     permalink: python/setting-graph-size/
     thumbnail: thumbnail/sizing.png
-    title: Setting Graph Size
+    
     v4upgrade: true
 ---
 

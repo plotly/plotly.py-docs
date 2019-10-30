@@ -33,7 +33,7 @@ jupyter:
     permalink: python/facet-plots/
     redirect_from: python/trellis-plots/
     thumbnail: thumbnail/facet-trellis-thumbnail.jpg
-    title: Python Facet and Trellis Plots | plotly
+    
 ---
 
 

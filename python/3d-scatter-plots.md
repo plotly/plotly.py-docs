@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/3d-scatter-plots/
     thumbnail: thumbnail/3d-scatter.jpg
-    title: 3D Python Scatter Plots | plotly
+    
     v4upgrade: true
 ---
 

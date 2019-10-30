@@ -33,7 +33,7 @@ jupyter:
     order: 1.5
     permalink: python/orca-management/
     thumbnail: thumbnail/orca-management.png
-    title: Orca Management | Plotly
+    
     v4upgrade: true
 ---
 

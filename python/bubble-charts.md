@@ -34,7 +34,7 @@ jupyter:
     permalink: python/bubble-charts/
     redirect_from: python/bubble-charts-tutorial/
     thumbnail: thumbnail/bubble.jpg
-    title: Bubble Charts | plotly
+    
     v4upgrade: true
 ---
 

@@ -32,7 +32,7 @@ jupyter:
     page_type: example_index
     permalink: python/custom-buttons/
     thumbnail: thumbnail/custom-buttons.jpg
-    title: Custom Buttons | plotly
+    
     v4upgrade: true
 ---
 

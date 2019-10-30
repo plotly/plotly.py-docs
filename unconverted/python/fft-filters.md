@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/fft-filters/
     thumbnail: /images/static-image
-    title: FFT Filters in Python | plotly
+    
 ---
 
 #### New to Plotly?

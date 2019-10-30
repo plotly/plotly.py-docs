@@ -19,7 +19,7 @@ jupyter:
     page_type: u-guide
     permalink: python/userguide/
     thumbnail: null
-    title: Getting Started Plotly for Python
+    
 ---
 
 # Plotly for Python User Guide

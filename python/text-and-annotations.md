@@ -32,7 +32,7 @@ jupyter:
     order: 30
     permalink: python/text-and-annotations/
     thumbnail: thumbnail/text-and-annotations.png
-    title: Text and Annotations | plotly
+    
     v4upgrade: true
 ---
 

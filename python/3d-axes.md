@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/3d-axes/
     thumbnail: thumbnail/3d-axes.png
-    title: Format 3d Axes | plotly
+    
     v4upgrade: true
 ---
 

@@ -22,7 +22,7 @@ jupyter:
     order: 5
     permalink: python/3d-filled-line-plots/
     thumbnail: thumbnail/3d-filled-line-plot.jpg
-    title: 3D Filled Line Plots in Python | plotly
+    
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

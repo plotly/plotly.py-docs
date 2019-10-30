@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/3d-surface-plots/
     thumbnail: thumbnail/3d-surface.jpg
-    title: 3D Surface Plots in Python | Plotly
+    
     v4upgrade: true
 ---
 

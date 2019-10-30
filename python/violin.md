@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/violin/
     thumbnail: thumbnail/violin.jpg
-    title: Violin Plots | Plotly
+    
     v4upgrade: true
 ---
 

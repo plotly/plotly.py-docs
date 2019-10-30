@@ -35,7 +35,7 @@ jupyter:
     page_type: u-guide
     permalink: python/carpet-contour/
     thumbnail: thumbnail/contourcarpet.jpg
-    title: Carpet Contour Plots | Plotly
+    
 ---
 
 ### Basic Carpet Plot

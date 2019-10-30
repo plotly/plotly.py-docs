@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/parallel-categories-diagram/
     thumbnail: thumbnail/parcats.jpg
-    title: Python Parallel Categories | Plotly
+    
 ---
 
 #### Parallel Categories Diagram

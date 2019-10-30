@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/box-plots/
     thumbnail: thumbnail/box.jpg
-    title: Box Plots | plotly
+    
     v4upgrade: true
 ---
 

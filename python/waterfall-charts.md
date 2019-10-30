@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/waterfall-charts/
     thumbnail: thumbnail/waterfall-charts.jpg
-    title: Python Waterfall Chart | Plotly
+    
 ---
 
 ### Simple Waterfall Chart

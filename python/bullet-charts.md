@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/bullet-charts/
     thumbnail: thumbnail/bullet.png
-    title: Python Bullet Chart | plotly
+    
     v4upgrade: true
 ---
 

@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/anova/
     thumbnail: /images/static-image
-    title: Anova in Python | plotly
+    
 ---
 
 #### New to Plotly?

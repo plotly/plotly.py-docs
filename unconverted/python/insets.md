@@ -22,7 +22,7 @@ jupyter:
     page_type: example_index
     permalink: python/insets/
     thumbnail: thumbnail/insets.jpg
-    title: Inset Plots | plotly
+    
 ---
 
 #### New to Plotly?

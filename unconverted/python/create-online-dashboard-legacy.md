@@ -23,7 +23,7 @@ jupyter:
     page_type: u-guide
     permalink: python/create-online-dashboard-legacy/
     thumbnail: thumbnail/dashboard.jpg
-    title: Dashboard API | plotly
+    
 ---
 
 #### New to Plotly?

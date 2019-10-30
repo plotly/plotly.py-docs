@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/lines-on-mapbox/
     thumbnail: thumbnail/line_mapbox.jpg
-    title: Lines on Mapbox | plotly
+    
 ---
 
 ### Mapbox Access Token

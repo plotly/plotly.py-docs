@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/logos/
     thumbnail: thumbnail/your-tutorial-chart.jpg
-    title: Add Logos to Charts | plotly
+    
 ---
 
 #### New to Plotly?

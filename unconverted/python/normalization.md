@@ -24,7 +24,7 @@ jupyter:
     page_type: example_index
     permalink: python/normalization/
     thumbnail: /images/static-image
-    title: Normalization in Python. | plotly
+    
 ---
 
 #### New to Plotly?

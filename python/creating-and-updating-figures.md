@@ -34,7 +34,7 @@ jupyter:
       - python/user-guide/
       - python/user-g/
     thumbnail: thumbnail/creating-and-updating-figures.png
-    title: Creating and Updating Figures | plotly
+    
     v4upgrade: true
 ---
 

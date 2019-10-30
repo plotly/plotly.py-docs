@@ -34,7 +34,7 @@ jupyter:
     permalink: python/3d-isosurface-plots/
     redirect_from: python/isosurfaces-with-marching-cubes/
     thumbnail: thumbnail/isosurface.jpg
-    title: Python 3D Isosurface Plots | plotly
+    
 ---
 
 With ``go.Isosurface``, you can plot [isosurface contours](https://en.wikipedia.org/wiki/Isosurface) of a scalar field ``value``, which is defined on ``x``, ``y`` and ``z`` coordinates.

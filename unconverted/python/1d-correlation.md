@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/1d-correlation/
     thumbnail: /images/static-image
-    title: 1D Correlation in Python | plotly
+    
 ---
 
 #### New to Plotly?

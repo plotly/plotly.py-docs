@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/basic-statistics/
     thumbnail: /images/static-image
-    title: Basic Statistics in Python. | plotly
+    
 ---
 
 #### New to Plotly?

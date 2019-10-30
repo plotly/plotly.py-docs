@@ -33,7 +33,7 @@ jupyter:
     order: 0.5
     permalink: python/webgl-vs-svg/
     thumbnail: thumbnail/webgl.jpg
-    title: Python WebGL vs SVG | plotly
+    
     v4upgrade: true
 ---
 

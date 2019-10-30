@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/indicator/
     thumbnail: thumbnail/indicator.jpg
-    title: Python Gauge Chart | plotly
+    
     v4upgrade: true
 ---
 

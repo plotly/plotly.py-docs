@@ -22,7 +22,7 @@ jupyter:
     order: 14
     permalink: python/3d-point-clustering/
     thumbnail: thumbnail/3d-clusters.jpg
-    title: 3D Point Clustering in Python | plotly
+    
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

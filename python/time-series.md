@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/time-series/
     thumbnail: thumbnail/time-series.jpg
-    title: Time Series Plots | plotly
+    
     v4upgrade: true
 ---
 

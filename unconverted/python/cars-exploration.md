@@ -22,7 +22,7 @@ jupyter:
     order: 26
     permalink: python/cars-exploration/
     thumbnail: thumbnail/figurewidget-cars.gif
-    title: Car Exploration with Hover Events
+    
 ---
 
 #### New to Plotly?

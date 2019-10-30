@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/horizontal-bar-charts/
     thumbnail: thumbnail/horizontal-bar.jpg
-    title: Horizontal Bar Charts | plotly
+    
     v4upgrade: true
 ---
 

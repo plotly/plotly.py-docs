@@ -36,7 +36,7 @@ jupyter:
     - python/gauge-chart/
     - python/gauge-meter/
     thumbnail: thumbnail/gauge.jpg
-    title: Python Gauge Chart | plotly
+    
     v4upgrade: true
 ---
 

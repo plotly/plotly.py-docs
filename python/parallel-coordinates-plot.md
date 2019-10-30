@@ -35,7 +35,7 @@ jupyter:
     page_type: u-guide
     permalink: python/parallel-coordinates-plot/
     thumbnail: thumbnail/parcoords.jpg
-    title: Parallel Coordinates Plot | plotly
+    
     v4upgrade: true
 ---
 

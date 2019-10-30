@@ -22,7 +22,7 @@ jupyter:
     order: 4
     permalink: python/ribbon-plots/
     thumbnail: thumbnail/ribbon-plot.jpg
-    title: Python Ribbon Plots | plotly
+    
 ---
 
 #### New to Plotly?

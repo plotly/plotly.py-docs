@@ -34,7 +34,7 @@ jupyter:
     page_type: u-guide
     permalink: python/configuration-options/
     thumbnail: thumbnail/modebar-icons.png
-    title: Configuration | plotly
+    
     v4upgrade: true
 ---
 

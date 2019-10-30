@@ -34,7 +34,7 @@ jupyter:
     page_type: example_index
     permalink: python/multiple-transforms/
     thumbnail: thumbnail/multiple-transforms.jpg
-    title: Multiple Transforms | Plotly
+    
     v4upgrade: true
 ---
 

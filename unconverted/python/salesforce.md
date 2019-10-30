@@ -25,7 +25,7 @@ jupyter:
     permalink: python/salesforce/
     redirect_from: ipython-notebooks/salesforce/
     thumbnail: /images/static-image
-    title: Interactive Salesforce Graphing | Plotly
+    
 ---
 
 #### New to Plotly?

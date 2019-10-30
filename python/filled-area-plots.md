@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/filled-area-plots/
     thumbnail: thumbnail/area.jpg
-    title: Filled Area Plots | plotly
+    
     v4upgrade: true
 ---
 

@@ -35,7 +35,7 @@ jupyter:
     permalink: python/subplots/
     redirect_from: ipython-notebooks/subplots/
     thumbnail: thumbnail/subplots.jpg
-    title: Python Subplots | Examples | Plotly
+    
     v4upgrade: true
 ---
 

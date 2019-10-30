@@ -31,7 +31,7 @@ jupyter:
     page_type: example_index
     permalink: python/compare-webgl-svg/
     thumbnail: /images/static-image
-    title: Comparing WebGL vs SVG | plotly
+    
     v4upgrade: true
 ---
 

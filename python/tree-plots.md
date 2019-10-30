@@ -33,7 +33,7 @@ jupyter:
     order: 10.5
     permalink: python/tree-plots/
     thumbnail: thumbnail/treeplot.jpg
-    title: Python Tree-plots | plotly
+    
     v4upgrade: true
 ---
 

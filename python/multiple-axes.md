@@ -32,7 +32,7 @@ jupyter:
     order: 14
     permalink: python/multiple-axes/
     thumbnail: thumbnail/multiple-axes.jpg
-    title: Python Multiple Axes | Examples | Plotly
+    
     v4upgrade: true
 ---
 

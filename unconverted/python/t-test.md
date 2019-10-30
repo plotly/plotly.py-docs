@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/t-test/
     thumbnail: /images/static-image
-    title: T-Test in Python. | plotly
+    
 ---
 
 #### New to Plotly?

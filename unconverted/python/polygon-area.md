@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/polygon-area/
     thumbnail: /images/static-image
-    title: Polygon Area in Python. | plotly
+    
 ---
 
 #### New to Plotly?

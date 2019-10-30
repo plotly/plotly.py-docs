@@ -34,7 +34,7 @@ jupyter:
     page_type: u-guide
     permalink: python/county-choropleth/
     thumbnail: thumbnail/county-choropleth-usa-greybkgd.jpg
-    title: Python USA County Choropleth Maps | Plotly
+    
 ---
 
 #### Required Packages

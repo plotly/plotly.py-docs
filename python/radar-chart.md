@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/radar-chart/
     thumbnail: thumbnail/radar.gif
-    title: Radar Charts | Plotly
+    
     v4upgrade: true
 ---
 

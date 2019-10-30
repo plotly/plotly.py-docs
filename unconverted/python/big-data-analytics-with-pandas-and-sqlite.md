@@ -25,7 +25,7 @@ jupyter:
     permalink: python/big-data-analytics-with-pandas-and-sqlite/
     redirect_from: ipython-notebooks/big-data-analytics-with-pandas-and-sqlite/
     thumbnail: /images/static-image
-    title: Big Data Workflow with Pandas and SQLite | Plotly
+    
 ---
 
 #### New to Plotly?

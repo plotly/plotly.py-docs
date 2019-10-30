@@ -22,7 +22,7 @@ jupyter:
     order: 9
     permalink: python/3d-parametric-plots/
     thumbnail: thumbnail/parametric.jpg
-    title: 3D Parametric Plots in Python | plotly
+    
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

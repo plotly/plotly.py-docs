@@ -24,7 +24,7 @@ jupyter:
     page_type: example_index
     permalink: python/gapminder-example/
     thumbnail: thumbnail/gapminder_animation.gif
-    title: Adding Sliders to Animations | plotly
+    
 ---
 
 #### New to Plotly?

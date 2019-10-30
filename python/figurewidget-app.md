@@ -33,7 +33,7 @@ jupyter:
     page_type: example_index
     permalink: python/figurewidget-app/
     thumbnail: thumbnail/multi-widget.jpg
-    title: Interactive Data Analysis with FigureWidget ipywidgets
+    
     v4upgrade: true
 ---
 

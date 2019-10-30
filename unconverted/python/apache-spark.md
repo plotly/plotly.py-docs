@@ -23,7 +23,7 @@ jupyter:
     permalink: python/apache-spark/
     redirect_from: ipython-notebooks/apache-spark/
     thumbnail: /images/static-image
-    title: Plotting Spark DataFrames | Plotly
+    
 ---
 
 #### New to Plotly?

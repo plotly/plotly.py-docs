@@ -35,7 +35,7 @@ jupyter:
     page_type: u-guide
     permalink: python/sankey-diagram/
     thumbnail: thumbnail/sankey.jpg
-    title: Sankey Diagram | Plotly
+    
     v4upgrade: true
 ---
 

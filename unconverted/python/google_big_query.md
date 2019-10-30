@@ -22,7 +22,7 @@ jupyter:
     page_type: example_index
     permalink: python/google_big_query/
     thumbnail: thumbnail/bigquery2.jpg
-    title: Google Big Query | plotly
+    
 ---
 
 #### New to Plotly?

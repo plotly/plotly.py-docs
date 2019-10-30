@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/dot-plots/
     thumbnail: thumbnail/dot-plot.jpg
-    title: Python Dot Plots | plotly
+    
     v4upgrade: true
 ---
 

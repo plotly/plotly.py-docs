@@ -24,7 +24,7 @@ jupyter:
     page_type: u-guide
     permalink: python/density-plots/
     thumbnail: thumbnail/density.gif
-    title: Python 2d Density Plots | plotly
+    
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

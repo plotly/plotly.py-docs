@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/3d-network-graph/
     thumbnail: thumbnail/3dnetwork.jpg
-    title: 3D Network Graphs in Python | plotly
+    
 ---
 
 #### New to Plotly?

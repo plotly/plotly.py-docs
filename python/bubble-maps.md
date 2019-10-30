@@ -32,7 +32,7 @@ jupyter:
     page_type: example_index
     permalink: python/bubble-maps/
     thumbnail: thumbnail/bubble-map.jpg
-    title: Python Bubble Maps | Plotly
+    
     v4upgrade: true
 ---
 

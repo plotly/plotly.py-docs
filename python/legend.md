@@ -32,7 +32,7 @@ jupyter:
     order: 13
     permalink: python/legend/
     thumbnail: thumbnail/legends.gif
-    title: Legends | plotly
+    
     v4upgrade: true
 ---
 

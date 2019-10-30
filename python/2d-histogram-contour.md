@@ -33,7 +33,7 @@ jupyter:
     page_type: u-guide
     permalink: python/2d-histogram-contour/
     thumbnail: thumbnail/hist2dcontour.png
-    title: 2D Histogram Contour | Plotly
+    
 ---
 
 #### Basic 2D Histogram Contour

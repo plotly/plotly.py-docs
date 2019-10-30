@@ -32,7 +32,7 @@ jupyter:
     order: 31
     permalink: python/images/
     thumbnail: thumbnail/images.png
-    title: Layout with images | plotly
+    
     v4upgrade: true
 ---
 

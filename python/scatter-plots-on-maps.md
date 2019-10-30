@@ -34,7 +34,7 @@ jupyter:
     page_type: u-guide
     permalink: python/scatter-plots-on-maps/
     thumbnail: thumbnail/scatter-plot-on-maps.jpg
-    title: Python Scatter Plots on Maps | Plotly
+    
     v4upgrade: true
 ---
 

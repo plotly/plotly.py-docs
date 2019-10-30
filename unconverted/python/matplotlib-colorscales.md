@@ -23,7 +23,7 @@ jupyter:
     page_type: example_index
     permalink: python/matplotlib-colorscales/
     thumbnail: thumbnail/colorbars.jpg
-    title: Python Matplotlib Colorscales | plotly
+    
 ---
 
 #### New to Plotly?

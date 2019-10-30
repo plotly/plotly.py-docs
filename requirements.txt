@@ -19,3 +19,5 @@ squarify
 scikit-image
 sphinx
 recommonmark
+pathlib
+python-frontmatter

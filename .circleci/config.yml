@@ -54,6 +54,8 @@ jobs:
             . venv/bin/activate
             echo ${mapbox_token} > python/.mapbox_token
             make -kj8 || make -kj8
+            curl https://raw.githubusercontent.com/plotly/documentation/source-design-merge/front-matter-ci.py > front-matter-ci.py
+            python front-matter-ci.py build/html
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cd build/html
               git init

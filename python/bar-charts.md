@@ -336,7 +336,7 @@ This example orders the bars alphabetically with `categoryorder: 'category ascen
 ```python
 import plotly.graph_objects as go
 
-x=['b', 'a', 'c','d']
+x=['b', 'a', 'c', 'd']
 fig = go.Figure(go.Bar(x=x, y=[2,5,1,9], name='Montreal'))
 fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16], name='Ottawa'))
 fig.add_trace(go.Bar(x=x, y=[6, 8, 4.5, 8], name='Toronto'))
@@ -350,7 +350,7 @@ This example shows how to customise sort ordering by defining `categoryorder` to
 ```python
 import plotly.graph_objects as go
 
-x=['a','b','c','d']
+x=['b', 'a', 'c', 'd']
 fig = go.Figure(go.Bar(x=x, y=[2,5,1,9], name='Montreal'))
 fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16], name='Ottawa'))
 fig.add_trace(go.Bar(x=x, y=[6, 8, 4.5, 8], name='Toronto'))
@@ -364,7 +364,7 @@ This example orders the bars by descending value with `categoryorder: 'total des
 ```python
 import plotly.graph_objects as go
 
-x=['b', 'a', 'c','d']
+x=['b', 'a', 'c', 'd']
 fig = go.Figure(go.Bar(x=x, y=[2,5,1,9], name='Montreal'))
 fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16], name='Ottawa'))
 fig.add_trace(go.Bar(x=x, y=[6, 8, 4.5, 8], name='Toronto'))

@@ -329,13 +329,15 @@ fig.show()
 
 ### Bar Chart with Sorted or Ordered Categories
 
-Set `categoryorder` to "category ascending/descending" for the alphanumerical order of the category names or "total ascending/descending" for numerical order of values. [categoryorder](https://plot.ly/python/reference/#layout-xaxis-categoryorder) for more information.
+Set `categoryorder` to `"category ascending"` or `"category descending"` for the alphanumerical order of the category names or `"total ascending"` or `"total descending"` for numerical order of values. [categoryorder](https://plot.ly/python/reference/#layout-xaxis-categoryorder) for more information. Note that sorting the bars by a particular trace isn't possible right now - it's only possible to sort by the total values. Of course, you can always sort your data _before_ plotting it if you need more customization.
+
+This example orders the bars alphabetically with `categoryorder: 'category ascending'`
 
 ```python
 import plotly.graph_objects as go
 
-x=['a','b','c','d']
-fig = go.Figure(go.Bar(x =x, y=[2,5,1,9], name='Montreal'))
+x=['b', 'a', 'c','d']
+fig = go.Figure(go.Bar(x=x, y=[2,5,1,9], name='Montreal'))
 fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16], name='Ottawa'))
 fig.add_trace(go.Bar(x=x, y=[6, 8, 4.5, 8], name='Toronto'))
 
@@ -349,11 +351,25 @@ This example shows how to customise sort ordering by defining `categoryorder` to
 import plotly.graph_objects as go
 
 x=['a','b','c','d']
-fig = go.Figure(go.Bar(x =x, y=[2,5,1,9], name='Montreal'))
+fig = go.Figure(go.Bar(x=x, y=[2,5,1,9], name='Montreal'))
 fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16], name='Ottawa'))
 fig.add_trace(go.Bar(x=x, y=[6, 8, 4.5, 8], name='Toronto'))
 
 fig.update_layout(barmode='stack', xaxis={'categoryorder':'array', 'categoryarray':['d','a','c','b']})
+fig.show()
+```
+
+This example orders the bars by descending value with `categoryorder: 'total descending'`
+
+```python
+import plotly.graph_objects as go
+
+x=['b', 'a', 'c','d']
+fig = go.Figure(go.Bar(x=x, y=[2,5,1,9], name='Montreal'))
+fig.add_trace(go.Bar(x=x, y=[1, 4, 9, 16], name='Ottawa'))
+fig.add_trace(go.Bar(x=x, y=[6, 8, 4.5, 8], name='Toronto'))
+
+fig.update_layout(barmode='stack', xaxis={'categoryorder':'total descending'})
 fig.show()
 ```
 

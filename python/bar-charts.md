@@ -331,7 +331,7 @@ fig.show()
 
 Set `categoryorder` to `"category ascending"` or `"category descending"` for the alphanumerical order of the category names or `"total ascending"` or `"total descending"` for numerical order of values. [categoryorder](https://plot.ly/python/reference/#layout-xaxis-categoryorder) for more information. Note that sorting the bars by a particular trace isn't possible right now - it's only possible to sort by the total values. Of course, you can always sort your data _before_ plotting it if you need more customization.
 
-This example orders the bars alphabetically with `categoryorder: 'category ascending'`
+This example orders the bar chart alphabetically with `categoryorder: 'category ascending'`
 
 ```python
 import plotly.graph_objects as go
@@ -359,7 +359,7 @@ fig.update_layout(barmode='stack', xaxis={'categoryorder':'array', 'categoryarra
 fig.show()
 ```
 
-This example orders the bars by descending value with `categoryorder: 'total descending'`
+This example orders the bar chart by descending value with `categoryorder: 'total descending'`
 
 ```python
 import plotly.graph_objects as go

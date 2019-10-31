@@ -24,7 +24,7 @@ jupyter:
   plotly:
     description: Arguments accepted by Plotly Express functions
     display_as: file_settings
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/253
     language: python
     layout: base

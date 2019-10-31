@@ -24,7 +24,7 @@ jupyter:
   plotly:
     description: How to make Facet and Trellis Plots in Python with Plotly.
     display_as: statistical
-    has_thumbnail: true
+    
     language: python
     layout: base
     name: Facet and Trellis Plots

@@ -26,7 +26,7 @@ jupyter:
   plotly:
     description: How to make Sankey Diagrams in Python with Plotly.
     display_as: basic
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/151
     language: python
     layout: base

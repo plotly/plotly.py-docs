@@ -25,7 +25,7 @@ jupyter:
     description: How to make a quiver plot in Python. A quiver plot displays velocity
       vectors a arrows.
     display_as: scientific
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/42
     language: python
     layout: base

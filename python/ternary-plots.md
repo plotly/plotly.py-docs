@@ -24,7 +24,7 @@ jupyter:
   plotly:
     description: How to make Ternary plots in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/39
     language: python
     layout: base

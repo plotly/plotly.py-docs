@@ -15,7 +15,7 @@ jupyter:
     description: How to make a 2d density plot in python. Examples of density plots
       with kernel density estimations, custom color-scales, and smoothing.
     display_as: statistical
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/25
     language: python
     layout: base

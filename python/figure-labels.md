@@ -25,7 +25,7 @@ jupyter:
     description: How to set the global font, title, legend-entries, and axis-titles
       in python.
     display_as: file_settings
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/271
     language: python
     layout: base

@@ -24,7 +24,7 @@ jupyter:
   plotly:
     description: Creating and Updating Figures from Python
     display_as: file_settings
-    has_thumbnail: true
+    
     language: python
     layout: base
     name: Creating and Updating Figures

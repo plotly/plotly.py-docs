@@ -24,7 +24,7 @@ jupyter:
   plotly:
     description: How to add error-bars to charts in Python with Plotly.
     display_as: statistical
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/18
     language: python
     layout: base

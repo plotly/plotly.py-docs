@@ -14,7 +14,7 @@ jupyter:
   plotly:
     description: How to cluster points in 3d with alpha shapes in plotly and Python
     display_as: 3d_charts
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/74
     language: python
     layout: base

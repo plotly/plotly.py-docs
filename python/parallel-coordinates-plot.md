@@ -26,7 +26,7 @@ jupyter:
   plotly:
     description: How to make parallel coorindates plots in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/142
     language: python
     layout: base

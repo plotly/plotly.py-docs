@@ -24,7 +24,7 @@ jupyter:
   plotly:
     description: How to add slider controls to your plots in Python with Plotly.
     display_as: controls
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/85
     language: python
     layout: base

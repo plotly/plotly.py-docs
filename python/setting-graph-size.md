@@ -24,7 +24,7 @@ jupyter:
   plotly:
     description: How to manipulate the graph size in Python with Plotly.
     display_as: file_settings
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/133
     language: python
     layout: base

@@ -24,7 +24,7 @@ jupyter:
   plotly:
     description: Learn how to perform smoothing using various methods in Python.
     display_as: signal-analysis
-    has_thumbnail: false
+    
     language: python
     layout: base
     name: Smoothing

@@ -14,7 +14,7 @@ jupyter:
   plotly:
     description: Use the Interact decorator with go.FigureWidget
     display_as: chart_events
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/254
     language: python
     layout: base

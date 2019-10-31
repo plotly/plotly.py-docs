@@ -14,7 +14,7 @@ jupyter:
   plotly:
     description: Learn how to perform frequency counts using Python.
     display_as: statistics
-    has_thumbnail: false
+    
     ipynb: ~notebook_demo/111
     language: python
     layout: base

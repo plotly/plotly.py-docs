@@ -24,7 +24,7 @@ jupyter:
   plotly:
     description: How to make 3D Cone plots in Python with Plotly.
     display_as: 3d_charts
-    has_thumbnail: true
+    
     ipynb: ~notebook_demo/206
     language: python
     layout: base

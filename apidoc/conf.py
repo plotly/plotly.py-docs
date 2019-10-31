@@ -83,6 +83,10 @@ pygments_style = None
 # If true, keep warnings as "system message" paragraphs in the built documents.
 keep_warnings = True
 
+
+# A list of warning types to suppress arbitrary warning messages.
+suppress_warnings = ['ref.python']
+
 default_role = "literal"
 
 # -- Options for HTML output -------------------------------------------------

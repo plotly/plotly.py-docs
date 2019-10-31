@@ -150,6 +150,8 @@ import plotly.graph_objects as go
 
 import numpy as np
 np.random.seed(1)
+import scipy
+print(scipy.__version__)
 from scipy.signal import savgol_filter
 
 # Simulate spectroscopy data

@@ -80,6 +80,9 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
+# If true, keep warnings as "system message" paragraphs in the built documents.
+keep_warnings = True
+
 default_role = "literal"
 
 # -- Options for HTML output -------------------------------------------------

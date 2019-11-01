@@ -111,8 +111,7 @@ This template string can include `variables` in %{variable} format, `numbers` in
 Hovertemplate customize the tooltip text vs. [texttemplate](https://plot.ly/python/reference/#pie-texttemplate) which customizes the text that appears on your chart. 
 
 ```python
-import plotly.graph_objs as go
-import plotly.io as pio
+import plotly.graph_objects as go
 
 fig = go.Figure(go.Scatter(
     x = [1,2,3,4,5],
@@ -130,9 +129,7 @@ fig.add_trace(go.Scatter(
     hovertemplate = 'Price: %{y:$.2f}<extra></extra>',
     showlegend = False))
 
-fig.update_layout(
-    title = "Set hover text with hovertemplate",
-    template = pio.templates['plotly'])
+fig.update_layout(title = "Set hover text with hovertemplate")
 
 fig.show()
 ```
@@ -152,7 +149,7 @@ fig.show()
 ```
 
 ### Advanced Hover Template
-The following example shows how to format hover template. [Here](https://plot.ly/python/v3/hover-text-and-formatting/#dash-example) is an example to see how to format hovetemplate in Dash.
+The following example shows how to format hover template. [Here](https://plot.ly/python/v3/hover-text-and-formatting/#dash-example) is an example to see how to format hovertemplate in Dash.
 
 ```python
 import plotly.graph_objects as go

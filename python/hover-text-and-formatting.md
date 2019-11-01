@@ -152,7 +152,6 @@ fig.show()
 ```
 
 ### Advanced Hover Template
-### Advanced Hover Template
 The following example shows how to format hover template. [Here](https://plot.ly/python/v3/hover-text-and-formatting/#dash-example) is an example to see how to format hovetemplate in Dash.
 
 ```python

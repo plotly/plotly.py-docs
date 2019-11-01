@@ -25,7 +25,8 @@ jupyter:
     description: How to make interactive tree-plot in Python with Plotly. An examples
       of a tree-plot in Plotly.
     display_as: statistical
-        ipynb: ~notebook_demo/28
+    has_thumbnail: true
+    ipynb: ~notebook_demo/28
     language: python
     layout: base
     name: Tree-plots

@@ -14,7 +14,8 @@ jupyter:
   plotly:
     description: Learn how to detect baselines on data in Python.
     display_as: peak-analysis
-        ipynb: ~notebook_demo/117
+    has_thumbnail: false
+    ipynb: ~notebook_demo/117
     language: python
     layout: base
     name: Baseline Detection

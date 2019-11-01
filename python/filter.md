@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to use filters in Python with Plotly.
     display_as: transforms
-        ipynb: ~notebook_demo/195
+    has_thumbnail: true
+    ipynb: ~notebook_demo/195
     language: python
     layout: base
     name: Filter

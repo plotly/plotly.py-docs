@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: Comparing WebGL with Scattergl() to SVG with Scatter() in Python
       with Plotly.
-        language: python
+    has_thumbnail: false
+    language: python
     layout: base
     name: Comparing WebGL vs SVG
     page_type: example_index

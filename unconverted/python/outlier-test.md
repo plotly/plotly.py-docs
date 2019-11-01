@@ -14,7 +14,8 @@ jupyter:
   plotly:
     description: Learn how to test for outliers in datasets using Python.
     display_as: statistics
-        ipynb: ~notebook_demo/113
+    has_thumbnail: false
+    ipynb: ~notebook_demo/113
     language: python
     layout: base
     name: Outlier Test

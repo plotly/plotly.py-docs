@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to plot date and time in python.
     display_as: financial
-        ipynb: ~notebook_demo/213
+    has_thumbnail: true
+    ipynb: ~notebook_demo/213
     language: python
     layout: base
     name: Time Series

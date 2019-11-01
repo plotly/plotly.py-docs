@@ -14,7 +14,8 @@ jupyter:
   plotly:
     description: How to make your-tutorial-chart plots in Python with Plotly.
     display_as: databases
-        language: python
+    has_thumbnail: true
+    language: python
     layout: base
     name: Google Big-Query
     order: 7

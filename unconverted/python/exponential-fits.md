@@ -15,7 +15,8 @@ jupyter:
     description: Create a exponential fit / regression in Python and add a line of
       best fit to your chart.
     display_as: statistics
-        ipynb: ~notebook_demo/135
+    has_thumbnail: true
+    ipynb: ~notebook_demo/135
     language: python
     layout: base
     name: Exponential Fit

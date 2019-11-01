@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to configure and style the legend in Plotly with Python.
     display_as: file_settings
-        ipynb: ~notebook_demo/14
+    has_thumbnail: true
+    ipynb: ~notebook_demo/14
     language: python
     layout: base
     name: Legends

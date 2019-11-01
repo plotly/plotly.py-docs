@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: Migration guide for upgrading from version 3 to version 4
     display_as: file_settings
-        language: python
+    has_thumbnail: true
+    language: python
     layout: base
     name: Version 4 Migration Guide
     order: 1

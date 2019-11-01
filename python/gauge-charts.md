@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make guage meter charts in Python with Plotly.
     display_as: financial
-        ipynb: ~notebook_demo/11
+    has_thumbnail: true
+    ipynb: ~notebook_demo/11
     language: python
     layout: base
     name: Gauge Charts

@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to format axes ticks in Python with Plotly.
     display_as: file_settings
-        ipynb: ~notebook_demo/1
+    has_thumbnail: true
+    ipynb: ~notebook_demo/1
     language: python
     layout: base
     name: Formatting Ticks

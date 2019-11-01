@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make 2D Histograms in Python with Plotly.
     display_as: statistical
-        ipynb: ~notebook_demo/24
+    has_thumbnail: true
+    ipynb: ~notebook_demo/24
     language: python
     layout: base
     name: 2D Histograms

@@ -14,7 +14,8 @@ jupyter:
   plotly:
     description: How to make an inset graph in python.
     display_as: multiple_axes
-        language: python
+    has_thumbnail: true
+    language: python
     layout: base
     name: Inset Plots
     order: 3

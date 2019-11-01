@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make 3D Volume Plots in Python with Plotly.
     display_as: 3d_charts
-        language: python
+    has_thumbnail: true
+    language: python
     layout: base
     name: 3D Volume Plots
     order: 12.2

@@ -25,7 +25,8 @@ jupyter:
     description: How to make SVG shapes in python. Examples of lines, circle, rectangle,
       and path.
     display_as: file_settings
-        ipynb: ~notebook_demo/14
+    has_thumbnail: true
+    ipynb: ~notebook_demo/14
     language: python
     layout: base
     name: Shapes

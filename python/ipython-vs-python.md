@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: Discussion of key differences between IPython and Python
     display_as: file_settings
-        ipynb: ~notebook_demo/17
+    has_thumbnail: true
+    ipynb: ~notebook_demo/17
     language: python
     layout: base
     name: IPython vs Python

@@ -15,7 +15,8 @@ jupyter:
     description: How to plot car-travel routes between USA and Canada Telsa Supercharging
       Stations in Python.
     display_as: maps
-        ipynb: ~notebook_demo/124
+    has_thumbnail: true
+    ipynb: ~notebook_demo/124
     language: python
     layout: base
     name: Tesla Supercharging Stations

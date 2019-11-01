@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make parallel categories diagrams in Python with Plotly.
     display_as: statistical
-        ipynb: ~notebook_demo/258
+    has_thumbnail: true
+    ipynb: ~notebook_demo/258
     language: python
     layout: base
     name: Parallel Categories Diagram

@@ -25,7 +25,8 @@ jupyter:
     description: How to set configuration options of plotly graphs in python. Examples
       of both online and offline configurations.
     display_as: file_settings
-        ipynb: ~notebook_demo/97
+    has_thumbnail: true
+    ipynb: ~notebook_demo/97
     language: python
     layout: base
     name: Configuration

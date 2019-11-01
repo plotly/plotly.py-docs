@@ -25,7 +25,8 @@ jupyter:
     description: How to create an plotly animation with slider that cycles through
       MRI cross-sections of a human brain.
     display_as: animations
-        ipynb: ~notebook_demo/190
+    has_thumbnail: true
+    ipynb: ~notebook_demo/190
     language: python
     layout: base
     name: Visualizing MRI Volume Slices

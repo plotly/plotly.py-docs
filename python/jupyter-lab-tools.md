@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: Using Plotly FigureWidgets with Jupyter Lab
     display_as: chart_events
-        language: python
+    has_thumbnail: true
+    language: python
     layout: base
     name: Jupyter Lab with FigureWidget
     order: 2

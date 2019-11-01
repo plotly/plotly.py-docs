@@ -25,7 +25,8 @@ jupyter:
     description: How to make subplots in python. Examples of stacked, custom-sized,
       gridded, and annotated subplts.
     display_as: file_settings
-        ipynb: ~notebook_demo/269
+    has_thumbnail: true
+    ipynb: ~notebook_demo/269
     language: python
     layout: base
     name: Subplots

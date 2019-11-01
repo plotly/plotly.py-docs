@@ -23,7 +23,8 @@ jupyter:
     version: 3.7.3
   plotly:
     description: Getting Started with Plotly for Python.
-        ipynb: ~notebook_demo/123/installation
+    has_thumbnail: false
+    ipynb: ~notebook_demo/123/installation
     language: python
     layout: base
     name: Getting Started with Plotly

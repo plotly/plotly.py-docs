@@ -15,7 +15,8 @@ jupyter:
     description: Create a polynomial fit / regression in Python and add a line of
       best fit to your chart.
     display_as: statistics
-        ipynb: ~notebook_demo/138
+    has_thumbnail: true
+    ipynb: ~notebook_demo/138
     language: python
     layout: base
     name: Polynomial Fit

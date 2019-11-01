@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make Histograms in Python with Plotly.
     display_as: statistical
-        ipynb: ~notebook_demo/22
+    has_thumbnail: true
+    ipynb: ~notebook_demo/22
     language: python
     layout: base
     name: Histograms

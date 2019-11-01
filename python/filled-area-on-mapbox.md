@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make an area on Map in Python with Plotly.
     display_as: maps
-        ipynb: ~notebook_demo/56
+    has_thumbnail: true
+    ipynb: ~notebook_demo/56
     language: python
     layout: base
     name: Filled Area on Maps

@@ -25,7 +25,8 @@ jupyter:
     description: How to make Mapbox maps in Python with various base layers, with
       or without needing a Mapbox Access token.
     display_as: maps
-        ipynb: ~notebook_demo/261
+    has_thumbnail: true
+    ipynb: ~notebook_demo/261
     language: python
     layout: base
     name: Mapbox Map Layers

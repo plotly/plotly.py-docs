@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make filled area plots in Python with Plotly.
     display_as: basic
-        ipynb: ~notebook_demo/8
+    has_thumbnail: true
+    ipynb: ~notebook_demo/8
     language: python
     layout: base
     name: Filled Area Plots

@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make Box Plots in Python with Plotly.
     display_as: statistical
-        ipynb: ~notebook_demo/20
+    has_thumbnail: true
+    ipynb: ~notebook_demo/20
     language: python
     layout: base
     name: Box Plots

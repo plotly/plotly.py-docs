@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make 3D scatter plots in Python with Plotly.
     display_as: 3d_charts
-        ipynb: ~notebook_demo/61
+    has_thumbnail: true
+    ipynb: ~notebook_demo/61
     language: python
     layout: base
     name: 3D Scatter Plots

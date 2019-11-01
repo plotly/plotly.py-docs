@@ -14,7 +14,8 @@ jupyter:
   plotly:
     description: Learn how to perform convolution between two signals in Python.
     display_as: signal-analysis
-        language: python
+    has_thumbnail: false
+    language: python
     layout: base
     name: Convolution
     order: 4

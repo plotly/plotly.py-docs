@@ -14,7 +14,8 @@ jupyter:
   plotly:
     description: Learn how to perform a one and two way ANOVA test using Python.
     display_as: statistics
-        ipynb: ~notebook_demo/108
+    has_thumbnail: false
+    ipynb: ~notebook_demo/108
     language: python
     layout: base
     name: Anova

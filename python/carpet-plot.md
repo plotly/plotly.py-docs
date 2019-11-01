@@ -26,7 +26,8 @@ jupyter:
   plotly:
     description: How to make carpet plots in Python with Plotly.
     display_as: scientific
-        ipynb: ~notebook_demo/144
+    has_thumbnail: true
+    ipynb: ~notebook_demo/144
     language: python
     layout: base
     name: Carpet Plots

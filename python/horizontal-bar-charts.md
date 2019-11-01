@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make horizontal bar charts in Python with Plotly.
     display_as: basic
-        ipynb: ~notebook_demo/5
+    has_thumbnail: true
+    ipynb: ~notebook_demo/5
     language: python
     layout: base
     name: Horizontal Bar Charts

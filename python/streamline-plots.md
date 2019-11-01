@@ -25,7 +25,8 @@ jupyter:
     description: How to make a streamline plot in Python. A streamline plot displays
       vector field data.
     display_as: scientific
-        ipynb: ~notebook_demo/43
+    has_thumbnail: true
+    ipynb: ~notebook_demo/43
     language: python
     layout: base
     name: Streamline Plots

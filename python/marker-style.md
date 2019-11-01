@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to style markers in Python with Plotly.
     display_as: file_settings
-        ipynb: ~notebook_demo/203
+    has_thumbnail: true
+    ipynb: ~notebook_demo/203
     language: python
     layout: base
     name: Styling Markers

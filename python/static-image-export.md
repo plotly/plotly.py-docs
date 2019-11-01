@@ -26,7 +26,8 @@ jupyter:
       to your local computer, or embed it inside your Jupyter notebooks as a static
       image.
     display_as: file_settings
-        ipynb: ~notebook_demo/252
+    has_thumbnail: true
+    ipynb: ~notebook_demo/252
     language: python
     layout: base
     name: Static Image Export

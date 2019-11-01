@@ -25,7 +25,8 @@ jupyter:
     description: How to make a Mapbox Choropleth Map of US Counties in Python with
       Plotly.
     display_as: maps
-        ipynb: ~notebook_demo/56
+    has_thumbnail: true
+    ipynb: ~notebook_demo/56
     language: python
     layout: base
     name: Mapbox Choropleth Maps

@@ -13,7 +13,8 @@ jupyter:
     name: python2
   plotly:
     description: Getting Started with Plotly for Python
-        language: python
+    has_thumbnail: false
+    language: python
     layout: base
     page_type: u-guide
     permalink: python/userguide/

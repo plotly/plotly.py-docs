@@ -24,7 +24,8 @@ jupyter:
   plotly:
     description: How to make bubble maps in Python with Plotly.
     display_as: maps
-        language: python
+    has_thumbnail: true
+    language: python
     layout: base
     name: Bubble Maps
     order: 2

@@ -15,7 +15,8 @@ jupyter:
     description: Learn how to normalize data by fitting to intervals on the real line
       and dividing by a constant
     display_as: mathematics
-        ipynb: ~notebook_demo/103
+    has_thumbnail: false
+    ipynb: ~notebook_demo/103
     language: python
     layout: base
     name: Normalization

@@ -15,7 +15,8 @@ jupyter:
     description: Create interactive graphs with salesforce, IPython Notebooks and
       Plotly
     display_as: databases
-        ipynb: ~notebook_demo/1
+    has_thumbnail: false
+    ipynb: ~notebook_demo/1
     language: python
     layout: base
     name: Plot Data from Salesforce

@@ -14,7 +14,8 @@ jupyter:
   plotly:
     description: Display Large Datasets with DataShader and Change Callbacks
     display_as: chart_events
-        ipynb: ~notebook_demo/239
+    has_thumbnail: true
+    ipynb: ~notebook_demo/239
     language: python
     layout: base
     name: DataShader Case Study

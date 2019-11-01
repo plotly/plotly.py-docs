@@ -15,7 +15,8 @@ jupyter:
     description: Learn how filter out the frequencies of a signal by using low-pass,
       high-pass and band-pass FFT filtering.
     display_as: signal-analysis
-        language: python
+    has_thumbnail: false
+    language: python
     layout: base
     name: FFT Filters
     order: 2

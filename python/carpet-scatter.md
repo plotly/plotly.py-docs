@@ -26,7 +26,8 @@ jupyter:
   plotly:
     description: How to make carpet scatter plots in Python with Plotly.
     display_as: scientific
-        ipynb: ~notebook_demo/146
+    has_thumbnail: true
+    ipynb: ~notebook_demo/146
     language: python
     layout: base
     name: Carpet Scatter Plot

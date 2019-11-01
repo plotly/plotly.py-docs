@@ -26,7 +26,8 @@ jupyter:
       Six examples of candlestick charts with Pandas, time series, and yahoo finance
       data.
     display_as: financial
-        ipynb: ~notebook_demo/275
+    has_thumbnail: true
+    ipynb: ~notebook_demo/275
     language: python
     layout: base
     name: Candlestick Charts

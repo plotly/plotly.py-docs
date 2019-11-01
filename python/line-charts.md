@@ -25,7 +25,8 @@ jupyter:
     description: How to make line charts in Python with Plotly. Examples on creating
       and styling line charts in Python with Plotly.
     display_as: basic
-        ipynb: ~notebook_demo/3
+    has_thumbnail: true
+    ipynb: ~notebook_demo/3
     language: python
     layout: base
     name: Line Charts

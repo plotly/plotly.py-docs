@@ -14,7 +14,8 @@ jupyter:
   plotly:
     description: Use Plotly FigureWidget with hover callbacks and slider widgets
     display_as: chart_events
-        ipynb: ~notebook_demo/242
+    has_thumbnail: true
+    ipynb: ~notebook_demo/242
     language: python
     layout: base
     name: Car Exploration with Hover Events

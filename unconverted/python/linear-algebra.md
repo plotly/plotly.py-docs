@@ -15,7 +15,8 @@ jupyter:
     description: Learn how to perform several operations on matrices including inverse,
       eigenvalues, and determinents
     display_as: mathematics
-        ipynb: ~notebook_demo/104
+    has_thumbnail: false
+    ipynb: ~notebook_demo/104
     language: python
     layout: base
     name: Linear Algebra

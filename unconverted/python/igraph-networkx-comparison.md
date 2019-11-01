@@ -15,7 +15,8 @@ jupyter:
     description: Comparing a Network Graph created with igraph to one created with
       networkx in Python with Plotly.
     display_as: scientific
-        ipynb: ~notebook_demo/222
+    has_thumbnail: true
+    ipynb: ~notebook_demo/222
     language: python
     layout: base
     name: Network Graphs Comparison

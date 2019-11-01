@@ -25,7 +25,6 @@ jupyter:
     description: How to graph wind rose charts in python. Wind Rose charts display
       wind speed and direction of a given location.
     display_as: scientific
-    has_thumbnail: true
     ipynb: ~notebook_demo/38
     language: python
     layout: base

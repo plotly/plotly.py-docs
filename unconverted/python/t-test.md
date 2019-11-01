@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: Learn how to perform a one sample and two sample t-test using Python.
     display_as: statistics
-    has_thumbnail: false
     ipynb: ~notebook_demo/115
     language: python
     layout: base

@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: Interactive Data Analysis with Plotly
     display_as: chart_events
-    has_thumbnail: true
     ipynb: ~notebook_demo/231
     language: python
     layout: base

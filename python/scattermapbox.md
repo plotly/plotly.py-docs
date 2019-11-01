@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make scatter plots on Mapbox maps in Python.
     display_as: maps
-    has_thumbnail: true
     ipynb: ~notebook_demo/261
     language: python
     layout: base

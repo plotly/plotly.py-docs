@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to perform 1 dimensional correlation between two signals
       in Python.
     display_as: signal-analysis
-    has_thumbnail: false
     language: python
     layout: base
     name: 1D Correlation

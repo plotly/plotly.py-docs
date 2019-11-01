@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to draw lines, great circles, and contours on maps in Python.
     display_as: maps
-    has_thumbnail: true
     ipynb: ~notebook_demo/58
     language: python
     layout: base

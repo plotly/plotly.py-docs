@@ -25,7 +25,6 @@ jupyter:
     description: Displaying Figures from Python
     v4upgrade: true
     display_as: file_settings
-    has_thumbnail: true
     language: python
     name: Displaying Figures
     page_type: example_index

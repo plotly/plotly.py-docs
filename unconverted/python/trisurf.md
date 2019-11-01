@@ -15,7 +15,6 @@ jupyter:
     description: How to make tri-surf plots in Python with Plotly. Trisurfs are formed
       by replacing the boundaries of a compact surface by touching triangles.
     display_as: 3d_charts
-    has_thumbnail: true
     ipynb: ~notebook_demo/70
     language: python
     layout: base

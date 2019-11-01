@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to create charts from csv files with Plotly and Python
     display_as: databases
-    has_thumbnail: false
     ipynb: ~notebook_demo/84
     language: python
     layout: base

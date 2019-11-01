@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: A tutorial showing how to plot Apache Spark DataFrames with Plotly
     display_as: databases
-    has_thumbnail: false
     language: python
     layout: base
     name: Plot Data from Apache Spark

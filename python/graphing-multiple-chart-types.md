@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to design figures with multiple chart types in python.
     display_as: file_settings
-    has_thumbnail: true
     language: python
     layout: base
     name: Multiple Chart Types

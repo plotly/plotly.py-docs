@@ -15,7 +15,6 @@ jupyter:
     description: How to make an animated filled-area plot with apple stock data in
       Python.
     display_as: animations
-    has_thumbnail: true
     ipynb: ~notebook_demo/128
     language: python
     layout: base

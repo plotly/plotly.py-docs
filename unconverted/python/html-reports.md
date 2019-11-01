@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: How to make HTML reports with Python, Pandas, and Plotly Graphs.
     display_as: report_generation
-    has_thumbnail: false
     language: python
     layout: base
     name: Python HTML Reports

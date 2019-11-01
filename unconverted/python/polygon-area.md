@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: Learn how to find the area of any simple polygon
     display_as: mathematics
-    has_thumbnail: false
     ipynb: ~notebook_demo/100
     language: python
     layout: base

@@ -25,7 +25,6 @@ jupyter:
     description: Implement WebGL for increased speed, improved interactivity, and
       the ability to plot even more data!
     display_as: basic
-    has_thumbnail: true
     ipynb: ~notebook_demo/44
     language: python
     layout: base

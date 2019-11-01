@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.7
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.5
+    version: 3.7.3
   plotly:
     description: How to add images to charts as background images or logos.
     display_as: file_settings
@@ -32,11 +32,12 @@ jupyter:
     order: 31
     permalink: python/images/
     thumbnail: thumbnail/images.png
-    
     v4upgrade: true
 ---
 
 #### Add a Background Image
+
+In this page we explain how to add static, non-interactive images as background, logo or annotation images to a figure. For exploring image data in interactive charts, see the [tutorial on displaying image data](./imshow/).
 
 ```python
 import plotly.graph_objects as go

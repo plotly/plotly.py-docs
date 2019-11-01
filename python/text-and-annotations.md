@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.7
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.5
+    version: 3.7.3
   plotly:
     description: How to add text labels and annotations to plots in python.
     display_as: file_settings
@@ -522,9 +522,9 @@ This template string can include `variables` in %{variable} format, `numbers` in
 import plotly.graph_objects as go
 
 fig = go.Figure(go.Pie(
-    values = [2, 5, 3, 2.5],
-    labels = ["R", "Python", "Java Script", "Matlab"],
-    texttemplate = "%{label}: %{value} (%{percent})",
+    values = [40000000, 20000000, 30000000, 10000000],
+    labels = ["Sales", "Profit", "Income", "Expenses"],
+    texttemplate = "%{label}: %{value:$,s} <br>(%{percent})",
     textposition = "inside"))
 
 fig.show()
@@ -565,7 +565,7 @@ fig.add_trace(go.Funnel(
     y = ["2018-01-01", "2018-07-01", "2019-01-01", "2020-01-01"],
     x = [100, 60, 40, 20],
     textposition = "inside",
-    texttemplate = "%{label}"))
+    texttemplate = "%{y| %a. %_d %b %Y}"))
 
 fig.add_trace(go.Funnel(
     name = 'Vancouver',

@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.7
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.5
+    version: 3.7.3
   plotly:
     description: How to use hover text and formatting in Python with Plotly.
     display_as: file_settings
@@ -127,49 +127,54 @@ fig.show()
 ### Format Hover Template
 
 ```python
-import plotly.io as pio
+import plotly.graph_objects as go
 import plotly.express as px
+import pandas as pd
+import math
 
-df = px.data.gapminder()
-A = []
-B = []
+data = px.data.gapminder()
+df_2007 = data[data['year']==2007]
+df_2007 = df_2007.sort_values(['continent', 'country'])
 
-for i in range(5):
-    A = {'target': df['continent'][[i]].unique()}
-    B.append(A)
+bubble_size = []
 
-data = [{
-    'type': 'scatter',
-    'mode': 'markers',
-    'x': df['lifeExp'],
-    'y': df['gdpPercap'],
-    'text': df['continent'],
-    'hovertemplate':
-    "<b>%{text}</b><br><br>" +
-    "GDP per Capita: %{y:$,.0f}<br>" +
-    "Life Expectation: %{x:.0%}<br>" +
-    "Population: %{marker.size:,}" +
-    "<extra></extra>",
-    'marker': {
-      'size': df['pop'],
-      'sizemode': 'area',
-      'sizeref': 200000
-  },
-    'transforms': [{
-      'type': 'filter',
-      'target': df['year'],
-      'orientation': '=',
-      'value': 2002
-  },{
-      'type': 'groupby',
-      'groups': df['continent'],
-      'styles': B
-  }]
-}]
+for index, row in df_2007.iterrows():
+    bubble_size.append(math.sqrt(row['pop']))
 
-layout = {'yaxis': {'type': 'log'}}
+df_2007['size'] = bubble_size
+continent_names = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+continent_data = {continent:df_2007.query("continent == '%s'" %continent)
+                              for continent in continent_names}
 
-pio.show({'data': data, 'layout': layout}, validate=False)
+fig = go.Figure()
+
+for continent_name, continent in continent_data.items():
+    fig.add_trace(go.Scatter(
+        x=continent['gdpPercap'], 
+        y=continent['lifeExp'],
+        name=continent_name, 
+        text=df_2007['continent'],
+        hovertemplate=
+        "<b>%{text}</b><br><br>" +
+        "GDP per Capita: %{y:$,.0f}<br>" +
+        "Life Expectation: %{x:.0%}<br>" +
+        "Population: %{marker.size:,}" +
+        "<extra></extra>",
+        marker_size=continent['size'],
+        ))
+
+fig.update_traces(
+    mode='markers', 
+    marker={'sizemode':'area',
+            'sizeref':10})
+
+fig.update_layout(
+    xaxis={
+        'title':'GDP per capita',
+        'type':'log'},
+    yaxis={'title':'Life Expectancy (years)'})
+
+fig.show()
 ```
 
 ### Set Hover Template in Mapbox

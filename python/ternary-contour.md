@@ -24,8 +24,7 @@ jupyter:
   plotly:
     description: How to make Ternary Contour Plots in Python with plotly
     display_as: scientific
-    has_thumbnail: true
-    language: python
+        language: python
     layout: base
     name: Ternary contours
     page_type: u-guide

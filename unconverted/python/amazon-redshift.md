@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: A tutorial showing how to plot Amazon AWS Redshift data with Plotly.
     display_as: databases
-    has_thumbnail: false
-    ipynb: ~notebook_demo/1
+        ipynb: ~notebook_demo/1
     language: python
     layout: base
     name: Plot Data From Amazon Redshift

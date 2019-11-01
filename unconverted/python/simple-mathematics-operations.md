@@ -15,8 +15,7 @@ jupyter:
     description: Learn how to perform simple mathematical operations on dataframes
       such as scaling, adding, and subtracting
     display_as: mathematics
-    has_thumbnail: false
-    ipynb: ~notebook_demo/99
+        ipynb: ~notebook_demo/99
     language: python
     layout: base
     name: Simple Mathematics Operations

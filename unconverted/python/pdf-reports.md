@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: How to make PDF reports with Python and Plotly Graphs.
     display_as: report_generation
-    has_thumbnail: true
-    language: python
+        language: python
     layout: base
     name: Python PDF Reports
     order: 1

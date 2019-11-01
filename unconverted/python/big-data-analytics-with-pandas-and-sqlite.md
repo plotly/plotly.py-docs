@@ -15,8 +15,7 @@ jupyter:
     description: A primer on out-of-memory analytics of large datasets with Pandas,
       SQLite, and IPython notebooks.
     display_as: databases
-    has_thumbnail: false
-    ipynb: ~notebook_demo/1
+        ipynb: ~notebook_demo/1
     language: python
     layout: base
     name: Big Data Analytics with Pandas and SQLite

@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: Learn how to perform basic statistical operations using Python.
     display_as: statistics
-    has_thumbnail: false
-    ipynb: ~notebook_demo/109
+        ipynb: ~notebook_demo/109
     language: python
     layout: base
     name: Basic Statistics

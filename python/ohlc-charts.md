@@ -15,8 +15,7 @@ jupyter:
     description: How to make interactive OHLC charts in Python with Plotly. Six examples
       of OHLC charts with Pandas, time series, and yahoo finance data.
     display_as: financial
-    has_thumbnail: true
-    ipynb: ~notebook_demo/53
+        ipynb: ~notebook_demo/53
     language: python
     layout: base
     name: OHLC Charts

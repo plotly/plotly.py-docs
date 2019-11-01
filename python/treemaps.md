@@ -24,8 +24,7 @@ jupyter:
   plotly:
     description: How to make Treemap Charts with Plotly
     display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/280/
+        ipynb: ~notebook_demo/280/
     language: python
     layout: base
     name: Treemap Charts

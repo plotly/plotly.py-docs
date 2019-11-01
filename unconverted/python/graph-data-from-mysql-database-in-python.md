@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: How to graph data from a MySQL database with Python.
     display_as: databases
-    has_thumbnail: false
-    language: python
+        language: python
     layout: base
     name: Plot Data from MySQL
     order: 1

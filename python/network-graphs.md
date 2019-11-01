@@ -25,8 +25,7 @@ jupyter:
     description: How to make Network Graphs in Python with Plotly. One examples of
       a network graph with NetworkX
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/223
+        ipynb: ~notebook_demo/223
     language: python
     layout: base
     name: Network Graphs

@@ -26,8 +26,7 @@ jupyter:
     v4upgrade: true
     language: python
     display_as: file_settings
-    has_thumbnail: true
-    name: Theming and templates
+        name: Theming and templates
     page_type: u-guide
     layout: base
     permalink: python/templates/

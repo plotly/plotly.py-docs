@@ -15,8 +15,7 @@ jupyter:
     description: Create a linear fit / regression in Python and add a line of best
       fit to your chart.
     display_as: statistics
-    has_thumbnail: true
-    ipynb: ~notebook_demo/139
+        ipynb: ~notebook_demo/139
     language: python
     layout: base
     name: Linear Fit

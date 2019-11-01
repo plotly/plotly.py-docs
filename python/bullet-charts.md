@@ -24,8 +24,7 @@ jupyter:
   plotly:
     description: How to make bullet charts in Python with Plotly.
     display_as: financial
-    has_thumbnail: true
-    ipynb: ~notebook_demo/11
+        ipynb: ~notebook_demo/11
     language: python
     layout: base
     name: Bullet Charts

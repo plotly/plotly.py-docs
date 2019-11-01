@@ -26,8 +26,7 @@ jupyter:
       and logarithmic axes, axes titles, styling and coloring axes and grid lines, and
       more.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/95
+        ipynb: ~notebook_demo/95
     language: python
     layout: base
     name: Axes

@@ -24,8 +24,7 @@ jupyter:
   plotly:
     description: How to use hover text and formatting in Python with Plotly.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/198
+        ipynb: ~notebook_demo/198
     language: python
     layout: base
     name: Hover Text and Formatting

@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: Learn how to interpolation and extrapolate data in one dimension
     display_as: mathematics
-    has_thumbnail: false
-    ipynb: ~notebook_demo/106
+        ipynb: ~notebook_demo/106
     language: python
     layout: base
     name: Interpolation and Extrapolation in 1D

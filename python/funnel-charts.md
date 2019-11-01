@@ -17,8 +17,7 @@ jupyter:
     name: Funnel Chart
     thumbnail: thumbnail/funnel.jpg
     
-    has_thumbnail: true
-    language: python
+        language: python
     display_as: financial
     order: 4
     ipynb: ~notebook_demo/293

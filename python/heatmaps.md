@@ -24,8 +24,7 @@ jupyter:
   plotly:
     description: How to make Heatmaps in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/33
+        ipynb: ~notebook_demo/33
     language: python
     layout: base
     name: Heatmaps

@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: Learn how to plot statistical data with various charts using Python.
     display_as: statistics
-    has_thumbnail: false
-    ipynb: ~notebook_demo/116
+        ipynb: ~notebook_demo/116
     language: python
     layout: base
     name: Statistics Charts

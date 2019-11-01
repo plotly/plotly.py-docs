@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: How to make tables in Python with Plotly.
     display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/197
+        ipynb: ~notebook_demo/197
     language: python
     layout: base
     name: Tables

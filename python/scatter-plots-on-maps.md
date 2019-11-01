@@ -25,8 +25,7 @@ jupyter:
     description: How to make scatter plots on maps in Python. Scatter plots on maps
       highlight geographic areas and can be colored by value.
     display_as: maps
-    has_thumbnail: true
-    ipynb: ~notebook_demo/57
+        ipynb: ~notebook_demo/57
     language: python
     layout: base
     name: Scatter Plots on Maps

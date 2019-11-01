@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: How to add LaTeX to python graphs.
     display_as: advanced_opt
-    has_thumbnail: true
-    ipynb: ~notebook_demo/268
+        ipynb: ~notebook_demo/268
     language: python
     layout: base
     name: LaTeX

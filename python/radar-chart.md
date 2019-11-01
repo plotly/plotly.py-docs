@@ -24,8 +24,7 @@ jupyter:
   plotly:
     description: How to make radar charts in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/202
+        ipynb: ~notebook_demo/202
     language: python
     layout: base
     name: Radar Charts

@@ -24,8 +24,7 @@ jupyter:
   plotly:
     description: Click Events With FigureWidget
     display_as: chart_events
-    has_thumbnail: true
-    ipynb: ~notebook_demo/240
+        ipynb: ~notebook_demo/240
     language: python
     layout: base
     name: Click Events

@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: How to add webGL based text labels and annotations to plots in python
     display_as: advanced_opt
-    has_thumbnail: false
-    ipynb: ~notebook_demo/219
+        ipynb: ~notebook_demo/219
     language: python
     layout: base
     name: WebGL Text and Annotations

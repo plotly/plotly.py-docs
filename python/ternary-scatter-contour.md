@@ -25,8 +25,7 @@ jupyter:
     description: How to make a scatter plot overlaid on ternary contour in Python
       with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/41
+        ipynb: ~notebook_demo/41
     language: python
     layout: base
     name: Ternary Overlay

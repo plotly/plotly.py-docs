@@ -14,8 +14,7 @@ jupyter:
   plotly:
     description: How to make Matplotlib Colorscales in Python with Plotly.
     display_as: advanced_opt
-    has_thumbnail: true
-    ipynb: ~notebook_demo/48
+        ipynb: ~notebook_demo/48
     language: python
     layout: base
     name: Matplotlib Colorscales

@@ -25,8 +25,7 @@ jupyter:
     description: Plotly Express is a terse, consistent, high-level API for rapid data
       exploration and figure generation.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/252
+        ipynb: ~notebook_demo/252
     language: python
     layout: base
     name: Plotly Express

@@ -34,10 +34,10 @@ jupyter:
     permalink: python/cone-plot/
     redirect_from: python/3d-cone/
     thumbnail: thumbnail/3dcone.png
-    
+
 ---
 
-A cone plot is the 3D equivalent of a 2D [quiver plot](./quiver-plots/), i.e., it represents a 3D vector field using cones to represent the direction and norm of the vectors. 3-D coordinates are given by `x`, `y` and `z`, and the coordinates of the vector field by `u`, `v` and `w`.
+A cone plot is the 3D equivalent of a 2D [quiver plot](/python/quiver-plots/), i.e., it represents a 3D vector field using cones to represent the direction and norm of the vectors. 3-D coordinates are given by `x`, `y` and `z`, and the coordinates of the vector field by `u`, `v` and `w`.
 
 ### Basic 3D Cone
 
@@ -48,7 +48,7 @@ import plotly.graph_objects as go
 fig = go.Figure(data=go.Cone(x=[1], y=[1], z=[1], u=[1], v=[1], w=[0]))
 
 fig.update_layout(scene_camera_eye=dict(x=-0.76, y=1.8, z=0.92))
-   
+
 fig.show()
 ```
 
@@ -91,7 +91,7 @@ fig.add_trace(go.Cone(x=[7,] * 3, lighting_fresnel=2, name="lighting.fresnel:2")
 fig.add_trace(go.Cone(x=[8,] * 3, lightposition=dict(x=0, y=0, z=1e5),
                                   name="lighting.position x:0,y:0,z:1e5"))
 
-fig.update_traces(y=[1, 2, 3], z=[1, 1, 1], 
+fig.update_traces(y=[1, 2, 3], z=[1, 1, 1],
                   u=[1, 2, 3], v=[1, 1, 2], w=[4, 4, 1],
                   hoverinfo="u+v+w+name",
                   showscale=False)

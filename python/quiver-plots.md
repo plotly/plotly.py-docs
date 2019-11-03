@@ -33,7 +33,7 @@ jupyter:
     order: 12
     permalink: python/quiver-plots/
     thumbnail: thumbnail/quiver-plot.jpg
-    
+
 ---
 
 #### Basic Quiver Plot
@@ -82,7 +82,7 @@ fig.show()
 
 #### See also
 
-[Cone plots](./cone-plot) for the 3D equivalent of quiver plots.
+[Cone plot](/python/cone-plot) for the 3D equivalent of quiver plots.
 
 #### Reference
 

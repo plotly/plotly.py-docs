@@ -32,10 +32,10 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-volume-plots/
     thumbnail: thumbnail/3d-volume-plots.jpg
-    
+
 ---
 
-A volume plot with `go.Volume` shows several partially transparent isosurfaces for volume rendering. The API of `go.Volume` is close to the one of `go.Isosurface`. However, whereas [isosurface plots](./3d-isosurface-plots/) show all surfaces with the same opacity, tweaking the `opacityscale` parameter of `go.Volume` results in a depth effect and better volume rendering.
+A volume plot with `go.Volume` shows several partially transparent isosurfaces for volume rendering. The API of `go.Volume` is close to the one of `go.Isosurface`. However, whereas [isosurface plots](/python/3d-isosurface-plots/) show all surfaces with the same opacity, tweaking the `opacityscale` parameter of `go.Volume` results in a depth effect and better volume rendering.
 
 ## Simple volume plot with go.Volume
 
@@ -95,7 +95,7 @@ vol = ndimage.gaussian_filter(vol, 4)
 vol /= vol.max()
 
 fig = go.Figure(data=go.Volume(
-    x=X.flatten(), y=Y.flatten(), z=Z.flatten(), 
+    x=X.flatten(), y=Y.flatten(), z=Z.flatten(),
     value=vol.flatten(),
     isomin=0.2,
     isomax=0.7,
@@ -162,7 +162,7 @@ fig = go.Figure(data=go.Volume(
     isomax=0.5,
     opacity=0.1, # max opacity
     opacityscale=[[-0.5, 1], [-0.2, 0], [0.2, 0], [0.5, 1]],
-    surface_count=21, 
+    surface_count=21,
     colorscale='RdBu'
     ))
 fig.show()
@@ -182,7 +182,7 @@ vol = (X - 1)**2 + (Y - 1)**2 + Z**2
 
 
 fig = go.Figure(data=go.Volume(
-    x=X.flatten(), y=Y.flatten(), z=Z.flatten(), 
+    x=X.flatten(), y=Y.flatten(), z=Z.flatten(),
     value=vol.flatten(),
     isomin=0.2,
     isomax=0.7,
@@ -211,7 +211,7 @@ vol = (X - 1)**2 + (Y - 1)**2 + Z**2
 
 
 fig = go.Figure(data=go.Volume(
-    x=X.flatten(), y=Y.flatten(), z=Z.flatten(), 
+    x=X.flatten(), y=Y.flatten(), z=Z.flatten(),
     value=vol.flatten(),
     isomin=0.2,
     isomax=0.7,
@@ -241,7 +241,7 @@ vol = (X - 1)**2 + (Y - 1)**2 + Z**2
 
 
 fig = go.Figure(data=go.Volume(
-    x=X.flatten(), y=Y.flatten(), z=Z.flatten(), 
+    x=X.flatten(), y=Y.flatten(), z=Z.flatten(),
     value=vol.flatten(),
     isomin=0.2,
     isomax=0.7,
@@ -259,4 +259,4 @@ fig.show()
 See https://plot.ly/python/reference/#volume for more information and chart attribute options!
 
 #### See also
-[3D isosurface documentation](./3d-isosurface-plots/)
+[3D isosurface documentation](/python/3d-isosurface-plots/)

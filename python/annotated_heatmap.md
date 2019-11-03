@@ -33,13 +33,13 @@ jupyter:
     page_type: u-guide
     permalink: python/annotated_heatmap/
     thumbnail: thumbnail/ann_heat.jpg
-    
+
     v4upgrade: true
 ---
 
 #### Simple Annotated Heatmap
 
-For more examples with Heatmaps, see [this page](../heatmaps/).
+For more examples with Heatmaps, see [this page](/python/heatmaps/).
 
 ```python
 import plotly.figure_factory as ff

@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Distplots
-    order: 5
+    order: 4
     page_type: example_index
     permalink: python/distplot/
     thumbnail: thumbnail/distplot.jpg

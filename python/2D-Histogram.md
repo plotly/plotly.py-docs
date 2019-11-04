@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: 2D Histograms
-    order: 6
+    order: 5
     page_type: u-guide
     permalink: python/2D-Histogram/
     thumbnail: thumbnail/histogram2d.jpg

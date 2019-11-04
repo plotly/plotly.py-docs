@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Violin Plots
-    order: 12
+    order: 10
     page_type: u-guide
     permalink: python/violin/
     thumbnail: thumbnail/violin.jpg

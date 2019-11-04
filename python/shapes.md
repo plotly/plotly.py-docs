@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Shapes
-    order: 32
+    order: 23
     permalink: python/shapes/
     thumbnail: thumbnail/shape.jpg
     v4upgrade: true

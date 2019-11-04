@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Configuration
-    order: 7
+    order: 9
     page_type: u-guide
     permalink: python/configuration-options/
     thumbnail: thumbnail/modebar-icons.png

@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Images
-    order: 31
+    order: 22
     permalink: python/images/
     thumbnail: thumbnail/images.png
     v4upgrade: true

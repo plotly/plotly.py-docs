@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Orca Management
-    order: 1.5
+    order: 7
     permalink: python/orca-management/
     thumbnail: thumbnail/orca-management.png
     v4upgrade: true

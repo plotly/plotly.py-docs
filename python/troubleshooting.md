@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Troubleshooting
-    order: 50
+    order: 25
     page_type: u-guide
     permalink: python/troubleshooting/
     thumbnail: thumbnail/modebar-icons.png

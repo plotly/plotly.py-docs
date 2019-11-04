@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Bubble Charts
-    order: 2
+    order: 5
     page_type: u-guide
     permalink: python/bubble-charts/
     redirect_from: python/bubble-charts-tutorial/

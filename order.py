@@ -3,6 +3,9 @@ from pathlib import Path, PosixPath
 import sys
 
 # the goal of this program is to take the current order and remap it to be continuous integers
+# take in a list that is sorted, and map to integers
+
+
 
 # will contain all posts with display_as: file_settings
 fileSettings = []
@@ -47,12 +50,21 @@ sortedMaps = sorted(maps)
 sorted3d = sorted(threedee)
 sortedSubplots = sorted(subplots)
 
-print(sortedPlotlyFundamentals)
-print(sortedBasic)
-print(sortedStatistical)
-print(sortedScientitic)
-print(sortedFinancial)
-print(sortedMaps)
-print(sorted3d)
-print(sortedSubplots)
+order = list(range(0,100))
 
+# starts with 1, increase by 1
+def sortList(posts):
+    for index, post in enumerate(posts):
+        if index+1 != post:
+            post = index+1
+
+sortList(sortedBasic)
+
+
+for index, md_path in enumerate(Path("python").glob("**/*.md")):
+    post = frontmatter.load(str(md_path))
+    if "display_as" in post.metadata['jupyter']['plotly']:
+        if post.metadata['jupyter']['plotly']['display_as'] == 'basic':
+            print(post.metadata['jupyter']['plotly']['order'])
+
+    

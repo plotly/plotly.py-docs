@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Bar Charts
-    order: 6
+    order: 3
     page_type: example_index
     permalink: python/bar-charts/
     thumbnail: thumbnail/bar.jpg

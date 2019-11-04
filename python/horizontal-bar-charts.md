@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Horizontal Bar Charts
-    order: 7
+    order: 8
     page_type: u-guide
     permalink: python/horizontal-bar-charts/
     thumbnail: thumbnail/horizontal-bar.jpg

@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/click-events/
     thumbnail: thumbnail/figurewidget-click-events.gif
-    
     v4upgrade: true
 ---
 

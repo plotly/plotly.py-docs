@@ -23,7 +23,6 @@ jupyter:
     page_type: u-guide
     permalink: python/table/
     thumbnail: thumbnail/table.gif
-    
     v4upgrade: true
 ---
 

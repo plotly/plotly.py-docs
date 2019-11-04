@@ -35,7 +35,6 @@ jupyter:
     permalink: python/subplots/
     redirect_from: ipython-notebooks/subplots/
     thumbnail: thumbnail/subplots.jpg
-    
     v4upgrade: true
 ---
 

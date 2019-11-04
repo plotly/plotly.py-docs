@@ -31,7 +31,6 @@ jupyter:
     order: 2
     permalink: python/jupyter-lab-tools/
     thumbnail: thumbnail/figurewidget-jupyterlab.png
-    
     v4upgrade: true
 ---
 

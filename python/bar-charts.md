@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/bar-charts/
     thumbnail: thumbnail/bar.jpg
-    
     v4upgrade: true
 ---
 

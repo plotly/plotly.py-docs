@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-mesh/
     thumbnail: thumbnail/3d-mesh.jpg
-    
     v4upgrade: true
 ---
 
@@ -85,8 +84,8 @@ fig = go.Figure(data=[
         y=[0, 0, 1, 2],
         z=[0, 2, 0, 1],
         colorbar_title='z',
-        colorscale=[[0, 'gold'], 
-                    [0.5, 'mediumturquoise'], 
+        colorscale=[[0, 'gold'],
+                    [0.5, 'mediumturquoise'],
                     [1, 'magenta']],
         # Intensity of each vertex, which will be interpolated and color-coded
         intensity=[0, 0.33, 0.66, 1],
@@ -115,7 +114,7 @@ fig = go.Figure(data=[
         z=[0, 0, 0, 0, 1, 1, 1, 1],
         colorbar_title='z',
         colorscale=[[0, 'gold'],
-                    [0.5, 'mediumturquoise'], 
+                    [0.5, 'mediumturquoise'],
                     [1, 'magenta']],
         # Intensity of each vertex, which will be interpolated and color-coded
         intensity = np.linspace(0, 1, 8, endpoint=True),

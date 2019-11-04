@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/sunburst-charts/
     thumbnail: thumbnail/sunburst.gif
-    
 ---
 
 ### Basic Sunburst Plot ###

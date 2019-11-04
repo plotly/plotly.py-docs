@@ -31,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/getting-started/
     redirect_from: python/getting_started/
-
     v4upgrade: true
 ---
 

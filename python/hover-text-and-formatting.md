@@ -32,7 +32,6 @@ jupyter:
     order: 30.5
     permalink: python/hover-text-and-formatting/
     thumbnail: thumbnail/hover-text.png
-    
     v4upgrade: true
 ---
 
@@ -106,9 +105,9 @@ fig.show()
 
 ### Customize tooltip text with a hovertemplate
 
-To customize the tooltip on your graph you can use [hovertemplate](https://plot.ly/python/reference/#pie-hovertemplate), which is a template string used for rendering the information that appear on hoverbox. 
+To customize the tooltip on your graph you can use [hovertemplate](https://plot.ly/python/reference/#pie-hovertemplate), which is a template string used for rendering the information that appear on hoverbox.
 This template string can include `variables` in %{variable} format, `numbers` in [d3-format's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_forma), and `date` in [d3-time-fomrat's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format).
-Hovertemplate customize the tooltip text vs. [texttemplate](https://plot.ly/python/reference/#pie-texttemplate) which customizes the text that appears on your chart. 
+Hovertemplate customize the tooltip text vs. [texttemplate](https://plot.ly/python/reference/#pie-texttemplate) which customizes the text that appears on your chart.
 
 ```python
 import plotly.graph_objects as go
@@ -116,7 +115,7 @@ import plotly.graph_objects as go
 fig = go.Figure(go.Scatter(
     x = [1,2,3,4,5],
     y = [2.02825,1.63728,6.83839,4.8485,4.73463],
-    hovertemplate = 
+    hovertemplate =
     '<i>Price</i>: $%{y:.2f}'+
     '<br><b>X</b>: %{x}<br>'+
     '<b>%{text}</b>',
@@ -138,7 +137,7 @@ fig.show()
 import plotly.graph_objects as go
 
 fig = go.Figure(go.Pie(
-    name = "", 
+    name = "",
     values = [2, 5, 3, 2.5],
     labels = ["R", "Python", "Java Script", "Matlab"],
     text = ["textA", "TextB", "TextC", "TextD"],
@@ -175,9 +174,9 @@ fig = go.Figure()
 
 for continent_name, continent in continent_data.items():
     fig.add_trace(go.Scatter(
-        x=continent['gdpPercap'], 
+        x=continent['gdpPercap'],
         y=continent['lifeExp'],
-        name=continent_name, 
+        name=continent_name,
         text=df_2007['continent'],
         hovertemplate=
         "<b>%{text}</b><br><br>" +
@@ -189,7 +188,7 @@ for continent_name, continent in continent_data.items():
         ))
 
 fig.update_traces(
-    mode='markers', 
+    mode='markers',
     marker={'sizemode':'area',
             'sizeref':10})
 
@@ -211,8 +210,8 @@ token = open(".mapbox_token").read() # you need your own token
 fig = go.Figure(go.Scattermapbox(
     name = "",
     mode = "markers+text+lines",
-    lon = [-75, -80, -50], 
-    lat = [45, 20, -20], 
+    lon = [-75, -80, -50],
+    lat = [45, 20, -20],
     marker = {'size': 20, 'symbol': ["bus", "harbor", "airport"]},
     hovertemplate =
     "<b>%{marker.symbol} </b><br><br>" +

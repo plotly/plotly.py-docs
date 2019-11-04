@@ -22,7 +22,6 @@ jupyter:
     order: 5
     permalink: python/3d-filled-line-plots/
     thumbnail: thumbnail/3d-filled-line-plot.jpg
-    
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

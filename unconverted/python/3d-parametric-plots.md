@@ -22,7 +22,6 @@ jupyter:
     order: 9
     permalink: python/3d-parametric-plots/
     thumbnail: thumbnail/parametric.jpg
-    
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

@@ -22,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/insets/
     thumbnail: thumbnail/insets.jpg
-    
 ---
 
 #### New to Plotly?

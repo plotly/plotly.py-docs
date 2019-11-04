@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/radar-chart/
     thumbnail: thumbnail/radar.gif
-
     v4upgrade: true
 ---
 

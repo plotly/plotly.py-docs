@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/animations/
     thumbnail: thumbnail/animations.gif
-    
     v4upgrade: true
 ---
 

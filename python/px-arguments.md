@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/px-arguments/
     thumbnail: thumbnail/plotly-express.png
-    
     v4upgrade: true
 ---
 

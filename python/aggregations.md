@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/aggregations/
     thumbnail: thumbnail/aggregations.jpg
-    
     v4upgrade: true
 ---
 

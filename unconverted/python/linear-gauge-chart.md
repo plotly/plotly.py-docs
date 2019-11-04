@@ -23,7 +23,6 @@ jupyter:
     page_type: u-guide
     permalink: python/linear-gauge-chart/
     thumbnail: thumbnail/linear-gauge.jpg
-    
 ---
 
 #### New to Plotly?

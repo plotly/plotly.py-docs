@@ -22,7 +22,6 @@ jupyter:
     order: 14
     permalink: python/3d-point-clustering/
     thumbnail: thumbnail/3d-clusters.jpg
-    
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

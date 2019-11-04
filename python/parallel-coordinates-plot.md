@@ -35,7 +35,6 @@ jupyter:
     page_type: u-guide
     permalink: python/parallel-coordinates-plot/
     thumbnail: thumbnail/parcoords.jpg
-
     v4upgrade: true
 ---
 

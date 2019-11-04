@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/mixed-subplots/
     thumbnail: thumbnail/mixed_subplot.JPG
-    
     v4upgrade: true
 ---
 
@@ -71,7 +70,7 @@ fig.add_trace(
     go.Scattergeo(lat=df["Latitude"],
                   lon=df["Longitude"],
                   mode="markers",
-                  hoverinfo="text", 
+                  hoverinfo="text",
                   showlegend=False,
                   marker=dict(color="crimson", size=4, opacity=0.8)),
     row=1, col=1

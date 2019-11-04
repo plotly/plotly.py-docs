@@ -33,7 +33,6 @@ jupyter:
     order: 12
     permalink: python/quiver-plots/
     thumbnail: thumbnail/quiver-plot.jpg
-
 ---
 
 #### Basic Quiver Plot

@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/discrete-frequency/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/numerical-differentiation/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

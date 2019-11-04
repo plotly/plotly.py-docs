@@ -19,7 +19,6 @@ jupyter:
     page_type: u-guide
     permalink: python/userguide/
     thumbnail: null
-    
 ---
 
 # Plotly for Python User Guide

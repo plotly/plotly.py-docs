@@ -32,7 +32,6 @@ jupyter:
     order: 2
     permalink: python/setting-graph-size/
     thumbnail: thumbnail/sizing.png
-    
     v4upgrade: true
 ---
 

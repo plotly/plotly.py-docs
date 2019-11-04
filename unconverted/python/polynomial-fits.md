@@ -24,7 +24,6 @@ jupyter:
     page_type: example_index
     permalink: python/polynomial-fits/
     thumbnail: thumbnail/polynomial_fit.jpg
-    
 ---
 
 #### New to Plotly?

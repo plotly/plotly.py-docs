@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/filled-area-plots/
     thumbnail: thumbnail/area.jpg
-    
     v4upgrade: true
 ---
 

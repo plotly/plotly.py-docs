@@ -34,7 +34,6 @@ jupyter:
     page_type: u-guide
     permalink: python/gantt/
     thumbnail: thumbnail/gantt.jpg
-    
     v4upgrade: true
 ---
 

@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/treemaps/
     thumbnail: thumbnail/treemap.png
-    
 ---
 
 ### Basic Treemap
@@ -56,9 +55,9 @@ fig.show()
 This example uses the following attributes:
 
  1. [values](https://plot.ly/python/reference/#treemap-values): sets the values associated with each of the sectors.
- 2. [textinfo](https://plot.ly/python/reference/#treemap-textinfo): determines which trace information appear on the graph that can be 'text', 'value', 'current path', 'percent root', 'percent entry', and 'percent parent', or any combination of them.  
+ 2. [textinfo](https://plot.ly/python/reference/#treemap-textinfo): determines which trace information appear on the graph that can be 'text', 'value', 'current path', 'percent root', 'percent entry', and 'percent parent', or any combination of them.
  3. [pathbar](https://plot.ly/python/reference/#treemap-pathbar): a main extra feature of treemap to display the current path of the visible portion of the hierarchical map. It may also be useful for zooming out of the graph.
- 4. [branchvalues](https://plot.ly/python/reference/#treemap-branchvalues): determines how the items in `values` are summed. When set to "total", items in `values` are taken to be value of all its descendants. In the example below Eva = 65, which is equal to 14 + 12 + 10 + 2 + 6 + 6 + 1 + 4. 
+ 4. [branchvalues](https://plot.ly/python/reference/#treemap-branchvalues): determines how the items in `values` are summed. When set to "total", items in `values` are taken to be value of all its descendants. In the example below Eva = 65, which is equal to 14 + 12 + 10 + 2 + 6 + 6 + 1 + 4.
 When set to "remainder", items in `values` corresponding to the root and the branches sectors are taken to be the extra part not part of the sum of the values at their leaves.
 
 ```python
@@ -72,7 +71,7 @@ fig = make_subplots(
     cols = 2, rows = 1,
     column_widths = [0.4, 0.4],
     subplot_titles = ('branchvalues: <b>remainder<br />&nbsp;<br />', 'branchvalues: <b>total<br />&nbsp;<br />'),
-    specs = [[{'type': 'treemap', 'rowspan': 1}, {'type': 'treemap'}]]    
+    specs = [[{'type': 'treemap', 'rowspan': 1}, {'type': 'treemap'}]]
 )
 
 fig.add_trace(go.Treemap(
@@ -80,7 +79,7 @@ fig.add_trace(go.Treemap(
     parents = parents,
     values =  [10, 14, 12, 10, 2, 6, 6, 1, 4],
     textinfo = "label+value+percent parent+percent entry+percent root",
-    ), 
+    ),
               row = 1, col = 1)
 
 fig.add_trace(go.Treemap(
@@ -100,7 +99,7 @@ fig.show()
 ### Set Color of Treemap Sectors
 
 There are three different ways to change the color of the sectors in Treemap:
- 1) [marker.colors](https://plot.ly/python/reference/#treemap-marker-colors), 2) [colorway](https://plot.ly/python/reference/#treemap-colorway), 3) [colorscale](https://plot.ly/python/reference/#treemap-colorscale). The following examples show how to use each of them. 
+ 1) [marker.colors](https://plot.ly/python/reference/#treemap-marker-colors), 2) [colorway](https://plot.ly/python/reference/#treemap-colorway), 3) [colorscale](https://plot.ly/python/reference/#treemap-colorscale). The following examples show how to use each of them.
 
 ```python
 import plotly.graph_objects as go
@@ -116,7 +115,7 @@ fig = go.Figure(go.Treemap(
 fig.show()
 ```
 
-This example uses `treemapcolorway` attribute, which should be set in layout. 
+This example uses `treemapcolorway` attribute, which should be set in layout.
 
 ```python
 import plotly.graph_objects as go
@@ -152,10 +151,10 @@ fig.show()
 
 ### Nested Layers in Treemap
 
-The following example uses hierarchical data that includes layers and grouping. Treemap and [Sunburst](https://plot.ly/python/sunburst-charts/) charts reveal insights into the data, and the format of your hierarchical data. [maxdepth](https://plot.ly/python/reference/#treemap-maxdepth) attribute sets the number of rendered sectors from the given level. 
+The following example uses hierarchical data that includes layers and grouping. Treemap and [Sunburst](https://plot.ly/python/sunburst-charts/) charts reveal insights into the data, and the format of your hierarchical data. [maxdepth](https://plot.ly/python/reference/#treemap-maxdepth) attribute sets the number of rendered sectors from the given level.
 
 ```python
-import plotly.graph_objects as go 
+import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 import pandas as pd

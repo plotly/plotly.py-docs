@@ -23,7 +23,6 @@ jupyter:
     permalink: python/apache-spark/
     redirect_from: ipython-notebooks/apache-spark/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

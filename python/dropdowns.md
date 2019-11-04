@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/dropdowns/
     thumbnail: thumbnail/dropdown.jpg
-    
     v4upgrade: true
 ---
 

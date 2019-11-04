@@ -31,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/compare-webgl-svg/
     thumbnail: /images/static-image
-    
     v4upgrade: true
 ---
 

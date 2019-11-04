@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/dendrogram/
     thumbnail: thumbnail/dendrogram.jpg
-    
     v4upgrade: true
 ---
 

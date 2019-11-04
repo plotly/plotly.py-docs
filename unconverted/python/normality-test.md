@@ -23,7 +23,6 @@ jupyter:
     page_type: u-guide
     permalink: python/normality-test/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

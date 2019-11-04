@@ -24,7 +24,6 @@ jupyter:
     page_type: u-guide
     permalink: python/filled-chord-diagram/
     thumbnail: thumbnail/filled-chord.jpg
-    
 ---
 
 # Filled-Chord Diagrams with Plotly

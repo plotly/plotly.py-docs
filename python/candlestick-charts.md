@@ -35,7 +35,6 @@ jupyter:
     page_type: example_index
     permalink: python/candlestick-charts/
     thumbnail: thumbnail/candlestick.jpg
-    
     v4upgrade: true
 ---
 

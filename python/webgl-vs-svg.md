@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: WebGL vs SVG
-    order: 0.5
+    order: 14
     permalink: python/webgl-vs-svg/
     thumbnail: thumbnail/webgl.jpg
     v4upgrade: true

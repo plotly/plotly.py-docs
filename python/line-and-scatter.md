@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Scatter Plots
-    order: 2
+    order: 1
     page_type: example_index
     permalink: python/line-and-scatter/
     redirect_from: python/line-and-scatter-plots-tutorial/

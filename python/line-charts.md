@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Line Charts
-    order: 3.3
+    order: 4
     page_type: example_index
     permalink: python/line-charts/
     thumbnail: thumbnail/line-plot.jpg

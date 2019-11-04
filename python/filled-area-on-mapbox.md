@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Filled Area on Maps
-    order: 1
+    order: 3
     page_type: example_index
     permalink: python/filled-area-on-mapbox/
     thumbnail: thumbnail/area.jpg

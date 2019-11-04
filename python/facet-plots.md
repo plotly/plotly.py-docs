@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to make Facet and Trellis Plots in Python with Plotly.
     display_as: statistical
@@ -58,6 +58,18 @@ fig = px.bar(tips, x="size", y="total_bill", color="sex", facet_row="smoker")
 fig.show()
 ```
 
+### Wrapping Column Facets
+
+When the facet dimension has a large number of unique values, it is possible to wrap columns using the `facet_col_wrap` argument. 
+
+```python
+import plotly.express as px
+df = px.data.gapminder()
+fig = px.scatter(df, x='gdpPercap', y='lifeExp', color='continent', size='pop',
+                facet_col='year', facet_col_wrap=4)
+fig.show()
+```
+
 ### Histogram Facet Grids
 
 ```python
@@ -65,5 +77,22 @@ import plotly.express as px
 tips = px.data.tips()
 fig = px.histogram(tips, x="total_bill", y="tip", color="sex", facet_row="time", facet_col="day",
        category_orders={"day": ["Thur", "Fri", "Sat", "Sun"], "time": ["Lunch", "Dinner"]})
+fig.show()
+```
+
+### Facets with independent axes
+
+By default, facet axes are linked together: zooming inside one of the facets will also zoom in the other facets. You can disable this behaviour as follows. 
+
+```python
+import plotly.express as px
+df = px.data.tips()
+fig = px.scatter(df, x="total_bill", y="tip", color='sex', 
+                 facet_row="day", facet_col='time')
+# No match between subplot axes
+fig.update_xaxes(matches=None)
+fig.update_yaxes(matches=None)
+# Show ticks for each axis since they are now independent
+fig.update_xaxes(showticklabels=True)
 fig.show()
 ```

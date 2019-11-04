@@ -28,7 +28,7 @@ jupyter:
     language: python
     layout: base
     name: Table and Chart Subplots
-    order: 11
+    order: 3
     page_type: example_index
     permalink: python/table-subplots/
     thumbnail: thumbnail/table_subplots.jpg

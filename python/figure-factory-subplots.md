@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Figure Factory Subplots
-    order: 10
+    order: 4
     page_type: u-guide
     permalink: python/figure-factory-subplots/
     thumbnail: thumbnail/ff-subplots.jpg

@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Map Subplots
-    order: 5
+    order: 2
     page_type: example_index
     permalink: python/map-subplots-and-small-multiples/
     thumbnail: thumbnail/map-subplots.jpg

@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Time Series
-    order: 0
+    order: 1
     page_type: example_index
     permalink: python/time-series/
     thumbnail: thumbnail/time-series.jpg

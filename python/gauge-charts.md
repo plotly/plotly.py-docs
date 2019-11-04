@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Gauge Charts
-    order: 6
+    order: 7
     page_type: u-guide
     permalink: python/gauge-charts/
     redirect_from:

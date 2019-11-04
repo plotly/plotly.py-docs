@@ -31,7 +31,7 @@ jupyter:
     language: python
     layout: base
     name: Parallel Coordinates Plot
-    order: 10
+    order: 9
     page_type: u-guide
     permalink: python/parallel-coordinates-plot/
     thumbnail: thumbnail/parcoords.jpg

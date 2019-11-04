@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Scatter Plots on Maps
-    order: 2
+    order: 11
     page_type: u-guide
     permalink: python/scatter-plots-on-maps/
     thumbnail: thumbnail/scatter-plot-on-maps.jpg

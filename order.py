@@ -21,50 +21,38 @@ for md_path in Path("python").glob("**/*.md"):
     if len(post.metadata.keys()) > 0:
         if "display_as" in post.metadata['jupyter']['plotly']:
             if post.metadata['jupyter']['plotly']['display_as'] == 'file_settings':
-                fileSettings.append(post); 
+                fileSettings.append(post.metadata['jupyter']['plotly']['order'])
             if post.metadata['jupyter']['plotly']['display_as'] == 'basic':
-                basic.append(post);
+                basic.append(post.metadata['jupyter']['plotly']['order'])
             if post.metadata['jupyter']['plotly']['display_as'] == 'statistical':
-                statistical.append(post);
+                statistical.append(post.metadata['jupyter']['plotly']['order'])
             if post.metadata['jupyter']['plotly']['display_as'] == 'scientific':
-                scientific.append(post);
+                scientific.append(post.metadata['jupyter']['plotly']['order'])
             if post.metadata['jupyter']['plotly']['display_as'] == 'financial':
-                financial.append(post);
+                financial.append(post.metadata['jupyter']['plotly']['order'])
             if post.metadata['jupyter']['plotly']['display_as'] == 'maps':
-                maps.append(post);
+                maps.append(post.metadata['jupyter']['plotly']['order'])
             if post.metadata['jupyter']['plotly']['display_as'] == '3d_charts':
-                threedee.append(post);
-            if post.metadata['jupyter']['plotly']['display_as'] == 'subplots':
-                subplots.append(post);
+                threedee.append(post.metadata['jupyter']['plotly']['order'])
+            if post.metadata['jupyter']['plotly']['display_as'] == 'multiple_axes':
+                subplots.append(post.metadata['jupyter']['plotly']['order'])
 
-for post in fileSettings:
-    print(post.metadata['jupyter']['plotly']['order'])
-print('888888888888888888888888888888888')
 
-for post in basic:
-    print(post.metadata['jupyter']['plotly']['order'])
-print('888888888888888888888888888888888')
+sortedPlotlyFundamentals = sorted(fileSettings)
+sortedBasic = sorted(basic)
+sortedStatistical = sorted(statistical)
+sortedScientitic = sorted(scientific)
+sortedFinancial = sorted(financial)
+sortedMaps = sorted(maps)
+sorted3d = sorted(threedee)
+sortedSubplots = sorted(subplots)
 
-for post in statistical:
-    print(post.metadata['jupyter']['plotly']['order'])
-print('888888888888888888888888888888888')
+print(sortedPlotlyFundamentals)
+print(sortedBasic)
+print(sortedStatistical)
+print(sortedScientitic)
+print(sortedFinancial)
+print(sortedMaps)
+print(sorted3d)
+print(sortedSubplots)
 
-for post in scientific:
-    print(post.metadata['jupyter']['plotly']['order'])
-print('888888888888888888888888888888888')
-
-for post in financial:
-    print(post.metadata['jupyter']['plotly']['order'])
-print('888888888888888888888888888888888')
-
-for post in maps:
-    print(post.metadata['jupyter']['plotly']['order'])
-print('888888888888888888888888888888888')
-
-for post in threedee:
-    print(post.metadata['jupyter']['plotly']['order'])
-
-print('888888888888888888888888888888888')
-
-for post in subplots:
-    print(post.metadata['jupyter']['plotly']['order'])

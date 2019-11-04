@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Streamline Plots
-    order: 12
+    order: 11
     permalink: python/streamline-plots/
     thumbnail: thumbnail/streamline.jpg
 ---

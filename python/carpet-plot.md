@@ -31,7 +31,7 @@ jupyter:
     language: python
     layout: base
     name: Carpet Plots
-    order: 26
+    order: 13
     page_type: u-guide
     permalink: python/carpet-plot/
     thumbnail: thumbnail/carpet.jpg

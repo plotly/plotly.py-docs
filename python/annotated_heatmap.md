@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Annotated Heatmaps
-    order: 4
+    order: 6
     page_type: u-guide
     permalink: python/annotated_heatmap/
     thumbnail: thumbnail/ann_heat.jpg

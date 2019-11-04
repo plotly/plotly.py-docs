@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Surface Plots
-    order: 6
+    order: 3
     page_type: example_index
     permalink: python/3d-surface-plots/
     thumbnail: thumbnail/3d-surface.jpg

@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Axes
-    order: 0.101
+    order: 1
     page_type: example_index
     permalink: python/3d-axes/
     thumbnail: thumbnail/3d-axes.png

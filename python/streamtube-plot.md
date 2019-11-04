@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Streamtube Plots
-    order: 21
+    order: 13
     page_type: u-guide
     permalink: python/streamtube-plot/
     thumbnail: thumbnail/streamtube.jpg

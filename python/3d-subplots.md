@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Subplots
-    order: 0.104
+    order: 4
     page_type: u-guide
     permalink: python/3d-subplots/
     thumbnail: thumbnail/3d-subplots.jpg

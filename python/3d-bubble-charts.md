@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Bubble Charts
-    order: 2
+    order: 6
     page_type: u-guide
     permalink: python/3d-bubble-charts/
     thumbnail: thumbnail/3dbubble.jpg

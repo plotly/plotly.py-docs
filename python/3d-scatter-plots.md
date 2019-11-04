@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Scatter Plots
-    order: 1
+    order: 2
     page_type: example_index
     permalink: python/3d-scatter-plots/
     thumbnail: thumbnail/3d-scatter.jpg

@@ -60,7 +60,7 @@ import plotly.express as px
 gapminder = px.data.gapminder()
 gapminder_2007 = gapminder.query("year==2007")
 
-for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "none"]:
+for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]:
     fig = px.scatter(gapminder_2007,
                      x="gdpPercap", y="lifeExp", size="pop", color="continent",
                      log_x=True, size_max=60,
@@ -85,7 +85,7 @@ fig = go.Figure(
         height=500,
     ))
 
-for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "none"]:
+for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]:
     fig.update_layout(template=template, title="Mt Bruno Elevation: '%s' theme" % template)
     fig.show()
 ```

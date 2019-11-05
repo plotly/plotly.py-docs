@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Pie Charts
-    order: 10
+    order: 4
     page_type: example_index
     permalink: python/pie-charts/
     thumbnail: thumbnail/pie-chart.jpg

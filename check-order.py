@@ -30,6 +30,8 @@ if order[0] != 1:
 def checkConsecutive(l): 
     return sorted(l) == list(range(min(l), max(l)+1)) 
 
+print(order)
+
 try:
     if not checkConsecutive(order):
         raise Exception("Order Check Failed! Posts are Not in Consecutive Order!")

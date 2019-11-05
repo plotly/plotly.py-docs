@@ -52,7 +52,7 @@ From this, we can see that the default theme is `"plotly"`, and we can see the n
 
 
 #### Specifying themes in Plotly Express
-All Plotly Express functions accept a `template` argument that can be set to the name of a registered theme (or to a `Template` object as discussed later in this section). Here is an example of using Plotly Express to build and display the same scatter plot with five different themes.
+All Plotly Express functions accept a `template` argument that can be set to the name of a registered theme (or to a `Template` object as discussed later in this section). Here is an example of using Plotly Express to build and display the same scatter plot with six different themes.
 
 ```python
 import plotly.express as px
@@ -69,7 +69,7 @@ for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", 
 ```
 
 #### Specifying themes in graph object figures
-The theme for a particular graph object figure can be specified by setting the `template` property of the figure's `layout` to the name of a registered theme (or to a `Template` object as discussed later in this section).  Here is an example of constructing a surface plot and then displaying it with each of five themes.
+The theme for a particular graph object figure can be specified by setting the `template` property of the figure's `layout` to the name of a registered theme (or to a `Template` object as discussed later in this section). Here is an example of constructing a surface plot and then displaying it with each of six themes.
 
 ```python
 import plotly.graph_objects as go

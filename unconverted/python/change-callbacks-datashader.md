@@ -22,7 +22,6 @@ jupyter:
     order: 24
     permalink: python/change-callbacks-datashader/
     thumbnail: thumbnail/figurewidget-datashader.gif
-    
 ---
 
 #### New to Plotly?

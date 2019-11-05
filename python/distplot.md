@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/distplot/
     thumbnail: thumbnail/distplot.jpg
-    
 ---
 
 ## Combined statistical representations with px.histogram

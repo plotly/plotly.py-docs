@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/interpolation-and-extrapolation-in-1d/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

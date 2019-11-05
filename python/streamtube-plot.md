@@ -33,14 +33,13 @@ jupyter:
     page_type: u-guide
     permalink: python/streamtube-plot/
     thumbnail: thumbnail/streamtube.jpg
-    
 ---
 
 
 ### Introduction
 
 
-In streamtube plots, attributes include `x`, `y`, and `z`, which set the coordinates of the vector field, and `u`, `v`, and `w`, which set the x, y, and z components of the vector field. Additionally, you can use `starts` to determine the streamtube's starting position. 
+In streamtube plots, attributes include `x`, `y`, and `z`, which set the coordinates of the vector field, and `u`, `v`, and `w`, which set the x, y, and z components of the vector field. Additionally, you can use `starts` to determine the streamtube's starting position.
 
 
 ### Basic Streamtube Plot
@@ -48,7 +47,7 @@ In streamtube plots, attributes include `x`, `y`, and `z`, which set the coordin
 ```python
 import plotly.graph_objects as go
 
-fig = go.Figure(data=go.Streamtube(x=[0, 0, 0], y=[0, 1, 2], z=[0, 0, 0], 
+fig = go.Figure(data=go.Streamtube(x=[0, 0, 0], y=[0, 1, 2], z=[0, 0, 0],
                                    u=[0, 0, 0], v=[1, 1, 1], w=[0, 0, 0]))
 fig.show()
 ```
@@ -103,17 +102,17 @@ fig.show()
 
 ### Tube color and diameter
 
-The color of tubes is determined by their local norm, and the diameter of the field by the local [divergence](https://en.wikipedia.org/wiki/Divergence) of the vector field. 
+The color of tubes is determined by their local norm, and the diameter of the field by the local [divergence](https://en.wikipedia.org/wiki/Divergence) of the vector field.
 
-In all cases below the norm is proportional to `z**2` but the direction of the vector is different, resulting in a different divergence field. 
+In all cases below the norm is proportional to `z**2` but the direction of the vector is different, resulting in a different divergence field.
 
 ```python
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import numpy as np
 
-x, y, z = np.mgrid[0:10, 0:10, 0:10] 
-x = x.T.flatten() 
+x, y, z = np.mgrid[0:10, 0:10, 0:10]
+x = x.T.flatten()
 y = y.T.flatten()
 z = z.T.flatten()
 

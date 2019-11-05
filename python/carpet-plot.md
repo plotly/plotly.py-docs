@@ -35,7 +35,6 @@ jupyter:
     page_type: u-guide
     permalink: python/carpet-plot/
     thumbnail: thumbnail/carpet.jpg
-    
 ---
 
 <!-- #region -->

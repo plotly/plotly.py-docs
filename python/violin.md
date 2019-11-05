@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/violin/
     thumbnail: thumbnail/violin.jpg
-    
     v4upgrade: true
 ---
 

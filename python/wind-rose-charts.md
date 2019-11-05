@@ -34,7 +34,6 @@ jupyter:
     page_type: example_index
     permalink: python/wind-rose-charts/
     thumbnail: thumbnail/wind-rose.jpg
-    
     v4upgrade: true
 ---
 

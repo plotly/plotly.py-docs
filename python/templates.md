@@ -32,7 +32,6 @@ jupyter:
     layout: base
     permalink: python/templates/
     thumbnail: thumbnail/theming-and-templates.png
-    
 ---
 
 ### Theming and templates

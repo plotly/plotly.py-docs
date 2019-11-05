@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/map-subplots-and-small-multiples/
     thumbnail: thumbnail/map-subplots.jpg
-    
     v4upgrade: true
 ---
 

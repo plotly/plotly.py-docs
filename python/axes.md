@@ -34,7 +34,6 @@ jupyter:
     order: 12
     permalink: python/axes/
     thumbnail: thumbnail/axes.png
-    
     v4upgrade: true
 ---
 

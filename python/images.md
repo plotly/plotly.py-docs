@@ -32,7 +32,6 @@ jupyter:
     order: 31
     permalink: python/images/
     thumbnail: thumbnail/images.png
-    
     v4upgrade: true
 ---
 

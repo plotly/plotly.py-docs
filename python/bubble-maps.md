@@ -32,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/bubble-maps/
     thumbnail: thumbnail/bubble-map.jpg
-    
     v4upgrade: true
 ---
 

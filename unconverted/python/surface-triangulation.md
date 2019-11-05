@@ -23,7 +23,6 @@ jupyter:
     page_type: u-guide
     permalink: python/surface-triangulation/
     thumbnail: thumbnail/trisurf.jpg
-    
 ---
 
 #### New to Plotly?

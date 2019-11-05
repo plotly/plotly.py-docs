@@ -22,7 +22,6 @@ jupyter:
     order: 26
     permalink: python/cars-exploration/
     thumbnail: thumbnail/figurewidget-cars.gif
-    
 ---
 
 #### New to Plotly?

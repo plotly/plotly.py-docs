@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/indicator/
     thumbnail: thumbnail/indicator.jpg
-    
     v4upgrade: true
 ---
 

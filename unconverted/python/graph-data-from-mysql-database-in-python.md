@@ -22,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/graph-data-from-mysql-database-in-python/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

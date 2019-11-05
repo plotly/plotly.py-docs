@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/plot-data-from-csv/
     thumbnail: thumbnail/csv.jpg
-    
 ---
 
 

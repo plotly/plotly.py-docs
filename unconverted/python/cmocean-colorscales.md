@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/cmocean-colorscales/
     thumbnail: thumbnail/colorbars.jpg
-    
 ---
 
 #### New to Plotly?

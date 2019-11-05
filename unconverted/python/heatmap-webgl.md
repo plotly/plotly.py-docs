@@ -23,7 +23,6 @@ jupyter:
     page_type: u-guide
     permalink: python/heatmap-webgl/
     thumbnail: thumbnail/heatmap-webgl.jpg
-    
 ---
 
 #### New to Plotly?

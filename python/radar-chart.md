@@ -33,13 +33,12 @@ jupyter:
     page_type: u-guide
     permalink: python/radar-chart/
     thumbnail: thumbnail/radar.gif
-    
     v4upgrade: true
 ---
 
-A [Radar Chart](https://en.wikipedia.org/wiki/Radar_chart) (also known as a spider plot or star plot) displays multivariate data in the form of a two-dimensional chart of quantitative variables represented on axes originating from the center. The relative position and angle of the axes is typically uninformative.  It is equivalent to a [parallel coordinates plot](../parallel-coordinates-plot/) with the axes arranged radially.
+A [Radar Chart](https://en.wikipedia.org/wiki/Radar_chart) (also known as a spider plot or star plot) displays multivariate data in the form of a two-dimensional chart of quantitative variables represented on axes originating from the center. The relative position and angle of the axes is typically uninformative.  It is equivalent to a [parallel coordinates plot](/python/parallel-coordinates-plot/) with the axes arranged radially.
 
-For a Radar Chart, use a [polar chart](../polar-chart/) with categorical angular variables, with `px.line_polar` for data available as a tidy pandas DataFrame, or with `go.Scatterpolar` in the general case. See more examples of [polar charts here](../polar-chart/).
+For a Radar Chart, use a [polar chart](/python/polar-chart/) with categorical angular variables, with `px.line_polar` for data available as a tidy pandas DataFrame, or with `go.Scatterpolar` in the general case. See more examples of [polar charts here](/python/polar-chart/).
 
 #### Radar Chart with Plotly Express
 

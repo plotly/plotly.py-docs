@@ -35,7 +35,6 @@ jupyter:
     page_type: u-guide
     permalink: python/static-image-export/
     thumbnail: thumbnail/static-image-export.png
-    
     v4upgrade: true
 ---
 
@@ -194,4 +193,4 @@ Image(img_bytes)
 ### Summary
 In summary, to export high-quality static images from plotly.py, all you need to do is install orca, psutil, and requests and then use the `plotly.io.write_image` and `plotly.io.to_image` functions (or the `.write_image` and `.to_image` graph object figure methods).
 
-If you want to know more about how the orca integration works, or if you need to troubleshoot an issue, please check out the [Orca Management](../orca-management/) section.
+If you want to know more about how the orca integration works, or if you need to troubleshoot an issue, please check out the [Orca Management](/python/orca-management/) section.

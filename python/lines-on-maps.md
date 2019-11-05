@@ -33,11 +33,10 @@ jupyter:
     page_type: example_index
     permalink: python/lines-on-maps/
     thumbnail: thumbnail/flight-paths.jpg
-    
     v4upgrade: true
 ---
 
-For other geographical and map charts see [the maps index page](../maps/).
+For other geographical and map charts see [the maps index page](/python/maps/).
 
 Below we show how to create geographical line plots using either Plotly Express with `px.line_geo` or the lower-level `go.Scattergeo`.
 

@@ -24,7 +24,6 @@ jupyter:
     page_type: u-guide
     permalink: python/density-plots/
     thumbnail: thumbnail/density.gif
-    
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

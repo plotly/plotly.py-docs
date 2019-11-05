@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/filter/
     thumbnail: thumbnail/filter.jpg
-    
     v4upgrade: true
 ---
 

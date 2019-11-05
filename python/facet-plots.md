@@ -33,13 +33,12 @@ jupyter:
     permalink: python/facet-plots/
     redirect_from: python/trellis-plots/
     thumbnail: thumbnail/facet-trellis-thumbnail.jpg
-    
 ---
 
 
 ### Facet and Trellis Plots
 
-Facet plots, also known as trellis plots or small multiples, are figures made up of multiple subplots which have the same set of axes, where each subplot shows a subset of the data. While it is straightforward to use `plotly`'s 
+Facet plots, also known as trellis plots or small multiples, are figures made up of multiple subplots which have the same set of axes, where each subplot shows a subset of the data. While it is straightforward to use `plotly`'s
 [subplot capabilities](/python/subplots/) to make such figures, it's far easier to use the built-in `facet_row` and `facet_col` arguments in the various [Plotly Express](/python/plotly-express/) functions.
 
 ### Scatter Plot Column Facets

@@ -23,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/logos/
     thumbnail: thumbnail/your-tutorial-chart.jpg
-    
 ---
 
 #### New to Plotly?

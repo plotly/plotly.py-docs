@@ -23,7 +23,6 @@ jupyter:
     page_type: u-guide
     permalink: python/2d-projection-of-3d-surface/
     thumbnail: thumbnail/projection-3d.jpg
-    
 ---
 
 #### New to Plotly?

@@ -34,7 +34,6 @@ jupyter:
     permalink: python/bubble-charts/
     redirect_from: python/bubble-charts-tutorial/
     thumbnail: thumbnail/bubble.jpg
-    
     v4upgrade: true
 ---
 

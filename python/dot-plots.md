@@ -33,13 +33,12 @@ jupyter:
     page_type: u-guide
     permalink: python/dot-plots/
     thumbnail: thumbnail/dot-plot.jpg
-    
     v4upgrade: true
 ---
 
 #### Basic Dot Plot
 
-Dot plots (also known as [Cleveland dot plots](https://en.wikipedia.org/wiki/Dot_plot_(statistics))) show changes between two (or more) points in time or between two (or more) conditions. Compared to a [bar chart](../bar-charts/), dot plots can be less cluttered and allow for an easier comparison between conditions.
+Dot plots (also known as [Cleveland dot plots](https://en.wikipedia.org/wiki/Dot_plot_(statistics))) show changes between two (or more) points in time or between two (or more) conditions. Compared to a [bar chart](/python/bar-charts/), dot plots can be less cluttered and allow for an easier comparison between conditions.
 
 For the same data, we show below how to create a dot plot using either `px.scatter` (for a tidy pandas DataFrame) or `go.Scatter`.
 

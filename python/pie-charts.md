@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/pie-charts/
     thumbnail: thumbnail/pie-chart.jpg
-    
     v4upgrade: true
 ---
 
@@ -59,7 +58,7 @@ Colors can be given as RGB triplets or hexadecimal strings, or with [CSS color n
 import plotly.graph_objects as go
 colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen']
 
-fig = go.Figure(data=[go.Pie(labels=['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen'], 
+fig = go.Figure(data=[go.Pie(labels=['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen'],
                              values=[4500,2500,1053,500])])
 fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                   marker=dict(colors=colors, line=dict(color='#000000', width=2)))
@@ -86,7 +85,7 @@ fig.show()
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-labels = ["US", "China", "European Union", "Russian Federation", "Brazil", "India", 
+labels = ["US", "China", "European Union", "Russian Federation", "Brazil", "India",
           "Rest of World"]
 
 # Create subplots: use 'domain' type for Pie subplot

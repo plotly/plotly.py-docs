@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/time-series/
     thumbnail: thumbnail/time-series.jpg
-    
     v4upgrade: true
 ---
 

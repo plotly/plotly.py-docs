@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/peak-finding/
     thumbnail: /images/static-image
-    
 ---
 
 #### Imports

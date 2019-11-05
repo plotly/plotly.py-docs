@@ -32,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/table-subplots/
     thumbnail: thumbnail/table_subplots.jpg
-    
     v4upgrade: true
 ---
 

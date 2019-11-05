@@ -24,7 +24,6 @@ jupyter:
     page_type: example_index
     permalink: python/filled-area-animation/
     thumbnail: thumbnail/apple_stock_animation.gif
-    
 ---
 
 #### New to Plotly?

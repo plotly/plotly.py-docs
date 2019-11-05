@@ -32,7 +32,6 @@ jupyter:
     order: 10
     permalink: python/tick-formatting/
     thumbnail: thumbnail/tick-formatting.gif
-    
 ---
 
 #### Tickmode - Linear

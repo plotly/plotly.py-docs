@@ -25,7 +25,6 @@ jupyter:
     permalink: python/salesforce/
     redirect_from: ipython-notebooks/salesforce/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

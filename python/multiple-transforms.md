@@ -34,7 +34,6 @@ jupyter:
     page_type: example_index
     permalink: python/multiple-transforms/
     thumbnail: thumbnail/multiple-transforms.jpg
-    
     v4upgrade: true
 ---
 

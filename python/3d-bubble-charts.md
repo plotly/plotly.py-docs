@@ -34,7 +34,6 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-bubble-charts/
     thumbnail: thumbnail/3dbubble.jpg
-    
 ---
 
 ### 3d Bubble chart with Plotly Express

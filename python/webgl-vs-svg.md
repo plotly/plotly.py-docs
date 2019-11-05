@@ -33,7 +33,6 @@ jupyter:
     order: 0.5
     permalink: python/webgl-vs-svg/
     thumbnail: thumbnail/webgl.jpg
-    
     v4upgrade: true
 ---
 

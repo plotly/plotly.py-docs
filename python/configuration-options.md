@@ -34,7 +34,6 @@ jupyter:
     page_type: u-guide
     permalink: python/configuration-options/
     thumbnail: thumbnail/modebar-icons.png
-    
     v4upgrade: true
 ---
 

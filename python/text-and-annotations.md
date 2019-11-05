@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.7
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.5
+    version: 3.7.3
   plotly:
     description: How to add text labels and annotations to plots in python.
     display_as: file_settings
@@ -32,7 +32,6 @@ jupyter:
     order: 30
     permalink: python/text-and-annotations/
     thumbnail: thumbnail/text-and-annotations.png
-    
     v4upgrade: true
 ---
 
@@ -115,6 +114,8 @@ fig.show()
 
 ### Simple Annotation
 
+Annotations can be added to a figure using `fig.update_layout(annotations=[...])` or `fig.add_annotation`.
+
 ```python
 import plotly.graph_objects as go
 
@@ -168,33 +169,28 @@ fig.add_trace(go.Scatter(
     y=[0, 4, 5, 1, 2, 2, 3, 4, 2]
 ))
 
-fig.update_layout(
-    showlegend=False,
-    annotations=[
-        go.layout.Annotation(
+fig.add_annotation(
+    go.layout.Annotation(
             x=2,
             y=5,
-            xref="x",
-            yref="y",
-            text="dict Text",
-            showarrow=True,
-            arrowhead=7,
-            ax=0,
-            ay=-40
-        ),
-        go.layout.Annotation(
+            text="dict Text")
+)
+fig.add_annotation(
+    go.layout.Annotation(
             x=4,
             y=4,
+            text="dict Text 2")
+)
+fig.update_annotations(dict(
             xref="x",
             yref="y",
-            text="dict Text 2",
             showarrow=True,
             arrowhead=7,
             ax=0,
             ay=-40
-        )
-    ]
-)
+))
+
+fig.update_layout(showlegend=False)
 
 fig.show()
 ```
@@ -351,37 +347,35 @@ fig.add_trace(go.Scatter(
     y=[0, 4, 5, 1, 2, 2, 3, 4, 2]
 ))
 
-fig.update_layout(
-    showlegend=False,
-    annotations=[
-        go.layout.Annotation(
-            x=2,
-            y=5,
-            xref="x",
-            yref="y",
-            text="max=5",
-            showarrow=True,
-            font=dict(
-                family="Courier New, monospace",
-                size=16,
-                color="#ffffff"
+fig.add_annotation(
+    go.layout.Annotation(
+        x=2,
+        y=5,
+        xref="x",
+        yref="y",
+        text="max=5",
+        showarrow=True,
+        font=dict(
+            family="Courier New, monospace",
+            size=16,
+            color="#ffffff"
             ),
-            align="center",
-            arrowhead=2,
-            arrowsize=1,
-            arrowwidth=2,
-            arrowcolor="#636363",
-            ax=20,
-            ay=-30,
-            bordercolor="#c7c7c7",
-            borderwidth=2,
-            borderpad=4,
-            bgcolor="#ff7f0e",
-            opacity=0.8
+        align="center",
+        arrowhead=2,
+        arrowsize=1,
+        arrowwidth=2,
+        arrowcolor="#636363",
+        ax=20,
+        ay=-30,
+        bordercolor="#c7c7c7",
+        borderwidth=2,
+        borderpad=4,
+        bgcolor="#ff7f0e",
+        opacity=0.8
         )
-    ]
 )
 
+fig.update_layout(showlegend=False)
 fig.show()
 ```
 

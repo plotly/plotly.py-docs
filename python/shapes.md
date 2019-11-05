@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.6
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -33,7 +33,6 @@ jupyter:
     order: 32
     permalink: python/shapes/
     thumbnail: thumbnail/shape.jpg
-    
     v4upgrade: true
 ---
 
@@ -59,8 +58,7 @@ fig.update_xaxes(range=[0, 7])
 fig.update_yaxes(range=[0, 2.5])
 
 # Add shapes
-fig.update_layout(
-    shapes=[
+fig.add_shape(
         # Line Vertical
         go.layout.Shape(
             type="line",
@@ -72,7 +70,8 @@ fig.update_layout(
                 color="RoyalBlue",
                 width=3
             )
-        ),
+))
+fig.add_shape(
         # Line Horizontal
         go.layout.Shape(
             type="line",
@@ -85,7 +84,8 @@ fig.update_layout(
                 width=4,
                 dash="dashdot",
             ),
-        ),
+    ))
+fig.add_shape(
         # Line Diagonal
         go.layout.Shape(
             type="line",
@@ -97,11 +97,9 @@ fig.update_layout(
                 color="MediumPurple",
                 width=4,
                 dash="dot",
-            ),
-        ),
-    ]
-)
-
+            )
+))
+fig.update_shapes(dict(xref='x', yref='y'))
 fig.show()
 ```
 
@@ -126,8 +124,7 @@ fig.update_xaxes(range=[0, 8])
 fig.update_yaxes(range=[0, 2])
 
 # Add shapes
-fig.update_layout(
-    shapes=[
+fig.add_shape(
         # Line reference to the axes
         go.layout.Shape(
             type="line",
@@ -141,7 +138,8 @@ fig.update_layout(
                 color="LightSeaGreen",
                 width=3,
             ),
-        ),
+        ))
+fig.add_shape(
         # Line reference to the plot
         go.layout.Shape(
             type="line",
@@ -156,7 +154,6 @@ fig.update_layout(
                 width=3,
             ),
         ),
-    ]
 )
 
 fig.show()
@@ -169,7 +166,7 @@ import plotly.graph_objects as go
 
 import numpy as np
 
-# Generate date
+# Generate data
 x0 = np.linspace(1, 3, 200)
 y0 = x0 * np.sin(np.power(x0, 2)) + 1
 
@@ -187,47 +184,38 @@ fig.update_layout(
 )
 
 # Add tangent line shapes
-fig.update_layout(
-    shapes=[
+fig.add_shape(
         go.layout.Shape(
             type="line",
             x0=1,
             y0=2.30756,
             x1=1.75,
             y1=2.30756,
-            opacity=0.7,
-            line=dict(
-                color="Crimson",
-                width=2.5,
-            ),
-        ),
+        ))
+fig.add_shape(
         go.layout.Shape(
             type="line",
             x0=2.5,
             y0=3.80796,
             x1=3.05,
             y1=3.80796,
-            opacity=0.7,
-            line=dict(
-                color="Crimson",
-                width=2.5,
-            ),
-        ),
+        ))
+fig.add_shape(
         go.layout.Shape(
             type="line",
             x0=1.90,
             y0=-1.1827,
             x1=2.50,
             y1=-1.1827,
-            opacity=0.7,
-            line=dict(
-                color="Crimson",
-                width=2.5,
-            ),
-        ),
-    ]
-)
-
+        ))
+fig.update_shapes(dict(
+    xref="x",
+    yref="y",
+    opacity=0.7,
+    line=dict(
+        color="Crimson",
+        width=2.5,
+        )))
 fig.show()
 ```
 
@@ -250,8 +238,7 @@ fig.update_xaxes(range=[0, 7], showgrid=False)
 fig.update_yaxes(range=[0, 3.5])
 
 # Add shapes
-fig.update_layout(
-    shapes=[
+fig.add_shape(
         # unfilled Rectangle
         go.layout.Shape(
             type="rect",
@@ -262,7 +249,8 @@ fig.update_layout(
             line=dict(
                 color="RoyalBlue",
             ),
-        ),
+        ))
+fig.add_shape(
         # filled Rectangle
         go.layout.Shape(
             type="rect",
@@ -275,10 +263,8 @@ fig.update_layout(
                 width=2,
             ),
             fillcolor="LightSkyBlue",
-        ),
-    ]
-)
-
+        ))
+fig.update_shapes(dict(xref='x', yref='y'))
 fig.show()
 ```
 
@@ -303,8 +289,7 @@ fig.update_xaxes(range=[0, 4], showgrid=False)
 fig.update_yaxes(range=[0, 4])
 
 # Add shapes
-fig.update_layout(
-    shapes=[
+fig.add_shape(
         # Rectangle reference to the axes
         go.layout.Shape(
             type="rect",
@@ -319,7 +304,8 @@ fig.update_layout(
                 width=3,
             ),
             fillcolor="LightSkyBlue",
-        ),
+        ))
+fig.add_shape(
         # Rectangle reference to the plot
         go.layout.Shape(
             type="rect",
@@ -334,9 +320,7 @@ fig.update_layout(
                 width=3,
             ),
             fillcolor="PaleTurquoise",
-        ),
-    ]
-)
+        ))
 
 fig.show()
 ```
@@ -596,37 +580,32 @@ fig.update_yaxes(
 )
 
 # Add circles
-fig.update_layout(
-    shapes=[
+fig.add_shape(
         go.layout.Shape(
-            opacity=0.3,
-            xref="x",
-            yref="y",
+            type="circle",
             fillcolor="blue",
             x0=0,
             y0=0,
             x1=2,
             y1=2,
-            type="circle",
-            line_color="blue",
-            layer="below"
-        ),
+            line_color="blue"
+        ))
+fig.add_shape(
         go.layout.Shape(
-            opacity=0.3,
-            xref="x",
-            yref="y",
+            type="circle",
             fillcolor="gray",
             x0=1.5,
             y0=0,
             x1=3.5,
             y1=2,
-            type="circle",
-            line_color="gray",
-            layer="below"
-        )
-    ],
-)
-
+            line_color="gray"
+        ))
+fig.update_shapes(dict(
+    opacity=0.3,
+    xref="x",
+    yref="y",
+    layer="below"
+))
 # Update figure dimensions
 fig.update_layout(
     margin=dict(

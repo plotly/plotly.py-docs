@@ -37,6 +37,10 @@ jupyter:
     v4upgrade: true
 ---
 
+This tutorial shows how to display and explore image data. If you would like
+instead a logo or static image, use `go.layout.Image` as explained
+[here](/python/images).
+
 ### Displaying RBG image data with px.imshow
 
 `px.imshow` displays multichannel (RGB) or single-channel ("grayscale") image data.
@@ -73,7 +77,7 @@ fig.show()
 
 ### Display single-channel 2D image as grayscale
 
-For a 2D image, `px.imshows` uses a colorscale to map scalar data to colors. The default colorscale is `gray`, ie grayscale images. 
+For a 2D image, `px.imshow` uses a colorscale to map scalar data to colors. The default colorscale is `gray`, ie grayscale images. 
 
 ```python
 import plotly.express as px
@@ -85,7 +89,6 @@ fig.show()
 
 ### Choose the colorscale to display a single-channel image
 
-For a 2D image, `px.imshows` uses a colorscale to map scalar data to colors. The default colorscale is `gray`, ie grayscale images.
 
 ```python
 import plotly.express as px
@@ -97,9 +100,9 @@ fig.show()
 
 ### Display multichannel image data with go.Image
 
-It is also possible to use the `go.Image` trace from the low-level `graph_objects` API in order to display image data. Note that `go.Image` only accepts multichannel images. For single images, use [`go.Heatmap`](https://plot.ly/python/heatmaps/).
+It is also possible to use the `go.Image` trace from the low-level `graph_objects` API in order to display image data. Note that `go.Image` only accepts multichannel images. For single images, use [`go.Heatmap`](/python/heatmaps).
 
-Note that the `go.Image` trace is different from the `go.layout.Image` class, which can be used for [adding background images or logos to figures](./images/). 
+Note that the `go.Image` trace is different from the `go.layout.Image` class, which can be used for [adding background images or logos to figures](/python/images). 
 
 ```python
 import plotly.graph_objects as go

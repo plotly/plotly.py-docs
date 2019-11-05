@@ -3,9 +3,14 @@ from pathlib import Path, PosixPath
 import sys
 
 try:
-    category = str(sys.argv[1])
+    category = str(sys.argv[2])
 except:
     raise Exception("You need to specify a display_as category!")
+
+try:
+    path = str(sys.argv[1])
+except:
+    raise Exception("You need to specify a path!")
 
 # will contain all posts with display_as: file_settings
 postFamily = []

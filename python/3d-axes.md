@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to format axes of 3d plots in Python with Plotly.
     display_as: 3d_charts
@@ -209,4 +209,26 @@ fig.update_layout(scene = dict(
                     b=10, t=10)
                   )
 fig.show()
+```
+
+### Disabling tooltip spikes
+
+By default, guidelines originating from the tooltip point are drawn. It is possible to disable this behaviour with the `showspikes` parameter. In this example we only keep the `z` spikes (projection of the tooltip on the `x-y` plane). Hover on the data to show this behaviour.
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+N = 50
+fig = go.Figure(data=[go.Mesh3d(x=(30*np.random.randn(N)),
+                   y=(25*np.random.randn(N)),
+                   z=(30*np.random.randn(N)),
+                   opacity=0.5,)])
+fig.update_layout(scene=dict(xaxis_showspikes=False,
+                             yaxis_showspikes=False))
+fig.show()
+```
+
+```python
+
 ```

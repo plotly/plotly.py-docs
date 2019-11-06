@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Mapbox Map Layers
-    order: 8
+    order: 9
     page_type: u-guide
     permalink: python/mapbox-layers/
     thumbnail: thumbnail/mapbox-layers.png

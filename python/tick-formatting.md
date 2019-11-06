@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Formatting Ticks
-    order: 10
+    order: 11
     permalink: python/tick-formatting/
     thumbnail: thumbnail/tick-formatting.gif
 ---

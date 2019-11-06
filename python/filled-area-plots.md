@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Filled Area Plots
-    order: 7
+    order: 8
     page_type: u-guide
     permalink: python/filled-area-plots/
     thumbnail: thumbnail/area.jpg

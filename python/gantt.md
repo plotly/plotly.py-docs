@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Gantt Charts
-    order: 9
+    order: 10
     page_type: u-guide
     permalink: python/gantt/
     thumbnail: thumbnail/gantt.jpg

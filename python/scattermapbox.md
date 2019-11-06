@@ -30,7 +30,7 @@ jupyter:
     layout: base
     mapbox_access_token: pk.eyJ1IjoicHJpeWF0aGFyc2FuIiwiYSI6ImNqbGRyMGQ5YTBhcmkzcXF6YWZldnVvZXoifQ.sN7gyyHTIq1BSfHQRBZdHA
     name: Scatter Plots on Mapbox
-    order: 9
+    order: 10
     page_type: u-guide
     permalink: python/scattermapbox/
     thumbnail: thumbnail/scatter-mapbox.jpg

@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Tree-plots
-    order: 9
+    order: 10
     permalink: python/tree-plots/
     thumbnail: thumbnail/treeplot.jpg
     v4upgrade: true

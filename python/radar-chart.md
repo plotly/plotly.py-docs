@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Radar Charts
-    order: 17
+    order: 18
     page_type: u-guide
     permalink: python/radar-chart/
     thumbnail: thumbnail/radar.gif

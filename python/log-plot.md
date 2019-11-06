@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Log Plots
-    order: 5
+    order: 6
     permalink: python/log-plot/
     thumbnail: thumbnail/log.jpg
 ---

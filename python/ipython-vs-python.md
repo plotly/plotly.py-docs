@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: IPython vs Python
-    order: 24
+    order: 25
     permalink: python/ipython-vs-python/
     thumbnail: thumbnail/venn.jpg
     v4upgrade: true

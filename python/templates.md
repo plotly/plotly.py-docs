@@ -32,7 +32,7 @@ jupyter:
     layout: base
     permalink: python/templates/
     thumbnail: thumbnail/theming-and-templates.png
-    order: 5
+    order: 7
 ---
 
 ### Theming and templates

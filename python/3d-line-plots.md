@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Line Plots
-    order: 7
+    order: 8
     page_type: u-guide
     permalink: python/3d-line-plots/
     thumbnail: thumbnail/3d-line.jpg

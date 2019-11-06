@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Multiple Axes
-    order: 14
+    order: 15
     permalink: python/multiple-axes/
     thumbnail: thumbnail/multiple-axes.jpg
     v4upgrade: true

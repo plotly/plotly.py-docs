@@ -30,7 +30,7 @@ jupyter:
     language: python
     layout: base
     name: Mapbox Density Heatmap
-    order: 5
+    order: 6
     page_type: example_index
     permalink: python/mapbox-density-heatmaps/
     thumbnail: thumbnail/mapbox-density.png

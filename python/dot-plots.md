@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Dot Plots
-    order: 6
+    order: 7
     page_type: u-guide
     permalink: python/dot-plots/
     thumbnail: thumbnail/dot-plot.jpg

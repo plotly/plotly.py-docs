@@ -107,7 +107,8 @@ fig.show()
 
 To customize the tooltip on your graph you can use [hovertemplate](https://plot.ly/python/reference/#pie-hovertemplate), which is a template string used for rendering the information that appear on hoverbox.
 This template string can include `variables` in %{variable} format, `numbers` in [d3-format's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_forma), and `date` in [d3-time-fomrat's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format).
-Hovertemplate customize the tooltip text vs. [texttemplate](https://plot.ly/python/reference/#pie-texttemplate) which customizes the text that appears on your chart.
+Hovertemplate customize the tooltip text vs. [texttemplate](https://plot.ly/python/reference/#pie-texttemplate) which customizes the text that appears on your chart. <br>
+Set the horizontal alignment of the text within tooltip with [hoverlabel.align](https://plot.ly/python/reference/#layout-hoverlabel-align). 
 
 ```python
 import plotly.graph_objects as go
@@ -128,7 +129,9 @@ fig.add_trace(go.Scatter(
     hovertemplate = 'Price: %{y:$.2f}<extra></extra>',
     showlegend = False))
 
-fig.update_layout(title = "Set hover text with hovertemplate")
+fig.update_layout(
+    hoverlabel_align = 'right', 
+    title = "Set hover text with hovertemplate")
 
 fig.show()
 ```

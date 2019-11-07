@@ -82,7 +82,7 @@ For a 2D image, `px.imshow` uses a colorscale to map scalar data to colors. The 
 ```python
 import plotly.express as px
 import numpy as np
-img = np.arange(100).reshape((10, 10))
+img = np.arange(15**2).reshape((15, 15))
 fig = px.imshow(img)
 fig.show()
 ```
@@ -116,11 +116,11 @@ fig.show()
 
 The data range and color range are mapped together using the parameters `zmin` and `zmax`, which correspond respectively to the data values mapped to black `[0, 0, 0]` and white `[255, 255, 255]`, or to the extreme colors of the colorscale in the case on single-channel data. 
 
-`px.imshow` and `go.Image` use slightly different default values for `zmin` and `zmax`. For `go.Image`, the default value is `zmin=[0, 0, 0]` and `zmax=[255, 255, 255]`, no matter the data type. On the other hand, `px.imshow` adapts the default `zmin` and `zmax` to the data type:
+For single-channel data, the defaults values of `zmin` and `zmax` used by `px.imshow` and `go.Heatmap` are the the extrema of the data range. For multichannel data, `px.imshow` and `go.Image` use slightly different default values for `zmin` and `zmax`. For `go.Image`, the default value is `zmin=[0, 0, 0]` and `zmax=[255, 255, 255]`, no matter the data type. On the other hand, `px.imshow` adapts the default `zmin` and `zmax` to the data type:
 - for integer data types, `zmin` and `zmax` correspond to the extreme values of the data type, for example 0 and 255 for `uint8`, 0 and 65535 for `uint16`, etc.
-- for float numbers, when the data range is more arbitrary, the minimum and maximum values of the image (across all channels) is used.
+- for float numbers, the maximum value of the data is computed, and zmax is 1 if the max is smaller than 1, 255 if the max is smaller than 255, etc. (with higher thresholds 2**16 - 1 and 2**32 -1).
 
-These defaults can be overriden by setting the values of `zmin` and `zmax`. For `go.Image`, `zmin` and `zmax` need to be given for all channels, whereas it is also possible to pass a scalar value (used for all channels) go `px.imshow`.
+These defaults can be overriden by setting the values of `zmin` and `zmax`. For `go.Image`, `zmin` and `zmax` need to be given for all channels, whereas it is also possible to pass a scalar value (used for all channels) to `px.imshow`.
 
 ```python
 import plotly.express as px
@@ -189,3 +189,7 @@ fig.show()
 #### Reference
 See https://plot.ly/python/reference/#image for more information and chart attribute options!
 
+
+```python
+fig = px.imshow
+```

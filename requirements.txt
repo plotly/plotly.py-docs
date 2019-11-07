@@ -18,6 +18,7 @@ networkx
 squarify
 scikit-image
 sphinx
+sphinx_bootstrap_theme
 recommonmark
 pathlib
 python-frontmatter

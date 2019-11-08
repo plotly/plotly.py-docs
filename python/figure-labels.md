@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.8
+    version: 3.7.3
   plotly:
     description: How to set the global font, title, legend-entries, and axis-titles
       in python.
@@ -62,6 +62,27 @@ fig.update_layout(
         color="#7f7f7f"
     )
 )
+
+fig.show()
+```
+
+### Align Plot Title
+The following example shows how to align the plot title in [layout.title](https://plot.ly/python/reference/#layout-title). [x] sets the x position with respect to [xref](https://plot.ly/python/reference/#layout-title-xref) from "0" (left) to "1" (right), and [y](https://plot.ly/python/reference/#layout-title-y) sets the y position with respect to [yref](https://plot.ly/python/reference/#layout-title-yref) from "0" (bottom) to "1" (top). Moreover, you can define [xanchor](https://plot.ly/python/reference/#layout-title-xanchor) to `left`,`right`, or `center` for setting the title's horizontal alignment with respect to its x position, and/or [yanchor](https://plot.ly/python/reference/#layout-title-yanchor) to `top`, `bottom`, or `middle` for setting the title's vertical alignment with respect to its y position.
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Scatter(
+    y=[3, 1, 4],
+    x=["Mon", "Tue", "Wed"]))
+
+fig.update_layout(
+    title={
+        'text': "Plot Title",
+        'y':0.9,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'})
 
 fig.show()
 ```

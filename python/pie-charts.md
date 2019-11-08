@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/pie-charts/
     thumbnail: thumbnail/pie-chart.jpg
-    v4upgrade: true
 ---
 
 ### Basic Pie Chart ###

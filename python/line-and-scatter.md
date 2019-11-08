@@ -34,7 +34,6 @@ jupyter:
     permalink: python/line-and-scatter/
     redirect_from: python/line-and-scatter-plots-tutorial/
     thumbnail: thumbnail/line-and-scatter.jpg
-    v4upgrade: true
 ---
 
 ## Scatter plot with Plotly Express

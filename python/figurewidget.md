@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/figurewidget/
     thumbnail: thumbnail/figurewidget-overview.gif
-    v4upgrade: true
 ---
 
 #### Create a Simple FigureWidget

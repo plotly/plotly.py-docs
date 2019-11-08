@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-mesh/
     thumbnail: thumbnail/3d-mesh.jpg
-    v4upgrade: true
 ---
 
 ### Simple 3D Mesh example ###

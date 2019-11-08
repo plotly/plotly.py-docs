@@ -33,7 +33,6 @@ jupyter:
     order: 32
     permalink: python/shapes/
     thumbnail: thumbnail/shape.jpg
-    v4upgrade: true
 ---
 
 #### Vertical and Horizontal Lines Positioned Relative to the Axes

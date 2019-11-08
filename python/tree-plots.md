@@ -33,7 +33,6 @@ jupyter:
     order: 10.5
     permalink: python/tree-plots/
     thumbnail: thumbnail/treeplot.jpg
-    v4upgrade: true
 ---
 
 #### Set Up Tree with [igraph](http://igraph.org/python/)

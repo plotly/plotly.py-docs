@@ -34,7 +34,6 @@ jupyter:
     page_type: example_index
     permalink: python/range-slider/
     thumbnail: thumbnail/sliders.jpg
-    v4upgrade: true
 ---
 
 #### Basic Range Slider and Range Selectors

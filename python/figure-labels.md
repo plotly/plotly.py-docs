@@ -34,7 +34,6 @@ jupyter:
     permalink: python/figure-labels/
     redirect_from: python/font/
     thumbnail: thumbnail/figure-labels.png
-    v4upgrade: true
 ---
 
 ```python

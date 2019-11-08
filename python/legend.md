@@ -32,7 +32,6 @@ jupyter:
     order: 13
     permalink: python/legend/
     thumbnail: thumbnail/legends.gif
-    v4upgrade: true
 ---
 
 #### Show Legend

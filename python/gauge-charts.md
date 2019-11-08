@@ -36,7 +36,6 @@ jupyter:
     - python/gauge-chart/
     - python/gauge-meter/
     thumbnail: thumbnail/gauge.jpg
-    v4upgrade: true
 ---
 
 #### Basic Gauge

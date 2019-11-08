@@ -35,7 +35,6 @@ jupyter:
     page_type: u-guide
     permalink: python/static-image-export/
     thumbnail: thumbnail/static-image-export.png
-    v4upgrade: true
 ---
 
 <!-- #region -->

@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/mixed-subplots/
     thumbnail: thumbnail/mixed_subplot.JPG
-    v4upgrade: true
 ---
 
 #### Mixed Subplot

@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.6.8
   plotly:
     description: How to make Network Graphs in Python with Plotly. One examples of
       a network graph with NetworkX
@@ -33,11 +33,10 @@ jupyter:
     order: 14
     page_type: u-guide
     permalink: python/network-graphs/
-    redirect_from: 
-      - ipython-notebooks/networks/
-      - ipython-notebooks/network-graphs/
+    redirect_from:
+    - ipython-notebooks/networks/
+    - ipython-notebooks/network-graphs/
     thumbnail: thumbnail/net.jpg
-    v4upgrade: true
 ---
 
 In this example we show how to visualize a network graph created using `networkx`.

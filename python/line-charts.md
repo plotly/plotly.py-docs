@@ -34,7 +34,6 @@ jupyter:
     page_type: example_index
     permalink: python/line-charts/
     thumbnail: thumbnail/line-plot.jpg
-    v4upgrade: true
 ---
 
 ### Line Plot with plotly.express

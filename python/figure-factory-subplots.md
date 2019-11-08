@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/figure-factory-subplots/
     thumbnail: thumbnail/ff-subplots.jpg
-    v4upgrade: true
 ---
 
 #### Plotly's Figure Factory Module

@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/figurewidget-app/
     thumbnail: thumbnail/multi-widget.jpg
-    v4upgrade: true
 ---
 
 #### NYC Flights Database

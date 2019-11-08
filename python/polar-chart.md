@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/polar-chart/
     thumbnail: thumbnail/polar.gif
-    v4upgrade: true
 ---
 
 ## Polar chart with Plotly Express

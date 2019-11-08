@@ -35,7 +35,6 @@ jupyter:
     page_type: u-guide
     permalink: python/sankey-diagram/
     thumbnail: thumbnail/sankey.jpg
-    v4upgrade: true
 ---
 
 A [Sankey diagram](https://en.wikipedia.org/wiki/Sankey_diagram) is a flow diagram, in which the width of arrows is proportional to the flow quantity.

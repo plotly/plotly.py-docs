@@ -32,7 +32,6 @@ jupyter:
     order: 21
     permalink: python/marker-style/
     thumbnail: thumbnail/marker-style.gif
-    v4upgrade: true
 ---
 
 ### Add Marker Border

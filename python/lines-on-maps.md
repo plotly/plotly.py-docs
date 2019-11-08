@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/lines-on-maps/
     thumbnail: thumbnail/flight-paths.jpg
-    v4upgrade: true
 ---
 
 For other geographical and map charts see [the maps index page](/python/maps/).

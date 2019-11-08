@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/contour-plots/
     thumbnail: thumbnail/contour.jpg
-    v4upgrade: true
 ---
 
 ### Basic Contour Plot

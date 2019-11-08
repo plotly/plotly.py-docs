@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/dot-plots/
     thumbnail: thumbnail/dot-plot.jpg
-    v4upgrade: true
 ---
 
 #### Basic Dot Plot

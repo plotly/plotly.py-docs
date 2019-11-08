@@ -32,7 +32,6 @@ jupyter:
     order: 30
     permalink: python/text-and-annotations/
     thumbnail: thumbnail/text-and-annotations.png
-    v4upgrade: true
 ---
 
 ### Text scatter plot with Plotly Express

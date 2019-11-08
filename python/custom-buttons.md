@@ -32,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/custom-buttons/
     thumbnail: thumbnail/custom-buttons.jpg
-    v4upgrade: true
 ---
 
 #### Methods

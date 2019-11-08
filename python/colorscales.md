@@ -34,7 +34,6 @@ jupyter:
     permalink: python/colorscales/
     thumbnail: thumbnail/heatmap_colorscale.jpg
     redirect_from: python/logarithmic-color-scale/
-    v4upgrade: true
 ---
 
 ### Predefined colorscales in Plotly Express

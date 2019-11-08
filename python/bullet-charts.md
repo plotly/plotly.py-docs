@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/bullet-charts/
     thumbnail: thumbnail/bullet.png
-    v4upgrade: true
 ---
 
 #### Basic Bullet Charts

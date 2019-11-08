@@ -34,7 +34,6 @@ jupyter:
     permalink: python/heatmaps/
     redirect_from: python/heatmap/
     thumbnail: thumbnail/heatmap.jpg
-    v4upgrade: true
 ---
 
 ### Basic Heatmap

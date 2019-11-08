@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/3d-surface-plots/
     thumbnail: thumbnail/3d-surface.jpg
-    v4upgrade: true
 ---
 
 #### Topographical 3D Surface Plot

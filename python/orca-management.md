@@ -33,7 +33,6 @@ jupyter:
     order: 1.5
     permalink: python/orca-management/
     thumbnail: thumbnail/orca-management.png
-    v4upgrade: true
 ---
 
 ### Overview

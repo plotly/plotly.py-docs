@@ -34,7 +34,6 @@ jupyter:
       - python/user-guide/
       - python/user-g/
     thumbnail: thumbnail/creating-and-updating-figures.png
-    v4upgrade: true
 ---
 
 ### Representing Figures

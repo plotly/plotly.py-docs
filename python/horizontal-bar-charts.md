@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/horizontal-bar-charts/
     thumbnail: thumbnail/horizontal-bar.jpg
-    v4upgrade: true
 ---
 
 See more examples of bar charts (including vertical bar charts) and styling options [here](https://plot.ly/python/bar-charts/).

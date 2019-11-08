@@ -33,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-subplots/
     thumbnail: thumbnail/3d-subplots.jpg
-    v4upgrade: true
 ---
 
 #### 3D Surface Subplots

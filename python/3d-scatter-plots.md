@@ -33,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/3d-scatter-plots/
     thumbnail: thumbnail/3d-scatter.jpg
-    v4upgrade: true
 ---
 
 ## 3D scatter plot with Plotly Express

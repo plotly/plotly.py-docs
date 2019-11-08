@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make Sunburst Charts.
     display_as: basic
-    ipynb: ~notebook_demo/274/
     language: python
     layout: base
     name: Sunburst Charts

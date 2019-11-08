@@ -25,7 +25,6 @@ jupyter:
     description: This section covers the low-level details of how plotly.py uses orca
       to perform static image generation.
     display_as: file_settings
-    ipynb: ~notebook_demo/253
     language: python
     layout: base
     name: Orca Management

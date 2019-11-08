@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: Introduction to the new Plotly FigureWidget
     display_as: chart_events
-    ipynb: ~notebook_demo/235
     language: python
     layout: base
     name: Plotly FigureWidget Overview

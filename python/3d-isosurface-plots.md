@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make 3D Isosurface Plots in Python with Plotly.
     display_as: 3d_charts
-    ipynb: ~notebook_demo/272
     language: python
     layout: base
     name: 3D Isosurface Plots

@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: How to 3D Parameteric Plots in Python
     display_as: 3d_charts
-    ipynb: ~notebook_demo/69
     language: python
     layout: base
     name: Parametric Plots

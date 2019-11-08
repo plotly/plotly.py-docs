@@ -25,7 +25,6 @@ jupyter:
     description: How to create colormaped representations of USA counties by FIPS
       values in Python.
     display_as: maps
-    ipynb: ~notebook_demo/212
     language: python
     layout: base
     name: USA County Choropleth Maps

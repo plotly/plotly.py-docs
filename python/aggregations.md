@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to use aggregates in Python with Plotly.
     display_as: transforms
-    ipynb: ~notebook_demo/192
     language: python
     layout: base
     name: Aggregations

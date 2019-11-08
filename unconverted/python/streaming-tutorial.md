@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: Plotly Streaming
     has_thumbnail: false
-    ipynb: ~notebook_demo/80
     language: python
     layout: base
     name: Plotly Streaming

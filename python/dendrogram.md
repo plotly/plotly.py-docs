@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make a dendrogram in Python with Plotly.
     display_as: scientific
-    ipynb: ~notebook_demo/262
     language: python
     layout: base
     name: Dendrograms

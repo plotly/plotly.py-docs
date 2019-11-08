@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make Contour plots in Python with Plotly.
     display_as: scientific
-    ipynb: ~notebook_demo/185
     language: python
     layout: base
     name: Contour Plots

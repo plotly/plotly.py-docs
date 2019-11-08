@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to format axes of 3d plots in Python with Plotly.
     display_as: 3d_charts
-    ipynb: ~notebook_demo/96
     language: python
     layout: base
     name: 3D Axes

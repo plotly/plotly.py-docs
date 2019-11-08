@@ -25,7 +25,6 @@ jupyter:
     description: How to troubleshoot import and rendering problems in Plotly with
       Python.
     display_as: file_settings
-    ipynb: ~notebook_demo/97
     language: python
     layout: base
     name: Troubleshooting

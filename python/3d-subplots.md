@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: 3D Subplots in Plotly
     display_as: 3d_charts
-    ipynb: ~notebook_demo/75
     language: python
     layout: base
     name: 3D Subplots

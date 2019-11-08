@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to add images to charts as background images or logos.
     display_as: file_settings
-    ipynb: ~notebook_demo/216
     language: python
     layout: base
     name: Images

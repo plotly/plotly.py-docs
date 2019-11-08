@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make Log plots in Python with Plotly.
     display_as: scientific
-    ipynb: ~notebook_demo/31
     language: python
     layout: base
     name: Log Plots

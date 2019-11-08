@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to Color 3D Surface Plots in Python with Plotly.
     display_as: 3d_charts
-    ipynb: ~notebook_demo/76
     language: python
     layout: base
     name: 3D Surface Coloring

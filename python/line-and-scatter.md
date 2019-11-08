@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make scatter plots in Python with Plotly.
     display_as: basic
-    ipynb: ~notebook_demo/2
     language: python
     layout: base
     name: Scatter Plots

@@ -26,7 +26,6 @@ jupyter:
   plotly:
     description: How to make parallel coorindates plots in Python with Plotly.
     display_as: scientific
-    ipynb: ~notebook_demo/142
     language: python
     layout: base
     name: Parallel Coordinates Plot

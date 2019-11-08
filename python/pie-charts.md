@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make Pie Charts.
     display_as: basic
-    ipynb: ~notebook_demo/7/
     language: python
     layout: base
     name: Pie Charts

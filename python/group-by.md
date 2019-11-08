@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to use group by in Python with Plotly.
     display_as: transforms
-    ipynb: ~notebook_demo/194
     language: python
     layout: base
     name: Group By

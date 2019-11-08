@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: How to make wireframe plots in Python
     display_as: 3d_charts
-    ipynb: ~notebook_demo/68
     language: python
     layout: base
     name: 3D Wireframe Plots

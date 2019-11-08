@@ -25,7 +25,6 @@ jupyter:
     description: How to make 3D Bubble Charts in Python with Plotly. Three examples
       of 3D Bubble Charts.
     display_as: 3d_charts
-    ipynb: ~notebook_demo/62
     language: python
     layout: base
     name: 3D Bubble Charts

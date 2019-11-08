@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make bubble charts in Python with Plotly.
     display_as: basic
-    ipynb: ~notebook_demo/1/new-to-plotly-plotlys-python-library-i
     language: python
     layout: base
     name: Bubble Charts

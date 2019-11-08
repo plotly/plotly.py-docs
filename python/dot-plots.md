@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make dot plots in Python with Plotly.
     display_as: basic
-    ipynb: ~notebook_demo/2
     language: python
     layout: base
     name: Dot Plots

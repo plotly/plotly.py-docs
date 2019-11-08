@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to fit to peaks in Python
     display_as: peak-analysis
     has_thumbnail: false
-    ipynb: ~notebook_demo/119
     language: python
     layout: base
     name: Peak Fitting

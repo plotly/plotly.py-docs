@@ -20,7 +20,6 @@ jupyter:
     language: python
     display_as: financial
     order: 4
-    ipynb: ~notebook_demo/293
     layout: base
     page_type: example_index
 ---

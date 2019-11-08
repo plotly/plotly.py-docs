@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: How to make Cmocean Colorscales in Python with Plotly.
     display_as: advanced_opt
-    has_thumbnail: true
     ipynb: ~notebook_demo/52
     language: python
     layout: base

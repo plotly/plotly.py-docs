@@ -25,7 +25,6 @@ jupyter:
     description: Theming and templates with plotly with Python
     language: python
     display_as: file_settings
-    has_thumbnail: true
     name: Theming and templates
     page_type: u-guide
     layout: base

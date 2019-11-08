@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: Introduction to the new Plotly FigureWidget
     display_as: chart_events
-    has_thumbnail: true
     ipynb: ~notebook_demo/235
     language: python
     layout: base

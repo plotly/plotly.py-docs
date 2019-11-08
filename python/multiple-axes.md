@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make a graph with multiple axes in python.
     display_as: file_settings
-    has_thumbnail: true
     ipynb: ~notebook_demo/270
     language: python
     layout: base

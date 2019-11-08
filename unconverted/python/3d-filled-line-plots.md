@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: How to make 3D Filled Line Plots in Python
     display_as: 3d_charts
-    has_thumbnail: true
     ipynb: ~notebook_demo/65
     language: python
     layout: base

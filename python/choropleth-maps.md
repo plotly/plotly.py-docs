@@ -14,7 +14,6 @@ jupyter:
   plotly:
     description: How to make choropleth maps in Python with Plotly.
     display_as: maps
-    has_thumbnail: true
     ipynb: ~notebook_demo/55
     language: python
     layout: base

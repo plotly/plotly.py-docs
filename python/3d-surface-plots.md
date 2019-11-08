@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make 3D-surface plots in Python
     display_as: 3d_charts
-    has_thumbnail: true
     ipynb: ~notebook_demo/66
     language: python
     layout: base

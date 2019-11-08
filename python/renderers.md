@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: Displaying Figures from Python
     display_as: file_settings
-    has_thumbnail: true
     language: python
     name: Displaying Figures
     page_type: example_index

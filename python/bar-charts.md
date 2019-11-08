@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make Bar Charts in Python with Plotly.
     display_as: basic
-    has_thumbnail: true
     ipynb: ~notebook_demo/186
     language: python
     layout: base

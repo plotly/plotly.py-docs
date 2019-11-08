@@ -16,8 +16,7 @@ jupyter:
     description: How to make funnel-chart plots in Python with Plotly.
     name: Funnel Chart
     thumbnail: thumbnail/funnel.jpg
-    
-    has_thumbnail: true
+
     language: python
     display_as: financial
     order: 4

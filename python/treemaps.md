@@ -165,7 +165,7 @@ print(df.head())
 
 levels = ['salesperson', 'county', 'region'] # levels used for the hierarchical chart
 color_columns = ['sales', 'calls']
-value_column = 'sales'
+value_column = 'calls'
 
 def build_hierarchical_dataframe(df, levels, value_column, color_columns=None):
     """

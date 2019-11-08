@@ -63,8 +63,8 @@ Add edges as disconnected lines in a single trace and nodes as a scatter trace
 edge_x = []
 edge_y = []
 for edge in G.edges():
-    x0, y0 = G.node[edge[0]]['pos']
-    x1, y1 = G.node[edge[1]]['pos']
+    x0, y0 = G.nodes[edge[0]]['pos']
+    x1, y1 = G.nodes[edge[1]]['pos']
     edge_x.append(x0)
     edge_x.append(x1)
     edge_x.append(None)
@@ -81,7 +81,7 @@ edge_trace = go.Scatter(
 node_x = []
 node_y = []
 for node in G.nodes():
-    x, y = G.node[node]['pos']
+    x, y = G.nodes[node]['pos']
     node_x.append(x)
     node_y.append(y)
 

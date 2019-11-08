@@ -118,19 +118,13 @@ or conda.
 $ conda install jupyterlab=1.0 "ipywidgets>=7.5"
 ```
 
-Then run the following commands to install the required JupyterLab extensions (note that this will require [`node`](https://nodejs.org/) to be installed):
+Then run the following commands to install the required JupyterLab extensions (note that this requires [`nodejs`](https://nodejs.org/), which can be installed with conda via `conda install nodejs`):
 
 ```
-# Avoid "JavaScript heap out of memory" errors during extension installation
-# (OS X/Linux)
-export NODE_OPTIONS=--max-old-space-size=4096
-# (Windows)
-set NODE_OPTIONS=--max-old-space-size=4096
-
 # Jupyter widgets extension
 jupyter labextension install @jupyter-widgets/jupyterlab-manager@1.0 --no-build
 
-# jupyterlab renderer support
+# JupyterLab renderer support
 jupyter labextension install jupyterlab-plotly@1.2.0 --no-build
 
 # FigureWidget support
@@ -138,21 +132,33 @@ jupyter labextension install plotlywidget@1.2.0 --no-build
 
 # Build extensions (must be done to activate extensions since --no-build is used above)
 jupyter lab build
-
-# Unset NODE_OPTIONS environment variable
-# (OS X/Linux)
-unset NODE_OPTIONS
-# (Windows)
-set NODE_OPTIONS=
 ```
 
-These packages contain everything you need to run JupyterLab...
+> Note: If you run into "JavaScript heap out of memory" errors during extension installation, you can set the following environmental variables and then run the commands above again.
+>
+>```
+># (OS X/Linux)
+>export NODE_OPTIONS=--max-old-space-size=4096
+># (Windows)
+>set NODE_OPTIONS=--max-old-space-size=4096
+>```
+>
+> After the installation has finished, you can set the environmental variables back to their default values.
+>
+>```
+># (OS X/Linux)
+>unset NODE_OPTIONS
+># (Windows)
+>set NODE_OPTIONS=
+>```
+
+These packages contain everything you need to run JupyterLab.
 
 ```
 $ jupyter lab
 ```
 
-and display plotly figures inline using the `plotly_mimetype` renderer...
+and display plotly figures inline using the `plotly_mimetype` renderer.
 <!-- #endregion -->
 ```python
 import plotly.graph_objects as go

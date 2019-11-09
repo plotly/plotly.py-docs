@@ -23,5 +23,5 @@ I/O
     show
 
 .. automodule:: plotly.io
-   :members:
+   :no-members:
 

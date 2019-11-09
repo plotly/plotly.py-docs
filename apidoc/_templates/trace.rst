@@ -15,7 +15,6 @@
 {{ underline }}
 
 .. autosummary::
-   :toctree: generated/
    
    plotly.graph_objects.{{ objname.lower() }}
 

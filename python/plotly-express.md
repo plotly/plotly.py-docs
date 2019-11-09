@@ -50,8 +50,6 @@ You can also read our original [Medium announcement article](https://medium.com/
 import plotly.express as px
 print(px.data.iris.__doc__)
 px.data.iris().head()
-
-px.defaults.template = "simple_white"
 ```
 
 #### Scatter and Line plots

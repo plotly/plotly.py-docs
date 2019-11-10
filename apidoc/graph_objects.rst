@@ -1,6 +1,6 @@
 .. _graph-objects:
 
-Graph objects: figures, traces and layout
+`plotly.graph_objects`: low-level interface to figures, traces and layout
 =========================================
 
 .. currentmodule:: plotly.graph_objects
@@ -11,12 +11,14 @@ Graph objects: figures, traces and layout
 
    >>> import plotly.graph_objects as go
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Figure:
+Figure
+------
 
-   figure.rst
+.. autosummary::
+   :toctree: generated/
+   :template: trace.rst
 
+   Figure
 
 Layout
 ------

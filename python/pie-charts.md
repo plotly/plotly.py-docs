@@ -164,6 +164,31 @@ fig.update_layout(title_text='World GDP')
 fig.show()
 ```
 
+### Automatically Adjust Margins
+The following example sets [automargin](https://plot.ly/python/setting-graph-size/#automatically-adjust-margins) attribute to true, which automatically increases the margin size.
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Pie(
+    values = [2, 3, 4, 4],
+    labels = ['wages', 'operating expenses', 'cost of sales', 'insurance'],
+    textinfo = 'label+percent',
+    textposition = 'outside',
+    automargin = True))
+
+fig.update_layout(
+height = 400,
+width = 400,
+margin = {'t':0, 'b':0, 'l':0, 'r':0},
+showlegend = False)
+
+fig.update_yaxes(automargin = True)
+fig.update_xaxes(automargin = False)
+
+fig.show()
+```
+
 ### Dash Example
 
 

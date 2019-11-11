@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to Control the Camera in your 3D Charts in Python with Plotly.
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/78
     language: python
     layout: base
     name: 3D Camera Controls

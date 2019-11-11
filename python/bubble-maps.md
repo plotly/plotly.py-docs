@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to make bubble maps in Python with Plotly.
     display_as: maps
-    has_thumbnail: true
     language: python
     layout: base
     name: Bubble Maps
@@ -32,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/bubble-maps/
     thumbnail: thumbnail/bubble-map.jpg
-    v4upgrade: true
 ---
 
 ### Bubble map with Plotly Express

@@ -55,7 +55,7 @@ Distributions
    Violin
    Histogram
    Histogram2d
-   Histogram2dcontour
+   Histogram2dContour
 
 Finance
 -------

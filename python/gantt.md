@@ -25,8 +25,6 @@ jupyter:
     description: How to make Gantt Charts in Python with Plotly. Gantt Charts use
       horizontal bars to represent the start and end times of tasks.
     display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/6
     language: python
     layout: base
     name: Gantt Charts
@@ -34,7 +32,6 @@ jupyter:
     page_type: u-guide
     permalink: python/gantt/
     thumbnail: thumbnail/gantt.jpg
-    v4upgrade: true
 ---
 
 A [Gantt chart](https://en.wikipedia.org/wiki/Gantt_chart) is a type of bar chart that illustrates a project schedule. The chart lists the tasks to be performed on the vertical axis, and time intervals on the horizontal axis. The width of the horizontal bars in the graph shows the duration of each activity.

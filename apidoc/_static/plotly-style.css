@@ -1,0 +1,13 @@
+.navbar-default {
+    background-color: #00004f;
+}
+.navbar {
+    min-height: 75px;
+}
+.navbar-brand {
+    font-family: "Open Sans", sans-serif;
+    padding: 10px 10px;
+}
+.body {
+    font-family: "Open Sans", sans-serif;
+}

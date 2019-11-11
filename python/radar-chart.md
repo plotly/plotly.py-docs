@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make radar charts in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/202
     language: python
     layout: base
     name: Radar Charts
@@ -33,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/radar-chart/
     thumbnail: thumbnail/radar.gif
-    v4upgrade: true
 ---
 
 A [Radar Chart](https://en.wikipedia.org/wiki/Radar_chart) (also known as a spider plot or star plot) displays multivariate data in the form of a two-dimensional chart of quantitative variables represented on axes originating from the center. The relative position and angle of the axes is typically uninformative.  It is equivalent to a [parallel coordinates plot](/python/parallel-coordinates-plot/) with the axes arranged radially.

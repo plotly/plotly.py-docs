@@ -20,24 +20,21 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.6.8
   plotly:
     description: How to make Network Graphs in Python with Plotly. One examples of
       a network graph with NetworkX
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/223
     language: python
     layout: base
     name: Network Graphs
     order: 13
     page_type: u-guide
     permalink: python/network-graphs/
-    redirect_from: 
-      - ipython-notebooks/networks/
-      - ipython-notebooks/network-graphs/
+    redirect_from:
+    - ipython-notebooks/networks/
+    - ipython-notebooks/network-graphs/
     thumbnail: thumbnail/net.jpg
-    v4upgrade: true
 ---
 
 In this example we show how to visualize a network graph created using `networkx`.
@@ -63,8 +60,8 @@ Add edges as disconnected lines in a single trace and nodes as a scatter trace
 edge_x = []
 edge_y = []
 for edge in G.edges():
-    x0, y0 = G.node[edge[0]]['pos']
-    x1, y1 = G.node[edge[1]]['pos']
+    x0, y0 = G.nodes[edge[0]]['pos']
+    x1, y1 = G.nodes[edge[1]]['pos']
     edge_x.append(x0)
     edge_x.append(x1)
     edge_x.append(None)
@@ -81,7 +78,7 @@ edge_trace = go.Scatter(
 node_x = []
 node_y = []
 for node in G.nodes():
-    x, y = G.node[node]['pos']
+    x, y = G.nodes[node]['pos']
     node_x.append(x)
     node_y.append(y)
 
@@ -147,20 +144,6 @@ fig = go.Figure(data=[edge_trace, node_trace],
 fig.show()
 ```
 
-### Dash Example
-
-
-[Dash](https://plot.ly/products/dash/) is an Open Source Python library which can help you convert plotly figures into a reactive, web-based application. Below is a simple example of a dashboard created using Dash. Its [source code](https://github.com/plotly/simple-example-chart-apps/tree/master/dash-networkplot) can easily be deployed to a PaaS.
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-networkplot/", width="100%", height="650px", frameBorder="0")
-```
-
-```python
-from IPython.display import IFrame
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-networkplot/code", width="100%", height=500, frameBorder="0")
-```
 
 #### Reference
 See https://plot.ly/python/reference/#scatter for more information and chart attribute options!

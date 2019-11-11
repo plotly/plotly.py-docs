@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: An introduction to creating animations with Plotly in Python.
     display_as: animations
-    has_thumbnail: true
-    ipynb: ~notebook_demo/131
     language: python
     layout: base
     name: Intro to Animations
@@ -23,7 +21,6 @@ jupyter:
     page_type: example_index
     permalink: python/animations/
     thumbnail: thumbnail/animations.gif
-    v4upgrade: true
 ---
 
 #### Animated figures with Plotly Express

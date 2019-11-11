@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to make tables in Python with Plotly.
     display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/197
     language: python
     layout: base
     name: Tables
@@ -23,7 +21,6 @@ jupyter:
     page_type: u-guide
     permalink: python/table/
     thumbnail: thumbnail/table.gif
-    v4upgrade: true
 ---
 
 `go.Table` provides a Table object for detailed data viewing. The data are arranged in

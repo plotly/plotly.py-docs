@@ -26,8 +26,6 @@ jupyter:
   plotly:
     description: How to make carpet contour plots in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/145
     language: python
     layout: base
     name: Carpet Contour Plot

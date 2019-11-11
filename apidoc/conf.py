@@ -14,13 +14,13 @@
 #
 import os
 import sys
-
+import sphinx_bootstrap_theme
 # sys.path.insert(0, os.path.abspath("../packages/python/plotly"))
 
 
 # -- Project information -----------------------------------------------------
 
-project = "plotly"
+project = ""
 copyright = "2019, plotly team"
 author = "plotly team"
 
@@ -87,18 +87,18 @@ default_role = "literal"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "alabaster"
+html_theme = "bootstrap"
+html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
+html_logo='_static/logo.png'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 html_theme_options = {
-        #'nosidebar': True,
-        'analytics_id':'UA-39373211-1',
-        'logo':'logo.png',
-        'page_width': '70%',
-        'sidebar_width':'20%'
+        'analytics_id':'UA-39373211-1', # not supported by this theme
+        'bootswatch_theme': "flatly",
+        'source_link_position': "no"
         }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -116,6 +116,7 @@ html_static_path = ["_static"]
 #
 # html_sidebars = {}
 
+html_favicon = "_static/favicon.ico"
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
@@ -202,3 +203,6 @@ intersphinx_mapping = {"https://docs.python.org/": None}
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+def setup(app):
+    app.add_stylesheet("plotly-style.css") # also can be a full URL

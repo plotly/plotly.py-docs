@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to add images to charts as background images or logos.
     display_as: advanced_opt
-    has_thumbnail: true
-    ipynb: ~notebook_demo/94
     language: python
     layout: base
     name: Horizontal Legends
@@ -33,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/horizontal-legend/
     thumbnail: thumbnail/your-tutorial-chart.jpg
-    v4upgrade: true
 ---
 
 ###  Horizontal Legend

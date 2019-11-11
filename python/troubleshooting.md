@@ -25,8 +25,6 @@ jupyter:
     description: How to troubleshoot import and rendering problems in Plotly with
       Python.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/97
     language: python
     layout: base
     name: Troubleshooting
@@ -34,7 +32,6 @@ jupyter:
     page_type: u-guide
     permalink: python/troubleshooting/
     thumbnail: thumbnail/modebar-icons.png
-    v4upgrade: true
 ---
 
 <!-- #region -->
@@ -68,13 +65,13 @@ In order to use `plotly` in JupyterLab, you *must have the extensions installed*
 
 If you are having problems in JupyterLab, a good first step is to check that you have the extensions installed by running uninstall/reinstall the extensions.
 
-To list your current extensions, run the following command in a terminal shell: 
+To list your current extensions, run the following command in a terminal shell:
 
 ```bash
 $ jupyter labextension list
 ```
 
-To uninstall your `plotly` extensions, run the following commands in a terminal shell before reinstalling them by following the instructions in the [Getting Started guide](/python/getting-started): 
+To uninstall your `plotly` extensions, run the following commands in a terminal shell before reinstalling them by following the instructions in the [Getting Started guide](/python/getting-started):
 
 ```bash
 $ jupyter labextension uninstall jupyterlab-plotly

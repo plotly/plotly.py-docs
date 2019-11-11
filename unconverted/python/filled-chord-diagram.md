@@ -15,8 +15,6 @@ jupyter:
     description: How to make an interactive filled-chord diagram in Python with Plotly
       and iGraph.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/191
     language: python
     layout: base
     name: Filled Chord Diagram

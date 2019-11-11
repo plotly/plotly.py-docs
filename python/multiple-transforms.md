@@ -25,8 +25,6 @@ jupyter:
     description: How to use multiple transforms (filter, group by, and aggregates)
       in Python with Plotly.
     display_as: transforms
-    has_thumbnail: true
-    ipynb: ~notebook_demo/193
     language: python
     layout: base
     name: Multiple Transforms
@@ -34,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/multiple-transforms/
     thumbnail: thumbnail/multiple-transforms.jpg
-    v4upgrade: true
 ---
 
 #### Filter and Group By

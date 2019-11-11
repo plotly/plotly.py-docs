@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make Box Plots in Python with Plotly.
     display_as: statistical
-    has_thumbnail: true
-    ipynb: ~notebook_demo/20
     language: python
     layout: base
     name: Box Plots
@@ -33,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/box-plots/
     thumbnail: thumbnail/box.jpg
-    v4upgrade: true
 ---
 
 A [box plot](https://en.wikipedia.org/wiki/Box_plot) is a statistical representation of numerical data through their quartiles. The ends of the box represent the lower and upper quartiles, while the median (second quartile) is marked by a line inside the box. For other statistical representations of numerical data, see [other statistical charts](https://plot.ly/python/statistical-charts/).

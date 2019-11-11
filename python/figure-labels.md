@@ -25,8 +25,6 @@ jupyter:
     description: How to set the global font, title, legend-entries, and axis-titles
       in python.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/271
     language: python
     layout: base
     name: Setting the Font, Title, Legend Entries, and Axis Titles
@@ -34,7 +32,6 @@ jupyter:
     permalink: python/figure-labels/
     redirect_from: python/font/
     thumbnail: thumbnail/figure-labels.png
-    v4upgrade: true
 ---
 
 ```python

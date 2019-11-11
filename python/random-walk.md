@@ -25,7 +25,6 @@ jupyter:
     description: Learn how to use Python to make a Random Walk
     display_as: statistics
     has_thumbnail: false
-    ipynb: ~notebook_demo/114
     language: python
     layout: base
     name: Random Walk

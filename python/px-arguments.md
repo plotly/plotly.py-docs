@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: Arguments accepted by Plotly Express functions
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/253
     language: python
     layout: base
     name: Plotly Express Arguments
@@ -33,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/px-arguments/
     thumbnail: thumbnail/plotly-express.png
-    v4upgrade: true
 ---
 
 ### Tidy Data

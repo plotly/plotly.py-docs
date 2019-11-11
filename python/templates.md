@@ -23,10 +23,8 @@ jupyter:
     version: 3.7.3
   plotly:
     description: Theming and templates with plotly with Python
-    v4upgrade: true
     language: python
     display_as: file_settings
-    has_thumbnail: true
     name: Theming and templates
     page_type: u-guide
     layout: base

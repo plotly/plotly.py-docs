@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make mixed subplots in Python with Plotly.
     display_as: multiple_axes
-    has_thumbnail: true
-    ipynb: ~notebook_demo/132
     language: python
     layout: base
     name: Mixed Subplots
@@ -33,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/mixed-subplots/
     thumbnail: thumbnail/mixed_subplot.JPG
-    v4upgrade: true
 ---
 
 #### Mixed Subplot

@@ -24,11 +24,11 @@ Full reference list
 .. toctree::
    :maxdepth: 3
 
-   px.rst
-   graph_objects.rst
-   subplots.rst
-   figure_factory.rst
-   io.rst
+   plotly.express.rst
+   plotly.graph_objects.rst
+   plotly.subplots.rst
+   plotly.figure_factory.rst
+   plotly.io.rst
 
 
 

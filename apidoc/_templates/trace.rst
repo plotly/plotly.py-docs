@@ -1,5 +1,5 @@
 :mod:`{{module}}`.{{objname}}
-{{ underline }}
+{{ underline }}============================
 
 
 .. currentmodule:: {{ module }}
@@ -12,7 +12,7 @@
 
 
 :mod:`{{module}}`.{{objname.lower()}}
-{{ underline }}
+{{ underline }}================================
 
 .. autosummary::
    

@@ -30,7 +30,7 @@ for category in categories:
     print(order)
 
     if order[0] != 1:
-        raise Exception("Order Check Failed! First post does not have order 1!")
+        raise Exception("Order Check Failed! First post in {} display_as does not have order 1!".format(category))
 
     def checkConsecutive(l): 
         return sorted(l) == list(range(min(l), max(l)+1)) 
@@ -38,7 +38,11 @@ for category in categories:
     try:
         checkConsecutive(order)
     except:
-        raise Exception("Order Check Failed! Orders are not consecutive integers!!")
+        raise Exception("Order Check Failed! Orders in {} display_as are not consecutive integers!!".format(category))
 
-    print("Order Checks Passed!")
+    if len(order) != len(set(order)):
+        raise Exception("Order Check Failed! {} display_as has duplicate order frontmatter!!".format(category))
+
+
+    print("Order Checks Passed for {} display_as!".format(category))
     order = []

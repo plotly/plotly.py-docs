@@ -18,7 +18,7 @@ Figure
    :toctree: generated/
    :template: class_figure.rst
 
-   Figure   
+   Figure  
 
 
 Layout

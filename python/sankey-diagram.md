@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.1
   kernel_info:
     name: python2
   kernelspec:
@@ -22,7 +22,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to make Sankey Diagrams in Python with Plotly.
     display_as: basic
@@ -39,6 +39,7 @@ A [Sankey diagram](https://en.wikipedia.org/wiki/Sankey_diagram) is a flow diagr
 
 
 ### Basic Sankey Diagram
+Sankey diagrams visualize the contributions to a flow by defining [source](https://plot.ly/python/reference/#sankey-link-source) to represent the source node, [target](https://plot.ly/python/reference/#sankey-link-target) for the target node, [value](https://plot.ly/python/reference/#sankey-link-value) to set the flow volum, and [label](https://plot.ly/python/reference/#sankey-node-label) that shows the node name. 
 
 ```python
 import plotly.graph_objects as go
@@ -64,6 +65,7 @@ fig.show()
 ### More complex Sankey diagram
 
 ```python inputHidden=false outputHidden=false
+import plotly.graph_objects as go
 import urllib, json
 
 url = 'https://raw.githubusercontent.com/plotly/plotly.js/master/test/image/mocks/sankey_energy.json'
@@ -96,6 +98,7 @@ fig.show()
 ### Style Sankey Diagram
 
 ```python
+import plotly.graph_objects as go
 import urllib, json
 
 url = 'https://raw.githubusercontent.com/plotly/plotly.js/master/test/image/mocks/sankey_energy.json'
@@ -125,6 +128,28 @@ fig.update_layout(
     plot_bgcolor='black',
     paper_bgcolor='black'
 )
+
+fig.show()
+```
+
+### Define Node Position
+
+The following axample sets [node.x](https://plot.ly/python/reference/#sankey-node-x) and [node.y](https://plot.ly/python/reference/#sankey-node-y) to place nodes in the specified locations, except in the [snap arrangement](https://plot.ly/python/reference/#sankey-arrangement) to avoid overlapping of the nodes, therefore, an automatic snapping of elements will be set to define the padding between nodes via [nodepad](https://plot.ly/python/reference/#sankey-node-pad). The other possible arrangements are:<font color='blue'> 1)</font> perpendicular <font color='blue'>2)</font> freeform <font color='blue'>3)</font> fixed
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Sankey(
+    arrangement = "snap",
+    node = {
+        "label": ["A", "B", "C", "D", "E", "F"],
+        "x": [0.2, 0.1, 0.5, 0.7, 0.3, 0.5],
+        "y": [0.7, 0.5, 0.2, 0.4, 0.2, 0.3],
+        'pad':10},
+    link = {
+        "source": [0, 0, 1, 2, 5, 4, 3, 5],
+        "target": [5, 3, 4, 3, 0, 2, 2, 3],
+        "value": [1, 2, 1, 1, 1, 1, 1, 2]}))
 
 fig.show()
 ```

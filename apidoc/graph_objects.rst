@@ -16,9 +16,10 @@ Figure
 
 .. autosummary::
    :toctree: generated/
-   :template: trace.rst
+   :template: class_figure.rst
 
-   Figure
+   Figure   
+
 
 Layout
 ------

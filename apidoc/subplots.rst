@@ -1,6 +1,6 @@
 .. _subplots:
 
-`plotly.subplots`: helper function for layout out multi-plot figures
+`plotly.subplots`: helper function for laying out multi-plot figures
 ===========================
 
 .. currentmodule:: plotly.subplots

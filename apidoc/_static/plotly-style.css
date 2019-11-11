@@ -11,3 +11,19 @@
 .body {
     font-family: "Open Sans", sans-serif;
 }
+.navbar-brand img {
+    height: 30px;
+    margin-top: 4px;
+}
+
+.navbar .container {
+    padding-top: 8px;
+}
+
+a {
+    color: #2391fe !important;
+}
+
+code {
+    color: #2391fe !important;
+}

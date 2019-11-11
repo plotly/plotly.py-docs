@@ -1,6 +1,6 @@
 .. _io:
 
-I/O
+`plotly.io`: low-level interface for displaying, reading and writing figures
 ==============
 
 .. currentmodule:: plotly.io

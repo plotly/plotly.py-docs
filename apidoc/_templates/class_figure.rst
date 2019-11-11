@@ -4,24 +4,28 @@
 
 .. currentmodule:: {{ module }}
 
-.. autoclass:: {{ objname }}
-
-   {% block methods %}
-   .. automethod:: __init__
-   .. automethod:: show
-   .. automethod:: update_layout
-   .. automethod:: add_traces
-   {% endblock %}
-
-Other methods
-{{ underline }}==============
-
 .. autosummary::
    :toctree: generated/
-   
-   plotly.graph_objects.{{ objname }}
 
+   Figure
+
+   Figure.show
+   Figure.add_traces
+   Figure.update_traces
+   Figure.update_layout
+
+
+.. autoclass:: {{ objname }}
+   {% block methods %}
+   .. automethod:: __init__
+   {% endblock %}
+
+
+.. autoclass:: {{ objname }}
+   :members:
+   :inherited-members:
 
 .. raw:: html
 
     <div class="clearer"></div>
+

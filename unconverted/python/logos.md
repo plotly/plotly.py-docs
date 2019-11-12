@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to add images as logos to Plotly charts.
     display_as: advanced_opt
-    has_thumbnail: true
-    ipynb: ~notebook_demo/92
     language: python
     layout: base
     name: Logos
@@ -23,7 +21,6 @@ jupyter:
     page_type: example_index
     permalink: python/logos/
     thumbnail: thumbnail/your-tutorial-chart.jpg
-    
 ---
 
 #### New to Plotly?

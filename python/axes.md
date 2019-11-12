@@ -26,16 +26,12 @@ jupyter:
       and logarithmic axes, axes titles, styling and coloring axes and grid lines, and
       more.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/95
     language: python
     layout: base
     name: Axes
     order: 12
     permalink: python/axes/
     thumbnail: thumbnail/axes.png
-    
-    v4upgrade: true
 ---
 
 #### Toggling Axes Lines, Ticks, Labels, and Autorange

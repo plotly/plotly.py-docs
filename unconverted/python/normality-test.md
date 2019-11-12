@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to generate various normality tests using Python.
     display_as: statistics
     has_thumbnail: false
-    ipynb: ~notebook_demo/266
     language: python
     layout: base
     name: Normality Tests
@@ -23,7 +22,6 @@ jupyter:
     page_type: u-guide
     permalink: python/normality-test/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

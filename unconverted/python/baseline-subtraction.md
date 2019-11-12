@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to subtract baseline estimates from data in Python.
     display_as: peak-analysis
     has_thumbnail: false
-    ipynb: ~notebook_demo/118
     language: python
     layout: base
     name: Baseline Subtraction
@@ -23,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/baseline-subtraction/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

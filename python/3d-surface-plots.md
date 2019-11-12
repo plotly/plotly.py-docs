@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make 3D-surface plots in Python
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/66
     language: python
     layout: base
     name: 3D Surface Plots
@@ -33,8 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/3d-surface-plots/
     thumbnail: thumbnail/3d-surface.jpg
-    
-    v4upgrade: true
 ---
 
 #### Topographical 3D Surface Plot

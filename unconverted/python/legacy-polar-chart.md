@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: Legacy polar charts in python.
     display_as: legacy_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/37
     language: python
     layout: base
     name: Polar Charts [Legacy]
@@ -23,7 +21,6 @@ jupyter:
     page_type: u-guide
     permalink: python/legacy-polar-chart/
     thumbnail: thumbnail/polar-scatter.jpg
-    
 ---
 
 #### New to Plotly?

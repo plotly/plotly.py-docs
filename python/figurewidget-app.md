@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: Interactive Data Analysis with Plotly
     display_as: chart_events
-    has_thumbnail: true
-    ipynb: ~notebook_demo/231
     language: python
     layout: base
     name: Interactive Data Analysis with FigureWidget ipywidgets
@@ -33,8 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/figurewidget-app/
     thumbnail: thumbnail/multi-widget.jpg
-    
-    v4upgrade: true
 ---
 
 #### NYC Flights Database

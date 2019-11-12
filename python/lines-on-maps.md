@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to draw lines, great circles, and contours on maps in Python.
     display_as: maps
-    has_thumbnail: true
-    ipynb: ~notebook_demo/58
     language: python
     layout: base
     name: Lines on Maps
@@ -33,11 +31,9 @@ jupyter:
     page_type: example_index
     permalink: python/lines-on-maps/
     thumbnail: thumbnail/flight-paths.jpg
-    
-    v4upgrade: true
 ---
 
-For other geographical and map charts see [the maps index page](../maps/).
+For other geographical and map charts see [the maps index page](/python/maps/).
 
 Below we show how to create geographical line plots using either Plotly Express with `px.line_geo` or the lower-level `go.Scattergeo`.
 

@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to draw a line on Map in Python with Plotly.
     display_as: maps
-    has_thumbnail: true
-    ipynb: ~notebook_demo/56
     language: python
     layout: base
     name: Lines on Mapbox
@@ -33,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/lines-on-mapbox/
     thumbnail: thumbnail/line_mapbox.jpg
-    
 ---
 
 ### Mapbox Access Token

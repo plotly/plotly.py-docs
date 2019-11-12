@@ -14,15 +14,12 @@ jupyter:
   plotly:
     description: Use the Interact decorator with go.FigureWidget
     display_as: chart_events
-    has_thumbnail: true
-    ipynb: ~notebook_demo/254
     language: python
     layout: base
     name: Use Interact decorator with FigureWidget
     order: 4
     permalink: python/interact-decorator/
     thumbnail: thumbnail/figurewidget-interact.gif
-    
 ---
 
 #### New to Plotly?

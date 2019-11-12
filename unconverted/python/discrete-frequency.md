@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to perform discrete frequency analysis using Python.
     display_as: statistics
     has_thumbnail: false
-    ipynb: ~notebook_demo/110
     language: python
     layout: base
     name: Discrete Frequency
@@ -23,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/discrete-frequency/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make parallel categories diagrams in Python with Plotly.
     display_as: statistical
-    has_thumbnail: true
-    ipynb: ~notebook_demo/258
     language: python
     layout: base
     name: Parallel Categories Diagram
@@ -33,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/parallel-categories-diagram/
     thumbnail: thumbnail/parcats.jpg
-    
 ---
 
 #### Parallel Categories Diagram
@@ -63,7 +60,7 @@ In this example `dimensions` represents a list of stings or the columns of data 
 import plotly.express as px
 
 tips = px.data.tips()
-fig = px.parallel_categories(tips, dimensions=['sex', 'smoker', 'day'], 
+fig = px.parallel_categories(tips, dimensions=['sex', 'smoker', 'day'],
                 color="size", color_continuous_scale=px.colors.sequential.Inferno,
                 labels={'sex':'Payer sex', 'smoker':'Smokers at the table', 'day':'Day of week'})
 fig.show()
@@ -133,7 +130,7 @@ class_dim = go.parcats.Dimension(
 gender_dim = go.parcats.Dimension(values=titanic_df.Sex, label="Gender")
 
 survival_dim = go.parcats.Dimension(
-    values=titanic_df.Survived, label="Outcome", categoryarray=[0, 1], 
+    values=titanic_df.Survived, label="Outcome", categoryarray=[0, 1],
     ticktext=['perished', 'survived']
 )
 
@@ -156,7 +153,7 @@ This example demonstrates how the `on_selection` and `on_click` callbacks can be
 
 This example also sets the `line.shape` property to `hspline` to cause the ribbons to curve between categories.
 
-**Note:** In order for the callback functions to be executed the figure must be a `FigureWidget`, and the figure should display itself. 
+**Note:** In order for the callback functions to be executed the figure must be a `FigureWidget`, and the figure should display itself.
 
 ```python
 import plotly.graph_objects as go
@@ -248,7 +245,7 @@ fig = go.FigureWidget(
                    'cmax': cmax, 'color': color, 'shape': 'hspline'})]
 )
 
-fig.update_layout(height=800, xaxis={'title': 'Horsepower'}, 
+fig.update_layout(height=800, xaxis={'title': 'Horsepower'},
                   yaxis={'title': 'MPG', 'domain': [0.6, 1]},
                   dragmode='lasso', hovermode='closest')
 

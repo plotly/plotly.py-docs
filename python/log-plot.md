@@ -24,15 +24,12 @@ jupyter:
   plotly:
     description: How to make Log plots in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/31
     language: python
     layout: base
     name: Log Plots
     order: 1
     permalink: python/log-plot/
     thumbnail: thumbnail/log.jpg
-    
 ---
 
 ### Logarithmic Axes ###

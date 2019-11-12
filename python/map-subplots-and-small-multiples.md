@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make map subplots and map small multiples in Python.
     display_as: multiple_axes
-    has_thumbnail: true
-    ipynb: ~notebook_demo/59
     language: python
     layout: base
     name: Map Subplots
@@ -33,8 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/map-subplots-and-small-multiples/
     thumbnail: thumbnail/map-subplots.jpg
-    
-    v4upgrade: true
 ---
 
 ### US map small multiples

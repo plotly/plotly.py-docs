@@ -25,8 +25,6 @@ jupyter:
     description: How to make a Mapbox Choropleth Map of US Counties in Python with
       Plotly.
     display_as: maps
-    has_thumbnail: true
-    ipynb: ~notebook_demo/56
     language: python
     layout: base
     name: Mapbox Choropleth Maps
@@ -34,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/mapbox-county-choropleth/
     thumbnail: thumbnail/mapbox-choropleth.png
-    
 ---
 
 
@@ -55,7 +52,7 @@ from urllib.request import urlopen
 import json
 with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
     counties = json.load(response)
-    
+
 counties["features"][0]
 ```
 

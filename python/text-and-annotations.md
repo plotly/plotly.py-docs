@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.7
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,20 +20,16 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.5
+    version: 3.7.3
   plotly:
     description: How to add text labels and annotations to plots in python.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/204
     language: python
     layout: base
     name: Text and Annotations
     order: 30
     permalink: python/text-and-annotations/
     thumbnail: thumbnail/text-and-annotations.png
-    
-    v4upgrade: true
 ---
 
 ### Text scatter plot with Plotly Express
@@ -115,6 +111,8 @@ fig.show()
 
 ### Simple Annotation
 
+Annotations can be added to a figure using `fig.update_layout(annotations=[...])` or `fig.add_annotation`.
+
 ```python
 import plotly.graph_objects as go
 
@@ -168,33 +166,28 @@ fig.add_trace(go.Scatter(
     y=[0, 4, 5, 1, 2, 2, 3, 4, 2]
 ))
 
-fig.update_layout(
-    showlegend=False,
-    annotations=[
-        go.layout.Annotation(
+fig.add_annotation(
+    go.layout.Annotation(
             x=2,
             y=5,
-            xref="x",
-            yref="y",
-            text="dict Text",
-            showarrow=True,
-            arrowhead=7,
-            ax=0,
-            ay=-40
-        ),
-        go.layout.Annotation(
+            text="dict Text")
+)
+fig.add_annotation(
+    go.layout.Annotation(
             x=4,
             y=4,
+            text="dict Text 2")
+)
+fig.update_annotations(dict(
             xref="x",
             yref="y",
-            text="dict Text 2",
             showarrow=True,
             arrowhead=7,
             ax=0,
             ay=-40
-        )
-    ]
-)
+))
+
+fig.update_layout(showlegend=False)
 
 fig.show()
 ```
@@ -351,37 +344,35 @@ fig.add_trace(go.Scatter(
     y=[0, 4, 5, 1, 2, 2, 3, 4, 2]
 ))
 
-fig.update_layout(
-    showlegend=False,
-    annotations=[
-        go.layout.Annotation(
-            x=2,
-            y=5,
-            xref="x",
-            yref="y",
-            text="max=5",
-            showarrow=True,
-            font=dict(
-                family="Courier New, monospace",
-                size=16,
-                color="#ffffff"
+fig.add_annotation(
+    go.layout.Annotation(
+        x=2,
+        y=5,
+        xref="x",
+        yref="y",
+        text="max=5",
+        showarrow=True,
+        font=dict(
+            family="Courier New, monospace",
+            size=16,
+            color="#ffffff"
             ),
-            align="center",
-            arrowhead=2,
-            arrowsize=1,
-            arrowwidth=2,
-            arrowcolor="#636363",
-            ax=20,
-            ay=-30,
-            bordercolor="#c7c7c7",
-            borderwidth=2,
-            borderpad=4,
-            bgcolor="#ff7f0e",
-            opacity=0.8
+        align="center",
+        arrowhead=2,
+        arrowsize=1,
+        arrowwidth=2,
+        arrowcolor="#636363",
+        ax=20,
+        ay=-30,
+        bordercolor="#c7c7c7",
+        borderwidth=2,
+        borderpad=4,
+        bgcolor="#ff7f0e",
+        opacity=0.8
         )
-    ]
 )
 
+fig.update_layout(showlegend=False)
 fig.show()
 ```
 
@@ -508,6 +499,74 @@ fig.update_layout(
     height=550,
     width=1137
 )
+
+fig.show()
+```
+
+
+### Customize Displayed Text with a Text Template
+To show an arbitrary text in your chart you can use [texttemplate](https://plot.ly/python/reference/#pie-texttemplate), which is a template string used for rendering the information, and will override [textinfo](https://plot.ly/python/reference/#treemap-textinfo).
+This template string can include `variables` in %{variable} format, `numbers` in [d3-format's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_forma), and `date` in [d3-time-fomrat's syntax](https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format).
+`texttemplate` customizes the text that appears on your plot vs. [hovertemplate](https://plot.ly/python/reference/#pie-hovertemplate) that customizes the tooltip text.
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Pie(
+    values = [40000000, 20000000, 30000000, 10000000],
+    labels = ["Wages", "Operating expenses", "Cost of sales", "Insurance"],
+    texttemplate = "%{label}: %{value:$,s} <br>(%{percent})",
+    textposition = "inside"))
+
+fig.show()
+```
+
+### Customize Text Template
+
+The following example uses [textfont](https://plot.ly/python/reference/#scatterternary-textfont) to customize the added text.
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Scatterternary(
+    a = [3, 2, 5],
+    b = [2, 5, 2],
+    c = [5, 2, 2],
+    mode = "markers+text",
+    text = ["A", "B", "C"],
+    texttemplate = "%{text}<br>(%{a:.2f}, %{b:.2f}, %{c:.2f})",
+    textposition = "bottom center",
+    textfont = {'family': "Times", 'size': [18, 21, 20], 'color': ["IndianRed", "MediumPurple", "DarkOrange"]}
+))
+
+fig.show()
+```
+### Set Date in Text Template
+The following example shows how to show date by setting [axis.type](https://plot.ly/python/reference/#layout-yaxis-type) in [funnel charts](https://plot.ly/python/funnel-charts/).
+As you can see [textinfo](https://plot.ly/python/reference/#funnel-textinfo) and [texttemplate](https://plot.ly/python/reference/#funnel-texttemplate) have the same functionality when you want to determine 'just' the trace information on the graph.
+
+```python
+from plotly import graph_objects as go
+
+fig = go.Figure()
+
+fig.add_trace(go.Funnel(
+    name = 'Montreal',
+    orientation = "h",
+    y = ["2018-01-01", "2018-07-01", "2019-01-01", "2020-01-01"],
+    x = [100, 60, 40, 20],
+    textposition = "inside",
+    texttemplate = "%{y| %a. %_d %b %Y}"))
+
+fig.add_trace(go.Funnel(
+    name = 'Vancouver',
+    orientation = "h",
+    y = ["2018-01-01", "2018-07-01", "2019-01-01", "2020-01-01"],
+    x = [90, 70, 50, 10],
+    textposition = "inside",
+    textinfo = "label"))
+
+fig.update_layout(yaxis = {'type': 'date'})
 
 fig.show()
 ```

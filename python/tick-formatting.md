@@ -24,15 +24,12 @@ jupyter:
   plotly:
     description: How to format axes ticks in Python with Plotly.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/1
     language: python
     layout: base
     name: Formatting Ticks
     order: 10
     permalink: python/tick-formatting/
     thumbnail: thumbnail/tick-formatting.gif
-    
 ---
 
 #### Tickmode - Linear

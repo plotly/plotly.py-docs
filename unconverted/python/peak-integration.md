@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to integrate the area between peaks and bassline in Python.
     display_as: peak-analysis
     has_thumbnail: false
-    ipynb: ~notebook_demo/121
     language: python
     layout: base
     name: Peak Integration
@@ -23,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/peak-integration/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

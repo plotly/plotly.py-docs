@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: Click Events With FigureWidget
     display_as: chart_events
-    has_thumbnail: true
-    ipynb: ~notebook_demo/240
     language: python
     layout: base
     name: Click Events
@@ -33,8 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/click-events/
     thumbnail: thumbnail/figurewidget-click-events.gif
-    
-    v4upgrade: true
 ---
 
 #### Update Points Using a Click Callback

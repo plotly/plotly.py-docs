@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to differentiate a sequence or list of values numerically
     display_as: mathematics
     has_thumbnail: false
-    ipynb: ~notebook_demo/102
     language: python
     layout: base
     name: Numerical Differentiation
@@ -23,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/numerical-differentiation/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

@@ -24,14 +24,12 @@ jupyter:
   plotly:
     description: How to make Ternary Contour Plots in Python with plotly
     display_as: scientific
-    has_thumbnail: true
     language: python
     layout: base
     name: Ternary contours
     page_type: u-guide
     permalink: python/ternary-contour/
     thumbnail: thumbnail/ternary-contour.jpg
-    
 ---
 
 ## Ternary contour plots
@@ -57,7 +55,7 @@ enthalpy = (Al - 0.01) * Cu * (Al - 0.52) * (Cu - 0.48) * (Y - 1)**2
 fig = ff.create_ternary_contour(np.array([Al, Y, Cu]), enthalpy,
                                 pole_labels=['Al', 'Y', 'Cu'],
                                 interp_mode='cartesian')
-fig.show() 
+fig.show()
 ```
 
 #### Customized ternary contour plot
@@ -78,7 +76,7 @@ fig = ff.create_ternary_contour(np.array([Al, Y, Cu]), enthalpy,
                                 colorscale='Viridis',
                                 showscale=True,
                                 title='Mixing enthalpy of ternary alloy')
-fig.show() 
+fig.show()
 ```
 
 #### Ternary contour plot with lines only
@@ -97,7 +95,7 @@ fig = ff.create_ternary_contour(np.array([Al, Y, Cu]), enthalpy,
                                 interp_mode='cartesian',
                                 ncontours=20,
                                 coloring='lines')
-fig.show() 
+fig.show()
 ```
 
 #### Ternary contour plot with data points
@@ -119,12 +117,12 @@ fig = ff.create_ternary_contour(np.array([Al, Y, Cu]), enthalpy,
                                 ncontours=20,
                                 coloring='lines',
                                 showmarkers=True)
-fig.show() 
+fig.show()
 ```
 
 #### Interpolation mode
 
-Two modes are available in order to interpolate between data points: interpolation in Cartesian space (`interp_mode='cartesian'`) or interpolation using the [isometric log-ratio transformation](https://link.springer.com/article/10.1023/A:1023818214614) (see also [preprint](https://www.researchgate.net/profile/Leon_Parent2/post/What_is_the_best_approach_for_diagnosing_nutrient_disorders_and_formulating_fertilizer_recommendations/attachment/59d62a69c49f478072e9cf3f/AS%3A272541220835360%401441990298625/download/Egozcue+et+al+2003.pdf)),  `interp_mode='ilr'`. The `ilr` transformation preserves metrics in the [simplex](https://en.wikipedia.org/wiki/Simplex) but is not defined on its edges. 
+Two modes are available in order to interpolate between data points: interpolation in Cartesian space (`interp_mode='cartesian'`) or interpolation using the [isometric log-ratio transformation](https://link.springer.com/article/10.1023/A:1023818214614) (see also [preprint](https://www.researchgate.net/profile/Leon_Parent2/post/What_is_the_best_approach_for_diagnosing_nutrient_disorders_and_formulating_fertilizer_recommendations/attachment/59d62a69c49f478072e9cf3f/AS%3A272541220835360%401441990298625/download/Egozcue+et+al+2003.pdf)),  `interp_mode='ilr'`. The `ilr` transformation preserves metrics in the [simplex](https://en.wikipedia.org/wiki/Simplex) but is not defined on its edges.
 
 ```python
 a, b = np.mgrid[0:1:20j, 0:1:20j]

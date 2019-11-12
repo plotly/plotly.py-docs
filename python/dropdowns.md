@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to add dropdowns to update Plotly chart attributes in Python.
     display_as: controls
-    has_thumbnail: true
-    ipynb: ~notebook_demo/85
     language: python
     layout: base
     name: Dropdown Menus
@@ -33,8 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/dropdowns/
     thumbnail: thumbnail/dropdown.jpg
-    
-    v4upgrade: true
 ---
 
 #### Methods

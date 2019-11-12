@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make waterfall plots in Python with Plotly.
     display_as: financial
-    has_thumbnail: true
-    ipynb: /~notebook_demo/276
     language: python
     layout: base
     name: Waterfall Charts
@@ -33,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/waterfall-charts/
     thumbnail: thumbnail/waterfall-charts.jpg
-    
 ---
 
 ### Simple Waterfall Chart

@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to make Population Pyramid Charts in Python with Plotly.
     display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/221
     language: python
     layout: base
     name: Population Pyramid Charts
@@ -23,7 +21,6 @@ jupyter:
     page_type: u-guide
     permalink: python/population-pyramid-charts/
     thumbnail: thumbnail/pyramid.jpg
-    
 ---
 
 #### New to Plotly?

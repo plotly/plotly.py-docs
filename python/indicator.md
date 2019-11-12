@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make guage charts in Python with Plotly.
     display_as: financial
-    has_thumbnail: true
-    ipynb: ~notebook_demo/11
     language: python
     layout: base
     name: Indicators
@@ -33,8 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/indicator/
     thumbnail: thumbnail/indicator.jpg
-    
-    v4upgrade: true
 ---
 
 #### Overview

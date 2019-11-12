@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to make 3D Network Graphs in Python.
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/226
     language: python
     layout: base
     name: 3D Network Graphs
@@ -23,7 +21,6 @@ jupyter:
     page_type: example_index
     permalink: python/3d-network-graph/
     thumbnail: thumbnail/3dnetwork.jpg
-    
 ---
 
 #### New to Plotly?

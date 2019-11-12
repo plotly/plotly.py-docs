@@ -24,16 +24,12 @@ jupyter:
   plotly:
     description: How to make a graph with multiple axes in python.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/270
     language: python
     layout: base
     name: Multiple Axes
     order: 14
     permalink: python/multiple-axes/
     thumbnail: thumbnail/multiple-axes.jpg
-    
-    v4upgrade: true
 ---
 
 #### Two Y Axes
@@ -229,4 +225,4 @@ fig.show()
 ```
 
 #### Reference
-All of the y-axis properties are found here: https://plot.ly/python/reference/#YAxis.  For more information on creating subplots see the [Subplots in Python](../subplots/) section.
+All of the y-axis properties are found here: https://plot.ly/python/reference/#YAxis.  For more information on creating subplots see the [Subplots in Python](/python/subplots/) section.

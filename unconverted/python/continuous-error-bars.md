@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: Add continuous error bars to charts in Python with Plotly.
     display_as: statistical
-    has_thumbnail: true
-    ipynb: ~notebook_demo/19
     language: python
     layout: base
     name: Continuous Error Bars
@@ -23,7 +21,6 @@ jupyter:
     page_type: u-guide
     permalink: python/continuous-error-bars/
     thumbnail: thumbnail/error-cont.jpg
-    
 ---
 
 #### New to Plotly?

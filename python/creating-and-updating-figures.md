@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.6
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -24,18 +24,15 @@ jupyter:
   plotly:
     description: Creating and Updating Figures from Python
     display_as: file_settings
-    has_thumbnail: true
     language: python
     layout: base
     name: Creating and Updating Figures
     page_type: example_index
     permalink: python/creating-and-updating-figures/
     redirect_from:
-      - python/user-guide/
-      - python/user-g/
+    - python/user-guide/
+    - python/user-g/
     thumbnail: thumbnail/creating-and-updating-figures.png
-    
-    v4upgrade: true
 ---
 
 ### Representing Figures
@@ -436,6 +433,23 @@ fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", facet
 fig.update_traces(
     line=dict(dash="dot", width=4),
     selector=dict(type="scatter", mode="lines"))
+fig.show()
+```
+
+### Overwrite existing properties when using update methods
+
+`update_layout` and `update_traces` have an `overwrite` keyword argument, defaulting to False, in which case updates are applied recursively to the *existing* nested property structure. When set to True, the prior value of existing properties is overwritten with the provided value.
+
+In the example below, the red color of markers is overwritten when updating `marker` in `update_traces` with `overwrite=True`. Note that setting instead `marker_opacity` with the magic underscore would not overwrite `marker_color` because properties would be overwritten starting only at the level of `marker.opacity`. 
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure(go.Bar(x=[1, 2, 3], y=[6, 4, 9], 
+                       marker_color="red")) # will be overwritten below
+fig.update_traces(
+    overwrite=True,
+    marker={"opacity": 0.4}
+                 )
 fig.show()
 ```
 

@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to make webGL based heatmaps in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/34
     language: python
     layout: base
     name: WebGL Heatmaps
@@ -23,7 +21,6 @@ jupyter:
     page_type: u-guide
     permalink: python/heatmap-webgl/
     thumbnail: thumbnail/heatmap-webgl.jpg
-    
 ---
 
 #### New to Plotly?

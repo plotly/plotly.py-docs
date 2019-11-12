@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to make interactive linear-guage charts in Python with Plotly.
     display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/12
     language: python
     layout: base
     name: Linear-Gauge Chart
@@ -23,7 +21,6 @@ jupyter:
     page_type: u-guide
     permalink: python/linear-gauge-chart/
     thumbnail: thumbnail/linear-gauge.jpg
-    
 ---
 
 #### New to Plotly?

@@ -31,8 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/compare-webgl-svg/
     thumbnail: /images/static-image
-    
-    v4upgrade: true
 ---
 
 ### Comparing Scatter Plots with 75,000 Random Points

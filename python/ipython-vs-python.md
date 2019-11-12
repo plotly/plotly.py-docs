@@ -24,16 +24,12 @@ jupyter:
   plotly:
     description: Discussion of key differences between IPython and Python
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/17
     language: python
     layout: base
     name: IPython vs Python
     order: 41
     permalink: python/ipython-vs-python/
     thumbnail: thumbnail/venn.jpg
-    
-    v4upgrade: true
 ---
 
 #### What is the difference between IPython and Python?

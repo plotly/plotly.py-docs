@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: An introduction to creating animations with Plotly in Python.
     display_as: animations
-    has_thumbnail: true
-    ipynb: ~notebook_demo/131
     language: python
     layout: base
     name: Intro to Animations
@@ -23,14 +21,12 @@ jupyter:
     page_type: example_index
     permalink: python/animations/
     thumbnail: thumbnail/animations.gif
-    
-    v4upgrade: true
 ---
 
 #### Animated figures with Plotly Express
 Several Plotly Express functions support the creation of animated figures through the `animation_frame` and `animation_group` arguments.
 
-Here is an example of an animated scatter plot creating using Plotly Express
+Here is an example of an animated scatter plot creating using Plotly Express. Note that you should always fix the `x_range` and `y_range` to ensure that your data remains visible throughout the animation.
 
 ```python
 import plotly.express as px
@@ -39,6 +35,22 @@ px.scatter(gapminder, x="gdpPercap", y="lifeExp", animation_frame="year", animat
            size="pop", color="continent", hover_name="country",
            log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])
 ```
+
+#### Animated Bar Charts with Plotly Express
+
+ Note that you should always fix the `y_range` to ensure that your data remains visible throughout the animation.
+
+```python
+import plotly.express as px
+
+gapminder = px.data.gapminder()
+
+fig = px.bar(gapminder, x="continent", y="pop", color="continent", 
+  animation_frame="year", animation_group="country", y_range=[0,4000000000])
+fig.show()
+```
+
+#### Animated figures with Graph Objects
 
 The remainder of this section describes the low-level API for constructing animated figures manually.
 

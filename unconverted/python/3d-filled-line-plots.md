@@ -14,15 +14,12 @@ jupyter:
   plotly:
     description: How to make 3D Filled Line Plots in Python
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/65
     language: python
     layout: base
     name: 3D Filled Line Plots
     order: 5
     permalink: python/3d-filled-line-plots/
     thumbnail: thumbnail/3d-filled-line-plot.jpg
-    
 ---
 
 <!-- #region {"deletable": true, "editable": true} -->

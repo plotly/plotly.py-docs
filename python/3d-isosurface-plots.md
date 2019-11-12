@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make 3D Isosurface Plots in Python with Plotly.
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/272
     language: python
     layout: base
     name: 3D Isosurface Plots
@@ -34,7 +32,6 @@ jupyter:
     permalink: python/3d-isosurface-plots/
     redirect_from: python/isosurfaces-with-marching-cubes/
     thumbnail: thumbnail/isosurface.jpg
-    
 ---
 
 With ``go.Isosurface``, you can plot [isosurface contours](https://en.wikipedia.org/wiki/Isosurface) of a scalar field ``value``, which is defined on ``x``, ``y`` and ``z`` coordinates.
@@ -68,7 +65,7 @@ import numpy as np
 
 X, Y, Z = np.mgrid[-5:5:40j, -5:5:40j, -5:5:40j]
 
-# ellipsoid 
+# ellipsoid
 values = X * X * 0.5 + Y * Y + Z * Z * 2
 
 fig = go.Figure(data=go.Isosurface(
@@ -91,7 +88,7 @@ import numpy as np
 
 X, Y, Z = np.mgrid[-5:5:40j, -5:5:40j, -5:5:40j]
 
-# ellipsoid 
+# ellipsoid
 values = X * X * 0.5 + Y * Y + Z * Z * 2
 
 fig = go.Figure(data=go.Isosurface(
@@ -116,7 +113,7 @@ import numpy as np
 
 X, Y, Z = np.mgrid[-5:5:40j, -5:5:40j, -5:5:40j]
 
-# ellipsoid 
+# ellipsoid
 values = X * X * 0.5 + Y * Y + Z * Z * 2
 
 fig = go.Figure(data=go.Isosurface(
@@ -135,7 +132,7 @@ fig.show()
 
 #### Isosurface with Addtional Slices
 
-Here we visualize slices parallel to the axes on top of isosurfaces. For a clearer visualization, the `fill` ratio of isosurfaces is decreased below 1 (completely filled). 
+Here we visualize slices parallel to the axes on top of isosurfaces. For a clearer visualization, the `fill` ratio of isosurfaces is decreased below 1 (completely filled).
 
 ```python
 import plotly.graph_objects as go
@@ -143,7 +140,7 @@ import numpy as np
 
 X, Y, Z = np.mgrid[-5:5:40j, -5:5:40j, -5:5:40j]
 
-# ellipsoid 
+# ellipsoid
 values = X * X * 0.5 + Y * Y + Z * Z * 2
 
 fig = go.Figure(data=go.Isosurface(
@@ -192,7 +189,7 @@ import numpy as np
 
 X, Y, Z = np.mgrid[-5:5:40j, -5:5:40j, -5:5:40j]
 
-# ellipsoid 
+# ellipsoid
 values = X * X * 0.5 + Y * Y + Z * Z * 2
 
 fig = go.Figure(data=go.Isosurface(

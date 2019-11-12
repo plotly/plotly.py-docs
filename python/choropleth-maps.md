@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to make choropleth maps in Python with Plotly.
     display_as: maps
-    has_thumbnail: true
-    ipynb: ~notebook_demo/55
     language: python
     layout: base
     name: Choropleth Maps
@@ -23,11 +21,9 @@ jupyter:
     page_type: u-guide
     permalink: python/choropleth-maps/
     thumbnail: thumbnail/choropleth.jpg
-    
-    v4upgrade: true
 ---
 
-A [Choropleth Map](https://en.wikipedia.org/wiki/Choropleth_map) is a heatmap using geographical boundaries. It is used to represent spatial variations of a quantity. See also the [index of other geographical charts](../maps/).
+A [Choropleth Map](https://en.wikipedia.org/wiki/Choropleth_map) is a heatmap using geographical boundaries. It is used to represent spatial variations of a quantity. See also the [index of other geographical charts](/python/maps/).
 
 Below we show how to create Choropleth Maps using either Plotly Express' `px.choropleth` or the lower-level `go.Choropleth`.
 

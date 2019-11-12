@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: Migration guide for upgrading from version 3 to version 4
     display_as: file_settings
-    has_thumbnail: true
     language: python
     layout: base
     name: Version 4 Migration Guide
@@ -32,8 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/v4-migration/
     thumbnail: thumbnail/v4-migration.png
-    
-    v4upgrade: true
 ---
 
 ### Upgrading to Version 4
@@ -84,7 +81,7 @@ Similarly,
 <!-- #region -->
 ### Offline features (`plotly.offline`) replaced by Renderers framework & HTML export
 
-Version 4 introduces a new renderers framework that is a generalization of version 3's `plotly.offline.init_notebook_mode` and `plotly.offline.iplot` functions for displaying figures.  *This is a non-breaking change*: the `plotly.offline.iplot` function is still available and has been reimplemented on top of the renderers framework, so no changes are required when porting to version 4.  Going forward, we recommend using the renderers framework directly. See [Displaying plotly figures](../renderers) for more information.
+Version 4 introduces a new renderers framework that is a generalization of version 3's `plotly.offline.init_notebook_mode` and `plotly.offline.iplot` functions for displaying figures.  *This is a non-breaking change*: the `plotly.offline.iplot` function is still available and has been reimplemented on top of the renderers framework, so no changes are required when porting to version 4.  Going forward, we recommend using the renderers framework directly. See [Displaying plotly figures](/python/renderers) for more information.
 
 
 In version 3, the `plotly.offline.plot` function was used to export figures to HTML files.  In version 4, this function has been reimplemented on top of the new `to_html` and `write_html` functions from the `plotly.io` module.  These functions have a slightly more consistent API (see docstrings for details), and going forward we recommend using them directly when performing HTML export. When working with a graph object figure, these functions are also available as the `.to_html` and `.write_html` figure methods.
@@ -163,7 +160,7 @@ fig.show()
 pio.templates.default = "plotly"
 ```
 
-See [Theming and templates](../templates) for more information on theming in plotly.py version 4.
+See [Theming and templates](/python/templates) for more information on theming in plotly.py version 4.
 
 ### Add trace return value
 In version 3, the `add_trace` graph object figure method returned a reference to the newly created trace. This was also the case for the `add_{trace_type}` methods (e.g. `add_scatter`, `add_bar`, etc.).  In version 4, these methods return a reference to the calling figure.  This change was made to support method chaining of figure operations. For example
@@ -289,7 +286,7 @@ pio.orca.config.use_xvfb = False
 The `fileopt` argument to `chart_studio.plotly.plot` has been removed, so in-place modifications to previously published figures are no longer supported.
 
 #### Legacy online `GraphWidget`
-The legacy online-only `GraphWidget` class has been removed.  Please use the `plotly.graph_objects.FigureWidget` class instead. See the [Figure Widget Overview](../figurewidget/) for more information.
+The legacy online-only `GraphWidget` class has been removed.  Please use the `plotly.graph_objects.FigureWidget` class instead. See the [Figure Widget Overview](/python/figurewidget/) for more information.
 
 ### Recommended style updates
 

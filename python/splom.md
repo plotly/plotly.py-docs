@@ -25,7 +25,6 @@ jupyter:
     description: How to make scatterplot matrices or sploms natively in Python with
       Plotly.
     display_as: statistical
-    has_thumbnail: true
     language: python
     layout: base
     name: Scatterplot Matrix
@@ -34,8 +33,6 @@ jupyter:
     permalink: python/splom/
     redirect_from: python/scatterplot-matrix/
     thumbnail: thumbnail/splom_image.jpg
-    
-    v4upgrade: true
 ---
 
 ### Scatter matrix with Plotly Express

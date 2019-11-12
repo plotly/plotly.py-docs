@@ -25,8 +25,6 @@ jupyter:
     description: Now you can implement range sliders and selectors in your Plotly
       graphs purely with python!
     display_as: controls
-    has_thumbnail: true
-    ipynb: ~notebook_demo/211
     language: python
     layout: base
     name: Range Slider and Selector
@@ -34,8 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/range-slider/
     thumbnail: thumbnail/sliders.jpg
-    
-    v4upgrade: true
 ---
 
 #### Basic Range Slider and Range Selectors

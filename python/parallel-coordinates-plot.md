@@ -26,8 +26,6 @@ jupyter:
   plotly:
     description: How to make parallel coorindates plots in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/142
     language: python
     layout: base
     name: Parallel Coordinates Plot
@@ -35,13 +33,11 @@ jupyter:
     page_type: u-guide
     permalink: python/parallel-coordinates-plot/
     thumbnail: thumbnail/parcoords.jpg
-    
-    v4upgrade: true
 ---
 
 ## Parallel Coordinates plot with Plotly Express
 
-[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/). In a parallel coordinates plot with `px.parallel_coordinates`, each row of the DataFrame is represented by a polyline mark which traverses a set of parallel axes, one for each of the dimensions. For other representations of multivariate data, also see [radar charts](../radar-chart/) and [scatterplot matrix (SPLOM)](../splom/).
+[Plotly Express](/python/plotly-express/) is the easy-to-use, high-level interface to Plotly, which [operates on "tidy" data](/python/px-arguments/). In a parallel coordinates plot with `px.parallel_coordinates`, each row of the DataFrame is represented by a polyline mark which traverses a set of parallel axes, one for each of the dimensions. For other representations of multivariate data, also see [radar charts](/python/radar-chart/) and [scatterplot matrix (SPLOM)](/python/splom/).
 
 ```python
 import plotly.express as px

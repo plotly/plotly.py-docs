@@ -15,8 +15,6 @@ jupyter:
     description: How to make the classic Gapminder Animation using sliders and buttons
       in Python.
     display_as: animations
-    has_thumbnail: true
-    ipynb: ~notebook_demo/129
     language: python
     layout: base
     name: Adding Sliders to Animations
@@ -24,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/gapminder-example/
     thumbnail: thumbnail/gapminder_animation.gif
-    
 ---
 
 #### New to Plotly?

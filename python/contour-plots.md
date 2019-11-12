@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make Contour plots in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/185
     language: python
     layout: base
     name: Contour Plots
@@ -33,11 +31,9 @@ jupyter:
     page_type: example_index
     permalink: python/contour-plots/
     thumbnail: thumbnail/contour.jpg
-    
-    v4upgrade: true
 ---
 
-### Basic Contour Plot 
+### Basic Contour Plot
 
 A 2D contour plot shows the [contour lines](https://en.wikipedia.org/wiki/Contour_line) of a 2D numerical array `z`, i.e. interpolated lines of isovalues of `z`.
 
@@ -60,7 +56,7 @@ fig.show()
 ```python
 import plotly.graph_objects as go
 
-fig = go.Figure(data = 
+fig = go.Figure(data =
     go.Contour(
         z=[[10, 10.625, 12.5, 15.625, 20],
            [5.625, 6.25, 8.125, 11.25, 15.625],
@@ -79,7 +75,7 @@ fig.show()
 ```python
 import plotly.graph_objects as go
 
-fig = go.Figure(data = 
+fig = go.Figure(data =
      go.Contour(
         z=[[10, 10.625, 12.5, 15.625, 20],
            [5.625, 6.25, 8.125, 11.25, 15.625],
@@ -96,7 +92,7 @@ fig.show()
 ```python
 import plotly.graph_objects as go
 
-fig = go.Figure(data = 
+fig = go.Figure(data =
     go.Contour(
         z=[[10, 10.625, 12.5, 15.625, 20],
            [5.625, 6.25, 8.125, 11.25, 15.625],
@@ -119,7 +115,7 @@ fig.show()
 ```python
 import plotly.graph_objects as go
 
-fig = go.Figure(data = 
+fig = go.Figure(data =
     go.Contour(
         z= [[10, 10.625, 12.5, 15.625, 20],
               [5.625, 6.25, 8.125, 11.25, 15.625],
@@ -297,7 +293,7 @@ fig.show()
 
 ### Color Bar Size for Contour Plots
 
-In the example below, both the thickness (given here in pixels) and the length (given here as a fraction of the plot height) are set. 
+In the example below, both the thickness (given here in pixels) and the length (given here as a fraction of the plot height) are set.
 
 ```python
 import plotly.graph_objects as go
@@ -326,7 +322,7 @@ fig.show()
 ```python
 import plotly.graph_objects as go
 
-fig = go.Figure(data = 
+fig = go.Figure(data =
          go.Contour(
            z=[[10, 10.625, 12.5, 15.625, 20],
               [5.625, 6.25, 8.125, 11.25, 15.625],

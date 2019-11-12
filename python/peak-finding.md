@@ -25,7 +25,6 @@ jupyter:
     description: Learn how to find peaks and valleys on datasets in Python
     display_as: peak-analysis
     has_thumbnail: false
-    ipynb: ~notebook_demo/120
     language: python
     layout: base
     name: Peak Finding
@@ -33,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/peak-finding/
     thumbnail: /images/static-image
-    
 ---
 
 #### Imports

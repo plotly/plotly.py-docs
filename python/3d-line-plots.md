@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make 3D Line Plots
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/63
     language: python
     layout: base
     name: 3D Line Plots
@@ -33,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-line-plots/
     thumbnail: thumbnail/3d-line.jpg
-    
 ---
 
 ### 3D Line plot with Plotly Express

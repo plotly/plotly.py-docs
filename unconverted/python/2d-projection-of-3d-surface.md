@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to project 3D Surface plots in 2D with Plotly.
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/79
     language: python
     layout: base
     name: Projection of 3D Surface
@@ -23,7 +21,6 @@ jupyter:
     page_type: u-guide
     permalink: python/2d-projection-of-3d-surface/
     thumbnail: thumbnail/projection-3d.jpg
-    
 ---
 
 #### New to Plotly?

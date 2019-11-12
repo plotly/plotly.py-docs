@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to use aggregates in Python with Plotly.
     display_as: transforms
-    has_thumbnail: true
-    ipynb: ~notebook_demo/192
     language: python
     layout: base
     name: Aggregations
@@ -33,8 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/aggregations/
     thumbnail: thumbnail/aggregations.jpg
-    
-    v4upgrade: true
 ---
 
 #### Introduction

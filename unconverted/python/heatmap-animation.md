@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to make an animated heatmap in Python.
     display_as: animations
-    has_thumbnail: true
-    ipynb: ~notebook_demo/131
     language: python
     layout: base
     name: Heatmap Animation
@@ -23,7 +21,6 @@ jupyter:
     page_type: example_index
     permalink: python/heatmap-animation/
     thumbnail: thumbnail/heatmap_animation.gif
-    
 ---
 
 #### New to Plotly?

@@ -25,8 +25,6 @@ jupyter:
     description: How to make a Mapbox Density Heatmap in Python
       with Plotly.
     display_as: maps
-    has_thumbnail: true
-    ipynb: ~notebook_demo/56
     language: python
     layout: base
     name: Mapbox Density Heatmap
@@ -34,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/mapbox-density-heatmaps/
     thumbnail: thumbnail/mapbox-density.png
-    
 ---
 
 

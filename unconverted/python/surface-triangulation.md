@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to make Tri-Surf plots in Python with Plotly.
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/71
     language: python
     layout: base
     name: Surface Triangulation
@@ -23,7 +21,6 @@ jupyter:
     page_type: u-guide
     permalink: python/surface-triangulation/
     thumbnail: thumbnail/trisurf.jpg
-    
 ---
 
 #### New to Plotly?

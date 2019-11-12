@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: 3D Subplots in Plotly
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/75
     language: python
     layout: base
     name: 3D Subplots
@@ -33,8 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-subplots/
     thumbnail: thumbnail/3d-subplots.jpg
-    
-    v4upgrade: true
 ---
 
 #### 3D Surface Subplots

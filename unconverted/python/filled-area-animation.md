@@ -15,8 +15,6 @@ jupyter:
     description: How to make an animated filled-area plot with apple stock data in
       Python.
     display_as: animations
-    has_thumbnail: true
-    ipynb: ~notebook_demo/128
     language: python
     layout: base
     name: Filled-Area Animation
@@ -24,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/filled-area-animation/
     thumbnail: thumbnail/apple_stock_animation.gif
-    
 ---
 
 #### New to Plotly?

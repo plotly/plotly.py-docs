@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make violin plots in Python with Plotly.
     display_as: statistical
-    has_thumbnail: true
-    ipynb: ~notebook_demo/201
     language: python
     layout: base
     name: Violin Plots
@@ -33,8 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/violin/
     thumbnail: thumbnail/violin.jpg
-    
-    v4upgrade: true
 ---
 
 ## Violin Plot with Plotly Express

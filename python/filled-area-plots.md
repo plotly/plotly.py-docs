@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make filled area plots in Python with Plotly.
     display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/8
     language: python
     layout: base
     name: Filled Area Plots
@@ -33,8 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/filled-area-plots/
     thumbnail: thumbnail/area.jpg
-    
-    v4upgrade: true
 ---
 
 This example shows how to fill the area enclosed by traces.

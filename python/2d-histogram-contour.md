@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make 2D Histogram Contour plots in Python with Plotly.
     display_as: statistical
-    has_thumbnail: true
-    ipynb: ~notebook_demo/199
     language: python
     layout: base
     name: 2D Histogram Contour
@@ -33,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/2d-histogram-contour/
     thumbnail: thumbnail/hist2dcontour.png
-    
 ---
 
 #### Basic 2D Histogram Contour

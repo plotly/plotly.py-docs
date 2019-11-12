@@ -23,16 +23,13 @@ jupyter:
     version: 3.7.3
   plotly:
     description: Theming and templates with plotly with Python
-    v4upgrade: true
     language: python
     display_as: file_settings
-    has_thumbnail: true
     name: Theming and templates
     page_type: u-guide
     layout: base
     permalink: python/templates/
     thumbnail: thumbnail/theming-and-templates.png
-    
 ---
 
 ### Theming and templates
@@ -53,7 +50,7 @@ From this, we can see that the default theme is `"plotly"`, and we can see the n
 
 
 #### Specifying themes in Plotly Express
-All Plotly Express functions accept a `template` argument that can be set to the name of a registered theme (or to a `Template` object as discussed later in this section). Here is an example of using Plotly Express to build and display the same scatter plot with five different themes.
+All Plotly Express functions accept a `template` argument that can be set to the name of a registered theme (or to a `Template` object as discussed later in this section). Here is an example of using Plotly Express to build and display the same scatter plot with six different themes.
 
 ```python
 import plotly.express as px
@@ -61,7 +58,7 @@ import plotly.express as px
 gapminder = px.data.gapminder()
 gapminder_2007 = gapminder.query("year==2007")
 
-for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "none"]:
+for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]:
     fig = px.scatter(gapminder_2007,
                      x="gdpPercap", y="lifeExp", size="pop", color="continent",
                      log_x=True, size_max=60,
@@ -70,7 +67,7 @@ for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", 
 ```
 
 #### Specifying themes in graph object figures
-The theme for a particular graph object figure can be specified by setting the `template` property of the figure's `layout` to the name of a registered theme (or to a `Template` object as discussed later in this section).  Here is an example of constructing a surface plot and then displaying it with each of five themes.
+The theme for a particular graph object figure can be specified by setting the `template` property of the figure's `layout` to the name of a registered theme (or to a `Template` object as discussed later in this section). Here is an example of constructing a surface plot and then displaying it with each of six themes.
 
 ```python
 import plotly.graph_objects as go
@@ -86,7 +83,7 @@ fig = go.Figure(
         height=500,
     ))
 
-for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "none"]:
+for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]:
     fig.update_layout(template=template, title="Mt Bruno Elevation: '%s' theme" % template)
     fig.show()
 ```

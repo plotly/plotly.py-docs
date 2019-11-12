@@ -15,8 +15,6 @@ jupyter:
     description: How to make an interactive chord diagram in Python with Plotly and
       iGraph.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/225
     language: python
     layout: base
     name: Python Chord Diagram
@@ -24,7 +22,6 @@ jupyter:
     page_type: u-guide
     permalink: python/chord-diagram/
     thumbnail: thumbnail/chord.jpg
-    
 ---
 
 # Chord Diagrams with Plotly

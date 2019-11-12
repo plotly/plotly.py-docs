@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make an area on Map in Python with Plotly.
     display_as: maps
-    has_thumbnail: true
-    ipynb: ~notebook_demo/56
     language: python
     layout: base
     name: Filled Area on Maps
@@ -33,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/filled-area-on-mapbox/
     thumbnail: thumbnail/area.jpg
-    
 ---
 
 <!-- #region -->
@@ -43,31 +40,31 @@ jupyter:
 To plot on Mapbox maps with Plotly you *may* need a Mapbox account and a public [Mapbox Access Token](https://www.mapbox.com/studio). See our [Mapbox Map Layers](/python/mapbox-layers/) documentation for more information.
 
 
-There are three different ways to show a filled area in a Mapbox map: 
-1. Use a [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) trace and set `fill` attribute to 'toself' 
+There are three different ways to show a filled area in a Mapbox map:
+1. Use a [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) trace and set `fill` attribute to 'toself'
 2. Use a Mapbox layout (i.e. by minimally using an empty [Scattermapbox](https://plot.ly/python/reference/#scattermapbox) trace) and add a GeoJSON layer
 3. Use the [Choroplethmapbox](https://plot.ly/python/mapbox-county-choropleth/) trace type
 <!-- #endregion -->
 
 ### Filled `Scattermapbox` Trace
 
-The following example uses `Scattermapbox` and sets `fill = 'toself'` 
+The following example uses `Scattermapbox` and sets `fill = 'toself'`
 
 ```python
 import plotly.graph_objects as go
 
 fig = go.Figure(go.Scattermapbox(
-    fill = "toself", 
+    fill = "toself",
     lon = [-74, -70, -70, -74], lat = [47, 47, 45, 45],
     marker = { 'size': 10, 'color': "orange" }))
 
 fig.update_layout(
     mapbox = {
-        'style': "stamen-terrain", 
-        'center': {'lon': -73, 'lat': 46 }, 
-        'zoom': 5}, 
+        'style': "stamen-terrain",
+        'center': {'lon': -73, 'lat': 46 },
+        'zoom': 5},
     showlegend = False)
-        
+
 fig.show()
 ```
 
@@ -80,7 +77,7 @@ import plotly.graph_objects as go
 
 fig = go.Figure(go.Scattermapbox(
     mode = "lines", fill = "toself",
-    lon = [-10, -10, 8, 8, -10, None, 30, 30, 50, 50, 30, None, 100, 100, 80, 80, 100], 
+    lon = [-10, -10, 8, 8, -10, None, 30, 30, 50, 50, 30, None, 100, 100, 80, 80, 100],
     lat = [30, 6, 6, 30, 30,    None, 20, 30, 30, 20, 20, None, 40, 50, 50, 40, 40]))
 
 fig.update_layout(

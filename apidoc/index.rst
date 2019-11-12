@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-plotly API reference
+Python API reference for `plotly`
 ====================
 
 This is the reference of plotly's API. Also see `plotly's documentation website <https://plot.ly/python>`_.
@@ -12,11 +12,11 @@ Submodules
 ----------
 
 
-* :ref:`Plotly express <px>`
-* :ref:`Graph objects: figures, traces and layout <graph-objects>`
-* :ref:`Subplots <subplots>`
-* :ref:`Figure Factory <ff>`
-* :ref:`I/O <io>`
+* :ref:`Plotly Express: high-level interface for data visualization <px>`
+* :ref:`Graph Objects: low-level interface to figures, traces and layout <graph-objects>`
+* :ref:`Subplots: helper function for layout out multi-plot figures <subplots>`
+* :ref:`Figure Factories: helper methods for building specific complex charts <ff>`
+* :ref:`I/O: low-level interface for displaying, reading and writing figures <io>`
 
 Full reference list
 -------------------
@@ -24,11 +24,11 @@ Full reference list
 .. toctree::
    :maxdepth: 3
 
-   px.rst
-   graph_objects.rst
-   subplots.rst
-   figure_factory.rst
-   io.rst
+   plotly.express.rst
+   plotly.graph_objects.rst
+   plotly.subplots.rst
+   plotly.figure_factory.rst
+   plotly.io.rst
 
 
 

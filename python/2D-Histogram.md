@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make 2D Histograms in Python with Plotly.
     display_as: statistical
-    has_thumbnail: true
-    ipynb: ~notebook_demo/24
     language: python
     layout: base
     name: 2D Histograms
@@ -33,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/2D-Histogram/
     thumbnail: thumbnail/histogram2d.jpg
-    
 ---
 
 ### 2D Histogram of a Bivariate Normal Distribution ###

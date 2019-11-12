@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make mixed subplots in Python with Plotly.
     display_as: multiple_axes
-    has_thumbnail: true
-    ipynb: ~notebook_demo/132
     language: python
     layout: base
     name: Mixed Subplots
@@ -33,8 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/mixed-subplots/
     thumbnail: thumbnail/mixed_subplot.JPG
-    
-    v4upgrade: true
 ---
 
 #### Mixed Subplot
@@ -71,7 +67,7 @@ fig.add_trace(
     go.Scattergeo(lat=df["Latitude"],
                   lon=df["Longitude"],
                   mode="markers",
-                  hoverinfo="text", 
+                  hoverinfo="text",
                   showlegend=False,
                   marker=dict(color="crimson", size=4, opacity=0.8)),
     row=1, col=1

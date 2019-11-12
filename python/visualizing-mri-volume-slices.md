@@ -25,8 +25,6 @@ jupyter:
     description: How to create an plotly animation with slider that cycles through
       MRI cross-sections of a human brain.
     display_as: animations
-    has_thumbnail: true
-    ipynb: ~notebook_demo/190
     language: python
     layout: base
     name: Visualizing MRI Volume Slices
@@ -34,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/visualizing-mri-volume-slices/
     thumbnail: thumbnail/brain-mri-animation_square.gif
-    
 ---
 
 #### Visualization of MRI volume slices
@@ -58,7 +55,7 @@ fig = go.Figure(frames=[go.Frame(data=go.Surface(
     z=(6.7 - k * 0.1) * np.ones((r, c)),
     surfacecolor=np.flipud(volume[67 - k]),
     cmin=0, cmax=200
-    ), 
+    ),
     name=str(k) # you need to name the frame for the animation to behave properly
     )
     for k in range(nb_frames)])

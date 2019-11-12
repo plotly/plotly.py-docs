@@ -16,7 +16,6 @@ jupyter:
       eigenvalues, and determinents
     display_as: mathematics
     has_thumbnail: false
-    ipynb: ~notebook_demo/104
     language: python
     layout: base
     name: Linear Algebra
@@ -24,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/linear-algebra/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

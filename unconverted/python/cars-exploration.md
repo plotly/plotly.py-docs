@@ -14,15 +14,12 @@ jupyter:
   plotly:
     description: Use Plotly FigureWidget with hover callbacks and slider widgets
     display_as: chart_events
-    has_thumbnail: true
-    ipynb: ~notebook_demo/242
     language: python
     layout: base
     name: Car Exploration with Hover Events
     order: 26
     permalink: python/cars-exploration/
     thumbnail: thumbnail/figurewidget-cars.gif
-    
 ---
 
 #### New to Plotly?

@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to interpolation and extrapolate data in two dimensions
     display_as: mathematics
     has_thumbnail: false
-    ipynb: ~notebook_demo/105
     language: python
     layout: base
     name: Interpolation and Extrapolation in 2D
@@ -23,7 +22,6 @@ jupyter:
     page_type: example_index
     permalink: python/interpolation-and-extrapolation-in-2d/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

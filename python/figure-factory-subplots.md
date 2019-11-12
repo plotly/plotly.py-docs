@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: Subplots with Plotly Figure Factory Charts
     display_as: multiple_axes
-    has_thumbnail: true
-    ipynb: ~PythonPlotBot/1828
     language: python
     layout: base
     name: Figure Factory Subplots
@@ -33,8 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/figure-factory-subplots/
     thumbnail: thumbnail/ff-subplots.jpg
-    
-    v4upgrade: true
 ---
 
 #### Plotly's Figure Factory Module

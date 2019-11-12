@@ -16,7 +16,6 @@ jupyter:
       such as scaling, adding, and subtracting
     display_as: mathematics
     has_thumbnail: false
-    ipynb: ~notebook_demo/99
     language: python
     layout: base
     name: Simple Mathematics Operations
@@ -24,7 +23,6 @@ jupyter:
     page_type: example_index
     permalink: python/simple-mathematics-operations/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

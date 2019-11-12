@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make polar charts in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/200
     language: python
     layout: base
     name: Polar Charts
@@ -33,8 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/polar-chart/
     thumbnail: thumbnail/polar.gif
-    
-    v4upgrade: true
 ---
 
 ## Polar chart with Plotly Express

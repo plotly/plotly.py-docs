@@ -25,16 +25,12 @@ jupyter:
     description: How to make interactive tree-plot in Python with Plotly. An examples
       of a tree-plot in Plotly.
     display_as: statistical
-    has_thumbnail: true
-    ipynb: ~notebook_demo/28
     language: python
     layout: base
     name: Tree-plots
     order: 10.5
     permalink: python/tree-plots/
     thumbnail: thumbnail/treeplot.jpg
-    
-    v4upgrade: true
 ---
 
 #### Set Up Tree with [igraph](http://igraph.org/python/)
@@ -67,7 +63,7 @@ Xe = []
 Ye = []
 for edge in E:
     Xe+=[position[edge[0]][0],position[edge[1]][0], None]
-    Ye+=[2*M-position[edge[0]][1],2*M-position[edge[1]][1], None] 
+    Ye+=[2*M-position[edge[0]][1],2*M-position[edge[1]][1], None]
 
 labels = v_label
 ```
@@ -88,8 +84,8 @@ fig.add_trace(go.Scatter(x=Xn,
                   mode='markers',
                   name='bla',
                   marker=dict(symbol='circle-dot',
-                                size=18, 
-                                color='#6175c1',    #'#DB4551', 
+                                size=18,
+                                color='#6175c1',    #'#DB4551',
                                 line=dict(color='rgb(50,50,50)', width=1)
                                 ),
                   text=labels,
@@ -109,13 +105,13 @@ def make_annotations(pos, text, font_size=10, font_color='rgb(250,250,250)'):
     for k in range(L):
         annotations.append(
             dict(
-                text=labels[k], # or replace labels with a different list for the text within the circle  
+                text=labels[k], # or replace labels with a different list for the text within the circle
                 x=pos[k][0], y=2*M-position[k][1],
                 xref='x1', yref='y1',
                 font=dict(color=font_color, size=font_size),
                 showarrow=False)
         )
-    return annotations  
+    return annotations
 ```
 
 #### Add Axis Specifications and Create the Layout
@@ -127,15 +123,15 @@ axis = dict(showline=False, # hide axis line, grid, ticklabels and  title
             showticklabels=False,
             )
 
-fig.update_layout(title= 'Tree with Reingold-Tilford Layout',  
+fig.update_layout(title= 'Tree with Reingold-Tilford Layout',
               annotations=make_annotations(position, v_label),
               font_size=12,
               showlegend=False,
               xaxis=axis,
-              yaxis=axis,          
+              yaxis=axis,
               margin=dict(l=40, r=40, b=85, t=100),
               hovermode='closest',
-              plot_bgcolor='rgb(248,248,248)'          
+              plot_bgcolor='rgb(248,248,248)'
               )
 fig.show()
 ```

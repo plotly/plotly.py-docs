@@ -16,7 +16,6 @@ jupyter:
       SQLite, and IPython notebooks.
     display_as: databases
     has_thumbnail: false
-    ipynb: ~notebook_demo/1
     language: python
     layout: base
     name: Big Data Analytics with Pandas and SQLite
@@ -25,7 +24,6 @@ jupyter:
     permalink: python/big-data-analytics-with-pandas-and-sqlite/
     redirect_from: ipython-notebooks/big-data-analytics-with-pandas-and-sqlite/
     thumbnail: /images/static-image
-    
 ---
 
 #### New to Plotly?

@@ -24,21 +24,18 @@ jupyter:
   plotly:
     description: How to Control the Camera in your 3D Charts in Python with Plotly.
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/78
     language: python
     layout: base
     name: 3D Camera Controls
     order: 0.108
     permalink: python/3d-camera-controls/
     thumbnail: thumbnail/3d-camera-controls.jpg
-    
 ---
 
 ### How camera controls work
 
-The camera position and direction is determined by three vectors: *up*, *center*, *eye*. Their coordinates refer to the 3-d domain, i.e., `(0, 0, 0)` is always the center of the domain, no matter data values. 
-The `eye` vector determines the position of the camera. The default is $(x=1.25, y=1.25, z=1.25)$. 
+The camera position and direction is determined by three vectors: *up*, *center*, *eye*. Their coordinates refer to the 3-d domain, i.e., `(0, 0, 0)` is always the center of the domain, no matter data values.
+The `eye` vector determines the position of the camera. The default is $(x=1.25, y=1.25, z=1.25)$.
 
 The `up` vector determines the `up` direction on the page. The default is $(x=0, y=0, z=1)$, that is, the z-axis points up.
 

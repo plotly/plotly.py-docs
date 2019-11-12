@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make interactive Distplots in Python with Plotly.
     display_as: statistical
-    has_thumbnail: true
-    ipynb: ~notebook_demo/23
     language: python
     layout: base
     name: Distplots

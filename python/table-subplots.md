@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to create a subplot with tables and charts in Python with Plotly.
     display_as: multiple_axes
-    has_thumbnail: true
     language: python
     layout: base
     name: Table and Chart Subplots
@@ -32,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/table-subplots/
     thumbnail: thumbnail/table_subplots.jpg
-    v4upgrade: true
 ---
 
 #### Import CSV Data

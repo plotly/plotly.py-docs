@@ -1,6 +1,6 @@
 .. _px:
 
-Plotly express: `plotly.express`
+`plotly.express`: high-level interface for data visualization
 ================================
 
 The `plotly.express <https://plot.ly/python/plotly-express/>`_ module is
@@ -39,6 +39,7 @@ plotly's high-level API for rapid figure generation. ::
     choropleth
     density_contour
     density_heatmap
+    imshow
 
 
 

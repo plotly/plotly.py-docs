@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to average the values of multiple curves with Python.
     display_as: mathematics
     has_thumbnail: false
-    ipynb: ~notebook_demo/107
     language: python
     layout: base
     name: Average Multiple Curves

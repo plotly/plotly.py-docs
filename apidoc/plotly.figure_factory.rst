@@ -1,6 +1,6 @@
 .. _ff:
 
-Figure Factory
+`plotly.figure_factory`: helper methods for building specific complex charts
 ==============
 
 .. currentmodule:: plotly.figure_factory
@@ -23,6 +23,6 @@ Figure Factory
    create_streamline
    create_table
    create_ternary_contour
-   create_trisurf           
+   create_trisurf
    create_violin
 

@@ -26,8 +26,6 @@ jupyter:
       to your local computer, or embed it inside your Jupyter notebooks as a static
       image.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/252
     language: python
     layout: base
     name: Static Image Export
@@ -35,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/static-image-export/
     thumbnail: thumbnail/static-image-export.png
-    v4upgrade: true
 ---
 
 <!-- #region -->

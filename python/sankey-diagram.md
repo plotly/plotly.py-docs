@@ -26,8 +26,6 @@ jupyter:
   plotly:
     description: How to make Sankey Diagrams in Python with Plotly.
     display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/151
     language: python
     layout: base
     name: Sankey Diagram
@@ -35,7 +33,6 @@ jupyter:
     page_type: u-guide
     permalink: python/sankey-diagram/
     thumbnail: thumbnail/sankey.jpg
-    v4upgrade: true
 ---
 
 A [Sankey diagram](https://en.wikipedia.org/wiki/Sankey_diagram) is a flow diagram, in which the width of arrows is proportional to the flow quantity.

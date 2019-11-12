@@ -14,8 +14,6 @@ jupyter:
   plotly:
     description: How to create and publish a dashboard with the Python API.
     display_as: legacy_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/148
     language: python
     layout: base
     name: Dashboard API

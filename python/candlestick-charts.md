@@ -26,8 +26,6 @@ jupyter:
       Six examples of candlestick charts with Pandas, time series, and yahoo finance
       data.
     display_as: financial
-    has_thumbnail: true
-    ipynb: ~notebook_demo/275
     language: python
     layout: base
     name: Candlestick Charts
@@ -35,7 +33,6 @@ jupyter:
     page_type: example_index
     permalink: python/candlestick-charts/
     thumbnail: thumbnail/candlestick.jpg
-    v4upgrade: true
 ---
 
 The [candlestick chart](https://en.wikipedia.org/wiki/Candlestick_chart) is a style of financial chart describing open, high, low and close for a given `x` coordinate (most likely

@@ -24,15 +24,12 @@ jupyter:
   plotly:
     description: How to manipulate the graph size in Python with Plotly.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/133
     language: python
     layout: base
     name: Setting Graph Size
     order: 2
     permalink: python/setting-graph-size/
     thumbnail: thumbnail/sizing.png
-    v4upgrade: true
 ---
 
 ### Adjusting Height, Width, & Margins with Plotly Express

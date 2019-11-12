@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.7
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,12 +20,10 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.5
+    version: 3.7.3
   plotly:
     description: How to add images to charts as background images or logos.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/216
     language: python
     layout: base
     name: Images
@@ -36,6 +34,8 @@ jupyter:
 ---
 
 #### Add a Background Image
+
+In this page we explain how to add static, non-interactive images as background, logo or annotation images to a figure. For exploring image data in interactive charts, see the [tutorial on displaying image data](/python/imshow).
 
 ```python
 import plotly.graph_objects as go
@@ -49,8 +49,7 @@ fig.add_trace(
 )
 
 # Add images
-fig.update_layout(
-    images=[
+fig.add_layout_image(
         go.layout.Image(
             source="https://images.plot.ly/language-icons/api-home/python-logo.png",
             xref="x",
@@ -62,7 +61,6 @@ fig.update_layout(
             sizing="stretch",
             opacity=0.5,
             layer="below")
-    ]
 )
 
 # Set templates
@@ -115,14 +113,14 @@ fig.add_trace(
 )
 
 # Add image
-fig.update_layout(
-    images=[dict(
+fig.add_layout_image(
+    dict(
         source="https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/vox.png",
         xref="paper", yref="paper",
         x=1, y=1.05,
         sizex=0.2, sizey=0.2,
         xanchor="right", yanchor="bottom"
-    )],
+    )
 )
 
 # update layout properties
@@ -174,30 +172,26 @@ for (x, y), n in zip(simulated_absorptions, names):
     fig.add_trace(go.Scatter(x=x, y=y, name=n))
 
 # Add images
-fig.update_layout(
-    images=[go.layout.Image(
+fig.add_layout_image(
+    go.layout.Image(
         source="https://raw.githubusercontent.com/michaelbabyn/plot_data/master/benzene.png",
-        xref="paper",
-        yref="paper",
         x=0.75,
         y=0.65,
-        sizex=0.3,
-        sizey=0.3,
-        xanchor="right",
-        yanchor="bottom"
-    ), go.layout.Image(
+    ))
+fig.add_layout_image(go.layout.Image(
         source="https://raw.githubusercontent.com/michaelbabyn/plot_data/master/naphthalene.png",
-        xref="paper",
-        yref="paper",
         x=0.9,
         y=0.3,
+        )
+)
+fig.update_layout_images(dict(
+        xref="paper",
+        yref="paper",
         sizex=0.3,
         sizey=0.3,
         xanchor="right",
         yanchor="bottom"
-        )
-    ]
-)
+))
 
 # Add annotations
 fig.update_layout(
@@ -280,8 +274,8 @@ fig.update_yaxes(
 )
 
 # Add image
-fig.update_layout(
-    images=[go.layout.Image(
+fig.add_layout_image(
+    go.layout.Image(
         x=0,
         sizex=img_width * scale_factor,
         y=img_height * scale_factor,
@@ -291,7 +285,7 @@ fig.update_layout(
         opacity=1.0,
         layer="below",
         sizing="stretch",
-        source="https://raw.githubusercontent.com/michaelbabyn/plot_data/master/bridge.jpg")]
+        source="https://raw.githubusercontent.com/michaelbabyn/plot_data/master/bridge.jpg")
 )
 
 # Configure other layout

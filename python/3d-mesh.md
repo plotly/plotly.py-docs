@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make 3D Mesh Plots
     display_as: 3d_charts
-    has_thumbnail: true
-    ipynb: ~notebook_demo/67
     language: python
     layout: base
     name: 3D Mesh Plots
@@ -33,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/3d-mesh/
     thumbnail: thumbnail/3d-mesh.jpg
-    v4upgrade: true
 ---
 
 ### Simple 3D Mesh example ###

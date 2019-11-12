@@ -1,5 +1,5 @@
 :mod:`{{module}}`.{{objname}}
-{{ underline }}
+{{ underline }}============================
 
 
 .. currentmodule:: {{ module }}
@@ -12,10 +12,9 @@
 
 
 :mod:`{{module}}`.{{objname.lower()}}
-{{ underline }}
+{{ underline }}================================
 
 .. autosummary::
-   :toctree: generated/
    
    plotly.graph_objects.{{ objname.lower() }}
 

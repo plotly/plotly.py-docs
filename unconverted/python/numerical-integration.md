@@ -15,7 +15,6 @@ jupyter:
     description: Learn how to integrate a sequence or list of values numerically
     display_as: mathematics
     has_thumbnail: false
-    ipynb: ~notebook_demo/101
     language: python
     layout: base
     name: Numerical Integration

@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: Migration guide for upgrading from version 3 to version 4
     display_as: file_settings
-    has_thumbnail: true
     language: python
     layout: base
     name: Version 4 Migration Guide
@@ -32,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/v4-migration/
     thumbnail: thumbnail/v4-migration.png
-    v4upgrade: true
 ---
 
 ### Upgrading to Version 4

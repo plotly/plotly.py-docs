@@ -25,6 +25,8 @@ jupyter:
     description: How to set colorscales and heatmap colorscales in Python and Plotly.
       Divergent, sequential, and qualitative colorscales.
     display_as: file_settings
+    has_thumbnail: true
+    ipynb: ~notebook_demo/187
     language: python
     layout: base
     name: Colorscales
@@ -32,6 +34,7 @@ jupyter:
     permalink: python/colorscales/
     redirect_from: python/logarithmic-color-scale/
     thumbnail: thumbnail/heatmap_colorscale.jpg
+    v4upgrade: true
 ---
 
 ### Predefined colorscales in Plotly Express
@@ -198,7 +201,6 @@ The following example uses [marker.cmid](https://plot.ly/python/reference/#scatt
 
 ```python
 import plotly.graph_objects as go
-import plotly.express as px
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(

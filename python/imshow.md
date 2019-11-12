@@ -32,7 +32,6 @@ jupyter:
     order: 3
     page_type: example_index
     permalink: python/imshow/
-    redirect_from: python/imshow/
     thumbnail: thumbnail/imshow.jpg
     v4upgrade: true
 ---
@@ -77,7 +76,7 @@ fig.show()
 
 ### Display single-channel 2D image as grayscale
 
-For a 2D image, `px.imshow` uses a colorscale to map scalar data to colors. The default colorscale is the one of the active template (see [the tutorial on templates](/python/templates/)). 
+For a 2D image, `px.imshow` uses a colorscale to map scalar data to colors. The default colorscale is the one of the active template (see [the tutorial on templates](/python/templates/)).
 
 ```python
 import plotly.express as px
@@ -102,7 +101,7 @@ fig.show()
 
 It is also possible to use the `go.Image` trace from the low-level `graph_objects` API in order to display image data. Note that `go.Image` only accepts multichannel images. For single images, use [`go.Heatmap`](/python/heatmaps).
 
-Note that the `go.Image` trace is different from the `go.layout.Image` class, which can be used for [adding background images or logos to figures](/python/images). 
+Note that the `go.Image` trace is different from the `go.layout.Image` class, which can be used for [adding background images or logos to figures](/python/images).
 
 ```python
 import plotly.graph_objects as go
@@ -114,7 +113,7 @@ fig.show()
 
 ### Defining the data range covered by the color range with zmin and zmax
 
-The data range and color range are mapped together using the parameters `zmin` and `zmax`, which correspond respectively to the data values mapped to black `[0, 0, 0]` and white `[255, 255, 255]`, or to the extreme colors of the colorscale in the case on single-channel data. 
+The data range and color range are mapped together using the parameters `zmin` and `zmax`, which correspond respectively to the data values mapped to black `[0, 0, 0]` and white `[255, 255, 255]`, or to the extreme colors of the colorscale in the case on single-channel data.
 
 For single-channel data, the defaults values of `zmin` and `zmax` used by `px.imshow` and `go.Heatmap` are the extrema of the data range. For multichannel data, `px.imshow` and `go.Image` use slightly different default values for `zmin` and `zmax`. For `go.Image`, the default value is `zmin=[0, 0, 0]` and `zmax=[255, 255, 255]`, no matter the data type. On the other hand, `px.imshow` adapts the default `zmin` and `zmax` to the data type:
 - for integer data types, `zmin` and `zmax` correspond to the extreme values of the data type, for example 0 and 255 for `uint8`, 0 and 65535 for `uint16`, etc.
@@ -163,7 +162,7 @@ import plotly.graph_objects as go
 from skimage import data
 img = data.camera()
 fig = px.imshow(img, color_continuous_scale='gray')
-fig.add_trace(go.Contour(z=img, showscale=False, 
+fig.add_trace(go.Contour(z=img, showscale=False,
                          contours=dict(start=0, end=70, size=70, coloring='lines'),
                          line_width=2))
 fig.add_trace(go.Scatter(x=[230], y=[100], marker=dict(color='red', size=16)))
@@ -180,7 +179,7 @@ fig = make_subplots(1, 2)
 # We use go.Image because subplots require traces, whereas px functions return a figure
 fig.add_trace(go.Image(z=img), 1, 1)
 for channel, color in enumerate(['red', 'green', 'blue']):
-    fig.add_trace(go.Histogram(x=img[..., channel].ravel(), opacity=0.5, 
+    fig.add_trace(go.Histogram(x=img[..., channel].ravel(), opacity=0.5,
                                marker_color=color, name='%s channel' %color), 1, 2)
 fig.update_layout(height=400)
 fig.show()

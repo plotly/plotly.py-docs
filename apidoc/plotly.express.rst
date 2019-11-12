@@ -39,6 +39,7 @@ plotly's high-level API for rapid figure generation. ::
     choropleth
     density_contour
     density_heatmap
+    imshow
 
 
 

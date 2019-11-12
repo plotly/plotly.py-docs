@@ -44,6 +44,7 @@ Simple charts
    Bar
    Pie
    Heatmap
+   Image
    Contour
    Table
 

@@ -77,7 +77,7 @@ fig.show()
 
 ### Display single-channel 2D image as grayscale
 
-For a 2D image, `px.imshow` uses a colorscale to map scalar data to colors. The default colorscale is `gray`, ie grayscale images. 
+For a 2D image, `px.imshow` uses a colorscale to map scalar data to colors. The default colorscale is the one of the active template (see [the tutorial on templates](/python/templates/)). 
 
 ```python
 import plotly.express as px
@@ -94,7 +94,7 @@ fig.show()
 import plotly.express as px
 import numpy as np
 img = np.arange(100).reshape((10, 10))
-fig = px.imshow(img, colorscale='Viridis')
+fig = px.imshow(img, color_continuous_scale='gray')
 fig.show()
 ```
 
@@ -116,7 +116,7 @@ fig.show()
 
 The data range and color range are mapped together using the parameters `zmin` and `zmax`, which correspond respectively to the data values mapped to black `[0, 0, 0]` and white `[255, 255, 255]`, or to the extreme colors of the colorscale in the case on single-channel data. 
 
-For single-channel data, the defaults values of `zmin` and `zmax` used by `px.imshow` and `go.Heatmap` are the the extrema of the data range. For multichannel data, `px.imshow` and `go.Image` use slightly different default values for `zmin` and `zmax`. For `go.Image`, the default value is `zmin=[0, 0, 0]` and `zmax=[255, 255, 255]`, no matter the data type. On the other hand, `px.imshow` adapts the default `zmin` and `zmax` to the data type:
+For single-channel data, the defaults values of `zmin` and `zmax` used by `px.imshow` and `go.Heatmap` are the extrema of the data range. For multichannel data, `px.imshow` and `go.Image` use slightly different default values for `zmin` and `zmax`. For `go.Image`, the default value is `zmin=[0, 0, 0]` and `zmax=[255, 255, 255]`, no matter the data type. On the other hand, `px.imshow` adapts the default `zmin` and `zmax` to the data type:
 - for integer data types, `zmin` and `zmax` correspond to the extreme values of the data type, for example 0 and 255 for `uint8`, 0 and 65535 for `uint16`, etc.
 - for float numbers, the maximum value of the data is computed, and zmax is 1 if the max is smaller than 1, 255 if the max is smaller than 255, etc. (with higher thresholds 2**16 - 1 and 2**32 -1).
 
@@ -162,7 +162,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from skimage import data
 img = data.camera()
-fig = px.imshow(img)
+fig = px.imshow(img, color_continuous_scale='gray')
 fig.add_trace(go.Contour(z=img, showscale=False, 
                          contours=dict(start=0, end=70, size=70, coloring='lines'),
                          line_width=2))
@@ -189,7 +189,3 @@ fig.show()
 #### Reference
 See https://plot.ly/python/reference/#image for more information and chart attribute options!
 
-
-```python
-fig = px.imshow
-```

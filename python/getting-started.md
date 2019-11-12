@@ -129,10 +129,10 @@ set NODE_OPTIONS=--max-old-space-size=4096
 jupyter labextension install @jupyter-widgets/jupyterlab-manager@1.0 --no-build
 
 # jupyterlab renderer support
-jupyter labextension install jupyterlab-plotly@1.2.0 --no-build
+jupyter labextension install jupyterlab-plotly@1.3.0 --no-build
 
 # FigureWidget support
-jupyter labextension install plotlywidget@1.2.0 --no-build
+jupyter labextension install plotlywidget@1.3.0 --no-build
 
 # Build extensions (must be done to activate extensions since --no-build is used above)
 jupyter lab build

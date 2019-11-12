@@ -16,7 +16,6 @@ jupyter:
       and dividing by a constant
     display_as: mathematics
     has_thumbnail: false
-    ipynb: ~notebook_demo/103
     language: python
     layout: base
     name: Normalization

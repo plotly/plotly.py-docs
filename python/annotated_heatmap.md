@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make Annotated Heatmaps in Python with Plotly.
     display_as: scientific
-    has_thumbnail: true
-    ipynb: ~notebook_demo/35
     language: python
     layout: base
     name: Annotated Heatmaps
@@ -33,7 +31,6 @@ jupyter:
     page_type: u-guide
     permalink: python/annotated_heatmap/
     thumbnail: thumbnail/ann_heat.jpg
-    v4upgrade: true
 ---
 
 #### Simple Annotated Heatmap

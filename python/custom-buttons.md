@@ -24,7 +24,6 @@ jupyter:
   plotly:
     description: How to add custom buttons to update Plotly chart attributes in Python.
     display_as: controls
-    has_thumbnail: true
     language: python
     layout: base
     name: Custom Buttons
@@ -32,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/custom-buttons/
     thumbnail: thumbnail/custom-buttons.jpg
-    v4upgrade: true
 ---
 
 #### Methods

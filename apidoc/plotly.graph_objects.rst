@@ -1,6 +1,6 @@
 .. _graph-objects:
 
-Graph objects: figures, traces and layout
+`plotly.graph_objects`: low-level interface to figures, traces and layout
 =========================================
 
 .. currentmodule:: plotly.graph_objects
@@ -11,11 +11,14 @@ Graph objects: figures, traces and layout
 
    >>> import plotly.graph_objects as go
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Figure:
+Figure
+------
 
-   figure.rst
+.. autosummary::
+   :toctree: generated/
+   :template: class_figure.rst
+
+   Figure  
 
 
 Layout
@@ -41,6 +44,7 @@ Simple charts
    Bar
    Pie
    Heatmap
+   Image
    Contour
    Table
 
@@ -55,7 +59,7 @@ Distributions
    Violin
    Histogram
    Histogram2d
-   Histogram2dcontour
+   Histogram2dContour
 
 Finance
 -------

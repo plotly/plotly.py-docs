@@ -20,13 +20,11 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.7.3
+    version: 3.6.8
   plotly:
     description: Plotly Express is a terse, consistent, high-level API for rapid data
       exploration and figure generation.
     display_as: file_settings
-    has_thumbnail: true
-    ipynb: ~notebook_demo/252
     language: python
     layout: base
     name: Plotly Express
@@ -34,7 +32,6 @@ jupyter:
     page_type: example_index
     permalink: python/plotly-express/
     thumbnail: thumbnail/plotly-express.png
-    v4upgrade: true
 ---
 
 ### Plotly Express
@@ -75,7 +72,7 @@ fig.show()
 import plotly.express as px
 iris = px.data.iris()
 fig = px.scatter(iris, x="sepal_width", y="sepal_length", color="species", marginal_y="rug", marginal_x="histogram")
-fig.show()
+fig
 ```
 
 ```python

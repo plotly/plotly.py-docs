@@ -24,8 +24,6 @@ jupyter:
   plotly:
     description: How to make Pie Charts.
     display_as: basic
-    has_thumbnail: true
-    ipynb: ~notebook_demo/7/
     language: python
     layout: base
     name: Pie Charts
@@ -33,7 +31,6 @@ jupyter:
     page_type: example_index
     permalink: python/pie-charts/
     thumbnail: thumbnail/pie-chart.jpg
-    v4upgrade: true
 ---
 
 ### Basic Pie Chart ###

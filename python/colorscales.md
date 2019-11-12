@@ -196,37 +196,35 @@ fig.add_trace(go.Heatmap(
 fig.show()
 ```
 
-### Colorscale Midpoint 
-The following example uses [cmid](https://plot.ly/python/reference/#scatter-marker-cmid) attribute to set the mid-point of the color domain by scaling [cmin](https://plot.ly/python/reference/#scatter-marker-cmin) and/or [cmax](https://plot.ly/python/reference/#scatter-marker-cmax) to be equidistant to this point. It only has impact when [marker.line.color](https://plot.ly/python/reference/#scattercarpet-marker-line-color) sets to a numerical array, and [marker.line.cauto](https://plot.ly/python/reference/#scattercarpet-marker-line-cauto) is `True`. The heatmap chart uses [zmid](https://plot.ly/python/reference/#heatmap-zmid) attribute to set the mid-point of the color domain by scaling [zmin](https://plot.ly/python/reference/#heatmap-zmin) and/or [zmax](https://plot.ly/python/reference/#heatmap-zmax) to be equidistant to this point.
+### Setting the Midpoint of a Diverging Colorscale
+The following example uses [marker.cmid](https://plot.ly/python/reference/#scatter-marker-cmid) attribute to set the mid-point of the color domain by scaling 'cmin' and/or 'cmax' to be equidistant to this point. It only has impact when [marker.color](https://plot.ly/python/reference/#scattercarpet-marker-line-color) sets to a numerical array, and 'marker.cauto' is `True`. 
+
+```python
+import plotly.graph_objects as go
+import plotly.express as px
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(
+    y=list(range(-5,15)),
+    mode="markers",
+    marker={"size": 25, "color": list(range(-10,10)), "cmid": 0}))
+
+fig.show()
+```
+
+The heatmap chart uses [marker.zmid](https://plot.ly/python/reference/#scatter-marker-zmid) attribute to set the mid-point of the color domain.
 
 ```python
 import plotly.graph_objects as go
 
-fig = go.Figure()
-
-fig.add_trace(go.Scatter(
-    y=[1, 2, 0, 1],
-    mode="markers",
-    marker={
-      "size": 25,
-      "color": [1,4,8],
-      "cmid": 0,
-      "colorbar": {
-        "len": 0.5,
-        "y": 1,
-        "yanchor": "top",
-        "title": {"text": "cmid=0", "side": "right"}
-      }}))
-
-fig.add_trace(go.Heatmap(
-    z=[[1, 5, 3, 2], [5, 3, 7, 9], [3, 2, 6, 4]],
-    zmid=10,
-    colorbar={
-      "len": 0.5,
-      "y": 0.5,
-      "yanchor": "top",
-      "title": {"text": "zmid=10", "side": "right"}
-    }))
+a = list(range(-15,5))
+b = list(range(-10,10))
+c = list(range(-5,15))
+         
+fig = go.Figure(go.Heatmap(
+    z=[a, b, c],
+    colorscale='RdBu',
+    zmid=0))
 
 fig.show()
 ```

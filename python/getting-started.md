@@ -107,13 +107,13 @@ For use in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), install t
 packages using pip...
 
 ```
-$ pip install jupyterlab==1.0 "ipywidgets>=7.5"
+$ pip install jupyterlab==1.2 "ipywidgets>=7.5"
 ```
 
 or conda.
 
 ```
-$ conda install jupyterlab=1.0 "ipywidgets>=7.5"
+$ conda install jupyterlab=1.2 "ipywidgets>=7.5"
 ```
 
 Then run the following commands to install the required JupyterLab extensions (note that this will require [`node`](https://nodejs.org/) to be installed):
@@ -126,7 +126,7 @@ export NODE_OPTIONS=--max-old-space-size=4096
 set NODE_OPTIONS=--max-old-space-size=4096
 
 # Jupyter widgets extension
-jupyter labextension install @jupyter-widgets/jupyterlab-manager@1.0 --no-build
+jupyter labextension install @jupyter-widgets/jupyterlab-manager@1.1 --no-build
 
 # jupyterlab renderer support
 jupyter labextension install jupyterlab-plotly@1.3.0 --no-build

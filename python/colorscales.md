@@ -282,7 +282,7 @@ fig.show()
 
 ### Share Color Axis
 This example shows how to specify the color scale and color bar per trace. To share colorscale information in multiple subplots, you can use [coloraxis](https://plot.ly/javascript/reference/#scatter-marker-line-coloraxis).
-Below we show how to set a reference (coloraxis, coloraxis2, coloraxis3) to a shared coloraxis, which are set in the layout. Note that multiple color scales can be linked to the same color.
+Below we show how to set a reference coloraxis1 to a shared coloraxis, which are set in the layout. Note that multiple color scales can be linked to the same color.
 
 ```python
 import plotly.graph_objects as go

@@ -25,5 +25,9 @@ a {
 }
 
 code {
-    color: #2391fe !important;
+    color: #2c3e50 !important;
+}
+
+.alert-info {
+    background: lightgrey;
 }

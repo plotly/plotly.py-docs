@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.8
+    version: 3.7.3
   plotly:
     description: How to set colorscales and heatmap colorscales in Python and Plotly.
       Divergent, sequential, and qualitative colorscales.
@@ -30,8 +30,10 @@ jupyter:
     name: Colorscales
     order: 20
     permalink: python/colorscales/
-    thumbnail: thumbnail/heatmap_colorscale.jpg
     redirect_from: python/logarithmic-color-scale/
+    thumbnail: thumbnail/heatmap_colorscale.jpg
+    v4upgrade: true
+>>>>>>> 82930cd... a modified simpler  example
 ---
 
 ### Predefined colorscales in Plotly Express
@@ -272,8 +274,27 @@ fig = go.Figure(go.Heatmap(
         tick0= 0,
         tickmode= 'array',
         tickvals= [0, 1000, 10000, 100000]
-    )
+    
 ))
+
+fig.show()
+```
+
+### Share Color Axis
+This example shows how to specify the color scale and color bar per trace. To share colorscale information in multiple subplots, you can use [coloraxis](https://plot.ly/javascript/reference/#scatter-marker-line-coloraxis).
+Below we show how to set a reference (coloraxis, coloraxis2, coloraxis3) to a shared coloraxis, which are set in the layout. Note that multiple color scales can be linked to the same color.
+
+```python
+import plotly.graph_objects as go
+
+fig = make_subplots(1,2)
+
+fig.add_trace(
+    go.Heatmap(x = [1, 2, 3, 4], z = [[1, 2, 3, 4], [4, -3, -1, 1]], coloraxis = "coloraxis"), 1,1)
+
+fig.add_trace(
+    go.Heatmap(x = [3, 4, 5, 6], z = [[10, 2, 1, 0], [4, 3, 5, 6]], coloraxis = "coloraxis"),1,2)
+fig.update_layout(coloraxis = {'colorscale':'jet'})
 
 fig.show()
 ```

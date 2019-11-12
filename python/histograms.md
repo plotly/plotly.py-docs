@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to make Histograms in Python with Plotly.
     display_as: statistical
@@ -329,6 +329,21 @@ fig.append_trace(trace4, 3, 1)
 fig.append_trace(trace5, 3, 2)
 
 fig.show()
+```
+
+### See also: Bar Charts
+
+If you want to display information about the individual items within each histogram bar, then create a stacked bar chart with hover information as shown below. Note that this is not technically the histogram chart type, but it will have a similar effect as shown below by comparing the output of `px.histogram` and `px.bar`. For more information, see the [tutorial on bar charts](/python/bar-charts/).
+
+```python
+import plotly.express as px
+tips = px.data.tips()
+fig1 = px.bar(tips, x='day', y='tip', height=300,
+              title='Stacked Bar Chart - Hover on individual items')
+fig2 = px.histogram(tips, x='day', y='tip', histfunc='sum', height=300,
+                    title='Histogram Chart')
+fig1.show()
+fig2.show()
 ```
 
 ### Dash Example

@@ -30,6 +30,7 @@ jupyter:
     order: 11
     page_type: u-guide
     permalink: python/violin/
+    redirect_from: /python/violin-plot/
     thumbnail: thumbnail/violin.jpg
 ---
 

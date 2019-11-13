@@ -30,7 +30,9 @@ jupyter:
     order: 8
     page_type: u-guide
     permalink: python/facet-plots/
-    redirect_from: python/trellis-plots/
+    redirect_from: 
+      - python/trellis-plots/
+      - python/facet-trellis/
     thumbnail: thumbnail/facet-trellis-thumbnail.jpg
 ---
 

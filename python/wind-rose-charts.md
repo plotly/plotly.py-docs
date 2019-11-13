@@ -28,7 +28,7 @@ jupyter:
     language: python
     layout: base
     name: Wind Rose and Polar Bar Charts
-    order: 3
+    order: 20
     page_type: example_index
     permalink: python/wind-rose-charts/
     thumbnail: thumbnail/wind-rose.jpg

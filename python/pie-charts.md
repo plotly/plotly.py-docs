@@ -35,7 +35,10 @@ jupyter:
 
 ### Basic Pie Chart ###
 
-A pie chart ``go.Pie`` object is a circular statistical chart, which is divided into sectors to illustrate numerical proportion. Data visualized by the sectors of the pie is set in `values`. The sector labels are set in `labels`. The sector colors are set in `marker.colors`.
+A pie chart ``go.Pie`` object is a circular statistical chart, which is divided into sectors to illustrate numerical proportion. Data visualized by the sectors of the pie is set in `values`. The sector labels are set in `labels`. The sector colors are set in `marker.colors`. 
+
+If you're looking instead for a multilevel hierarchical pie-like chart, go to the
+[Sunburst tutorial](/python/sunburst-charts/).
 
 ```python
 import plotly.graph_objects as go

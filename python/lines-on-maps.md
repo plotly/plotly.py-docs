@@ -28,7 +28,7 @@ jupyter:
     layout: base
     name: Lines on Maps
     order: 7
-    page_type: example_index
+    page_type: u-guide
     permalink: python/lines-on-maps/
     thumbnail: thumbnail/flight-paths.jpg
 ---

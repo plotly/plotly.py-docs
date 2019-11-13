@@ -29,7 +29,7 @@ jupyter:
     layout: base
     name: Mapbox Density Heatmap
     order: 6
-    page_type: example_index
+    page_type: u-guide
     permalink: python/mapbox-density-heatmaps/
     thumbnail: thumbnail/mapbox-density.png
 ---

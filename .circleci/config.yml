@@ -55,7 +55,9 @@ jobs:
             echo ${mapbox_token} > python/.mapbox_token
             make -kj8 || make -kj8
             curl https://raw.githubusercontent.com/plotly/documentation/source-design-merge/front-matter-ci.py > front-matter-ci.py
+            curl https://raw.githubusercontent.com/plotly/documentation/69c99a624397ed2eaf644afd76f3d42fe1b4015c/check-or-enforce-order.py > check-or-enforce-order.py
             python front-matter-ci.py build/html
+            python check-or-enforce-order.py build/html
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cd build/html
               git init

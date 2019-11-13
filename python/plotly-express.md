@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.8
+    version: 3.7.3
   plotly:
     description: Plotly Express is a terse, consistent, high-level API for rapid data
       exploration and figure generation.
@@ -262,6 +262,18 @@ fig = px.line_ternary(election, a="Joly", b="Coderre", c="Bergeron", color="winn
 fig.show()
 ```
 
+### Images
+
+```python
+import plotly.express as px
+import numpy as np
+img_rgb = np.array([[[255, 0, 0], [0, 255, 0], [0, 0, 255]],
+                    [[0, 255, 0], [0, 0, 255], [255, 0, 0]]
+                   ], dtype=np.uint8)
+fig = px.imshow(img_rgb)
+fig.show()
+```
+
 #### 3D Coordinates
 
 ```python
@@ -309,7 +321,7 @@ fig.show()
 
 ```python
 import plotly.express as px
-px.set_mapbox_access_token(open(".mapbox_token").read())
+#px.set_mapbox_access_token(open(".mapbox_token").read())
 carshare = px.data.carshare()
 fig = px.scatter_mapbox(carshare, lat="centroid_lat", lon="centroid_lon",     color="peak_hour", size="car_hours",
                   color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10)

@@ -29,7 +29,7 @@ jupyter:
     layout: base
     name: Wind Rose and Polar Bar Charts
     order: 20
-    page_type: example_index
+    page_type: u-guide
     permalink: python/wind-rose-charts/
     thumbnail: thumbnail/wind-rose.jpg
 ---

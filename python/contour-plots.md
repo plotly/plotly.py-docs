@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Contour Plots
-    order: 2
+    order: 1
     page_type: example_index
     permalink: python/contour-plots/
     thumbnail: thumbnail/contour.jpg

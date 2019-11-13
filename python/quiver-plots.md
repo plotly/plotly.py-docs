@@ -28,7 +28,7 @@ jupyter:
     language: python
     layout: base
     name: Quiver Plots
-    order: 12
+    order: 11
     permalink: python/quiver-plots/
     thumbnail: thumbnail/quiver-plot.jpg
 ---

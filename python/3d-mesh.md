@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Mesh Plots
-    order: 7
+    order: 10
     page_type: u-guide
     permalink: python/3d-mesh/
     thumbnail: thumbnail/3d-mesh.jpg

@@ -28,7 +28,7 @@ jupyter:
     language: python
     layout: base
     name: Linear and Non-Linear Trendlines
-    order: 10
+    order: 13
     page_type: u-guide
     permalink: python/linear-fits/
     thumbnail: thumbnail/linear_fit.jpg

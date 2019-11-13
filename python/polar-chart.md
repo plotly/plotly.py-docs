@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Polar Charts
-    order: 29
+    order: 17
     page_type: u-guide
     permalink: python/polar-chart/
     thumbnail: thumbnail/polar.gif

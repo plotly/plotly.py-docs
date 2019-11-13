@@ -28,7 +28,7 @@ jupyter:
     language: python
     layout: base
     name: Plotly Express
-    order: 1
+    order: 4
     page_type: example_index
     permalink: python/plotly-express/
     thumbnail: thumbnail/plotly-express.png

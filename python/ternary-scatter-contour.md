@@ -28,7 +28,7 @@ jupyter:
     language: python
     layout: base
     name: Ternary Overlay
-    order: 11
+    order: 9
     page_type: u-guide
     permalink: python/ternary-scatter-contour/
     thumbnail: thumbnail/ternary-scatter-contour.jpg

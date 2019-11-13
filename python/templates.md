@@ -30,6 +30,7 @@ jupyter:
     layout: base
     permalink: python/templates/
     thumbnail: thumbnail/theming-and-templates.png
+    order: 7
 ---
 
 ### Theming and templates

@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Legends
-    order: 13
+    order: 14
     permalink: python/legend/
     thumbnail: thumbnail/legends.gif
 ---

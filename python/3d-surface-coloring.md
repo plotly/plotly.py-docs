@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Surface Coloring
-    order: 7
+    order: 9
     permalink: python/3d-surface-coloring/
     thumbnail: thumbnail/3d-surface-color.jpg
 ---

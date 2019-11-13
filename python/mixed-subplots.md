@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Mixed Subplots
-    order: 5
+    order: 1
     page_type: example_index
     permalink: python/mixed-subplots/
     thumbnail: thumbnail/mixed_subplot.JPG

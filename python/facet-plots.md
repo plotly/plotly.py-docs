@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Facet and Trellis Plots
-    order: 10.2
+    order: 8
     page_type: u-guide
     permalink: python/facet-plots/
     redirect_from: python/trellis-plots/

@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Box Plots
-    order: 3
+    order: 2
     page_type: example_index
     permalink: python/box-plots/
     thumbnail: thumbnail/box.jpg

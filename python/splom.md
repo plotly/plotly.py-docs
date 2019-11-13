@@ -28,7 +28,7 @@ jupyter:
     language: python
     layout: base
     name: Scatterplot Matrix
-    order: 10.2
+    order: 7
     page_type: u-guide
     permalink: python/splom/
     redirect_from: python/scatterplot-matrix/

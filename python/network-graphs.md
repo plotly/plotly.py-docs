@@ -28,7 +28,7 @@ jupyter:
     language: python
     layout: base
     name: Network Graphs
-    order: 14
+    order: 13
     page_type: u-guide
     permalink: python/network-graphs/
     redirect_from:

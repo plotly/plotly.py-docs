@@ -29,7 +29,7 @@ jupyter:
     language: python
     layout: base
     name: Carpet Scatter Plot
-    order: 28
+    order: 16
     page_type: u-guide
     permalink: python/carpet-scatter/
     thumbnail: thumbnail/scattercarpet.jpg

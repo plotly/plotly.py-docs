@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Indicators
-    order: 5
+    order: 7
     page_type: u-guide
     permalink: python/indicator/
     thumbnail: thumbnail/indicator.jpg

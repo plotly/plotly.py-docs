@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Heatmaps
-    order: 3
+    order: 2
     page_type: example_index
     permalink: python/heatmaps/
     redirect_from: python/heatmap/

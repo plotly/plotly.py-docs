@@ -17,7 +17,7 @@ jupyter:
     language: python
     layout: base
     name: Tables
-    order: 7
+    order: 12
     page_type: u-guide
     permalink: python/table/
     thumbnail: thumbnail/table.gif

@@ -33,6 +33,8 @@ jupyter:
     - python/user-guide/
     - python/user-g/
     thumbnail: thumbnail/creating-and-updating-figures.png
+    v4upgrade: true
+    order: 2
 ---
 
 ### Representing Figures

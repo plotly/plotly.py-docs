@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: 2D Histogram Contour
-    order: 30
+    order: 12
     page_type: u-guide
     permalink: python/2d-histogram-contour/
     thumbnail: thumbnail/hist2dcontour.png

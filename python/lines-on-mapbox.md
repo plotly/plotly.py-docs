@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Lines on Mapbox
-    order: 1
+    order: 2
     page_type: example_index
     permalink: python/lines-on-mapbox/
     thumbnail: thumbnail/line_mapbox.jpg

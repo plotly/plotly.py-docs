@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Histograms
-    order: 4
+    order: 3
     page_type: example_index
     permalink: python/histograms/
     redirect_from: /python/histogram-tutorial/

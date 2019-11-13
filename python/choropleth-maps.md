@@ -17,7 +17,7 @@ jupyter:
     language: python
     layout: base
     name: Choropleth Maps
-    order: 5
+    order: 8
     page_type: u-guide
     permalink: python/choropleth-maps/
     thumbnail: thumbnail/choropleth.jpg

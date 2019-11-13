@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: 3D Cone Plots
-    order: 20
+    order: 13
     page_type: u-guide
     permalink: python/cone-plot/
     redirect_from: python/3d-cone/

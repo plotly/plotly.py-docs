@@ -31,6 +31,7 @@ jupyter:
     permalink: python/renderers/
     redirect_from: python/offline/
     thumbnail: thumbnail/displaying-figures.png
+    order: 1
 ---
 
 ### Displaying plotly figures

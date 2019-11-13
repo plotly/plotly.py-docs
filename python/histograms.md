@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to make Histograms in Python with Plotly.
     display_as: statistical
@@ -297,27 +297,27 @@ x = ['1970-01-01', '1970-01-01', '1970-02-01', '1970-04-01', '1970-01-02',
 fig = make_subplots(rows=3, cols=2)
 
 trace0 = go.Histogram(x=x, nbinsx=4)
-trace1 = go.Histogram(x=x, nbinsx = 8)
+trace1 = go.Histogram(x=x, nbinsx=8)
 trace2 = go.Histogram(x=x, nbinsx=10)
-trace3 = go.Histogram(x=x,
+trace3 = go.Histogram(x=x,bingroup=1,
                       xbins=dict(
                       start='1969-11-15',
                       end='1972-03-31',
                       size='M18'), # M18 stands for 18 months
-                      autobinx=False
+                      
                      )
-trace4 = go.Histogram(x=x,
+trace4 = go.Histogram(x=x,bingroup=1,
                       xbins=dict(
                       start='1969-11-15',
                       end='1972-03-31',
                       size='M4'), # 4 months bin size
-                      autobinx=False
+                    
                       )
 trace5 = go.Histogram(x=x,
                       xbins=dict(
                       start='1969-11-15',
                       end='1972-03-31',
-                      size= 'M2'), # 2 months
+                      size='M2'), # 2 months
                       autobinx = False
                       )
 
@@ -327,6 +327,28 @@ fig.append_trace(trace2, 2, 1)
 fig.append_trace(trace3, 2, 2)
 fig.append_trace(trace4, 3, 1)
 fig.append_trace(trace5, 3, 2)
+
+fig.show()
+```
+
+### Share Binning
+In this example both histograms have a compatible bin settings using [bingroup](https://plot.ly/python/reference/#histogram-bingroup) attribute. 
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+fig = go.Figure(go.Histogram(
+    x=np.random.randint(7, size=100),
+    bingroup=1))
+
+fig.add_trace(go.Histogram(
+    x=np.random.randint(7, size=20),
+    bingroup=1))
+
+fig.update_layout(
+    barmode="overlay",
+    bargap=0.1)
 
 fig.show()
 ```

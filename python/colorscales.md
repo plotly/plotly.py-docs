@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.1
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,18 +20,21 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.8
+    version: 3.7.3
   plotly:
     description: How to set colorscales and heatmap colorscales in Python and Plotly.
       Divergent, sequential, and qualitative colorscales.
     display_as: file_settings
+    has_thumbnail: true
+    ipynb: ~notebook_demo/187
     language: python
     layout: base
     name: Colorscales
     order: 20
     permalink: python/colorscales/
-    thumbnail: thumbnail/heatmap_colorscale.jpg
     redirect_from: python/logarithmic-color-scale/
+    thumbnail: thumbnail/heatmap_colorscale.jpg
+    v4upgrade: true
 ---
 
 ### Predefined colorscales in Plotly Express
@@ -193,6 +196,38 @@ fig.add_trace(go.Heatmap(
 fig.show()
 ```
 
+### Setting the Midpoint of a Diverging Colorscale
+The following example uses [marker.cmid](https://plot.ly/python/reference/#scatter-marker-cmid) attribute to set the mid-point of the color domain by scaling 'cmin' and/or 'cmax' to be equidistant to this point. It only has impact when [marker.color](https://plot.ly/python/reference/#scattercarpet-marker-line-color) sets to a numerical array, and 'marker.cauto' is `True`. 
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(
+    y=list(range(-5,15)),
+    mode="markers",
+    marker={"size": 25, "color": list(range(-3,10)), "cmid": 0}))
+
+fig.show()
+```
+
+The heatmap chart uses [marker.zmid](https://plot.ly/python/reference/#scatter-marker-zmid) attribute to set the mid-point of the color domain.
+
+```python
+import plotly.graph_objects as go
+
+a = list(range(-10,5))
+b = list(range(-5,10))
+c = list(range(-5,15))
+         
+fig = go.Figure(go.Heatmap(
+    z=[a, b, c],
+    colorscale='RdBu',
+    zmid=0))
+
+fig.show()
+```
+
 ### Custom Contour Plot Colorscale
 
 ```python
@@ -268,7 +303,7 @@ fig = go.Figure(go.Heatmap(
         [1., 'rgb(0, 0, 0)'],             #100000
 
     ],
-    colorbar = dict(
+    colorbar= dict(
         tick0= 0,
         tickmode= 'array',
         tickvals= [0, 1000, 10000, 100000]

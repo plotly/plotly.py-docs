@@ -303,19 +303,19 @@ trace3 = go.Histogram(x=x,
                       xbins=dict(
                       start='1969-11-15',
                       end='1972-03-31',
-                      size='M18'), # M18 stands for 18 months)
+                      size='M18')) # M18 stands for 18 months
                       
 trace4 = go.Histogram(x=x,
                       xbins=dict(
                       start='1969-11-15',
                       end='1972-03-31',
-                      size='M4') # 4 months bin size)
+                      size='M4')) # M4 months bin size
                       
 trace5 = go.Histogram(x=x,
                       xbins=dict(
                       start='1969-11-15',
                       end='1972-03-31',
-                      size='M2'), # 2 months)
+                      size='M2')) # M2 months
 
 fig.append_trace(trace0, 1, 1)
 fig.append_trace(trace1, 1, 2)

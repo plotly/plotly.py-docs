@@ -299,27 +299,23 @@ fig = make_subplots(rows=3, cols=2)
 trace0 = go.Histogram(x=x, nbinsx=4)
 trace1 = go.Histogram(x=x, nbinsx=8)
 trace2 = go.Histogram(x=x, nbinsx=10)
-trace3 = go.Histogram(x=x,bingroup=1,
+trace3 = go.Histogram(x=x,
                       xbins=dict(
                       start='1969-11-15',
                       end='1972-03-31',
-                      size='M18'), # M18 stands for 18 months
+                      size='M18'), # M18 stands for 18 months)
                       
-                     )
-trace4 = go.Histogram(x=x,bingroup=1,
+trace4 = go.Histogram(x=x,
                       xbins=dict(
                       start='1969-11-15',
                       end='1972-03-31',
-                      size='M4'), # 4 months bin size
-                    
-                      )
+                      size='M4') # 4 months bin size)
+                      
 trace5 = go.Histogram(x=x,
                       xbins=dict(
                       start='1969-11-15',
                       end='1972-03-31',
-                      size='M2'), # 2 months
-                      autobinx = False
-                      )
+                      size='M2'), # 2 months)
 
 fig.append_trace(trace0, 1, 1)
 fig.append_trace(trace1, 1, 2)
@@ -331,8 +327,8 @@ fig.append_trace(trace5, 3, 2)
 fig.show()
 ```
 
-### Share Binning
-In this example both histograms have a compatible bin settings using [bingroup](https://plot.ly/python/reference/#histogram-bingroup) attribute. 
+### Share bins between histograms
+In this example both histograms have a compatible bin settings using [bingroup](https://plot.ly/python/reference/#histogram-bingroup) attribute. Note that traces on the same subplot, and with the same `barmode` ("stack", "relative", "group") are forced into the same `bingroup`, however traces with `barmode = "overlay"` and on different axes (of the same axis type) can have compatible bin settings. Histogram and [histogram2d](https://plot.ly/python/2D-Histogram/) trace can share the same `bingroup`.
 
 ```python
 import plotly.graph_objects as go

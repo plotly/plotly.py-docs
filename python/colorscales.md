@@ -206,7 +206,7 @@ fig = go.Figure()
 fig.add_trace(go.Scatter(
     y=list(range(-5,15)),
     mode="markers",
-    marker={"size": 25, "color": list(range(-10,10)), "cmid": 0}))
+    marker={"size": 25, "color": list(range(-3,10)), "cmid": 0}))
 
 fig.show()
 ```
@@ -216,8 +216,8 @@ The heatmap chart uses [marker.zmid](https://plot.ly/python/reference/#scatter-m
 ```python
 import plotly.graph_objects as go
 
-a = list(range(-15,5))
-b = list(range(-10,10))
+a = list(range(-10,5))
+b = list(range(-5,10))
 c = list(range(-5,15))
          
 fig = go.Figure(go.Heatmap(

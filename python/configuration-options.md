@@ -122,7 +122,7 @@ fig.show(config={
 })
 ```
 
-### Double Click Delay
+### Double-click Delay
 Sets the maximum delay between two consecutive clicks to be interpreted as a double-click in ms. This is the time interval between first mousedown, and' second mouseup. The default timing is 300 ms (less than half a second).
 This setting propagates to all on-subplot double clicks (except for geo and mapbox). 
 
@@ -138,18 +138,6 @@ fig = go.Figure(go.Bar(
 fig.update_layout(xaxis = {'type': 'date'})
 
 fig.show(config = {'doubleClickDelay': 1000})
-```
-
-### `Edit in Chart Studio` Modebar Button
-
-```python
-import plotly.graph_objects as go
-
-fig = go.Figure(go.Scatter(y = [1, 2, 1, 3, 4, 2]))
-
-fig.update_layout()
-
-fig.show(config = {'showEditInChartStudio': True})
 ```
 
 #### Reference

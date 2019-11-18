@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.1.6
+      jupytext_version: 1.2.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -23,8 +23,8 @@ jupyter:
     version: 3.7.3
   plotly:
     description: How to adjust axes properties in python. Includes examples of linear
-      and logarithmic axes, axes titles, styling and coloring axes and grid lines, and
-      more.
+      and logarithmic axes, axes titles, styling and coloring axes and grid lines,
+      and more.
     display_as: file_settings
     language: python
     layout: base
@@ -218,6 +218,31 @@ fig.add_trace(go.Scatter(y=[1, 0]))
 
 fig.update_xaxes(title_text='Time')
 fig.update_yaxes(title_text='Value A')
+
+fig.show()
+```
+
+### Set axis title position
+
+This example sets `standoff` attribute to cartesian axes to determine the distance between the tick labels and the axis title. Note that the axis title position is always constrained within the margins, so the actual standoff distance is always less than the set or default value. By default [automargin](https://plot.ly/python/setting-graph-size/#automatically-adjust-margins) is `True` in Plotly template for the cartesian axis, so the margins will be pushed to fit the axis title at given standoff distance.
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Scatter(
+    mode = "lines+markers",
+    y = [4, 1, 3],
+    x = ["December", "January", "February"]))
+
+fig.update_layout(
+    xaxis = go.layout.XAxis(
+        tickangle = 90,
+        title_text = "Month",
+        title_font = {"size": 20},
+        title_standoff = 25),
+    yaxis = go.layout.YAxis(
+        title_text = "Temperature",
+        title_standoff = 25))
 
 fig.show()
 ```

@@ -134,7 +134,7 @@ fig.show()
 
 ### Define Node Position
 
-The following axample sets [node.x](https://plot.ly/python/reference/#sankey-node-x) and [node.y](https://plot.ly/python/reference/#sankey-node-y) to place nodes in the specified locations, except in the [snap arrangement](https://plot.ly/python/reference/#sankey-arrangement) to avoid overlapping of the nodes, therefore, an automatic snapping of elements will be set to define the padding between nodes via [nodepad](https://plot.ly/python/reference/#sankey-node-pad). The other possible arrangements are:<font color='blue'> 1)</font> perpendicular <font color='blue'>2)</font> freeform <font color='blue'>3)</font> fixed
+The following example sets [node.x](https://plot.ly/python/reference/#sankey-node-x) and `node.y` to place nodes in the specified locations, except in the `snap arrangement` (default behaviour when `node.x` and `node.y` are not defined) to avoid overlapping of the nodes, therefore, an automatic snapping of elements will be set to define the padding between nodes via [nodepad](https://plot.ly/python/reference/#sankey-node-pad). The other possible arrangements are:<font color='blue'> 1)</font> perpendicular <font color='blue'>2)</font> freeform <font color='blue'>3)</font> fixed
 
 ```python
 import plotly.graph_objects as go
@@ -145,7 +145,7 @@ fig = go.Figure(go.Sankey(
         "label": ["A", "B", "C", "D", "E", "F"],
         "x": [0.2, 0.1, 0.5, 0.7, 0.3, 0.5],
         "y": [0.7, 0.5, 0.2, 0.4, 0.2, 0.3],
-        'pad':10},
+        'pad':10},  # 10 Pixels 
     link = {
         "source": [0, 0, 1, 2, 5, 4, 3, 5],
         "target": [5, 3, 4, 3, 0, 2, 2, 3],

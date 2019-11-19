@@ -283,6 +283,27 @@ fig.add_trace(go.Heatmap(
 fig.show()
 ```
 
+### Share Color Axis
+This example shows how to specify the color scale and color bar per trace. To share colorscale information in multiple subplots, you can use [coloraxis](https://plot.ly/javascript/reference/#scatter-marker-line-coloraxis).
+Below we show how to set a reference coloraxis to a shared coloraxis, which are set in the layout. Note that multiple color scales can be linked to the same color.
+
+
+```python
+import plotly.graph_objects as go
+
+fig = make_subplots(1,2)
+
+fig.add_trace(
+ go.Heatmap(x = [1, 2, 3, 4], z = [[1, 2, 3, 4], [4, -3, -1, 1]], coloraxis = "coloraxis"), 1,1)
+
+fig.add_trace(
+ go.Heatmap(x = [3, 4, 5, 6], z = [[10, 2, 1, 0], [4, 3, 5, 6]], coloraxis = "coloraxis"),1,2)
+fig.update_layout(coloraxis = {'colorscale':'jet'})
+
+fig.show()
+```
+
+
 ### Logarithmic Colorscale
 
 ```python

@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.7
+    version: 3.7.3
   plotly:
     description: How to make Pie Charts.
     display_as: basic
@@ -35,7 +35,10 @@ jupyter:
 
 ### Basic Pie Chart ###
 
-A pie chart ``go.Pie`` object is a circular statistical chart, which is divided into sectors to illustrate numerical proportion. Data visualized by the sectors of the pie is set in `values`. The sector labels are set in `labels`. The sector colors are set in `marker.colors`.
+A pie chart ``go.Pie`` object is a circular statistical chart, which is divided into sectors to illustrate numerical proportion. Data visualized by the sectors of the pie is set in `values`. The sector labels are set in `labels`. The sector colors are set in `marker.colors`. 
+
+If you're looking instead for a multilevel hierarchical pie-like chart, go to the
+[Sunburst tutorial](/python/sunburst-charts/).
 
 ```python
 import plotly.graph_objects as go
@@ -162,6 +165,24 @@ fig.add_trace(go.Pie(labels=labels, values=[21, 15, 3, 19, 1], scalegroup='one',
 
 fig.update_layout(title_text='World GDP')
 fig.show()
+```
+
+### See Also: Sunburst charts
+
+For multilevel pie charts representing hierarchical data, you can use the `Sunburst` chart. A simple example is given below, for more information see the [tutorial on Sunburst charts](/python/sunburst-charts/).
+
+```python
+import plotly.graph_objects as go
+
+fig =go.Figure(go.Sunburst(
+    labels=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+    parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
+    values=[10, 14, 12, 10, 2, 6, 6, 4, 4],
+))
+fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
+
+fig.show()
+
 ```
 
 ### Dash Example

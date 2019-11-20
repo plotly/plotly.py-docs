@@ -34,6 +34,8 @@ jupyter:
     thumbnail: thumbnail/axes.png
 ---
 
+**See also** the tutorials on [subplots](/python/subplots) and [multiple axes](/python/multiple-axes/).
+
 #### Toggling Axes Lines, Ticks, Labels, and Autorange
 ##### Toggling Axis grid lines
 Axis grid lines can be disabled by setting the `showgrid` property to `False` for the x and/or y axis.

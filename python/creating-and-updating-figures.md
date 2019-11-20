@@ -489,6 +489,10 @@ fig.show()
 
 There are also `for_each_xaxis` and `for_each_yaxis` methods that are analogous to the `for_each_trace` method described above. For non-cartesian subplot types (e.g. polar), there are additional `update_{type}` and `for_each_{type}` methods (e.g. `update_polar`, `for_each_polar`).
 
+### Other update methods
+
+`go` figures also support `update_layout_images` in order to [update background layout images](/python/images/), `update_annotations` in order to [update annotations](/python/text-and-annotations/#multiple-annotations), and `update-shapes` in order to [update shapes](/python/shapes/).
+
 
 #### Chaining figure operations
 All of the figure update operations described above are methods that return a reference to the figure being modified.  This makes it possible the chain multiple figure modification operations together into a single expression.

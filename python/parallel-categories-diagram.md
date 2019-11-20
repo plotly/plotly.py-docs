@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.2.1
+      jupytext_version: 1.1.1
   kernelspec:
     display_name: Python 3
     language: python
@@ -20,7 +20,7 @@ jupyter:
     name: python
     nbconvert_exporter: python
     pygments_lexer: ipython3
-    version: 3.6.8
+    version: 3.7.3
   plotly:
     description: How to make parallel categories diagrams in Python with Plotly.
     display_as: statistical
@@ -37,6 +37,8 @@ jupyter:
 The parallel categories diagram is a visualization of multi-dimensional categorical data sets.  Each variable in the data set is represented by a column of rectangles, where each rectangle corresponds to a discrete value taken on by that variable.  The relative heights of the rectangles reflect the relative frequency of occurrence of the corresponding value.
 
 Combinations of category rectangles across dimensions are connected by ribbons, where the height of the ribbon corresponds to the relative frequency of occurrence of the combination of categories in the data set.
+
+For other representations of multivariate data, also see [parallel coordinates](/python/parallel-coordinates-plot/), [radar charts](/python/radar-chart/) and [scatterplot matrix (SPLOM)](/python/splom/).
 
 
 #### Basic Parallel Category Diagram with plotly.express

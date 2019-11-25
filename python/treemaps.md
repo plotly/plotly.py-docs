@@ -97,7 +97,7 @@ fig.show()
 ### Set Color of Treemap Sectors
 
 There are three different ways to change the color of the sectors in Treemap:
- 1) [marker.colors](https://plot.ly/python/reference/#treemap-marker-colors), 2) [colorway](https://plot.ly/python/reference/#treemap-colorway), 3) [colorscale](https://plot.ly/python/reference/#treemap-colorscale). The following examples show how to use each of them.
+ 1) [marker.colors](https://plot.ly/python/reference/#treemap-marker-colors), 2) [colorway](https://plot.ly/python/reference/#treemap-colorway), 3) [colorscale](https://plot.ly/python/reference/#treemap-colorscale). The following examples show how to use each of them. [count](https://plot.ly/python/reference/#treemap-count) attribute counts the number of `leaves` and /or `branches` when the `value` array is not provided.
 
 ```python
 import plotly.graph_objects as go
@@ -108,6 +108,7 @@ parents = ["", "A1", "A2", "A3", "A4", "", "B1"]
 fig = go.Figure(go.Treemap(
     labels = labels,
     parents = parents,
+    count = 'leaves+branches', 
     marker_colors = ["pink", "royalblue", "lightgray", "purple", "cyan", "lightgray", "lightblue"]))
 
 fig.show()

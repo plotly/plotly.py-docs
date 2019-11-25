@@ -55,8 +55,9 @@ fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
 
 fig.show()
 ```
+### Setting the width of wedges with count
 
-Here is the same example using [count](https://plot.ly/python/reference/#sunburst-count) attribute, that counts the number of `leaves` and/or `branches` when the `values` array is not provided.
+Here is the same example using [count](https://plot.ly/python/reference/#sunburst-count) attribute, that counts the number of `leaves` and/or `branches` when the `values` array is not provided. The default value of count is `leaves`. 
 ```python
 import plotly.graph_objects as go
 
@@ -70,7 +71,6 @@ fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
 
 fig.show()
 ```
-
 ### Sunburst with Repeated Labels
 
 ```python

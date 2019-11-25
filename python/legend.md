@@ -217,7 +217,32 @@ fig.update_layout(
 
 fig.show()
 ```
+### Legend Size
 
+In this example [itemsizing](https://plot.ly/python/reference/#layout-legend-itemsizing) attribute determines the legend items symbols remain constant, regardless of how tiny/huge the bubbles would be in the graph.   
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
+    x=[1, 2, 3, 4, 5],
+    y=[1, 2, 3, 4, 5],
+    mode='markers',
+    marker={'size':[10,9,3,6,4], 'sizemode': 'diameter'}
+))
+
+fig.add_trace(go.Scatter(
+    x=[1, 2, 3, 4, 5],
+    y=[5, 4, 3, 2, 1],
+    mode='markers',
+    marker={'size':[700,2000,400,1000,750], 'sizemode':'area'}
+))
+
+fig.update_layout(legend= {'itemsizing': 'constant'})
+
+fig.show()
+```
 #### Grouped Legend
 
 ```python

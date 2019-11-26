@@ -26,10 +26,11 @@ jupyter:
     display_as: 3d_charts
     language: python
     layout: base
+    title: i have one
     name: 3D Mesh Plots
-    order: 10
-    page_type: u-guide
-    permalink: python/3d-mesh/
+    order: 10.1
+    page_type: example-index
+    permalink: python/3d-mesh
     thumbnail: thumbnail/3d-mesh.jpg
 ---
 

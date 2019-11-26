@@ -26,12 +26,11 @@ jupyter:
     display_as: 3d_charts
     language: python
     layout: base
-    title: i have one
-    name: 3D Mesh Plots
+    title: 3D Mesh Plots
     order: 10.1
-    page_type: example-index
+    page_type: example_index
     permalink: python/3d-mesh
-    thumbnail: thumbnail/3d-mesh.jpg
+    redirect_from: python/line-and-scatter/
 ---
 
 ### Simple 3D Mesh example ###

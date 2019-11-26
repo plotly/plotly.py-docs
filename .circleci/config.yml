@@ -54,8 +54,8 @@ jobs:
             . venv/bin/activate
             echo ${mapbox_token} > python/.mapbox_token
             make -kj8 || make -kj8
-            curl https://raw.githubusercontent.com/plotly/documentation/source-design-merge/front-matter-ci.py > front-matter-ci.py
-            curl https://raw.githubusercontent.com/plotly/documentation/source-design-merge/check-or-enforce-order.py > check-or-enforce-order.py
+            curl https://raw.githubusercontent.com/plotly/documentation/f32dd8f57f6a689f9a6df8983086d739cc9ee9fa/front-matter-ci.py > front-matter-ci.py
+            curl https://raw.githubusercontent.com/plotly/documentation/f32dd8f57f6a689f9a6df8983086d739cc9ee9fa/check-or-enforce-order.py > check-or-enforce-order.py
             python front-matter-ci.py build/html
             python check-or-enforce-order.py build/html
             if [ "${CIRCLE_BRANCH}" == "master" ]; then

@@ -31,6 +31,7 @@ jupyter:
     page_type: example_index
     permalink: python/pie-charts/
     thumbnail: thumbnail/pie-chart.jpg
+    redirect_from: /python/pie
 ---
 
 ### Basic Pie Chart ###

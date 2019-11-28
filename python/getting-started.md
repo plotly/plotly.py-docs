@@ -29,7 +29,9 @@ jupyter:
     name: Getting Started with Plotly
     page_type: u-guide
     permalink: python/getting-started/
-    redirect_from: python/getting_started/
+    redirect_from: 
+      - python/getting_started/
+      - /python/pytables/
 ---
 
 <!-- #region -->

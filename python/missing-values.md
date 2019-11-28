@@ -27,7 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Missing Values
-    order: 30
+    order: 27
     permalink: python/missing-values/
     thumbnail: thumbnail/missing_values.jpg
 ---

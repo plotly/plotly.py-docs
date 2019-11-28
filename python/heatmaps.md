@@ -48,13 +48,16 @@ fig.show()
 
 ### Heatmap with Categorical Axis Labels
 
+In this example we also show how to ignore [hovertext](https://plot.ly/python/hover-text-and-formatting/) when we have [missing values](https://plot.ly/python/missing_values) in the data by setting the [hoverongaps](https://plot.ly/python/reference/#heatmap-hoverongaps) to False. 
+
 ```python
 import plotly.graph_objects as go
 
 fig = go.Figure(data=go.Heatmap(
-                   z=[[1, 20, 30, 50, 1], [20, 1, 60, 80, 30], [30, 60, 1, -10, 20]],
+                   z=[[1, None, 30, 50, 1], [20, 1, 60, 80, 30], [30, 60, 1, -10, 20]],
                    x=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                   y=['Morning', 'Afternoon', 'Evening']))
+                   y=['Morning', 'Afternoon', 'Evening'],
+                   hoverongaps = False))
 fig.show()
 ```
 

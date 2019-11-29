@@ -252,7 +252,9 @@ fig.add_trace(go.Contour(
 fig.show()
 ```
 
-### Custom Colorbar
+### Custom Colorbar Title, Labels, and Ticks
+
+Like axes, you can customize the colorbar ticks, labels, and values with `ticks`, `ticktext`, and `tickvals`.
 
 ```python
 import plotly.graph_objects as go

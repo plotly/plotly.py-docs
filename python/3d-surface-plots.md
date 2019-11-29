@@ -84,7 +84,7 @@ import plotly.graph_objects as go
 
 fig = go.Figure(go.Surface(
     contours = {
-        "x": {"show": True, "start": 1.5, "end": 2, "size": 0.04},
+        "x": {"show": True, "start": 1.5, "end": 2, "size": 0.04, "color":"white"},
         "z": {"show": True, "start": 0.5, "end": 0.8, "size": 0.05}
     },
     x = [1,2,3,4,5],

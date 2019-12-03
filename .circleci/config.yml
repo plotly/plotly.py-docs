@@ -58,17 +58,6 @@ jobs:
             curl https://raw.githubusercontent.com/plotly/documentation/source-design-merge/check-or-enforce-order.py > check-or-enforce-order.py
             python front-matter-ci.py build/html
             python check-or-enforce-order.py build/html
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              cd build/html
-              git init
-              git config user.name nicolaskruchten
-              git config user.email nicolas@plot.ly
-              git add *
-              git commit -m build
-              git push --force git@github.com:plotly/plotly.py-docs.git master:built
-              rm -rf .git
-              cd ../..
-            fi
             tar -zcf build/html.tgz build/html
             rm -rf build/html build/ipynb
 
@@ -78,19 +67,6 @@ jobs:
             . venv/bin/activate
             cd apidoc
             make html
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              cd _build/html
-              touch .nojekyll
-              git init
-              git config user.name nicolaskruchten
-              git config user.email nicolas@plot.ly
-              git add *
-              git add .nojekyll
-              git commit -m build
-              git push --force git@github.com:plotly/plotly.py-docs.git master:gh-pages
-              rm -rf .git
-              cd ../..
-            fi
 
             cd ..
 

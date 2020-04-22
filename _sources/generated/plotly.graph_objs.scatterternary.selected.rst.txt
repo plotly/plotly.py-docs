@@ -1,0 +1,10 @@
+plotly.graph\_objs.scatterternary.selected package
+==================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scatterternary.selected
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,20 @@
+plotly.graph\_objs.indicator.gauge package
+==========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.indicator.gauge.axis
+   plotly.graph_objs.indicator.gauge.bar
+   plotly.graph_objs.indicator.gauge.step
+   plotly.graph_objs.indicator.gauge.threshold
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.indicator.gauge
+   :members:
+   :undoc-members:
+   :show-inheritance:

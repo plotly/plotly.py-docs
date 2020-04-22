@@ -1,0 +1,17 @@
+plotly.graph\_objs.sankey.link package
+======================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.sankey.link.hoverlabel
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.sankey.link
+   :members:
+   :undoc-members:
+   :show-inheritance:

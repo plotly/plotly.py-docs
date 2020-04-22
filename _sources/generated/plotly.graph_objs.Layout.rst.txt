@@ -1,0 +1,27 @@
+:mod:`plotly.graph_objs`.Layout
+====================================================
+
+
+.. currentmodule:: plotly.graph_objs
+
+.. autoclass:: Layout
+
+   
+   .. automethod:: __init__
+   
+
+:mod:`plotly.graph_objs`.layout
+========================================================
+
+.. autosummary::
+   
+   plotly.graph_objects.layout
+
+.. automodule:: plotly.graph_objects.layout
+   :members:
+   :undoc-members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

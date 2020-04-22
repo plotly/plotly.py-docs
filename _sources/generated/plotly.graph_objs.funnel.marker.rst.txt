@@ -1,0 +1,17 @@
+plotly.graph\_objs.funnel.marker package
+========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.funnel.marker.colorbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.funnel.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

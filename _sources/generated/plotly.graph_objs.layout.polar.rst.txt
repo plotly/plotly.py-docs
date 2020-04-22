@@ -1,0 +1,18 @@
+plotly.graph\_objs.layout.polar package
+=======================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.layout.polar.angularaxis
+   plotly.graph_objs.layout.polar.radialaxis
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.layout.polar
+   :members:
+   :undoc-members:
+   :show-inheritance:

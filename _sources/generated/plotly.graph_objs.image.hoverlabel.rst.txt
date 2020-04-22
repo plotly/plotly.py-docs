@@ -1,0 +1,10 @@
+plotly.graph\_objs.image.hoverlabel package
+===========================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.image.hoverlabel
+   :members:
+   :undoc-members:
+   :show-inheritance:

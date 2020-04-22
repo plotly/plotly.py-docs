@@ -1,0 +1,18 @@
+plotly.graph\_objs.histogram2d package
+======================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.histogram2d.colorbar
+   plotly.graph_objs.histogram2d.hoverlabel
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.histogram2d
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,17 @@
+plotly.graph\_objs.isosurface.colorbar package
+==============================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.isosurface.colorbar.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.isosurface.colorbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

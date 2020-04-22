@@ -1,0 +1,18 @@
+plotly.graph\_objs.carpet package
+=================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.carpet.aaxis
+   plotly.graph_objs.carpet.baxis
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.carpet
+   :members:
+   :undoc-members:
+   :show-inheritance:

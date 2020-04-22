@@ -1,0 +1,19 @@
+plotly.graph\_objs.funnel package
+=================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.funnel.connector
+   plotly.graph_objs.funnel.hoverlabel
+   plotly.graph_objs.funnel.marker
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.funnel
+   :members:
+   :undoc-members:
+   :show-inheritance:

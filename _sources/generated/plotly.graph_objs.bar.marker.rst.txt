@@ -1,0 +1,17 @@
+plotly.graph\_objs.bar.marker package
+=====================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.bar.marker.colorbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.bar.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

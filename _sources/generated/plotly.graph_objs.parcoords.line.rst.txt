@@ -1,0 +1,17 @@
+plotly.graph\_objs.parcoords.line package
+=========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.parcoords.line.colorbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.parcoords.line
+   :members:
+   :undoc-members:
+   :show-inheritance:

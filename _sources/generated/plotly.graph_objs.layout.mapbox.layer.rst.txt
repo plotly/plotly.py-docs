@@ -1,0 +1,17 @@
+plotly.graph\_objs.layout.mapbox.layer package
+==============================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.layout.mapbox.layer.symbol
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.layout.mapbox.layer
+   :members:
+   :undoc-members:
+   :show-inheritance:

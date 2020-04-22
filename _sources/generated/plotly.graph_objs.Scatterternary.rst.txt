@@ -1,0 +1,27 @@
+:mod:`plotly.graph_objs`.Scatterternary
+============================================================
+
+
+.. currentmodule:: plotly.graph_objs
+
+.. autoclass:: Scatterternary
+
+   
+   .. automethod:: __init__
+   
+
+:mod:`plotly.graph_objs`.scatterternary
+================================================================
+
+.. autosummary::
+   
+   plotly.graph_objects.scatterternary
+
+.. automodule:: plotly.graph_objects.scatterternary
+   :members:
+   :undoc-members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

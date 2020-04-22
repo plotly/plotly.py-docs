@@ -1,0 +1,19 @@
+plotly.graph\_objs.pie package
+==============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.pie.hoverlabel
+   plotly.graph_objs.pie.marker
+   plotly.graph_objs.pie.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.pie
+   :members:
+   :undoc-members:
+   :show-inheritance:

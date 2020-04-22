@@ -1,0 +1,19 @@
+plotly.graph\_objs.layout.ternary package
+=========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.layout.ternary.aaxis
+   plotly.graph_objs.layout.ternary.baxis
+   plotly.graph_objs.layout.ternary.caxis
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.layout.ternary
+   :members:
+   :undoc-members:
+   :show-inheritance:

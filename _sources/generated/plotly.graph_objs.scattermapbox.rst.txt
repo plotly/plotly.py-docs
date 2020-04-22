@@ -1,0 +1,20 @@
+plotly.graph\_objs.scattermapbox package
+========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.scattermapbox.hoverlabel
+   plotly.graph_objs.scattermapbox.marker
+   plotly.graph_objs.scattermapbox.selected
+   plotly.graph_objs.scattermapbox.unselected
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scattermapbox
+   :members:
+   :undoc-members:
+   :show-inheritance:

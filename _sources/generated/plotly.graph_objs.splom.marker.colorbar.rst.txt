@@ -1,0 +1,17 @@
+plotly.graph\_objs.splom.marker.colorbar package
+================================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.splom.marker.colorbar.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.splom.marker.colorbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

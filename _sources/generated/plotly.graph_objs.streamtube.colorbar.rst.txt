@@ -1,0 +1,17 @@
+plotly.graph\_objs.streamtube.colorbar package
+==============================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.streamtube.colorbar.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.streamtube.colorbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

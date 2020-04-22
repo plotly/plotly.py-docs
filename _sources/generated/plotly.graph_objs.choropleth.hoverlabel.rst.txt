@@ -1,0 +1,10 @@
+plotly.graph\_objs.choropleth.hoverlabel package
+================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.choropleth.hoverlabel
+   :members:
+   :undoc-members:
+   :show-inheritance:

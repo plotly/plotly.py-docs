@@ -1,0 +1,17 @@
+plotly.graph\_objs.scattergl.marker.colorbar package
+====================================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.scattergl.marker.colorbar.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scattergl.marker.colorbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,10 @@
+plotly.graph\_objs.choropleth.colorbar.title package
+====================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.choropleth.colorbar.title
+   :members:
+   :undoc-members:
+   :show-inheritance:

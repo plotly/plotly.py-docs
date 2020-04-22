@@ -1,0 +1,21 @@
+plotly.graph\_objs.choropleth package
+=====================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.choropleth.colorbar
+   plotly.graph_objs.choropleth.hoverlabel
+   plotly.graph_objs.choropleth.marker
+   plotly.graph_objs.choropleth.selected
+   plotly.graph_objs.choropleth.unselected
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.choropleth
+   :members:
+   :undoc-members:
+   :show-inheritance:

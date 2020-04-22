@@ -1,0 +1,1298 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.graph_objects.indicator.gauge package &#8212;  4.6.0 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.express.html"><code class="docutils literal notranslate"><span class="pre">plotly.express</span></code>: high-level interface for data visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.graph_objects.html"><code class="docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>: low-level interface to figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.subplots.html"><code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code>: helper function for laying out multi-plot figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.figure_factory.html"><code class="docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>: helper methods for building specific complex charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.io.html"><code class="docutils literal notranslate"><span class="pre">plotly.io</span></code>: low-level interface for displaying, reading and writing figures</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">plotly.graph_objects.indicator.gauge package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#module-plotly.graph_objects.indicator.gauge">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-graph-objs-indicator-gauge-package">
+<h1>plotly.graph_objects.indicator.gauge package<a class="headerlink" href="#plotly-graph-objs-indicator-gauge-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plotly.graph_objects.indicator.gauge.axis.html">plotly.graph_objects.indicator.gauge.axis package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly.graph_objects.indicator.gauge.axis.html#module-plotly.graph_objects.indicator.gauge.axis">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotly.graph_objects.indicator.gauge.bar.html">plotly.graph_objects.indicator.gauge.bar package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly.graph_objects.indicator.gauge.bar.html#module-plotly.graph_objects.indicator.gauge.bar">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotly.graph_objects.indicator.gauge.step.html">plotly.graph_objects.indicator.gauge.step package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly.graph_objects.indicator.gauge.step.html#module-plotly.graph_objects.indicator.gauge.step">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotly.graph_objects.indicator.gauge.threshold.html">plotly.graph_objects.indicator.gauge.threshold package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly.graph_objects.indicator.gauge.threshold.html#module-plotly.graph_objects.indicator.gauge.threshold">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-plotly.graph_objects.indicator.gauge">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-plotly.graph_objects.indicator.gauge" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="plotly.graph_objects.indicator.gauge.Threshold">
+<em class="property">class </em><code class="sig-prename descclassname">plotly.graph_objects.indicator.gauge.</code><code class="sig-name descname">Threshold</code><span class="sig-paren">(</span><em class="sig-param">arg=None</em>, <em class="sig-param">line=None</em>, <em class="sig-param">thickness=None</em>, <em class="sig-param">value=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseTraceHierarchyType" title="plotly.basedatatypes.BaseTraceHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseTraceHierarchyType</span></code></a></p>
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Threshold.line">
+<em class="property">property </em><code class="sig-name descname">line</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Threshold.line" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘line’ property is an instance of Line
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.indicator.gauge.threshold.html#plotly.graph_objects.indicator.gauge.threshold.Line" title="plotly.graph_objects.indicator.gauge.threshold.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.indicator.gauge.threshold.Line</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Line constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>color</dt><dd><p>Sets the color of the threshold line.</p>
+</dd>
+<dt>width</dt><dd><p>Sets the width (in px) of the threshold line.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.indicator.gauge.threshold.html#plotly.graph_objects.indicator.gauge.threshold.Line" title="plotly.graph_objects.indicator.gauge.threshold.Line">plotly.graph_objects.indicator.gauge.threshold.Line</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Threshold.thickness">
+<em class="property">property </em><code class="sig-name descname">thickness</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Threshold.thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the thickness of the threshold line as a fraction of the
+thickness of the gauge.</p>
+<dl class="simple">
+<dt>The ‘thickness’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Threshold.value">
+<em class="property">property </em><code class="sig-name descname">value</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Threshold.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a treshold value drawn as a line.</p>
+<dl class="simple">
+<dt>The ‘value’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plotly.graph_objects.indicator.gauge.Step">
+<em class="property">class </em><code class="sig-prename descclassname">plotly.graph_objects.indicator.gauge.</code><code class="sig-name descname">Step</code><span class="sig-paren">(</span><em class="sig-param">arg=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">line=None</em>, <em class="sig-param">name=None</em>, <em class="sig-param">range=None</em>, <em class="sig-param">templateitemname=None</em>, <em class="sig-param">thickness=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseTraceHierarchyType" title="plotly.basedatatypes.BaseTraceHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseTraceHierarchyType</span></code></a></p>
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Step.color">
+<em class="property">property </em><code class="sig-name descname">color</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Step.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the background color of the arc.</p>
+<dl class="simple">
+<dt>The ‘color’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Step.line">
+<em class="property">property </em><code class="sig-name descname">line</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Step.line" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘line’ property is an instance of Line
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.indicator.gauge.step.html#plotly.graph_objects.indicator.gauge.step.Line" title="plotly.graph_objects.indicator.gauge.step.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.indicator.gauge.step.Line</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Line constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>color</dt><dd><p>Sets the color of the line enclosing each
+sector.</p>
+</dd>
+<dt>width</dt><dd><p>Sets the width (in px) of the line enclosing
+each sector.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.indicator.gauge.step.html#plotly.graph_objects.indicator.gauge.step.Line" title="plotly.graph_objects.indicator.gauge.step.Line">plotly.graph_objects.indicator.gauge.step.Line</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Step.name">
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Step.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>When used in a template, named items are created in the output
+figure in addition to any items the figure already has in this
+array. You can modify these items in the output figure by
+making your own item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code> matching this
+<code class="docutils literal notranslate"><span class="pre">name</span></code> alongside your modifications (including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code>
+or <code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code> to hide it). Has no effect outside of a
+template.</p>
+<dl class="simple">
+<dt>The ‘name’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Step.range">
+<em class="property">property </em><code class="sig-name descname">range</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Step.range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the range of this axis.</p>
+<blockquote>
+<div><p>The ‘range’ property is an info array that may be specified as:</p>
+<ul class="simple">
+<li><p>a list or tuple of 2 elements where:</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="0">
+<li><dl class="simple">
+<dt>The ‘range[0]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The ‘range[1]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<p>list</p>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Step.templateitemname">
+<em class="property">property </em><code class="sig-name descname">templateitemname</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Step.templateitemname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to refer to a named item in this array in the template.
+Named items from the template will be created even without a
+matching item in the input figure, but you can modify one by
+making an item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code> matching its <code class="docutils literal notranslate"><span class="pre">name</span></code>,
+alongside your modifications (including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code> or
+<code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code> to hide it). If there is no template or no
+matching item, this item will be hidden unless you explicitly
+show it with <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">true</span></code>.</p>
+<dl class="simple">
+<dt>The ‘templateitemname’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Step.thickness">
+<em class="property">property </em><code class="sig-name descname">thickness</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Step.thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the thickness of the bar as a fraction of the total
+thickness of the gauge.</p>
+<dl class="simple">
+<dt>The ‘thickness’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plotly.graph_objects.indicator.gauge.Bar">
+<em class="property">class </em><code class="sig-prename descclassname">plotly.graph_objects.indicator.gauge.</code><code class="sig-name descname">Bar</code><span class="sig-paren">(</span><em class="sig-param">arg=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">line=None</em>, <em class="sig-param">thickness=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseTraceHierarchyType" title="plotly.basedatatypes.BaseTraceHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseTraceHierarchyType</span></code></a></p>
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Bar.color">
+<em class="property">property </em><code class="sig-name descname">color</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Bar.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the background color of the arc.</p>
+<dl class="simple">
+<dt>The ‘color’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Bar.line">
+<em class="property">property </em><code class="sig-name descname">line</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Bar.line" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘line’ property is an instance of Line
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.indicator.gauge.bar.html#plotly.graph_objects.indicator.gauge.bar.Line" title="plotly.graph_objects.indicator.gauge.bar.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.indicator.gauge.bar.Line</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Line constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>color</dt><dd><p>Sets the color of the line enclosing each
+sector.</p>
+</dd>
+<dt>width</dt><dd><p>Sets the width (in px) of the line enclosing
+each sector.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.indicator.gauge.bar.html#plotly.graph_objects.indicator.gauge.bar.Line" title="plotly.graph_objects.indicator.gauge.bar.Line">plotly.graph_objects.indicator.gauge.bar.Line</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Bar.thickness">
+<em class="property">property </em><code class="sig-name descname">thickness</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Bar.thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the thickness of the bar as a fraction of the total
+thickness of the gauge.</p>
+<dl class="simple">
+<dt>The ‘thickness’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plotly.graph_objects.indicator.gauge.Axis">
+<em class="property">class </em><code class="sig-prename descclassname">plotly.graph_objects.indicator.gauge.</code><code class="sig-name descname">Axis</code><span class="sig-paren">(</span><em class="sig-param">arg=None</em>, <em class="sig-param">dtick=None</em>, <em class="sig-param">exponentformat=None</em>, <em class="sig-param">nticks=None</em>, <em class="sig-param">range=None</em>, <em class="sig-param">separatethousands=None</em>, <em class="sig-param">showexponent=None</em>, <em class="sig-param">showticklabels=None</em>, <em class="sig-param">showtickprefix=None</em>, <em class="sig-param">showticksuffix=None</em>, <em class="sig-param">tick0=None</em>, <em class="sig-param">tickangle=None</em>, <em class="sig-param">tickcolor=None</em>, <em class="sig-param">tickfont=None</em>, <em class="sig-param">tickformat=None</em>, <em class="sig-param">tickformatstops=None</em>, <em class="sig-param">tickformatstopdefaults=None</em>, <em class="sig-param">ticklen=None</em>, <em class="sig-param">tickmode=None</em>, <em class="sig-param">tickprefix=None</em>, <em class="sig-param">ticks=None</em>, <em class="sig-param">ticksuffix=None</em>, <em class="sig-param">ticktext=None</em>, <em class="sig-param">ticktextsrc=None</em>, <em class="sig-param">tickvals=None</em>, <em class="sig-param">tickvalssrc=None</em>, <em class="sig-param">tickwidth=None</em>, <em class="sig-param">visible=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseTraceHierarchyType" title="plotly.basedatatypes.BaseTraceHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseTraceHierarchyType</span></code></a></p>
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.dtick">
+<em class="property">property </em><code class="sig-name descname">dtick</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.dtick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the step in-between ticks on this axis. Use with <code class="docutils literal notranslate"><span class="pre">tick0</span></code>.
+Must be a positive number, or special strings available to
+“log” and “date” axes. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “log”, then ticks
+are set every 10^(n*dtick) where n is the tick number. For
+example, to set a tick mark at 1, 10, 100, 1000, … set dtick
+to 1. To set tick marks at 1, 100, 10000, … set dtick to 2.
+To set tick marks at 1, 5, 25, 125, 625, 3125, … set dtick to
+log_10(5), or 0.69897000433. “log” has several special values;
+“L&lt;f&gt;”, where <code class="docutils literal notranslate"><span class="pre">f</span></code> is a positive number, gives ticks linearly
+spaced in value (but not position). For example <code class="docutils literal notranslate"><span class="pre">tick0</span></code> = 0.1,
+<code class="docutils literal notranslate"><span class="pre">dtick</span></code> = “L0.5” will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To
+show powers of 10 plus small digits between, use “D1” (all
+digits) or “D2” (only 2 and 5). <code class="docutils literal notranslate"><span class="pre">tick0</span></code> is ignored for “D1” and
+“D2”. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “date”, then you must convert the
+time to milliseconds. For example, to set the interval between
+ticks to one day, set <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to 86400000.0. “date” also has
+special values “M&lt;n&gt;” gives ticks spaced by a number of months.
+<code class="docutils literal notranslate"><span class="pre">n</span></code> must be a positive integer. To set ticks on the 15th of
+every third month, set <code class="docutils literal notranslate"><span class="pre">tick0</span></code> to “2000-01-15” and <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to
+“M3”. To set ticks every 4 years, set <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to “M48”</p>
+<p>The ‘dtick’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.exponentformat">
+<em class="property">property </em><code class="sig-name descname">exponentformat</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.exponentformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines a formatting rule for the tick exponents. For
+example, consider the number 1,000,000,000. If “none”, it
+appears as 1,000,000,000. If “e”, 1e+9. If “E”, 1E+9. If
+“power”, 1x10^9 (with 9 in a super script). If “SI”, 1G. If
+“B”, 1B.</p>
+<dl class="simple">
+<dt>The ‘exponentformat’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘none’, ‘e’, ‘E’, ‘power’, ‘SI’, ‘B’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.nticks">
+<em class="property">property </em><code class="sig-name descname">nticks</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.nticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the maximum number of ticks for the particular axis.
+The actual number of ticks will be chosen automatically to be
+less than or equal to <code class="docutils literal notranslate"><span class="pre">nticks</span></code>. Has an effect only if
+<code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “auto”.</p>
+<dl class="simple">
+<dt>The ‘nticks’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [0, 9223372036854775807]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.range">
+<em class="property">property </em><code class="sig-name descname">range</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the range of this axis.</p>
+<blockquote>
+<div><p>The ‘range’ property is an info array that may be specified as:</p>
+<ul class="simple">
+<li><p>a list or tuple of 2 elements where:</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="0">
+<li><dl class="simple">
+<dt>The ‘range[0]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The ‘range[1]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<p>list</p>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.separatethousands">
+<em class="property">property </em><code class="sig-name descname">separatethousands</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.separatethousands" title="Permalink to this definition">¶</a></dt>
+<dd><p>If “true”, even 4-digit integers are separated</p>
+<p>The ‘separatethousands’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.showexponent">
+<em class="property">property </em><code class="sig-name descname">showexponent</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.showexponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>If “all”, all exponents are shown besides their significands.
+If “first”, only the exponent of the first tick is shown. If
+“last”, only the exponent of the last tick is shown. If “none”,
+no exponents appear.</p>
+<dl class="simple">
+<dt>The ‘showexponent’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘all’, ‘first’, ‘last’, ‘none’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.showticklabels">
+<em class="property">property </em><code class="sig-name descname">showticklabels</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.showticklabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not the tick labels are drawn.</p>
+<p>The ‘showticklabels’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.showtickprefix">
+<em class="property">property </em><code class="sig-name descname">showtickprefix</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.showtickprefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>If “all”, all tick labels are displayed with a prefix. If
+“first”, only the first tick is displayed with a prefix. If
+“last”, only the last tick is displayed with a suffix. If
+“none”, tick prefixes are hidden.</p>
+<dl class="simple">
+<dt>The ‘showtickprefix’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘all’, ‘first’, ‘last’, ‘none’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.showticksuffix">
+<em class="property">property </em><code class="sig-name descname">showticksuffix</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.showticksuffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <code class="docutils literal notranslate"><span class="pre">showtickprefix</span></code> but for tick suffixes.</p>
+<dl class="simple">
+<dt>The ‘showticksuffix’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘all’, ‘first’, ‘last’, ‘none’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tick0">
+<em class="property">property </em><code class="sig-name descname">tick0</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tick0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the placement of the first tick on this axis. Use with
+<code class="docutils literal notranslate"><span class="pre">dtick</span></code>. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “log”, then you must take the
+log of your starting tick (e.g. to set the starting tick to
+100, set the <code class="docutils literal notranslate"><span class="pre">tick0</span></code> to 2) except when <code class="docutils literal notranslate"><span class="pre">dtick`=*L&lt;f&gt;*</span> <span class="pre">(see</span>
+<span class="pre">`dtick</span></code> for more info). If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “date”, it should
+be a date string, like date data. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is
+“category”, it should be a number, using the scale where each
+category is assigned a serial number from zero in the order it
+appears.</p>
+<p>The ‘tick0’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickangle">
+<em class="property">property </em><code class="sig-name descname">tickangle</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the angle of the tick labels with respect to the
+horizontal. For example, a <code class="docutils literal notranslate"><span class="pre">tickangle</span></code> of -90 draws the tick
+labels vertically.</p>
+<p>The ‘tickangle’ property is a angle (in degrees) that may be
+specified as a number between -180 and 180. Numeric values outside this
+range are converted to the equivalent value
+(e.g. 270 is converted to -90).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickcolor">
+<em class="property">property </em><code class="sig-name descname">tickcolor</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickcolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick color.</p>
+<dl class="simple">
+<dt>The ‘tickcolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickfont">
+<em class="property">property </em><code class="sig-name descname">tickfont</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickfont" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the color bar’s tick label font</p>
+<p>The ‘tickfont’ property is an instance of Tickfont
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.indicator.gauge.axis.html#plotly.graph_objects.indicator.gauge.axis.Tickfont" title="plotly.graph_objects.indicator.gauge.axis.Tickfont"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.indicator.gauge.axis.Tickfont</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Tickfont constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><p>color</p>
+<dl class="simple">
+<dt>family</dt><dd><p>HTML font family - the typeface that will be
+applied by the web browser. The web browser
+will only be able to apply a font if it is
+available on the system which it operates.
+Provide multiple font families, separated by
+commas, to indicate the preference in which to
+apply fonts if they aren’t available on the
+system. The Chart Studio Cloud (at
+<a class="reference external" href="https://chart-studio.plotly.com">https://chart-studio.plotly.com</a> or on-premise)
+generates images on a server, where only a
+select number of fonts are installed and
+supported. These include “Arial”, “Balto”,
+“Courier New”, “Droid Sans”,, “Droid Serif”,
+“Droid Sans Mono”, “Gravitas One”, “Old
+Standard TT”, “Open Sans”, “Overpass”, “PT Sans
+Narrow”, “Raleway”, “Times New Roman”.</p>
+</dd>
+</dl>
+<p>size</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.indicator.gauge.axis.html#plotly.graph_objects.indicator.gauge.axis.Tickfont" title="plotly.graph_objects.indicator.gauge.axis.Tickfont">plotly.graph_objects.indicator.gauge.axis.Tickfont</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickformat">
+<em class="property">property </em><code class="sig-name descname">tickformat</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick label formatting rule using d3 formatting mini-
+languages which are very similar to those in Python. For
+numbers, see: <a class="reference external" href="https://github.com/d3/d3-3.x-api">https://github.com/d3/d3-3.x-api</a>-
+reference/blob/master/Formatting.md#d3_format And for dates
+see: <a class="reference external" href="https://github.com/d3/d3-3.x-api">https://github.com/d3/d3-3.x-api</a>-
+reference/blob/master/Time-Formatting.md#format We add one item
+to d3’s date formatter: “%{n}f” for fractional seconds with n
+digits. For example, <em>2016-10-13 09:15:23.456</em> with tickformat
+“%H~%M~%S.%2f” would display “09~15~23.46”</p>
+<dl class="simple">
+<dt>The ‘tickformat’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickformatstopdefaults">
+<em class="property">property </em><code class="sig-name descname">tickformatstopdefaults</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickformatstopdefaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>When used in a template (as layout.template.data.indicator.gaug
+e.axis.tickformatstopdefaults), sets the default property
+values to use for elements of
+indicator.gauge.axis.tickformatstops</p>
+<p>The ‘tickformatstopdefaults’ property is an instance of Tickformatstop
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.indicator.gauge.axis.html#plotly.graph_objects.indicator.gauge.axis.Tickformatstop" title="plotly.graph_objects.indicator.gauge.axis.Tickformatstop"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.indicator.gauge.axis.Tickformatstop</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Tickformatstop constructor</p>
+<p>Supported dict properties:</p>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.indicator.gauge.axis.html#plotly.graph_objects.indicator.gauge.axis.Tickformatstop" title="plotly.graph_objects.indicator.gauge.axis.Tickformatstop">plotly.graph_objects.indicator.gauge.axis.Tickformatstop</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickformatstops">
+<em class="property">property </em><code class="sig-name descname">tickformatstops</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickformatstops" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘tickformatstops’ property is a tuple of instances of
+Tickformatstop that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>A list or tuple of instances of plotly.graph_objects.indicator.gauge.axis.Tickformatstop</p></li>
+<li><p>A list or tuple of dicts of string/value properties that
+will be passed to the Tickformatstop constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>dtickrange</dt><dd><p>range [<em>min</em>, <em>max</em>], where “min”, “max” -
+dtick values which describe some zoom level, it
+is possible to omit “min” or “max” value by
+passing “null”</p>
+</dd>
+<dt>enabled</dt><dd><p>Determines whether or not this stop is used. If
+<code class="docutils literal notranslate"><span class="pre">false</span></code>, this stop is ignored even within its
+<code class="docutils literal notranslate"><span class="pre">dtickrange</span></code>.</p>
+</dd>
+<dt>name</dt><dd><p>When used in a template, named items are
+created in the output figure in addition to any
+items the figure already has in this array. You
+can modify these items in the output figure by
+making your own item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code>
+matching this <code class="docutils literal notranslate"><span class="pre">name</span></code> alongside your
+modifications (including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code> or
+<code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code> to hide it). Has no effect
+outside of a template.</p>
+</dd>
+<dt>templateitemname</dt><dd><p>Used to refer to a named item in this array in
+the template. Named items from the template
+will be created even without a matching item in
+the input figure, but you can modify one by
+making an item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code> matching
+its <code class="docutils literal notranslate"><span class="pre">name</span></code>, alongside your modifications
+(including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code> or <code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code>
+to hide it). If there is no template or no
+matching item, this item will be hidden unless
+you explicitly show it with <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">true</span></code>.</p>
+</dd>
+<dt>value</dt><dd><p>string - dtickformat for described zoom level,
+the same as “tickformat”</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>[<a class="reference internal" href="plotly.graph_objects.indicator.gauge.axis.html#plotly.graph_objects.indicator.gauge.axis.Tickformatstop" title="plotly.graph_objects.indicator.gauge.axis.Tickformatstop">plotly.graph_objects.indicator.gauge.axis.Tickformatstop</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.ticklen">
+<em class="property">property </em><code class="sig-name descname">ticklen</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.ticklen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick length (in px).</p>
+<dl class="simple">
+<dt>The ‘ticklen’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickmode">
+<em class="property">property </em><code class="sig-name descname">tickmode</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick mode for this axis. If “auto”, the number of
+ticks is set via <code class="docutils literal notranslate"><span class="pre">nticks</span></code>. If “linear”, the placement of the
+ticks is determined by a starting position <code class="docutils literal notranslate"><span class="pre">tick0</span></code> and a tick
+step <code class="docutils literal notranslate"><span class="pre">dtick</span></code> (“linear” is the default value if <code class="docutils literal notranslate"><span class="pre">tick0</span></code> and
+<code class="docutils literal notranslate"><span class="pre">dtick</span></code> are provided). If “array”, the placement of the ticks
+is set via <code class="docutils literal notranslate"><span class="pre">tickvals</span></code> and the tick text is <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>. (“array”
+is the default value if <code class="docutils literal notranslate"><span class="pre">tickvals</span></code> is provided).</p>
+<dl class="simple">
+<dt>The ‘tickmode’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘auto’, ‘linear’, ‘array’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickprefix">
+<em class="property">property </em><code class="sig-name descname">tickprefix</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickprefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a tick label prefix.</p>
+<dl class="simple">
+<dt>The ‘tickprefix’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.ticks">
+<em class="property">property </em><code class="sig-name descname">ticks</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether ticks are drawn or not. If “”, this axis’
+ticks are not drawn. If “outside” (“inside”), this axis’ are
+drawn outside (inside) the axis lines.</p>
+<dl class="simple">
+<dt>The ‘ticks’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘outside’, ‘inside’, ‘’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.ticksuffix">
+<em class="property">property </em><code class="sig-name descname">ticksuffix</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.ticksuffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a tick label suffix.</p>
+<dl class="simple">
+<dt>The ‘ticksuffix’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.ticktext">
+<em class="property">property </em><code class="sig-name descname">ticktext</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.ticktext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the text displayed at the ticks position via <code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.
+Only has an effect if <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “array”. Used with
+<code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.</p>
+<p>The ‘ticktext’ property is an array that may be specified as a tuple,
+list, numpy array, or pandas Series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.ticktextsrc">
+<em class="property">property </em><code class="sig-name descname">ticktextsrc</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.ticktextsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for  ticktext .</p>
+<p>The ‘ticktextsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickvals">
+<em class="property">property </em><code class="sig-name descname">tickvals</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the values at which ticks on this axis appear. Only has an
+effect if <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “array”. Used with <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>.</p>
+<p>The ‘tickvals’ property is an array that may be specified as a tuple,
+list, numpy array, or pandas Series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickvalssrc">
+<em class="property">property </em><code class="sig-name descname">tickvalssrc</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickvalssrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for  tickvals .</p>
+<p>The ‘tickvalssrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.tickwidth">
+<em class="property">property </em><code class="sig-name descname">tickwidth</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.tickwidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick width (in px).</p>
+<dl class="simple">
+<dt>The ‘tickwidth’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotly.graph_objects.indicator.gauge.Axis.visible">
+<em class="property">property </em><code class="sig-name descname">visible</code><a class="headerlink" href="#plotly.graph_objects.indicator.gauge.Axis.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>A single toggle to hide the axis while preserving interaction
+like dragging. Default is true when a cheater plot is present
+on the axis, otherwise false</p>
+<p>The ‘visible’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </body>
+</html>

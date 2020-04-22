@@ -1,0 +1,19 @@
+plotly.graph\_objs.contour package
+==================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.contour.colorbar
+   plotly.graph_objs.contour.contours
+   plotly.graph_objs.contour.hoverlabel
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.contour
+   :members:
+   :undoc-members:
+   :show-inheritance:

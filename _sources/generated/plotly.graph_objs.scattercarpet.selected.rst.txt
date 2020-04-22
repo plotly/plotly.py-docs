@@ -1,0 +1,10 @@
+plotly.graph\_objs.scattercarpet.selected package
+=================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scattercarpet.selected
+   :members:
+   :undoc-members:
+   :show-inheritance:

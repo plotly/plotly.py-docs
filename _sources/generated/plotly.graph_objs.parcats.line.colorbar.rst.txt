@@ -1,0 +1,17 @@
+plotly.graph\_objs.parcats.line.colorbar package
+================================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.parcats.line.colorbar.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.parcats.line.colorbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

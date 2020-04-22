@@ -1,0 +1,10 @@
+plotly.graph\_objs.isosurface.slices package
+============================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.isosurface.slices
+   :members:
+   :undoc-members:
+   :show-inheritance:

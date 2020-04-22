@@ -1,0 +1,10 @@
+plotly.graph\_objs.choropleth.selected package
+==============================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.choropleth.selected
+   :members:
+   :undoc-members:
+   :show-inheritance:

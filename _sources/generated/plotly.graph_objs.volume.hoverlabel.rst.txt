@@ -1,0 +1,10 @@
+plotly.graph\_objs.volume.hoverlabel package
+============================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.volume.hoverlabel
+   :members:
+   :undoc-members:
+   :show-inheritance:

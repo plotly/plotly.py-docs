@@ -1,0 +1,20 @@
+plotly.graph\_objs.isosurface package
+=====================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.isosurface.caps
+   plotly.graph_objs.isosurface.colorbar
+   plotly.graph_objs.isosurface.hoverlabel
+   plotly.graph_objs.isosurface.slices
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.isosurface
+   :members:
+   :undoc-members:
+   :show-inheritance:

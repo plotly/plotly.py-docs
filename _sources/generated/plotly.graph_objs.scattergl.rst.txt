@@ -1,0 +1,20 @@
+plotly.graph\_objs.scattergl package
+====================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.scattergl.hoverlabel
+   plotly.graph_objs.scattergl.marker
+   plotly.graph_objs.scattergl.selected
+   plotly.graph_objs.scattergl.unselected
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scattergl
+   :members:
+   :undoc-members:
+   :show-inheritance:

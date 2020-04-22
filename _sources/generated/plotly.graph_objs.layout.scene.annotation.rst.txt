@@ -1,0 +1,17 @@
+plotly.graph\_objs.layout.scene.annotation package
+==================================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.layout.scene.annotation.hoverlabel
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.layout.scene.annotation
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,10 @@
+plotly.graph\_objs.scattermapbox.hoverlabel package
+===================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scattermapbox.hoverlabel
+   :members:
+   :undoc-members:
+   :show-inheritance:

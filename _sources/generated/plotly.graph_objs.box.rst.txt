@@ -1,0 +1,20 @@
+plotly.graph\_objs.box package
+==============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.box.hoverlabel
+   plotly.graph_objs.box.marker
+   plotly.graph_objs.box.selected
+   plotly.graph_objs.box.unselected
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.box
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,10 @@
+plotly.graph\_objs.carpet.aaxis.title package
+=============================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.carpet.aaxis.title
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,10 @@
+plotly.graph\_objs.sankey.link.hoverlabel package
+=================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.sankey.link.hoverlabel
+   :members:
+   :undoc-members:
+   :show-inheritance:

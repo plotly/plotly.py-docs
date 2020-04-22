@@ -1,0 +1,17 @@
+plotly.graph\_objs.surface.colorbar package
+===========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.surface.colorbar.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.surface.colorbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

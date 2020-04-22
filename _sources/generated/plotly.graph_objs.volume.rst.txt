@@ -1,0 +1,20 @@
+plotly.graph\_objs.volume package
+=================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.volume.caps
+   plotly.graph_objs.volume.colorbar
+   plotly.graph_objs.volume.hoverlabel
+   plotly.graph_objs.volume.slices
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.volume
+   :members:
+   :undoc-members:
+   :show-inheritance:

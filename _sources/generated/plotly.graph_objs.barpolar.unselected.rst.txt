@@ -1,0 +1,10 @@
+plotly.graph\_objs.barpolar.unselected package
+==============================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.barpolar.unselected
+   :members:
+   :undoc-members:
+   :show-inheritance:

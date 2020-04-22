@@ -1,0 +1,10 @@
+plotly.graph\_objs.funnel.connector package
+===========================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.funnel.connector
+   :members:
+   :undoc-members:
+   :show-inheritance:

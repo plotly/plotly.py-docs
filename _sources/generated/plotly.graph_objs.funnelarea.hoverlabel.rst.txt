@@ -1,0 +1,10 @@
+plotly.graph\_objs.funnelarea.hoverlabel package
+================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.funnelarea.hoverlabel
+   :members:
+   :undoc-members:
+   :show-inheritance:

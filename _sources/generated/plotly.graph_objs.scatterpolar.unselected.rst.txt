@@ -1,0 +1,10 @@
+plotly.graph\_objs.scatterpolar.unselected package
+==================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scatterpolar.unselected
+   :members:
+   :undoc-members:
+   :show-inheritance:

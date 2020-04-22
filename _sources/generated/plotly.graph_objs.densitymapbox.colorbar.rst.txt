@@ -1,0 +1,17 @@
+plotly.graph\_objs.densitymapbox.colorbar package
+=================================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.densitymapbox.colorbar.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.densitymapbox.colorbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

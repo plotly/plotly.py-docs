@@ -1,0 +1,17 @@
+plotly.graph\_objs.area package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.area.hoverlabel
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.area
+   :members:
+   :undoc-members:
+   :show-inheritance:

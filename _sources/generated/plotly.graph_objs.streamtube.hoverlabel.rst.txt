@@ -1,0 +1,10 @@
+plotly.graph\_objs.streamtube.hoverlabel package
+================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.streamtube.hoverlabel
+   :members:
+   :undoc-members:
+   :show-inheritance:

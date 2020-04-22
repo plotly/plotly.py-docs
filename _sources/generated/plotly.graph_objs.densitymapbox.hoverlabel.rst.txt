@@ -1,0 +1,10 @@
+plotly.graph\_objs.densitymapbox.hoverlabel package
+===================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.densitymapbox.hoverlabel
+   :members:
+   :undoc-members:
+   :show-inheritance:

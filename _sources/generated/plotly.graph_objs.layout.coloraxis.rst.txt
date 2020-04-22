@@ -1,0 +1,17 @@
+plotly.graph\_objs.layout.coloraxis package
+===========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.layout.coloraxis.colorbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.layout.coloraxis
+   :members:
+   :undoc-members:
+   :show-inheritance:

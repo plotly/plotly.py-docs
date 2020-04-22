@@ -1,0 +1,17 @@
+plotly.graph\_objs.histogram.marker package
+===========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.histogram.marker.colorbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.histogram.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

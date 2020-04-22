@@ -1,0 +1,10 @@
+plotly.graph\_objs.box.unselected package
+=========================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.box.unselected
+   :members:
+   :undoc-members:
+   :show-inheritance:

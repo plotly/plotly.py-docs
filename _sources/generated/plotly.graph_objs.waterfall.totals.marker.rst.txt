@@ -1,0 +1,10 @@
+plotly.graph\_objs.waterfall.totals.marker package
+==================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.waterfall.totals.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

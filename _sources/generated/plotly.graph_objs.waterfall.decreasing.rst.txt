@@ -1,0 +1,17 @@
+plotly.graph\_objs.waterfall.decreasing package
+===============================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.waterfall.decreasing.marker
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.waterfall.decreasing
+   :members:
+   :undoc-members:
+   :show-inheritance:

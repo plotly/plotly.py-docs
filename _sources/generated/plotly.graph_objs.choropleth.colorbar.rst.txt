@@ -1,0 +1,17 @@
+plotly.graph\_objs.choropleth.colorbar package
+==============================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.choropleth.colorbar.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.choropleth.colorbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

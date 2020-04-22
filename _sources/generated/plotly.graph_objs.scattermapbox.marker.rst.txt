@@ -1,0 +1,17 @@
+plotly.graph\_objs.scattermapbox.marker package
+===============================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.scattermapbox.marker.colorbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scattermapbox.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

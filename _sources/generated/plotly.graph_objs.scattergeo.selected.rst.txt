@@ -1,0 +1,10 @@
+plotly.graph\_objs.scattergeo.selected package
+==============================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scattergeo.selected
+   :members:
+   :undoc-members:
+   :show-inheritance:

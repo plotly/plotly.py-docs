@@ -1,0 +1,20 @@
+plotly.graph\_objs.bar package
+==============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.bar.hoverlabel
+   plotly.graph_objs.bar.marker
+   plotly.graph_objs.bar.selected
+   plotly.graph_objs.bar.unselected
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.bar
+   :members:
+   :undoc-members:
+   :show-inheritance:

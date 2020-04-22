@@ -1,0 +1,21 @@
+plotly.graph\_objs.waterfall package
+====================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.waterfall.connector
+   plotly.graph_objs.waterfall.decreasing
+   plotly.graph_objs.waterfall.hoverlabel
+   plotly.graph_objs.waterfall.increasing
+   plotly.graph_objs.waterfall.totals
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.waterfall
+   :members:
+   :undoc-members:
+   :show-inheritance:

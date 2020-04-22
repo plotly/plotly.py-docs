@@ -1,0 +1,10 @@
+plotly.graph\_objs.treemap.pathbar package
+==========================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.treemap.pathbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

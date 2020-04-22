@@ -1,0 +1,10 @@
+plotly.graph\_objs.violin.marker package
+========================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.violin.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

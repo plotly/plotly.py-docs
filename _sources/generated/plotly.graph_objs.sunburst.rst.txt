@@ -1,0 +1,18 @@
+plotly.graph\_objs.sunburst package
+===================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.sunburst.hoverlabel
+   plotly.graph_objs.sunburst.marker
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.sunburst
+   :members:
+   :undoc-members:
+   :show-inheritance:

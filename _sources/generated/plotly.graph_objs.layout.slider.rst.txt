@@ -1,0 +1,17 @@
+plotly.graph\_objs.layout.slider package
+========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.layout.slider.currentvalue
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.layout.slider
+   :members:
+   :undoc-members:
+   :show-inheritance:

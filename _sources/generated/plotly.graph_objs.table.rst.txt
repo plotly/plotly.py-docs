@@ -1,0 +1,19 @@
+plotly.graph\_objs.table package
+================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.table.cells
+   plotly.graph_objs.table.header
+   plotly.graph_objs.table.hoverlabel
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.table
+   :members:
+   :undoc-members:
+   :show-inheritance:

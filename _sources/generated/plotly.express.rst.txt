@@ -1,0 +1,30 @@
+plotly.express package
+======================
+
+Submodules
+----------
+
+plotly.express.colors module
+----------------------------
+
+.. automodule:: plotly.express.colors
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+plotly.express.data module
+--------------------------
+
+.. automodule:: plotly.express.data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: plotly.express
+   :members:
+   :undoc-members:
+   :show-inheritance:

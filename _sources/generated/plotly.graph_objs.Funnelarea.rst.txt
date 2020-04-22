@@ -1,0 +1,27 @@
+:mod:`plotly.graph_objs`.Funnelarea
+========================================================
+
+
+.. currentmodule:: plotly.graph_objs
+
+.. autoclass:: Funnelarea
+
+   
+   .. automethod:: __init__
+   
+
+:mod:`plotly.graph_objs`.funnelarea
+============================================================
+
+.. autosummary::
+   
+   plotly.graph_objects.funnelarea
+
+.. automodule:: plotly.graph_objects.funnelarea
+   :members:
+   :undoc-members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

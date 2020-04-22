@@ -1,0 +1,10 @@
+plotly.graph\_objs.indicator.gauge.axis package
+===============================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.indicator.gauge.axis
+   :members:
+   :undoc-members:
+   :show-inheritance:

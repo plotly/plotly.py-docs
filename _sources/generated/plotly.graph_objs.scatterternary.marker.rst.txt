@@ -1,0 +1,17 @@
+plotly.graph\_objs.scatterternary.marker package
+================================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.scatterternary.marker.colorbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scatterternary.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

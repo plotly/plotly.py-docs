@@ -1,0 +1,17 @@
+plotly.graph\_objs.layout.geo package
+=====================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.layout.geo.projection
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.layout.geo
+   :members:
+   :undoc-members:
+   :show-inheritance:

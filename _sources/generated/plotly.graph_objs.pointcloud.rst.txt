@@ -1,0 +1,18 @@
+plotly.graph\_objs.pointcloud package
+=====================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.pointcloud.hoverlabel
+   plotly.graph_objs.pointcloud.marker
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.pointcloud
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,19 @@
+plotly.graph\_objs.ohlc package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.ohlc.decreasing
+   plotly.graph_objs.ohlc.hoverlabel
+   plotly.graph_objs.ohlc.increasing
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.ohlc
+   :members:
+   :undoc-members:
+   :show-inheritance:

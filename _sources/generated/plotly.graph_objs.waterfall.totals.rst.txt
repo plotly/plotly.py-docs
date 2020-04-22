@@ -1,0 +1,17 @@
+plotly.graph\_objs.waterfall.totals package
+===========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.waterfall.totals.marker
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.waterfall.totals
+   :members:
+   :undoc-members:
+   :show-inheritance:

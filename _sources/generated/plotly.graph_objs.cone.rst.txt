@@ -1,0 +1,18 @@
+plotly.graph\_objs.cone package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.cone.colorbar
+   plotly.graph_objs.cone.hoverlabel
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.cone
+   :members:
+   :undoc-members:
+   :show-inheritance:

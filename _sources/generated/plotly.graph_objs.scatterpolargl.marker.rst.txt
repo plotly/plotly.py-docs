@@ -1,0 +1,17 @@
+plotly.graph\_objs.scatterpolargl.marker package
+================================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.scatterpolargl.marker.colorbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scatterpolargl.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

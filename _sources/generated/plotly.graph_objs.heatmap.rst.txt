@@ -1,0 +1,18 @@
+plotly.graph\_objs.heatmap package
+==================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.heatmap.colorbar
+   plotly.graph_objs.heatmap.hoverlabel
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.heatmap
+   :members:
+   :undoc-members:
+   :show-inheritance:

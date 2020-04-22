@@ -1,0 +1,10 @@
+plotly.graph\_objs.carpet.baxis.title package
+=============================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.carpet.baxis.title
+   :members:
+   :undoc-members:
+   :show-inheritance:

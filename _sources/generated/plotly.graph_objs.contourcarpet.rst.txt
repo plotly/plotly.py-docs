@@ -1,0 +1,18 @@
+plotly.graph\_objs.contourcarpet package
+========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.contourcarpet.colorbar
+   plotly.graph_objs.contourcarpet.contours
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.contourcarpet
+   :members:
+   :undoc-members:
+   :show-inheritance:

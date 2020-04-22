@@ -1,0 +1,20 @@
+plotly.graph\_objs.indicator package
+====================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.indicator.delta
+   plotly.graph_objs.indicator.gauge
+   plotly.graph_objs.indicator.number
+   plotly.graph_objs.indicator.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.indicator
+   :members:
+   :undoc-members:
+   :show-inheritance:

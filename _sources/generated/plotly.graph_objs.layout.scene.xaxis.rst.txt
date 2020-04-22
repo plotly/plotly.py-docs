@@ -1,0 +1,17 @@
+plotly.graph\_objs.layout.scene.xaxis package
+=============================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.layout.scene.xaxis.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.layout.scene.xaxis
+   :members:
+   :undoc-members:
+   :show-inheritance:

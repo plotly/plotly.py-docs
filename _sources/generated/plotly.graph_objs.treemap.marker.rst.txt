@@ -1,0 +1,17 @@
+plotly.graph\_objs.treemap.marker package
+=========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.treemap.marker.colorbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.treemap.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

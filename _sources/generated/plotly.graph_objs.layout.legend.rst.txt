@@ -1,0 +1,17 @@
+plotly.graph\_objs.layout.legend package
+========================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.layout.legend.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.layout.legend
+   :members:
+   :undoc-members:
+   :show-inheritance:

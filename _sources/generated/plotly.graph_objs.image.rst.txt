@@ -1,0 +1,17 @@
+plotly.graph\_objs.image package
+================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.image.hoverlabel
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.image
+   :members:
+   :undoc-members:
+   :show-inheritance:

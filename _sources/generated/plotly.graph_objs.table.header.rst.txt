@@ -1,0 +1,10 @@
+plotly.graph\_objs.table.header package
+=======================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.table.header
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,17 @@
+plotly.graph\_objs.sunburst.marker.colorbar package
+===================================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.sunburst.marker.colorbar.title
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.sunburst.marker.colorbar
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,17 @@
+plotly.graph\_objs.parcats package
+==================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.parcats.line
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.parcats
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,10 @@
+plotly.graph\_objs.scattermapbox.selected package
+=================================================
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.scattermapbox.selected
+   :members:
+   :undoc-members:
+   :show-inheritance:

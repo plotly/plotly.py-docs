@@ -1,0 +1,10 @@
+plotly.data package
+===================
+
+Module contents
+---------------
+
+.. automodule:: plotly.data
+   :members:
+   :undoc-members:
+   :show-inheritance:

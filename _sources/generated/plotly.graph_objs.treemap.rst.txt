@@ -1,0 +1,19 @@
+plotly.graph\_objs.treemap package
+==================================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   plotly.graph_objs.treemap.hoverlabel
+   plotly.graph_objs.treemap.marker
+   plotly.graph_objs.treemap.pathbar
+
+Module contents
+---------------
+
+.. automodule:: plotly.graph_objs.treemap
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,158 @@
+---
+description: How to troubleshoot import and rendering problems in Plotly with Python.
+display_as: file_settings
+language: python
+layout: base
+name: Troubleshooting
+order: 27
+page_type: u-guide
+permalink: python/troubleshooting/
+thumbnail: thumbnail/modebar-icons.png
+---
+
+{% raw %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Version-Problems">Version Problems<a class="anchor-link" href="#Version-Problems">&#182;</a></h3><p>In order to follow the examples in this documentation site, you should have the latest version of <code>plotly</code> installed (5.x), as detailed in the <a href="/python/getting-started">Getting Started</a> guide. This documentation (under <a href="https://plotly.com/python">https://plotly.com/python</a>) is compatible with <code>plotly</code> version 4.x but <em>not</em> with version 3.x, for which the documentation is available under <a href="https://plotly.com/python/v3">https://plotly.com/python/v3</a>. In general you must also have the correct version of the underlying Plotly.js rendering engine installed, and the way to do that depends on the environment in which you are rendering figures: Dash, Jupyter Lab or Classic Notebook, VSCode etc. Read on for details about troubleshooting <code>plotly</code> in these environments.</p>
+<h3 id="Import-Problems">Import Problems<a class="anchor-link" href="#Import-Problems">&#182;</a></h3><p>Most <code>import</code> problems or <code>AttributeError</code>s can be traced back to having multiple versions of <code>plotly</code> installed, for example once with <code>conda</code> and once with <code>pip</code>. It's often worthwhile to uninstall with both methods before following the <a href="/python/getting-started">Getting Started</a> instructions from scratch with one or the other. You can run the following commands in a terminal to fully remove <code>plotly</code> before installing again:</p>
+<div class="highlight"><pre><span></span>$ conda uninstall plotly
+$ pip remove plotly
+</pre></div>
+<blockquote><p>Problems can also arise if you have a file named <code>plotly.py</code> in the same directory as the code you are executing.</p>
+</blockquote>
+<h3 id="Dash-Problems">Dash Problems<a class="anchor-link" href="#Dash-Problems">&#182;</a></h3><p>If you are encountering problems using <code>plotly</code> with <a href="https://dash.plotly.com/">Dash</a> please first ensure that you have upgraded <code>dash</code> to the latest version, which will automatically upgrade <code>dash-core-components</code> to the latest version, ensuring that Dash is using an up-to-date version of the Plotly.js rendering engine for <code>plotly</code>. If this does not resolve your issue, please visit our <a href="https://community.plotly.com/">Dash Community Forum</a> and we will be glad to help you out.</p>
+<p>This is an example of a <code>plotly</code> graph correctly rendering inside <code>dash</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="100%"
+            height="630"
+            src="https://dash-gallery.plotly.host/python-docs-dash-snippets/renderers"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="JupyterLab-Problems">JupyterLab Problems<a class="anchor-link" href="#JupyterLab-Problems">&#182;</a></h3><p>In order to use <code>plotly</code> in JupyterLab, you <em>must have the <code>jupyterlab-plotly</code> extension installed</em> as detailed in the <a href="/python/getting-started">Getting Started guide</a>. When you install <code>plotly</code>, this extension is automatically made available to any JupyterLab 3.x installation in the same Python environment.</p>
+<p>To list your current extensions, run the following command in a terminal shell <strong>from the same environment as JupyterLab is launched</strong>:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Check that jupyterlab-plotly is installed</span>
+$ jupyter labextension list
+</pre></div>
+<p>Please note that the <em>extension version matters</em>: the extension versions in the <a href="/python/getting-started">Getting Started</a> guide match the version of <code>plotly</code> at the top of the guide and so they should be installed together. Note also that these extensions are meant to work with JupyterLab 1 or above but not 0.x.</p>
+<p>If automatic installation of the extension is not working in your environment, or if you are using JupyterLab 1.x or 2.0, you may install it manually using the following command, which requires <code>node</code> to be installed.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Manually reinstall the extension</span>
+$ jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyterlab-plotly
+</pre></div>
+<p>If you have <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html">installed additional python environments</a> (or kernels) to use with JupyterLab, or if you are using a centrally hosted JupyterLab installation, you need to make sure that the extensions are installed in the python environment used to launch JupyterLab (the "server" environment). If you accidentally installed the extensions (and run the command above) in one of the additional python environments ("processing" environments), then it is possible for the command above to list the correct extensions but for them to not be available in the JupyterLab front-end you have loaded in your browser. To check if this is the problem, you can <a href="https://jupyterlab.readthedocs.io/en/stable/user/extensions.html#using-the-extension-manager">look at the active extension list through your browser via the JupyterLab Extension Manager</a>, which will always list the extensions in the "server" environment. To summarize: if you use JupyterLab with multiple python environments, the extensions must be installed in the "server" environment, and the plotly python library must be installed in each "processing" environment that you intend to use.</p>
+<blockquote><p>Note that version 4.14.3 of <code>plotly</code> or earlier needed two extensions (<code>jupyterlab-plotly</code> and <code>plotlywidget</code>) to be installed manually running, and that <code>plotlywidget</code> requires <code>@jupyter-widgets/jupyterlab-manager</code> to be installed:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="c1"># Instructions for `plotly` 4.x</span>
+$ jupyter labextension install jupyterlab-plotly plotlywidget @jupyter-widgets/jupyterlab-manager
+</pre></div>
+<p>If you have the correct version(s) of the extension(s) installed and active in your active JupyterLab sessions and are still seeing problems, the issue may clear up if you rebuild JupyterLab. This shouldn't be required in principle but some users have resolved their issues this way. To rebuild JupyterLab, shut down JupyterLab and run the following command in a terminal shell <strong>from the same environment as JupyterLab was launched</strong>:</p>
+<div class="highlight"><pre><span></span><span class="c1"># rebuilding JupyterLab</span>
+$ jupyter lab build
+</pre></div>
+<p>To uninstall your Plotly extensions prior to reinstalling them, run the following commands in a terminal shell before reinstalling them by following the instructions in the <a href="/python/getting-started">Getting Started guide</a>:</p>
+<div class="highlight"><pre><span></span><span class="c1"># uninstalling extensions to reinstall</span>
+$ jupyter labextension uninstall jupyterlab-plotly
+$ jupyter labextension uninstall plotlywidget
+</pre></div>
+<p>If you run into "out of memory" problems while installing the extensions or building JupyterLab, try running these commands before running <code>jupyter labextension install</code>...</p>
+<div class="highlight"><pre><span></span><span class="c1"># Avoid &quot;JavaScript heap out of memory&quot; errors during extension installation</span>
+<span class="c1"># (OS X/Linux)</span>
+<span class="nb">export</span> <span class="nv">NODE_OPTIONS</span><span class="o">=</span>--max-old-space-size<span class="o">=</span><span class="m">4096</span>
+<span class="c1"># (Windows)</span>
+<span class="nb">set</span> <span class="nv">NODE_OPTIONS</span><span class="o">=</span>--max-old-space-size<span class="o">=</span><span class="m">4096</span>
+</pre></div>
+<p>...and these commands afterwards.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Unset NODE_OPTIONS environment variable</span>
+<span class="c1"># (OS X/Linux)</span>
+<span class="nb">unset</span> NODE_OPTIONS
+<span class="c1"># (Windows)</span>
+<span class="nb">set</span> <span class="nv">NODE_OPTIONS</span><span class="o">=</span>
+</pre></div>
+<h3 id="Jupyter-Classic-Notebook-Problems">Jupyter Classic Notebook Problems<a class="anchor-link" href="#Jupyter-Classic-Notebook-Problems">&#182;</a></h3><p>The classic Jupyter Notebook (i.e. launched with <code>jupyter notebook</code>) sometimes suffers from a problem whereby if you close the window and reopen it, your plots render as blank spaces.</p>
+<p>The easiest solution is to force the <code>notebook</code> renderer to reload by calling <code>fig.show("notebook")</code> instead of just <code>fig.show()</code>.</p>
+<p>If this problem is recurrent, you may safely run the following code in a Notebook (not in JupyterLab!) at any time and it should restore your figures (for example, you may put it at the top of your notebook for easy access):</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span>
+</pre></div>
+<p>As a last resort, you can "Restart &amp; Clear Output" from the Kernel menu and rerun your notebook.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="VSCode-Notebook,-Nteract-and-Streamlit-Problems">VSCode Notebook, Nteract and Streamlit Problems<a class="anchor-link" href="#VSCode-Notebook,-Nteract-and-Streamlit-Problems">&#182;</a></h3><p>Plotly figures render in VSCode using a Plotly.js version bundled with the <a href="https://code.visualstudio.com/docs/languages/python">vscode-python extension</a>, and unfortunately it's often a little out of date compared to the latest version of the <code>plotly</code> module, so the very latest features may not work until the following release of the vscode-python extension. In any case, regularly upgrading your vscode-python extension to the latest version will ensure you have access to the greatest number of recent features.</p>
+<p>The situation is similar for environments like Nteract and Streamlit: in these environments you will need a version of these projects that bundles a version Plotly.js that supports the features in the version of <code>plotly</code> that you are running.</p>
+<h3 id="Orca-Problems">Orca Problems<a class="anchor-link" href="#Orca-Problems">&#182;</a></h3><blockquote><p>Note: as of <code>plotly</code> version 4.9, we recommend using <a href="https://github.com/plotly/Kaleido"><code>kaleido</code></a>
+instead of Orca for <a href="/python/static-image-export/">static image export</a></p>
+</blockquote>
+<p>If you get an error message stating that the <code>orca</code> executable that was found is not valid, this may be because another executable with the same name was found on your system. Please specify the complete path to the Plotly-Orca binary that you downloaded (for instance in the Miniconda folder) with the following command:</p>
+<p><code>plotly.io.orca.config.executable = '/home/your_name/miniconda3/bin/orca'</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-About-Dash?">What About Dash?<a class="anchor-link" href="#What-About-Dash?">&#182;</a></h3><p><a href="https://dash.plot.ly/">Dash</a> is an open-source framework for building analytical applications, with no Javascript required, and it is tightly integrated with the Plotly graphing library.</p>
+<p>Learn about how to install Dash at <a href="https://dash.plot.ly/installation">https://dash.plot.ly/installation</a>.</p>
+<p>Everywhere in this page that you see <code>fig.show()</code>, you can display the same figure in a Dash application by passing it to the <code>figure</code> argument of the <a href="https://dash.plot.ly/dash-core-components/graph"><code>Graph</code> component</a> from the built-in <code>dash_core_components</code> package like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span> <span class="c1"># or plotly.express as px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span> <span class="c1"># or any Plotly Express function e.g. px.bar(...)</span>
+<span class="c1"># fig.add_trace( ... )</span>
+<span class="c1"># fig.update_layout( ... )</span>
+
+<span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_reloader</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Turn off reloader if inside Jupyter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+{% endraw %}

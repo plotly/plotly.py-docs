@@ -1,0 +1,7 @@
+plotly.graph\_objs.treemap.legendgrouptitle package
+===================================================
+
+.. automodule:: plotly.graph_objs.treemap.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

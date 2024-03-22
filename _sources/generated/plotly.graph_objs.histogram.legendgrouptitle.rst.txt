@@ -1,0 +1,7 @@
+plotly.graph\_objs.histogram.legendgrouptitle package
+=====================================================
+
+.. automodule:: plotly.graph_objs.histogram.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

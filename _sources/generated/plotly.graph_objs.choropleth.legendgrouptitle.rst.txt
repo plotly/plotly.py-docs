@@ -1,0 +1,7 @@
+plotly.graph\_objs.choropleth.legendgrouptitle package
+======================================================
+
+.. automodule:: plotly.graph_objs.choropleth.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

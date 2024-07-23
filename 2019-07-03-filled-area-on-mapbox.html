@@ -1,0 +1,130 @@
+---
+description: How to make an area on Map in Python with Plotly.
+display_as: maps
+language: python
+layout: base
+name: Filled Area on Maps
+order: 3
+page_type: example_index
+permalink: python/filled-area-on-mapbox/
+thumbnail: thumbnail/area.jpg
+---
+
+{% raw %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mapbox-Access-Token-and-Base-Map-Configuration">Mapbox Access Token and Base Map Configuration<a class="anchor-link" href="#Mapbox-Access-Token-and-Base-Map-Configuration">&#182;</a></h3><p>To plot on Mapbox maps with Plotly you <em>may</em> need a Mapbox account and a public <a href="https://www.mapbox.com/studio">Mapbox Access Token</a>. See our <a href="/python/mapbox-layers/">Mapbox Map Layers</a> documentation for more information.</p>
+<p>There are three different ways to show a filled area in a Mapbox map:</p>
+<ol>
+<li>Use a <a href="https://plotly.com/python/reference/scattermapbox/">Scattermapbox</a> trace and set <code>fill</code> attribute to 'toself'</li>
+<li>Use a Mapbox layout (i.e. by minimally using an empty <a href="https://plotly.com/python/reference/scattermapbox/">Scattermapbox</a> trace) and add a GeoJSON layer</li>
+<li>Use the <a href="https://plotly.com/python/mapbox-county-choropleth/">Choroplethmapbox</a> trace type<!-- #endregion --></li>
+</ol>
+<h3 id="Filled-Scattermapbox-Trace">Filled <code>Scattermapbox</code> Trace<a class="anchor-link" href="#Filled-Scattermapbox-Trace">&#182;</a></h3><p>The following example uses <code>Scattermapbox</code> and sets <code>fill = 'toself'</code></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scattermapbox</span><span class="p">(</span>
+    <span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;toself&quot;</span><span class="p">,</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">74</span><span class="p">,</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mi">74</span><span class="p">],</span> <span class="n">lat</span> <span class="o">=</span> <span class="p">[</span><span class="mi">47</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s2">&quot;orange&quot;</span> <span class="p">}))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">mapbox</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s2">&quot;open-street-map&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;center&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">73</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mi">46</span> <span class="p">},</span>
+        <span class="s1">&#39;zoom&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+    <span class="n">showlegend</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<h3 id="Multiple-Filled-Areas-with-a-Scattermapbox-trace">Multiple Filled Areas with a <code>Scattermapbox</code> trace<a class="anchor-link" href="#Multiple-Filled-Areas-with-a-Scattermapbox-trace">&#182;</a></h3><p>The following example shows how to use <code>None</code> in your data to draw multiple filled areas. Such gaps in trace data are unconnected by default, but this can be controlled via the <a href="https://plotly.com/python/reference/scattermapbox/#scattermapbox-connectgaps">connectgaps</a> attribute.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scattermapbox</span><span class="p">(</span>
+    <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;lines&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;toself&quot;</span><span class="p">,</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span>    <span class="kc">None</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">]))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">mapbox</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s2">&quot;open-street-map&quot;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="s1">&#39;zoom&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="n">showlegend</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">margin</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;l&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<h3 id="GeoJSON-Layers">GeoJSON Layers<a class="anchor-link" href="#GeoJSON-Layers">&#182;</a></h3><p>In this map we add a GeoJSON layer.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scattermapbox</span><span class="p">(</span>
+    <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.605</span><span class="p">],</span> <span class="n">lat</span> <span class="o">=</span> <span class="p">[</span><span class="mf">45.51</span><span class="p">],</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;cyan&quot;</span><span class="p">]}))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">mapbox</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s2">&quot;open-street-map&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;center&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">73.6</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">45.5</span><span class="p">},</span>
+        <span class="s1">&#39;zoom&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;layers&#39;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
+                <span class="s1">&#39;features&#39;</span><span class="p">:</span> <span class="p">[{</span>
+                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+                    <span class="s1">&#39;geometry&#39;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s2">&quot;MultiPolygon&quot;</span><span class="p">,</span>
+                        <span class="s1">&#39;coordinates&#39;</span><span class="p">:</span> <span class="p">[[[</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.606352888</span><span class="p">,</span> <span class="mf">45.507489991</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.606133883</span><span class="p">,</span> <span class="mf">45.50687600</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.605905904</span><span class="p">,</span> <span class="mf">45.506773980</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.603533905</span><span class="p">,</span> <span class="mf">45.505698946</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.602475870</span><span class="p">,</span> <span class="mf">45.506856969</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.600031904</span><span class="p">,</span> <span class="mf">45.505696003</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.599379992</span><span class="p">,</span> <span class="mf">45.505389066</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.599119902</span><span class="p">,</span> <span class="mf">45.505632008</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.598896977</span><span class="p">,</span> <span class="mf">45.505514039</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.598783894</span><span class="p">,</span> <span class="mf">45.505617001</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.591308727</span><span class="p">,</span> <span class="mf">45.516246185</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.591380782</span><span class="p">,</span> <span class="mf">45.516280145</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.596778656</span><span class="p">,</span> <span class="mf">45.518690062</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.602796770</span><span class="p">,</span> <span class="mf">45.521348046</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.612239983</span><span class="p">,</span> <span class="mf">45.525564037</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.612422919</span><span class="p">,</span> <span class="mf">45.525642061</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.617229085</span><span class="p">,</span> <span class="mf">45.527751983</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.617279234</span><span class="p">,</span> <span class="mf">45.527774160</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.617304713</span><span class="p">,</span> <span class="mf">45.527741334</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.617492052</span><span class="p">,</span> <span class="mf">45.527498362</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.617533258</span><span class="p">,</span> <span class="mf">45.527512253</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.618074188</span><span class="p">,</span> <span class="mf">45.526759105</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.618271651</span><span class="p">,</span> <span class="mf">45.526500673</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.618446320</span><span class="p">,</span> <span class="mf">45.526287943</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.618968507</span><span class="p">,</span> <span class="mf">45.525698560</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.619388002</span><span class="p">,</span> <span class="mf">45.525216750</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.619532966</span><span class="p">,</span> <span class="mf">45.525064183</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.619686662</span><span class="p">,</span> <span class="mf">45.524889290</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.619787038</span><span class="p">,</span> <span class="mf">45.524770086</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.619925742</span><span class="p">,</span> <span class="mf">45.524584939</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.619954486</span><span class="p">,</span> <span class="mf">45.524557690</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.620122362</span><span class="p">,</span> <span class="mf">45.524377961</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">73.620201713</span><span class="p">,</span> <span class="mf">45.524298907</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">73.620775593</span><span class="p">,</span> <span class="mf">45.523650879</span><span class="p">]</span>
+                        <span class="p">]]]</span>
+                    <span class="p">}</span>
+                <span class="p">}]</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="s1">&#39;below&#39;</span><span class="p">:</span> <span class="s2">&quot;traces&quot;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s2">&quot;royalblue&quot;</span><span class="p">}]},</span>
+    <span class="n">margin</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;l&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<h4 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h4><p>See <a href="https://plotly.com/python/reference/scattermapbox/">https://plotly.com/python/reference/scattermapbox/</a> for more information about mapbox and their attribute options.</p>
+<p><!-- #region --></p>
+<h3 id="What-About-Dash?">What About Dash?<a class="anchor-link" href="#What-About-Dash?">&#182;</a></h3><p><a href="https://dash.plot.ly/">Dash</a> is an open-source framework for building analytical applications, with no Javascript required, and it is tightly integrated with the Plotly graphing library.</p>
+<p>Learn about how to install Dash at <a href="https://dash.plot.ly/installation">https://dash.plot.ly/installation</a>.</p>
+<p>Everywhere in this page that you see <code>fig.show()</code>, you can display the same figure in a Dash application by passing it to the <code>figure</code> argument of the <a href="https://dash.plot.ly/dash-core-components/graph"><code>Graph</code> component</a> from the built-in <code>dash_core_components</code> package like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span> <span class="c1"># or plotly.express as px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span> <span class="c1"># or any Plotly Express function e.g. px.bar(...)</span>
+<span class="c1"># fig.add_trace( ... )</span>
+<span class="c1"># fig.update_layout( ... )</span>
+
+<span class="kn">from</span> <span class="nn">dash</span> <span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_reloader</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Turn off reloader if inside Jupyter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+{% endraw %}

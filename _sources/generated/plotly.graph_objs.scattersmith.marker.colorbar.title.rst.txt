@@ -1,0 +1,7 @@
+plotly.graph\_objs.scattersmith.marker.colorbar.title package
+=============================================================
+
+.. automodule:: plotly.graph_objs.scattersmith.marker.colorbar.title
+   :members:
+   :undoc-members:
+   :show-inheritance:

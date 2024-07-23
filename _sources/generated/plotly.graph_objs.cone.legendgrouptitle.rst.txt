@@ -1,0 +1,7 @@
+plotly.graph\_objs.cone.legendgrouptitle package
+================================================
+
+.. automodule:: plotly.graph_objs.cone.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

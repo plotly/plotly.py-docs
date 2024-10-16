@@ -1,0 +1,7 @@
+plotly.graph\_objs.layout.map.layer.symbol package
+==================================================
+
+.. automodule:: plotly.graph_objs.layout.map.layer.symbol
+   :members:
+   :undoc-members:
+   :show-inheritance:

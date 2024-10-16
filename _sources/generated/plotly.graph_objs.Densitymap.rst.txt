@@ -1,0 +1,27 @@
+﻿:mod:`plotly.graph_objs`.Densitymap
+========================================================
+
+
+.. currentmodule:: plotly.graph_objs
+
+.. autoclass:: Densitymap
+
+   
+   .. automethod:: __init__
+   
+
+:mod:`plotly.graph_objs`.densitymap
+============================================================
+
+.. autosummary::
+   
+   plotly.graph_objs.densitymap
+
+.. automodule:: plotly.graph_objs.densitymap
+   :members:
+   :undoc-members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

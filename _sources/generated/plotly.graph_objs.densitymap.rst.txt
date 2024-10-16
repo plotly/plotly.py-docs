@@ -1,0 +1,17 @@
+plotly.graph\_objs.densitymap package
+=====================================
+
+.. automodule:: plotly.graph_objs.densitymap
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   plotly.graph_objs.densitymap.colorbar
+   plotly.graph_objs.densitymap.hoverlabel
+   plotly.graph_objs.densitymap.legendgrouptitle

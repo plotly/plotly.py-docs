@@ -1,0 +1,11 @@
+﻿:mod:`plotly.express`.choropleth_map
+=================================================
+
+.. currentmodule:: plotly.express
+
+.. autofunction:: choropleth_map
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

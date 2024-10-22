@@ -1,0 +1,7 @@
+plotly.graph\_objs.histogram2dcontour.legendgrouptitle package
+==============================================================
+
+.. automodule:: plotly.graph_objs.histogram2dcontour.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

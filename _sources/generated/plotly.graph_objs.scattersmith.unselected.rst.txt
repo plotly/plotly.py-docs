@@ -1,0 +1,7 @@
+plotly.graph\_objs.scattersmith.unselected package
+==================================================
+
+.. automodule:: plotly.graph_objs.scattersmith.unselected
+   :members:
+   :undoc-members:
+   :show-inheritance:

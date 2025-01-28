@@ -1,0 +1,7 @@
+plotly.graph\_objs.streamtube.legendgrouptitle package
+======================================================
+
+.. automodule:: plotly.graph_objs.streamtube.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

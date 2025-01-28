@@ -1,0 +1,7 @@
+plotly.graph\_objs.layout.shape.label package
+=============================================
+
+.. automodule:: plotly.graph_objs.layout.shape.label
+   :members:
+   :undoc-members:
+   :show-inheritance:

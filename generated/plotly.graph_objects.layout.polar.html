@@ -1,0 +1,3236 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>plotly.graph_objects.layout.polar package &#8212;  6.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.express.html"><code class="docutils literal notranslate"><span class="pre">plotly.express</span></code>: high-level interface for data visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.graph_objects.html"><code class="docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>: low-level interface to figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.subplots.html"><code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code>: helper function for laying out multi-plot figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.figure_factory.html"><code class="docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>: helper methods for building specific complex charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.io.html"><code class="docutils literal notranslate"><span class="pre">plotly.io</span></code>: low-level interface for displaying, reading and writing figures</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">plotly.graph_objects.layout.polar package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="module-plotly.graph_objects.layout.polar">
+<span id="plotly-graph-objs-layout-polar-package"></span><h1>plotly.graph_objects.layout.polar package<a class="headerlink" href="#module-plotly.graph_objects.layout.polar" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.layout.polar.</span></code><code class="sig-name descname"><span class="pre">AngularAxis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autotypenumbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoryarray</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoryarraysrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoryorder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtick</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponentformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gridcolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">griddash</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gridwidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoverformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labelalias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linecolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minexponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separatethousands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showexponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showgrid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showticklabels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showtickprefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showticksuffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetaunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tick0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickangle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickcolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickfont</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickformatstops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickformatstopdefaults</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticklabelstep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticklen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickmode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickprefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticksuffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticktext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticktextsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickvals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickvalssrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickwidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uirevision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseLayoutHierarchyType" title="plotly.basedatatypes.BaseLayoutHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseLayoutHierarchyType</span></code></a></p>
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.autotypenumbers">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">autotypenumbers</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.autotypenumbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Using “strict” a numeric string in trace data is not converted
+to a number. Using <em>convert types</em> a numeric string in trace
+data may be treated as a number during automatic axis <code class="docutils literal notranslate"><span class="pre">type</span></code>
+detection. Defaults to layout.autotypenumbers.</p>
+<dl class="simple">
+<dt>The ‘autotypenumbers’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘convert types’, ‘strict’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.categoryarray">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">categoryarray</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.categoryarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the order in which categories on this axis appear. Only
+has an effect if <code class="docutils literal notranslate"><span class="pre">categoryorder</span></code> is set to “array”. Used with
+<code class="docutils literal notranslate"><span class="pre">categoryorder</span></code>.</p>
+<p>The ‘categoryarray’ property is an array that may be specified as a tuple,
+list, numpy array, or pandas Series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.categoryarraysrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">categoryarraysrc</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.categoryarraysrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">categoryarray</span></code>.</p>
+<p>The ‘categoryarraysrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.categoryorder">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">categoryorder</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.categoryorder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the ordering logic for the case of categorical
+variables. By default, plotly uses “trace”, which specifies the
+order that is present in the data supplied. Set <code class="docutils literal notranslate"><span class="pre">categoryorder</span></code>
+to <em>category ascending</em> or <em>category descending</em> if order
+should be determined by the alphanumerical order of the
+category names. Set <code class="docutils literal notranslate"><span class="pre">categoryorder</span></code> to “array” to derive the
+ordering from the attribute <code class="docutils literal notranslate"><span class="pre">categoryarray</span></code>. If a category is
+not found in the <code class="docutils literal notranslate"><span class="pre">categoryarray</span></code> array, the sorting behavior
+for that attribute will be identical to the “trace” mode. The
+unspecified categories will follow the categories in
+<code class="docutils literal notranslate"><span class="pre">categoryarray</span></code>. Set <code class="docutils literal notranslate"><span class="pre">categoryorder</span></code> to <em>total ascending</em> or
+<em>total descending</em> if order should be determined by the
+numerical order of the values. Similarly, the order can be
+determined by the min, max, sum, mean, geometric mean or median
+of all the values.</p>
+<dl class="simple">
+<dt>The ‘categoryorder’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘trace’, ‘category ascending’, ‘category descending’,
+‘array’, ‘total ascending’, ‘total descending’, ‘min
+ascending’, ‘min descending’, ‘max ascending’, ‘max
+descending’, ‘sum ascending’, ‘sum descending’, ‘mean
+ascending’, ‘mean descending’, ‘geometric mean ascending’,
+‘geometric mean descending’, ‘median ascending’, ‘median
+descending’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.color">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">color</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets default for all colors associated with this axis all at
+once: line, font, tick, and grid colors. Grid color is
+lightened by blending this with the plot background Individual
+pieces can override this.</p>
+<dl class="simple">
+<dt>The ‘color’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.direction">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">direction</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the direction corresponding to positive angles.</p>
+<dl class="simple">
+<dt>The ‘direction’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘counterclockwise’, ‘clockwise’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.dtick">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dtick</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.dtick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the step in-between ticks on this axis. Use with <code class="docutils literal notranslate"><span class="pre">tick0</span></code>.
+Must be a positive number, or special strings available to
+“log” and “date” axes. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “log”, then ticks
+are set every 10^(n*dtick) where n is the tick number. For
+example, to set a tick mark at 1, 10, 100, 1000, … set dtick
+to 1. To set tick marks at 1, 100, 10000, … set dtick to 2.
+To set tick marks at 1, 5, 25, 125, 625, 3125, … set dtick to
+log_10(5), or 0.69897000433. “log” has several special values;
+“L&lt;f&gt;”, where <code class="docutils literal notranslate"><span class="pre">f</span></code> is a positive number, gives ticks linearly
+spaced in value (but not position). For example <code class="docutils literal notranslate"><span class="pre">tick0</span></code> = 0.1,
+<code class="docutils literal notranslate"><span class="pre">dtick</span></code> = “L0.5” will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To
+show powers of 10 plus small digits between, use “D1” (all
+digits) or “D2” (only 2 and 5). <code class="docutils literal notranslate"><span class="pre">tick0</span></code> is ignored for “D1” and
+“D2”. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “date”, then you must convert the
+time to milliseconds. For example, to set the interval between
+ticks to one day, set <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to 86400000.0. “date” also has
+special values “M&lt;n&gt;” gives ticks spaced by a number of months.
+<code class="docutils literal notranslate"><span class="pre">n</span></code> must be a positive integer. To set ticks on the 15th of
+every third month, set <code class="docutils literal notranslate"><span class="pre">tick0</span></code> to “2000-01-15” and <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to
+“M3”. To set ticks every 4 years, set <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to “M48”</p>
+<p>The ‘dtick’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.exponentformat">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">exponentformat</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.exponentformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines a formatting rule for the tick exponents. For
+example, consider the number 1,000,000,000. If “none”, it
+appears as 1,000,000,000. If “e”, 1e+9. If “E”, 1E+9. If
+“power”, 1x10^9 (with 9 in a super script). If “SI”, 1G. If
+“B”, 1B.</p>
+<dl class="simple">
+<dt>The ‘exponentformat’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘none’, ‘e’, ‘E’, ‘power’, ‘SI’, ‘B’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.gridcolor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">gridcolor</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.gridcolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the color of the grid lines.</p>
+<dl class="simple">
+<dt>The ‘gridcolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.griddash">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">griddash</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.griddash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the dash style of lines. Set to a dash type string
+(“solid”, “dot”, “dash”, “longdash”, “dashdot”, or
+“longdashdot”) or a dash length list in px (eg
+“5px,10px,2px,2px”).</p>
+<dl class="simple">
+<dt>The ‘griddash’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following dash styles:</dt><dd><p>[‘solid’, ‘dot’, ‘dash’, ‘longdash’, ‘dashdot’, ‘longdashdot’]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A string containing a dash length list in pixels or percentages</dt><dd><p>(e.g. ‘5px 10px 2px 2px’, ‘5, 10, 2, 2’, ‘10% 20% 40%’, etc.)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.gridwidth">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">gridwidth</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.gridwidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the width (in px) of the grid lines.</p>
+<dl class="simple">
+<dt>The ‘gridwidth’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.hoverformat">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">hoverformat</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.hoverformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the hover text formatting rule using d3 formatting mini-
+languages which are very similar to those in Python. For
+numbers, see:
+<a class="reference external" href="https://github.com/d3/d3-format/tree/v1.4.5#d3-format">https://github.com/d3/d3-format/tree/v1.4.5#d3-format</a>. And for
+dates see: <a class="reference external" href="https://github.com/d3/d3-time">https://github.com/d3/d3-time</a>-
+format/tree/v2.2.3#locale_format. We add two items to d3’s date
+formatter: “%h” for half of the year as a decimal number as
+well as “%{n}f” for fractional seconds with n digits. For
+example, <em>2016-10-13 09:15:23.456</em> with tickformat
+“%H~%M~%S.%2f” would display “09~15~23.46”</p>
+<dl class="simple">
+<dt>The ‘hoverformat’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.labelalias">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">labelalias</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.labelalias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replacement text for specific tick or hover labels. For example
+using {US: ‘USA’, CA: ‘Canada’} changes US to USA and CA to
+Canada. The labels we would have shown must match the keys
+exactly, after adding any tickprefix or ticksuffix. For
+negative numbers the minus sign symbol used (U+2212) is wider
+than the regular ascii dash. That means you need to use −1
+instead of -1. labelalias can be used with any axis type, and
+both keys (if needed) and values (if desired) can include html-
+like tags or MathJax.</p>
+<p>The ‘labelalias’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.layer">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">layer</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the layer on which this axis is displayed. If <em>above
+traces</em>, this axis is displayed above all the subplot’s traces
+If <em>below traces</em>, this axis is displayed below all the
+subplot’s traces, but above the grid lines. Useful when used
+together with scatter-like traces with <code class="docutils literal notranslate"><span class="pre">cliponaxis</span></code> set to
+False to show markers and/or text nodes above this axis.</p>
+<dl class="simple">
+<dt>The ‘layer’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘above traces’, ‘below traces’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.linecolor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">linecolor</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.linecolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the axis line color.</p>
+<dl class="simple">
+<dt>The ‘linecolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.linewidth">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">linewidth</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.linewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the width (in px) of the axis line.</p>
+<dl class="simple">
+<dt>The ‘linewidth’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.minexponent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">minexponent</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.minexponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide SI prefix for 10^n if <a href="#id5"><span class="problematic" id="id6">|n|</span></a> is below this number. This only
+has an effect when <code class="docutils literal notranslate"><span class="pre">tickformat</span></code> is “SI” or “B”.</p>
+<dl class="simple">
+<dt>The ‘minexponent’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.nticks">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">nticks</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.nticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the maximum number of ticks for the particular axis.
+The actual number of ticks will be chosen automatically to be
+less than or equal to <code class="docutils literal notranslate"><span class="pre">nticks</span></code>. Has an effect only if
+<code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “auto”.</p>
+<dl class="simple">
+<dt>The ‘nticks’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [0, 9223372036854775807]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.period">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">period</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the angular period. Has an effect only when
+<code class="docutils literal notranslate"><span class="pre">angularaxis.type</span></code> is “category”.</p>
+<dl class="simple">
+<dt>The ‘period’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.rotation">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">rotation</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets that start position (in degrees) of the angular axis By
+default, polar subplots with <code class="docutils literal notranslate"><span class="pre">direction</span></code> set to
+“counterclockwise” get a <code class="docutils literal notranslate"><span class="pre">rotation</span></code> of 0 which corresponds to
+due East (like what mathematicians prefer). In turn, polar with
+<code class="docutils literal notranslate"><span class="pre">direction</span></code> set to “clockwise” get a rotation of 90 which
+corresponds to due North (like on a compass),</p>
+<p>The ‘rotation’ property is a angle (in degrees) that may be
+specified as a number between -180 and 180.
+Numeric values outside this range are converted to the equivalent value
+(e.g. 270 is converted to -90).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.separatethousands">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">separatethousands</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.separatethousands" title="Permalink to this definition">¶</a></dt>
+<dd><p>If “true”, even 4-digit integers are separated</p>
+<p>The ‘separatethousands’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.showexponent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showexponent</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.showexponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>If “all”, all exponents are shown besides their significands.
+If “first”, only the exponent of the first tick is shown. If
+“last”, only the exponent of the last tick is shown. If “none”,
+no exponents appear.</p>
+<dl class="simple">
+<dt>The ‘showexponent’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘all’, ‘first’, ‘last’, ‘none’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.showgrid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showgrid</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.showgrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not grid lines are drawn. If True, the
+grid lines are drawn at every tick mark.</p>
+<p>The ‘showgrid’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.showline">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showline</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.showline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not a line bounding this axis is drawn.</p>
+<p>The ‘showline’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.showticklabels">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showticklabels</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.showticklabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not the tick labels are drawn.</p>
+<p>The ‘showticklabels’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.showtickprefix">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showtickprefix</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.showtickprefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>If “all”, all tick labels are displayed with a prefix. If
+“first”, only the first tick is displayed with a prefix. If
+“last”, only the last tick is displayed with a suffix. If
+“none”, tick prefixes are hidden.</p>
+<dl class="simple">
+<dt>The ‘showtickprefix’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘all’, ‘first’, ‘last’, ‘none’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.showticksuffix">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showticksuffix</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.showticksuffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <code class="docutils literal notranslate"><span class="pre">showtickprefix</span></code> but for tick suffixes.</p>
+<dl class="simple">
+<dt>The ‘showticksuffix’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘all’, ‘first’, ‘last’, ‘none’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.thetaunit">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">thetaunit</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.thetaunit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the format unit of the formatted “theta” values. Has an
+effect only when <code class="docutils literal notranslate"><span class="pre">angularaxis.type</span></code> is “linear”.</p>
+<dl class="simple">
+<dt>The ‘thetaunit’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘radians’, ‘degrees’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tick0">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tick0</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tick0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the placement of the first tick on this axis. Use with
+<code class="docutils literal notranslate"><span class="pre">dtick</span></code>. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “log”, then you must take the
+log of your starting tick (e.g. to set the starting tick to
+100, set the <code class="docutils literal notranslate"><span class="pre">tick0</span></code> to 2) except when <code class="docutils literal notranslate"><span class="pre">dtick`=*L&lt;f&gt;*</span> <span class="pre">(see</span>
+<span class="pre">`dtick</span></code> for more info). If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “date”, it should
+be a date string, like date data. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is
+“category”, it should be a number, using the scale where each
+category is assigned a serial number from zero in the order it
+appears.</p>
+<p>The ‘tick0’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickangle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickangle</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the angle of the tick labels with respect to the
+horizontal. For example, a <code class="docutils literal notranslate"><span class="pre">tickangle</span></code> of -90 draws the tick
+labels vertically.</p>
+<p>The ‘tickangle’ property is a angle (in degrees) that may be
+specified as a number between -180 and 180.
+Numeric values outside this range are converted to the equivalent value
+(e.g. 270 is converted to -90).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickcolor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickcolor</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickcolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick color.</p>
+<dl class="simple">
+<dt>The ‘tickcolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickfont">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickfont</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickfont" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick font.</p>
+<p>The ‘tickfont’ property is an instance of Tickfont
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.polar.angularaxis.html#plotly.graph_objects.layout.polar.angularaxis.Tickfont" title="plotly.graph_objects.layout.polar.angularaxis.Tickfont"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.polar.angularaxis.Tickfont</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Tickfont constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><p>color</p>
+<dl class="simple">
+<dt>family</dt><dd><p>HTML font family - the typeface that will be
+applied by the web browser. The web browser
+will only be able to apply a font if it is
+available on the system which it operates.
+Provide multiple font families, separated by
+commas, to indicate the preference in which to
+apply fonts if they aren’t available on the
+system. The Chart Studio Cloud (at
+<a class="reference external" href="https://chart-studio.plotly.com">https://chart-studio.plotly.com</a> or on-premise)
+generates images on a server, where only a
+select number of fonts are installed and
+supported. These include “Arial”, “Balto”,
+“Courier New”, “Droid Sans”, “Droid Serif”,
+“Droid Sans Mono”, “Gravitas One”, “Old
+Standard TT”, “Open Sans”, “Overpass”, “PT Sans
+Narrow”, “Raleway”, “Times New Roman”.</p>
+</dd>
+<dt>lineposition</dt><dd><p>Sets the kind of decoration line(s) with text,
+such as an “under”, “over” or “through” as well
+as combinations e.g. “under+over”, etc.</p>
+</dd>
+<dt>shadow</dt><dd><p>Sets the shape and color of the shadow behind
+text. “auto” places minimal shadow and applies
+contrast text font color. See
+<a class="reference external" href="https://developer.mozilla.org/en">https://developer.mozilla.org/en</a>-
+US/docs/Web/CSS/text-shadow for additional
+options.</p>
+</dd>
+</dl>
+<p>size</p>
+<dl class="simple">
+<dt>style</dt><dd><p>Sets whether a font should be styled with a
+normal or italic face from its family.</p>
+</dd>
+<dt>textcase</dt><dd><p>Sets capitalization of text. It can be used to
+make text appear in all-uppercase or all-
+lowercase, or with each word capitalized.</p>
+</dd>
+<dt>variant</dt><dd><p>Sets the variant of the font.</p>
+</dd>
+<dt>weight</dt><dd><p>Sets the weight (or boldness) of the font.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.polar.angularaxis.html#plotly.graph_objects.layout.polar.angularaxis.Tickfont" title="plotly.graph_objects.layout.polar.angularaxis.Tickfont">plotly.graph_objects.layout.polar.angularaxis.Tickfont</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickformat">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickformat</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick label formatting rule using d3 formatting mini-
+languages which are very similar to those in Python. For
+numbers, see:
+<a class="reference external" href="https://github.com/d3/d3-format/tree/v1.4.5#d3-format">https://github.com/d3/d3-format/tree/v1.4.5#d3-format</a>. And for
+dates see: <a class="reference external" href="https://github.com/d3/d3-time">https://github.com/d3/d3-time</a>-
+format/tree/v2.2.3#locale_format. We add two items to d3’s date
+formatter: “%h” for half of the year as a decimal number as
+well as “%{n}f” for fractional seconds with n digits. For
+example, <em>2016-10-13 09:15:23.456</em> with tickformat
+“%H~%M~%S.%2f” would display “09~15~23.46”</p>
+<dl class="simple">
+<dt>The ‘tickformat’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickformatstopdefaults">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickformatstopdefaults</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickformatstopdefaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>When used in a template (as layout.template.layout.polar.angula
+raxis.tickformatstopdefaults), sets the default property values
+to use for elements of layout.polar.angularaxis.tickformatstops</p>
+<p>The ‘tickformatstopdefaults’ property is an instance of Tickformatstop
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.polar.angularaxis.html#plotly.graph_objects.layout.polar.angularaxis.Tickformatstop" title="plotly.graph_objects.layout.polar.angularaxis.Tickformatstop"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.polar.angularaxis.Tickformatstop</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Tickformatstop constructor</p>
+<p>Supported dict properties:</p>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.polar.angularaxis.html#plotly.graph_objects.layout.polar.angularaxis.Tickformatstop" title="plotly.graph_objects.layout.polar.angularaxis.Tickformatstop">plotly.graph_objects.layout.polar.angularaxis.Tickformatstop</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickformatstops">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickformatstops</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickformatstops" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘tickformatstops’ property is a tuple of instances of
+Tickformatstop that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>A list or tuple of instances of plotly.graph_objects.layout.polar.angularaxis.Tickformatstop</p></li>
+<li><p>A list or tuple of dicts of string/value properties that
+will be passed to the Tickformatstop constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>dtickrange</dt><dd><p>range [<em>min</em>, <em>max</em>], where “min”, “max” -
+dtick values which describe some zoom level, it
+is possible to omit “min” or “max” value by
+passing “null”</p>
+</dd>
+<dt>enabled</dt><dd><p>Determines whether or not this stop is used. If
+<code class="docutils literal notranslate"><span class="pre">false</span></code>, this stop is ignored even within its
+<code class="docutils literal notranslate"><span class="pre">dtickrange</span></code>.</p>
+</dd>
+<dt>name</dt><dd><p>When used in a template, named items are
+created in the output figure in addition to any
+items the figure already has in this array. You
+can modify these items in the output figure by
+making your own item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code>
+matching this <code class="docutils literal notranslate"><span class="pre">name</span></code> alongside your
+modifications (including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code> or
+<code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code> to hide it). Has no effect
+outside of a template.</p>
+</dd>
+<dt>templateitemname</dt><dd><p>Used to refer to a named item in this array in
+the template. Named items from the template
+will be created even without a matching item in
+the input figure, but you can modify one by
+making an item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code> matching
+its <code class="docutils literal notranslate"><span class="pre">name</span></code>, alongside your modifications
+(including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code> or <code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code>
+to hide it). If there is no template or no
+matching item, this item will be hidden unless
+you explicitly show it with <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">true</span></code>.</p>
+</dd>
+<dt>value</dt><dd><p>string - dtickformat for described zoom level,
+the same as “tickformat”</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)">tuple</a>[<a class="reference internal" href="plotly.graph_objects.layout.polar.angularaxis.html#plotly.graph_objects.layout.polar.angularaxis.Tickformatstop" title="plotly.graph_objects.layout.polar.angularaxis.Tickformatstop">plotly.graph_objects.layout.polar.angularaxis.Tickformatstop</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.ticklabelstep">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticklabelstep</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.ticklabelstep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the spacing between tick labels as compared to the spacing
+between ticks. A value of 1 (default) means each tick gets a
+label. A value of 2 means shows every 2nd label. A larger value
+n means only every nth tick is labeled. <code class="docutils literal notranslate"><span class="pre">tick0</span></code> determines
+which labels are shown. Not implemented for axes with <code class="docutils literal notranslate"><span class="pre">type</span></code>
+“log” or “multicategory”, or when <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is “array”.</p>
+<dl class="simple">
+<dt>The ‘ticklabelstep’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [1, 9223372036854775807]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.ticklen">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticklen</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.ticklen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick length (in px).</p>
+<dl class="simple">
+<dt>The ‘ticklen’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickmode">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickmode</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick mode for this axis. If “auto”, the number of
+ticks is set via <code class="docutils literal notranslate"><span class="pre">nticks</span></code>. If “linear”, the placement of the
+ticks is determined by a starting position <code class="docutils literal notranslate"><span class="pre">tick0</span></code> and a tick
+step <code class="docutils literal notranslate"><span class="pre">dtick</span></code> (“linear” is the default value if <code class="docutils literal notranslate"><span class="pre">tick0</span></code> and
+<code class="docutils literal notranslate"><span class="pre">dtick</span></code> are provided). If “array”, the placement of the ticks
+is set via <code class="docutils literal notranslate"><span class="pre">tickvals</span></code> and the tick text is <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>. (“array”
+is the default value if <code class="docutils literal notranslate"><span class="pre">tickvals</span></code> is provided).</p>
+<dl class="simple">
+<dt>The ‘tickmode’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘auto’, ‘linear’, ‘array’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickprefix">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickprefix</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickprefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a tick label prefix.</p>
+<dl class="simple">
+<dt>The ‘tickprefix’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.ticks">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticks</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether ticks are drawn or not. If “”, this axis’
+ticks are not drawn. If “outside” (“inside”), this axis’ are
+drawn outside (inside) the axis lines.</p>
+<dl class="simple">
+<dt>The ‘ticks’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘outside’, ‘inside’, ‘’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.ticksuffix">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticksuffix</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.ticksuffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a tick label suffix.</p>
+<dl class="simple">
+<dt>The ‘ticksuffix’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.ticktext">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticktext</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.ticktext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the text displayed at the ticks position via <code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.
+Only has an effect if <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “array”. Used with
+<code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.</p>
+<p>The ‘ticktext’ property is an array that may be specified as a tuple,
+list, numpy array, or pandas Series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.ticktextsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticktextsrc</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.ticktextsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>.</p>
+<p>The ‘ticktextsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickvals">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickvals</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the values at which ticks on this axis appear. Only has an
+effect if <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “array”. Used with <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>.</p>
+<p>The ‘tickvals’ property is an array that may be specified as a tuple,
+list, numpy array, or pandas Series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickvalssrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickvalssrc</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickvalssrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.</p>
+<p>The ‘tickvalssrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.tickwidth">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickwidth</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.tickwidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick width (in px).</p>
+<dl class="simple">
+<dt>The ‘tickwidth’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">type</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the angular axis type. If “linear”, set <code class="docutils literal notranslate"><span class="pre">thetaunit</span></code> to
+determine the unit in which axis value are shown. If <a href="#id1"><span class="problematic" id="id2">*</span></a>category,
+use <code class="docutils literal notranslate"><span class="pre">period</span></code> to set the number of integer coordinates around
+polar axis.</p>
+<dl class="simple">
+<dt>The ‘type’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘-‘, ‘linear’, ‘category’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.uirevision">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">uirevision</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.uirevision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controls persistence of user-driven changes in axis <code class="docutils literal notranslate"><span class="pre">rotation</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">polar&lt;N&gt;.uirevision</span></code>.</p>
+<p>The ‘uirevision’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.AngularAxis.visible">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">visible</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.AngularAxis.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>A single toggle to hide the axis while preserving interaction
+like dragging. Default is true when a cheater plot is present
+on the axis, otherwise false</p>
+<p>The ‘visible’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.layout.polar.Domain">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.layout.polar.</span></code><code class="sig-name descname"><span class="pre">Domain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.layout.polar.Domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseLayoutHierarchyType" title="plotly.basedatatypes.BaseLayoutHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseLayoutHierarchyType</span></code></a></p>
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.Domain.column">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">column</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.Domain.column" title="Permalink to this definition">¶</a></dt>
+<dd><p>If there is a layout grid, use the domain for this column in
+the grid for this polar subplot .</p>
+<dl class="simple">
+<dt>The ‘column’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [0, 9223372036854775807]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.Domain.row">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">row</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.Domain.row" title="Permalink to this definition">¶</a></dt>
+<dd><p>If there is a layout grid, use the domain for this row in the
+grid for this polar subplot .</p>
+<dl class="simple">
+<dt>The ‘row’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [0, 9223372036854775807]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.Domain.x">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.Domain.x" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Sets the horizontal domain of this polar subplot (in plot</dt><dd><p>fraction).</p>
+<p>The ‘x’ property is an info array that may be specified as:</p>
+<ul class="simple">
+<li><p>a list or tuple of 2 elements where:</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic" start="0">
+<li><dl class="simple">
+<dt>The ‘x[0]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The ‘x[1]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+<p>list</p>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.Domain.y">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">y</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.Domain.y" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Sets the vertical domain of this polar subplot (in plot</dt><dd><p>fraction).</p>
+<p>The ‘y’ property is an info array that may be specified as:</p>
+<ul class="simple">
+<li><p>a list or tuple of 2 elements where:</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic" start="0">
+<li><dl class="simple">
+<dt>The ‘y[0]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The ‘y[1]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+<p>list</p>
+</li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.layout.polar.</span></code><code class="sig-name descname"><span class="pre">RadialAxis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autorange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autorangeoptions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autotickangles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autotypenumbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calendar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoryarray</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoryarraysrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoryorder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtick</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponentformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gridcolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">griddash</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gridwidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoverformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labelalias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linecolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxallowed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minallowed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minexponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rangemode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separatethousands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showexponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showgrid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showticklabels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showtickprefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showticksuffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tick0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickangle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickcolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickfont</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickformatstops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickformatstopdefaults</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticklabelstep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticklen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickmode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickprefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticksuffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticktext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticktextsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickvals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickvalssrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickwidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uirevision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseLayoutHierarchyType" title="plotly.basedatatypes.BaseLayoutHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseLayoutHierarchyType</span></code></a></p>
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.angle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">angle</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the angle (in degrees) from which the radial axis is
+drawn. Note that by default, radial axis line on the theta=0
+line corresponds to a line pointing right (like what
+mathematicians prefer). Defaults to the first <code class="docutils literal notranslate"><span class="pre">polar.sector</span></code>
+angle.</p>
+<p>The ‘angle’ property is a angle (in degrees) that may be
+specified as a number between -180 and 180.
+Numeric values outside this range are converted to the equivalent value
+(e.g. 270 is converted to -90).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.autorange">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">autorange</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.autorange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not the range of this axis is computed in
+relation to the input data. See <code class="docutils literal notranslate"><span class="pre">rangemode</span></code> for more info. If
+<code class="docutils literal notranslate"><span class="pre">range</span></code> is provided and it has a value for both the lower and
+upper bound, <code class="docutils literal notranslate"><span class="pre">autorange</span></code> is set to False. Using “min” applies
+autorange only to set the minimum. Using “max” applies
+autorange only to set the maximum. Using <em>min reversed</em> applies
+autorange only to set the minimum on a reversed axis. Using
+<em>max reversed</em> applies autorange only to set the maximum on a
+reversed axis. Using “reversed” applies autorange on both ends
+and reverses the axis direction.</p>
+<dl class="simple">
+<dt>The ‘autorange’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[True, False, ‘reversed’, ‘min reversed’, ‘max reversed’,
+‘min’, ‘max’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.autorangeoptions">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">autorangeoptions</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.autorangeoptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘autorangeoptions’ property is an instance of Autorangeoptions
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#plotly.graph_objects.layout.polar.radialaxis.Autorangeoptions" title="plotly.graph_objects.layout.polar.radialaxis.Autorangeoptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.polar.radialaxis.Autorangeoptions</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Autorangeoptions constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>clipmax</dt><dd><p>Clip autorange maximum if it goes beyond this
+value. Has no effect when
+<code class="docutils literal notranslate"><span class="pre">autorangeoptions.maxallowed</span></code> is provided.</p>
+</dd>
+<dt>clipmin</dt><dd><p>Clip autorange minimum if it goes beyond this
+value. Has no effect when
+<code class="docutils literal notranslate"><span class="pre">autorangeoptions.minallowed</span></code> is provided.</p>
+</dd>
+<dt>include</dt><dd><p>Ensure this value is included in autorange.</p>
+</dd>
+<dt>includesrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">include</span></code>.</p>
+</dd>
+<dt>maxallowed</dt><dd><p>Use this value exactly as autorange maximum.</p>
+</dd>
+<dt>minallowed</dt><dd><p>Use this value exactly as autorange minimum.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#plotly.graph_objects.layout.polar.radialaxis.Autorangeoptions" title="plotly.graph_objects.layout.polar.radialaxis.Autorangeoptions">plotly.graph_objects.layout.polar.radialaxis.Autorangeoptions</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.autotickangles">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">autotickangles</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.autotickangles" title="Permalink to this definition">¶</a></dt>
+<dd><p>When <code class="docutils literal notranslate"><span class="pre">tickangle</span></code> is set to “auto”, it will be set to the first
+angle in this array that is large enough to prevent label
+overlap.</p>
+<p>The ‘autotickangles’ property is an info array that may be specified as:
+* a list of elements where:</p>
+<blockquote>
+<div><p>The ‘autotickangles[i]’ property is a angle (in degrees) that may be</p>
+</div></blockquote>
+<p>specified as a number between -180 and 180.
+Numeric values outside this range are converted to the equivalent value
+(e.g. 270 is converted to -90).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.autotypenumbers">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">autotypenumbers</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.autotypenumbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Using “strict” a numeric string in trace data is not converted
+to a number. Using <em>convert types</em> a numeric string in trace
+data may be treated as a number during automatic axis <code class="docutils literal notranslate"><span class="pre">type</span></code>
+detection. Defaults to layout.autotypenumbers.</p>
+<dl class="simple">
+<dt>The ‘autotypenumbers’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘convert types’, ‘strict’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.calendar">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">calendar</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.calendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the calendar system to use for <code class="docutils literal notranslate"><span class="pre">range</span></code> and <code class="docutils literal notranslate"><span class="pre">tick0</span></code> if this
+is a date axis. This does not set the calendar for interpreting
+data on this axis, that’s specified in the trace or via the
+global <code class="docutils literal notranslate"><span class="pre">layout.calendar</span></code></p>
+<dl class="simple">
+<dt>The ‘calendar’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘chinese’, ‘coptic’, ‘discworld’, ‘ethiopian’,
+‘gregorian’, ‘hebrew’, ‘islamic’, ‘jalali’, ‘julian’,
+‘mayan’, ‘nanakshahi’, ‘nepali’, ‘persian’, ‘taiwan’,
+‘thai’, ‘ummalqura’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.categoryarray">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">categoryarray</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.categoryarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the order in which categories on this axis appear. Only
+has an effect if <code class="docutils literal notranslate"><span class="pre">categoryorder</span></code> is set to “array”. Used with
+<code class="docutils literal notranslate"><span class="pre">categoryorder</span></code>.</p>
+<p>The ‘categoryarray’ property is an array that may be specified as a tuple,
+list, numpy array, or pandas Series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.categoryarraysrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">categoryarraysrc</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.categoryarraysrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">categoryarray</span></code>.</p>
+<p>The ‘categoryarraysrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.categoryorder">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">categoryorder</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.categoryorder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the ordering logic for the case of categorical
+variables. By default, plotly uses “trace”, which specifies the
+order that is present in the data supplied. Set <code class="docutils literal notranslate"><span class="pre">categoryorder</span></code>
+to <em>category ascending</em> or <em>category descending</em> if order
+should be determined by the alphanumerical order of the
+category names. Set <code class="docutils literal notranslate"><span class="pre">categoryorder</span></code> to “array” to derive the
+ordering from the attribute <code class="docutils literal notranslate"><span class="pre">categoryarray</span></code>. If a category is
+not found in the <code class="docutils literal notranslate"><span class="pre">categoryarray</span></code> array, the sorting behavior
+for that attribute will be identical to the “trace” mode. The
+unspecified categories will follow the categories in
+<code class="docutils literal notranslate"><span class="pre">categoryarray</span></code>. Set <code class="docutils literal notranslate"><span class="pre">categoryorder</span></code> to <em>total ascending</em> or
+<em>total descending</em> if order should be determined by the
+numerical order of the values. Similarly, the order can be
+determined by the min, max, sum, mean, geometric mean or median
+of all the values.</p>
+<dl class="simple">
+<dt>The ‘categoryorder’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘trace’, ‘category ascending’, ‘category descending’,
+‘array’, ‘total ascending’, ‘total descending’, ‘min
+ascending’, ‘min descending’, ‘max ascending’, ‘max
+descending’, ‘sum ascending’, ‘sum descending’, ‘mean
+ascending’, ‘mean descending’, ‘geometric mean ascending’,
+‘geometric mean descending’, ‘median ascending’, ‘median
+descending’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.color">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">color</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets default for all colors associated with this axis all at
+once: line, font, tick, and grid colors. Grid color is
+lightened by blending this with the plot background Individual
+pieces can override this.</p>
+<dl class="simple">
+<dt>The ‘color’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.dtick">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dtick</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.dtick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the step in-between ticks on this axis. Use with <code class="docutils literal notranslate"><span class="pre">tick0</span></code>.
+Must be a positive number, or special strings available to
+“log” and “date” axes. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “log”, then ticks
+are set every 10^(n*dtick) where n is the tick number. For
+example, to set a tick mark at 1, 10, 100, 1000, … set dtick
+to 1. To set tick marks at 1, 100, 10000, … set dtick to 2.
+To set tick marks at 1, 5, 25, 125, 625, 3125, … set dtick to
+log_10(5), or 0.69897000433. “log” has several special values;
+“L&lt;f&gt;”, where <code class="docutils literal notranslate"><span class="pre">f</span></code> is a positive number, gives ticks linearly
+spaced in value (but not position). For example <code class="docutils literal notranslate"><span class="pre">tick0</span></code> = 0.1,
+<code class="docutils literal notranslate"><span class="pre">dtick</span></code> = “L0.5” will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To
+show powers of 10 plus small digits between, use “D1” (all
+digits) or “D2” (only 2 and 5). <code class="docutils literal notranslate"><span class="pre">tick0</span></code> is ignored for “D1” and
+“D2”. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “date”, then you must convert the
+time to milliseconds. For example, to set the interval between
+ticks to one day, set <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to 86400000.0. “date” also has
+special values “M&lt;n&gt;” gives ticks spaced by a number of months.
+<code class="docutils literal notranslate"><span class="pre">n</span></code> must be a positive integer. To set ticks on the 15th of
+every third month, set <code class="docutils literal notranslate"><span class="pre">tick0</span></code> to “2000-01-15” and <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to
+“M3”. To set ticks every 4 years, set <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to “M48”</p>
+<p>The ‘dtick’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.exponentformat">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">exponentformat</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.exponentformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines a formatting rule for the tick exponents. For
+example, consider the number 1,000,000,000. If “none”, it
+appears as 1,000,000,000. If “e”, 1e+9. If “E”, 1E+9. If
+“power”, 1x10^9 (with 9 in a super script). If “SI”, 1G. If
+“B”, 1B.</p>
+<dl class="simple">
+<dt>The ‘exponentformat’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘none’, ‘e’, ‘E’, ‘power’, ‘SI’, ‘B’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.gridcolor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">gridcolor</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.gridcolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the color of the grid lines.</p>
+<dl class="simple">
+<dt>The ‘gridcolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.griddash">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">griddash</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.griddash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the dash style of lines. Set to a dash type string
+(“solid”, “dot”, “dash”, “longdash”, “dashdot”, or
+“longdashdot”) or a dash length list in px (eg
+“5px,10px,2px,2px”).</p>
+<dl class="simple">
+<dt>The ‘griddash’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following dash styles:</dt><dd><p>[‘solid’, ‘dot’, ‘dash’, ‘longdash’, ‘dashdot’, ‘longdashdot’]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A string containing a dash length list in pixels or percentages</dt><dd><p>(e.g. ‘5px 10px 2px 2px’, ‘5, 10, 2, 2’, ‘10% 20% 40%’, etc.)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.gridwidth">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">gridwidth</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.gridwidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the width (in px) of the grid lines.</p>
+<dl class="simple">
+<dt>The ‘gridwidth’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.hoverformat">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">hoverformat</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.hoverformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the hover text formatting rule using d3 formatting mini-
+languages which are very similar to those in Python. For
+numbers, see:
+<a class="reference external" href="https://github.com/d3/d3-format/tree/v1.4.5#d3-format">https://github.com/d3/d3-format/tree/v1.4.5#d3-format</a>. And for
+dates see: <a class="reference external" href="https://github.com/d3/d3-time">https://github.com/d3/d3-time</a>-
+format/tree/v2.2.3#locale_format. We add two items to d3’s date
+formatter: “%h” for half of the year as a decimal number as
+well as “%{n}f” for fractional seconds with n digits. For
+example, <em>2016-10-13 09:15:23.456</em> with tickformat
+“%H~%M~%S.%2f” would display “09~15~23.46”</p>
+<dl class="simple">
+<dt>The ‘hoverformat’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.labelalias">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">labelalias</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.labelalias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replacement text for specific tick or hover labels. For example
+using {US: ‘USA’, CA: ‘Canada’} changes US to USA and CA to
+Canada. The labels we would have shown must match the keys
+exactly, after adding any tickprefix or ticksuffix. For
+negative numbers the minus sign symbol used (U+2212) is wider
+than the regular ascii dash. That means you need to use −1
+instead of -1. labelalias can be used with any axis type, and
+both keys (if needed) and values (if desired) can include html-
+like tags or MathJax.</p>
+<p>The ‘labelalias’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.layer">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">layer</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the layer on which this axis is displayed. If <em>above
+traces</em>, this axis is displayed above all the subplot’s traces
+If <em>below traces</em>, this axis is displayed below all the
+subplot’s traces, but above the grid lines. Useful when used
+together with scatter-like traces with <code class="docutils literal notranslate"><span class="pre">cliponaxis</span></code> set to
+False to show markers and/or text nodes above this axis.</p>
+<dl class="simple">
+<dt>The ‘layer’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘above traces’, ‘below traces’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.linecolor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">linecolor</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.linecolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the axis line color.</p>
+<dl class="simple">
+<dt>The ‘linecolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.linewidth">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">linewidth</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.linewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the width (in px) of the axis line.</p>
+<dl class="simple">
+<dt>The ‘linewidth’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.maxallowed">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">maxallowed</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.maxallowed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines the maximum range of this axis.</p>
+<p>The ‘maxallowed’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.minallowed">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">minallowed</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.minallowed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines the minimum range of this axis.</p>
+<p>The ‘minallowed’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.minexponent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">minexponent</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.minexponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide SI prefix for 10^n if <a href="#id7"><span class="problematic" id="id8">|n|</span></a> is below this number. This only
+has an effect when <code class="docutils literal notranslate"><span class="pre">tickformat</span></code> is “SI” or “B”.</p>
+<dl class="simple">
+<dt>The ‘minexponent’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.nticks">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">nticks</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.nticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the maximum number of ticks for the particular axis.
+The actual number of ticks will be chosen automatically to be
+less than or equal to <code class="docutils literal notranslate"><span class="pre">nticks</span></code>. Has an effect only if
+<code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “auto”.</p>
+<dl class="simple">
+<dt>The ‘nticks’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [0, 9223372036854775807]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.range">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">range</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.range" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Sets the range of this axis. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “log”, then</dt><dd><p>you must take the log of your desired range (e.g. to set the
+range from 1 to 100, set the range from 0 to 2). If the axis
+<code class="docutils literal notranslate"><span class="pre">type</span></code> is “date”, it should be date strings, like date data,
+though Date objects and unix milliseconds will be accepted and
+converted to strings. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “category”, it
+should be numbers, using the scale where each category is
+assigned a serial number from zero in the order it appears.
+Leaving either or both elements <code class="docutils literal notranslate"><span class="pre">null</span></code> impacts the default
+<code class="docutils literal notranslate"><span class="pre">autorange</span></code>.</p>
+<p>The ‘range’ property is an info array that may be specified as:</p>
+<ul class="simple">
+<li><p>a list or tuple of 2 elements where:</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic" start="0">
+<li><p>The ‘range[0]’ property accepts values of any type</p></li>
+<li><p>The ‘range[1]’ property accepts values of any type</p>
+<p>list</p>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.rangemode">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">rangemode</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.rangemode" title="Permalink to this definition">¶</a></dt>
+<dd><p>If <a href="#id3"><span class="problematic" id="id4">*</span></a>tozero*`, the range extends to 0, regardless of the input
+data If “nonnegative”, the range is non-negative, regardless of
+the input data. If “normal”, the range is computed in relation
+to the extrema of the input data (same behavior as for
+cartesian axes).</p>
+<dl class="simple">
+<dt>The ‘rangemode’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘tozero’, ‘nonnegative’, ‘normal’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.separatethousands">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">separatethousands</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.separatethousands" title="Permalink to this definition">¶</a></dt>
+<dd><p>If “true”, even 4-digit integers are separated</p>
+<p>The ‘separatethousands’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.showexponent">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showexponent</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.showexponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>If “all”, all exponents are shown besides their significands.
+If “first”, only the exponent of the first tick is shown. If
+“last”, only the exponent of the last tick is shown. If “none”,
+no exponents appear.</p>
+<dl class="simple">
+<dt>The ‘showexponent’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘all’, ‘first’, ‘last’, ‘none’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.showgrid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showgrid</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.showgrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not grid lines are drawn. If True, the
+grid lines are drawn at every tick mark.</p>
+<p>The ‘showgrid’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.showline">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showline</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.showline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not a line bounding this axis is drawn.</p>
+<p>The ‘showline’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.showticklabels">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showticklabels</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.showticklabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not the tick labels are drawn.</p>
+<p>The ‘showticklabels’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.showtickprefix">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showtickprefix</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.showtickprefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>If “all”, all tick labels are displayed with a prefix. If
+“first”, only the first tick is displayed with a prefix. If
+“last”, only the last tick is displayed with a suffix. If
+“none”, tick prefixes are hidden.</p>
+<dl class="simple">
+<dt>The ‘showtickprefix’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘all’, ‘first’, ‘last’, ‘none’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.showticksuffix">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showticksuffix</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.showticksuffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <code class="docutils literal notranslate"><span class="pre">showtickprefix</span></code> but for tick suffixes.</p>
+<dl class="simple">
+<dt>The ‘showticksuffix’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘all’, ‘first’, ‘last’, ‘none’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.side">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">side</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.side" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines on which side of radial axis line the tick and tick
+labels appear.</p>
+<dl class="simple">
+<dt>The ‘side’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘clockwise’, ‘counterclockwise’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tick0">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tick0</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tick0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the placement of the first tick on this axis. Use with
+<code class="docutils literal notranslate"><span class="pre">dtick</span></code>. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “log”, then you must take the
+log of your starting tick (e.g. to set the starting tick to
+100, set the <code class="docutils literal notranslate"><span class="pre">tick0</span></code> to 2) except when <code class="docutils literal notranslate"><span class="pre">dtick`=*L&lt;f&gt;*</span> <span class="pre">(see</span>
+<span class="pre">`dtick</span></code> for more info). If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “date”, it should
+be a date string, like date data. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is
+“category”, it should be a number, using the scale where each
+category is assigned a serial number from zero in the order it
+appears.</p>
+<p>The ‘tick0’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickangle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickangle</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the angle of the tick labels with respect to the
+horizontal. For example, a <code class="docutils literal notranslate"><span class="pre">tickangle</span></code> of -90 draws the tick
+labels vertically.</p>
+<p>The ‘tickangle’ property is a angle (in degrees) that may be
+specified as a number between -180 and 180.
+Numeric values outside this range are converted to the equivalent value
+(e.g. 270 is converted to -90).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickcolor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickcolor</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickcolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick color.</p>
+<dl class="simple">
+<dt>The ‘tickcolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickfont">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickfont</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickfont" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick font.</p>
+<p>The ‘tickfont’ property is an instance of Tickfont
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#plotly.graph_objects.layout.polar.radialaxis.Tickfont" title="plotly.graph_objects.layout.polar.radialaxis.Tickfont"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.polar.radialaxis.Tickfont</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Tickfont constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><p>color</p>
+<dl class="simple">
+<dt>family</dt><dd><p>HTML font family - the typeface that will be
+applied by the web browser. The web browser
+will only be able to apply a font if it is
+available on the system which it operates.
+Provide multiple font families, separated by
+commas, to indicate the preference in which to
+apply fonts if they aren’t available on the
+system. The Chart Studio Cloud (at
+<a class="reference external" href="https://chart-studio.plotly.com">https://chart-studio.plotly.com</a> or on-premise)
+generates images on a server, where only a
+select number of fonts are installed and
+supported. These include “Arial”, “Balto”,
+“Courier New”, “Droid Sans”, “Droid Serif”,
+“Droid Sans Mono”, “Gravitas One”, “Old
+Standard TT”, “Open Sans”, “Overpass”, “PT Sans
+Narrow”, “Raleway”, “Times New Roman”.</p>
+</dd>
+<dt>lineposition</dt><dd><p>Sets the kind of decoration line(s) with text,
+such as an “under”, “over” or “through” as well
+as combinations e.g. “under+over”, etc.</p>
+</dd>
+<dt>shadow</dt><dd><p>Sets the shape and color of the shadow behind
+text. “auto” places minimal shadow and applies
+contrast text font color. See
+<a class="reference external" href="https://developer.mozilla.org/en">https://developer.mozilla.org/en</a>-
+US/docs/Web/CSS/text-shadow for additional
+options.</p>
+</dd>
+</dl>
+<p>size</p>
+<dl class="simple">
+<dt>style</dt><dd><p>Sets whether a font should be styled with a
+normal or italic face from its family.</p>
+</dd>
+<dt>textcase</dt><dd><p>Sets capitalization of text. It can be used to
+make text appear in all-uppercase or all-
+lowercase, or with each word capitalized.</p>
+</dd>
+<dt>variant</dt><dd><p>Sets the variant of the font.</p>
+</dd>
+<dt>weight</dt><dd><p>Sets the weight (or boldness) of the font.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#plotly.graph_objects.layout.polar.radialaxis.Tickfont" title="plotly.graph_objects.layout.polar.radialaxis.Tickfont">plotly.graph_objects.layout.polar.radialaxis.Tickfont</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickformat">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickformat</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick label formatting rule using d3 formatting mini-
+languages which are very similar to those in Python. For
+numbers, see:
+<a class="reference external" href="https://github.com/d3/d3-format/tree/v1.4.5#d3-format">https://github.com/d3/d3-format/tree/v1.4.5#d3-format</a>. And for
+dates see: <a class="reference external" href="https://github.com/d3/d3-time">https://github.com/d3/d3-time</a>-
+format/tree/v2.2.3#locale_format. We add two items to d3’s date
+formatter: “%h” for half of the year as a decimal number as
+well as “%{n}f” for fractional seconds with n digits. For
+example, <em>2016-10-13 09:15:23.456</em> with tickformat
+“%H~%M~%S.%2f” would display “09~15~23.46”</p>
+<dl class="simple">
+<dt>The ‘tickformat’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickformatstopdefaults">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickformatstopdefaults</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickformatstopdefaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>When used in a template (as layout.template.layout.polar.radial
+axis.tickformatstopdefaults), sets the default property values
+to use for elements of layout.polar.radialaxis.tickformatstops</p>
+<p>The ‘tickformatstopdefaults’ property is an instance of Tickformatstop
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#plotly.graph_objects.layout.polar.radialaxis.Tickformatstop" title="plotly.graph_objects.layout.polar.radialaxis.Tickformatstop"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.polar.radialaxis.Tickformatstop</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Tickformatstop constructor</p>
+<p>Supported dict properties:</p>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#plotly.graph_objects.layout.polar.radialaxis.Tickformatstop" title="plotly.graph_objects.layout.polar.radialaxis.Tickformatstop">plotly.graph_objects.layout.polar.radialaxis.Tickformatstop</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickformatstops">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickformatstops</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickformatstops" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘tickformatstops’ property is a tuple of instances of
+Tickformatstop that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>A list or tuple of instances of plotly.graph_objects.layout.polar.radialaxis.Tickformatstop</p></li>
+<li><p>A list or tuple of dicts of string/value properties that
+will be passed to the Tickformatstop constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>dtickrange</dt><dd><p>range [<em>min</em>, <em>max</em>], where “min”, “max” -
+dtick values which describe some zoom level, it
+is possible to omit “min” or “max” value by
+passing “null”</p>
+</dd>
+<dt>enabled</dt><dd><p>Determines whether or not this stop is used. If
+<code class="docutils literal notranslate"><span class="pre">false</span></code>, this stop is ignored even within its
+<code class="docutils literal notranslate"><span class="pre">dtickrange</span></code>.</p>
+</dd>
+<dt>name</dt><dd><p>When used in a template, named items are
+created in the output figure in addition to any
+items the figure already has in this array. You
+can modify these items in the output figure by
+making your own item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code>
+matching this <code class="docutils literal notranslate"><span class="pre">name</span></code> alongside your
+modifications (including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code> or
+<code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code> to hide it). Has no effect
+outside of a template.</p>
+</dd>
+<dt>templateitemname</dt><dd><p>Used to refer to a named item in this array in
+the template. Named items from the template
+will be created even without a matching item in
+the input figure, but you can modify one by
+making an item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code> matching
+its <code class="docutils literal notranslate"><span class="pre">name</span></code>, alongside your modifications
+(including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code> or <code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code>
+to hide it). If there is no template or no
+matching item, this item will be hidden unless
+you explicitly show it with <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">true</span></code>.</p>
+</dd>
+<dt>value</dt><dd><p>string - dtickformat for described zoom level,
+the same as “tickformat”</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)">tuple</a>[<a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#plotly.graph_objects.layout.polar.radialaxis.Tickformatstop" title="plotly.graph_objects.layout.polar.radialaxis.Tickformatstop">plotly.graph_objects.layout.polar.radialaxis.Tickformatstop</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.ticklabelstep">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticklabelstep</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.ticklabelstep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the spacing between tick labels as compared to the spacing
+between ticks. A value of 1 (default) means each tick gets a
+label. A value of 2 means shows every 2nd label. A larger value
+n means only every nth tick is labeled. <code class="docutils literal notranslate"><span class="pre">tick0</span></code> determines
+which labels are shown. Not implemented for axes with <code class="docutils literal notranslate"><span class="pre">type</span></code>
+“log” or “multicategory”, or when <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is “array”.</p>
+<dl class="simple">
+<dt>The ‘ticklabelstep’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [1, 9223372036854775807]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.ticklen">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticklen</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.ticklen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick length (in px).</p>
+<dl class="simple">
+<dt>The ‘ticklen’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickmode">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickmode</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick mode for this axis. If “auto”, the number of
+ticks is set via <code class="docutils literal notranslate"><span class="pre">nticks</span></code>. If “linear”, the placement of the
+ticks is determined by a starting position <code class="docutils literal notranslate"><span class="pre">tick0</span></code> and a tick
+step <code class="docutils literal notranslate"><span class="pre">dtick</span></code> (“linear” is the default value if <code class="docutils literal notranslate"><span class="pre">tick0</span></code> and
+<code class="docutils literal notranslate"><span class="pre">dtick</span></code> are provided). If “array”, the placement of the ticks
+is set via <code class="docutils literal notranslate"><span class="pre">tickvals</span></code> and the tick text is <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>. (“array”
+is the default value if <code class="docutils literal notranslate"><span class="pre">tickvals</span></code> is provided).</p>
+<dl class="simple">
+<dt>The ‘tickmode’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘auto’, ‘linear’, ‘array’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickprefix">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickprefix</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickprefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a tick label prefix.</p>
+<dl class="simple">
+<dt>The ‘tickprefix’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.ticks">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticks</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether ticks are drawn or not. If “”, this axis’
+ticks are not drawn. If “outside” (“inside”), this axis’ are
+drawn outside (inside) the axis lines.</p>
+<dl class="simple">
+<dt>The ‘ticks’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘outside’, ‘inside’, ‘’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.ticksuffix">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticksuffix</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.ticksuffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a tick label suffix.</p>
+<dl class="simple">
+<dt>The ‘ticksuffix’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.ticktext">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticktext</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.ticktext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the text displayed at the ticks position via <code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.
+Only has an effect if <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “array”. Used with
+<code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.</p>
+<p>The ‘ticktext’ property is an array that may be specified as a tuple,
+list, numpy array, or pandas Series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.ticktextsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ticktextsrc</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.ticktextsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>.</p>
+<p>The ‘ticktextsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickvals">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickvals</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the values at which ticks on this axis appear. Only has an
+effect if <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “array”. Used with <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>.</p>
+<p>The ‘tickvals’ property is an array that may be specified as a tuple,
+list, numpy array, or pandas Series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickvalssrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickvalssrc</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickvalssrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.</p>
+<p>The ‘tickvalssrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.tickwidth">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tickwidth</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.tickwidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the tick width (in px).</p>
+<dl class="simple">
+<dt>The ‘tickwidth’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.title">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">title</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘title’ property is an instance of Title
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#plotly.graph_objects.layout.polar.radialaxis.Title" title="plotly.graph_objects.layout.polar.radialaxis.Title"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.polar.radialaxis.Title</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Title constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>font</dt><dd><p>Sets this axis’ title font.</p>
+</dd>
+<dt>text</dt><dd><p>Sets the title of this axis.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#plotly.graph_objects.layout.polar.radialaxis.Title" title="plotly.graph_objects.layout.polar.radialaxis.Title">plotly.graph_objects.layout.polar.radialaxis.Title</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">type</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the axis type. By default, plotly attempts to determined
+the axis type by looking into the data of the traces that
+referenced the axis in question.</p>
+<dl class="simple">
+<dt>The ‘type’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘-‘, ‘linear’, ‘log’, ‘date’, ‘category’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.uirevision">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">uirevision</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.uirevision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controls persistence of user-driven changes in axis <code class="docutils literal notranslate"><span class="pre">range</span></code>,
+<code class="docutils literal notranslate"><span class="pre">autorange</span></code>, <code class="docutils literal notranslate"><span class="pre">angle</span></code>, and <code class="docutils literal notranslate"><span class="pre">title</span></code> if in <code class="docutils literal notranslate"><span class="pre">editable:</span> <span class="pre">true</span></code>
+configuration. Defaults to <code class="docutils literal notranslate"><span class="pre">polar&lt;N&gt;.uirevision</span></code>.</p>
+<p>The ‘uirevision’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.polar.RadialAxis.visible">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">visible</span></code><a class="headerlink" href="#plotly.graph_objects.layout.polar.RadialAxis.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>A single toggle to hide the axis while preserving interaction
+like dragging. Default is true when a cheater plot is present
+on the axis, otherwise false</p>
+<p>The ‘visible’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plotly.graph_objects.layout.polar.angularaxis.html">plotly.graph_objects.layout.polar.angularaxis package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html">plotly.graph_objects.layout.polar.radialaxis package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plotly.graph_objects.layout.polar.radialaxis.title.html">plotly.graph_objects.layout.polar.radialaxis.title package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </body>
+</html>

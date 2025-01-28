@@ -1,0 +1,930 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>plotly.graph_objects.layout.map package &#8212;  6.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.express.html"><code class="docutils literal notranslate"><span class="pre">plotly.express</span></code>: high-level interface for data visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.graph_objects.html"><code class="docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>: low-level interface to figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.subplots.html"><code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code>: helper function for laying out multi-plot figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.figure_factory.html"><code class="docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>: helper methods for building specific complex charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.io.html"><code class="docutils literal notranslate"><span class="pre">plotly.io</span></code>: low-level interface for displaying, reading and writing figures</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">plotly.graph_objects.layout.map package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="module-plotly.graph_objects.layout.map">
+<span id="plotly-graph-objs-layout-map-package"></span><h1>plotly.graph_objects.layout.map package<a class="headerlink" href="#module-plotly.graph_objects.layout.map" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="plotly.graph_objects.layout.map.Bounds">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.layout.map.</span></code><code class="sig-name descname"><span class="pre">Bounds</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">east</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">north</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">south</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">west</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.layout.map.Bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseLayoutHierarchyType" title="plotly.basedatatypes.BaseLayoutHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseLayoutHierarchyType</span></code></a></p>
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Bounds.east">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">east</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Bounds.east" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the maximum longitude of the map (in degrees East) if
+<code class="docutils literal notranslate"><span class="pre">west</span></code>, <code class="docutils literal notranslate"><span class="pre">south</span></code> and <code class="docutils literal notranslate"><span class="pre">north</span></code> are declared.</p>
+<dl class="simple">
+<dt>The ‘east’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Bounds.north">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">north</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Bounds.north" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the maximum latitude of the map (in degrees North) if
+<code class="docutils literal notranslate"><span class="pre">east</span></code>, <code class="docutils literal notranslate"><span class="pre">west</span></code> and <code class="docutils literal notranslate"><span class="pre">south</span></code> are declared.</p>
+<dl class="simple">
+<dt>The ‘north’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Bounds.south">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">south</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Bounds.south" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the minimum latitude of the map (in degrees North) if
+<code class="docutils literal notranslate"><span class="pre">east</span></code>, <code class="docutils literal notranslate"><span class="pre">west</span></code> and <code class="docutils literal notranslate"><span class="pre">north</span></code> are declared.</p>
+<dl class="simple">
+<dt>The ‘south’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Bounds.west">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">west</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Bounds.west" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the minimum longitude of the map (in degrees East) if
+<code class="docutils literal notranslate"><span class="pre">east</span></code>, <code class="docutils literal notranslate"><span class="pre">south</span></code> and <code class="docutils literal notranslate"><span class="pre">north</span></code> are declared.</p>
+<dl class="simple">
+<dt>The ‘west’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.layout.map.Center">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.layout.map.</span></code><code class="sig-name descname"><span class="pre">Center</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.layout.map.Center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseLayoutHierarchyType" title="plotly.basedatatypes.BaseLayoutHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseLayoutHierarchyType</span></code></a></p>
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Center.lat">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lat</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Center.lat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the latitude of the center of the map (in degrees North).</p>
+<dl class="simple">
+<dt>The ‘lat’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Center.lon">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lon</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Center.lon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the longitude of the center of the map (in degrees East).</p>
+<dl class="simple">
+<dt>The ‘lon’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.layout.map.Domain">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.layout.map.</span></code><code class="sig-name descname"><span class="pre">Domain</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.layout.map.Domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseLayoutHierarchyType" title="plotly.basedatatypes.BaseLayoutHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseLayoutHierarchyType</span></code></a></p>
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Domain.column">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">column</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Domain.column" title="Permalink to this definition">¶</a></dt>
+<dd><p>If there is a layout grid, use the domain for this column in
+the grid for this map subplot .</p>
+<dl class="simple">
+<dt>The ‘column’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [0, 9223372036854775807]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Domain.row">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">row</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Domain.row" title="Permalink to this definition">¶</a></dt>
+<dd><p>If there is a layout grid, use the domain for this row in the
+grid for this map subplot .</p>
+<dl class="simple">
+<dt>The ‘row’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [0, 9223372036854775807]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Domain.x">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Domain.x" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Sets the horizontal domain of this map subplot (in plot</dt><dd><p>fraction).</p>
+<p>The ‘x’ property is an info array that may be specified as:</p>
+<ul class="simple">
+<li><p>a list or tuple of 2 elements where:</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic" start="0">
+<li><dl class="simple">
+<dt>The ‘x[0]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The ‘x[1]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+<p>list</p>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Domain.y">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">y</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Domain.y" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Sets the vertical domain of this map subplot (in plot</dt><dd><p>fraction).</p>
+<p>The ‘y’ property is an info array that may be specified as:</p>
+<ul class="simple">
+<li><p>a list or tuple of 2 elements where:</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic" start="0">
+<li><dl class="simple">
+<dt>The ‘y[0]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The ‘y[1]’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+<p>list</p>
+</li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.layout.map.Layer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.layout.map.</span></code><code class="sig-name descname"><span class="pre">Layer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">below</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">circle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxzoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minzoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceattribution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourcelayer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourcetype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">templateitemname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseLayoutHierarchyType" title="plotly.basedatatypes.BaseLayoutHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseLayoutHierarchyType</span></code></a></p>
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.below">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">below</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.below" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if the layer will be inserted before the layer with
+the specified ID. If omitted or set to ‘’, the layer will be
+inserted above every existing layer.</p>
+<dl class="simple">
+<dt>The ‘below’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.circle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">circle</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘circle’ property is an instance of Circle
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.map.layer.html#plotly.graph_objects.layout.map.layer.Circle" title="plotly.graph_objects.layout.map.layer.Circle"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.map.layer.Circle</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Circle constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>radius</dt><dd><p>Sets the circle radius (map.layer.paint.circle-
+radius). Has an effect only when <code class="docutils literal notranslate"><span class="pre">type</span></code> is set
+to “circle”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.map.layer.html#plotly.graph_objects.layout.map.layer.Circle" title="plotly.graph_objects.layout.map.layer.Circle">plotly.graph_objects.layout.map.layer.Circle</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.color">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">color</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the primary layer color. If <code class="docutils literal notranslate"><span class="pre">type</span></code> is “circle”, color
+corresponds to the circle color (map.layer.paint.circle-color)
+If <code class="docutils literal notranslate"><span class="pre">type</span></code> is “line”, color corresponds to the line color
+(map.layer.paint.line-color) If <code class="docutils literal notranslate"><span class="pre">type</span></code> is “fill”, color
+corresponds to the fill color (map.layer.paint.fill-color) If
+<code class="docutils literal notranslate"><span class="pre">type</span></code> is “symbol”, color corresponds to the icon color
+(map.layer.paint.icon-color)</p>
+<dl class="simple">
+<dt>The ‘color’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.coordinates">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">coordinates</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the coordinates array contains [longitude, latitude] pairs
+for the image corners listed in clockwise order: top left, top
+right, bottom right, bottom left. Only has an effect for
+“image” <code class="docutils literal notranslate"><span class="pre">sourcetype</span></code>.</p>
+<p>The ‘coordinates’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.fill">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fill</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘fill’ property is an instance of Fill
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.map.layer.html#plotly.graph_objects.layout.map.layer.Fill" title="plotly.graph_objects.layout.map.layer.Fill"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.map.layer.Fill</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Fill constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>outlinecolor</dt><dd><p>Sets the fill outline color
+(map.layer.paint.fill-outline-color). Has an
+effect only when <code class="docutils literal notranslate"><span class="pre">type</span></code> is set to “fill”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.map.layer.html#plotly.graph_objects.layout.map.layer.Fill" title="plotly.graph_objects.layout.map.layer.Fill">plotly.graph_objects.layout.map.layer.Fill</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.line">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">line</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.line" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘line’ property is an instance of Line
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.map.layer.html#plotly.graph_objects.layout.map.layer.Line" title="plotly.graph_objects.layout.map.layer.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.map.layer.Line</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Line constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>dash</dt><dd><p>Sets the length of dashes and gaps
+(map.layer.paint.line-dasharray). Has an effect
+only when <code class="docutils literal notranslate"><span class="pre">type</span></code> is set to “line”.</p>
+</dd>
+<dt>dashsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">dash</span></code>.</p>
+</dd>
+<dt>width</dt><dd><p>Sets the line width (map.layer.paint.line-
+width). Has an effect only when <code class="docutils literal notranslate"><span class="pre">type</span></code> is set
+to “line”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.map.layer.html#plotly.graph_objects.layout.map.layer.Line" title="plotly.graph_objects.layout.map.layer.Line">plotly.graph_objects.layout.map.layer.Line</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.maxzoom">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">maxzoom</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.maxzoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the maximum zoom level (map.layer.maxzoom). At zoom levels
+equal to or greater than the maxzoom, the layer will be hidden.</p>
+<dl class="simple">
+<dt>The ‘maxzoom’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 24]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.minzoom">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">minzoom</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.minzoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the minimum zoom level (map.layer.minzoom). At zoom levels
+less than the minzoom, the layer will be hidden.</p>
+<dl class="simple">
+<dt>The ‘minzoom’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 24]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.name">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>When used in a template, named items are created in the output
+figure in addition to any items the figure already has in this
+array. You can modify these items in the output figure by
+making your own item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code> matching this
+<code class="docutils literal notranslate"><span class="pre">name</span></code> alongside your modifications (including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code>
+or <code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code> to hide it). Has no effect outside of a
+template.</p>
+<dl class="simple">
+<dt>The ‘name’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.opacity">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">opacity</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the opacity of the layer. If <code class="docutils literal notranslate"><span class="pre">type</span></code> is “circle”, opacity
+corresponds to the circle opacity (map.layer.paint.circle-
+opacity) If <code class="docutils literal notranslate"><span class="pre">type</span></code> is “line”, opacity corresponds to the line
+opacity (map.layer.paint.line-opacity) If <code class="docutils literal notranslate"><span class="pre">type</span></code> is “fill”,
+opacity corresponds to the fill opacity (map.layer.paint.fill-
+opacity) If <code class="docutils literal notranslate"><span class="pre">type</span></code> is “symbol”, opacity corresponds to the
+icon/text opacity (map.layer.paint.text-opacity)</p>
+<dl class="simple">
+<dt>The ‘opacity’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.source">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">source</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source data for this layer (map.layer.source). When
+<code class="docutils literal notranslate"><span class="pre">sourcetype</span></code> is set to “geojson”, <code class="docutils literal notranslate"><span class="pre">source</span></code> can be a URL to a
+GeoJSON or a GeoJSON object. When <code class="docutils literal notranslate"><span class="pre">sourcetype</span></code> is set to
+“vector” or “raster”, <code class="docutils literal notranslate"><span class="pre">source</span></code> can be a URL or an array of tile
+URLs. When <code class="docutils literal notranslate"><span class="pre">sourcetype</span></code> is set to “image”, <code class="docutils literal notranslate"><span class="pre">source</span></code> can be a
+URL to an image.</p>
+<p>The ‘source’ property accepts values of any type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.sourceattribution">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sourceattribution</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.sourceattribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the attribution for this source.</p>
+<dl class="simple">
+<dt>The ‘sourceattribution’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.sourcelayer">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sourcelayer</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.sourcelayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the layer to use from a vector tile source
+(map.layer.source-layer). Required for “vector” source type
+that supports multiple layers.</p>
+<dl class="simple">
+<dt>The ‘sourcelayer’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.sourcetype">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sourcetype</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.sourcetype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source type for this layer, that is the type of the
+layer data.</p>
+<dl class="simple">
+<dt>The ‘sourcetype’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘geojson’, ‘vector’, ‘raster’, ‘image’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.symbol">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">symbol</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘symbol’ property is an instance of Symbol
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.layout.map.layer.html#plotly.graph_objects.layout.map.layer.Symbol" title="plotly.graph_objects.layout.map.layer.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.layout.map.layer.Symbol</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Symbol constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>icon</dt><dd><p>Sets the symbol icon image
+(map.layer.layout.icon-image). Full list:
+<a class="reference external" href="https://www.map.com/maki-icons/">https://www.map.com/maki-icons/</a></p>
+</dd>
+<dt>iconsize</dt><dd><p>Sets the symbol icon size
+(map.layer.layout.icon-size). Has an effect
+only when <code class="docutils literal notranslate"><span class="pre">type</span></code> is set to “symbol”.</p>
+</dd>
+<dt>placement</dt><dd><p>Sets the symbol and/or text placement
+(map.layer.layout.symbol-placement). If
+<code class="docutils literal notranslate"><span class="pre">placement</span></code> is “point”, the label is placed
+where the geometry is located If <code class="docutils literal notranslate"><span class="pre">placement</span></code> is
+“line”, the label is placed along the line of
+the geometry If <code class="docutils literal notranslate"><span class="pre">placement</span></code> is “line-center”,
+the label is placed on the center of the
+geometry</p>
+</dd>
+<dt>text</dt><dd><p>Sets the symbol text (map.layer.layout.text-
+field).</p>
+</dd>
+<dt>textfont</dt><dd><p>Sets the icon text font
+(color=map.layer.paint.text-color,
+size=map.layer.layout.text-size). Has an effect
+only when <code class="docutils literal notranslate"><span class="pre">type</span></code> is set to “symbol”.</p>
+</dd>
+<dt>textposition</dt><dd><p>Sets the positions of the <code class="docutils literal notranslate"><span class="pre">text</span></code> elements with
+respects to the (x,y) coordinates.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.layout.map.layer.html#plotly.graph_objects.layout.map.layer.Symbol" title="plotly.graph_objects.layout.map.layer.Symbol">plotly.graph_objects.layout.map.layer.Symbol</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.templateitemname">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">templateitemname</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.templateitemname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to refer to a named item in this array in the template.
+Named items from the template will be created even without a
+matching item in the input figure, but you can modify one by
+making an item with <code class="docutils literal notranslate"><span class="pre">templateitemname</span></code> matching its <code class="docutils literal notranslate"><span class="pre">name</span></code>,
+alongside your modifications (including <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">false</span></code> or
+<code class="docutils literal notranslate"><span class="pre">enabled:</span> <span class="pre">false</span></code> to hide it). If there is no template or no
+matching item, this item will be hidden unless you explicitly
+show it with <code class="docutils literal notranslate"><span class="pre">visible:</span> <span class="pre">true</span></code>.</p>
+<dl class="simple">
+<dt>The ‘templateitemname’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">type</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the layer type, that is the how the layer data set in
+<code class="docutils literal notranslate"><span class="pre">source</span></code> will be rendered With <code class="docutils literal notranslate"><span class="pre">sourcetype</span></code> set to “geojson”,
+the following values are allowed: “circle”, “line”, “fill” and
+“symbol”. but note that “line” and “fill” are not compatible
+with Point GeoJSON geometries. With <code class="docutils literal notranslate"><span class="pre">sourcetype</span></code> set to
+“vector”, the following values are allowed:  “circle”, “line”,
+“fill” and “symbol”. With <code class="docutils literal notranslate"><span class="pre">sourcetype</span></code> set to “raster” or
+<code class="docutils literal notranslate"><span class="pre">*image*</span></code>, only the “raster” value is allowed.</p>
+<dl class="simple">
+<dt>The ‘type’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘circle’, ‘line’, ‘fill’, ‘symbol’, ‘raster’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.map.Layer.visible">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">visible</span></code><a class="headerlink" href="#plotly.graph_objects.layout.map.Layer.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether this layer is displayed</p>
+<p>The ‘visible’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plotly.graph_objects.layout.map.layer.html">plotly.graph_objects.layout.map.layer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly.graph_objects.layout.map.layer.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plotly.graph_objects.layout.map.layer.symbol.html">plotly.graph_objects.layout.map.layer.symbol package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </body>
+</html>

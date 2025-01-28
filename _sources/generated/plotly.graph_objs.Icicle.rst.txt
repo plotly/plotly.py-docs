@@ -1,0 +1,27 @@
+﻿:mod:`plotly.graph_objs`.Icicle
+====================================================
+
+
+.. currentmodule:: plotly.graph_objs
+
+.. autoclass:: Icicle
+
+   
+   .. automethod:: __init__
+   
+
+:mod:`plotly.graph_objs`.icicle
+========================================================
+
+.. autosummary::
+   
+   plotly.graph_objs.icicle
+
+.. automodule:: plotly.graph_objs.icicle
+   :members:
+   :undoc-members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

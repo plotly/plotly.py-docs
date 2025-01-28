@@ -1,0 +1,11 @@
+﻿:mod:`plotly.express`.icicle
+=========================================
+
+.. currentmodule:: plotly.express
+
+.. autofunction:: icicle
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

@@ -1,0 +1,7 @@
+plotly.graph\_objs.layout.smith.realaxis package
+================================================
+
+.. automodule:: plotly.graph_objs.layout.smith.realaxis
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,27 @@
+﻿:mod:`plotly.graph_objs`.Choroplethmap
+===========================================================
+
+
+.. currentmodule:: plotly.graph_objs
+
+.. autoclass:: Choroplethmap
+
+   
+   .. automethod:: __init__
+   
+
+:mod:`plotly.graph_objs`.choroplethmap
+===============================================================
+
+.. autosummary::
+   
+   plotly.graph_objs.choroplethmap
+
+.. automodule:: plotly.graph_objs.choroplethmap
+   :members:
+   :undoc-members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

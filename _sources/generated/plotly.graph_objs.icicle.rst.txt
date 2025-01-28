@@ -1,0 +1,18 @@
+plotly.graph\_objs.icicle package
+=================================
+
+.. automodule:: plotly.graph_objs.icicle
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   plotly.graph_objs.icicle.hoverlabel
+   plotly.graph_objs.icicle.legendgrouptitle
+   plotly.graph_objs.icicle.marker
+   plotly.graph_objs.icicle.pathbar

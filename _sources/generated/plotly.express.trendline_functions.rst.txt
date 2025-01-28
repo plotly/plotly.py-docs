@@ -1,0 +1,7 @@
+plotly.express.trendline\_functions package
+===========================================
+
+.. automodule:: plotly.express.trendline_functions
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+plotly.graph\_objs.layout.selection package
+===========================================
+
+.. automodule:: plotly.graph_objs.layout.selection
+   :members:
+   :undoc-members:
+   :show-inheritance:

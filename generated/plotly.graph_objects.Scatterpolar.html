@@ -1,0 +1,2844 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>plotly.graph_objects.Scatterpolar &#8212;  6.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.graph_objects.Scatterpolargl" href="plotly.graph_objects.Scatterpolargl.html" />
+    <link rel="prev" title="plotly.graph_objects.Densitymapbox" href="plotly.graph_objects.Densitymapbox.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../plotly.express.html"><code class="docutils literal notranslate"><span class="pre">plotly.express</span></code>: high-level interface for data visualization</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../plotly.graph_objects.html"><code class="docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>: low-level interface to figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.subplots.html"><code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code>: helper function for laying out multi-plot figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.figure_factory.html"><code class="docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>: helper methods for building specific complex charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotly.io.html"><code class="docutils literal notranslate"><span class="pre">plotly.io</span></code>: low-level interface for displaying, reading and writing figures</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scatterpolar</a></li>
+<li><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scatterpolar</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plotly.graph_objects.Densitymapbox.html" title="Previous Chapter: plotly.graph_objects.Densitymapbox"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.graph_...</span>
+    </a>
+  </li>
+  <li>
+    <a href="plotly.graph_objects.Scatterpolargl.html" title="Next Chapter: plotly.graph_objects.Scatterpolargl"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.graph_... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-graph-objs-scatterpolar">
+<h1><a class="reference internal" href="plotly.graph_objects.html#module-plotly.graph_objects" title="plotly.graph_objects"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code></a>.Scatterpolar<a class="headerlink" href="#plotly-graph-objs-scatterpolar" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="plotly.graph_objects.Scatterpolar">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.</span></code><code class="sig-name descname"><span class="pre">Scatterpolar</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cliponaxis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectgaps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customdata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customdatasrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtheta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillcolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoverinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoverinfosrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoverlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoveron</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovertemplate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovertemplatesrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovertext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovertextsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idssrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legendgroup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legendgrouptitle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legendrank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legendwidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metasrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selectedpoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showlegend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subplot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textfont</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textposition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textpositionsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texttemplate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texttemplatesrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetasrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetaunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uirevision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unselected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.Scatterpolar" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="plotly.graph_objects.Scatterpolar.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cliponaxis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectgaps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customdata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customdatasrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtheta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillcolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoverinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoverinfosrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoverlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoveron</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovertemplate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovertemplatesrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovertext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hovertextsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idssrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legendgroup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legendgrouptitle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legendrank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legendwidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metasrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selectedpoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showlegend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subplot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textfont</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textposition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textpositionsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texttemplate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texttemplatesrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetasrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetaunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uirevision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unselected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.Scatterpolar.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a new Scatterpolar object</p>
+<p>The scatterpolar trace type encompasses line charts, scatter
+charts, text charts, and bubble charts in polar coordinates.
+The data visualized as scatter point or lines is set in <code class="docutils literal notranslate"><span class="pre">r</span></code>
+(radial) and <code class="docutils literal notranslate"><span class="pre">theta</span></code> (angular) coordinates Text (appearing
+either on the chart or on hover only) is via <code class="docutils literal notranslate"><span class="pre">text</span></code>. Bubble
+charts are achieved by setting <code class="docutils literal notranslate"><span class="pre">marker.size</span></code> and/or
+<code class="docutils literal notranslate"><span class="pre">marker.color</span></code> to numerical arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg</strong> – dict of properties compatible with this constructor or
+an instance of <a class="reference internal" href="#plotly.graph_objects.Scatterpolar" title="plotly.graph_objects.Scatterpolar"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.Scatterpolar</span></code></a></p></li>
+<li><p><strong>cliponaxis</strong> – Determines whether or not markers and text nodes are
+clipped about the subplot axes. To show markers and
+text nodes above axis lines and tick labels, make sure
+to set <code class="docutils literal notranslate"><span class="pre">xaxis.layer</span></code> and <code class="docutils literal notranslate"><span class="pre">yaxis.layer</span></code> to <em>below
+traces</em>.</p></li>
+<li><p><strong>connectgaps</strong> – Determines whether or not gaps (i.e. {nan} or missing
+values) in the provided data arrays are connected.</p></li>
+<li><p><strong>customdata</strong> – Assigns extra data each datum. This may be useful when
+listening to hover, click and selection events. Note
+that, “scatter” traces also appends customdata items in
+the markers DOM elements</p></li>
+<li><p><strong>customdatasrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">customdata</span></code>.</p></li>
+<li><p><strong>dr</strong> – Sets the r coordinate step.</p></li>
+<li><p><strong>dtheta</strong> – Sets the theta coordinate step. By default, the
+<code class="docutils literal notranslate"><span class="pre">dtheta</span></code> step equals the subplot’s period divided by
+the length of the <code class="docutils literal notranslate"><span class="pre">r</span></code> coordinates.</p></li>
+<li><p><strong>fill</strong> – Sets the area to fill with a solid color. Use with
+<code class="docutils literal notranslate"><span class="pre">fillcolor</span></code> if not “none”. scatterpolar has a subset of
+the options available to scatter. “toself” connects the
+endpoints of the trace (or each segment of the trace if
+it has gaps) into a closed shape. “tonext” fills the
+space between two traces if one completely encloses the
+other (eg consecutive contour lines), and behaves like
+“toself” if there is no trace before it. “tonext”
+should not be used if one trace does not enclose the
+other.</p></li>
+<li><p><strong>fillcolor</strong> – Sets the fill color. Defaults to a half-transparent
+variant of the line color, marker color, or marker line
+color, whichever is available.</p></li>
+<li><p><strong>hoverinfo</strong> – Determines which trace information appear on hover. If
+<code class="docutils literal notranslate"><span class="pre">none</span></code> or <code class="docutils literal notranslate"><span class="pre">skip</span></code> are set, no information is displayed
+upon hovering. But, if <code class="docutils literal notranslate"><span class="pre">none</span></code> is set, click and hover
+events are still fired.</p></li>
+<li><p><strong>hoverinfosrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">hoverinfo</span></code>.</p></li>
+<li><p><strong>hoverlabel</strong> – <a class="reference internal" href="plotly.graph_objects.scatterpolar.html#plotly.graph_objects.scatterpolar.Hoverlabel" title="plotly.graph_objects.scatterpolar.Hoverlabel"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.Hoverlabel</span></code></a>
+instance or dict with compatible properties</p></li>
+<li><p><strong>hoveron</strong> – Do the hover effects highlight individual points
+(markers or line points) or do they highlight filled
+regions? If the fill is “toself” or “tonext” and there
+are no markers or text, then the default is “fills”,
+otherwise it is “points”.</p></li>
+<li><p><strong>hovertemplate</strong> – Template string used for rendering the information that
+appear on hover box. Note that this will override
+<code class="docutils literal notranslate"><span class="pre">hoverinfo</span></code>. Variables are inserted using %{variable},
+for example “y: %{y}” as well as %{xother}, {%_xother},
+{%_xother_}, {%xother_}. When showing info for several
+points, “xother” will be added to those with different
+x positions from the first point. An underscore before
+or after “(x|y)other” will add a space on that side,
+only when this field is shown. Numbers are formatted
+using d3-format’s syntax %{variable:d3-format}, for
+example “Price: %{y:$.2f}”.
+https://github.com/d3/d3-format/tree/v1.4.5#d3-format
+for details on the formatting syntax. Dates are
+formatted using d3-time-format’s syntax
+%{variable|d3-time-format}, for example “Day:
+%{2019-01-01|%A}”. https://github.com/d3/d3-time-
+format/tree/v2.2.3#locale_format for details on the
+date formatting syntax. The variables available in
+<code class="docutils literal notranslate"><span class="pre">hovertemplate</span></code> are the ones emitted as event data
+described at this link
+<a class="reference external" href="https://plotly.com/javascript/plotlyjs-events/#event">https://plotly.com/javascript/plotlyjs-events/#event</a>-
+data. Additionally, every attributes that can be
+specified per-point (the ones that are <code class="docutils literal notranslate"><span class="pre">arrayOk:</span> <span class="pre">true</span></code>)
+are available.  Anything contained in tag <code class="docutils literal notranslate"><span class="pre">&lt;extra&gt;</span></code> is
+displayed in the secondary box, for example
+“&lt;extra&gt;{fullData.name}&lt;/extra&gt;”. To hide the secondary
+box completely, use an empty tag <code class="docutils literal notranslate"><span class="pre">&lt;extra&gt;&lt;/extra&gt;</span></code>.</p></li>
+<li><p><strong>hovertemplatesrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">hovertemplate</span></code>.</p></li>
+<li><p><strong>hovertext</strong> – Sets hover text elements associated with each (x,y)
+pair. If a single string, the same string appears over
+all the data points. If an array of string, the items
+are mapped in order to the this trace’s (x,y)
+coordinates. To be seen, trace <code class="docutils literal notranslate"><span class="pre">hoverinfo</span></code> must contain
+a “text” flag.</p></li>
+<li><p><strong>hovertextsrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">hovertext</span></code>.</p></li>
+<li><p><strong>ids</strong> – Assigns id labels to each datum. These ids for object
+constancy of data points during animation. Should be an
+array of strings, not numbers or any other type.</p></li>
+<li><p><strong>idssrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">ids</span></code>.</p></li>
+<li><p><strong>legend</strong> – Sets the reference to a legend to show this trace in.
+References to these legends are “legend”, “legend2”,
+“legend3”, etc. Settings for these legends are set in
+the layout, under <code class="docutils literal notranslate"><span class="pre">layout.legend</span></code>, <code class="docutils literal notranslate"><span class="pre">layout.legend2</span></code>,
+etc.</p></li>
+<li><p><strong>legendgroup</strong> – Sets the legend group for this trace. Traces and shapes
+part of the same legend group hide/show at the same
+time when toggling legend items.</p></li>
+<li><p><strong>legendgrouptitle</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.Legendgroupti</span>
+<span class="pre">tle</span></code> instance or dict with compatible properties</p></li>
+<li><p><strong>legendrank</strong> – Sets the legend rank for this trace. Items and groups
+with smaller ranks are presented on top/left side while
+with “reversed” <code class="docutils literal notranslate"><span class="pre">legend.traceorder</span></code> they are on
+bottom/right side. The default legendrank is 1000, so
+that you can use ranks less than 1000 to place certain
+items before all unranked items, and ranks greater than
+1000 to go after all unranked items. When having
+unranked or equal rank items shapes would be displayed
+after traces i.e. according to their order in data and
+layout.</p></li>
+<li><p><strong>legendwidth</strong> – Sets the width (in px or fraction) of the legend for
+this trace.</p></li>
+<li><p><strong>line</strong> – <a class="reference internal" href="plotly.graph_objects.scatterpolar.html#plotly.graph_objects.scatterpolar.Line" title="plotly.graph_objects.scatterpolar.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.Line</span></code></a>
+instance or dict with compatible properties</p></li>
+<li><p><strong>marker</strong> – <a class="reference internal" href="plotly.graph_objects.scatterpolar.html#plotly.graph_objects.scatterpolar.Marker" title="plotly.graph_objects.scatterpolar.Marker"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.Marker</span></code></a>
+instance or dict with compatible properties</p></li>
+<li><p><strong>meta</strong> – Assigns extra meta information associated with this
+trace that can be used in various text attributes.
+Attributes such as trace <code class="docutils literal notranslate"><span class="pre">name</span></code>, graph, axis and
+colorbar <code class="docutils literal notranslate"><span class="pre">title.text</span></code>, annotation <code class="docutils literal notranslate"><span class="pre">text</span></code>
+<code class="docutils literal notranslate"><span class="pre">rangeselector</span></code>, <code class="docutils literal notranslate"><span class="pre">updatemenues</span></code> and <code class="docutils literal notranslate"><span class="pre">sliders</span></code> <code class="docutils literal notranslate"><span class="pre">label</span></code>
+text all support <code class="docutils literal notranslate"><span class="pre">meta</span></code>. To access the trace <code class="docutils literal notranslate"><span class="pre">meta</span></code>
+values in an attribute in the same trace, simply use
+<code class="docutils literal notranslate"><span class="pre">%{meta[i]}</span></code> where <code class="docutils literal notranslate"><span class="pre">i</span></code> is the index or key of the
+<code class="docutils literal notranslate"><span class="pre">meta</span></code> item in question. To access trace <code class="docutils literal notranslate"><span class="pre">meta</span></code> in
+layout attributes, use <code class="docutils literal notranslate"><span class="pre">%{data[n[.meta[i]}</span></code> where <code class="docutils literal notranslate"><span class="pre">i</span></code>
+is the index or key of the <code class="docutils literal notranslate"><span class="pre">meta</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code> is the trace
+index.</p></li>
+<li><p><strong>metasrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">meta</span></code>.</p></li>
+<li><p><strong>mode</strong> – Determines the drawing mode for this scatter trace. If
+the provided <code class="docutils literal notranslate"><span class="pre">mode</span></code> includes “text” then the <code class="docutils literal notranslate"><span class="pre">text</span></code>
+elements appear at the coordinates. Otherwise, the
+<code class="docutils literal notranslate"><span class="pre">text</span></code> elements appear on hover. If there are less than
+20 points and the trace is not stacked then the default
+is “lines+markers”. Otherwise, “lines”.</p></li>
+<li><p><strong>name</strong> – Sets the trace name. The trace name appears as the
+legend item and on hover.</p></li>
+<li><p><strong>opacity</strong> – Sets the opacity of the trace.</p></li>
+<li><p><strong>r</strong> – Sets the radial coordinates</p></li>
+<li><p><strong>r0</strong> – Alternate to <code class="docutils literal notranslate"><span class="pre">r</span></code>. Builds a linear space of r
+coordinates. Use with <code class="docutils literal notranslate"><span class="pre">dr</span></code> where <code class="docutils literal notranslate"><span class="pre">r0</span></code> is the starting
+coordinate and <code class="docutils literal notranslate"><span class="pre">dr</span></code> the step.</p></li>
+<li><p><strong>rsrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">r</span></code>.</p></li>
+<li><p><strong>selected</strong> – <a class="reference internal" href="plotly.graph_objects.scatterpolar.html#plotly.graph_objects.scatterpolar.Selected" title="plotly.graph_objects.scatterpolar.Selected"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.Selected</span></code></a>
+instance or dict with compatible properties</p></li>
+<li><p><strong>selectedpoints</strong> – Array containing integer indices of selected points.
+Has an effect only for traces that support selections.
+Note that an empty array means an empty selection where
+the <code class="docutils literal notranslate"><span class="pre">unselected</span></code> are turned on for all points, whereas,
+any other non-array values means no selection all where
+the <code class="docutils literal notranslate"><span class="pre">selected</span></code> and <code class="docutils literal notranslate"><span class="pre">unselected</span></code> styles have no effect.</p></li>
+<li><p><strong>showlegend</strong> – Determines whether or not an item corresponding to this
+trace is shown in the legend.</p></li>
+<li><p><strong>stream</strong> – <a class="reference internal" href="plotly.graph_objects.scatterpolar.html#plotly.graph_objects.scatterpolar.Stream" title="plotly.graph_objects.scatterpolar.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.Stream</span></code></a>
+instance or dict with compatible properties</p></li>
+<li><p><strong>subplot</strong> – Sets a reference between this trace’s data coordinates
+and a polar subplot. If “polar” (the default value),
+the data refer to <code class="docutils literal notranslate"><span class="pre">layout.polar</span></code>. If “polar2”, the data
+refer to <code class="docutils literal notranslate"><span class="pre">layout.polar2</span></code>, and so on.</p></li>
+<li><p><strong>text</strong> – Sets text elements associated with each (x,y) pair. If
+a single string, the same string appears over all the
+data points. If an array of string, the items are
+mapped in order to the this trace’s (x,y) coordinates.
+If trace <code class="docutils literal notranslate"><span class="pre">hoverinfo</span></code> contains a “text” flag and
+“hovertext” is not set, these elements will be seen in
+the hover labels.</p></li>
+<li><p><strong>textfont</strong> – Sets the text font.</p></li>
+<li><p><strong>textposition</strong> – Sets the positions of the <code class="docutils literal notranslate"><span class="pre">text</span></code> elements with respects
+to the (x,y) coordinates.</p></li>
+<li><p><strong>textpositionsrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">textposition</span></code>.</p></li>
+<li><p><strong>textsrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">text</span></code>.</p></li>
+<li><p><strong>texttemplate</strong> – Template string used for rendering the information text
+that appear on points. Note that this will override
+<code class="docutils literal notranslate"><span class="pre">textinfo</span></code>. Variables are inserted using %{variable},
+for example “y: %{y}”. Numbers are formatted using
+d3-format’s syntax %{variable:d3-format}, for example
+“Price: %{y:$.2f}”.
+https://github.com/d3/d3-format/tree/v1.4.5#d3-format
+for details on the formatting syntax. Dates are
+formatted using d3-time-format’s syntax
+%{variable|d3-time-format}, for example “Day:
+%{2019-01-01|%A}”. https://github.com/d3/d3-time-
+format/tree/v2.2.3#locale_format for details on the
+date formatting syntax. Every attributes that can be
+specified per-point (the ones that are <code class="docutils literal notranslate"><span class="pre">arrayOk:</span> <span class="pre">true</span></code>)
+are available. Finally, the template string has access
+to variables <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">theta</span></code> and <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p></li>
+<li><p><strong>texttemplatesrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">texttemplate</span></code>.</p></li>
+<li><p><strong>theta</strong> – Sets the angular coordinates</p></li>
+<li><p><strong>theta0</strong> – Alternate to <code class="docutils literal notranslate"><span class="pre">theta</span></code>. Builds a linear space of theta
+coordinates. Use with <code class="docutils literal notranslate"><span class="pre">dtheta</span></code> where <code class="docutils literal notranslate"><span class="pre">theta0</span></code> is the
+starting coordinate and <code class="docutils literal notranslate"><span class="pre">dtheta</span></code> the step.</p></li>
+<li><p><strong>thetasrc</strong> – Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">theta</span></code>.</p></li>
+<li><p><strong>thetaunit</strong> – Sets the unit of input “theta” values. Has an effect
+only when on “linear” angular axes.</p></li>
+<li><p><strong>uid</strong> – Assign an id to this trace, Use this to provide object
+constancy between traces during animations and
+transitions.</p></li>
+<li><p><strong>uirevision</strong> – Controls persistence of some user-driven changes to the
+trace: <code class="docutils literal notranslate"><span class="pre">constraintrange</span></code> in <code class="docutils literal notranslate"><span class="pre">parcoords</span></code> traces, as well
+as some <code class="docutils literal notranslate"><span class="pre">editable:</span> <span class="pre">true</span></code> modifications such as <code class="docutils literal notranslate"><span class="pre">name</span></code>
+and <code class="docutils literal notranslate"><span class="pre">colorbar.title</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">layout.uirevision</span></code>.
+Note that other user-driven trace attribute changes are
+controlled by <code class="docutils literal notranslate"><span class="pre">layout</span></code> attributes: <code class="docutils literal notranslate"><span class="pre">trace.visible</span></code> is
+controlled by <code class="docutils literal notranslate"><span class="pre">layout.legend.uirevision</span></code>,
+<code class="docutils literal notranslate"><span class="pre">selectedpoints</span></code> is controlled by
+<code class="docutils literal notranslate"><span class="pre">layout.selectionrevision</span></code>, and <code class="docutils literal notranslate"><span class="pre">colorbar.(x|y)</span></code>
+(accessible with <code class="docutils literal notranslate"><span class="pre">config:</span> <span class="pre">{editable:</span> <span class="pre">true}</span></code>) is
+controlled by <code class="docutils literal notranslate"><span class="pre">layout.editrevision</span></code>. Trace changes are
+tracked by <code class="docutils literal notranslate"><span class="pre">uid</span></code>, which only falls back on trace index
+if no <code class="docutils literal notranslate"><span class="pre">uid</span></code> is provided. So if your app can add/remove
+traces before the end of the <code class="docutils literal notranslate"><span class="pre">data</span></code> array, such that
+the same trace has a different index, you can still
+preserve user-driven changes if you give each trace a
+<code class="docutils literal notranslate"><span class="pre">uid</span></code> that stays with it as it moves.</p></li>
+<li><p><strong>unselected</strong> – <a class="reference internal" href="plotly.graph_objects.scatterpolar.html#plotly.graph_objects.scatterpolar.Unselected" title="plotly.graph_objects.scatterpolar.Unselected"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.Unselected</span></code></a>
+instance or dict with compatible properties</p></li>
+<li><p><strong>visible</strong> – Determines whether or not this trace is visible. If
+“legendonly”, the trace is not drawn, but can appear as
+a legend item (provided that the legend itself is
+visible).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#plotly.graph_objects.Scatterpolar" title="plotly.graph_objects.Scatterpolar">Scatterpolar</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h1><a class="reference internal" href="plotly.graph_objects.html#module-plotly.graph_objects" title="plotly.graph_objects"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code></a>.scatterpolar<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.html#module-plotly.graph_objects.scatterpolar" title="plotly.graph_objects.scatterpolar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="module-plotly.graph_objects.scatterpolar"></span><dl class="py class">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.scatterpolar.</span></code><code class="sig-name descname"><span class="pre">Hoverlabel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bgcolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bgcolorsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bordercolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bordercolorsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namelength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namelengthsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel.align">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">align</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel.align" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the horizontal alignment of the text content within hover
+label box. Has an effect only if the hover label text spans
+more two or more lines</p>
+<dl class="simple">
+<dt>The ‘align’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘left’, ‘right’, ‘auto’]</p>
+</dd>
+</dl>
+</li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel.alignsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">alignsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel.alignsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">align</span></code>.</p>
+<p>The ‘alignsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel.bgcolor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bgcolor</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel.bgcolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the background color of the hover labels for this trace</p>
+<dl class="simple">
+<dt>The ‘bgcolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+<li><p>A list or array of any of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel.bgcolorsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bgcolorsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel.bgcolorsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">bgcolor</span></code>.</p>
+<p>The ‘bgcolorsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel.bordercolor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bordercolor</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel.bordercolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the border color of the hover labels for this trace.</p>
+<dl class="simple">
+<dt>The ‘bordercolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+<li><p>A list or array of any of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel.bordercolorsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bordercolorsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel.bordercolorsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">bordercolor</span></code>.</p>
+<p>The ‘bordercolorsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel.font">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">font</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel.font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the font used in hover labels.</p>
+<p>The ‘font’ property is an instance of Font
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.scatterpolar.hoverlabel.html#plotly.graph_objects.scatterpolar.hoverlabel.Font" title="plotly.graph_objects.scatterpolar.hoverlabel.Font"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.hoverlabel.Font</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Font constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><p>color</p>
+<dl class="simple">
+<dt>colorsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p>
+</dd>
+<dt>family</dt><dd><p>HTML font family - the typeface that will be
+applied by the web browser. The web browser
+will only be able to apply a font if it is
+available on the system which it operates.
+Provide multiple font families, separated by
+commas, to indicate the preference in which to
+apply fonts if they aren’t available on the
+system. The Chart Studio Cloud (at
+<a class="reference external" href="https://chart-studio.plotly.com">https://chart-studio.plotly.com</a> or on-premise)
+generates images on a server, where only a
+select number of fonts are installed and
+supported. These include “Arial”, “Balto”,
+“Courier New”, “Droid Sans”, “Droid Serif”,
+“Droid Sans Mono”, “Gravitas One”, “Old
+Standard TT”, “Open Sans”, “Overpass”, “PT Sans
+Narrow”, “Raleway”, “Times New Roman”.</p>
+</dd>
+<dt>familysrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">family</span></code>.</p>
+</dd>
+<dt>lineposition</dt><dd><p>Sets the kind of decoration line(s) with text,
+such as an “under”, “over” or “through” as well
+as combinations e.g. “under+over”, etc.</p>
+</dd>
+<dt>linepositionsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">lineposition</span></code>.</p>
+</dd>
+<dt>shadow</dt><dd><p>Sets the shape and color of the shadow behind
+text. “auto” places minimal shadow and applies
+contrast text font color. See
+<a class="reference external" href="https://developer.mozilla.org/en">https://developer.mozilla.org/en</a>-
+US/docs/Web/CSS/text-shadow for additional
+options.</p>
+</dd>
+<dt>shadowsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">shadow</span></code>.</p>
+</dd>
+</dl>
+<p>size</p>
+<dl class="simple">
+<dt>sizesrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">size</span></code>.</p>
+</dd>
+<dt>style</dt><dd><p>Sets whether a font should be styled with a
+normal or italic face from its family.</p>
+</dd>
+<dt>stylesrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">style</span></code>.</p>
+</dd>
+<dt>textcase</dt><dd><p>Sets capitalization of text. It can be used to
+make text appear in all-uppercase or all-
+lowercase, or with each word capitalized.</p>
+</dd>
+<dt>textcasesrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">textcase</span></code>.</p>
+</dd>
+<dt>variant</dt><dd><p>Sets the variant of the font.</p>
+</dd>
+<dt>variantsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">variant</span></code>.</p>
+</dd>
+<dt>weight</dt><dd><p>Sets the weight (or boldness) of the font.</p>
+</dd>
+<dt>weightsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">weight</span></code>.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.hoverlabel.html#plotly.graph_objects.scatterpolar.hoverlabel.Font" title="plotly.graph_objects.scatterpolar.hoverlabel.Font">plotly.graph_objects.scatterpolar.hoverlabel.Font</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel.namelength">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">namelength</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel.namelength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the default length (in number of characters) of the trace
+name in the hover labels for all traces. -1 shows the whole
+name regardless of length. 0-3 shows the first 0-3 characters,
+and an integer &gt;3 will show the whole name if it is less than
+that many characters, but if it is longer, will truncate to
+<code class="docutils literal notranslate"><span class="pre">namelength</span> <span class="pre">-</span> <span class="pre">3</span></code> characters and add an ellipsis.</p>
+<dl class="simple">
+<dt>The ‘namelength’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [-1, 9223372036854775807]</p></li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Hoverlabel.namelengthsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">namelengthsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Hoverlabel.namelengthsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">namelength</span></code>.</p>
+<p>The ‘namelengthsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.scatterpolar.Legendgrouptitle">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.scatterpolar.</span></code><code class="sig-name descname"><span class="pre">Legendgrouptitle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Legendgrouptitle" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Legendgrouptitle.font">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">font</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Legendgrouptitle.font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets this legend group’s title font.</p>
+<p>The ‘font’ property is an instance of Font
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.scatterpolar.legendgrouptitle.html#plotly.graph_objects.scatterpolar.legendgrouptitle.Font" title="plotly.graph_objects.scatterpolar.legendgrouptitle.Font"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.legendgrouptitle.Font</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Font constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><p>color</p>
+<dl class="simple">
+<dt>family</dt><dd><p>HTML font family - the typeface that will be
+applied by the web browser. The web browser
+will only be able to apply a font if it is
+available on the system which it operates.
+Provide multiple font families, separated by
+commas, to indicate the preference in which to
+apply fonts if they aren’t available on the
+system. The Chart Studio Cloud (at
+<a class="reference external" href="https://chart-studio.plotly.com">https://chart-studio.plotly.com</a> or on-premise)
+generates images on a server, where only a
+select number of fonts are installed and
+supported. These include “Arial”, “Balto”,
+“Courier New”, “Droid Sans”, “Droid Serif”,
+“Droid Sans Mono”, “Gravitas One”, “Old
+Standard TT”, “Open Sans”, “Overpass”, “PT Sans
+Narrow”, “Raleway”, “Times New Roman”.</p>
+</dd>
+<dt>lineposition</dt><dd><p>Sets the kind of decoration line(s) with text,
+such as an “under”, “over” or “through” as well
+as combinations e.g. “under+over”, etc.</p>
+</dd>
+<dt>shadow</dt><dd><p>Sets the shape and color of the shadow behind
+text. “auto” places minimal shadow and applies
+contrast text font color. See
+<a class="reference external" href="https://developer.mozilla.org/en">https://developer.mozilla.org/en</a>-
+US/docs/Web/CSS/text-shadow for additional
+options.</p>
+</dd>
+</dl>
+<p>size</p>
+<dl class="simple">
+<dt>style</dt><dd><p>Sets whether a font should be styled with a
+normal or italic face from its family.</p>
+</dd>
+<dt>textcase</dt><dd><p>Sets capitalization of text. It can be used to
+make text appear in all-uppercase or all-
+lowercase, or with each word capitalized.</p>
+</dd>
+<dt>variant</dt><dd><p>Sets the variant of the font.</p>
+</dd>
+<dt>weight</dt><dd><p>Sets the weight (or boldness) of the font.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.legendgrouptitle.html#plotly.graph_objects.scatterpolar.legendgrouptitle.Font" title="plotly.graph_objects.scatterpolar.legendgrouptitle.Font">plotly.graph_objects.scatterpolar.legendgrouptitle.Font</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Legendgrouptitle.text">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">text</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Legendgrouptitle.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the title of the legend group.</p>
+<dl class="simple">
+<dt>The ‘text’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.scatterpolar.Line">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.scatterpolar.</span></code><code class="sig-name descname"><span class="pre">Line</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backoffsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dash</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Line" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Line.backoff">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">backoff</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Line.backoff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the line back off from the end point of the nth line
+segment (in px). This option is useful e.g. to avoid overlap
+with arrowhead markers. With “auto” the lines would trim before
+markers if <code class="docutils literal notranslate"><span class="pre">marker.angleref</span></code> is set to “previous”.</p>
+<dl class="simple">
+<dt>The ‘backoff’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Line.backoffsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">backoffsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Line.backoffsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">backoff</span></code>.</p>
+<p>The ‘backoffsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Line.color">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">color</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Line.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the line color.</p>
+<dl class="simple">
+<dt>The ‘color’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Line.dash">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dash</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Line.dash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the dash style of lines. Set to a dash type string
+(“solid”, “dot”, “dash”, “longdash”, “dashdot”, or
+“longdashdot”) or a dash length list in px (eg
+“5px,10px,2px,2px”).</p>
+<dl class="simple">
+<dt>The ‘dash’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following dash styles:</dt><dd><p>[‘solid’, ‘dot’, ‘dash’, ‘longdash’, ‘dashdot’, ‘longdashdot’]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A string containing a dash length list in pixels or percentages</dt><dd><p>(e.g. ‘5px 10px 2px 2px’, ‘5, 10, 2, 2’, ‘10% 20% 40%’, etc.)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Line.shape">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">shape</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Line.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines the line shape. With “spline” the lines are drawn
+using spline interpolation. The other available values
+correspond to step-wise line shapes.</p>
+<dl class="simple">
+<dt>The ‘shape’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘linear’, ‘spline’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Line.smoothing">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">smoothing</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Line.smoothing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has an effect only if <code class="docutils literal notranslate"><span class="pre">shape</span></code> is set to “spline” Sets the
+amount of smoothing. 0 corresponds to no smoothing (equivalent
+to a “linear” shape).</p>
+<dl class="simple">
+<dt>The ‘smoothing’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1.3]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Line.width">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">width</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Line.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the line width (in px).</p>
+<dl class="simple">
+<dt>The ‘width’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.scatterpolar.Marker">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.scatterpolar.</span></code><code class="sig-name descname"><span class="pre">Marker</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angleref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anglesrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autocolorscale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cauto</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coloraxis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorscale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxdisplayed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacitysrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reversescale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showscale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizemin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizemode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizeref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizesrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standoffsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbolsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.angle">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">angle</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the marker angle in respect to <code class="docutils literal notranslate"><span class="pre">angleref</span></code>.</p>
+<p>The ‘angle’ property is a angle (in degrees) that may be
+specified as a number between -180 and 180, or a list, numpy array or other iterable thereof.
+Numeric values outside this range are converted to the equivalent value
+(e.g. 270 is converted to -90).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.angleref">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">angleref</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.angleref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the reference for marker angle. With “previous”, angle 0
+points along the line from the previous point to this one. With
+“up”, angle 0 points toward the top of the screen.</p>
+<dl class="simple">
+<dt>The ‘angleref’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘previous’, ‘up’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.anglesrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">anglesrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.anglesrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">angle</span></code>.</p>
+<p>The ‘anglesrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.autocolorscale">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">autocolorscale</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.autocolorscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether the colorscale is a default palette
+(<code class="docutils literal notranslate"><span class="pre">autocolorscale:</span> <span class="pre">true</span></code>) or the palette determined by
+<code class="docutils literal notranslate"><span class="pre">marker.colorscale</span></code>. Has an effect only if in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code> is
+set to a numerical array. In case <code class="docutils literal notranslate"><span class="pre">colorscale</span></code> is unspecified
+or <code class="docutils literal notranslate"><span class="pre">autocolorscale</span></code> is true, the default palette will be chosen
+according to whether numbers in the <code class="docutils literal notranslate"><span class="pre">color</span></code> array are all
+positive, all negative or mixed.</p>
+<p>The ‘autocolorscale’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.cauto">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">cauto</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.cauto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not the color domain is computed with
+respect to the input data (here in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code>) or the
+bounds set in <code class="docutils literal notranslate"><span class="pre">marker.cmin</span></code> and <code class="docutils literal notranslate"><span class="pre">marker.cmax</span></code> Has an effect
+only if in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code> is set to a numerical array. Defaults
+to <code class="docutils literal notranslate"><span class="pre">false</span></code> when <code class="docutils literal notranslate"><span class="pre">marker.cmin</span></code> and <code class="docutils literal notranslate"><span class="pre">marker.cmax</span></code> are set by the
+user.</p>
+<p>The ‘cauto’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.cmax">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">cmax</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.cmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the upper bound of the color domain. Has an effect only if
+in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code> is set to a numerical array. Value should
+have the same units as in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code> and if set,
+<code class="docutils literal notranslate"><span class="pre">marker.cmin</span></code> must be set as well.</p>
+<dl class="simple">
+<dt>The ‘cmax’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.cmid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">cmid</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.cmid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the mid-point of the color domain by scaling <code class="docutils literal notranslate"><span class="pre">marker.cmin</span></code>
+and/or <code class="docutils literal notranslate"><span class="pre">marker.cmax</span></code> to be equidistant to this point. Has an
+effect only if in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code> is set to a numerical array.
+Value should have the same units as in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code>. Has no
+effect when <code class="docutils literal notranslate"><span class="pre">marker.cauto</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<dl class="simple">
+<dt>The ‘cmid’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.cmin">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">cmin</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.cmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the lower bound of the color domain. Has an effect only if
+in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code> is set to a numerical array. Value should
+have the same units as in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code> and if set,
+<code class="docutils literal notranslate"><span class="pre">marker.cmax</span></code> must be set as well.</p>
+<dl class="simple">
+<dt>The ‘cmin’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.color">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">color</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the marker color. It accepts either a specific color or an
+array of numbers that are mapped to the colorscale relative to
+the max and min values of the array or relative to
+<code class="docutils literal notranslate"><span class="pre">marker.cmin</span></code> and <code class="docutils literal notranslate"><span class="pre">marker.cmax</span></code> if set.</p>
+<dl class="simple">
+<dt>The ‘color’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+<li><p>A number that will be interpreted as a color
+according to scatterpolar.marker.colorscale</p></li>
+<li><p>A list or array of any of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.coloraxis">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">coloraxis</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.coloraxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a reference to a shared color axis. References to these
+shared color axes are “coloraxis”, “coloraxis2”, “coloraxis3”,
+etc. Settings for these shared color axes are set in the
+layout, under <code class="docutils literal notranslate"><span class="pre">layout.coloraxis</span></code>, <code class="docutils literal notranslate"><span class="pre">layout.coloraxis2</span></code>, etc.
+Note that multiple color scales can be linked to the same color
+axis.</p>
+<p>The ‘coloraxis’ property is an identifier of a particular
+subplot, of type ‘coloraxis’, that may be specified as the string ‘coloraxis’
+optionally followed by an integer &gt;= 1
+(e.g. ‘coloraxis’, ‘coloraxis1’, ‘coloraxis2’, ‘coloraxis3’, etc.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.colorbar">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">colorbar</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.colorbar" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘colorbar’ property is an instance of ColorBar
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.scatterpolar.marker.html#plotly.graph_objects.scatterpolar.marker.ColorBar" title="plotly.graph_objects.scatterpolar.marker.ColorBar"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.marker.ColorBar</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the ColorBar constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>bgcolor</dt><dd><p>Sets the color of padded area.</p>
+</dd>
+<dt>bordercolor</dt><dd><p>Sets the axis line color.</p>
+</dd>
+<dt>borderwidth</dt><dd><p>Sets the width (in px) or the border enclosing
+this color bar.</p>
+</dd>
+<dt>dtick</dt><dd><p>Sets the step in-between ticks on this axis.
+Use with <code class="docutils literal notranslate"><span class="pre">tick0</span></code>. Must be a positive number, or
+special strings available to “log” and “date”
+axes. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “log”, then ticks
+are set every 10^(n*dtick) where n is the tick
+number. For example, to set a tick mark at 1,
+10, 100, 1000, … set dtick to 1. To set tick
+marks at 1, 100, 10000, … set dtick to 2. To
+set tick marks at 1, 5, 25, 125, 625, 3125, …
+set dtick to log_10(5), or 0.69897000433. “log”
+has several special values; “L&lt;f&gt;”, where <code class="docutils literal notranslate"><span class="pre">f</span></code>
+is a positive number, gives ticks linearly
+spaced in value (but not position). For example
+<code class="docutils literal notranslate"><span class="pre">tick0</span></code> = 0.1, <code class="docutils literal notranslate"><span class="pre">dtick</span></code> = “L0.5” will put ticks
+at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10
+plus small digits between, use “D1” (all
+digits) or “D2” (only 2 and 5). <code class="docutils literal notranslate"><span class="pre">tick0</span></code> is
+ignored for “D1” and “D2”. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code>
+is “date”, then you must convert the time to
+milliseconds. For example, to set the interval
+between ticks to one day, set <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to
+86400000.0. “date” also has special values
+“M&lt;n&gt;” gives ticks spaced by a number of
+months. <code class="docutils literal notranslate"><span class="pre">n</span></code> must be a positive integer. To set
+ticks on the 15th of every third month, set
+<code class="docutils literal notranslate"><span class="pre">tick0</span></code> to “2000-01-15” and <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to “M3”. To
+set ticks every 4 years, set <code class="docutils literal notranslate"><span class="pre">dtick</span></code> to “M48”</p>
+</dd>
+<dt>exponentformat</dt><dd><p>Determines a formatting rule for the tick
+exponents. For example, consider the number
+1,000,000,000. If “none”, it appears as
+1,000,000,000. If “e”, 1e+9. If “E”, 1E+9. If
+“power”, 1x10^9 (with 9 in a super script). If
+“SI”, 1G. If “B”, 1B.</p>
+</dd>
+<dt>labelalias</dt><dd><p>Replacement text for specific tick or hover
+labels. For example using {US: ‘USA’, CA:
+‘Canada’} changes US to USA and CA to Canada.
+The labels we would have shown must match the
+keys exactly, after adding any tickprefix or
+ticksuffix. For negative numbers the minus sign
+symbol used (U+2212) is wider than the regular
+ascii dash. That means you need to use −1
+instead of -1. labelalias can be used with any
+axis type, and both keys (if needed) and values
+(if desired) can include html-like tags or
+MathJax.</p>
+</dd>
+<dt>len</dt><dd><p>Sets the length of the color bar This measure
+excludes the padding of both ends. That is, the
+color bar length is this length minus the
+padding on both ends.</p>
+</dd>
+<dt>lenmode</dt><dd><p>Determines whether this color bar’s length
+(i.e. the measure in the color variation
+direction) is set in units of plot “fraction”
+or in <a href="#id2"><span class="problematic" id="id3">*</span></a>pixels. Use <code class="docutils literal notranslate"><span class="pre">len</span></code> to set the value.</p>
+</dd>
+<dt>minexponent</dt><dd><p>Hide SI prefix for 10^n if <a href="#id4"><span class="problematic" id="id5">|n|</span></a> is below this
+number. This only has an effect when
+<code class="docutils literal notranslate"><span class="pre">tickformat</span></code> is “SI” or “B”.</p>
+</dd>
+<dt>nticks</dt><dd><p>Specifies the maximum number of ticks for the
+particular axis. The actual number of ticks
+will be chosen automatically to be less than or
+equal to <code class="docutils literal notranslate"><span class="pre">nticks</span></code>. Has an effect only if
+<code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “auto”.</p>
+</dd>
+<dt>orientation</dt><dd><p>Sets the orientation of the colorbar.</p>
+</dd>
+<dt>outlinecolor</dt><dd><p>Sets the axis line color.</p>
+</dd>
+<dt>outlinewidth</dt><dd><p>Sets the width (in px) of the axis line.</p>
+</dd>
+<dt>separatethousands</dt><dd><p>If “true”, even 4-digit integers are separated</p>
+</dd>
+<dt>showexponent</dt><dd><p>If “all”, all exponents are shown besides their
+significands. If “first”, only the exponent of
+the first tick is shown. If “last”, only the
+exponent of the last tick is shown. If “none”,
+no exponents appear.</p>
+</dd>
+<dt>showticklabels</dt><dd><p>Determines whether or not the tick labels are
+drawn.</p>
+</dd>
+<dt>showtickprefix</dt><dd><p>If “all”, all tick labels are displayed with a
+prefix. If “first”, only the first tick is
+displayed with a prefix. If “last”, only the
+last tick is displayed with a suffix. If
+“none”, tick prefixes are hidden.</p>
+</dd>
+<dt>showticksuffix</dt><dd><p>Same as <code class="docutils literal notranslate"><span class="pre">showtickprefix</span></code> but for tick suffixes.</p>
+</dd>
+<dt>thickness</dt><dd><p>Sets the thickness of the color bar This
+measure excludes the size of the padding, ticks
+and labels.</p>
+</dd>
+<dt>thicknessmode</dt><dd><p>Determines whether this color bar’s thickness
+(i.e. the measure in the constant color
+direction) is set in units of plot “fraction”
+or in “pixels”. Use <code class="docutils literal notranslate"><span class="pre">thickness</span></code> to set the
+value.</p>
+</dd>
+<dt>tick0</dt><dd><p>Sets the placement of the first tick on this
+axis. Use with <code class="docutils literal notranslate"><span class="pre">dtick</span></code>. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is
+“log”, then you must take the log of your
+starting tick (e.g. to set the starting tick to
+100, set the <code class="docutils literal notranslate"><span class="pre">tick0</span></code> to 2) except when
+<code class="docutils literal notranslate"><span class="pre">dtick`=*L&lt;f&gt;*</span> <span class="pre">(see</span> <span class="pre">`dtick</span></code> for more info). If
+the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is “date”, it should be a date
+string, like date data. If the axis <code class="docutils literal notranslate"><span class="pre">type</span></code> is
+“category”, it should be a number, using the
+scale where each category is assigned a serial
+number from zero in the order it appears.</p>
+</dd>
+<dt>tickangle</dt><dd><p>Sets the angle of the tick labels with respect
+to the horizontal. For example, a <code class="docutils literal notranslate"><span class="pre">tickangle</span></code>
+of -90 draws the tick labels vertically.</p>
+</dd>
+<dt>tickcolor</dt><dd><p>Sets the tick color.</p>
+</dd>
+<dt>tickfont</dt><dd><p>Sets the color bar’s tick label font</p>
+</dd>
+<dt>tickformat</dt><dd><p>Sets the tick label formatting rule using d3
+formatting mini-languages which are very
+similar to those in Python. For numbers, see: h
+ttps://github.com/d3/d3-format/tree/v1.4.5#d3-
+format. And for dates see:
+https://github.com/d3/d3-time-
+format/tree/v2.2.3#locale_format. We add two
+items to d3’s date formatter: “%h” for half of
+the year as a decimal number as well as “%{n}f”
+for fractional seconds with n digits. For
+example, <em>2016-10-13 09:15:23.456</em> with
+tickformat “%H~%M~%S.%2f” would display
+“09~15~23.46”</p>
+</dd>
+<dt>tickformatstops</dt><dd><p>A tuple of <code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatter</span>
+<span class="pre">polar.marker.colorbar.Tickformatstop</span></code> instances
+or dicts with compatible properties</p>
+</dd>
+<dt>tickformatstopdefaults</dt><dd><p>When used in a template (as layout.template.dat
+a.scatterpolar.marker.colorbar.tickformatstopde
+faults), sets the default property values to
+use for elements of
+scatterpolar.marker.colorbar.tickformatstops</p>
+</dd>
+<dt>ticklabeloverflow</dt><dd><p>Determines how we handle tick labels that would
+overflow either the graph div or the domain of
+the axis. The default value for inside tick
+labels is <em>hide past domain</em>. In other cases
+the default is <em>hide past div</em>.</p>
+</dd>
+<dt>ticklabelposition</dt><dd><p>Determines where tick labels are drawn relative
+to the ticks. Left and right options are used
+when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “h”, top and bottom when
+<code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “v”.</p>
+</dd>
+<dt>ticklabelstep</dt><dd><p>Sets the spacing between tick labels as
+compared to the spacing between ticks. A value
+of 1 (default) means each tick gets a label. A
+value of 2 means shows every 2nd label. A
+larger value n means only every nth tick is
+labeled. <code class="docutils literal notranslate"><span class="pre">tick0</span></code> determines which labels are
+shown. Not implemented for axes with <code class="docutils literal notranslate"><span class="pre">type</span></code>
+“log” or “multicategory”, or when <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is
+“array”.</p>
+</dd>
+<dt>ticklen</dt><dd><p>Sets the tick length (in px).</p>
+</dd>
+<dt>tickmode</dt><dd><p>Sets the tick mode for this axis. If “auto”,
+the number of ticks is set via <code class="docutils literal notranslate"><span class="pre">nticks</span></code>. If
+“linear”, the placement of the ticks is
+determined by a starting position <code class="docutils literal notranslate"><span class="pre">tick0</span></code> and a
+tick step <code class="docutils literal notranslate"><span class="pre">dtick</span></code> (“linear” is the default
+value if <code class="docutils literal notranslate"><span class="pre">tick0</span></code> and <code class="docutils literal notranslate"><span class="pre">dtick</span></code> are provided). If
+“array”, the placement of the ticks is set via
+<code class="docutils literal notranslate"><span class="pre">tickvals</span></code> and the tick text is <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>.
+(“array” is the default value if <code class="docutils literal notranslate"><span class="pre">tickvals</span></code> is
+provided).</p>
+</dd>
+<dt>tickprefix</dt><dd><p>Sets a tick label prefix.</p>
+</dd>
+<dt>ticks</dt><dd><p>Determines whether ticks are drawn or not. If
+“”, this axis’ ticks are not drawn. If
+“outside” (“inside”), this axis’ are drawn
+outside (inside) the axis lines.</p>
+</dd>
+<dt>ticksuffix</dt><dd><p>Sets a tick label suffix.</p>
+</dd>
+<dt>ticktext</dt><dd><p>Sets the text displayed at the ticks position
+via <code class="docutils literal notranslate"><span class="pre">tickvals</span></code>. Only has an effect if
+<code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set to “array”. Used with
+<code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.</p>
+</dd>
+<dt>ticktextsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>.</p>
+</dd>
+<dt>tickvals</dt><dd><p>Sets the values at which ticks on this axis
+appear. Only has an effect if <code class="docutils literal notranslate"><span class="pre">tickmode</span></code> is set
+to “array”. Used with <code class="docutils literal notranslate"><span class="pre">ticktext</span></code>.</p>
+</dd>
+<dt>tickvalssrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">tickvals</span></code>.</p>
+</dd>
+<dt>tickwidth</dt><dd><p>Sets the tick width (in px).</p>
+</dd>
+<dt>title</dt><dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.marke</span>
+<span class="pre">r.colorbar.Title</span></code> instance or dict with
+compatible properties</p>
+</dd>
+<dt>x</dt><dd><p>Sets the x position with respect to <code class="docutils literal notranslate"><span class="pre">xref</span></code> of
+the color bar (in plot fraction). When <code class="docutils literal notranslate"><span class="pre">xref</span></code>
+is “paper”, defaults to 1.02 when <code class="docutils literal notranslate"><span class="pre">orientation</span></code>
+is “v” and 0.5 when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “h”. When
+<code class="docutils literal notranslate"><span class="pre">xref</span></code> is “container”, defaults to 1 when
+<code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “v” and 0.5 when <code class="docutils literal notranslate"><span class="pre">orientation</span></code>
+is “h”. Must be between 0 and 1 if <code class="docutils literal notranslate"><span class="pre">xref</span></code> is
+“container” and between “-2” and 3 if <code class="docutils literal notranslate"><span class="pre">xref</span></code> is
+“paper”.</p>
+</dd>
+<dt>xanchor</dt><dd><p>Sets this color bar’s horizontal position
+anchor. This anchor binds the <code class="docutils literal notranslate"><span class="pre">x</span></code> position to
+the “left”, “center” or “right” of the color
+bar. Defaults to “left” when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is
+“v” and “center” when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “h”.</p>
+</dd>
+<dt>xpad</dt><dd><p>Sets the amount of padding (in px) along the x
+direction.</p>
+</dd>
+<dt>xref</dt><dd><p>Sets the container <code class="docutils literal notranslate"><span class="pre">x</span></code> refers to. “container”
+spans the entire <code class="docutils literal notranslate"><span class="pre">width</span></code> of the plot. “paper”
+refers to the width of the plotting area only.</p>
+</dd>
+<dt>y</dt><dd><p>Sets the y position with respect to <code class="docutils literal notranslate"><span class="pre">yref</span></code> of
+the color bar (in plot fraction). When <code class="docutils literal notranslate"><span class="pre">yref</span></code>
+is “paper”, defaults to 0.5 when <code class="docutils literal notranslate"><span class="pre">orientation</span></code>
+is “v” and 1.02 when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “h”. When
+<code class="docutils literal notranslate"><span class="pre">yref</span></code> is “container”, defaults to 0.5 when
+<code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “v” and 1 when <code class="docutils literal notranslate"><span class="pre">orientation</span></code>
+is “h”. Must be between 0 and 1 if <code class="docutils literal notranslate"><span class="pre">yref</span></code> is
+“container” and between “-2” and 3 if <code class="docutils literal notranslate"><span class="pre">yref</span></code> is
+“paper”.</p>
+</dd>
+<dt>yanchor</dt><dd><p>Sets this color bar’s vertical position anchor
+This anchor binds the <code class="docutils literal notranslate"><span class="pre">y</span></code> position to the
+“top”, “middle” or “bottom” of the color bar.
+Defaults to “middle” when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “v”
+and “bottom” when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “h”.</p>
+</dd>
+<dt>ypad</dt><dd><p>Sets the amount of padding (in px) along the y
+direction.</p>
+</dd>
+<dt>yref</dt><dd><p>Sets the container <code class="docutils literal notranslate"><span class="pre">y</span></code> refers to. “container”
+spans the entire <code class="docutils literal notranslate"><span class="pre">height</span></code> of the plot. “paper”
+refers to the height of the plotting area only.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.marker.html#plotly.graph_objects.scatterpolar.marker.ColorBar" title="plotly.graph_objects.scatterpolar.marker.ColorBar">plotly.graph_objects.scatterpolar.marker.ColorBar</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.colorscale">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">colorscale</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.colorscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the colorscale. Has an effect only if in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code> is
+set to a numerical array. The colorscale must be an array
+containing arrays mapping a normalized value to an rgb, rgba,
+hex, hsl, hsv, or named color string. At minimum, a mapping for
+the lowest (0) and highest (1) values are required. For
+example, <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">'rgb(0,0,255)'],</span> <span class="pre">[1,</span> <span class="pre">'rgb(255,0,0)']]</span></code>. To
+control the bounds of the colorscale in color space, use
+<code class="docutils literal notranslate"><span class="pre">marker.cmin</span></code> and <code class="docutils literal notranslate"><span class="pre">marker.cmax</span></code>. Alternatively, <code class="docutils literal notranslate"><span class="pre">colorscale</span></code>
+may be a palette name string of the following list: Blackbody,B
+luered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic
+,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.</p>
+<p>The ‘colorscale’ property is a colorscale and may be
+specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>A list of colors that will be spaced evenly to create the colorscale.
+Many predefined colorscale lists are included in the sequential, diverging,
+and cyclical modules in the plotly.colors package.</p></li>
+<li><p>A list of 2-element lists where the first element is the
+normalized color level value (starting at 0 and ending at 1),
+and the second item is a valid color string.
+(e.g. [[0, ‘green’], [0.5, ‘red’], [1.0, ‘rgb(0, 0, 255)’]])</p></li>
+<li><dl class="simple">
+<dt>One of the following named colorscales:</dt><dd><dl class="simple">
+<dt>[‘aggrnyl’, ‘agsunset’, ‘algae’, ‘amp’, ‘armyrose’, ‘balance’,</dt><dd><p>‘blackbody’, ‘bluered’, ‘blues’, ‘blugrn’, ‘bluyl’, ‘brbg’,
+‘brwnyl’, ‘bugn’, ‘bupu’, ‘burg’, ‘burgyl’, ‘cividis’, ‘curl’,
+‘darkmint’, ‘deep’, ‘delta’, ‘dense’, ‘earth’, ‘edge’, ‘electric’,
+‘emrld’, ‘fall’, ‘geyser’, ‘gnbu’, ‘gray’, ‘greens’, ‘greys’,
+‘haline’, ‘hot’, ‘hsv’, ‘ice’, ‘icefire’, ‘inferno’, ‘jet’,
+‘magenta’, ‘magma’, ‘matter’, ‘mint’, ‘mrybm’, ‘mygbm’, ‘oranges’,
+‘orrd’, ‘oryel’, ‘oxy’, ‘peach’, ‘phase’, ‘picnic’, ‘pinkyl’,
+‘piyg’, ‘plasma’, ‘plotly3’, ‘portland’, ‘prgn’, ‘pubu’, ‘pubugn’,
+‘puor’, ‘purd’, ‘purp’, ‘purples’, ‘purpor’, ‘rainbow’, ‘rdbu’,
+‘rdgy’, ‘rdpu’, ‘rdylbu’, ‘rdylgn’, ‘redor’, ‘reds’, ‘solar’,
+‘spectral’, ‘speed’, ‘sunset’, ‘sunsetdark’, ‘teal’, ‘tealgrn’,
+‘tealrose’, ‘tempo’, ‘temps’, ‘thermal’, ‘tropic’, ‘turbid’,
+‘turbo’, ‘twilight’, ‘viridis’, ‘ylgn’, ‘ylgnbu’, ‘ylorbr’,
+‘ylorrd’].</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Appending ‘_r’ to a named colorscale reverses it.</p>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.colorsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">colorsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.colorsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p>
+<p>The ‘colorsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.gradient">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">gradient</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘gradient’ property is an instance of Gradient
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.scatterpolar.marker.html#plotly.graph_objects.scatterpolar.marker.Gradient" title="plotly.graph_objects.scatterpolar.marker.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.marker.Gradient</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Gradient constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>color</dt><dd><p>Sets the final color of the gradient fill: the
+center color for radial, the right for
+horizontal, or the bottom for vertical.</p>
+</dd>
+<dt>colorsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p>
+</dd>
+<dt>type</dt><dd><p>Sets the type of gradient used to fill the
+markers</p>
+</dd>
+<dt>typesrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.marker.html#plotly.graph_objects.scatterpolar.marker.Gradient" title="plotly.graph_objects.scatterpolar.marker.Gradient">plotly.graph_objects.scatterpolar.marker.Gradient</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.line">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">line</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.line" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘line’ property is an instance of Line
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.scatterpolar.marker.html#plotly.graph_objects.scatterpolar.marker.Line" title="plotly.graph_objects.scatterpolar.marker.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.marker.Line</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Line constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>autocolorscale</dt><dd><p>Determines whether the colorscale is a default
+palette (<code class="docutils literal notranslate"><span class="pre">autocolorscale:</span> <span class="pre">true</span></code>) or the palette
+determined by <code class="docutils literal notranslate"><span class="pre">marker.line.colorscale</span></code>. Has an
+effect only if in <code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code> is set to
+a numerical array. In case <code class="docutils literal notranslate"><span class="pre">colorscale</span></code> is
+unspecified or <code class="docutils literal notranslate"><span class="pre">autocolorscale</span></code> is true, the
+default palette will be chosen according to
+whether numbers in the <code class="docutils literal notranslate"><span class="pre">color</span></code> array are all
+positive, all negative or mixed.</p>
+</dd>
+<dt>cauto</dt><dd><p>Determines whether or not the color domain is
+computed with respect to the input data (here
+in <code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code>) or the bounds set in
+<code class="docutils literal notranslate"><span class="pre">marker.line.cmin</span></code> and <code class="docutils literal notranslate"><span class="pre">marker.line.cmax</span></code> Has
+an effect only if in <code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code> is set
+to a numerical array. Defaults to <code class="docutils literal notranslate"><span class="pre">false</span></code> when
+<code class="docutils literal notranslate"><span class="pre">marker.line.cmin</span></code> and <code class="docutils literal notranslate"><span class="pre">marker.line.cmax</span></code> are
+set by the user.</p>
+</dd>
+<dt>cmax</dt><dd><p>Sets the upper bound of the color domain. Has
+an effect only if in <code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code> is set
+to a numerical array. Value should have the
+same units as in <code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code> and if
+set, <code class="docutils literal notranslate"><span class="pre">marker.line.cmin</span></code> must be set as well.</p>
+</dd>
+<dt>cmid</dt><dd><p>Sets the mid-point of the color domain by
+scaling <code class="docutils literal notranslate"><span class="pre">marker.line.cmin</span></code> and/or
+<code class="docutils literal notranslate"><span class="pre">marker.line.cmax</span></code> to be equidistant to this
+point. Has an effect only if in
+<code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code> is set to a numerical
+array. Value should have the same units as in
+<code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code>. Has no effect when
+<code class="docutils literal notranslate"><span class="pre">marker.line.cauto</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</dd>
+<dt>cmin</dt><dd><p>Sets the lower bound of the color domain. Has
+an effect only if in <code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code> is set
+to a numerical array. Value should have the
+same units as in <code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code> and if
+set, <code class="docutils literal notranslate"><span class="pre">marker.line.cmax</span></code> must be set as well.</p>
+</dd>
+<dt>color</dt><dd><p>Sets the marker.line color. It accepts either a
+specific color or an array of numbers that are
+mapped to the colorscale relative to the max
+and min values of the array or relative to
+<code class="docutils literal notranslate"><span class="pre">marker.line.cmin</span></code> and <code class="docutils literal notranslate"><span class="pre">marker.line.cmax</span></code> if
+set.</p>
+</dd>
+<dt>coloraxis</dt><dd><p>Sets a reference to a shared color axis.
+References to these shared color axes are
+“coloraxis”, “coloraxis2”, “coloraxis3”, etc.
+Settings for these shared color axes are set in
+the layout, under <code class="docutils literal notranslate"><span class="pre">layout.coloraxis</span></code>,
+<code class="docutils literal notranslate"><span class="pre">layout.coloraxis2</span></code>, etc. Note that multiple
+color scales can be linked to the same color
+axis.</p>
+</dd>
+<dt>colorscale</dt><dd><p>Sets the colorscale. Has an effect only if in
+<code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code> is set to a numerical
+array. The colorscale must be an array
+containing arrays mapping a normalized value to
+an rgb, rgba, hex, hsl, hsv, or named color
+string. At minimum, a mapping for the lowest
+(0) and highest (1) values are required. For
+example, <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">'rgb(0,0,255)'],</span> <span class="pre">[1,</span>
+<span class="pre">'rgb(255,0,0)']]</span></code>. To control the bounds of the
+colorscale in color space, use
+<code class="docutils literal notranslate"><span class="pre">marker.line.cmin</span></code> and <code class="docutils literal notranslate"><span class="pre">marker.line.cmax</span></code>.
+Alternatively, <code class="docutils literal notranslate"><span class="pre">colorscale</span></code> may be a palette
+name string of the following list: Blackbody,Bl
+uered,Blues,Cividis,Earth,Electric,Greens,Greys
+,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viri
+dis,YlGnBu,YlOrRd.</p>
+</dd>
+<dt>colorsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p>
+</dd>
+<dt>reversescale</dt><dd><p>Reverses the color mapping if true. Has an
+effect only if in <code class="docutils literal notranslate"><span class="pre">marker.line.color</span></code> is set to
+a numerical array. If true, <code class="docutils literal notranslate"><span class="pre">marker.line.cmin</span></code>
+will correspond to the last color in the array
+and <code class="docutils literal notranslate"><span class="pre">marker.line.cmax</span></code> will correspond to the
+first color.</p>
+</dd>
+<dt>width</dt><dd><p>Sets the width (in px) of the lines bounding
+the marker points.</p>
+</dd>
+<dt>widthsrc</dt><dd><p>Sets the source reference on Chart Studio Cloud
+for <code class="docutils literal notranslate"><span class="pre">width</span></code>.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.marker.html#plotly.graph_objects.scatterpolar.marker.Line" title="plotly.graph_objects.scatterpolar.marker.Line">plotly.graph_objects.scatterpolar.marker.Line</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.maxdisplayed">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">maxdisplayed</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.maxdisplayed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a maximum number of points to be drawn on the graph. 0
+corresponds to no limit.</p>
+<dl class="simple">
+<dt>The ‘maxdisplayed’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.opacity">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">opacity</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the marker opacity.</p>
+<dl class="simple">
+<dt>The ‘opacity’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 1]</p></li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.opacitysrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">opacitysrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.opacitysrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">opacity</span></code>.</p>
+<p>The ‘opacitysrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.reversescale">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">reversescale</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.reversescale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverses the color mapping if true. Has an effect only if in
+<code class="docutils literal notranslate"><span class="pre">marker.color</span></code> is set to a numerical array. If true,
+<code class="docutils literal notranslate"><span class="pre">marker.cmin</span></code> will correspond to the last color in the array
+and <code class="docutils literal notranslate"><span class="pre">marker.cmax</span></code> will correspond to the first color.</p>
+<p>The ‘reversescale’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.showscale">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">showscale</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.showscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether or not a colorbar is displayed for this
+trace. Has an effect only if in <code class="docutils literal notranslate"><span class="pre">marker.color</span></code> is set to a
+numerical array.</p>
+<p>The ‘showscale’ property must be specified as a bool
+(either True, or False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.size">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">size</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the marker size (in px).</p>
+<dl class="simple">
+<dt>The ‘size’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.sizemin">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sizemin</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.sizemin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has an effect only if <code class="docutils literal notranslate"><span class="pre">marker.size</span></code> is set to a numerical
+array. Sets the minimum size (in px) of the rendered marker
+points.</p>
+<dl class="simple">
+<dt>The ‘sizemin’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.sizemode">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sizemode</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.sizemode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has an effect only if <code class="docutils literal notranslate"><span class="pre">marker.size</span></code> is set to a numerical
+array. Sets the rule for which the data in <code class="docutils literal notranslate"><span class="pre">size</span></code> is converted
+to pixels.</p>
+<dl class="simple">
+<dt>The ‘sizemode’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘diameter’, ‘area’]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.sizeref">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sizeref</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.sizeref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has an effect only if <code class="docutils literal notranslate"><span class="pre">marker.size</span></code> is set to a numerical
+array. Sets the scale factor used to determine the rendered
+size of marker points. Use with <code class="docutils literal notranslate"><span class="pre">sizemin</span></code> and <code class="docutils literal notranslate"><span class="pre">sizemode</span></code>.</p>
+<dl class="simple">
+<dt>The ‘sizeref’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.sizesrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sizesrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.sizesrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">size</span></code>.</p>
+<p>The ‘sizesrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.standoff">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">standoff</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.standoff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves the marker away from the data point in the direction of
+<code class="docutils literal notranslate"><span class="pre">angle</span></code> (in px). This can be useful for example if you have
+another marker at this location and you want to point an
+arrowhead marker at it.</p>
+<dl class="simple">
+<dt>The ‘standoff’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.standoffsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">standoffsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.standoffsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">standoff</span></code>.</p>
+<p>The ‘standoffsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.symbol">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">symbol</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the marker symbol type. Adding 100 is equivalent to
+appending “-open” to a symbol name. Adding 200 is equivalent to
+appending “-dot” to a symbol name. Adding 300 is equivalent to
+appending “-open-dot” or “dot-open” to a symbol name.</p>
+<dl class="simple">
+<dt>The ‘symbol’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[0, ‘0’, ‘circle’, 100, ‘100’, ‘circle-open’, 200, ‘200’,
+‘circle-dot’, 300, ‘300’, ‘circle-open-dot’, 1, ‘1’,
+‘square’, 101, ‘101’, ‘square-open’, 201, ‘201’,
+‘square-dot’, 301, ‘301’, ‘square-open-dot’, 2, ‘2’,
+‘diamond’, 102, ‘102’, ‘diamond-open’, 202, ‘202’,
+‘diamond-dot’, 302, ‘302’, ‘diamond-open-dot’, 3, ‘3’,
+‘cross’, 103, ‘103’, ‘cross-open’, 203, ‘203’,
+‘cross-dot’, 303, ‘303’, ‘cross-open-dot’, 4, ‘4’, ‘x’,
+104, ‘104’, ‘x-open’, 204, ‘204’, ‘x-dot’, 304, ‘304’,
+‘x-open-dot’, 5, ‘5’, ‘triangle-up’, 105, ‘105’,
+‘triangle-up-open’, 205, ‘205’, ‘triangle-up-dot’, 305,
+‘305’, ‘triangle-up-open-dot’, 6, ‘6’, ‘triangle-down’,
+106, ‘106’, ‘triangle-down-open’, 206, ‘206’,
+‘triangle-down-dot’, 306, ‘306’, ‘triangle-down-open-dot’,
+7, ‘7’, ‘triangle-left’, 107, ‘107’, ‘triangle-left-open’,
+207, ‘207’, ‘triangle-left-dot’, 307, ‘307’,
+‘triangle-left-open-dot’, 8, ‘8’, ‘triangle-right’, 108,
+‘108’, ‘triangle-right-open’, 208, ‘208’,
+‘triangle-right-dot’, 308, ‘308’,
+‘triangle-right-open-dot’, 9, ‘9’, ‘triangle-ne’, 109,
+‘109’, ‘triangle-ne-open’, 209, ‘209’, ‘triangle-ne-dot’,
+309, ‘309’, ‘triangle-ne-open-dot’, 10, ‘10’,
+‘triangle-se’, 110, ‘110’, ‘triangle-se-open’, 210, ‘210’,
+‘triangle-se-dot’, 310, ‘310’, ‘triangle-se-open-dot’, 11,
+‘11’, ‘triangle-sw’, 111, ‘111’, ‘triangle-sw-open’, 211,
+‘211’, ‘triangle-sw-dot’, 311, ‘311’,
+‘triangle-sw-open-dot’, 12, ‘12’, ‘triangle-nw’, 112,
+‘112’, ‘triangle-nw-open’, 212, ‘212’, ‘triangle-nw-dot’,
+312, ‘312’, ‘triangle-nw-open-dot’, 13, ‘13’, ‘pentagon’,
+113, ‘113’, ‘pentagon-open’, 213, ‘213’, ‘pentagon-dot’,
+313, ‘313’, ‘pentagon-open-dot’, 14, ‘14’, ‘hexagon’, 114,
+‘114’, ‘hexagon-open’, 214, ‘214’, ‘hexagon-dot’, 314,
+‘314’, ‘hexagon-open-dot’, 15, ‘15’, ‘hexagon2’, 115,
+‘115’, ‘hexagon2-open’, 215, ‘215’, ‘hexagon2-dot’, 315,
+‘315’, ‘hexagon2-open-dot’, 16, ‘16’, ‘octagon’, 116,
+‘116’, ‘octagon-open’, 216, ‘216’, ‘octagon-dot’, 316,
+‘316’, ‘octagon-open-dot’, 17, ‘17’, ‘star’, 117, ‘117’,
+‘star-open’, 217, ‘217’, ‘star-dot’, 317, ‘317’,
+‘star-open-dot’, 18, ‘18’, ‘hexagram’, 118, ‘118’,
+‘hexagram-open’, 218, ‘218’, ‘hexagram-dot’, 318, ‘318’,
+‘hexagram-open-dot’, 19, ‘19’, ‘star-triangle-up’, 119,
+‘119’, ‘star-triangle-up-open’, 219, ‘219’,
+‘star-triangle-up-dot’, 319, ‘319’,
+‘star-triangle-up-open-dot’, 20, ‘20’,
+‘star-triangle-down’, 120, ‘120’,
+‘star-triangle-down-open’, 220, ‘220’,
+‘star-triangle-down-dot’, 320, ‘320’,
+‘star-triangle-down-open-dot’, 21, ‘21’, ‘star-square’,
+121, ‘121’, ‘star-square-open’, 221, ‘221’,
+‘star-square-dot’, 321, ‘321’, ‘star-square-open-dot’, 22,
+‘22’, ‘star-diamond’, 122, ‘122’, ‘star-diamond-open’,
+222, ‘222’, ‘star-diamond-dot’, 322, ‘322’,
+‘star-diamond-open-dot’, 23, ‘23’, ‘diamond-tall’, 123,
+‘123’, ‘diamond-tall-open’, 223, ‘223’,
+‘diamond-tall-dot’, 323, ‘323’, ‘diamond-tall-open-dot’,
+24, ‘24’, ‘diamond-wide’, 124, ‘124’, ‘diamond-wide-open’,
+224, ‘224’, ‘diamond-wide-dot’, 324, ‘324’,
+‘diamond-wide-open-dot’, 25, ‘25’, ‘hourglass’, 125,
+‘125’, ‘hourglass-open’, 26, ‘26’, ‘bowtie’, 126, ‘126’,
+‘bowtie-open’, 27, ‘27’, ‘circle-cross’, 127, ‘127’,
+‘circle-cross-open’, 28, ‘28’, ‘circle-x’, 128, ‘128’,
+‘circle-x-open’, 29, ‘29’, ‘square-cross’, 129, ‘129’,
+‘square-cross-open’, 30, ‘30’, ‘square-x’, 130, ‘130’,
+‘square-x-open’, 31, ‘31’, ‘diamond-cross’, 131, ‘131’,
+‘diamond-cross-open’, 32, ‘32’, ‘diamond-x’, 132, ‘132’,
+‘diamond-x-open’, 33, ‘33’, ‘cross-thin’, 133, ‘133’,
+‘cross-thin-open’, 34, ‘34’, ‘x-thin’, 134, ‘134’,
+‘x-thin-open’, 35, ‘35’, ‘asterisk’, 135, ‘135’,
+‘asterisk-open’, 36, ‘36’, ‘hash’, 136, ‘136’,
+‘hash-open’, 236, ‘236’, ‘hash-dot’, 336, ‘336’,
+‘hash-open-dot’, 37, ‘37’, ‘y-up’, 137, ‘137’,
+‘y-up-open’, 38, ‘38’, ‘y-down’, 138, ‘138’,
+‘y-down-open’, 39, ‘39’, ‘y-left’, 139, ‘139’,
+‘y-left-open’, 40, ‘40’, ‘y-right’, 140, ‘140’,
+‘y-right-open’, 41, ‘41’, ‘line-ew’, 141, ‘141’,
+‘line-ew-open’, 42, ‘42’, ‘line-ns’, 142, ‘142’,
+‘line-ns-open’, 43, ‘43’, ‘line-ne’, 143, ‘143’,
+‘line-ne-open’, 44, ‘44’, ‘line-nw’, 144, ‘144’,
+‘line-nw-open’, 45, ‘45’, ‘arrow-up’, 145, ‘145’,
+‘arrow-up-open’, 46, ‘46’, ‘arrow-down’, 146, ‘146’,
+‘arrow-down-open’, 47, ‘47’, ‘arrow-left’, 147, ‘147’,
+‘arrow-left-open’, 48, ‘48’, ‘arrow-right’, 148, ‘148’,
+‘arrow-right-open’, 49, ‘49’, ‘arrow-bar-up’, 149, ‘149’,
+‘arrow-bar-up-open’, 50, ‘50’, ‘arrow-bar-down’, 150,
+‘150’, ‘arrow-bar-down-open’, 51, ‘51’, ‘arrow-bar-left’,
+151, ‘151’, ‘arrow-bar-left-open’, 52, ‘52’,
+‘arrow-bar-right’, 152, ‘152’, ‘arrow-bar-right-open’, 53,
+‘53’, ‘arrow’, 153, ‘153’, ‘arrow-open’, 54, ‘54’,
+‘arrow-wide’, 154, ‘154’, ‘arrow-wide-open’]</p>
+</dd>
+</dl>
+</li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Marker.symbolsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">symbolsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Marker.symbolsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">symbol</span></code>.</p>
+<p>The ‘symbolsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.scatterpolar.Selected">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.scatterpolar.</span></code><code class="sig-name descname"><span class="pre">Selected</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textfont</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Selected" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Selected.marker">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">marker</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Selected.marker" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘marker’ property is an instance of Marker
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.scatterpolar.selected.html#plotly.graph_objects.scatterpolar.selected.Marker" title="plotly.graph_objects.scatterpolar.selected.Marker"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.selected.Marker</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Marker constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>color</dt><dd><p>Sets the marker color of selected points.</p>
+</dd>
+<dt>opacity</dt><dd><p>Sets the marker opacity of selected points.</p>
+</dd>
+<dt>size</dt><dd><p>Sets the marker size of selected points.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.selected.html#plotly.graph_objects.scatterpolar.selected.Marker" title="plotly.graph_objects.scatterpolar.selected.Marker">plotly.graph_objects.scatterpolar.selected.Marker</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Selected.textfont">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">textfont</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Selected.textfont" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘textfont’ property is an instance of Textfont
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.scatterpolar.selected.html#plotly.graph_objects.scatterpolar.selected.Textfont" title="plotly.graph_objects.scatterpolar.selected.Textfont"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.selected.Textfont</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Textfont constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>color</dt><dd><p>Sets the text font color of selected points.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.selected.html#plotly.graph_objects.scatterpolar.selected.Textfont" title="plotly.graph_objects.scatterpolar.selected.Textfont">plotly.graph_objects.scatterpolar.selected.Textfont</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.scatterpolar.Stream">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.scatterpolar.</span></code><code class="sig-name descname"><span class="pre">Stream</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxpoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Stream" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Stream.maxpoints">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">maxpoints</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Stream.maxpoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the maximum number of points to keep on the plots from an
+incoming stream. If <code class="docutils literal notranslate"><span class="pre">maxpoints</span></code> is set to 50, only the newest
+50 points will be displayed on the plot.</p>
+<dl class="simple">
+<dt>The ‘maxpoints’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, 10000]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Stream.token">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">token</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Stream.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>The stream id number links a data trace on a plot with a
+stream. See <a class="reference external" href="https://chart-studio.plotly.com/settings">https://chart-studio.plotly.com/settings</a> for more
+details.</p>
+<dl class="simple">
+<dt>The ‘token’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A non-empty string</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.scatterpolar.Textfont">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.scatterpolar.</span></code><code class="sig-name descname"><span class="pre">Textfont</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">family</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">familysrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineposition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linepositionsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shadow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shadowsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizesrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stylesrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textcase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textcasesrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variantsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weightsrc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.color">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">color</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The ‘color’ property is a color and may be specified as:</dt><dd><ul class="simple">
+<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
+<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
+<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
+<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
+<li><dl class="simple">
+<dt>A named CSS color:</dt><dd><p>aliceblue, antiquewhite, aqua, aquamarine, azure,
+beige, bisque, black, blanchedalmond, blue,
+blueviolet, brown, burlywood, cadetblue,
+chartreuse, chocolate, coral, cornflowerblue,
+cornsilk, crimson, cyan, darkblue, darkcyan,
+darkgoldenrod, darkgray, darkgrey, darkgreen,
+darkkhaki, darkmagenta, darkolivegreen, darkorange,
+darkorchid, darkred, darksalmon, darkseagreen,
+darkslateblue, darkslategray, darkslategrey,
+darkturquoise, darkviolet, deeppink, deepskyblue,
+dimgray, dimgrey, dodgerblue, firebrick,
+floralwhite, forestgreen, fuchsia, gainsboro,
+ghostwhite, gold, goldenrod, gray, grey, green,
+greenyellow, honeydew, hotpink, indianred, indigo,
+ivory, khaki, lavender, lavenderblush, lawngreen,
+lemonchiffon, lightblue, lightcoral, lightcyan,
+lightgoldenrodyellow, lightgray, lightgrey,
+lightgreen, lightpink, lightsalmon, lightseagreen,
+lightskyblue, lightslategray, lightslategrey,
+lightsteelblue, lightyellow, lime, limegreen,
+linen, magenta, maroon, mediumaquamarine,
+mediumblue, mediumorchid, mediumpurple,
+mediumseagreen, mediumslateblue, mediumspringgreen,
+mediumturquoise, mediumvioletred, midnightblue,
+mintcream, mistyrose, moccasin, navajowhite, navy,
+oldlace, olive, olivedrab, orange, orangered,
+orchid, palegoldenrod, palegreen, paleturquoise,
+palevioletred, papayawhip, peachpuff, peru, pink,
+plum, powderblue, purple, red, rosybrown,
+royalblue, rebeccapurple, saddlebrown, salmon,
+sandybrown, seagreen, seashell, sienna, silver,
+skyblue, slateblue, slategray, slategrey, snow,
+springgreen, steelblue, tan, teal, thistle, tomato,
+turquoise, violet, wheat, white, whitesmoke,
+yellow, yellowgreen</p>
+</dd>
+</dl>
+</li>
+<li><p>A list or array of any of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.colorsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">colorsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.colorsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p>
+<p>The ‘colorsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.family">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">family</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.family" title="Permalink to this definition">¶</a></dt>
+<dd><p>HTML font family - the typeface that will be applied by the web
+browser. The web browser will only be able to apply a font if
+it is available on the system which it operates. Provide
+multiple font families, separated by commas, to indicate the
+preference in which to apply fonts if they aren’t available on
+the system. The Chart Studio Cloud (at <a class="reference external" href="https://chart">https://chart</a>-
+studio.plotly.com or on-premise) generates images on a server,
+where only a select number of fonts are installed and
+supported. These include “Arial”, “Balto”, “Courier New”,
+“Droid Sans”, “Droid Serif”, “Droid Sans Mono”, “Gravitas One”,
+“Old Standard TT”, “Open Sans”, “Overpass”, “PT Sans Narrow”,
+“Raleway”, “Times New Roman”.</p>
+<dl class="simple">
+<dt>The ‘family’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A non-empty string</p></li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.familysrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">familysrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.familysrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">family</span></code>.</p>
+<p>The ‘familysrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.lineposition">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">lineposition</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.lineposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the kind of decoration line(s) with text, such as an
+“under”, “over” or “through” as well as combinations e.g.
+“under+over”, etc.</p>
+<p>The ‘lineposition’ property is a flaglist and may be specified
+as a string containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Any combination of [‘under’, ‘over’, ‘through’] joined with ‘+’ characters
+(e.g. ‘under+over’)
+OR exactly one of [‘none’] (e.g. ‘none’)</p></li>
+<li><p>A list or array of the above</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.linepositionsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">linepositionsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.linepositionsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for
+<code class="docutils literal notranslate"><span class="pre">lineposition</span></code>.</p>
+<p>The ‘linepositionsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.shadow">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">shadow</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.shadow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the shape and color of the shadow behind text. “auto”
+places minimal shadow and applies contrast text font color. See
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow</a>
+for additional options.</p>
+<dl class="simple">
+<dt>The ‘shadow’ property is a string and must be specified as:</dt><dd><ul class="simple">
+<li><p>A string</p></li>
+<li><p>A number that will be converted to a string</p></li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.shadowsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">shadowsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.shadowsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">shadow</span></code>.</p>
+<p>The ‘shadowsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.size">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">size</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.size" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The ‘size’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [1, inf]</p></li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.sizesrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sizesrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.sizesrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">size</span></code>.</p>
+<p>The ‘sizesrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.style">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">style</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether a font should be styled with a normal or italic
+face from its family.</p>
+<dl class="simple">
+<dt>The ‘style’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘normal’, ‘italic’]</p>
+</dd>
+</dl>
+</li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.stylesrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">stylesrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.stylesrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">style</span></code>.</p>
+<p>The ‘stylesrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.textcase">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">textcase</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.textcase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets capitalization of text. It can be used to make text appear
+in all-uppercase or all-lowercase, or with each word
+capitalized.</p>
+<dl class="simple">
+<dt>The ‘textcase’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘normal’, ‘word caps’, ‘upper’, ‘lower’]</p>
+</dd>
+</dl>
+</li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.textcasesrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">textcasesrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.textcasesrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">textcase</span></code>.</p>
+<p>The ‘textcasesrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.variant">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">variant</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.variant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the variant of the font.</p>
+<dl class="simple">
+<dt>The ‘variant’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>One of the following enumeration values:</dt><dd><p>[‘normal’, ‘small-caps’, ‘all-small-caps’,
+‘all-petite-caps’, ‘petite-caps’, ‘unicase’]</p>
+</dd>
+</dl>
+</li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.variantsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">variantsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.variantsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">variant</span></code>.</p>
+<p>The ‘variantsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.weight">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">weight</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the weight (or boldness) of the font.</p>
+<dl class="simple">
+<dt>The ‘weight’ property is a integer and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int (or float that will be cast to an int)
+in the interval [1, 1000]
+OR exactly one of [‘normal’, ‘bold’] (e.g. ‘bold’)</p></li>
+<li><p>A tuple, list, or one-dimensional numpy array of the above</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Textfont.weightsrc">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">weightsrc</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Textfont.weightsrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the source reference on Chart Studio Cloud for <code class="docutils literal notranslate"><span class="pre">weight</span></code>.</p>
+<p>The ‘weightsrc’ property must be specified as a string or
+as a plotly.grid_objs.Column object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="plotly.graph_objects.scatterpolar.Unselected">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.scatterpolar.</span></code><code class="sig-name descname"><span class="pre">Unselected</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">textfont</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Unselected" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Unselected.marker">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">marker</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Unselected.marker" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘marker’ property is an instance of Marker
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.scatterpolar.unselected.html#plotly.graph_objects.scatterpolar.unselected.Marker" title="plotly.graph_objects.scatterpolar.unselected.Marker"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.unselected.Marker</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Marker constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>color</dt><dd><p>Sets the marker color of unselected points,
+applied only when a selection exists.</p>
+</dd>
+<dt>opacity</dt><dd><p>Sets the marker opacity of unselected points,
+applied only when a selection exists.</p>
+</dd>
+<dt>size</dt><dd><p>Sets the marker size of unselected points,
+applied only when a selection exists.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.unselected.html#plotly.graph_objects.scatterpolar.unselected.Marker" title="plotly.graph_objects.scatterpolar.unselected.Marker">plotly.graph_objects.scatterpolar.unselected.Marker</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.scatterpolar.Unselected.textfont">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">textfont</span></code><a class="headerlink" href="#plotly.graph_objects.scatterpolar.Unselected.textfont" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ‘textfont’ property is an instance of Textfont
+that may be specified as:</p>
+<blockquote>
+<div><ul>
+<li><p>An instance of <a class="reference internal" href="plotly.graph_objects.scatterpolar.unselected.html#plotly.graph_objects.scatterpolar.unselected.Textfont" title="plotly.graph_objects.scatterpolar.unselected.Textfont"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.scatterpolar.unselected.Textfont</span></code></a></p></li>
+<li><p>A dict of string/value properties that will be passed
+to the Textfont constructor</p>
+<p>Supported dict properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>color</dt><dd><p>Sets the text font color of unselected points,
+applied only when a selection exists.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="plotly.graph_objects.scatterpolar.unselected.html#plotly.graph_objects.scatterpolar.unselected.Textfont" title="plotly.graph_objects.scatterpolar.unselected.Textfont">plotly.graph_objects.scatterpolar.unselected.Textfont</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </body>
+</html>

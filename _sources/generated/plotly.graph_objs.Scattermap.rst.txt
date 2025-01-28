@@ -1,0 +1,27 @@
+﻿:mod:`plotly.graph_objs`.Scattermap
+========================================================
+
+
+.. currentmodule:: plotly.graph_objs
+
+.. autoclass:: Scattermap
+
+   
+   .. automethod:: __init__
+   
+
+:mod:`plotly.graph_objs`.scattermap
+============================================================
+
+.. autosummary::
+   
+   plotly.graph_objs.scattermap
+
+.. automodule:: plotly.graph_objs.scattermap
+   :members:
+   :undoc-members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

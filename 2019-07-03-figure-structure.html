@@ -1,0 +1,354 @@
+---
+description: The structure of a figure - data, traces and layout explained.
+display_as: file_settings
+language: python
+layout: base
+name: The Figure Data Structure
+order: 1
+page_type: u-guide
+permalink: python/figure-structure/
+thumbnail: thumbnail/violin.jpg
+---
+
+{% raw %}
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h3><p>The <code>plotly</code> Python package exists to <a href="/python/creating-and-updating-figures/">create, manipulate</a> and <a href="/python/renderers/">render</a> graphical figures (i.e. charts, plots, maps and diagrams) represented by data structures also referred to as figures. The rendering process uses the <a href="https://plotly.com/javascript/">Plotly.js JavaScript library</a> under the hood although Python developers using this module very rarely need to interact with the Javascript library directly, if ever. Figures can be represented in Python either as dicts or as instances of the <code>plotly.graph_objects.Figure</code> class, and are serialized as text in <a href="https://json.org/">JavaScript Object Notation (JSON)</a> before being passed to Plotly.js.</p>
+<blockquote><p>Note: the recommended entry-point into the plotly package is the <a href="/python/plotly-express/">high-level plotly.express module, also known as Plotly Express</a>, which consists of Python functions which return fully-populated <code>plotly.graph_objects.Figure</code> objects. This page exists to document the architecture of the data structure that these objects represent, for users who wish to understand more about how to customize them, or assemble them from <a href="/python/graph-objects/">other <code>plotly.graph_objects</code> components</a>.</p>
+</blockquote>
+<p>Viewing the underlying data structure for any <code>plotly.graph_objects.Figure</code> object, including those returned by Plotly Express, can be done via <code>print(fig)</code> or, in JupyterLab, with the special <code>fig.show("json")</code> renderer. Figures also support <code>fig.to_dict()</code> and <code>fig.to_json()</code> methods. <code>print()</code>ing the figure will result in the often-verbose <code>layout.template</code> key being represented as ellipses <code>'...'</code> for brevity.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;sample figure&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Figure({
+    &#39;data&#39;: [{&#39;hovertemplate&#39;: &#39;x=%{x}&lt;br&gt;y=%{y}&lt;extra&gt;&lt;/extra&gt;&#39;,
+              &#39;legendgroup&#39;: &#39;&#39;,
+              &#39;line&#39;: {&#39;color&#39;: &#39;#636efa&#39;, &#39;dash&#39;: &#39;solid&#39;},
+              &#39;marker&#39;: {&#39;symbol&#39;: &#39;circle&#39;},
+              &#39;mode&#39;: &#39;lines&#39;,
+              &#39;name&#39;: &#39;&#39;,
+              &#39;orientation&#39;: &#39;v&#39;,
+              &#39;showlegend&#39;: False,
+              &#39;type&#39;: &#39;scatter&#39;,
+              &#39;x&#39;: array([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], dtype=object),
+              &#39;xaxis&#39;: &#39;x&#39;,
+              &#39;y&#39;: {&#39;bdata&#39;: &#39;AQMC&#39;, &#39;dtype&#39;: &#39;i1&#39;},
+              &#39;yaxis&#39;: &#39;y&#39;}],
+    &#39;layout&#39;: {&#39;legend&#39;: {&#39;tracegroupgap&#39;: 0},
+               &#39;template&#39;: &#39;...&#39;,
+               &#39;title&#39;: {&#39;text&#39;: &#39;sample figure&#39;},
+               &#39;xaxis&#39;: {&#39;anchor&#39;: &#39;y&#39;, &#39;domain&#39;: [0.0, 1.0], &#39;title&#39;: {&#39;text&#39;: &#39;x&#39;}},
+               &#39;yaxis&#39;: {&#39;anchor&#39;: &#39;x&#39;, &#39;domain&#39;: [0.0, 1.0], &#39;title&#39;: {&#39;text&#39;: &#39;y&#39;}}}
+})
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.0.0.min"</script>
+        
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="45c6d71d-56f7-469e-8f9e-57ed5c6793d6" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("45c6d71d-56f7-469e-8f9e-57ed5c6793d6")) {                    Plotly.newPlot(                        "45c6d71d-56f7-469e-8f9e-57ed5c6793d6",                        [{"hovertemplate":"x=%{x}\u003cbr\u003ey=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":["a","b","c"],"xaxis":"x","y":{"dtype":"i1","bdata":"AQMC"},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"x"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"y"}},"legend":{"tracegroupgap":0},"title":{"text":"sample figure"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('45c6d71d-56f7-469e-8f9e-57ed5c6793d6');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Accessing-figure-structures-in-Dash">Accessing figure structures in Dash<a class="anchor-link" href="#Accessing-figure-structures-in-Dash">&#182;</a></h3><p><a href="https://plotly.com/dash/">Dash</a> is the best way to build analytical apps in Python using Plotly figures. To run the app below, run <code>pip install dash</code>, click "Download" to get the code and run <code>python app.py</code>.</p>
+<p>Get started  with <a href="https://dash.plotly.com/installation">the official Dash docs</a> and <strong>learn how to effortlessly <a href="https://plotly.com/dash/design-kit/">style</a> &amp; <a href="https://plotly.com/dash/app-manager/">deploy</a> apps like this with <a class="plotly-red" href="https://plotly.com/dash/">Dash Enterprise</a>.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="100%"
+            height="1200"
+            src="https://python-docs-dash-snippets.herokuapp.com/python-docs-dash-snippets/figure-structure"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="font-size: 0.9em;"><div style="width: calc(100% - 30px); box-shadow: none; border: thin solid rgb(229, 229, 229);"><div style="padding: 5px;"><div><p><strong>Sign up for Dash Club</strong> → Free cheat sheets plus updates from Chris Parmer and Adam Schroeder delivered to your inbox every two months. Includes tips and tricks, community apps, and deep dives into the Dash architecture.
+<u><a href="https://go.plotly.com/dash-club?utm_source=Dash+Club+2022&utm_medium=graphing_libraries&utm_content=inline">Join now</a></u>.</p></div></div></div></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Figures-as-Trees-of-Attributes">Figures as Trees of Attributes<a class="anchor-link" href="#Figures-as-Trees-of-Attributes">&#182;</a></h3><p>Plotly.js supports inputs adhering to a well-defined schema, whose overall architecture is explained in this page and which is exhaustively documented in the <a href="/python/reference/index/">Figure Reference</a> (which is itself generated from a <a href="https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plot-schema.json">machine-readable JSON representation of the schema</a>). Figures are represented as trees with named nodes called "attributes". The root node of the tree has three top-level attributes: <code>data</code>, <code>layout</code> and <code>frames</code> (see below).</p>
+<p>Attributes are referred to in text and in the <a href="/python/reference/index/">Figure Reference</a> by their full "path" i.e. the dot-delimited concatenation of their parents. For example <code>"layout.width"</code> refers to the attribute whose key is <code>"width"</code> inside a dict which is the value associated with a key <code>"layout"</code> at the root of the figure. If one of the parents is a list rather than a dict, a set of brackets is inserted in the path when referring to the attribute in the abstract, e.g. <code>"layout.annotations[].text"</code>. Finally, as explained below, the top-level "data" attribute defines a list of typed objects called "traces" with the schema dependent upon the type, and these attributes' paths are listed in the <a href="/python/reference/index/">Figure Reference</a> as <code>"data[type=scatter].name"</code>.</p>
+<p>The <a href="/python/graph-objects/"><code>plotly.graph_objects</code> module contains an automatically-generated hierarchy of  Python classes</a> which represent non-leaf attributes in the figure schema and provide a Pythonic API for them. When <a href="/python/creating-and-updating-figures/">manipulating a <code>plotly.graph_objects.Figure</code> object</a>, attributes can be set either directly using Python object attributes e.g. <code>fig.layout.title.font.family="Open Sans"</code> or using <a href="/python/creating-and-updating-figures/#magic-underscore-notation">update methods and "magic underscores"</a> e.g. <code>fig.update_layout(title_font_family="Open Sans")</code></p>
+<p>When building a figure, it is <em>not necessary to populate every attribute</em> of every object. At render-time, <a href="/python/figure-introspection/">the JavaScript layer will compute default values</a> for each required unspecified attribute, depending upon the ones that are specified, as documented in the <a href="/python/reference/index/">Figure Reference</a>. An example of this would be <code>layout.xaxis.range</code>, which may be specified explicitly, but if not will be computed based on the range of <code>x</code> values for every trace linked to that axis. The JavaScript layer will ignore unknown attributes or malformed values, although the <code>plotly.graph_objects</code> module provides Python-side validation for attribute values. Note also that if <a href="/python/templates/">the <code>layout.template</code> key is present (as it is by default)</a> then default values will be drawn first from the contents of the template and only if missing from there will the JavaScript layer infer further defaults. The built-in template can be disabled by setting <code>layout.template="none"</code>.</p>
+<h3 id="The-Top-Level-data-Attribute">The Top-Level <code>data</code> Attribute<a class="anchor-link" href="#The-Top-Level-data-Attribute">&#182;</a></h3><p>The first of the three top-level attributes of a figure is <code>data</code>, whose value must be a list of dicts referred to as "traces".</p>
+<ul>
+<li>Each trace has one of more than 40 possible types (see below for a list organized by subplot type, including e.g. <a href="/python/line-and-scatter/"><code>scatter</code></a>, <a href="/python/bar-charts/"><code>bar</code></a>, <a href="/python/pie-charts/"><code>pie</code></a>, <a href="/python/3d-surface-plots/"><code>surface</code></a>, <a href="/python/choropleth-maps/"><code>choropleth</code></a> etc), and represents a set of related graphical marks in a figure. Each trace must have a <code>type</code> attribute which defines the other allowable attributes.</li>
+<li>Each trace is drawn on a single <a href="/python/subplots/">subplot</a> whose type must be compatible with the trace's type, or is its own subplot (see below).</li>
+<li>Traces may have a single <a href="/python/legend/">legend</a> entry, with the exception of pie and funnelarea traces (see below).</li>
+<li>Certain trace types support <a href="/python/colorscales/">continuous color, with an associated colorbar</a>, which can be controlled by attributes either within the trace, or within the layout when using the <a href="/python/colorscales/">coloraxis attribute</a>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Top-Level-layout-Attribute">The Top-Level <code>layout</code> Attribute<a class="anchor-link" href="#The-Top-Level-layout-Attribute">&#182;</a></h3><p>The second of the three top-level attributes of a figure is <code>layout</code>, whose value is referred to in text as "the layout" and must be a dict, containing attributes that control positioning and configuration of non-data-related parts of the figure such as:</p>
+<ul>
+<li>Dimensions and margins, which define the bounds of "paper coordinates" (see below)</li>
+<li>Figure-wide defaults: <a href="/python/templates/">templates</a>, <a href="/python/figure-labels/">fonts</a>, colors, hover-label and modebar defaults</li>
+<li><a href="/python/figure-labels/">Title</a> and <a href="/python/legend/">legend</a> (positionable in container and/or paper coordinates)</li>
+<li><a href="/python/colorscales/">Color axes and associated color bars</a> (positionable in paper coordinates)</li>
+<li>Subplots of various types on which can be drawn multiple traces and which are positioned in paper coordinates:<ul>
+<li><code>xaxis</code>, <code>yaxis</code>, <code>xaxis2</code>, <code>yaxis3</code> etc: X and Y cartesian axes, the intersections of which are cartesian subplots</li>
+<li><code>scene</code>, <code>scene2</code>, <code>scene3</code> etc: 3d scene subplots</li>
+<li><code>ternary</code>, <code>ternary2</code>, <code>ternary3</code>, <code>polar</code>, <code>polar2</code>, <code>polar3</code>, <code>geo</code>, <code>geo2</code>, <code>geo3</code>, <code>map</code>, <code>map2</code>, <code>map3</code>, <code>smith</code>, <code>smith2</code> etc: ternary, polar, geo, map or smith subplots</li>
+</ul>
+</li>
+<li>Non-data marks which can be positioned in paper coordinates, or in data coordinates linked to 2d cartesian subplots:<ul>
+<li><code>annotations</code>: <a href="/python/text-and-annotations/">textual annotations with or without arrows</a></li>
+<li><code>shapes</code>: <a href="/python/shapes/">lines, rectangles, ellipses or open or closed paths</a></li>
+<li><code>images</code>: <a href="/python/images/">background or decorative images</a></li>
+</ul>
+</li>
+<li>Controls which can be positioned in paper coordinates and which can trigger Plotly.js functions when interacted with by a user:<ul>
+<li><code>updatemenus</code>: <a href="/python/custom-buttons/">single buttons, toggles</a> and <a href="/python/dropdowns/">dropdown menus</a></li>
+<li><code>sliders</code>: <a href="/python/sliders/">slider controls</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="The-Top-Level-frames-Attribute">The Top-Level <code>frames</code> Attribute<a class="anchor-link" href="#The-Top-Level-frames-Attribute">&#182;</a></h3><p>The third of the three top-level attributes of a figure is <code>frames</code>, whose value must be a list of dicts that define sequential frames in an <a href="/python/animations/">animated plot</a>. Each frame contains its own data attribute as well as other parameters. Animations are usually triggered and controlled via controls defined in layout.sliders and/or layout.updatemenus</p>
+<h3 id="The-config-Object">The <code>config</code> Object<a class="anchor-link" href="#The-config-Object">&#182;</a></h3><p>At <a href="/python/renderers/">render-time</a>, it is also possible to control certain figure behaviors which are not considered part of the figure proper i.e. the behavior of the "modebar" and how the figure relates to mouse actions like scrolling etc. The object that contains these options is called the <a href="/python/configuration-options/"><code>config</code>, and has its own documentation page</a>. It is exposed in Python as the <code>config</code> keyword argument of the <code>.show()</code> method on <code>plotly.graph_objects.Figure</code> objects.</p>
+<h3 id="Positioning-With-Paper,-Container-Coordinates,-or-Axis-Domain-Coordinates">Positioning With Paper, Container Coordinates, or Axis Domain Coordinates<a class="anchor-link" href="#Positioning-With-Paper,-Container-Coordinates,-or-Axis-Domain-Coordinates">&#182;</a></h3><p>Various figure components configured within the layout of the figure support positioning attributes named <code>x</code> or <code>y</code>, whose values may be specified in "paper coordinates" (sometimes referred to as "plot fractions" or "normalized coordinates"). Examples include <code>layout.xaxis.domain</code> or <code>layout.legend.x</code> or <code>layout.annotation[].x</code>.</p>
+<p>Positioning in paper coordinates is <em>not</em> done in absolute pixel terms, but rather in terms relative to a coordinate system defined with an origin <code>(0,0)</code> at <code>(layout.margin.l, layout.margin.b)</code> and a point <code>(1,1)</code> at <code>(layout.width-layout.margin.r, layout.height-layout.margin.t)</code> (note: <code>layout.margin</code> values are pixel values, as are <code>layout.width</code> and <code>layout.height</code>). Paper coordinate values less than 0 or greater than 1 are permitted, and refer to areas within the plot margins.</p>
+<p>To position an object in "paper" coordinates, the corresponding axis reference
+is set to <code>"paper"</code>. For instance a shape's <code>xref</code> attribute would be set to
+<code>"paper"</code> so that the <code>x</code> value of the shape refers to its position in paper
+coordinates.</p>
+<p>Note that the contents of the <code>layout.margin</code> attribute are by default computed based on the position and dimensions of certain items like the title or legend, and may be made dependent on the position and dimensions of tick labels as well when setting the <code>layout.xaxis.automargin</code> attribute to <code>True</code>. This has the effect of automatically increasing the margin values and therefore shrinking the physical area defined between the <code>(0,0)</code> and <code>(1,1)</code> points. Positioning certain items at paper coordinates less than 0 or greater than 1 will also trigger this behavior. The <code>layout.width</code> and <code>layout.height</code>, however, are taken as givens, so a figure will never grow or shrink based on its contents.</p>
+<p>The figure title may be positioned using "container coordinates" which have <code>(0,0)</code> and <code>(1,1)</code> anchored at the bottom-left and top-right of the figure, respectively, and therefore are independent of the values of layout.margin.</p>
+<p>Furthermore, shapes, annotations, and images can be placed relative to an axis's
+domain so that, for instance, an <code>x</code> value of <code>0.5</code> would place the object
+halfway along the x-axis, regardless of the domain as specified in the
+<code>layout.xaxis.domain</code> attribute. This behavior can be specified by adding
+<code>' domain'</code> to the axis reference in the axis referencing attribute of the object.
+For example, setting <code>yref = 'y2 domain'</code> for a shape will refer to the length
+and position of the axis named <code>y2</code>.</p>
+<h3 id="2D-Cartesian-Trace-Types-and-Subplots">2D Cartesian Trace Types and Subplots<a class="anchor-link" href="#2D-Cartesian-Trace-Types-and-Subplots">&#182;</a></h3><p>The most commonly-used kind of subplot is a <a href="/python/axes/">two-dimensional Cartesian subplot</a>. Traces compatible with these subplots support <code>xaxis</code> and <code>yaxis</code> attributes whose values must refer to corresponding objects in the layout portion of the figure. For example, if <code>xaxis="x"</code>, and <code>yaxis="y"</code> (which is the default) then this trace is drawn on the subplot at the intersection of the axes configured under <code>layout.xaxis</code> and <code>layout.yaxis</code>, but if <code>xaxis="x2"</code> and <code>yaxis="y3"</code> then the trace is drawn at the intersection of the axes configured under <code>layout.xaxis2</code> and <code>layout.yaxis3</code>. Note that attributes such as <code>layout.xaxis</code> and <code>layout.xaxis2</code> etc do not have to be explicitly defined, in which case default values will be inferred. Multiple traces of different types can be drawn on the same subplot.</p>
+<p>X- and Y-axes support the <code>type</code> attribute, which enables them to represent <a href="/python/axes/">continuous values (<code>type="linear"</code>, <code>type="log"</code>)</a>, <a href="/python/time-series/">temporal values (<code>type="date"</code>)</a> or <a href="/python/bar-charts/">categorical values (<code>type="category"</code>, <code>type="multicategory</code>)</a>. Axes can also be overlaid on top of one another to create <a href="/python/multiple-axes/">dual-axis or multiple-axis charts</a>. 2-d cartesian subplots lend themselves very well to creating <a href="/python/facet-plots/">"small multiples" figures, also known as facet or trellis plots</a>.</p>
+<p>The following trace types are compatible with 2d-cartesian subplots via the <code>xaxis</code> and <code>yaxis</code> attributes:</p>
+<ul>
+<li>scatter-like trace types: <a href="/python/line-and-scatter/"><code>scatter</code></a> and <a href="/python/webgl-vs-svg/"><code>scattergl</code></a>, which can be used to draw <a href="/python/line-and-scatter/">scatter plots</a>, <a href="/python/line-charts/">line plots and curves</a>, <a href="/python/time-series/">time-series plots</a>, <a href="/python/bubble-charts/">bubble charts</a>, <a href="/python/dot-plots/">dot plots</a> and <a href="/python/filled-area-plots/">filled areas</a> and also support <a href="/python/error-bars/">error bars</a></li>
+<li><a href="/python/bar-charts/"><code>bar</code></a>, <a href="/python/funnel-charts/"><code>funnel</code></a>, <a href="/python/waterfall-charts/"><code>waterfall</code></a>: bar-like trace types which can also be used to draw <a href="/python/gantt/">timelines and Gantt charts</a></li>
+<li><a href="/python/histograms/"><code>histogram</code></a>: an <em>aggregating</em> bar-like trace type</li>
+<li><a href="/python/box-plots/"><code>box</code></a> and <a href="/python/box-plots/"><code>violin</code></a>: 1-dimensional distribution-like trace types</li>
+<li><a href="/python/2D-Histogram/"><code>histogram2d</code></a> and <a href="/python/2d-histogram-contour/"><code>histogram2dcontour</code></a>: 2-dimensional distribution-like density trace types</li>
+<li><a href="/python/imshow/"><code>image</code></a>, <a href="/python/heatmaps/"><code>heatmap</code></a> and <a href="/python/contour-plots/"><code>contour</code></a>: matrix trace types</li>
+<li><a href="/python/ohlc-charts/"><code>ohlc</code></a> and <a href="/python/candlestick-charts/"><code>candlestick</code></a>: stock-like trace types</li>
+<li><a href="/python/carpet-plot/"><code>carpet</code></a>: a special trace type for building <a href="/python/carpet-plot/">carpet plots</a>, in that other traces can use as subplots (see below)</li>
+<li><a href="/python/splom/"><code>splom</code></a>: multi-dimensional scatter plots which implicitly refer to many 2-d cartesian subplots at once.</li>
+</ul>
+<h3 id="3D,-Polar,-Ternary-and-Smith-Trace-Types-and-Subplots">3D, Polar, Ternary and Smith Trace Types and Subplots<a class="anchor-link" href="#3D,-Polar,-Ternary-and-Smith-Trace-Types-and-Subplots">&#182;</a></h3><p>Beyond 2D cartesian subplots, figures can include <a href="/python/3d-charts/">three-dimensional cartesian subplots</a>, <a href="/python/polar-chart/">polar subplots</a>, <a href="/python/ternary-plots/">ternary subplots</a> and <a href="/python/smith-charts/">smith subplots</a>. The following trace types support attributes named <code>scene</code>, <code>polar</code>, <code>smith</code> or <code>ternary</code>, whose values must refer to corresponding objects in the layout portion of the figure i.e. <code>ternary="ternary2"</code> etc. Note that attributes such as <code>layout.scene</code> and <code>layout.ternary2</code> etc do not have to be explicitly defined, in which case default values will be inferred. Multiple traces of a compatible type can be placed on the same subplot.</p>
+<p>The following trace types are compatible with 3D subplots via the <code>scene</code> attribute, which contains special <a href="/python/3d-camera-controls/">camera controls</a>:</p>
+<ul>
+<li><a href="/python/3d-scatter-plots/"><code>scatter3d</code></a>, which can be used to draw <a href="/python/3d-scatter-plots/">individual markers</a>, <a href="/python/3d-bubble-charts/">3d bubble charts</a> and <a href="/python/3d-line-plots/">lines and curves</a></li>
+<li><a href="/python/3d-surface-plots/"><code>surface</code></a> and <a href="/python/3d-mesh/"><code>mesh</code></a>: 3d surface trace types</li>
+<li><a href="/python/cone-plot/"><code>cone</code></a> and <a href="/python/streamtube-plot/"><code>streamtube</code></a>: 3d vector field trace types</li>
+<li><a href="/python/3d-volume-plots/"><code>volume</code></a> and <a href="/python/3d-isosurface-plots/"><code>isosurface</code></a>: 3d volume trace types</li>
+</ul>
+<p>The following trace types are compatible with polar subplots via the <code>polar</code> attribute:</p>
+<ul>
+<li>scatter-like trace types: <a href="/python/polar-chart/"><code>scatterpolar</code> and <code>scatterpolargl</code></a>, which can be used to draw individual markers, <a href="/python/radar-chart/">curves and filled areas (i.e. radar or spider charts)</a></li>
+<li><a href="/python/wind-rose-charts/"><code>barpolar</code></a>: useful for <a href="/python/wind-rose-charts/">wind roses</a> and other polar bar charts</li>
+</ul>
+<p>The following trace types are compatible with ternary subplots via the <code>ternary</code> attribute:</p>
+<ul>
+<li><a href="/python/ternary-plots/"><code>scatterternary</code></a>, which can be used to draw individual markers, <a href="/python/ternary-contour/">curves and filled areas</a></li>
+</ul>
+<p>The following trace types are compatible with smith subplots via the <code>smith</code> attribute:</p>
+<ul>
+<li><a href="/python/smith-charts/"><code>scattersmith</code></a>, which can be used to draw individual markers, curves and filled areas</li>
+</ul>
+<h3 id="Map-Trace-Types-and-Subplots">Map Trace Types and Subplots<a class="anchor-link" href="#Map-Trace-Types-and-Subplots">&#182;</a></h3><p>Figures can include two different types of map subplots: <a href="/python/map-configuration/">geo subplots for outline maps</a> and <a href="/python/tile-map-layers/">tile-based maps</a>. The following trace types support attributes named <code>geo</code> or <code>map</code>, whose values must refer to corresponding objects in the layout i.e. <code>geo="geo2"</code> etc.  Note that attributes such as <code>layout.geo2</code> and <code>layout.map</code> etc do not have to be explicitly defined, in which case default values will be inferred. Multiple traces of a compatible type can be placed on the same subplot.</p>
+<p>The following trace types are compatible with geo subplots via the <code>geo</code> attribute:</p>
+<ul>
+<li><a href="/python/scatter-plots-on-maps/"><code>scattergeo</code></a>, which can be used to draw <a href="/python/scatter-plots-on-maps/">individual markers</a>, <a href="/python/lines-on-maps/">line and curves</a> and filled areas on outline maps</li>
+<li><a href="/python/choropleth-maps/"><code>choropleth</code></a>: <a href="/python/choropleth-maps/">colored polygons</a> on outline maps</li>
+</ul>
+<p>The following trace types are compatible with tile map subplots via the <code>map</code> attribute:</p>
+<ul>
+<li><a href="/python/tile-scatter-maps/"><code>scattermap</code></a>, which can be used to draw <a href="/python/tile-scatter-maps/">individual markers</a>, <a href="/python/lines-on-tile-maps/">lines and curves</a> and <a href="/python/filled-area-tile-maps/">filled areas</a> on tile maps</li>
+<li><a href="/python/tile-county-choropleth/"><code>choroplethmap</code></a>: colored polygons on tile maps</li>
+<li><a href="/python/tile-density-heatmaps/"><code>densitymap</code></a>: density heatmaps on tile maps</li>
+</ul>
+<h3 id="Traces-Which-Are-Their-Own-Subplots">Traces Which Are Their Own Subplots<a class="anchor-link" href="#Traces-Which-Are-Their-Own-Subplots">&#182;</a></h3><p>Certain trace types cannot share subplots, and hence have no attribute to map to a corresponding subplot in the layout. Instead, these traces are their own subplot and support a <code>domain</code> attribute for position, which enables the trace to be positioned in paper coordinates (see below). With the exception of <code>pie</code> and <code>funnelarea</code>, such traces also do not support legends (see below)</p>
+<p>The following trace types are their own subplots and support a domain attribute:</p>
+<ul>
+<li><a href="/python/pie-charts/"><code>pie</code></a> and <a href="/python/waterfall-charts/"><code>funnelarea</code></a>: one-level part-to-whole relationships with legend items</li>
+<li><a href="/python/sunburst-charts/"><code>sunburst</code></a> and <a href="/python/treemaps/"><code>treemap</code></a>: hierarchical multi-level part-to-whole relationships</li>
+<li><a href="/python/parallel-coordinates-plot/"><code>parcoords</code></a> and <a href="/python/parallel-categories-diagram/"><code>parcats</code></a>: continuous and categorical multidimensional figures with <a href="/python/parallel-coordinates-plot/">parallel coordinates</a> and <a href="/python/parallel-categories-diagram/">parallel sets</a></li>
+<li><a href="/python/sankey-diagram/"><code>sankey</code></a>: <a href="/python/sankey-diagram/">flow diagrams</a></li>
+<li><a href="/python/table/"><code>table</code></a>: <a href="/python/table/">text-based tables</a></li>
+<li><a href="/python/indicator/"><code>indicator</code></a>: big numbers, <a href="/python/gauge-charts/">gauges</a>, and <a href="/python/bullet-charts/">bullet charts</a></li>
+</ul>
+<h3 id="Carpet-Trace-Types-and-Subplots">Carpet Trace Types and Subplots<a class="anchor-link" href="#Carpet-Trace-Types-and-Subplots">&#182;</a></h3><p>Certain trace types use <a href="/python/carpet-plot/">traces of type <code>carpet</code> as a subplot</a>. These support a <code>carpet</code> attribute whose value must match the value of the <code>carpet</code> attribute of the <code>carpet</code> trace they are to be drawn on. Multiple compatible traces can be placed on the same <code>carpet</code> trace.</p>
+<p>The following trace types are compatible with <code>carpet</code> trace subplots via the <code>carpet</code> attribute:</p>
+<ul>
+<li><a href="/python/carpet-scatter/"><code>scattercarpet</code></a>, which can be used to draw individual markers, curves and filled areas</li>
+<li><a href="/python/carpet-plot/"><code>contourcarpet</code></a></li>
+</ul>
+<h3 id="Trace-Types,-Legends-and-Color-Bars">Trace Types, Legends and Color Bars<a class="anchor-link" href="#Trace-Types,-Legends-and-Color-Bars">&#182;</a></h3><p>Traces of most types can be optionally associated with a single legend item in the <a href="/python/legend/">legend</a>. Whether or not a given trace appears in the legend is controlled via the <code>showlegend</code> attribute. Traces which are their own subplots (see above) do not support this, with the exception of traces of type <code>pie</code> and <code>funnelarea</code> for which every distinct color represented in the trace gets a separate legend item. Users may show or hide traces by clicking or double-clicking on their associated legend item. Traces that support legend items also support the <code>legendgroup</code> attribute, and all traces with the same legend group are treated the same way during click/double-click interactions.</p>
+<p>The fact that legend items are linked to traces means that when using <a href="/python/discrete-color/">discrete color</a>, a figure must have one trace per color in order to get a meaningful legend. <a href="/python/discrete-color/">Plotly Express has robust support for discrete color</a> to make this easy.</p>
+<p>Traces which support <a href="/python/colorscales/">continuous color</a> can also be associated with color axes in the layout via the <code>coloraxis</code> attribute. Multiple traces can be linked to the same color axis. Color axes have a legend-like component called color bars. Alternatively, color axes can be configured within the trace itself.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-About-Dash?">What About Dash?<a class="anchor-link" href="#What-About-Dash?">&#182;</a></h3><p><a href="https://dash.plot.ly/">Dash</a> is an open-source framework for building analytical applications, with no Javascript required, and it is tightly integrated with the Plotly graphing library.</p>
+<p>Learn about how to install Dash at <a href="https://dash.plot.ly/installation">https://dash.plot.ly/installation</a>.</p>
+<p>Everywhere in this page that you see <code>fig.show()</code>, you can display the same figure in a Dash application by passing it to the <code>figure</code> argument of the <a href="https://dash.plot.ly/dash-core-components/graph"><code>Graph</code> component</a> from the built-in <code>dash_core_components</code> package like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span> <span class="c1"># or plotly.express as px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span> <span class="c1"># or any Plotly Express function e.g. px.bar(...)</span>
+<span class="c1"># fig.add_trace( ... )</span>
+<span class="c1"># fig.update_layout( ... )</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dash</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_reloader</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Turn off reloader if inside Jupyter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+{% endraw %}

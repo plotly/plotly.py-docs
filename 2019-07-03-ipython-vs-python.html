@@ -1,0 +1,108 @@
+---
+description: Discussion of key differences between IPython and Python
+display_as: file_settings
+language: python
+layout: base
+name: IPython vs Python
+order: 26
+permalink: python/ipython-vs-python/
+thumbnail: thumbnail/venn.jpg
+---
+
+{% raw %}
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="What-is-the-difference-between-IPython-and-Python?">What is the difference between IPython and Python?<a class="anchor-link" href="#What-is-the-difference-between-IPython-and-Python?">&#182;</a></h4><p>While these two names are quite similar, they refer to entirely different things.<br>
+<br>
+<a href="https://www.python.org/"><strong>Python</strong></a> is a general-purpose programming language. It was created in the late 1980s by Guido van Rossum. It is now one of the most popular languages in the world. It is routinely used by system administrators and web developers. Also, many scientists are using Python thanks to libraries such as NumPy, SciPy, pandas, and matplotlib. The ease of use of Python and its dynamic nature make it a very productive language.<br>
+<br>
+<a href="https://ipython.org/"><strong>IPython</strong></a> is an interactive command-line terminal for Python. It was created by Fernando Perez in 2001. IPython offers an enhanced read-eval-print loop (REPL) environment particularly well adapted to scientific computing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/plotly-documentation/images/ipython-console.png" alt="IPython terminal"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In other words, IPython is a powerful <em>interface</em> to the Python language. But it is certainly not the only one. Besides IPython, the most common way to use Python is to write <em>scripts</em>, files with the <code>.py</code> extension.<br>
+<br>
+A script contains a list of commands to execute in order. It runs from start to finish and display some output. On the contrary, with IPython, you generally write one command at a time and you get the results instantly. This is a completely different way of working with Python. When analyzing data or running computational models, you need this sort of interactivity to explore them efficiently.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Jupyter-Notebook">Jupyter Notebook<a class="anchor-link" href="#Jupyter-Notebook">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In 2011, IPython introduced a new tool named the <strong>Notebook</strong>. Inspired by scientific programs like Mathematica or Sage, the Notebook offers a modern and powerful web interface to Python.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/plotly-documentation/images/notebook.png" alt="IPython Notebook"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Compared to the original IPython terminal, the Notebook offers a more convenient text editor, the possibility to write rich text, and improved graphical capabilities. Also, since it is a web interface, it can integrate many of the existing web libraries for data visualization, including <em>plotly.js</em>.<br>
+<br>
+In 2015, the IPython developers made a major code reorganization of their ever-growing project. The Notebook is now called the Jupyter Notebook. This interface can be used not only with Python but with dozens of other languages such as R and Julia. IPython is now the name of the Python backend (aka kernel).<br>
+<br>
+In conclusion, IPython and Jupyter are great interfaces to the Python language. If you're learning Python, using the IPython terminal or the Jupyter Notebook is highly recommended.<br>
+<br>
+This was a guest article written by Cyrille Rossant, author of Learning IPython for Interactive Computing and Data Visualization, second edition and IPython Interactive Computing and Visualization Cookbook.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-About-Dash?">What About Dash?<a class="anchor-link" href="#What-About-Dash?">&#182;</a></h3><p><a href="https://dash.plot.ly/">Dash</a> is an open-source framework for building analytical applications, with no Javascript required, and it is tightly integrated with the Plotly graphing library.</p>
+<p>Learn about how to install Dash at <a href="https://dash.plot.ly/installation">https://dash.plot.ly/installation</a>.</p>
+<p>Everywhere in this page that you see <code>fig.show()</code>, you can display the same figure in a Dash application by passing it to the <code>figure</code> argument of the <a href="https://dash.plot.ly/dash-core-components/graph"><code>Graph</code> component</a> from the built-in <code>dash_core_components</code> package like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span> <span class="c1"># or plotly.express as px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span> <span class="c1"># or any Plotly Express function e.g. px.bar(...)</span>
+<span class="c1"># fig.add_trace( ... )</span>
+<span class="c1"># fig.update_layout( ... )</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dash</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_reloader</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Turn off reloader if inside Jupyter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+{% endraw %}

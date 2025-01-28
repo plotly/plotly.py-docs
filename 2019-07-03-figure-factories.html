@@ -1,0 +1,67 @@
+---
+description: Figure Factories are dedicated functions for creating very specific types of plots.
+display_as: file_settings
+language: python
+layout: base
+name: Figure Factories
+order: 33
+permalink: python/figure-factories/
+thumbnail: thumbnail/streamline.jpg
+---
+
+{% raw %}
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="plotly.figure_factory"><code>plotly.figure_factory</code><a class="anchor-link" href="#plotly.figure_factory">&#182;</a></h4><p>The <code>plotly.figure_factory</code> module contains dedicated functions for creating very specific types of plots that were at the time of their creation difficult to create with <a href="/python/graph-objects/">graph objects</a> and prior to the existence of <a href="/python/plotly-express/">Plotly Express</a>. As new functionality gets added to <a href="https://plotly.com/javascript/">Plotly.js</a> and to Plotly Express, certain Figure Factories become unnecessary and are therefore deprecated as "legacy", but remain in the module for backwards-compatibility reasons.</p>
+<p>The following types of plots are still difficult to create with Graph Objects or Plotly Express and therefore the corresponding Figure Factories are <em>not</em> deprecated:</p>
+<ul>
+<li><a href="/python/dendrogram/">Dendrograms</a></li>
+<li><a href="/python/hexbin-mapbox/">Hexagonal Binning Tile Map</a></li>
+<li><a href="/python/quiver-plots/">Quiver Plots</a></li>
+<li><a href="/python/streamline-plots/">Streamline Plots</a></li>
+<li><a href="/python/figure-factory-table/">Tables</a></li>
+<li><a href="/python/ternary-contour/">Ternary Contour Plots</a></li>
+<li><a href="/python/trisurf/">Triangulated Surface Plots</a></li>
+</ul>
+<p>Deprecated "legacy" Figure Factories include:</p>
+<ul>
+<li><a href="/python/annotated-heatmap/">Annotated Heatmaps</a>, deprecated by <a href="/python/heatmaps/">heatmaps with <code>px.imshow()</code></a></li>
+<li><a href="/python/county-choropleth/">County Choropleth Maps</a>, deprecated by regular <a href="/python/choropleth-maps/">Choropleth maps with GeoJSON input</a></li>
+<li><a href="/python/distplot/">Distplots</a>, mostly deprecated by <a href="/python/histograms/"><code>px.histogram</code></a> except for KDE plots, which <code>px.histogram</code> doesn't support yet</li>
+<li><a href="/python/gantt/">Gantt Charts</a>, deprecated by <a href="/python/gantt/"><code>px.timeline</code></a></li>
+</ul>
+<h4 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h4><p>For more information about the contents of <code>plotly.figure_factory</code>, including deprecated methods, please refer to our <a href="https://plotly.com/python-api-reference/plotly.figure_factory.html">API Reference documentation</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-About-Dash?">What About Dash?<a class="anchor-link" href="#What-About-Dash?">&#182;</a></h3><p><a href="https://dash.plot.ly/">Dash</a> is an open-source framework for building analytical applications, with no Javascript required, and it is tightly integrated with the Plotly graphing library.</p>
+<p>Learn about how to install Dash at <a href="https://dash.plot.ly/installation">https://dash.plot.ly/installation</a>.</p>
+<p>Everywhere in this page that you see <code>fig.show()</code>, you can display the same figure in a Dash application by passing it to the <code>figure</code> argument of the <a href="https://dash.plot.ly/dash-core-components/graph"><code>Graph</code> component</a> from the built-in <code>dash_core_components</code> package like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span> <span class="c1"># or plotly.express as px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span> <span class="c1"># or any Plotly Express function e.g. px.bar(...)</span>
+<span class="c1"># fig.add_trace( ... )</span>
+<span class="c1"># fig.update_layout( ... )</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dash</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_reloader</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Turn off reloader if inside Jupyter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+{% endraw %}

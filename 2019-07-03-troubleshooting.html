@@ -1,0 +1,112 @@
+---
+description: How to troubleshoot import and rendering problems in Plotly with Python.
+display_as: file_settings
+language: python
+layout: base
+name: Troubleshooting
+order: 27
+page_type: u-guide
+permalink: python/troubleshooting/
+thumbnail: thumbnail/modebar-icons.png
+---
+
+{% raw %}
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Version-Problems">Version Problems<a class="anchor-link" href="#Version-Problems">&#182;</a></h3><p>In order to follow the examples in this documentation site, you should have the latest version of <code>plotly</code> installed (5.x), as detailed in the <a href="/python/getting-started">Getting Started</a> guide. This documentation (under <a href="https://plotly.com/python">https://plotly.com/python</a>) is compatible with <code>plotly</code> version 4.x but <em>not</em> with version 3.x, for which the documentation is available under <a href="https://plotly.com/python/v3">https://plotly.com/python/v3</a>. In general you must also have the correct version of the underlying Plotly.js rendering engine installed, and the way to do that depends on the environment in which you are rendering figures: Dash, Jupyter Lab or Classic Notebook, VSCode etc. Read on for details about troubleshooting <code>plotly</code> in these environments.</p>
+<h3 id="Import-Problems">Import Problems<a class="anchor-link" href="#Import-Problems">&#182;</a></h3><p>It's very important that you not have a file named <code>plotly.py</code> in the same directory as the Python script you're running, and this includes not naming the script itself <code>plotly.py</code>, otherwise importing <code>plotly</code> can fail with mysterious error messages.</p>
+<p>Beyond this, most <code>import</code> problems or <code>AttributeError</code>s can be traced back to having multiple versions of <code>plotly</code> installed, for example once with <code>conda</code> and once with <code>pip</code>. It's often worthwhile to uninstall with both methods before following the <a href="/python/getting-started">Getting Started</a> instructions from scratch with one or the other. You can run the following commands in a terminal to fully remove <code>plotly</code> before installing again:</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>uninstall<span class="w"> </span>plotly
+$<span class="w"> </span>pip<span class="w"> </span>uninstall<span class="w"> </span>plotly
+</pre></div>
+<blockquote><p>Problems can also arise if you have a file named <code>plotly.py</code> in the same directory as the code you are executing.</p>
+</blockquote>
+<h3 id="Dash-Problems">Dash Problems<a class="anchor-link" href="#Dash-Problems">&#182;</a></h3><p>If you are encountering problems using <code>plotly</code> with <a href="https://dash.plotly.com/">Dash</a> please first ensure that you have upgraded <code>dash</code> to the latest version, which will automatically upgrade <code>dash-core-components</code> to the latest version, ensuring that Dash is using an up-to-date version of the Plotly.js rendering engine for <code>plotly</code>. If this does not resolve your issue, please visit our <a href="https://community.plotly.com/">Dash Community Forum</a> and we will be glad to help you out.</p>
+<p>This is an example of a <code>plotly</code> graph correctly rendering inside <code>dash</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="100%"
+            height="1200"
+            src="https://python-docs-dash-snippets.herokuapp.com/python-docs-dash-snippets/renderers"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="font-size: 0.9em;"><div style="width: calc(100% - 30px); box-shadow: none; border: thin solid rgb(229, 229, 229);"><div style="padding: 5px;"><div><p><strong>Sign up for Dash Club</strong> → Free cheat sheets plus updates from Chris Parmer and Adam Schroeder delivered to your inbox every two months. Includes tips and tricks, community apps, and deep dives into the Dash architecture.
+<u><a href="https://go.plotly.com/dash-club?utm_source=Dash+Club+2022&utm_medium=graphing_libraries&utm_content=inline">Join now</a></u>.</p></div></div></div></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="VSCode-Notebook,-Nteract-and-Streamlit-Problems">VSCode Notebook, Nteract and Streamlit Problems<a class="anchor-link" href="#VSCode-Notebook,-Nteract-and-Streamlit-Problems">&#182;</a></h3><p>Plotly figures render in VSCode using a Plotly.js version bundled with the <a href="https://code.visualstudio.com/docs/languages/python">vscode-python extension</a>, and unfortunately it's often a little out of date compared to the latest version of the <code>plotly</code> module, so the very latest features may not work until the following release of the vscode-python extension. In any case, regularly upgrading your vscode-python extension to the latest version will ensure you have access to the greatest number of recent features.</p>
+<p>The situation is similar for environments like Nteract and Streamlit: in these environments you will need a version of these projects that bundles a version Plotly.js that supports the features in the version of <code>plotly</code> that you are running.</p>
+<h3 id="Orca-Problems">Orca Problems<a class="anchor-link" href="#Orca-Problems">&#182;</a></h3><blockquote><p>Note: as of <code>plotly</code> version 4.9, we recommend using <a href="https://github.com/plotly/Kaleido"><code>kaleido</code></a>
+instead of Orca for <a href="/python/static-image-export/">static image export</a></p>
+</blockquote>
+<p>If you get an error message stating that the <code>orca</code> executable that was found is not valid, this may be because another executable with the same name was found on your system. Please specify the complete path to the Plotly-Orca binary that you downloaded (for instance in the Miniconda folder) with the following command:</p>
+<p><code>plotly.io.orca.config.executable = '/home/your_name/miniconda3/bin/orca'</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-About-Dash?">What About Dash?<a class="anchor-link" href="#What-About-Dash?">&#182;</a></h3><p><a href="https://dash.plot.ly/">Dash</a> is an open-source framework for building analytical applications, with no Javascript required, and it is tightly integrated with the Plotly graphing library.</p>
+<p>Learn about how to install Dash at <a href="https://dash.plot.ly/installation">https://dash.plot.ly/installation</a>.</p>
+<p>Everywhere in this page that you see <code>fig.show()</code>, you can display the same figure in a Dash application by passing it to the <code>figure</code> argument of the <a href="https://dash.plot.ly/dash-core-components/graph"><code>Graph</code> component</a> from the built-in <code>dash_core_components</code> package like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span> <span class="c1"># or plotly.express as px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span> <span class="c1"># or any Plotly Express function e.g. px.bar(...)</span>
+<span class="c1"># fig.add_trace( ... )</span>
+<span class="c1"># fig.update_layout( ... )</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dash</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_reloader</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Turn off reloader if inside Jupyter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+{% endraw %}

@@ -1,0 +1,1447 @@
+---
+description: How to dig into and learn more about the figure data structure.
+display_as: file_settings
+language: python
+layout: base
+name: Introspecting Figures
+order: 36
+page_type: u-guide
+permalink: python/figure-introspection/
+thumbnail: thumbnail/violin.jpg
+---
+
+{% raw %}
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Figure-Lifecycle">The Figure Lifecycle<a class="anchor-link" href="#The-Figure-Lifecycle">&#182;</a></h3><p>As explained in the <a href="/python/figure-structure/">Figure Data Structure documentation</a>, when building a figure object with Plotly.py, it is not necessary to populate every possible attribute. At render-time, figure objects (whether generated via <a href="/python/plotly-express/">Plotly Express</a> or <a href="/python/graph-objects/">Graph Objects</a>) are passed from Plotly.py to <a href="/javascript/">Plotly.js</a>, which is the Javascript library responsible for turning JSON descriptions of figures into graphical representations.</p>
+<p>As part of this rendering process, Plotly.js will determine, based on the attributes that have been set, which other attributes require values in order to draw the figure. Plotly.js will then apply either static or dynamic defaults to all of the remaining required attributes and render the figure. A good example of a static default would be the text font size: if unspecified, the default value is always the same. A good example of a dynamic default would be the range of an axis: if unspecified, the default will be computed based on the range of the data in traces associated with that axis.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Introspecting-Plotly-Express-Figures">Introspecting Plotly Express Figures<a class="anchor-link" href="#Introspecting-Plotly-Express-Figures">&#182;</a></h3><p>Figure objects created by <a href="/python/plotly-express/">Plotly Express</a> have a number of attributes automatically set, and these can be introspected using the Python <code>print()</code> function, or in JupyterLab, the special <code>fig.show("json")</code> renderer, which gives an interactive drilldown interface with search:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.0.0.min"</script>
+        
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="55c59518-17ae-40b7-992d-a35d96303e28" class="plotly-graph-div" style="height:400px; width:400px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("55c59518-17ae-40b7-992d-a35d96303e28")) {                    Plotly.newPlot(                        "55c59518-17ae-40b7-992d-a35d96303e28",                        [{"hovertemplate":"x=%{x}\u003cbr\u003ey=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":{"dtype":"i1","bdata":"ChQ="},"xaxis":"x","y":{"dtype":"i1","bdata":"FAo="},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"x"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"y"}},"legend":{"tracegroupgap":0},"margin":{"t":60},"height":400,"width":400},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('55c59518-17ae-40b7-992d-a35d96303e28');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Figure({
+    &#39;data&#39;: [{&#39;hovertemplate&#39;: &#39;x=%{x}&lt;br&gt;y=%{y}&lt;extra&gt;&lt;/extra&gt;&#39;,
+              &#39;legendgroup&#39;: &#39;&#39;,
+              &#39;marker&#39;: {&#39;color&#39;: &#39;#636efa&#39;, &#39;symbol&#39;: &#39;circle&#39;},
+              &#39;mode&#39;: &#39;markers&#39;,
+              &#39;name&#39;: &#39;&#39;,
+              &#39;orientation&#39;: &#39;v&#39;,
+              &#39;showlegend&#39;: False,
+              &#39;type&#39;: &#39;scatter&#39;,
+              &#39;x&#39;: {&#39;bdata&#39;: &#39;ChQ=&#39;, &#39;dtype&#39;: &#39;i1&#39;},
+              &#39;xaxis&#39;: &#39;x&#39;,
+              &#39;y&#39;: {&#39;bdata&#39;: &#39;FAo=&#39;, &#39;dtype&#39;: &#39;i1&#39;},
+              &#39;yaxis&#39;: &#39;y&#39;}],
+    &#39;layout&#39;: {&#39;height&#39;: 400,
+               &#39;legend&#39;: {&#39;tracegroupgap&#39;: 0},
+               &#39;margin&#39;: {&#39;t&#39;: 60},
+               &#39;template&#39;: &#39;...&#39;,
+               &#39;width&#39;: 400,
+               &#39;xaxis&#39;: {&#39;anchor&#39;: &#39;y&#39;, &#39;domain&#39;: [0.0, 1.0], &#39;title&#39;: {&#39;text&#39;: &#39;x&#39;}},
+               &#39;yaxis&#39;: {&#39;anchor&#39;: &#39;x&#39;, &#39;domain&#39;: [0.0, 1.0], &#39;title&#39;: {&#39;text&#39;: &#39;y&#39;}}}
+})
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can learn more about the attributes Plotly Express has set for us with the Python <code>help()</code> function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on property:
+
+    Determines the drawing mode for this scatter trace. If the
+    provided `mode` includes &#34;text&#34; then the `text` elements appear
+    at the coordinates. Otherwise, the `text` elements appear on
+    hover. If there are less than 20 points and the trace is not
+    stacked then the default is &#34;lines+markers&#34;. Otherwise,
+    &#34;lines&#34;.
+    
+    The &#39;mode&#39; property is a flaglist and may be specified
+    as a string containing:
+      - Any combination of [&#39;lines&#39;, &#39;markers&#39;, &#39;text&#39;] joined with &#39;+&#39; characters
+        (e.g. &#39;lines+markers&#39;)
+        OR exactly one of [&#39;none&#39;] (e.g. &#39;none&#39;)
+    
+    Returns
+    -------
+    Any
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Accessing-Javascript-Computed-Defaults">Accessing Javascript-Computed Defaults<a class="anchor-link" href="#Accessing-Javascript-Computed-Defaults">&#182;</a></h3><p><em>new in 4.10</em></p>
+<p>The <code>.full_figure_for_development()</code> method provides Python-level access to the default values computed by Plotly.js. This method requires <a href="/python/static-image-export/">the Kaleido package</a>, which is easy to install and also used for <a href="/python/static-image-export/">static image export</a>.</p>
+<p>By way of example, here is an extremely simple figure created with <a href="/python/graph-objects/">Graph Objects</a> (although it could have been made with <a href="/python/plotly-express/">Plotly Express</a> as well just like above) where we have disabled the default template for maximum readability. Note how in this figure the text labels on the markers are clipped, and sit on top of the markers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers+text&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+        <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Point A&quot;</span><span class="p">,</span> <span class="s2">&quot;Point B&quot;</span><span class="p">]</span>
+    <span class="p">)],</span>
+    <span class="n">layout</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="efa734a4-fd83-4f2b-ae9b-4e5c5480cfca" class="plotly-graph-div" style="height:400px; width:400px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("efa734a4-fd83-4f2b-ae9b-4e5c5480cfca")) {                    Plotly.newPlot(                        "efa734a4-fd83-4f2b-ae9b-4e5c5480cfca",                        [{"mode":"markers+text","text":["Point A","Point B"],"x":[10,20],"y":[20,10],"type":"scatter"}],                        {"height":400,"template":{"data":{"scatter":[{"type":"scatter"}]}},"width":400},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('efa734a4-fd83-4f2b-ae9b-4e5c5480cfca');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's print this figure to see the very small JSON object that is passed to Plotly.js as input:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Figure({
+    &#39;data&#39;: [{&#39;mode&#39;: &#39;markers+text&#39;, &#39;text&#39;: [&#39;Point A&#39;, &#39;Point B&#39;], &#39;type&#39;: &#39;scatter&#39;, &#39;x&#39;: [10, 20], &#39;y&#39;: [20, 10]}],
+    &#39;layout&#39;: {&#39;height&#39;: 400, &#39;template&#39;: &#39;...&#39;, &#39;width&#39;: 400}
+})
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let's look at the "full" figure after Plotly.js has computed the default values for every necessary attribute.</p>
+<blockquote><p>Heads-up: the full figure is quite long and intimidating, and this page is meant to help demystify things so <strong>please read on</strong>!</p>
+</blockquote>
+<p>Please also note that the <code>.full_figure_for_development()</code> function is really meant for interactive learning and debugging, rather than production use, hence its name and the warning it produces by default, which you can see below, and which can be suppressed with <code>warn=False</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_fig</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">full_figure_for_development</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_fig</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/circleci/project/doc/venv/lib/python3.9/site-packages/plotly/io/_kaleido.py:338: UserWarning:
+
+full_figure_for_development is not recommended or necessary for production use in most circumstances. 
+To suppress this warning, set warn=False
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Figure({
+    &#39;data&#39;: [{&#39;cliponaxis&#39;: True,
+              &#39;error_x&#39;: {&#39;visible&#39;: False},
+              &#39;error_y&#39;: {&#39;visible&#39;: False},
+              &#39;fill&#39;: &#39;none&#39;,
+              &#39;hoverinfo&#39;: &#39;x+y+z+text&#39;,
+              &#39;hoverlabel&#39;: {&#39;align&#39;: &#39;auto&#39;,
+                             &#39;font&#39;: {&#39;family&#39;: &#39;Arial, sans-serif&#39;,
+                                      &#39;lineposition&#39;: &#39;none&#39;,
+                                      &#39;shadow&#39;: &#39;none&#39;,
+                                      &#39;size&#39;: 13,
+                                      &#39;style&#39;: &#39;normal&#39;,
+                                      &#39;textcase&#39;: &#39;normal&#39;,
+                                      &#39;variant&#39;: &#39;normal&#39;,
+                                      &#39;weight&#39;: &#39;normal&#39;},
+                             &#39;namelength&#39;: 15},
+              &#39;hoveron&#39;: &#39;points&#39;,
+              &#39;hovertemplate&#39;: &#39;&#39;,
+              &#39;hovertext&#39;: &#39;&#39;,
+              &#39;legend&#39;: &#39;legend&#39;,
+              &#39;legendgroup&#39;: &#39;&#39;,
+              &#39;legendgrouptitle&#39;: {&#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                            &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                            &#39;lineposition&#39;: &#39;none&#39;,
+                                            &#39;shadow&#39;: &#39;none&#39;,
+                                            &#39;size&#39;: 13,
+                                            &#39;style&#39;: &#39;normal&#39;,
+                                            &#39;textcase&#39;: &#39;normal&#39;,
+                                            &#39;variant&#39;: &#39;normal&#39;,
+                                            &#39;weight&#39;: &#39;normal&#39;},
+                                   &#39;text&#39;: &#39;&#39;},
+              &#39;legendrank&#39;: 1000,
+              &#39;marker&#39;: {&#39;angle&#39;: 0,
+                         &#39;angleref&#39;: &#39;up&#39;,
+                         &#39;color&#39;: &#39;#1f77b4&#39;,
+                         &#39;gradient&#39;: {&#39;type&#39;: &#39;none&#39;},
+                         &#39;line&#39;: {&#39;color&#39;: &#39;#444&#39;, &#39;width&#39;: 0},
+                         &#39;maxdisplayed&#39;: 0,
+                         &#39;opacity&#39;: 1,
+                         &#39;size&#39;: 6,
+                         &#39;standoff&#39;: 0,
+                         &#39;symbol&#39;: &#39;circle&#39;},
+              &#39;mode&#39;: &#39;markers+text&#39;,
+              &#39;name&#39;: &#39;trace 0&#39;,
+              &#39;opacity&#39;: 1,
+              &#39;selected&#39;: {&#39;marker&#39;: {&#39;opacity&#39;: 1}},
+              &#39;showlegend&#39;: True,
+              &#39;stackgroup&#39;: &#39;&#39;,
+              &#39;text&#39;: [Point A, Point B],
+              &#39;textfont&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                           &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                           &#39;lineposition&#39;: &#39;none&#39;,
+                           &#39;shadow&#39;: &#39;none&#39;,
+                           &#39;size&#39;: 12,
+                           &#39;style&#39;: &#39;normal&#39;,
+                           &#39;textcase&#39;: &#39;normal&#39;,
+                           &#39;variant&#39;: &#39;normal&#39;,
+                           &#39;weight&#39;: &#39;normal&#39;},
+              &#39;textposition&#39;: &#39;middle center&#39;,
+              &#39;texttemplate&#39;: &#39;&#39;,
+              &#39;type&#39;: &#39;scatter&#39;,
+              &#39;uid&#39;: &#39;9c1fe8&#39;,
+              &#39;unselected&#39;: {&#39;marker&#39;: {&#39;opacity&#39;: 0.2}},
+              &#39;visible&#39;: True,
+              &#39;x&#39;: [10, 20],
+              &#39;xaxis&#39;: &#39;x&#39;,
+              &#39;xcalendar&#39;: &#39;gregorian&#39;,
+              &#39;xhoverformat&#39;: &#39;&#39;,
+              &#39;xperiod&#39;: 0,
+              &#39;y&#39;: [20, 10],
+              &#39;yaxis&#39;: &#39;y&#39;,
+              &#39;ycalendar&#39;: &#39;gregorian&#39;,
+              &#39;yhoverformat&#39;: &#39;&#39;,
+              &#39;yperiod&#39;: 0,
+              &#39;zorder&#39;: 0}],
+    &#39;layout&#39;: {&#39;activeselection&#39;: {&#39;fillcolor&#39;: &#39;rgba(0,0,0,0)&#39;, &#39;opacity&#39;: 0.5},
+               &#39;activeshape&#39;: {&#39;fillcolor&#39;: &#39;rgb(255,0,255)&#39;, &#39;opacity&#39;: 0.5},
+               &#39;autosize&#39;: False,
+               &#39;autotypenumbers&#39;: &#39;convert types&#39;,
+               &#39;calendar&#39;: &#39;gregorian&#39;,
+               &#39;clickmode&#39;: &#39;event&#39;,
+               &#39;colorscale&#39;: {&#39;diverging&#39;: [[0, &#39;rgb(5,10,172)&#39;], [0.35,
+                                            &#39;rgb(106,137,247)&#39;], [0.5,
+                                            &#39;rgb(190,190,190)&#39;], [0.6,
+                                            &#39;rgb(220,170,132)&#39;], [0.7,
+                                            &#39;rgb(230,145,90)&#39;], [1,
+                                            &#39;rgb(178,10,28)&#39;]],
+                              &#39;sequential&#39;: [[0, &#39;rgb(220,220,220)&#39;], [0.2,
+                                             &#39;rgb(245,195,157)&#39;], [0.4,
+                                             &#39;rgb(245,160,105)&#39;], [1,
+                                             &#39;rgb(178,10,28)&#39;]],
+                              &#39;sequentialminus&#39;: [[0, &#39;rgb(5,10,172)&#39;], [0.35,
+                                                  &#39;rgb(40,60,190)&#39;], [0.5,
+                                                  &#39;rgb(70,100,245)&#39;], [0.6,
+                                                  &#39;rgb(90,120,245)&#39;], [0.7,
+                                                  &#39;rgb(106,137,247)&#39;], [1,
+                                                  &#39;rgb(220,220,220)&#39;]]},
+               &#39;colorway&#39;: [#1f77b4, #ff7f0e, #2ca02c, #d62728, #9467bd, #8c564b,
+                            #e377c2, #7f7f7f, #bcbd22, #17becf],
+               &#39;computed&#39;: {&#39;margin&#39;: {&#39;b&#39;: 80, &#39;l&#39;: 80, &#39;r&#39;: 80, &#39;t&#39;: 100}},
+               &#39;dragmode&#39;: &#39;zoom&#39;,
+               &#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                        &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                        &#39;lineposition&#39;: &#39;none&#39;,
+                        &#39;shadow&#39;: &#39;none&#39;,
+                        &#39;size&#39;: 12,
+                        &#39;style&#39;: &#39;normal&#39;,
+                        &#39;textcase&#39;: &#39;normal&#39;,
+                        &#39;variant&#39;: &#39;normal&#39;,
+                        &#39;weight&#39;: &#39;normal&#39;},
+               &#39;height&#39;: 400,
+               &#39;hidesources&#39;: False,
+               &#39;hoverdistance&#39;: 20,
+               &#39;hoverlabel&#39;: {&#39;align&#39;: &#39;auto&#39;,
+                              &#39;font&#39;: {&#39;family&#39;: &#39;Arial, sans-serif&#39;,
+                                       &#39;lineposition&#39;: &#39;none&#39;,
+                                       &#39;shadow&#39;: &#39;none&#39;,
+                                       &#39;size&#39;: 13,
+                                       &#39;style&#39;: &#39;normal&#39;,
+                                       &#39;textcase&#39;: &#39;normal&#39;,
+                                       &#39;variant&#39;: &#39;normal&#39;,
+                                       &#39;weight&#39;: &#39;normal&#39;},
+                              &#39;grouptitlefont&#39;: {&#39;family&#39;: &#39;Arial, sans-serif&#39;,
+                                                 &#39;lineposition&#39;: &#39;none&#39;,
+                                                 &#39;shadow&#39;: &#39;none&#39;,
+                                                 &#39;size&#39;: 13,
+                                                 &#39;style&#39;: &#39;normal&#39;,
+                                                 &#39;textcase&#39;: &#39;normal&#39;,
+                                                 &#39;variant&#39;: &#39;normal&#39;,
+                                                 &#39;weight&#39;: &#39;normal&#39;},
+                              &#39;namelength&#39;: 15},
+               &#39;hovermode&#39;: &#39;closest&#39;,
+               &#39;hoversubplots&#39;: &#39;overlaying&#39;,
+               &#39;margin&#39;: {&#39;autoexpand&#39;: True, &#39;b&#39;: 80, &#39;l&#39;: 80, &#39;pad&#39;: 0, &#39;r&#39;: 80, &#39;t&#39;: 100},
+               &#39;minreducedheight&#39;: 64,
+               &#39;minreducedwidth&#39;: 64,
+               &#39;modebar&#39;: {&#39;activecolor&#39;: &#39;rgba(68, 68, 68, 0.7)&#39;,
+                           &#39;add&#39;: &#39;&#39;,
+                           &#39;bgcolor&#39;: &#39;rgba(255, 255, 255, 0.5)&#39;,
+                           &#39;color&#39;: &#39;rgba(68, 68, 68, 0.3)&#39;,
+                           &#39;orientation&#39;: &#39;h&#39;,
+                           &#39;remove&#39;: &#39;&#39;},
+               &#39;newselection&#39;: {&#39;line&#39;: {&#39;dash&#39;: &#39;dot&#39;, &#39;width&#39;: 1}, &#39;mode&#39;: &#39;immediate&#39;},
+               &#39;newshape&#39;: {&#39;drawdirection&#39;: &#39;diagonal&#39;,
+                            &#39;fillcolor&#39;: &#39;rgba(0,0,0,0)&#39;,
+                            &#39;fillrule&#39;: &#39;evenodd&#39;,
+                            &#39;label&#39;: {&#39;text&#39;: &#39;&#39;, &#39;texttemplate&#39;: &#39;&#39;},
+                            &#39;layer&#39;: &#39;above&#39;,
+                            &#39;legend&#39;: &#39;legend&#39;,
+                            &#39;legendgroup&#39;: &#39;&#39;,
+                            &#39;legendgrouptitle&#39;: {&#39;font&#39;: {&#39;lineposition&#39;: &#39;none&#39;,
+                                                          &#39;shadow&#39;: &#39;none&#39;,
+                                                          &#39;style&#39;: &#39;normal&#39;,
+                                                          &#39;textcase&#39;: &#39;normal&#39;,
+                                                          &#39;variant&#39;: &#39;normal&#39;,
+                                                          &#39;weight&#39;: &#39;normal&#39;},
+                                                 &#39;text&#39;: &#39;&#39;},
+                            &#39;legendrank&#39;: 1000,
+                            &#39;line&#39;: {&#39;color&#39;: &#39;#444&#39;, &#39;dash&#39;: &#39;solid&#39;, &#39;width&#39;: 4},
+                            &#39;opacity&#39;: 1,
+                            &#39;showlegend&#39;: False,
+                            &#39;visible&#39;: True},
+               &#39;paper_bgcolor&#39;: &#39;#fff&#39;,
+               &#39;plot_bgcolor&#39;: &#39;#fff&#39;,
+               &#39;scattermode&#39;: &#39;overlay&#39;,
+               &#39;separators&#39;: &#39;.,&#39;,
+               &#39;showlegend&#39;: False,
+               &#39;spikedistance&#39;: -1,
+               &#39;template&#39;: &#39;...&#39;,
+               &#39;title&#39;: {&#39;automargin&#39;: False,
+                         &#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                  &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                  &#39;lineposition&#39;: &#39;none&#39;,
+                                  &#39;shadow&#39;: &#39;none&#39;,
+                                  &#39;size&#39;: 17,
+                                  &#39;style&#39;: &#39;normal&#39;,
+                                  &#39;textcase&#39;: &#39;normal&#39;,
+                                  &#39;variant&#39;: &#39;normal&#39;,
+                                  &#39;weight&#39;: &#39;normal&#39;},
+                         &#39;pad&#39;: {&#39;b&#39;: 0, &#39;l&#39;: 0, &#39;r&#39;: 0, &#39;t&#39;: 0},
+                         &#39;subtitle&#39;: {&#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                               &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                               &#39;lineposition&#39;: &#39;none&#39;,
+                                               &#39;shadow&#39;: &#39;none&#39;,
+                                               &#39;size&#39;: 12,
+                                               &#39;style&#39;: &#39;normal&#39;,
+                                               &#39;textcase&#39;: &#39;normal&#39;,
+                                               &#39;variant&#39;: &#39;normal&#39;,
+                                               &#39;weight&#39;: &#39;normal&#39;},
+                                      &#39;text&#39;: &#39;Click to enter Plot subtitle&#39;},
+                         &#39;text&#39;: &#39;Click to enter Plot title&#39;,
+                         &#39;x&#39;: 0.5,
+                         &#39;xanchor&#39;: &#39;auto&#39;,
+                         &#39;xref&#39;: &#39;container&#39;,
+                         &#39;yanchor&#39;: &#39;auto&#39;,
+                         &#39;yref&#39;: &#39;container&#39;},
+               &#39;uniformtext&#39;: {&#39;mode&#39;: False},
+               &#39;width&#39;: 400,
+               &#39;xaxis&#39;: {&#39;anchor&#39;: &#39;y&#39;,
+                         &#39;automargin&#39;: False,
+                         &#39;autorange&#39;: True,
+                         &#39;autotickangles&#39;: [0, 30, 90],
+                         &#39;autotypenumbers&#39;: &#39;convert types&#39;,
+                         &#39;color&#39;: &#39;#444&#39;,
+                         &#39;constrain&#39;: &#39;range&#39;,
+                         &#39;constraintoward&#39;: &#39;center&#39;,
+                         &#39;domain&#39;: [0, 1],
+                         &#39;dtick&#39;: 5,
+                         &#39;exponentformat&#39;: &#39;B&#39;,
+                         &#39;fixedrange&#39;: False,
+                         &#39;gridcolor&#39;: &#39;rgb(238, 238, 238)&#39;,
+                         &#39;griddash&#39;: &#39;solid&#39;,
+                         &#39;gridwidth&#39;: 1,
+                         &#39;hoverformat&#39;: &#39;&#39;,
+                         &#39;layer&#39;: &#39;above traces&#39;,
+                         &#39;minexponent&#39;: 3,
+                         &#39;nticks&#39;: 0,
+                         &#39;range&#39;: [9.244604316546763, 20.755395683453237],
+                         &#39;rangemode&#39;: &#39;normal&#39;,
+                         &#39;separatethousands&#39;: False,
+                         &#39;showexponent&#39;: &#39;all&#39;,
+                         &#39;showgrid&#39;: True,
+                         &#39;showline&#39;: False,
+                         &#39;showspikes&#39;: False,
+                         &#39;showticklabels&#39;: True,
+                         &#39;side&#39;: &#39;bottom&#39;,
+                         &#39;tick0&#39;: 0,
+                         &#39;tickfont&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                      &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                      &#39;lineposition&#39;: &#39;none&#39;,
+                                      &#39;shadow&#39;: &#39;none&#39;,
+                                      &#39;size&#39;: 12,
+                                      &#39;style&#39;: &#39;normal&#39;,
+                                      &#39;textcase&#39;: &#39;normal&#39;,
+                                      &#39;variant&#39;: &#39;normal&#39;,
+                                      &#39;weight&#39;: &#39;normal&#39;},
+                         &#39;tickformat&#39;: &#39;&#39;,
+                         &#39;ticklabeloverflow&#39;: &#39;hide past div&#39;,
+                         &#39;ticklabelposition&#39;: &#39;outside&#39;,
+                         &#39;ticklabelshift&#39;: 0,
+                         &#39;ticklabelstandoff&#39;: 0,
+                         &#39;ticklabelstep&#39;: 1,
+                         &#39;tickmode&#39;: &#39;auto&#39;,
+                         &#39;tickprefix&#39;: &#39;&#39;,
+                         &#39;ticks&#39;: &#39;&#39;,
+                         &#39;ticksuffix&#39;: &#39;&#39;,
+                         &#39;title&#39;: {&#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                            &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                            &#39;lineposition&#39;: &#39;none&#39;,
+                                            &#39;shadow&#39;: &#39;none&#39;,
+                                            &#39;size&#39;: 14,
+                                            &#39;style&#39;: &#39;normal&#39;,
+                                            &#39;textcase&#39;: &#39;normal&#39;,
+                                            &#39;variant&#39;: &#39;normal&#39;,
+                                            &#39;weight&#39;: &#39;normal&#39;},
+                                   &#39;text&#39;: &#39;Click to enter X axis title&#39;},
+                         &#39;type&#39;: &#39;linear&#39;,
+                         &#39;visible&#39;: True,
+                         &#39;zeroline&#39;: True,
+                         &#39;zerolinecolor&#39;: &#39;#444&#39;,
+                         &#39;zerolinewidth&#39;: 1},
+               &#39;yaxis&#39;: {&#39;anchor&#39;: &#39;x&#39;,
+                         &#39;automargin&#39;: False,
+                         &#39;autorange&#39;: True,
+                         &#39;autotypenumbers&#39;: &#39;convert types&#39;,
+                         &#39;color&#39;: &#39;#444&#39;,
+                         &#39;constrain&#39;: &#39;range&#39;,
+                         &#39;constraintoward&#39;: &#39;middle&#39;,
+                         &#39;domain&#39;: [0, 1],
+                         &#39;dtick&#39;: 2,
+                         &#39;exponentformat&#39;: &#39;B&#39;,
+                         &#39;fixedrange&#39;: False,
+                         &#39;gridcolor&#39;: &#39;rgb(238, 238, 238)&#39;,
+                         &#39;griddash&#39;: &#39;solid&#39;,
+                         &#39;gridwidth&#39;: 1,
+                         &#39;hoverformat&#39;: &#39;&#39;,
+                         &#39;layer&#39;: &#39;above traces&#39;,
+                         &#39;minexponent&#39;: 3,
+                         &#39;nticks&#39;: 0,
+                         &#39;range&#39;: [9.225721784776903, 20.7742782152231],
+                         &#39;rangemode&#39;: &#39;normal&#39;,
+                         &#39;separatethousands&#39;: False,
+                         &#39;showexponent&#39;: &#39;all&#39;,
+                         &#39;showgrid&#39;: True,
+                         &#39;showline&#39;: False,
+                         &#39;showspikes&#39;: False,
+                         &#39;showticklabels&#39;: True,
+                         &#39;side&#39;: &#39;left&#39;,
+                         &#39;tick0&#39;: 0,
+                         &#39;tickfont&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                      &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                      &#39;lineposition&#39;: &#39;none&#39;,
+                                      &#39;shadow&#39;: &#39;none&#39;,
+                                      &#39;size&#39;: 12,
+                                      &#39;style&#39;: &#39;normal&#39;,
+                                      &#39;textcase&#39;: &#39;normal&#39;,
+                                      &#39;variant&#39;: &#39;normal&#39;,
+                                      &#39;weight&#39;: &#39;normal&#39;},
+                         &#39;tickformat&#39;: &#39;&#39;,
+                         &#39;ticklabeloverflow&#39;: &#39;hide past div&#39;,
+                         &#39;ticklabelposition&#39;: &#39;outside&#39;,
+                         &#39;ticklabelshift&#39;: 0,
+                         &#39;ticklabelstandoff&#39;: 0,
+                         &#39;ticklabelstep&#39;: 1,
+                         &#39;tickmode&#39;: &#39;auto&#39;,
+                         &#39;tickprefix&#39;: &#39;&#39;,
+                         &#39;ticks&#39;: &#39;&#39;,
+                         &#39;ticksuffix&#39;: &#39;&#39;,
+                         &#39;title&#39;: {&#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                            &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                            &#39;lineposition&#39;: &#39;none&#39;,
+                                            &#39;shadow&#39;: &#39;none&#39;,
+                                            &#39;size&#39;: 14,
+                                            &#39;style&#39;: &#39;normal&#39;,
+                                            &#39;textcase&#39;: &#39;normal&#39;,
+                                            &#39;variant&#39;: &#39;normal&#39;,
+                                            &#39;weight&#39;: &#39;normal&#39;},
+                                   &#39;text&#39;: &#39;Click to enter Y axis title&#39;},
+                         &#39;type&#39;: &#39;linear&#39;,
+                         &#39;visible&#39;: True,
+                         &#39;zeroline&#39;: True,
+                         &#39;zerolinecolor&#39;: &#39;#444&#39;,
+                         &#39;zerolinewidth&#39;: 1}}
+})
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, Plotly.js does a lot of work filling things in for us! Let's look at the examples described at the top of the page of static and dynamic defaults. If we look just at <code>layout.font</code> and <code>layout.xaxis.range</code> we can see that the static default font size is 12 and that the dynamic default range is computed to be a bit beyond the data range which was 10-20:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;full_fig.layout.font.size: &quot;</span><span class="p">,</span> <span class="n">full_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;full_fig.layout.xaxis.range: &quot;</span><span class="p">,</span> <span class="n">full_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">range</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>full_fig.layout.font.size:  12
+full_fig.layout.xaxis.range:  (9.244604316546763, 20.755395683453237)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Learning-About-Attributes">Learning About Attributes<a class="anchor-link" href="#Learning-About-Attributes">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What else can we use this <code>full_fig</code> for? Let's start by looking at the first entry of the <code>data</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">full_fig</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Scatter({
+    &#39;cliponaxis&#39;: True,
+    &#39;error_x&#39;: {&#39;visible&#39;: False},
+    &#39;error_y&#39;: {&#39;visible&#39;: False},
+    &#39;fill&#39;: &#39;none&#39;,
+    &#39;hoverinfo&#39;: &#39;x+y+z+text&#39;,
+    &#39;hoverlabel&#39;: {&#39;align&#39;: &#39;auto&#39;,
+                   &#39;font&#39;: {&#39;family&#39;: &#39;Arial, sans-serif&#39;,
+                            &#39;lineposition&#39;: &#39;none&#39;,
+                            &#39;shadow&#39;: &#39;none&#39;,
+                            &#39;size&#39;: 13,
+                            &#39;style&#39;: &#39;normal&#39;,
+                            &#39;textcase&#39;: &#39;normal&#39;,
+                            &#39;variant&#39;: &#39;normal&#39;,
+                            &#39;weight&#39;: &#39;normal&#39;},
+                   &#39;namelength&#39;: 15},
+    &#39;hoveron&#39;: &#39;points&#39;,
+    &#39;hovertemplate&#39;: &#39;&#39;,
+    &#39;hovertext&#39;: &#39;&#39;,
+    &#39;legend&#39;: &#39;legend&#39;,
+    &#39;legendgroup&#39;: &#39;&#39;,
+    &#39;legendgrouptitle&#39;: {&#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                  &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                  &#39;lineposition&#39;: &#39;none&#39;,
+                                  &#39;shadow&#39;: &#39;none&#39;,
+                                  &#39;size&#39;: 13,
+                                  &#39;style&#39;: &#39;normal&#39;,
+                                  &#39;textcase&#39;: &#39;normal&#39;,
+                                  &#39;variant&#39;: &#39;normal&#39;,
+                                  &#39;weight&#39;: &#39;normal&#39;},
+                         &#39;text&#39;: &#39;&#39;},
+    &#39;legendrank&#39;: 1000,
+    &#39;marker&#39;: {&#39;angle&#39;: 0,
+               &#39;angleref&#39;: &#39;up&#39;,
+               &#39;color&#39;: &#39;#1f77b4&#39;,
+               &#39;gradient&#39;: {&#39;type&#39;: &#39;none&#39;},
+               &#39;line&#39;: {&#39;color&#39;: &#39;#444&#39;, &#39;width&#39;: 0},
+               &#39;maxdisplayed&#39;: 0,
+               &#39;opacity&#39;: 1,
+               &#39;size&#39;: 6,
+               &#39;standoff&#39;: 0,
+               &#39;symbol&#39;: &#39;circle&#39;},
+    &#39;mode&#39;: &#39;markers+text&#39;,
+    &#39;name&#39;: &#39;trace 0&#39;,
+    &#39;opacity&#39;: 1,
+    &#39;selected&#39;: {&#39;marker&#39;: {&#39;opacity&#39;: 1}},
+    &#39;showlegend&#39;: True,
+    &#39;stackgroup&#39;: &#39;&#39;,
+    &#39;text&#39;: [Point A, Point B],
+    &#39;textfont&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                 &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                 &#39;lineposition&#39;: &#39;none&#39;,
+                 &#39;shadow&#39;: &#39;none&#39;,
+                 &#39;size&#39;: 12,
+                 &#39;style&#39;: &#39;normal&#39;,
+                 &#39;textcase&#39;: &#39;normal&#39;,
+                 &#39;variant&#39;: &#39;normal&#39;,
+                 &#39;weight&#39;: &#39;normal&#39;},
+    &#39;textposition&#39;: &#39;middle center&#39;,
+    &#39;texttemplate&#39;: &#39;&#39;,
+    &#39;uid&#39;: &#39;9c1fe8&#39;,
+    &#39;unselected&#39;: {&#39;marker&#39;: {&#39;opacity&#39;: 0.2}},
+    &#39;visible&#39;: True,
+    &#39;x&#39;: [10, 20],
+    &#39;xaxis&#39;: &#39;x&#39;,
+    &#39;xcalendar&#39;: &#39;gregorian&#39;,
+    &#39;xhoverformat&#39;: &#39;&#39;,
+    &#39;xperiod&#39;: 0,
+    &#39;y&#39;: [20, 10],
+    &#39;yaxis&#39;: &#39;y&#39;,
+    &#39;ycalendar&#39;: &#39;gregorian&#39;,
+    &#39;yhoverformat&#39;: &#39;&#39;,
+    &#39;yperiod&#39;: 0,
+    &#39;zorder&#39;: 0
+})
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We see that this is an instance of <code>go.Scatter</code> (as expected, given the input) and that it has an attribute we've maybe never heard of called <code>cliponaxis</code> which by default seems to be set to <code>True</code> in this case. Let's find out more about this attribute using the built-in Python <code>help()</code> function</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="o">.</span><span class="n">cliponaxis</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on property:
+
+    Determines whether or not markers and text nodes are clipped
+    about the subplot axes. To show markers and text nodes above
+    axis lines and tick labels, make sure to set `xaxis.layer` and
+    `yaxis.layer` to *below traces*.
+    
+    The &#39;cliponaxis&#39; property must be specified as a bool
+    (either True, or False)
+    
+    Returns
+    -------
+    bool
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Aha!  This explains why in our original figure above, the text was cut off by the edge of the plotting area! Let's try forcing that to <code>False</code>, and let's also use the attribute <code>textposition</code> which we see in the full figure is by default set to <code>"middle center"</code> to get our text off of our markers:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">cliponaxis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">textposition</span><span class="o">=</span><span class="s2">&quot;top right&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="d9d59d23-a008-4817-93da-b9ee814e2b2f" class="plotly-graph-div" style="height:400px; width:400px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("d9d59d23-a008-4817-93da-b9ee814e2b2f")) {                    Plotly.newPlot(                        "d9d59d23-a008-4817-93da-b9ee814e2b2f",                        [{"mode":"markers+text","text":["Point A","Point B"],"x":[10,20],"y":[20,10],"type":"scatter","cliponaxis":false,"textposition":"top right"}],                        {"height":400,"template":{"data":{"scatter":[{"type":"scatter"}]}},"width":400},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('d9d59d23-a008-4817-93da-b9ee814e2b2f');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can use this technique (of making a figure, and querying Plotly.js for the "full" version of that figure, and then exploring the attributes that are automatically set for us) to learn more about the range of possibilities that the figure schema makes available. We can drill down into <code>layout</code> attributes also:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">XAxis</span><span class="o">.</span><span class="n">autorange</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on property:
+
+    Determines whether or not the range of this axis is computed in
+    relation to the input data. See `rangemode` for more info. If
+    `range` is provided and it has a value for both the lower and
+    upper bound, `autorange` is set to False. Using &#34;min&#34; applies
+    autorange only to set the minimum. Using &#34;max&#34; applies
+    autorange only to set the maximum. Using *min reversed* applies
+    autorange only to set the minimum on a reversed axis. Using
+    *max reversed* applies autorange only to set the maximum on a
+    reversed axis. Using &#34;reversed&#34; applies autorange on both ends
+    and reverses the axis direction.
+    
+    The &#39;autorange&#39; property is an enumeration that may be specified as:
+      - One of the following enumeration values:
+            [True, False, &#39;reversed&#39;, &#39;min reversed&#39;, &#39;max reversed&#39;,
+            &#39;min&#39;, &#39;max&#39;]
+    
+    Returns
+    -------
+    Any
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="More-about-Layout">More about Layout<a class="anchor-link" href="#More-about-Layout">&#182;</a></h3><p>In the figure we introspected above, we had added <a href="/python/line-and-scatter/">a <code>scatter</code> trace</a>, and Plotly.js automatically filled in for us the <code>xaxis</code> and <code>yaxis</code> values of that trace object to be <code>x</code> and <code>y</code>, and then also filled out the corresponding <code>layout.xaxis</code> and <code>layout.yaxis</code> objects for us, complete with their <a href="/python/axes/">extensive set of defaults for gridlines, tick labels and so on</a>.</p>
+<p>If we create a figure with <a href="/python/scatter-plots-on-maps/">a <code>scattergeo</code> trace</a> instead, however, Plotly.js will fill in a totally different set of objects in <code>layout</code>, corresponding to <a href="https://plotly.com/python/map-configuration/">a <code>geo</code> subplot, with all of its defaults for whether or not to show rivers, lakes, country borders, coastlines etc</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Scattergeo</span><span class="p">(</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers+text&quot;</span><span class="p">,</span>
+        <span class="n">lat</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+        <span class="n">lon</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+        <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Point A&quot;</span><span class="p">,</span> <span class="s2">&quot;Point B&quot;</span><span class="p">]</span>
+    <span class="p">)],</span>
+    <span class="n">layout</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+                <span class="n">template</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">full_fig</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">full_figure_for_development</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_fig</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="3c04c6c2-6a19-4ecb-8188-6948300d0c9e" class="plotly-graph-div" style="height:400px; width:400px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("3c04c6c2-6a19-4ecb-8188-6948300d0c9e")) {                    Plotly.newPlot(                        "3c04c6c2-6a19-4ecb-8188-6948300d0c9e",                        [{"lat":[10,20],"lon":[20,10],"mode":"markers+text","text":["Point A","Point B"],"type":"scattergeo"}],                        {"height":400,"margin":{"b":0,"l":0,"r":0,"t":0},"template":{"data":{"scatter":[{"type":"scatter"}]}},"width":400},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('3c04c6c2-6a19-4ecb-8188-6948300d0c9e');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Figure({
+    &#39;data&#39;: [{&#39;fill&#39;: &#39;none&#39;,
+              &#39;geo&#39;: &#39;geo&#39;,
+              &#39;hoverinfo&#39;: &#39;lon+lat+location+text&#39;,
+              &#39;hoverlabel&#39;: {&#39;align&#39;: &#39;auto&#39;,
+                             &#39;font&#39;: {&#39;family&#39;: &#39;Arial, sans-serif&#39;,
+                                      &#39;lineposition&#39;: &#39;none&#39;,
+                                      &#39;shadow&#39;: &#39;none&#39;,
+                                      &#39;size&#39;: 13,
+                                      &#39;style&#39;: &#39;normal&#39;,
+                                      &#39;textcase&#39;: &#39;normal&#39;,
+                                      &#39;variant&#39;: &#39;normal&#39;,
+                                      &#39;weight&#39;: &#39;normal&#39;},
+                             &#39;namelength&#39;: 15},
+              &#39;hovertemplate&#39;: &#39;&#39;,
+              &#39;hovertext&#39;: &#39;&#39;,
+              &#39;lat&#39;: [10, 20],
+              &#39;legend&#39;: &#39;legend&#39;,
+              &#39;legendgroup&#39;: &#39;&#39;,
+              &#39;legendgrouptitle&#39;: {&#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                            &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                            &#39;lineposition&#39;: &#39;none&#39;,
+                                            &#39;shadow&#39;: &#39;none&#39;,
+                                            &#39;size&#39;: 13,
+                                            &#39;style&#39;: &#39;normal&#39;,
+                                            &#39;textcase&#39;: &#39;normal&#39;,
+                                            &#39;variant&#39;: &#39;normal&#39;,
+                                            &#39;weight&#39;: &#39;normal&#39;},
+                                   &#39;text&#39;: &#39;&#39;},
+              &#39;legendrank&#39;: 1000,
+              &#39;lon&#39;: [20, 10],
+              &#39;marker&#39;: {&#39;angle&#39;: 0,
+                         &#39;angleref&#39;: &#39;up&#39;,
+                         &#39;color&#39;: &#39;#1f77b4&#39;,
+                         &#39;gradient&#39;: {&#39;type&#39;: &#39;none&#39;},
+                         &#39;line&#39;: {&#39;color&#39;: &#39;#444&#39;, &#39;width&#39;: 0},
+                         &#39;opacity&#39;: 1,
+                         &#39;size&#39;: 6,
+                         &#39;standoff&#39;: 0,
+                         &#39;symbol&#39;: &#39;circle&#39;},
+              &#39;mode&#39;: &#39;markers+text&#39;,
+              &#39;name&#39;: &#39;trace 0&#39;,
+              &#39;opacity&#39;: 1,
+              &#39;selected&#39;: {&#39;marker&#39;: {&#39;opacity&#39;: 1}},
+              &#39;showlegend&#39;: True,
+              &#39;text&#39;: [Point A, Point B],
+              &#39;textfont&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                           &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                           &#39;lineposition&#39;: &#39;none&#39;,
+                           &#39;shadow&#39;: &#39;none&#39;,
+                           &#39;size&#39;: 12,
+                           &#39;style&#39;: &#39;normal&#39;,
+                           &#39;textcase&#39;: &#39;normal&#39;,
+                           &#39;variant&#39;: &#39;normal&#39;,
+                           &#39;weight&#39;: &#39;normal&#39;},
+              &#39;textposition&#39;: &#39;middle center&#39;,
+              &#39;texttemplate&#39;: &#39;&#39;,
+              &#39;type&#39;: &#39;scattergeo&#39;,
+              &#39;uid&#39;: &#39;ec8b51&#39;,
+              &#39;unselected&#39;: {&#39;marker&#39;: {&#39;opacity&#39;: 0.2}},
+              &#39;visible&#39;: True}],
+    &#39;layout&#39;: {&#39;activeselection&#39;: {&#39;fillcolor&#39;: &#39;rgba(0,0,0,0)&#39;, &#39;opacity&#39;: 0.5},
+               &#39;activeshape&#39;: {&#39;fillcolor&#39;: &#39;rgb(255,0,255)&#39;, &#39;opacity&#39;: 0.5},
+               &#39;autosize&#39;: False,
+               &#39;autotypenumbers&#39;: &#39;convert types&#39;,
+               &#39;calendar&#39;: &#39;gregorian&#39;,
+               &#39;clickmode&#39;: &#39;event&#39;,
+               &#39;colorscale&#39;: {&#39;diverging&#39;: [[0, &#39;rgb(5,10,172)&#39;], [0.35,
+                                            &#39;rgb(106,137,247)&#39;], [0.5,
+                                            &#39;rgb(190,190,190)&#39;], [0.6,
+                                            &#39;rgb(220,170,132)&#39;], [0.7,
+                                            &#39;rgb(230,145,90)&#39;], [1,
+                                            &#39;rgb(178,10,28)&#39;]],
+                              &#39;sequential&#39;: [[0, &#39;rgb(220,220,220)&#39;], [0.2,
+                                             &#39;rgb(245,195,157)&#39;], [0.4,
+                                             &#39;rgb(245,160,105)&#39;], [1,
+                                             &#39;rgb(178,10,28)&#39;]],
+                              &#39;sequentialminus&#39;: [[0, &#39;rgb(5,10,172)&#39;], [0.35,
+                                                  &#39;rgb(40,60,190)&#39;], [0.5,
+                                                  &#39;rgb(70,100,245)&#39;], [0.6,
+                                                  &#39;rgb(90,120,245)&#39;], [0.7,
+                                                  &#39;rgb(106,137,247)&#39;], [1,
+                                                  &#39;rgb(220,220,220)&#39;]]},
+               &#39;colorway&#39;: [#1f77b4, #ff7f0e, #2ca02c, #d62728, #9467bd, #8c564b,
+                            #e377c2, #7f7f7f, #bcbd22, #17becf],
+               &#39;computed&#39;: {&#39;margin&#39;: {&#39;b&#39;: 0, &#39;l&#39;: 0, &#39;r&#39;: 0, &#39;t&#39;: 0}},
+               &#39;dragmode&#39;: &#39;pan&#39;,
+               &#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                        &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                        &#39;lineposition&#39;: &#39;none&#39;,
+                        &#39;shadow&#39;: &#39;none&#39;,
+                        &#39;size&#39;: 12,
+                        &#39;style&#39;: &#39;normal&#39;,
+                        &#39;textcase&#39;: &#39;normal&#39;,
+                        &#39;variant&#39;: &#39;normal&#39;,
+                        &#39;weight&#39;: &#39;normal&#39;},
+               &#39;geo&#39;: {&#39;bgcolor&#39;: &#39;#fff&#39;,
+                       &#39;center&#39;: {&#39;lat&#39;: 0, &#39;lon&#39;: 0},
+                       &#39;coastlinecolor&#39;: &#39;#444&#39;,
+                       &#39;coastlinewidth&#39;: 1,
+                       &#39;domain&#39;: {&#39;x&#39;: [0, 1], &#39;y&#39;: [0, 1]},
+                       &#39;fitbounds&#39;: False,
+                       &#39;framecolor&#39;: &#39;#444&#39;,
+                       &#39;framewidth&#39;: 1,
+                       &#39;lataxis&#39;: {&#39;dtick&#39;: 10, &#39;range&#39;: [-90, 90], &#39;showgrid&#39;: False, &#39;tick0&#39;: 0},
+                       &#39;lonaxis&#39;: {&#39;dtick&#39;: 30, &#39;range&#39;: [-180, 180], &#39;showgrid&#39;: False, &#39;tick0&#39;: 0},
+                       &#39;projection&#39;: {&#39;rotation&#39;: {&#39;lat&#39;: 0, &#39;lon&#39;: 0, &#39;roll&#39;: 0}, &#39;scale&#39;: 1, &#39;type&#39;: &#39;equirectangular&#39;},
+                       &#39;resolution&#39;: 110,
+                       &#39;scope&#39;: &#39;world&#39;,
+                       &#39;showcoastlines&#39;: True,
+                       &#39;showcountries&#39;: False,
+                       &#39;showframe&#39;: True,
+                       &#39;showlakes&#39;: False,
+                       &#39;showland&#39;: False,
+                       &#39;showocean&#39;: False,
+                       &#39;showrivers&#39;: False,
+                       &#39;visible&#39;: True},
+               &#39;height&#39;: 400,
+               &#39;hidesources&#39;: False,
+               &#39;hoverdistance&#39;: 20,
+               &#39;hoverlabel&#39;: {&#39;align&#39;: &#39;auto&#39;,
+                              &#39;font&#39;: {&#39;family&#39;: &#39;Arial, sans-serif&#39;,
+                                       &#39;lineposition&#39;: &#39;none&#39;,
+                                       &#39;shadow&#39;: &#39;none&#39;,
+                                       &#39;size&#39;: 13,
+                                       &#39;style&#39;: &#39;normal&#39;,
+                                       &#39;textcase&#39;: &#39;normal&#39;,
+                                       &#39;variant&#39;: &#39;normal&#39;,
+                                       &#39;weight&#39;: &#39;normal&#39;},
+                              &#39;grouptitlefont&#39;: {&#39;family&#39;: &#39;Arial, sans-serif&#39;,
+                                                 &#39;lineposition&#39;: &#39;none&#39;,
+                                                 &#39;shadow&#39;: &#39;none&#39;,
+                                                 &#39;size&#39;: 13,
+                                                 &#39;style&#39;: &#39;normal&#39;,
+                                                 &#39;textcase&#39;: &#39;normal&#39;,
+                                                 &#39;variant&#39;: &#39;normal&#39;,
+                                                 &#39;weight&#39;: &#39;normal&#39;},
+                              &#39;namelength&#39;: 15},
+               &#39;hovermode&#39;: &#39;closest&#39;,
+               &#39;hoversubplots&#39;: &#39;overlaying&#39;,
+               &#39;margin&#39;: {&#39;autoexpand&#39;: True, &#39;b&#39;: 0, &#39;l&#39;: 0, &#39;pad&#39;: 0, &#39;r&#39;: 0, &#39;t&#39;: 0},
+               &#39;minreducedheight&#39;: 64,
+               &#39;minreducedwidth&#39;: 64,
+               &#39;modebar&#39;: {&#39;activecolor&#39;: &#39;rgba(68, 68, 68, 0.7)&#39;,
+                           &#39;add&#39;: &#39;&#39;,
+                           &#39;bgcolor&#39;: &#39;rgba(255, 255, 255, 0.5)&#39;,
+                           &#39;color&#39;: &#39;rgba(68, 68, 68, 0.3)&#39;,
+                           &#39;orientation&#39;: &#39;h&#39;,
+                           &#39;remove&#39;: &#39;&#39;},
+               &#39;newselection&#39;: {&#39;line&#39;: {&#39;dash&#39;: &#39;dot&#39;, &#39;width&#39;: 1}, &#39;mode&#39;: &#39;immediate&#39;},
+               &#39;newshape&#39;: {&#39;drawdirection&#39;: &#39;diagonal&#39;,
+                            &#39;fillcolor&#39;: &#39;rgba(0,0,0,0)&#39;,
+                            &#39;fillrule&#39;: &#39;evenodd&#39;,
+                            &#39;label&#39;: {&#39;text&#39;: &#39;&#39;, &#39;texttemplate&#39;: &#39;&#39;},
+                            &#39;layer&#39;: &#39;above&#39;,
+                            &#39;legend&#39;: &#39;legend&#39;,
+                            &#39;legendgroup&#39;: &#39;&#39;,
+                            &#39;legendgrouptitle&#39;: {&#39;font&#39;: {&#39;lineposition&#39;: &#39;none&#39;,
+                                                          &#39;shadow&#39;: &#39;none&#39;,
+                                                          &#39;style&#39;: &#39;normal&#39;,
+                                                          &#39;textcase&#39;: &#39;normal&#39;,
+                                                          &#39;variant&#39;: &#39;normal&#39;,
+                                                          &#39;weight&#39;: &#39;normal&#39;},
+                                                 &#39;text&#39;: &#39;&#39;},
+                            &#39;legendrank&#39;: 1000,
+                            &#39;line&#39;: {&#39;color&#39;: &#39;#444&#39;, &#39;dash&#39;: &#39;solid&#39;, &#39;width&#39;: 4},
+                            &#39;opacity&#39;: 1,
+                            &#39;showlegend&#39;: False,
+                            &#39;visible&#39;: True},
+               &#39;paper_bgcolor&#39;: &#39;#fff&#39;,
+               &#39;scattermode&#39;: &#39;overlay&#39;,
+               &#39;separators&#39;: &#39;.,&#39;,
+               &#39;showlegend&#39;: False,
+               &#39;spikedistance&#39;: -1,
+               &#39;template&#39;: &#39;...&#39;,
+               &#39;title&#39;: {&#39;automargin&#39;: False,
+                         &#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                  &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                  &#39;lineposition&#39;: &#39;none&#39;,
+                                  &#39;shadow&#39;: &#39;none&#39;,
+                                  &#39;size&#39;: 17,
+                                  &#39;style&#39;: &#39;normal&#39;,
+                                  &#39;textcase&#39;: &#39;normal&#39;,
+                                  &#39;variant&#39;: &#39;normal&#39;,
+                                  &#39;weight&#39;: &#39;normal&#39;},
+                         &#39;pad&#39;: {&#39;b&#39;: 0, &#39;l&#39;: 0, &#39;r&#39;: 0, &#39;t&#39;: 0},
+                         &#39;subtitle&#39;: {&#39;font&#39;: {&#39;color&#39;: &#39;#444&#39;,
+                                               &#39;family&#39;: &#39;&#34;Open Sans&#34;, verdana, arial, sans-serif&#39;,
+                                               &#39;lineposition&#39;: &#39;none&#39;,
+                                               &#39;shadow&#39;: &#39;none&#39;,
+                                               &#39;size&#39;: 12,
+                                               &#39;style&#39;: &#39;normal&#39;,
+                                               &#39;textcase&#39;: &#39;normal&#39;,
+                                               &#39;variant&#39;: &#39;normal&#39;,
+                                               &#39;weight&#39;: &#39;normal&#39;},
+                                      &#39;text&#39;: &#39;Click to enter Plot subtitle&#39;},
+                         &#39;text&#39;: &#39;Click to enter Plot title&#39;,
+                         &#39;x&#39;: 0.5,
+                         &#39;xanchor&#39;: &#39;auto&#39;,
+                         &#39;xref&#39;: &#39;container&#39;,
+                         &#39;yanchor&#39;: &#39;auto&#39;,
+                         &#39;yref&#39;: &#39;container&#39;},
+               &#39;uniformtext&#39;: {&#39;mode&#39;: False},
+               &#39;width&#39;: 400}
+})
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If I then set <code>showrivers=True</code> and re-query the full figure, I see that new keys have appeared in the <code>layout.geo</code> object for <code>rivercolor</code> and <code>riverwidth</code>, showing the dynamic nature of these defaults.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_geos</span><span class="p">(</span><span class="n">showrivers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">full_fig</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">full_figure_for_development</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">geo</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>layout.Geo({
+    &#39;bgcolor&#39;: &#39;#fff&#39;,
+    &#39;center&#39;: {&#39;lat&#39;: 0, &#39;lon&#39;: 0},
+    &#39;coastlinecolor&#39;: &#39;#444&#39;,
+    &#39;coastlinewidth&#39;: 1,
+    &#39;domain&#39;: {&#39;x&#39;: [0, 1], &#39;y&#39;: [0, 1]},
+    &#39;fitbounds&#39;: False,
+    &#39;framecolor&#39;: &#39;#444&#39;,
+    &#39;framewidth&#39;: 1,
+    &#39;lataxis&#39;: {&#39;dtick&#39;: 10, &#39;range&#39;: [-90, 90], &#39;showgrid&#39;: False, &#39;tick0&#39;: 0},
+    &#39;lonaxis&#39;: {&#39;dtick&#39;: 30, &#39;range&#39;: [-180, 180], &#39;showgrid&#39;: False, &#39;tick0&#39;: 0},
+    &#39;projection&#39;: {&#39;rotation&#39;: {&#39;lat&#39;: 0, &#39;lon&#39;: 0, &#39;roll&#39;: 0}, &#39;scale&#39;: 1, &#39;type&#39;: &#39;equirectangular&#39;},
+    &#39;resolution&#39;: 110,
+    &#39;rivercolor&#39;: &#39;#3399FF&#39;,
+    &#39;riverwidth&#39;: 1,
+    &#39;scope&#39;: &#39;world&#39;,
+    &#39;showcoastlines&#39;: True,
+    &#39;showcountries&#39;: False,
+    &#39;showframe&#39;: True,
+    &#39;showlakes&#39;: False,
+    &#39;showland&#39;: False,
+    &#39;showocean&#39;: False,
+    &#39;showrivers&#39;: True,
+    &#39;visible&#39;: True
+})
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h3><p>You can learn more about <a href="/python/reference/">all the available attributes in the plotly figure schema</a> (and read about its <a href="/python/figure-structure/">high-level structure</a>) or about <a href="/python-api-reference/">all the classes and functions in the <code>plotly</code> module</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-About-Dash?">What About Dash?<a class="anchor-link" href="#What-About-Dash?">&#182;</a></h3><p><a href="https://dash.plot.ly/">Dash</a> is an open-source framework for building analytical applications, with no Javascript required, and it is tightly integrated with the Plotly graphing library.</p>
+<p>Learn about how to install Dash at <a href="https://dash.plot.ly/installation">https://dash.plot.ly/installation</a>.</p>
+<p>Everywhere in this page that you see <code>fig.show()</code>, you can display the same figure in a Dash application by passing it to the <code>figure</code> argument of the <a href="https://dash.plot.ly/dash-core-components/graph"><code>Graph</code> component</a> from the built-in <code>dash_core_components</code> package like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span> <span class="c1"># or plotly.express as px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span> <span class="c1"># or any Plotly Express function e.g. px.bar(...)</span>
+<span class="c1"># fig.add_trace( ... )</span>
+<span class="c1"># fig.update_layout( ... )</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dash</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_reloader</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Turn off reloader if inside Jupyter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+{% endraw %}

@@ -1,0 +1,20 @@
+plotly.graph\_objs.choroplethmap package
+========================================
+
+.. automodule:: plotly.graph_objs.choroplethmap
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   plotly.graph_objs.choroplethmap.colorbar
+   plotly.graph_objs.choroplethmap.hoverlabel
+   plotly.graph_objs.choroplethmap.legendgrouptitle
+   plotly.graph_objs.choroplethmap.marker
+   plotly.graph_objs.choroplethmap.selected
+   plotly.graph_objs.choroplethmap.unselected

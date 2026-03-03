@@ -1,0 +1,11 @@
+﻿:mod:`plotly.figure_factory`.create_hexbin_map
+===========================================================
+
+.. currentmodule:: plotly.figure_factory
+
+.. autofunction:: create_hexbin_map
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

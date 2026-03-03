@@ -1,0 +1,19 @@
+plotly.graph\_objs.scattersmith package
+=======================================
+
+.. automodule:: plotly.graph_objs.scattersmith
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   plotly.graph_objs.scattersmith.hoverlabel
+   plotly.graph_objs.scattersmith.legendgrouptitle
+   plotly.graph_objs.scattersmith.marker
+   plotly.graph_objs.scattersmith.selected
+   plotly.graph_objs.scattersmith.unselected

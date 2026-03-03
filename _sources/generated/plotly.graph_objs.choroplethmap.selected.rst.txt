@@ -1,0 +1,7 @@
+plotly.graph\_objs.choroplethmap.selected package
+=================================================
+
+.. automodule:: plotly.graph_objs.choroplethmap.selected
+   :members:
+   :undoc-members:
+   :show-inheritance:

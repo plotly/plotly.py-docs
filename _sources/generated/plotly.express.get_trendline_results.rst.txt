@@ -1,0 +1,11 @@
+﻿:mod:`plotly.express`.get_trendline_results
+========================================================
+
+.. currentmodule:: plotly.express
+
+.. autofunction:: get_trendline_results
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

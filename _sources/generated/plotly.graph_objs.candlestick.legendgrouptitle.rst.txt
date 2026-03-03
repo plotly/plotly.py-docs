@@ -1,0 +1,7 @@
+plotly.graph\_objs.candlestick.legendgrouptitle package
+=======================================================
+
+.. automodule:: plotly.graph_objs.candlestick.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

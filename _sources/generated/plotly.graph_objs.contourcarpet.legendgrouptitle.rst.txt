@@ -1,0 +1,7 @@
+plotly.graph\_objs.contourcarpet.legendgrouptitle package
+=========================================================
+
+.. automodule:: plotly.graph_objs.contourcarpet.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

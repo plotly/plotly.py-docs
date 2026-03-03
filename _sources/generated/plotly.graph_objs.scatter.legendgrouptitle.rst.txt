@@ -1,0 +1,7 @@
+plotly.graph\_objs.scatter.legendgrouptitle package
+===================================================
+
+.. automodule:: plotly.graph_objs.scatter.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

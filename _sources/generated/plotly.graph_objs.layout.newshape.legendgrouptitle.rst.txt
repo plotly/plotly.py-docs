@@ -1,0 +1,7 @@
+plotly.graph\_objs.layout.newshape.legendgrouptitle package
+===========================================================
+
+.. automodule:: plotly.graph_objs.layout.newshape.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

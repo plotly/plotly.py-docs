@@ -1,0 +1,7 @@
+plotly.graph\_objs.densitymap.legendgrouptitle package
+======================================================
+
+.. automodule:: plotly.graph_objs.densitymap.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

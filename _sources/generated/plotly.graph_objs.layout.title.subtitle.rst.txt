@@ -1,0 +1,7 @@
+plotly.graph\_objs.layout.title.subtitle package
+================================================
+
+.. automodule:: plotly.graph_objs.layout.title.subtitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

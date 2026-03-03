@@ -1,0 +1,7 @@
+plotly.graph\_objs.icicle.marker.colorbar.title package
+=======================================================
+
+.. automodule:: plotly.graph_objs.icicle.marker.colorbar.title
+   :members:
+   :undoc-members:
+   :show-inheritance:

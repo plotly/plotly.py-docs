@@ -1,0 +1,11 @@
+﻿:mod:`plotly.express`.density_map
+==============================================
+
+.. currentmodule:: plotly.express
+
+.. autofunction:: density_map
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

@@ -1,0 +1,7 @@
+plotly.graph\_objs.surface.legendgrouptitle package
+===================================================
+
+.. automodule:: plotly.graph_objs.surface.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

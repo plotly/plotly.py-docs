@@ -1,0 +1,68 @@
+---
+description: Details about changes to static image generation in Plotly.py 6.1.
+display_as: file_settings
+language: python
+layout: base
+name: Static Image Generation Changes in Plotly.py 6.1
+order: 40
+page_type: u-guide
+permalink: python/static-image-generation-changes/
+thumbnail: thumbnail/static-image-export.png
+---
+
+{% raw %}
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Static-Image-Generation-Changes-in-Plotly.py-6.1">Static Image Generation Changes in Plotly.py 6.1<a class="anchor-link" href="#Static-Image-Generation-Changes-in-Plotly.py-6.1">&#182;</a></h1><p>Plotly.py 6.1 introduces support for Kaleido v1, which <a href="https://plotly.com/blog/kaleido-the-next-generation/">improves static image generation</a> for Plotly figures.</p>
+<p>While adding support for Kaleido v1, we are deprecating support for earlier versions of Kaleido and support for <a href="/python/orca-management/">Orca</a>. Support for Orca and earlier versions of Kaleido will be removed after September 2025, and we recommend updating to the latest Kaleido. This page documents how to migrate your Plotly code to Kaleido v1 and outlines the changes in functionality.</p>
+<p>To migrate from either Orca or Kaleido v0, first install the latest Kaleido with:</p>
+<div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>kaleido
+</pre></div>
+<h2 id="Chrome">Chrome<a class="anchor-link" href="#Chrome">&#182;</a></h2><p>Kaleido uses Chrome for static image generation. Versions of Kaleido prior to v1 included Chrome as part of the Kaleido package. Kaleido v1 does not include Chrome; instead, it looks for a compatible version of Chrome (or Chromium) already installed on the machine on which it's running.</p>
+<p>See the <a href="/python/static-image-export#chrome">Chrome section</a> on the Static Image Export page for more details on Chome and Kaleido.</p>
+<h2 id="Engine-Parameter">Engine Parameter<a class="anchor-link" href="#Engine-Parameter">&#182;</a></h2><p>The <code>engine</code> parameter on static image export methods and functions is deprecated in Plotly.py 6.2 and will be removed after September 2025. Once the <code>engine</code> parameter is removed, static image generation will use Kaleido v1 if it's installed, or raise an error if it isn't.</p>
+<p>You'll need to update your code to remove references to <code>engine</code>. For example, <code>fig.to_image(format="png", engine="orca")</code> or <code>fig.to_image(format="png", engine="kaleido")</code> needs to be updated to <code>fig.to_image(format="png")</code>. This change applies to: <code>fig.to_image</code>, <code>fig.write_image</code>, <code>plotly.io.to_image</code>, and <code>plotly.io.write_image</code>.</p>
+<h2 id="EPS-Format">EPS Format<a class="anchor-link" href="#EPS-Format">&#182;</a></h2><p>The <code>eps</code> format is no longer supported in Kaleido v1. If your existing code sets <code>format="eps"</code>, you'll need to update it to use another format, for example <code>pdf</code>.</p>
+<h2 id="Config-Settings">Config Settings<a class="anchor-link" href="#Config-Settings">&#182;</a></h2><p>Accessing Kaleido defaults and config settings via <code>plotly.io.kaleido.scope</code> is now deprecated and will be removed after September 2025. You'll need to update any code that uses <code>plotly.io.kaleido.scope</code> to instead use <code>plotly.io.defaults</code>. For example, to set the <code>default_format</code> to "jpeg":</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">defaults</span><span class="o">.</span><span class="n">default_format</span> <span class="o">=</span> <span class="s2">&quot;jpeg&quot;</span>
+<span class="c1"># Instead of:</span>
+<span class="c1"># pio.kaleido.scope.default_format = &quot;jpeg&quot;</span>
+</pre></div>
+<p>The <code>mapbox_access_token</code> config setting is not available on <code>plotly.io.defaults</code> because Mapbox maps are deprecated and will be removed in a future version of Plotly.py. See <a href="https://plotly.com/python/mapbox-to-maplibre/">MapLibre Migration</a> for more details.</p>
+<p>If you are migrating from Orca, the following config settings do not apply to Kaleido: <code>server_url</code>, <code>port</code>, <code>timeout</code>, and <code>use_xvfb</code>, but other settings, such as <code>default_format</code>, can be accessed via <code>plotly.io.defaults</code>.</p>
+<h2 id="Multiple-Image-Export">Multiple Image Export<a class="anchor-link" href="#Multiple-Image-Export">&#182;</a></h2><p>Plotly.py 6.1 includes a <code>write_images</code> function (<code>plotly.io.write_images</code>), which we recommend over <code>write_image</code> when exporting more than one figure. Calling <code>write_images</code> with a list of figures (or dicts representing figures) to export provides better performance than multiple calls with <code>write_image</code>. See the <a href="/python/static-image-export#write-multiple-images">Write Multiple Images</a> section for more details.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-About-Dash?">What About Dash?<a class="anchor-link" href="#What-About-Dash?">&#182;</a></h3><p><a href="https://dash.plot.ly/">Dash</a> is an open-source framework for building analytical applications, with no Javascript required, and it is tightly integrated with the Plotly graphing library.</p>
+<p>Learn about how to install Dash at <a href="https://dash.plot.ly/installation">https://dash.plot.ly/installation</a>.</p>
+<p>Everywhere in this page that you see <code>fig.show()</code>, you can display the same figure in a Dash application by passing it to the <code>figure</code> argument of the <a href="https://dash.plot.ly/dash-core-components/graph"><code>Graph</code> component</a> from the built-in <code>dash_core_components</code> package like this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span> <span class="c1"># or plotly.express as px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span> <span class="c1"># or any Plotly Express function e.g. px.bar(...)</span>
+<span class="c1"># fig.add_trace( ... )</span>
+<span class="c1"># fig.update_layout( ... )</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dash</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_reloader</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Turn off reloader if inside Jupyter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+{% endraw %}

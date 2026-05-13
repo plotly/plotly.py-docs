@@ -79,7 +79,6 @@
 <li><a class="reference internal" href="#module-plotly.basedatatypes">plotly.basedatatypes module</a></li>
 <li><a class="reference internal" href="#module-plotly.basewidget">plotly.basewidget module</a></li>
 <li><a class="reference internal" href="#module-plotly.callbacks">plotly.callbacks module</a></li>
-<li><a class="reference internal" href="#module-plotly.conftest">plotly.conftest module</a></li>
 <li><a class="reference internal" href="#module-plotly.exceptions">plotly.exceptions module</a></li>
 <li><a class="reference internal" href="#module-plotly.files">plotly.files module</a></li>
 <li><a class="reference internal" href="#module-plotly.missing_anywidget">plotly.missing_anywidget module</a></li>
@@ -2403,7 +2402,7 @@ on the arguments inside <code class="docutils literal notranslate"><span class="
 <span id="plotly-basewidget-module"></span><h2>plotly.basewidget module<a class="headerlink" href="#module-plotly.basewidget" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="plotly.basewidget.BaseFigureWidget">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.basewidget.</span></code><code class="sig-name descname"><span class="pre">BaseFigureWidget</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.basewidget.BaseFigureWidget" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.basewidget.</span></code><code class="sig-name descname"><span class="pre">BaseFigureWidget</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">t.Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">t.Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.basewidget.BaseFigureWidget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="plotly.basedatatypes.BaseFigure.html#plotly.basedatatypes.BaseFigure" title="plotly.basedatatypes.BaseFigure"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseFigure</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">anywidget.widget.AnyWidget</span></code></p>
 <p>Base class for FigureWidget. The FigureWidget class is code-generated as a
 subclass</p>
@@ -2576,13 +2575,13 @@ mouse when the event is triggered.</p>
 <li><p>0: No button or un-initialized</p></li>
 <li><p>1: Primary button (usually left)</p></li>
 <li><p>2: Secondary button (usually right)</p></li>
-<li><p>4: Auxilary button (usually middle or mouse wheel button)</p></li>
+<li><p>4: Auxiliary button (usually middle or mouse wheel button)</p></li>
 <li><p>8: 4th button (typically the “Browser Back” button)</p></li>
 <li><p>16: 5th button (typically the “Browser Forward” button)</p></li>
 </ul>
 <p>Combinations of buttons are represented as the decimal form of the
 bitmask of the values above.</p>
-<p>For example, pressing both the primary (1) and auxilary (4) buttons
+<p>For example, pressing both the primary (1) and auxiliary (4) buttons
 will result in a code of 5</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2763,14 +2762,6 @@ boundary</p>
 </dd></dl>
 
 </dd></dl>
-
-</div>
-<div class="section" id="module-plotly.conftest">
-<span id="plotly-conftest-module"></span><h2>plotly.conftest module<a class="headerlink" href="#module-plotly.conftest" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt id="plotly.conftest.pytest_ignore_collect">
-<code class="sig-prename descclassname"><span class="pre">plotly.conftest.</span></code><code class="sig-name descname"><span class="pre">pytest_ignore_collect</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.conftest.pytest_ignore_collect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </div>
 <div class="section" id="module-plotly.exceptions">

@@ -55,14 +55,6 @@ plotly.callbacks module
    :undoc-members:
    :show-inheritance:
 
-plotly.conftest module
-----------------------
-
-.. automodule:: plotly.conftest
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 plotly.exceptions module
 ------------------------
 

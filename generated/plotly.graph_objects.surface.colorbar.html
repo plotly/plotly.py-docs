@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.graph_objects.surface.colorbar package &#8212;  6.8.0 documentation</title>
+    <title>plotly.graph_objects.surface.colorbar package &#8212;  7.0.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -119,12 +119,18 @@
 <dt id="plotly.graph_objects.surface.colorbar.Tickfont.color">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">color</span></code><a class="headerlink" href="#plotly.graph_objects.surface.colorbar.Tickfont.color" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>The ‘color’ property is a color and may be specified as:</dt><dd><ul class="simple">
-<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
-<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
-<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
-<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
-<li><p>A named CSS color: see <a class="reference external" href="https://plotly.com/python/css-colors/">https://plotly.com/python/css-colors/</a> for a list</p></li>
+<dt>The ‘color’ property is a color and may be specified as a string in the following formats:</dt><dd><ul class="simple">
+<li><p>hex or short hex (e.g. ‘#d3d3d3’, ‘#d3d’)</p></li>
+<li><p>hex or short hex with alpha (e.g. ‘#d3d3d380’, ‘#d3d8’)</p></li>
+<li><p>rgb (e.g. ‘rgb(255, 0, 0)’, ‘rgb(255 0 0)’)</p></li>
+<li><p>rgba (e.g. ‘rgba(255, 0, 0, 0.5)’, ‘rgba(255 0 0 / 0.5)’)</p></li>
+<li><p>hsl (e.g. ‘hsl(0, 100%, 50%)’, ‘hsl(0deg 100% 50%)’)</p></li>
+<li><p>hsla (e.g. ‘hsla(0, 100%, 50%, 0.5)’, ‘hsla(0deg 100% 50% / 0.5)’)</p></li>
+<li><p>hwb (e.g. ‘hwb(0 0% 100%)’)</p></li>
+<li><p>lab/lch/oklab/oklch (e.g. ‘oklch(0.7 0.15 180)’)</p></li>
+<li><p>color (e.g. ‘color(display-p3 1 0 0)’)</p></li>
+<li><p>named colors (full list: <a class="reference external" href="https://www.w3.org/TR/css-color-4/#named-color">https://www.w3.org/TR/css-color-4/#named-color</a>)</p></li>
+<li><p>Any other supported CSS 4 color format: <a class="reference external" href="https://www.w3.org/TR/css-color-4/">https://www.w3.org/TR/css-color-4/</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -485,8 +491,8 @@ to the Font constructor</p></li>
 <dt id="plotly.graph_objects.surface.colorbar.Title.side">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">side</span></code><a class="headerlink" href="#plotly.graph_objects.surface.colorbar.Title.side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines the location of color bar’s title with respect to
-the color bar. Defaults to “top” when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> if “v” and
-defaults to “right” when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> if “h”.</p>
+the color bar. Defaults to “top” when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “v” and
+defaults to “right” when <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is “h”.</p>
 <dl class="simple">
 <dt>The ‘side’ property is an enumeration that may be specified as:</dt><dd><ul class="simple">
 <li><dl class="simple">

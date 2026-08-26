@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.io.to_templated &#8212;  6.8.0 documentation</title>
+    <title>plotly.io.to_templated &#8212;  7.0.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -142,14 +142,14 @@ the template</p></li>
 </pre></div>
 </div>
 <p>Construct a figure with large courier text</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure Title&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                        <span class="s1">&#39;font&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;family&#39;</span><span class="p">:</span> <span class="s1">&#39;Courier&#39;</span><span class="p">},</span>
-<span class="gp">... </span>                        <span class="s1">&#39;template&#39;</span><span class="p">:</span><span class="s2">&quot;none&quot;</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Figure Title'</span><span class="p">,</span>
+<span class="gp">... </span>                        <span class="s1">'font'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'size'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">'family'</span><span class="p">:</span> <span class="s1">'Courier'</span><span class="p">},</span>
+<span class="gp">... </span>                        <span class="s1">'template'</span><span class="p">:</span><span class="s2">"none"</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> 
 <span class="go">Figure({</span>
-<span class="go">    &#39;data&#39;: [],</span>
-<span class="go">    &#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;, &#39;size&#39;: 20},</span>
-<span class="go">               &#39;template&#39;: &#39;...&#39;, &#39;title&#39;: {&#39;text&#39;: &#39;Figure Title&#39;}}</span>
+<span class="go">    'data': [],</span>
+<span class="go">    'layout': {'font': {'family': 'Courier', 'size': 20},</span>
+<span class="go">               'template': '...', 'title': {'text': 'Figure Title'}}</span>
 <span class="go">})</span>
 </pre></div>
 </div>
@@ -158,42 +158,42 @@ been moved into the template property.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">templated_fig</span> <span class="o">=</span> <span class="n">pio</span><span class="o">.</span><span class="n">to_templated</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
 <span class="go">layout.Template({</span>
-<span class="go">    &#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;, &#39;size&#39;: 20}}</span>
+<span class="go">    'layout': {'font': {'family': 'Courier', 'size': 20}}</span>
 <span class="go">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">templated_fig</span>
 <span class="go">Figure({</span>
-<span class="go">    &#39;data&#39;: [], &#39;layout&#39;: {&#39;template&#39;: &#39;...&#39;, &#39;title&#39;: {&#39;text&#39;: &#39;Figure Title&#39;}}</span>
+<span class="go">    'data': [], 'layout': {'template': '...', 'title': {'text': 'Figure Title'}}</span>
 <span class="go">})</span>
 </pre></div>
 </div>
 <p>Next create a new figure with this template</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span>
-<span class="gp">... </span>    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure 2 Title&#39;</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="s1">&#39;template&#39;</span><span class="p">:</span> <span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span><span class="p">})</span>
+<span class="gp">... </span>    <span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Figure 2 Title'</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">'template'</span><span class="p">:</span> <span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig2</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
 <span class="go">layout.Template({</span>
-<span class="go">    &#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;, &#39;size&#39;: 20}}</span>
+<span class="go">    'layout': {'font': {'family': 'Courier', 'size': 20}}</span>
 <span class="go">})</span>
 </pre></div>
 </div>
 <p>The default font in fig2 will now be size 20 Courier.</p>
 <p>Next, register as a named template…</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="p">[</span><span class="s1">&#39;large_courier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="p">[</span><span class="s1">'large_courier'</span><span class="p">]</span> <span class="o">=</span> <span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
 </pre></div>
 </div>
 <p>and specify this template by name when constructing a figure.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span>
-<span class="gp">... </span>    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure 3 Title&#39;</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="s1">&#39;template&#39;</span><span class="p">:</span> <span class="s1">&#39;large_courier&#39;</span><span class="p">})</span> 
+<span class="gp">... </span>    <span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Figure 3 Title'</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">'template'</span><span class="p">:</span> <span class="s1">'large_courier'</span><span class="p">})</span> 
 <span class="go">Figure(...)</span>
 </pre></div>
 </div>
 <p>Finally, set this as the default template to be applied to all new figures</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;large_courier&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure 4 Title&#39;</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s1">'large_courier'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Figure 4 Title'</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
 <span class="go">layout.Template({</span>
-<span class="go">    &#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;, &#39;size&#39;: 20}}</span>
+<span class="go">    'layout': {'font': {'family': 'Courier', 'size': 20}}</span>
 <span class="go">})</span>
 </pre></div>
 </div>

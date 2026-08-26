@@ -1,0 +1,19 @@
+plotly.graph\_objs.quiver package
+=================================
+
+.. automodule:: plotly.graph_objs.quiver
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   plotly.graph_objs.quiver.hoverlabel
+   plotly.graph_objs.quiver.legendgrouptitle
+   plotly.graph_objs.quiver.marker
+   plotly.graph_objs.quiver.selected
+   plotly.graph_objs.quiver.unselected

@@ -19,12 +19,10 @@ Subpackages
    plotly.graph_objs.carpet
    plotly.graph_objs.choropleth
    plotly.graph_objs.choroplethmap
-   plotly.graph_objs.choroplethmapbox
    plotly.graph_objs.cone
    plotly.graph_objs.contour
    plotly.graph_objs.contourcarpet
    plotly.graph_objs.densitymap
-   plotly.graph_objs.densitymapbox
    plotly.graph_objs.funnel
    plotly.graph_objs.funnelarea
    plotly.graph_objs.heatmap
@@ -41,6 +39,7 @@ Subpackages
    plotly.graph_objs.parcats
    plotly.graph_objs.parcoords
    plotly.graph_objs.pie
+   plotly.graph_objs.quiver
    plotly.graph_objs.sankey
    plotly.graph_objs.scatter
    plotly.graph_objs.scatter3d
@@ -48,7 +47,6 @@ Subpackages
    plotly.graph_objs.scattergeo
    plotly.graph_objs.scattergl
    plotly.graph_objs.scattermap
-   plotly.graph_objs.scattermapbox
    plotly.graph_objs.scatterpolar
    plotly.graph_objs.scatterpolargl
    plotly.graph_objs.scattersmith

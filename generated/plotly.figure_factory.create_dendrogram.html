@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.figure_factory.create_dendrogram &#8212;  6.8.0 documentation</title>
+    <title>plotly.figure_factory.create_dendrogram &#8212;  7.0.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -16,8 +16,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="plotly.figure_factory.create_distplot" href="plotly.figure_factory.create_distplot.html" />
-    <link rel="prev" title="plotly.figure_factory.create_choropleth" href="plotly.figure_factory.create_choropleth.html" />
+    <link rel="next" title="plotly.figure_factory.create_hexbin_map" href="plotly.figure_factory.create_hexbin_map.html" />
+    <link rel="prev" title="plotly.figure_factory: helper methods for building specific complex charts" href="../plotly.figure_factory.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -84,11 +84,11 @@
               
                 
   <li>
-    <a href="plotly.figure_factory.create_choropleth.html" title="Previous Chapter: plotly.figure_factory.create_choropleth"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.figure...</span>
+    <a href="../plotly.figure_factory.html" title="Previous Chapter: plotly.figure_factory: helper methods for building specific complex charts"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.figure...</span>
     </a>
   </li>
   <li>
-    <a href="plotly.figure_factory.create_distplot.html" title="Next Chapter: plotly.figure_factory.create_distplot"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
+    <a href="plotly.figure_factory.create_hexbin_map.html" title="Next Chapter: plotly.figure_factory.create_hexbin_map"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
     </a>
   </li>
               
@@ -167,9 +167,9 @@ clusters</p></li>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="s1">&#39;Oxana&#39;</span><span class="p">,</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Chelsea&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dendro</span> <span class="o">=</span> <span class="n">create_dendrogram</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dendro</span><span class="o">.</span><span class="n">update_layout</span><span class="p">({</span><span class="s1">&#39;width&#39;</span><span class="p">:</span><span class="mi">700</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span><span class="mi">500</span><span class="p">})</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Jack'</span><span class="p">,</span> <span class="s1">'Oxana'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">,</span> <span class="s1">'Chelsea'</span><span class="p">,</span> <span class="s1">'Mark'</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dendro</span> <span class="o">=</span> <span class="n">create_dendrogram</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">'right'</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dendro</span><span class="o">.</span><span class="n">update_layout</span><span class="p">({</span><span class="s1">'width'</span><span class="p">:</span><span class="mi">700</span><span class="p">,</span> <span class="s1">'height'</span><span class="p">:</span><span class="mi">500</span><span class="p">})</span> 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dendro</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -181,7 +181,7 @@ clusters</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Index</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;H&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;J&#39;</span><span class="p">]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Index</span><span class="o">=</span> <span class="p">[</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'C'</span><span class="p">,</span><span class="s1">'D'</span><span class="p">,</span><span class="s1">'E'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'G'</span><span class="p">,</span><span class="s1">'H'</span><span class="p">,</span><span class="s1">'I'</span><span class="p">,</span><span class="s1">'J'</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)),</span> <span class="n">index</span><span class="o">=</span><span class="n">Index</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_dendrogram</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">Index</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.subplots: helper function for laying out multi-plot figures &#8212;  6.8.0 documentation</title>
+    <title>plotly.subplots: helper function for laying out multi-plot figures &#8212;  7.0.0 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/plotly-style.css" />
@@ -216,7 +216,6 @@ times ‘cols’ cells.)</p></li>
 <li><p>’polar’: Polar subplot for scatterpolar, barpolar, etc.</p></li>
 <li><p>’ternary’: Ternary subplot for scatterternary</p></li>
 <li><p>’map’: Map subplot for scattermap</p></li>
-<li><p>’mapbox’: Mapbox subplot for scattermapbox</p></li>
 <li><dl class="simple">
 <dt>’domain’: Subplot type for traces that are individually</dt><dd><p>positioned. pie, parcoords, parcats, etc.</p>
 </dd>
@@ -362,10 +361,10 @@ already contains axes, they will be overwritten.</p></li>
 </pre></div>
 </div>
 <p>Example 3:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># irregular subplot layout (more examples below under &#39;specs&#39;)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># irregular subplot layout (more examples below under 'specs')</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="gp">... </span>                    <span class="n">specs</span><span class="o">=</span><span class="p">[[{},</span> <span class="p">{}],</span>
-<span class="gp">... </span>                    <span class="p">[{</span><span class="s1">&#39;colspan&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="kc">None</span><span class="p">]])</span>
+<span class="gp">... </span>                    <span class="p">[{</span><span class="s1">'colspan'</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="kc">None</span><span class="p">]])</span>
 </pre></div>
 </div>
 <p>This is the format of your plot grid:
@@ -381,7 +380,7 @@ already contains axes, they will be overwritten.</p></li>
 </div>
 <p>Example 4:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># insets</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">insets</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;cell&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">}])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">insets</span><span class="o">=</span><span class="p">[{</span><span class="s1">'cell'</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="s1">'l'</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">}])</span>
 </pre></div>
 </div>
 <p>This is the format of your plot grid:
@@ -390,13 +389,13 @@ already contains axes, they will be overwritten.</p></li>
 [ xaxis2,yaxis2 ] over [ (1,1) xaxis1,yaxis1 ]</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">add_scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> 
 <span class="go">Figure(...)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">add_scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">xaxis</span><span class="o">=</span><span class="s1">&#39;x2&#39;</span><span class="p">,</span> <span class="n">yaxis</span><span class="o">=</span><span class="s1">&#39;y2&#39;</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">add_scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">xaxis</span><span class="o">=</span><span class="s1">'x2'</span><span class="p">,</span> <span class="n">yaxis</span><span class="o">=</span><span class="s1">'y2'</span><span class="p">)</span> 
 <span class="go">Figure(...)</span>
 </pre></div>
 </div>
 <p>Example 5:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># include subplot titles</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">subplot_titles</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Plot 1&#39;</span><span class="p">,</span><span class="s1">&#39;Plot 2&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">subplot_titles</span><span class="o">=</span><span class="p">(</span><span class="s1">'Plot 1'</span><span class="p">,</span><span class="s1">'Plot 2'</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>This is the format of your plot grid:
@@ -411,8 +410,8 @@ already contains axes, they will be overwritten.</p></li>
 <p>Example 6:</p>
 <p>Subplot with mixed subplot types</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<span class="gp">... </span>                    <span class="n">specs</span><span class="o">=</span><span class="p">[[{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;xy&#39;</span><span class="p">},</span>    <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;polar&#39;</span><span class="p">}],</span>
-<span class="gp">... </span>                           <span class="p">[{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;scene&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ternary&#39;</span><span class="p">}]])</span>
+<span class="gp">... </span>                    <span class="n">specs</span><span class="o">=</span><span class="p">[[{</span><span class="s1">'type'</span><span class="p">:</span> <span class="s1">'xy'</span><span class="p">},</span>    <span class="p">{</span><span class="s1">'type'</span><span class="p">:</span> <span class="s1">'polar'</span><span class="p">}],</span>
+<span class="gp">... </span>                           <span class="p">[{</span><span class="s1">'type'</span><span class="p">:</span> <span class="s1">'scene'</span><span class="p">},</span> <span class="p">{</span><span class="s1">'type'</span><span class="p">:</span> <span class="s1">'ternary'</span><span class="p">}]])</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">add_traces</span><span class="p">(</span>

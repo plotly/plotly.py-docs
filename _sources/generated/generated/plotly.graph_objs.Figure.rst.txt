@@ -22,12 +22,10 @@ plotly.graph\_objs.Figure
       ~Figure.add_carpet
       ~Figure.add_choropleth
       ~Figure.add_choroplethmap
-      ~Figure.add_choroplethmapbox
       ~Figure.add_cone
       ~Figure.add_contour
       ~Figure.add_contourcarpet
       ~Figure.add_densitymap
-      ~Figure.add_densitymapbox
       ~Figure.add_funnel
       ~Figure.add_funnelarea
       ~Figure.add_heatmap
@@ -46,6 +44,7 @@ plotly.graph\_objs.Figure
       ~Figure.add_parcats
       ~Figure.add_parcoords
       ~Figure.add_pie
+      ~Figure.add_quiver
       ~Figure.add_sankey
       ~Figure.add_scatter
       ~Figure.add_scatter3d
@@ -53,7 +52,6 @@ plotly.graph\_objs.Figure
       ~Figure.add_scattergeo
       ~Figure.add_scattergl
       ~Figure.add_scattermap
-      ~Figure.add_scattermapbox
       ~Figure.add_scatterpolar
       ~Figure.add_scatterpolargl
       ~Figure.add_scattersmith
@@ -82,7 +80,6 @@ plotly.graph\_objs.Figure
       ~Figure.for_each_layout_image
       ~Figure.for_each_legend
       ~Figure.for_each_map
-      ~Figure.for_each_mapbox
       ~Figure.for_each_polar
       ~Figure.for_each_scene
       ~Figure.for_each_selection
@@ -104,7 +101,6 @@ plotly.graph\_objs.Figure
       ~Figure.select_geos
       ~Figure.select_layout_images
       ~Figure.select_legends
-      ~Figure.select_mapboxes
       ~Figure.select_maps
       ~Figure.select_polars
       ~Figure.select_scenes
@@ -130,7 +126,6 @@ plotly.graph\_objs.Figure
       ~Figure.update_layout
       ~Figure.update_layout_images
       ~Figure.update_legends
-      ~Figure.update_mapboxes
       ~Figure.update_maps
       ~Figure.update_polars
       ~Figure.update_scenes

@@ -1,7 +1,0 @@
-plotly.graph\_objs.scattermapbox.legendgrouptitle package
-=========================================================
-
-.. automodule:: plotly.graph_objs.scattermapbox.legendgrouptitle
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.figure_factory: helper methods for building specific complex charts &#8212;  6.8.0 documentation</title>
+    <title>plotly.figure_factory: helper methods for building specific complex charts &#8212;  7.0.0 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/plotly-style.css" />
@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="plotly.figure_factory.create_2d_density" href="generated/plotly.figure_factory.create_2d_density.html" />
+    <link rel="next" title="plotly.figure_factory.create_dendrogram" href="generated/plotly.figure_factory.create_dendrogram.html" />
     <link rel="prev" title="plotly.subplots.make_subplots" href="generated/plotly.subplots.make_subplots.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -88,7 +88,7 @@
     </a>
   </li>
   <li>
-    <a href="generated/plotly.figure_factory.create_2d_density.html" title="Next Chapter: plotly.figure_factory.create_2d_density"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
+    <a href="generated/plotly.figure_factory.create_dendrogram.html" title="Next Chapter: plotly.figure_factory.create_dendrogram"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
     </a>
   </li>
               
@@ -124,44 +124,14 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_2d_density.html#plotly.figure_factory.create_2d_density" title="plotly.figure_factory.create_2d_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_2d_density</span></code></a>(x, y[, colorscale, …])</p></td>
-<td><p><strong>deprecated</strong>, use instead <a class="reference internal" href="generated/plotly.express.density_heatmap.html#plotly.express.density_heatmap" title="plotly.express.density_heatmap"><code class="xref py py-func docutils literal notranslate"><span class="pre">plotly.express.density_heatmap()</span></code></a>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_annotated_heatmap.html#plotly.figure_factory.create_annotated_heatmap" title="plotly.figure_factory.create_annotated_heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_annotated_heatmap</span></code></a>(z[, x, y, …])</p></td>
-<td><p><strong>deprecated</strong>, use instead <a class="reference internal" href="generated/plotly.express.imshow.html#plotly.express.imshow" title="plotly.express.imshow"><code class="xref py py-func docutils literal notranslate"><span class="pre">plotly.express.imshow()</span></code></a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_bullet.html#plotly.figure_factory.create_bullet" title="plotly.figure_factory.create_bullet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_bullet</span></code></a>(data[, markers, measures, …])</p></td>
-<td><p><strong>deprecated</strong>, use instead the plotly.graph_objects trace <a class="reference internal" href="generated/plotly.graph_objects.html#plotly.graph_objects.Indicator" title="plotly.graph_objects.Indicator"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.Indicator</span></code></a>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_candlestick.html#plotly.figure_factory.create_candlestick" title="plotly.figure_factory.create_candlestick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_candlestick</span></code></a>(open, high, low, close[, …])</p></td>
-<td><p><strong>deprecated</strong>, use instead the plotly.graph_objects trace <a class="reference internal" href="generated/plotly.graph_objects.html#plotly.graph_objects.Candlestick" title="plotly.graph_objects.Candlestick"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.Candlestick</span></code></a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_choropleth.html#plotly.figure_factory.create_choropleth" title="plotly.figure_factory.create_choropleth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_choropleth</span></code></a>(fips, values[, scope, …])</p></td>
-<td><p><strong>deprecated</strong>, use instead <a class="reference internal" href="generated/plotly.express.choropleth.html#plotly.express.choropleth" title="plotly.express.choropleth"><code class="xref py py-func docutils literal notranslate"><span class="pre">plotly.express.choropleth()</span></code></a> with custom GeoJSON.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_dendrogram.html#plotly.figure_factory.create_dendrogram" title="plotly.figure_factory.create_dendrogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_dendrogram</span></code></a>(X[, orientation, labels, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_dendrogram.html#plotly.figure_factory.create_dendrogram" title="plotly.figure_factory.create_dendrogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_dendrogram</span></code></a>(X[, orientation, labels, …])</p></td>
 <td><p>Function that returns a dendrogram Plotly figure object.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_distplot.html#plotly.figure_factory.create_distplot" title="plotly.figure_factory.create_distplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_distplot</span></code></a>(hist_data, group_labels[, …])</p></td>
-<td><p>Function that creates a distplot similar to seaborn.distplot; <strong>this function is deprecated</strong>, use instead <a class="reference internal" href="generated/plotly.express.html#module-plotly.express" title="plotly.express"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code></a> functions, for example</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_facet_grid.html#plotly.figure_factory.create_facet_grid" title="plotly.figure_factory.create_facet_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_facet_grid</span></code></a>(df[, x, y, facet_row, …])</p></td>
-<td><p>Returns figure for facet grid; <strong>this function is deprecated</strong>, since plotly.express functions should be used instead, for example</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_gantt.html#plotly.figure_factory.create_gantt" title="plotly.figure_factory.create_gantt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_gantt</span></code></a>(df[, colors, index_col, …])</p></td>
-<td><p><strong>deprecated</strong>, use instead <a class="reference internal" href="generated/plotly.express.timeline.html#plotly.express.timeline" title="plotly.express.timeline"><code class="xref py py-func docutils literal notranslate"><span class="pre">plotly.express.timeline()</span></code></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_hexbin_map.html#plotly.figure_factory.create_hexbin_map" title="plotly.figure_factory.create_hexbin_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_hexbin_map</span></code></a>([data_frame, lat, lon, …])</p></td>
 <td><p>Returns a figure aggregating scattered points into connected hexagons</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_ohlc.html#plotly.figure_factory.create_ohlc" title="plotly.figure_factory.create_ohlc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_ohlc</span></code></a>(open, high, low, close[, dates, …])</p></td>
-<td><p><strong>deprecated</strong>, use instead the plotly.graph_objects trace <a class="reference internal" href="generated/plotly.graph_objects.html#plotly.graph_objects.Ohlc" title="plotly.graph_objects.Ohlc"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.Ohlc</span></code></a></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_quiver.html#plotly.figure_factory.create_quiver" title="plotly.figure_factory.create_quiver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_quiver</span></code></a>(x, y, u, v[, scale, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_quiver.html#plotly.figure_factory.create_quiver" title="plotly.figure_factory.create_quiver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_quiver</span></code></a>(x, y, u, v[, scale, …])</p></td>
 <td><p>Returns data for a quiver plot.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_scatterplotmatrix.html#plotly.figure_factory.create_scatterplotmatrix" title="plotly.figure_factory.create_scatterplotmatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_scatterplotmatrix</span></code></a>(df[, index, …])</p></td>
-<td><p>Returns data for a scatterplot matrix; <strong>deprecated</strong>, use instead the plotly.graph_objects trace <a class="reference internal" href="generated/plotly.graph_objects.html#plotly.graph_objects.Splom" title="plotly.graph_objects.Splom"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.Splom</span></code></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_streamline.html#plotly.figure_factory.create_streamline" title="plotly.figure_factory.create_streamline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_streamline</span></code></a>(x, y, u, v[, density, …])</p></td>
 <td><p>Returns data for a streamline plot.</p></td>
@@ -174,9 +144,6 @@
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_trisurf.html#plotly.figure_factory.create_trisurf" title="plotly.figure_factory.create_trisurf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_trisurf</span></code></a>(x, y, z, simplices[, …])</p></td>
 <td><p>Returns figure for a triangulated surface plot</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.figure_factory.create_violin.html#plotly.figure_factory.create_violin" title="plotly.figure_factory.create_violin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_violin</span></code></a>(data[, data_header, …])</p></td>
-<td><p><strong>deprecated</strong>, use instead the plotly.graph_objects trace <a class="reference internal" href="generated/plotly.graph_objects.html#plotly.graph_objects.Violin" title="plotly.graph_objects.Violin"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.Violin</span></code></a>.</p></td>
 </tr>
 </tbody>
 </table>

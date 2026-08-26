@@ -1,7 +1,0 @@
-plotly.graph\_objs.choroplethmapbox.legendgrouptitle package
-============================================================
-
-.. automodule:: plotly.graph_objs.choroplethmapbox.legendgrouptitle
-   :members:
-   :undoc-members:
-   :show-inheritance:

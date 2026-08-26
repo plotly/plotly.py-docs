@@ -1,0 +1,7 @@
+plotly.graph\_objs.quiver.legendgrouptitle package
+==================================================
+
+.. automodule:: plotly.graph_objs.quiver.legendgrouptitle
+   :members:
+   :undoc-members:
+   :show-inheritance:

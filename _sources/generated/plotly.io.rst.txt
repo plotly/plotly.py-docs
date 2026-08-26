@@ -32,11 +32,3 @@ plotly.io.kaleido module
    :members:
    :undoc-members:
    :show-inheritance:
-
-plotly.io.orca module
----------------------
-
-.. automodule:: plotly.io.orca
-   :members:
-   :undoc-members:
-   :show-inheritance:

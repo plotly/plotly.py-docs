@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.io package &#8212;  6.8.0 documentation</title>
+    <title>plotly.io package &#8212;  7.0.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -77,7 +77,6 @@
 <li><a class="reference internal" href="#module-plotly.io.base_renderers">plotly.io.base_renderers module</a></li>
 <li><a class="reference internal" href="#module-plotly.io.json">plotly.io.json module</a></li>
 <li><a class="reference internal" href="#module-plotly.io.kaleido">plotly.io.kaleido module</a></li>
-<li><a class="reference internal" href="#module-plotly.io.orca">plotly.io.orca module</a></li>
 </ul>
 </li>
 </ul>
@@ -346,75 +345,37 @@ id attribute is a UUID.</p></li>
 
 <dl class="py function">
 <dt id="plotly.io.to_image">
-<code class="sig-prename descclassname"><span class="pre">plotly.io.</span></code><code class="sig-name descname"><span class="pre">to_image</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">plotly.graph_objects._figure.Figure</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)"><span class="pre">bytes</span></a><a class="headerlink" href="#plotly.io.to_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">plotly.io.</span></code><code class="sig-name descname"><span class="pre">to_image</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">plotly.graph_objects._figure.Figure</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)"><span class="pre">bytes</span></a><a class="headerlink" href="#plotly.io.to_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a figure to a static image bytes string</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fig</strong> – Figure object or dict representing a figure</p></li>
-<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – <dl class="simple">
-<dt>The desired image format. One of</dt><dd><ul>
+<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – <dl class="simple">
+<dt>(optional) The desired image format. One of:</dt><dd><ul>
 <li><p>’png’</p></li>
 <li><p>’jpg’ or ‘jpeg’</p></li>
 <li><p>’webp’</p></li>
 <li><p>’svg’</p></li>
 <li><p>’pdf’</p></li>
-<li><p>’eps’ (deprecated) (Requires the poppler library to be installed and on the PATH)</p></li>
-</ul>
-</dd>
-<dt>If not specified, will default to:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_format</span></code> if engine is “kaleido”</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.orca.config.default_format</span></code> if engine is “orca” (deprecated)</p></li>
 </ul>
 </dd>
 </dl>
+<p>Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_format</span></code>.</p>
 </p></li>
-<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – <p>The width of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
-property is 1.0, this will also be the width of the exported image
-in physical pixels.</p>
-<dl class="simple">
-<dt>If not specified, will default to:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_width</span></code> if engine is “kaleido”</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.orca.config.default_width</span></code> if engine is “orca” (deprecated)</p></li>
-</ul>
-</dd>
-</dl>
-</p></li>
-<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – <p>The height of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
-property is 1.0, this will also be the height of the exported image
-in physical pixels.</p>
-<dl class="simple">
-<dt>If not specified, will default to:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_height</span></code> if engine is “kaleido”</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.orca.config.default_height</span></code> if engine is “orca” (deprecated)</p></li>
-</ul>
-</dd>
-</dl>
-</p></li>
-<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – <p>The scale factor to use when exporting the figure. A scale factor
-larger than 1.0 will increase the image resolution with respect
-to the figure’s layout pixel dimensions. Whereas as scale factor of
-less than 1.0 will decrease the image resolution.</p>
-<dl class="simple">
-<dt>If not specified, will default to:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_scale</span></code> if engine is “kaleido”</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.orca.config.default_scale</span></code> if engine is “orca” (deprecated)</p></li>
-</ul>
-</dd>
-</dl>
-</p></li>
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – True if the figure should be validated before being converted to
-an image, False otherwise.</p></li>
-<li><p><strong>(</strong><strong>deprecated</strong><strong>)</strong> (<em>engine</em>) – <p>Image export engine to use. This parameter is deprecated and Orca engine support will be
-dropped in the next major Plotly version. Until then, the following values are supported:</p>
-<blockquote>
-<div><ul>
-<li><p>”kaleido”: Use Kaleido for image export</p></li>
-<li><p>”orca”: Use Orca for image export</p></li>
-<li><p>”auto” (default): Use Kaleido if installed, otherwise use Orca</p></li>
-</ul>
-</div></blockquote>
-</p></li>
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The width of the exported image in layout pixels. If the
+<code class="docutils literal notranslate"><span class="pre">scale</span></code> property is 1.0, this will also be the width of the exported image
+in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_width</span></code>.</p></li>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The height of the exported image in layout pixels. If the
+<code class="docutils literal notranslate"><span class="pre">scale</span></code> property is 1.0, this will also be the height of the exported image
+in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_height</span></code>.</p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – (optional) The scale factor to use when exporting the figure. A scale
+factor larger than 1.0 will increase the image resolution with respect
+to the figure’s layout pixel dimensions, while a scale factor of
+less than 1.0 will decrease the image resolution. Defaults to
+<code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_scale</span></code>.</p></li>
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – (optional) True if the figure should be validated before being converted
+to an image, False otherwise. Defaults to True.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -492,14 +453,14 @@ the template</p></li>
 </pre></div>
 </div>
 <p>Construct a figure with large courier text</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure Title&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                        <span class="s1">&#39;font&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;family&#39;</span><span class="p">:</span> <span class="s1">&#39;Courier&#39;</span><span class="p">},</span>
-<span class="gp">... </span>                        <span class="s1">&#39;template&#39;</span><span class="p">:</span><span class="s2">&quot;none&quot;</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Figure Title'</span><span class="p">,</span>
+<span class="gp">... </span>                        <span class="s1">'font'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'size'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">'family'</span><span class="p">:</span> <span class="s1">'Courier'</span><span class="p">},</span>
+<span class="gp">... </span>                        <span class="s1">'template'</span><span class="p">:</span><span class="s2">"none"</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> 
 <span class="go">Figure({</span>
-<span class="go">    &#39;data&#39;: [],</span>
-<span class="go">    &#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;, &#39;size&#39;: 20},</span>
-<span class="go">               &#39;template&#39;: &#39;...&#39;, &#39;title&#39;: {&#39;text&#39;: &#39;Figure Title&#39;}}</span>
+<span class="go">    'data': [],</span>
+<span class="go">    'layout': {'font': {'family': 'Courier', 'size': 20},</span>
+<span class="go">               'template': '...', 'title': {'text': 'Figure Title'}}</span>
 <span class="go">})</span>
 </pre></div>
 </div>
@@ -508,42 +469,42 @@ been moved into the template property.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">templated_fig</span> <span class="o">=</span> <span class="n">pio</span><span class="o">.</span><span class="n">to_templated</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
 <span class="go">layout.Template({</span>
-<span class="go">    &#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;, &#39;size&#39;: 20}}</span>
+<span class="go">    'layout': {'font': {'family': 'Courier', 'size': 20}}</span>
 <span class="go">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">templated_fig</span>
 <span class="go">Figure({</span>
-<span class="go">    &#39;data&#39;: [], &#39;layout&#39;: {&#39;template&#39;: &#39;...&#39;, &#39;title&#39;: {&#39;text&#39;: &#39;Figure Title&#39;}}</span>
+<span class="go">    'data': [], 'layout': {'template': '...', 'title': {'text': 'Figure Title'}}</span>
 <span class="go">})</span>
 </pre></div>
 </div>
 <p>Next create a new figure with this template</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span>
-<span class="gp">... </span>    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure 2 Title&#39;</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="s1">&#39;template&#39;</span><span class="p">:</span> <span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span><span class="p">})</span>
+<span class="gp">... </span>    <span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Figure 2 Title'</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">'template'</span><span class="p">:</span> <span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig2</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
 <span class="go">layout.Template({</span>
-<span class="go">    &#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;, &#39;size&#39;: 20}}</span>
+<span class="go">    'layout': {'font': {'family': 'Courier', 'size': 20}}</span>
 <span class="go">})</span>
 </pre></div>
 </div>
 <p>The default font in fig2 will now be size 20 Courier.</p>
 <p>Next, register as a named template…</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="p">[</span><span class="s1">&#39;large_courier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="p">[</span><span class="s1">'large_courier'</span><span class="p">]</span> <span class="o">=</span> <span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
 </pre></div>
 </div>
 <p>and specify this template by name when constructing a figure.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span>
-<span class="gp">... </span>    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure 3 Title&#39;</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="s1">&#39;template&#39;</span><span class="p">:</span> <span class="s1">&#39;large_courier&#39;</span><span class="p">})</span> 
+<span class="gp">... </span>    <span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Figure 3 Title'</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">'template'</span><span class="p">:</span> <span class="s1">'large_courier'</span><span class="p">})</span> 
 <span class="go">Figure(...)</span>
 </pre></div>
 </div>
 <p>Finally, set this as the default template to be applied to all new figures</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;large_courier&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure 4 Title&#39;</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s1">'large_courier'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Figure 4 Title'</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span>
 <span class="go">layout.Template({</span>
-<span class="go">    &#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;, &#39;size&#39;: 20}}</span>
+<span class="go">    'layout': {'font': {'family': 'Courier', 'size': 20}}</span>
 <span class="go">})</span>
 </pre></div>
 </div>
@@ -654,7 +615,7 @@ id attribute is a UUID.</p></li>
 
 <dl class="py function">
 <dt id="plotly.io.write_image">
-<code class="sig-prename descclassname"><span class="pre">plotly.io.</span></code><code class="sig-name descname"><span class="pre">write_image</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">plotly.graph_objects._figure.Figure</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.14)"><span class="pre">pathlib.Path</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.io.write_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">plotly.io.</span></code><code class="sig-name descname"><span class="pre">write_image</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">plotly.graph_objects._figure.Figure</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.14)"><span class="pre">pathlib.Path</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.io.write_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a figure to a static image and write it to a file or writeable
 object</p>
 <dl class="field-list simple">
@@ -663,73 +624,32 @@ object</p>
 <li><p><strong>fig</strong> – Figure object or dict representing a figure</p></li>
 <li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>writeable</em>) – A string representing a local file path or a writeable object
 (e.g. a pathlib.Path object or an open file descriptor)</p></li>
-<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – <dl class="simple">
-<dt>The desired image format. One of</dt><dd><ul>
+<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – <dl class="simple">
+<dt>(optional) The desired image format. One of:</dt><dd><ul>
 <li><p>’png’</p></li>
 <li><p>’jpg’ or ‘jpeg’</p></li>
 <li><p>’webp’</p></li>
 <li><p>’svg’</p></li>
 <li><p>’pdf’</p></li>
-<li><p>’eps’ (deprecated) (Requires the poppler library to be installed and on the PATH)</p></li>
 </ul>
 </dd>
 </dl>
-<p>If not specified and <code class="docutils literal notranslate"><span class="pre">file</span></code> is a string then this will default to the
-file extension. If not specified and <code class="docutils literal notranslate"><span class="pre">file</span></code> is not a string then this
-will default to:</p>
-<blockquote>
-<div><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_format</span></code> if engine is “kaleido”</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.orca.config.default_format</span></code> if engine is “orca” (deprecated)</p></li>
-</ul>
-</div></blockquote>
+<p>Defaults to the file extension of <code class="docutils literal notranslate"><span class="pre">file</span></code>, if given; otherwise
+defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_format</span></code>.</p>
 </p></li>
-<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – <p>The width of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
-property is 1.0, this will also be the width of the exported image
-in physical pixels.</p>
-<dl class="simple">
-<dt>If not specified, will default to:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_width</span></code> if engine is “kaleido”</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.orca.config.default_width</span></code> if engine is “orca” (deprecated)</p></li>
-</ul>
-</dd>
-</dl>
-</p></li>
-<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – <p>The height of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
-property is 1.0, this will also be the height of the exported image
-in physical pixels.</p>
-<dl class="simple">
-<dt>If not specified, will default to:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_height</span></code> if engine is “kaleido”</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.orca.config.default_height</span></code> if engine is “orca” (deprecated)</p></li>
-</ul>
-</dd>
-</dl>
-</p></li>
-<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – <p>The scale factor to use when exporting the figure. A scale factor
-larger than 1.0 will increase the image resolution with respect
-to the figure’s layout pixel dimensions. Whereas as scale factor of
-less than 1.0 will decrease the image resolution.</p>
-<dl class="simple">
-<dt>If not specified, will default to:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_scale</span></code> if engine is “kaleido”</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly.io.orca.config.default_scale</span></code> if engine is “orca” (deprecated)</p></li>
-</ul>
-</dd>
-</dl>
-</p></li>
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – True if the figure should be validated before being converted to
-an image, False otherwise.</p></li>
-<li><p><strong>(</strong><strong>deprecated</strong><strong>)</strong> (<em>engine</em>) – <p>Image export engine to use. This parameter is deprecated and Orca engine support will be
-dropped in the next major Plotly version. Until then, the following values are supported:</p>
-<blockquote>
-<div><ul>
-<li><p>”kaleido”: Use Kaleido for image export</p></li>
-<li><p>”orca”: Use Orca for image export</p></li>
-<li><p>”auto” (default): Use Kaleido if installed, otherwise use Orca</p></li>
-</ul>
-</div></blockquote>
-</p></li>
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The width of the exported image in layout pixels. If the
+<code class="docutils literal notranslate"><span class="pre">scale</span></code> property is 1.0, this will also be the width of the exported image
+in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_width</span></code>.</p></li>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The height of the exported image in layout pixels. If the
+<code class="docutils literal notranslate"><span class="pre">scale</span></code> property is 1.0, this will also be the height of the exported image
+in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_height</span></code>.</p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – (optional) The scale factor to use when exporting the figure. A scale
+factor larger than 1.0 will increase the image resolution with respect
+to the figure’s layout pixel dimensions, while a scale factor of
+less than 1.0 will decrease the image resolution. Defaults to
+<code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_scale</span></code>.</p></li>
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – (optional) True if the figure should be validated before being converted
+to an image, False otherwise. Defaults to True.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -758,53 +678,45 @@ Also accepts a single figure or dict representing a figure.</p></li>
 <li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.14)"><em>pathlib.Path</em></a><em>, or </em><em>list of</em><em> (</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.14)"><em>pathlib.Path</em></a><em>)</em>) – List of str or pathlib.Path objects representing local file paths to write to.
 Can also be a single str or pathlib.Path object if fig argument is
 a single figure or dict representing a figure.</p></li>
-<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, or </em><em>list of</em><em> (</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>)</em>) – <p>The image format to use for exported images.
-Supported formats are:</p>
-<blockquote>
-<div><ul>
+<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>list of</em><em> (</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>)</em>) – <dl class="simple">
+<dt>(optional) The image format to use for exported images. One of:</dt><dd><ul>
 <li><p>’png’</p></li>
 <li><p>’jpg’ or ‘jpeg’</p></li>
 <li><p>’webp’</p></li>
 <li><p>’svg’</p></li>
 <li><p>’pdf’</p></li>
 </ul>
-</div></blockquote>
-<p>Use a list to specify formats for each figure or dict in the list
-provided to the <code class="docutils literal notranslate"><span class="pre">fig</span></code> argument.
-Specify format as a <code class="docutils literal notranslate"><span class="pre">str</span></code> to apply the same format to all exported images.
-If not specified, and the corresponding <code class="docutils literal notranslate"><span class="pre">file</span></code> argument has a file extension, then <code class="docutils literal notranslate"><span class="pre">format</span></code> will default to the
-file extension. Otherwise, will default to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_format</span></code>.</p>
+</dd>
+</dl>
+<p>Defaults to the file extension of <code class="docutils literal notranslate"><span class="pre">file</span></code>, if given; otherwise
+defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_format</span></code>.</p>
+<p>Pass a list to specify formats for each figure in the list passed to <code class="docutils literal notranslate"><span class="pre">fig</span></code>.
+Pass a str to apply the same format to all exported images.</p>
 </p></li>
-<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, or </em><em>list of</em><em> (</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>)</em>) – <p>The width of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>list of</em><em> (</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>)</em>) – <p>(optional) The width of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
 property is 1.0, this will also be the width of the exported image
-in physical pixels.</p>
-<p>Use a list to specify widths for each figure or dict in the list
-provided to the <code class="docutils literal notranslate"><span class="pre">fig</span></code> argument.
-Specify width as an <code class="docutils literal notranslate"><span class="pre">int</span></code> to apply the same width to all exported images.
-If not specified, will default to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_width</span></code>.</p>
+in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_width</span></code>.</p>
+<p>Pass a list to specify widths for each figure in the list passed to <code class="docutils literal notranslate"><span class="pre">fig</span></code>.
+Pass an int to apply the same width to all exported images.</p>
 </p></li>
-<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, or </em><em>list of</em><em> (</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>)</em>) – <p>The height of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>list of</em><em> (</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>)</em>) – <p>(optional) The height of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
 property is 1.0, this will also be the height of the exported image
-in physical pixels.</p>
-<p>Use a list to specify heights for each figure or dict in the list
-provided to the <code class="docutils literal notranslate"><span class="pre">fig</span></code> argument.
-Specify height as an <code class="docutils literal notranslate"><span class="pre">int</span></code> to apply the same height to all exported images.
-If not specified, will default to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_height</span></code>.</p>
+in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_height</span></code>.</p>
+<p>Pass a list to specify heights for each figure in the list passed to <code class="docutils literal notranslate"><span class="pre">fig</span></code>.
+Pass an int to apply the same height to all exported images.</p>
 </p></li>
-<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, or </em><em>list of</em><em> (</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>)</em>) – <p>The scale factor to use when exporting the figure. A scale factor
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, or </em><em>list of</em><em> (</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>)</em>) – <p>(optional) The scale factor to use when exporting the figure. A scale factor
 larger than 1.0 will increase the image resolution with respect
-to the figure’s layout pixel dimensions. Whereas as scale factor of
-less than 1.0 will decrease the image resolution.</p>
-<p>Use a list to specify scale for each figure or dict in the list
-provided to the <code class="docutils literal notranslate"><span class="pre">fig</span></code> argument.
-Specify scale as an <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> to apply the same scale to all exported images.
-If not specified, will default to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_scale</span></code>.</p>
+to the figure’s layout pixel dimensions, while a scale factor of
+less than 1.0 will decrease the image resolution. Defaults to
+<code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_scale</span></code>.</p>
+<p>Pass a list to specify scale for each figure in the list passed to <code class="docutils literal notranslate"><span class="pre">fig</span></code>.
+Pass an int or float to apply the same scale to all exported images.</p>
 </p></li>
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>list of bool</em>) – <p>True if the figure should be validated before being converted to
-an image, False otherwise.</p>
-<p>Use a list to specify validation setting for each figure in the list
-provided to the <code class="docutils literal notranslate"><span class="pre">fig</span></code> argument.
-Specify validate as a boolean to apply the same validation setting to all figures.</p>
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>list of bool</em>) – <p>(optional) True if the figure should be validated before being converted
+to an image, False otherwise. Defaults to True.</p>
+<p>Pass a list to specify validation for each figure in the list passed to <code class="docutils literal notranslate"><span class="pre">fig</span></code>.
+Pass a boolean to apply the same validation setting to all figures.</p>
 </p></li>
 </ul>
 </dd>
@@ -865,9 +777,6 @@ plotly.io.json.config.default_engine.</p>
 </div>
 <div class="section" id="module-plotly.io.kaleido">
 <span id="plotly-io-kaleido-module"></span><h2>plotly.io.kaleido module<a class="headerlink" href="#module-plotly.io.kaleido" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-plotly.io.orca">
-<span id="plotly-io-orca-module"></span><h2>plotly.io.orca module<a class="headerlink" href="#module-plotly.io.orca" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

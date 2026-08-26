@@ -1,0 +1,7 @@
+plotly.graph\_objs.quiver.hoverlabel package
+============================================
+
+.. automodule:: plotly.graph_objs.quiver.hoverlabel
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+plotly.graph\_objs.quiver.unselected.marker package
+===================================================
+
+.. automodule:: plotly.graph_objs.quiver.unselected.marker
+   :members:
+   :undoc-members:
+   :show-inheritance:

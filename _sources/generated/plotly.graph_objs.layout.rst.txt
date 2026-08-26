@@ -19,7 +19,6 @@ Subpackages
    plotly.graph_objs.layout.hoverlabel
    plotly.graph_objs.layout.legend
    plotly.graph_objs.layout.map
-   plotly.graph_objs.layout.mapbox
    plotly.graph_objs.layout.newselection
    plotly.graph_objs.layout.newshape
    plotly.graph_objs.layout.polar

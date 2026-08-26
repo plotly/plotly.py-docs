@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.graph_objects.layout.geo package &#8212;  6.8.0 documentation</title>
+    <title>plotly.graph_objects.layout.geo package &#8212;  7.0.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -170,7 +170,7 @@ otherwise.</p>
 <dt id="plotly.graph_objects.layout.geo.Domain.column">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">column</span></code><a class="headerlink" href="#plotly.graph_objects.layout.geo.Domain.column" title="Permalink to this definition">¶</a></dt>
 <dd><p>If there is a layout grid, use the domain for this column in
-the grid for this geo subplot . Note that geo subplots are
+the grid for this geo subplot. Note that geo subplots are
 constrained by domain. In general, when <code class="docutils literal notranslate"><span class="pre">projection.scale</span></code> is
 set to 1. a map will fit either its x or y domain, but not
 both.</p>
@@ -195,7 +195,7 @@ in the interval [0, 9223372036854775807]</p></li>
 <dt id="plotly.graph_objects.layout.geo.Domain.row">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">row</span></code><a class="headerlink" href="#plotly.graph_objects.layout.geo.Domain.row" title="Permalink to this definition">¶</a></dt>
 <dd><p>If there is a layout grid, use the domain for this row in the
-grid for this geo subplot . Note that geo subplots are
+grid for this geo subplot. Note that geo subplots are
 constrained by domain. In general, when <code class="docutils literal notranslate"><span class="pre">projection.scale</span></code> is
 set to 1. a map will fit either its x or y domain, but not
 both.</p>
@@ -311,12 +311,18 @@ either its x or y domain, but not both.</p>
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">gridcolor</span></code><a class="headerlink" href="#plotly.graph_objects.layout.geo.Lataxis.gridcolor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the graticule’s stroke color.</p>
 <dl class="simple">
-<dt>The ‘gridcolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
-<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
-<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
-<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
-<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
-<li><p>A named CSS color: see <a class="reference external" href="https://plotly.com/python/css-colors/">https://plotly.com/python/css-colors/</a> for a list</p></li>
+<dt>The ‘gridcolor’ property is a color and may be specified as a string in the following formats:</dt><dd><ul class="simple">
+<li><p>hex or short hex (e.g. ‘#d3d3d3’, ‘#d3d’)</p></li>
+<li><p>hex or short hex with alpha (e.g. ‘#d3d3d380’, ‘#d3d8’)</p></li>
+<li><p>rgb (e.g. ‘rgb(255, 0, 0)’, ‘rgb(255 0 0)’)</p></li>
+<li><p>rgba (e.g. ‘rgba(255, 0, 0, 0.5)’, ‘rgba(255 0 0 / 0.5)’)</p></li>
+<li><p>hsl (e.g. ‘hsl(0, 100%, 50%)’, ‘hsl(0deg 100% 50%)’)</p></li>
+<li><p>hsla (e.g. ‘hsla(0, 100%, 50%, 0.5)’, ‘hsla(0deg 100% 50% / 0.5)’)</p></li>
+<li><p>hwb (e.g. ‘hwb(0 0% 100%)’)</p></li>
+<li><p>lab/lch/oklab/oklch (e.g. ‘oklch(0.7 0.15 180)’)</p></li>
+<li><p>color (e.g. ‘color(display-p3 1 0 0)’)</p></li>
+<li><p>named colors (full list: <a class="reference external" href="https://www.w3.org/TR/css-color-4/#named-color">https://www.w3.org/TR/css-color-4/#named-color</a>)</p></li>
+<li><p>Any other supported CSS 4 color format: <a class="reference external" href="https://www.w3.org/TR/css-color-4/">https://www.w3.org/TR/css-color-4/</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -483,12 +489,18 @@ either its x or y domain, but not both.</p>
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">gridcolor</span></code><a class="headerlink" href="#plotly.graph_objects.layout.geo.Lonaxis.gridcolor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the graticule’s stroke color.</p>
 <dl class="simple">
-<dt>The ‘gridcolor’ property is a color and may be specified as:</dt><dd><ul class="simple">
-<li><p>A hex string (e.g. ‘#ff0000’)</p></li>
-<li><p>An rgb/rgba string (e.g. ‘rgb(255,0,0)’)</p></li>
-<li><p>An hsl/hsla string (e.g. ‘hsl(0,100%,50%)’)</p></li>
-<li><p>An hsv/hsva string (e.g. ‘hsv(0,100%,100%)’)</p></li>
-<li><p>A named CSS color: see <a class="reference external" href="https://plotly.com/python/css-colors/">https://plotly.com/python/css-colors/</a> for a list</p></li>
+<dt>The ‘gridcolor’ property is a color and may be specified as a string in the following formats:</dt><dd><ul class="simple">
+<li><p>hex or short hex (e.g. ‘#d3d3d3’, ‘#d3d’)</p></li>
+<li><p>hex or short hex with alpha (e.g. ‘#d3d3d380’, ‘#d3d8’)</p></li>
+<li><p>rgb (e.g. ‘rgb(255, 0, 0)’, ‘rgb(255 0 0)’)</p></li>
+<li><p>rgba (e.g. ‘rgba(255, 0, 0, 0.5)’, ‘rgba(255 0 0 / 0.5)’)</p></li>
+<li><p>hsl (e.g. ‘hsl(0, 100%, 50%)’, ‘hsl(0deg 100% 50%)’)</p></li>
+<li><p>hsla (e.g. ‘hsla(0, 100%, 50%, 0.5)’, ‘hsla(0deg 100% 50% / 0.5)’)</p></li>
+<li><p>hwb (e.g. ‘hwb(0 0% 100%)’)</p></li>
+<li><p>lab/lch/oklab/oklch (e.g. ‘oklch(0.7 0.15 180)’)</p></li>
+<li><p>color (e.g. ‘color(display-p3 1 0 0)’)</p></li>
+<li><p>named colors (full list: <a class="reference external" href="https://www.w3.org/TR/css-color-4/#named-color">https://www.w3.org/TR/css-color-4/#named-color</a>)</p></li>
+<li><p>Any other supported CSS 4 color format: <a class="reference external" href="https://www.w3.org/TR/css-color-4/">https://www.w3.org/TR/css-color-4/</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -628,7 +640,7 @@ either its x or y domain, but not both.</p>
 
 <dl class="py class">
 <dt id="plotly.graph_objects.layout.geo.Projection">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.layout.geo.</span></code><code class="sig-name descname"><span class="pre">Projection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tilt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.layout.geo.Projection" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.graph_objects.layout.geo.</span></code><code class="sig-name descname"><span class="pre">Projection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxscale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minscale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tilt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.layout.geo.Projection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="plotly.html#plotly.basedatatypes.BaseLayoutHierarchyType" title="plotly.basedatatypes.BaseLayoutHierarchyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.basedatatypes.BaseLayoutHierarchyType</span></code></a></p>
 <dl class="py method">
 <dt id="plotly.graph_objects.layout.geo.Projection.distance">
@@ -639,6 +651,54 @@ the sphere’s radius.</p>
 <dl class="simple">
 <dt>The ‘distance’ property is a number and may be specified as:</dt><dd><ul class="simple">
 <li><p>An int or float in the interval [1.001, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.geo.Projection.maxscale">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">maxscale</span></code><a class="headerlink" href="#plotly.graph_objects.layout.geo.Projection.maxscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the maximum zoom level of the map view, relative to
+<code class="docutils literal notranslate"><span class="pre">projection.scale</span></code>. A <code class="docutils literal notranslate"><span class="pre">maxscale</span></code> of 2 (200%) prevents the user
+from zooming in beyond twice the base zoom level. Must be
+greater than or equal to <em>0</em>; has no upper bound. Defaults to
+“null” for no upper bound on zoom.</p>
+<dl class="simple">
+<dt>The ‘maxscale’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int|float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="plotly.graph_objects.layout.geo.Projection.minscale">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">minscale</span></code><a class="headerlink" href="#plotly.graph_objects.layout.geo.Projection.minscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the minimum zoom level of the map view, relative to
+<code class="docutils literal notranslate"><span class="pre">projection.scale</span></code>. A <code class="docutils literal notranslate"><span class="pre">minscale</span></code> of 0.5 (50%) prevents the user
+from zooming out beyond half the base zoom level. Must be
+greater than or equal to <em>0</em>; has no upper bound. The default
+of 0 imposes no lower bound on zoom.</p>
+<dl class="simple">
+<dt>The ‘minscale’ property is a number and may be specified as:</dt><dd><ul class="simple">
+<li><p>An int or float in the interval [0, inf]</p></li>
 </ul>
 </dd>
 </dl>

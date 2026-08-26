@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.graph_objects: low-level interface to figures, traces and layout &#8212;  6.8.0 documentation</title>
+    <title>plotly.graph_objects: low-level interface to figures, traces and layout &#8212;  7.0.0 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/plotly-style.css" />
@@ -176,7 +176,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scattergl.html#plotly.graph_objects.Scattergl" title="plotly.graph_objects.Scattergl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scattergl</span></code></a>([arg, connectgaps, customdata, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Bar.html#plotly.graph_objects.Bar" title="plotly.graph_objects.Bar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bar</span></code></a>([arg, alignmentgroup, base, basesrc, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Bar.html#plotly.graph_objects.Bar" title="plotly.graph_objects.Bar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bar</span></code></a>([arg, alignmentgroup, base, cliponaxis, …])</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Pie.html#plotly.graph_objects.Pie" title="plotly.graph_objects.Pie"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pie</span></code></a>([arg, automargin, customdata, …])</p></td>
@@ -185,7 +185,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Heatmap.html#plotly.graph_objects.Heatmap" title="plotly.graph_objects.Heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Heatmap</span></code></a>([arg, autocolorscale, coloraxis, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Image.html#plotly.graph_objects.Image" title="plotly.graph_objects.Image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Image</span></code></a>([arg, colormodel, customdata, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Image.html#plotly.graph_objects.Image" title="plotly.graph_objects.Image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Image</span></code></a>([arg, colormodel, customdata, dx, dy, …])</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Contour.html#plotly.graph_objects.Contour" title="plotly.graph_objects.Contour"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Contour</span></code></a>([arg, autocolorscale, autocontour, …])</p></td>
@@ -231,10 +231,10 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Ohlc.html#plotly.graph_objects.Ohlc" title="plotly.graph_objects.Ohlc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ohlc</span></code></a>([arg, close, closesrc, customdata, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Ohlc.html#plotly.graph_objects.Ohlc" title="plotly.graph_objects.Ohlc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ohlc</span></code></a>([arg, close, customdata, decreasing, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Candlestick.html#plotly.graph_objects.Candlestick" title="plotly.graph_objects.Candlestick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Candlestick</span></code></a>([arg, close, closesrc, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Candlestick.html#plotly.graph_objects.Candlestick" title="plotly.graph_objects.Candlestick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Candlestick</span></code></a>([arg, close, customdata, …])</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Waterfall.html#plotly.graph_objects.Waterfall" title="plotly.graph_objects.Waterfall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Waterfall</span></code></a>([arg, alignmentgroup, base, …])</p></td>
@@ -246,7 +246,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Funnelarea.html#plotly.graph_objects.Funnelarea" title="plotly.graph_objects.Funnelarea"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Funnelarea</span></code></a>([arg, aspectratio, baseratio, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Indicator.html#plotly.graph_objects.Indicator" title="plotly.graph_objects.Indicator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Indicator</span></code></a>([arg, align, customdata, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Indicator.html#plotly.graph_objects.Indicator" title="plotly.graph_objects.Indicator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Indicator</span></code></a>([arg, align, customdata, delta, …])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -306,15 +306,6 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Densitymap.html#plotly.graph_objects.Densitymap" title="plotly.graph_objects.Densitymap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Densitymap</span></code></a>([arg, autocolorscale, below, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scattermapbox.html#plotly.graph_objects.Scattermapbox" title="plotly.graph_objects.Scattermapbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scattermapbox</span></code></a>([arg, below, cluster, …])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Choroplethmapbox.html#plotly.graph_objects.Choroplethmapbox" title="plotly.graph_objects.Choroplethmapbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Choroplethmapbox</span></code></a>([arg, autocolorscale, …])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Densitymapbox.html#plotly.graph_objects.Densitymapbox" title="plotly.graph_objects.Densitymapbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Densitymapbox</span></code></a>([arg, autocolorscale, below, …])</p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -332,10 +323,10 @@
 <tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scatterpolargl.html#plotly.graph_objects.Scatterpolargl" title="plotly.graph_objects.Scatterpolargl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scatterpolargl</span></code></a>([arg, connectgaps, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Barpolar.html#plotly.graph_objects.Barpolar" title="plotly.graph_objects.Barpolar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Barpolar</span></code></a>([arg, base, basesrc, customdata, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Barpolar.html#plotly.graph_objects.Barpolar" title="plotly.graph_objects.Barpolar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Barpolar</span></code></a>([arg, base, customdata, dr, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scatterternary.html#plotly.graph_objects.Scatterternary" title="plotly.graph_objects.Scatterternary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scatterternary</span></code></a>([arg, a, asrc, b, bsrc, c, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scatterternary.html#plotly.graph_objects.Scatterternary" title="plotly.graph_objects.Scatterternary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scatterternary</span></code></a>([arg, a, b, c, cliponaxis, …])</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Sunburst.html#plotly.graph_objects.Sunburst" title="plotly.graph_objects.Sunburst"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sunburst</span></code></a>([arg, branchvalues, count, …])</p></td>
@@ -350,22 +341,22 @@
 <tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Sankey.html#plotly.graph_objects.Sankey" title="plotly.graph_objects.Sankey"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sankey</span></code></a>([arg, arrangement, customdata, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Splom.html#plotly.graph_objects.Splom" title="plotly.graph_objects.Splom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Splom</span></code></a>([arg, customdata, customdatasrc, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Splom.html#plotly.graph_objects.Splom" title="plotly.graph_objects.Splom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Splom</span></code></a>([arg, customdata, diagonal, …])</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Parcats.html#plotly.graph_objects.Parcats" title="plotly.graph_objects.Parcats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parcats</span></code></a>([arg, arrangement, bundlecolors, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Parcoords.html#plotly.graph_objects.Parcoords" title="plotly.graph_objects.Parcoords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parcoords</span></code></a>([arg, customdata, customdatasrc, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Parcoords.html#plotly.graph_objects.Parcoords" title="plotly.graph_objects.Parcoords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parcoords</span></code></a>([arg, customdata, dimensions, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Carpet.html#plotly.graph_objects.Carpet" title="plotly.graph_objects.Carpet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Carpet</span></code></a>([arg, a, a0, aaxis, asrc, b, b0, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Carpet.html#plotly.graph_objects.Carpet" title="plotly.graph_objects.Carpet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Carpet</span></code></a>([arg, a, a0, aaxis, b, b0, baxis, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scattercarpet.html#plotly.graph_objects.Scattercarpet" title="plotly.graph_objects.Scattercarpet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scattercarpet</span></code></a>([arg, a, asrc, b, bsrc, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scattercarpet.html#plotly.graph_objects.Scattercarpet" title="plotly.graph_objects.Scattercarpet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scattercarpet</span></code></a>([arg, a, b, carpet, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Contourcarpet.html#plotly.graph_objects.Contourcarpet" title="plotly.graph_objects.Contourcarpet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Contourcarpet</span></code></a>([arg, a, a0, asrc, atype, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Contourcarpet.html#plotly.graph_objects.Contourcarpet" title="plotly.graph_objects.Contourcarpet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Contourcarpet</span></code></a>([arg, a, a0, atype, …])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>

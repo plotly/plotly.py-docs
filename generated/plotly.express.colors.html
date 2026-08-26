@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.express.colors package &#8212;  6.8.0 documentation</title>
+    <title>plotly.express.colors package &#8212;  7.0.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -252,12 +252,16 @@ built-in colorscales.</p>
 <dd><p>Calculates rgb values from a hex color code.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>(</em><em>string</em><em>)</em>) – Hex color string</p>
+<dd class="field-odd"><p><strong>value</strong> (<em>(</em><em>string</em><em>)</em>) – Hex color string. May be a full 6-character code
+or a 3-character shorthand code.</p>
 </dd>
 <dt class="field-even">Rtype (tuple) (r_value, g_value, b_value)</dt>
 <dd class="field-even"><p>tuple of rgb values</p>
 </dd>
 </dl>
+<p class="rubric">Example</p>
+<p>‘#FFFFFF’ –&gt; (255, 255, 255)
+‘#FFF’    –&gt; (255, 255, 255)</p>
 </dd></dl>
 
 <dl class="py function">

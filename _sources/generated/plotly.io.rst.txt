@@ -32,3 +32,11 @@ plotly.io.kaleido module
    :members:
    :undoc-members:
    :show-inheritance:
+
+plotly.io.sg\_scraper module
+----------------------------
+
+.. automodule:: plotly.io.sg_scraper
+   :members:
+   :undoc-members:
+   :show-inheritance:

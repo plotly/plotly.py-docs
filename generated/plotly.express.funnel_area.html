@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.express.funnel_area &#8212;  7.0.0 documentation</title>
+    <title>plotly.express.funnel_area &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -128,17 +128,17 @@ trapezoidal sector of a funnel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data_frame</strong> (<em>DataFrame</em><em> or </em><em>array-like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – This argument needs to be passed for column names (and not keyword
+<li><p><strong>data_frame</strong> (<em>DataFrame</em><em> or </em><em>array-like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – This argument needs to be passed for column names (and not keyword
 names) to be used. Array-like and dict are transformed internally to a
 pandas DataFrame. Optional: if missing, a DataFrame gets constructed
 under the hood using the other arguments.</p></li>
-<li><p><strong>names</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>names</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used as
 labels for sectors.</p></li>
-<li><p><strong>values</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>values</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 set values associated to sectors.</p></li>
-<li><p><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 assign color to marks.</p></li>
 <li><p><strong>color_discrete_sequence</strong> (<em>list of str</em>) – Strings should define valid CSS-colors. When <code class="docutils literal notranslate"><span class="pre">color</span></code> is set and the
@@ -154,10 +154,10 @@ corresponding with specific values. Keys in <code class="docutils literal notran
 be values in the column denoted by <code class="docutils literal notranslate"><span class="pre">color</span></code>. Alternatively, if the
 values of <code class="docutils literal notranslate"><span class="pre">color</span></code> are valid colors, the string <code class="docutils literal notranslate"><span class="pre">'identity'</span></code> may be
 passed to cause them to be used directly.</p></li>
-<li><p><strong>hover_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>hover_name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like appear in bold
 in the hover tooltip.</p></li>
-<li><p><strong>hover_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, or </em><em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, or </em><em>Series</em><em> or </em><em>array-like</em><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Either a name or list of names of columns in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas
+<li><p><strong>hover_data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, or </em><em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, or </em><em>Series</em><em> or </em><em>array-like</em><em>, or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Either a name or list of names of columns in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas
 Series, or array_like objects or a dict with column names as keys, with
 values True (for default formatting) False (in order to remove this
 column from hover information), or a formatting string, for example
@@ -165,7 +165,7 @@ column from hover information), or a formatting string, for example
 tuples with a bool or formatting string as first element, and list-like
 data to appear in hover as second element Values from these columns
 appear as extra data in the hover tooltip.</p></li>
-<li><p><strong>custom_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, or </em><em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, or </em><em>Series</em><em> or </em><em>array-like</em>) – Either name or list of names of columns in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas
+<li><p><strong>custom_data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, or </em><em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, or </em><em>Series</em><em> or </em><em>array-like</em>) – Either name or list of names of columns in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas
 Series, or array_like objects Values from these columns are extra data,
 to be used in widgets or Dash callbacks for example. This data is not
 user-visible but is included in events emitted by the figure (lasso
@@ -174,13 +174,13 @@ selection etc.)</p></li>
 entries and hovers. This parameter allows this to be overridden. The
 keys of this dict should correspond to column names, and the values
 should correspond to the desired label to be displayed.</p></li>
-<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The figure title.</p></li>
-<li><p><strong>subtitle</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The figure subtitle.</p></li>
-<li><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name (must be a key in plotly.io.templates) or
+<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The figure title.</p></li>
+<li><p><strong>subtitle</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The figure subtitle.</p></li>
+<li><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name (must be a key in plotly.io.templates) or
 definition.</p></li>
 <li><p><strong>width</strong> (int (default <code class="docutils literal notranslate"><span class="pre">None</span></code>)) – The figure width in pixels.</p></li>
 <li><p><strong>height</strong> (int (default <code class="docutils literal notranslate"><span class="pre">None</span></code>)) – The figure height in pixels.</p></li>
-<li><p><strong>opacity</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Value between 0 and 1. Sets the opacity for markers.</p></li>
+<li><p><strong>opacity</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Value between 0 and 1. Sets the opacity for markers.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

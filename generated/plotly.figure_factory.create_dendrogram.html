@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.figure_factory.create_dendrogram &#8212;  7.0.0 documentation</title>
+    <title>plotly.figure_factory.create_dendrogram &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -128,9 +128,9 @@ wrapper around scipy.cluster.hierarchy.dendrogram.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> (<em>(</em><em>ndarray</em><em>)</em>) – Matrix of observations as array of arrays</p></li>
-<li><p><strong>orientation</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – ‘top’, ‘right’, ‘bottom’, or ‘left’</p></li>
-<li><p><strong>labels</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – List of axis category labels(observation labels)</p></li>
-<li><p><strong>colorscale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – Optional colorscale for the dendrogram tree.
+<li><p><strong>orientation</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – ‘top’, ‘right’, ‘bottom’, or ‘left’</p></li>
+<li><p><strong>labels</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – List of axis category labels(observation labels)</p></li>
+<li><p><strong>colorscale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – Optional colorscale for the dendrogram tree.
 Requires 8 colors to be specified, the 7th of
 which is ignored.  With scipy&gt;=1.5.0, the 2nd, 3rd
 and 6th are used twice as often as the others.
@@ -141,7 +141,7 @@ extra values are ignored.</p></li>
 the observations</p></li>
 <li><p><strong>linkagefun</strong> (<em>(</em><em>function</em><em>)</em>) – Function to compute the linkage matrix from
 the pairwise distances</p></li>
-<li><p><strong>hovertext</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>]</em><em>)</em>) – List of hovertext for constituent traces of dendrogram
+<li><p><strong>hovertext</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>]</em><em>)</em>) – List of hovertext for constituent traces of dendrogram
 clusters</p></li>
 <li><p><strong>color_threshold</strong> (<em>(</em><em>double</em><em>)</em>) – Value at which the separation of clusters will be made</p></li>
 </ul>

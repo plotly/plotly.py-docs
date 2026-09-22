@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.express.colors package &#8212;  7.0.0 documentation</title>
+    <title>plotly.express.colors package &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -180,7 +180,7 @@ option to return portion of the DEFAULT_PLOTLY_COLORS</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>colors</strong> (<em>(</em><em>str|tuple|list</em><em>)</em>) – either a plotly scale name, an rgb or hex
 color, a color tuple or a list/tuple of colors</p></li>
-<li><p><strong>scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – see docs for validate_scale_values()</p></li>
+<li><p><strong>scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – see docs for validate_scale_values()</p></li>
 </ul>
 </dd>
 </dl>
@@ -206,7 +206,7 @@ and 1) into a colorscale with the colors transformed into rgb colors</p>
 <dd><p>Converts a colors in a dictionary of colors to the specified color type</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>colors_dict</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>)</em>) – a dictionary whose values are single colors</p>
+<dd class="field-odd"><p><strong>colors_dict</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>)</em>) – a dictionary whose values are single colors</p>
 </dd>
 </dl>
 </dd></dl>
@@ -222,7 +222,7 @@ to just x. This is the way rounding works in Python 3 and in current
 statistical analysis to avoid rounding bias</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>rgb_components</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – grabs the three R, G and B values to be
+<dd class="field-odd"><p><strong>rgb_components</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – grabs the three R, G and B values to be
 returned as computed in the function</p>
 </dd>
 </dl>
@@ -282,7 +282,7 @@ For documentation regarding to the form of the output, see
 <a class="reference external" href="https://plot.ly/python/reference/#mesh3d-colorscale">https://plot.ly/python/reference/#mesh3d-colorscale</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>colors</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – a list of single colors</p>
+<dd class="field-odd"><p><strong>colors</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – a list of single colors</p>
 </dd>
 </dl>
 </dd></dl>
@@ -358,7 +358,7 @@ such colors and returns the color tuples in tuple(s) (a, b, c)</p>
 <dd><p>Validates scale values from a colorscale</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – a strictly increasing list of floats that begins
+<dd class="field-odd"><p><strong>scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – a strictly increasing list of floats that begins
 with 0 and ends with 1. Its usage derives from a colorscale which is
 a list of two-lists (a list with two elements) of the form
 [value, color] which are used to determine how interpolation weighting
@@ -398,7 +398,7 @@ complex numbers or other phase data.</p>
 <code class="sig-prename descclassname"><span class="pre">plotly.express.colors.cyclical.</span></code><code class="sig-name descname"><span class="pre">swatches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.express.colors.cyclical.swatches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
+<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>fig</strong> – A <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object. This figure demonstrates the color scales and
@@ -415,7 +415,7 @@ sequences in this module, as stacked bar charts.</p>
 <code class="sig-prename descclassname"><span class="pre">plotly.express.colors.cyclical.</span></code><code class="sig-name descname"><span class="pre">swatches_cyclical</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.express.colors.cyclical.swatches_cyclical" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
+<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>fig</strong> – A <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object. This figure demonstrates the color scales and
@@ -437,7 +437,7 @@ of a liquid. The color scales in this module are mostly meant to be passed in as
 <code class="sig-prename descclassname"><span class="pre">plotly.express.colors.diverging.</span></code><code class="sig-name descname"><span class="pre">swatches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.express.colors.diverging.swatches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
+<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>fig</strong> – A <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object. This figure demonstrates the color scales and
@@ -458,7 +458,7 @@ sequences in this module, as stacked bar charts.</p>
 <code class="sig-prename descclassname"><span class="pre">plotly.express.colors.qualitative.</span></code><code class="sig-name descname"><span class="pre">swatches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.express.colors.qualitative.swatches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
+<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>fig</strong> – A <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object. This figure demonstrates the color scales and
@@ -479,7 +479,7 @@ sequences in this module, as stacked bar charts.</p>
 <code class="sig-prename descclassname"><span class="pre">plotly.express.colors.sequential.</span></code><code class="sig-name descname"><span class="pre">swatches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.express.colors.sequential.swatches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
+<dd class="field-odd"><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name or definition.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>fig</strong> – A <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object. This figure demonstrates the color scales and

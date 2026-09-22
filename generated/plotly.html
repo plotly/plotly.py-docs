@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly package &#8212;  7.0.0 documentation</title>
+    <title>plotly package &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -394,6 +394,7 @@ server resources.</p>
 <li class="toctree-l2"><a class="reference internal" href="plotly.io.html#module-plotly.io.base_renderers">plotly.io.base_renderers module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotly.io.html#module-plotly.io.json">plotly.io.json module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotly.io.html#module-plotly.io.kaleido">plotly.io.kaleido module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.html#module-plotly.io.sg_scraper">plotly.io.sg_scraper module</a></li>
 </ul>
 </li>
 </ul>
@@ -422,7 +423,7 @@ server resources.</p>
 <dl class="py class">
 <dt id="plotly.basedatatypes.BaseFigure">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.basedatatypes.</span></code><code class="sig-name descname"><span class="pre">BaseFigure</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_plotly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_invalid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.basedatatypes.BaseFigure" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Base class for all figure types (both widget and non-widget)</p>
 <dl class="py method">
 <dt id="plotly.basedatatypes.BaseFigure.add_hline">
@@ -432,16 +433,16 @@ x-dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the y coordinate of the horizontal line.</p></li>
+<li><p><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the y coordinate of the horizontal line.</p></li>
 <li><p><strong>exclude_empty_subplots</strong> (<em>Boolean</em>) – If True (default) do not place the shape on subplots that have no data
 plotted on them.</p></li>
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot row for shape indexed starting at 1. If ‘all’, addresses all rows in
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot row for shape indexed starting at 1. If ‘all’, addresses all rows in
 the specified column(s). If both row and col are None, addresses the
 first subplot if subplots exist, or the only plot. By default is “all”.</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot column for shape indexed starting at 1. If ‘all’, addresses all rows in
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot column for shape indexed starting at 1. If ‘all’, addresses all rows in
 the specified column(s). If both row and col are None, addresses the
 first subplot if subplots exist, or the only plot. By default is “all”.</p></li>
-<li><p><strong>annotation</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Annotation. If dict</em><em>(</em><em>)</em><em>,</em>) – it is interpreted as describing an annotation. The annotation is
+<li><p><strong>annotation</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Annotation. If dict</em><em>(</em><em>)</em><em>,</em>) – it is interpreted as describing an annotation. The annotation is
 placed relative to the shape based on annotation_position (see
 below) unless its x or y value has been specified for the annotation
 passed here. xref and yref are always the same as for the added
@@ -468,17 +469,17 @@ x-dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>y0</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the y coordinate of one side of the rectangle.</p></li>
-<li><p><strong>y1</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the y coordinate of the other side of the rectangle.</p></li>
+<li><p><strong>y0</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the y coordinate of one side of the rectangle.</p></li>
+<li><p><strong>y1</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the y coordinate of the other side of the rectangle.</p></li>
 <li><p><strong>exclude_empty_subplots</strong> (<em>Boolean</em>) – If True (default) do not place the shape on subplots that have no data
 plotted on them.</p></li>
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot row for shape indexed starting at 1. If ‘all’, addresses all rows in
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot row for shape indexed starting at 1. If ‘all’, addresses all rows in
 the specified column(s). If both row and col are None, addresses the
 first subplot if subplots exist, or the only plot. By default is “all”.</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot column for shape indexed starting at 1. If ‘all’, addresses all rows in
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot column for shape indexed starting at 1. If ‘all’, addresses all rows in
 the specified column(s). If both row and col are None, addresses the
 first subplot if subplots exist, or the only plot. By default is “all”.</p></li>
-<li><p><strong>annotation</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Annotation. If dict</em><em>(</em><em>)</em><em>,</em>) – it is interpreted as describing an annotation. The annotation is
+<li><p><strong>annotation</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Annotation. If dict</em><em>(</em><em>)</em><em>,</em>) – it is interpreted as describing an annotation. The annotation is
 placed relative to the shape based on annotation_position (see
 below) unless its x or y value has been specified for the annotation
 passed here. xref and yref are always the same as for the added
@@ -505,7 +506,7 @@ except for x0, x1, y0, y1 or type.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>trace</strong> (<a class="reference internal" href="#plotly.basedatatypes.BaseTraceType" title="plotly.basedatatypes.BaseTraceType"><em>BaseTraceType</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – <dl>
+<li><p><strong>trace</strong> (<a class="reference internal" href="#plotly.basedatatypes.BaseTraceType" title="plotly.basedatatypes.BaseTraceType"><em>BaseTraceType</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – <dl>
 <dt>Either:</dt><dd><ul>
 <li><p>An instances of a trace classe from the plotly.graph_objects
 package (e.g plotly.graph_objects.Scatter, plotly.graph_objects.Bar)</p></li>
@@ -524,15 +525,15 @@ of the specified trace type.</p></li>
 </dd>
 </dl>
 </p></li>
-<li><p><strong>row</strong> (<em>'all'</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default</em><em>)</em>) – Subplot row index (starting from 1) for the trace to be
+<li><p><strong>row</strong> (<em>'all'</em><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default</em><em>)</em>) – Subplot row index (starting from 1) for the trace to be
 added. Only valid if figure was created using
 <code class="docutils literal notranslate"><span class="pre">plotly.tools.make_subplots</span></code>.
 If ‘all’, addresses all rows in the specified column(s).</p></li>
-<li><p><strong>col</strong> (<em>'all'</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default</em><em>)</em>) – Subplot col index (starting from 1) for the trace to be
+<li><p><strong>col</strong> (<em>'all'</em><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default</em><em>)</em>) – Subplot col index (starting from 1) for the trace to be
 added. Only valid if figure was created using
 <code class="docutils literal notranslate"><span class="pre">plotly.tools.make_subplots</span></code>.
 If ‘all’, addresses all columns in the specified row(s).</p></li>
-<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>If True, associate this trace with the secondary y-axis of the
+<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>If True, associate this trace with the secondary y-axis of the
 subplot at the specified row and col. Only valid if all of the
 following conditions are satisfied:</p>
 <blockquote>
@@ -589,7 +590,7 @@ have traces.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference internal" href="#plotly.basedatatypes.BaseTraceType" title="plotly.basedatatypes.BaseTraceType"><em>BaseTraceType</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>]</em>) – <p>A list of trace specifications to be added.
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference internal" href="#plotly.basedatatypes.BaseTraceType" title="plotly.basedatatypes.BaseTraceType"><em>BaseTraceType</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>]</em>) – <p>A list of trace specifications to be added.
 Trace specifications may be either:</p>
 <blockquote>
 <div><ul>
@@ -609,11 +610,11 @@ of the specified trace type.</p></li>
 </ul>
 </div></blockquote>
 </p></li>
-<li><p><strong>rows</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>]</em><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default None</em><em>)</em>) – List of subplot row indexes (starting from 1) for the traces to be
+<li><p><strong>rows</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>]</em><em>, or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default None</em><em>)</em>) – List of subplot row indexes (starting from 1) for the traces to be
 added. Only valid if figure was created using
 <code class="docutils literal notranslate"><span class="pre">plotly.tools.make_subplots</span></code>
 If a single integer is passed, all traces will be added to row number</p></li>
-<li><p><strong>cols</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>] </em><em>(</em><em>default None</em><em>)</em>) – List of subplot column indexes (starting from 1) for the traces
+<li><p><strong>cols</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>] </em><em>(</em><em>default None</em><em>)</em>) – List of subplot column indexes (starting from 1) for the traces
 to be added. Only valid if figure was created using
 <code class="docutils literal notranslate"><span class="pre">plotly.tools.make_subplots</span></code>
 If a single integer is passed, all traces will be added to column number</p></li>
@@ -666,16 +667,16 @@ y-dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the x coordinate of the vertical line.</p></li>
+<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the x coordinate of the vertical line.</p></li>
 <li><p><strong>exclude_empty_subplots</strong> (<em>Boolean</em>) – If True (default) do not place the shape on subplots that have no data
 plotted on them.</p></li>
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot row for shape indexed starting at 1. If ‘all’, addresses all rows in
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot row for shape indexed starting at 1. If ‘all’, addresses all rows in
 the specified column(s). If both row and col are None, addresses the
 first subplot if subplots exist, or the only plot. By default is “all”.</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot column for shape indexed starting at 1. If ‘all’, addresses all rows in
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot column for shape indexed starting at 1. If ‘all’, addresses all rows in
 the specified column(s). If both row and col are None, addresses the
 first subplot if subplots exist, or the only plot. By default is “all”.</p></li>
-<li><p><strong>annotation</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Annotation. If dict</em><em>(</em><em>)</em><em>,</em>) – it is interpreted as describing an annotation. The annotation is
+<li><p><strong>annotation</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Annotation. If dict</em><em>(</em><em>)</em><em>,</em>) – it is interpreted as describing an annotation. The annotation is
 placed relative to the shape based on annotation_position (see
 below) unless its x or y value has been specified for the annotation
 passed here. xref and yref are always the same as for the added
@@ -702,17 +703,17 @@ y-dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x0</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the x coordinate of one side of the rectangle.</p></li>
-<li><p><strong>x1</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the x coordinate of the other side of the rectangle.</p></li>
+<li><p><strong>x0</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the x coordinate of one side of the rectangle.</p></li>
+<li><p><strong>x1</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – A number representing the x coordinate of the other side of the rectangle.</p></li>
 <li><p><strong>exclude_empty_subplots</strong> (<em>Boolean</em>) – If True (default) do not place the shape on subplots that have no data
 plotted on them.</p></li>
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot row for shape indexed starting at 1. If ‘all’, addresses all rows in
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot row for shape indexed starting at 1. If ‘all’, addresses all rows in
 the specified column(s). If both row and col are None, addresses the
 first subplot if subplots exist, or the only plot. By default is “all”.</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot column for shape indexed starting at 1. If ‘all’, addresses all rows in
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>'all'</em>) – Subplot column for shape indexed starting at 1. If ‘all’, addresses all rows in
 the specified column(s). If both row and col are None, addresses the
 first subplot if subplots exist, or the only plot. By default is “all”.</p></li>
-<li><p><strong>annotation</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Annotation. If dict</em><em>(</em><em>)</em><em>,</em>) – it is interpreted as describing an annotation. The annotation is
+<li><p><strong>annotation</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Annotation. If dict</em><em>(</em><em>)</em><em>,</em>) – it is interpreted as describing an annotation. The annotation is
 placed relative to the shape based on annotation_position (see
 below) unless its x or y value has been specified for the annotation
 passed here. xref and yref are always the same as for the added
@@ -744,8 +745,8 @@ method</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>trace</strong> – The data trace to be bound</p></li>
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Subplot row index (see Figure.print_grid)</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Subplot column index (see Figure.print_grid)</p></li>
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Subplot row index (see Figure.print_grid)</p></li>
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Subplot column index (see Figure.print_grid)</p></li>
 </ul>
 </dd>
 </dl>
@@ -890,7 +891,7 @@ simultaneously.</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a>[<a class="reference internal" href="#plotly.basedatatypes.BaseTraceType" title="plotly.basedatatypes.BaseTraceType">BaseTraceType</a>]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a>[<a class="reference internal" href="#plotly.basedatatypes.BaseTraceType" title="plotly.basedatatypes.BaseTraceType">BaseTraceType</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -904,7 +905,7 @@ criteria</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fn</strong> – Function that inputs a single trace object.</p></li>
-<li><p><strong>selector</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>, </em><em>function</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dict to use as selection criteria.
+<li><p><strong>selector</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>, </em><em>function</em><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dict to use as selection criteria.
 Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all traces are
@@ -914,15 +915,15 @@ each trace and those for which the function returned True
 will be in the selection. If an int N, the Nth trace matching row
 and col will be selected (N can be negative). If a string S, the selector
 is equivalent to dict(type=S).</p></li>
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
-<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <ul>
+<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <ul>
 <li><p>If True, only select traces associated with the secondary
 y-axis of the subplot.</p></li>
 <li><p>If False, only select traces associated with the primary
@@ -955,7 +956,7 @@ creating subplots with secondary y-axes.</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a>[<a class="reference internal" href="plotly.graph_objects.html#plotly.graph_objects.Frame" title="plotly.graph_objects.Frame">plotly.graph_objects.Frame</a>]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a>[<a class="reference internal" href="plotly.graph_objects.html#plotly.graph_objects.Frame" title="plotly.graph_objects.Frame">plotly.graph_objects.Frame</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -971,8 +972,8 @@ not generally necessary or recommended for production use.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>warn</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False, suppress warnings about not using this in production.</p></li>
-<li><p><strong>as_dict</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, output is a dict with some keys that go.Figure can’t parse.
+<li><p><strong>warn</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False, suppress warnings about not using this in production.</p></li>
+<li><p><strong>as_dict</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, output is a dict with some keys that go.Figure can’t parse.
 If False, output is a go.Figure with unparseable keys skipped.</p></li>
 </ul>
 </dd>
@@ -980,7 +981,7 @@ If False, output is a go.Figure with unparseable keys skipped.</p></li>
 <dd class="field-even"><p>The full figure</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="plotly.graph_objects.html#plotly.graph_objects.Figure" title="plotly.graph_objects.Figure">plotly.graph_objects.Figure</a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="plotly.graph_objects.html#plotly.graph_objects.Figure" title="plotly.graph_objects.Figure">plotly.graph_objects.Figure</a> or <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -994,9 +995,9 @@ plotly.tools.make_subplots</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – 1-based index of subplot row</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – 1-based index of subplot column</p></li>
-<li><p><strong>secondary_y</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, select the subplot that consists of the x-axis and the
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – 1-based index of subplot row</p></li>
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – 1-based index of subplot column</p></li>
+<li><p><strong>secondary_y</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, select the subplot that consists of the x-axis and the
 secondary y-axis at the specified row/col. Only valid if the
 subplot at row/col is an 2D cartesian subplot that was created
 with a secondary y-axis.  See the docstring for the specs argument
@@ -1058,7 +1059,7 @@ if subplot type is ‘xy’.</p>
 <dd><p>Perform a Plotly relayout operation on the figure’s layout</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>relayout_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – <p>Dict of layout updates</p>
+<dd class="field-odd"><p><strong>relayout_data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – <p>Dict of layout updates</p>
 <p>dict keys are strings that specify the properties to be updated.
 Nested properties are expressed by joining successive keys on
 ‘.’ characters (e.g. ‘xaxis.range’)</p>
@@ -1069,7 +1070,7 @@ Nested properties are expressed by joining successive keys on
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1081,7 +1082,7 @@ Nested properties are expressed by joining successive keys on
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>restyle_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – <p>Dict of trace style updates.</p>
+<li><p><strong>restyle_data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – <p>Dict of trace style updates.</p>
 <p>Keys are strings that specify the properties to be updated.
 Nested properties are expressed by joining successive keys on
 ‘.’ characters (e.g. ‘marker.color’).</p>
@@ -1102,7 +1103,7 @@ property of the first trace to the list [1, 2, 3]</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>trace_indexes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>list of int</em>) – Trace index, or list of trace indexes, that the restyle operation
+<li><p><strong>trace_indexes</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>list of int</em>) – Trace index, or list of trace indexes, that the restyle operation
 applies to. Defaults to all trace indexes.</p></li>
 </ul>
 </dd>
@@ -1110,7 +1111,7 @@ applies to. Defaults to all trace indexes.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1123,9 +1124,9 @@ applies to. Defaults to all trace indexes.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>restyle_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Traces update specification. See the docstring for the
+<li><p><strong>restyle_data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Traces update specification. See the docstring for the
 <code class="docutils literal notranslate"><span class="pre">plotly_restyle</span></code> method for details</p></li>
-<li><p><strong>relayout_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Layout update specification. See the docstring for the
+<li><p><strong>relayout_data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Layout update specification. See the docstring for the
 <code class="docutils literal notranslate"><span class="pre">plotly_relayout</span></code> method for details</p></li>
 <li><p><strong>trace_indexes</strong> – Trace index, or list of trace indexes, that the update operation
 applies to. Defaults to all trace indexes.</p></li>
@@ -1147,7 +1148,7 @@ applies to. Defaults to all trace indexes.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Property name</p></li>
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Property name</p></li>
 <li><p><strong>dflt</strong> – The default value to return if key was not found in figure</p></li>
 </ul>
 </dd>
@@ -1158,7 +1159,7 @@ applies to. Defaults to all trace indexes.</p></li>
 <dd class="field-odd"><p>value</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.14)"><strong>KeyError</strong></a> – If key is not in object and no dflt argument specified</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#KeyError" title="(in Python v3.14)"><strong>KeyError</strong></a> – If key is not in object and no dflt argument specified</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1179,7 +1180,7 @@ that satisfy custom selection criteria.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>selector</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>, </em><em>function</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dict to use as selection criteria.
+<li><p><strong>selector</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>, </em><em>function</em><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dict to use as selection criteria.
 Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all traces are
@@ -1189,15 +1190,15 @@ each trace and those for which the function returned True
 will be in the selection. If an int N, the Nth trace matching row
 and col will be selected (N can be negative). If a string S, the selector
 is equivalent to dict(type=S).</p></li>
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
-<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <ul>
+<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <ul>
 <li><p>If True, only select traces associated with the secondary
 y-axis of the subplot.</p></li>
 <li><p>If False, only select traces associated with the primary
@@ -1238,16 +1239,16 @@ specified by the renderer argument</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>renderer</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – A string containing the names of one or more registered renderers
+<li><p><strong>renderer</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – A string containing the names of one or more registered renderers
 (separated by ‘+’ characters) or None.  If None, then the default
 renderers specified in plotly.io.renderers.default are used.</p></li>
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being shown,
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being shown,
 False otherwise.</p></li>
-<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – An integer or float that determines the number of pixels wide the
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – An integer or float that determines the number of pixels wide the
 plot is. The default is set in plotly.js.</p></li>
-<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – An integer or float specifying the height of the plot in pixels.
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – An integer or float specifying the height of the plot in pixels.
 The default is set in plotly.js.</p></li>
-<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – A dict of parameters to configure the figure. The defaults are set
+<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – A dict of parameters to configure the figure. The defaults are set
 in plotly.js.</p></li>
 </ul>
 </dd>
@@ -1255,7 +1256,7 @@ in plotly.js.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1271,7 +1272,7 @@ user, it does not include default values of unspecified properties</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1283,11 +1284,11 @@ user, it does not include default values of unspecified properties</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Plotly.js figure config options</p></li>
-<li><p><strong>auto_play</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default=True</em><em>)</em>) – Whether to automatically start the animation sequence on page load
+<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Plotly.js figure config options</p></li>
+<li><p><strong>auto_play</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default=True</em><em>)</em>) – Whether to automatically start the animation sequence on page load
 if the figure contains frames. Has no effect if the figure does not
 contain frames.</p></li>
-<li><p><strong>include_plotlyjs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default True</em><em>)</em>) – <p>Specifies how the plotly.js library is included/loaded in the output
+<li><p><strong>include_plotlyjs</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default True</em><em>)</em>) – <p>Specifies how the plotly.js library is included/loaded in the output
 div string.</p>
 <p>If True, a script tag containing the plotly.js source code (~3MB)
 is included in the output.  HTML files generated with this option are
@@ -1308,7 +1309,7 @@ useful when the resulting div string will be placed inside an HTML
 document that already loads plotly.js. This option is not advised
 when full_html=True as it will result in a non-functional html file.</p>
 </p></li>
-<li><p><strong>include_mathjax</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default False</em><em>)</em>) – <p>Specifies how the MathJax.js library is included in the output html
+<li><p><strong>include_mathjax</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default False</em><em>)</em>) – <p>Specifies how the MathJax.js library is included in the output html
 div string.  MathJax is required in order to display labels
 with LaTeX typesetting.</p>
 <p>If False, no script tag referencing MathJax.js will be included in the
@@ -1321,30 +1322,30 @@ is available.</p>
 references the specified path. This approach can be used to point the
 resulting HTML div string to an alternative CDN.</p>
 </p></li>
-<li><p><strong>post_script</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – JavaScript snippet(s) to be included in the resulting div just after
+<li><p><strong>post_script</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – JavaScript snippet(s) to be included in the resulting div just after
 plot creation.  The string(s) may include ‘{plot_id}’ placeholders
 that will then be replaced by the <code class="docutils literal notranslate"><span class="pre">id</span></code> of the div element that the
 plotly.js figure is associated with.  One application for this script
 is to install custom plotly.js event handlers.</p></li>
-<li><p><strong>full_html</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – If True, produce a string containing a complete HTML document
+<li><p><strong>full_html</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – If True, produce a string containing a complete HTML document
 starting with an &lt;html&gt; tag.  If False, produce a string containing
 a single &lt;div&gt; element.</p></li>
-<li><p><strong>animation_opts</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – dict of custom animation parameters to be passed to the function
+<li><p><strong>animation_opts</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – dict of custom animation parameters to be passed to the function
 Plotly.animate in Plotly.js. See
 <a class="reference external" href="https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js">https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js</a>
 for available options. Has no effect if the figure does not contain
 frames, or auto_play is False.</p></li>
-<li><p><strong>default_width</strong> (<em>number</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
+<li><p><strong>default_width</strong> (<em>number</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
 specify its own layout.width/layout.height property.  May be
 specified in pixels as an integer (e.g. 500), or as a css width style
 string (e.g. ‘500px’, ‘100%’).</p></li>
-<li><p><strong>default_height</strong> (<em>number</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
+<li><p><strong>default_height</strong> (<em>number</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
 specify its own layout.width/layout.height property.  May be
 specified in pixels as an integer (e.g. 500), or as a css width style
 string (e.g. ‘500px’, ‘100%’).</p></li>
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being converted to
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being converted to
 JSON, False otherwise.</p></li>
-<li><p><strong>div_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – If provided, this is the value of the id attribute of the div tag. If None, the
+<li><p><strong>div_id</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – If provided, this is the value of the id attribute of the div tag. If None, the
 id attribute is a UUID.</p></li>
 </ul>
 </dd>
@@ -1352,7 +1353,7 @@ id attribute is a UUID.</p></li>
 <dd class="field-even"><p>Representation of figure as an HTML div string</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1364,7 +1365,7 @@ id attribute is a UUID.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – <dl class="simple">
+<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – <dl class="simple">
 <dt>(optional) The desired image format. One of:</dt><dd><ul>
 <li><p>’png’</p></li>
 <li><p>’jpg’ or ‘jpeg’</p></li>
@@ -1376,18 +1377,18 @@ id attribute is a UUID.</p></li>
 </dl>
 <p>Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_format</span></code>.</p>
 </p></li>
-<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The width of the exported image in layout pixels. If the
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The width of the exported image in layout pixels. If the
 <code class="docutils literal notranslate"><span class="pre">scale</span></code> property is 1.0, this will also be the width of the exported image
 in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_width</span></code>.</p></li>
-<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The height of the exported image in layout pixels. If the
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The height of the exported image in layout pixels. If the
 <code class="docutils literal notranslate"><span class="pre">scale</span></code> property is 1.0, this will also be the height of the exported image
 in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_height</span></code>.</p></li>
-<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – (optional) The scale factor to use when exporting the figure. A scale
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – (optional) The scale factor to use when exporting the figure. A scale
 factor larger than 1.0 will increase the image resolution with respect
 to the figure’s layout pixel dimensions, while a scale factor of
 less than 1.0 will decrease the image resolution. Defaults to
 <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_scale</span></code>.</p></li>
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – (optional) True if the figure should be validated before being converted
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – (optional) True if the figure should be validated before being converted
 to an image, False otherwise. Defaults to True.</p></li>
 </ul>
 </dd>
@@ -1395,7 +1396,7 @@ to an image, False otherwise. Defaults to True.</p></li>
 <dd class="field-even"><p>The image data</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)">bytes</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#bytes" title="(in Python v3.14)">bytes</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1407,12 +1408,12 @@ to an image, False otherwise. Defaults to True.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being converted to
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being converted to
 JSON, False otherwise.</p></li>
-<li><p><strong>pretty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default False</em><em>)</em>) – True if JSON representation should be pretty-printed, False if
+<li><p><strong>pretty</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default False</em><em>)</em>) – True if JSON representation should be pretty-printed, False if
 representation should be as compact as possible.</p></li>
-<li><p><strong>remove_uids</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if trace UIDs should be omitted from the JSON representation</p></li>
-<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – <dl class="simple">
+<li><p><strong>remove_uids</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if trace UIDs should be omitted from the JSON representation</p></li>
+<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – <dl class="simple">
 <dt>The JSON encoding engine to use. One of:</dt><dd><ul>
 <li><p>”json” for an encoder based on the built-in Python json module</p></li>
 <li><p>”orjson” for a fast encoder the requires the orjson package</p></li>
@@ -1428,7 +1429,7 @@ plotly.io.json.config.default_encoder.</p>
 <dd class="field-even"><p>Representation of figure as a JSON string</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1449,7 +1450,7 @@ or the <code class="docutils literal notranslate"><span class="pre">to_json</spa
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1464,8 +1465,8 @@ object with the values in the input dict / keyword arguments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dict1</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary of properties to be updated</p></li>
-<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
+<li><p><strong>dict1</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary of properties to be updated</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
 <li><p><strong>kwargs</strong> – Keyword/value pair of properties to be updated</p></li>
@@ -1516,8 +1517,8 @@ layout with the values in the input dict / keyword arguments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dict1</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary of properties to be updated</p></li>
-<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
+<li><p><strong>dict1</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary of properties to be updated</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
 <li><p><strong>kwargs</strong> – Keyword/value pair of properties to be updated</p></li>
@@ -1540,9 +1541,9 @@ specified selection criteria</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>patch</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dictionary of property updates to be applied to all traces that
+<li><p><strong>patch</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dictionary of property updates to be applied to all traces that
 satisfy the selection criteria.</p></li>
-<li><p><strong>selector</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>, </em><em>function</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dict to use as selection criteria.
+<li><p><strong>selector</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>, </em><em>function</em><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dict to use as selection criteria.
 Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all traces are
@@ -1552,15 +1553,15 @@ each trace and those for which the function returned True
 will be in the selection. If an int N, the Nth trace matching row
 and col will be selected (N can be negative). If a string S, the selector
 is equivalent to dict(type=S).</p></li>
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
-<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <ul>
+<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <ul>
 <li><p>If True, only select traces associated with the secondary
 y-axis of the subplot.</p></li>
 <li><p>If False, only select traces associated with the primary
@@ -1573,7 +1574,7 @@ created using plotly.subplots.make_subplots. See the docstring
 for the specs argument to make_subplots for more info on
 creating subplots with secondary y-axes.</p>
 </p></li>
-<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
 <li><p><strong>**kwargs</strong> – Additional property updates to apply to each selected trace. If
@@ -1597,13 +1598,13 @@ one in <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs tak
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>writeable</em>) – A string representing a local file path or a writeable object
+<li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>writeable</em>) – A string representing a local file path or a writeable object
 (e.g. a pathlib.Path object or an open file descriptor)</p></li>
-<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Plotly.js figure config options</p></li>
-<li><p><strong>auto_play</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default=True</em><em>)</em>) – Whether to automatically start the animation sequence on page load
+<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Plotly.js figure config options</p></li>
+<li><p><strong>auto_play</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default=True</em><em>)</em>) – Whether to automatically start the animation sequence on page load
 if the figure contains frames. Has no effect if the figure does not
 contain frames.</p></li>
-<li><p><strong>include_plotlyjs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default True</em><em>)</em>) – <p>Specifies how the plotly.js library is included/loaded in the output
+<li><p><strong>include_plotlyjs</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default True</em><em>)</em>) – <p>Specifies how the plotly.js library is included/loaded in the output
 div string.</p>
 <p>If True, a script tag containing the plotly.js source code (~3MB)
 is included in the output.  HTML files generated with this option are
@@ -1633,7 +1634,7 @@ useful when the resulting div string will be placed inside an HTML
 document that already loads plotly.js.  This option is not advised
 when full_html=True as it will result in a non-functional html file.</p>
 </p></li>
-<li><p><strong>include_mathjax</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default False</em><em>)</em>) – <p>Specifies how the MathJax.js library is included in the output html
+<li><p><strong>include_mathjax</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default False</em><em>)</em>) – <p>Specifies how the MathJax.js library is included in the output html
 div string.  MathJax is required in order to display labels
 with LaTeX typesetting.</p>
 <p>If False, no script tag referencing MathJax.js will be included in the
@@ -1646,32 +1647,32 @@ is available.</p>
 references the specified path. This approach can be used to point the
 resulting HTML div string to an alternative CDN.</p>
 </p></li>
-<li><p><strong>post_script</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – JavaScript snippet(s) to be included in the resulting div just after
+<li><p><strong>post_script</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – JavaScript snippet(s) to be included in the resulting div just after
 plot creation.  The string(s) may include ‘{plot_id}’ placeholders
 that will then be replaced by the <code class="docutils literal notranslate"><span class="pre">id</span></code> of the div element that the
 plotly.js figure is associated with.  One application for this script
 is to install custom plotly.js event handlers.</p></li>
-<li><p><strong>full_html</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – If True, produce a string containing a complete HTML document
+<li><p><strong>full_html</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – If True, produce a string containing a complete HTML document
 starting with an &lt;html&gt; tag.  If False, produce a string containing
 a single &lt;div&gt; element.</p></li>
-<li><p><strong>animation_opts</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – dict of custom animation parameters to be passed to the function
+<li><p><strong>animation_opts</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – dict of custom animation parameters to be passed to the function
 Plotly.animate in Plotly.js. See
 <a class="reference external" href="https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js">https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js</a>
 for available options. Has no effect if the figure does not contain
 frames, or auto_play is False.</p></li>
-<li><p><strong>default_width</strong> (<em>number</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
+<li><p><strong>default_width</strong> (<em>number</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
 specify its own layout.width/layout.height property.  May be
 specified in pixels as an integer (e.g. 500), or as a css width style
 string (e.g. ‘500px’, ‘100%’).</p></li>
-<li><p><strong>default_height</strong> (<em>number</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
+<li><p><strong>default_height</strong> (<em>number</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
 specify its own layout.width/layout.height property.  May be
 specified in pixels as an integer (e.g. 500), or as a css width style
 string (e.g. ‘500px’, ‘100%’).</p></li>
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being converted to
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being converted to
 JSON, False otherwise.</p></li>
-<li><p><strong>auto_open</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – If True, open the saved file in a web browser after saving.
+<li><p><strong>auto_open</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – If True, open the saved file in a web browser after saving.
 This argument only applies if <code class="docutils literal notranslate"><span class="pre">full_html</span></code> is True.</p></li>
-<li><p><strong>div_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – If provided, this is the value of the id attribute of the div tag. If None, the
+<li><p><strong>div_id</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – If provided, this is the value of the id attribute of the div tag. If None, the
 id attribute is a UUID.</p></li>
 </ul>
 </dd>
@@ -1679,7 +1680,7 @@ id attribute is a UUID.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1692,9 +1693,9 @@ object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>writeable</em>) – A string representing a local file path or a writeable object
+<li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>writeable</em>) – A string representing a local file path or a writeable object
 (e.g. a pathlib.Path object or an open file descriptor)</p></li>
-<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – (optional) The desired image format. One of:
+<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – (optional) The desired image format. One of:
 - ‘png’
 - ‘jpg’ or ‘jpeg’
 - ‘webp’
@@ -1702,18 +1703,18 @@ object</p>
 - ‘pdf’
 Defaults to the file extension of <code class="docutils literal notranslate"><span class="pre">file</span></code>, if given; otherwise
 defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_format</span></code>.</p></li>
-<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The width of the exported image in layout pixels. If the
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The width of the exported image in layout pixels. If the
 <code class="docutils literal notranslate"><span class="pre">scale</span></code> property is 1.0, this will also be the width of the exported image
 in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_width</span></code>.</p></li>
-<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The height of the exported image in layout pixels. If the
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (optional) The height of the exported image in layout pixels. If the
 <code class="docutils literal notranslate"><span class="pre">scale</span></code> property is 1.0, this will also be the height of the exported image
 in physical pixels. Defaults to <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_height</span></code>.</p></li>
-<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – (optional) The scale factor to use when exporting the figure. A scale
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – (optional) The scale factor to use when exporting the figure. A scale
 factor larger than 1.0 will increase the image resolution with respect
 to the figure’s layout pixel dimensions, while a scale factor of
 less than 1.0 will decrease the image resolution. Defaults to
 <code class="docutils literal notranslate"><span class="pre">plotly.io.defaults.default_scale</span></code>.</p></li>
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – (optional) True if the figure should be validated before being converted
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – (optional) True if the figure should be validated before being converted
 to an image, False otherwise. Defaults to True.</p></li>
 </ul>
 </dd>
@@ -1721,7 +1722,7 @@ to an image, False otherwise. Defaults to True.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1734,12 +1735,12 @@ object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>writeable</em>) – A string representing a local file path or a writeable object
+<li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>writeable</em>) – A string representing a local file path or a writeable object
 (e.g. an open file descriptor)</p></li>
-<li><p><strong>pretty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default False</em><em>)</em>) – True if JSON representation should be pretty-printed, False if
+<li><p><strong>pretty</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default False</em><em>)</em>) – True if JSON representation should be pretty-printed, False if
 representation should be as compact as possible.</p></li>
-<li><p><strong>remove_uids</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if trace UIDs should be omitted from the JSON representation</p></li>
-<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – <dl class="simple">
+<li><p><strong>remove_uids</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if trace UIDs should be omitted from the JSON representation</p></li>
+<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – <dl class="simple">
 <dt>The JSON encoding engine to use. One of:</dt><dd><ul>
 <li><p>”json” for an encoder based on the built-in Python json module</p></li>
 <li><p>”orjson” for a fast encoder the requires the orjson package</p></li>
@@ -1755,7 +1756,7 @@ plotly.io.json.config.default_encoder.</p>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1782,7 +1783,7 @@ relayout / update operation.</p>
 <li><p><strong>callback</strong> (<em>function</em>) – Function that accepts 1 + len(<code class="docutils literal notranslate"><span class="pre">args</span></code>) parameters. First parameter
 is this object. Second through last parameters are the
 property / subpropery values referenced by args.</p></li>
-<li><p><strong>args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><em>str|tuple</em><em>[</em><em>int|str</em><em>]</em><em>]</em>) – <p>List of property references where each reference may be one of:</p>
+<li><p><strong>args</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><em>str|tuple</em><em>[</em><em>int|str</em><em>]</em><em>]</em>) – <p>List of property references where each reference may be one of:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>A property name string (e.g. ‘foo’) for direct properties</p></li>
@@ -1793,7 +1794,7 @@ subproperties</p></li>
 </ol>
 </div></blockquote>
 </p></li>
-<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – True if callback should be appended to previously registered
+<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – True if callback should be appended to previously registered
 callback on the same properties, False if callback should replace
 previously registered callbacks on the same properties. Defaults
 to False.</p></li>
@@ -1815,7 +1816,7 @@ yaxis whenever either either of them changes.</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1840,7 +1841,7 @@ code-generated subclass.</p>
 <dl class="py class">
 <dt id="plotly.basedatatypes.BasePlotlyType">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.basedatatypes.</span></code><code class="sig-name descname"><span class="pre">BasePlotlyType</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plotly_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.basedatatypes.BasePlotlyType" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>BasePlotlyType is the base class for all objects in the trace, layout,
 and frame object hierarchies</p>
 <dl class="py method">
@@ -1853,7 +1854,7 @@ belongs to. None if the object does not belong to a Figure</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Union[<a class="reference internal" href="plotly.basedatatypes.BaseFigure.html#plotly.basedatatypes.BaseFigure" title="plotly.basedatatypes.BaseFigure">BaseFigure</a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a>]</p>
+<dd class="field-even"><p>Union[<a class="reference internal" href="plotly.basedatatypes.BaseFigure.html#plotly.basedatatypes.BaseFigure" title="plotly.basedatatypes.BaseFigure">BaseFigure</a>, <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1873,7 +1874,7 @@ relayout / update operation.</p>
 <li><p><strong>callback</strong> (<em>function</em>) – Function that accepts 1 + len(<code class="docutils literal notranslate"><span class="pre">args</span></code>) parameters. First parameter
 is this object. Second through last parameters are the
 property / subpropery values referenced by args.</p></li>
-<li><p><strong>args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><em>str|tuple</em><em>[</em><em>int|str</em><em>]</em><em>]</em>) – <p>List of property references where each reference may be one of:</p>
+<li><p><strong>args</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><em>str|tuple</em><em>[</em><em>int|str</em><em>]</em><em>]</em>) – <p>List of property references where each reference may be one of:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>A property name string (e.g. ‘foo’) for direct properties</p></li>
@@ -1884,7 +1885,7 @@ subproperties</p></li>
 </ol>
 </div></blockquote>
 </p></li>
-<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – True if callback should be appended to previously registered
+<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – True if callback should be appended to previously registered
 callback on the same properties, False if callback should replace
 previously registered callbacks on the same properties. Defaults
 to False.</p></li>
@@ -1906,7 +1907,7 @@ yaxis whenever either either of them changes.</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1928,7 +1929,7 @@ yaxis whenever either either of them changes.</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1940,7 +1941,7 @@ yaxis whenever either either of them changes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Property name</p></li>
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Property name</p></li>
 <li><p><strong>dflt</strong> – The default value to return if key was not found in object</p></li>
 </ul>
 </dd>
@@ -1951,7 +1952,7 @@ yaxis whenever either either of them changes.</p>
 <dd class="field-odd"><p>value</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.14)"><strong>KeyError</strong></a> – If key is not in object and no dflt argument specified</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#KeyError" title="(in Python v3.14)"><strong>KeyError</strong></a> – If key is not in object and no dflt argument specified</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1963,12 +1964,12 @@ yaxis whenever either either of them changes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the object should be validated before being converted to
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the object should be validated before being converted to
 JSON, False otherwise.</p></li>
-<li><p><strong>pretty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default False</em><em>)</em>) – True if JSON representation should be pretty-printed, False if
+<li><p><strong>pretty</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default False</em><em>)</em>) – True if JSON representation should be pretty-printed, False if
 representation should be as compact as possible.</p></li>
-<li><p><strong>remove_uids</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if trace UIDs should be omitted from the JSON representation</p></li>
-<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – <dl class="simple">
+<li><p><strong>remove_uids</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if trace UIDs should be omitted from the JSON representation</p></li>
+<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – <dl class="simple">
 <dt>The JSON encoding engine to use. One of:</dt><dd><ul>
 <li><p>”json” for an encoder based on the built-in Python json module</p></li>
 <li><p>”orjson” for a fast encoder the requires the orjson package</p></li>
@@ -1984,7 +1985,7 @@ plotly.io.json.config.default_encoder.</p>
 <dd class="field-even"><p>Representation of object as a JSON string</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2000,7 +2001,7 @@ or the <code class="docutils literal notranslate"><span class="pre">to_json</spa
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2015,8 +2016,8 @@ object with the values in the input dict / keyword arguments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dict1</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary of properties to be updated</p></li>
-<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
+<li><p><strong>dict1</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary of properties to be updated</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
 <li><p><strong>kwargs</strong> – Keyword/value pair of properties to be updated</p></li>
@@ -2066,7 +2067,7 @@ that are displayed using plot/iplot.</p>
 <li><p>plotly.callbacks.InputDeviceState object</p></li>
 </ul>
 </p></li>
-<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
+<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
 defined on_click callbacks for this trace. If True,
 this callback is appended to the list of any previously defined
 callbacks.</p></li>
@@ -2076,7 +2077,7 @@ callbacks.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -2117,7 +2118,7 @@ that are displayed using plot/iplot.</p>
 <li><p>plotly.callbacks.Points object</p></li>
 </ul>
 </p></li>
-<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
+<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
 defined on_deselect callbacks for this trace. If True,
 this callback is appended to the list of any previously defined
 callbacks.</p></li>
@@ -2127,7 +2128,7 @@ callbacks.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -2169,7 +2170,7 @@ that are displayed using plot/iplot.</p>
 <li><p>plotly.callbacks.InputDeviceState object</p></li>
 </ul>
 </p></li>
-<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
+<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
 defined on_hover callbacks for this trace. If True,
 this callback is appended to the list of any previously defined
 callbacks.</p></li>
@@ -2179,7 +2180,7 @@ callbacks.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -2221,7 +2222,7 @@ that are displayed using plot/iplot.</p>
 <li><p>plotly.callbacks.BoxSelector or plotly.callbacks.LassoSelector</p></li>
 </ul>
 </p></li>
-<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
+<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
 defined on_selection callbacks for this trace. If True,
 this callback is appended to the list of any previously defined
 callbacks.</p></li>
@@ -2231,7 +2232,7 @@ callbacks.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -2273,7 +2274,7 @@ that are displayed using plot/iplot.</p>
 <li><p>plotly.callbacks.InputDeviceState object</p></li>
 </ul>
 </p></li>
-<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
+<li><p><strong>append</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If False (the default), this callback replaces any previously
 defined on_unhover callbacks for this trace. If True,
 this callback is appended to the list of any previously defined
 callbacks.</p></li>
@@ -2283,7 +2284,7 @@ callbacks.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -2331,7 +2332,7 @@ subclass</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a>[<a class="reference internal" href="plotly.graph_objects.html#plotly.graph_objects.Frame" title="plotly.graph_objects.Frame">plotly.graph_objects.Frame</a>]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a>[<a class="reference internal" href="plotly.graph_objects.html#plotly.graph_objects.Frame" title="plotly.graph_objects.Frame">plotly.graph_objects.Frame</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2359,16 +2360,16 @@ specified by the renderer argument</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>renderer</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – A string containing the names of one or more registered renderers
+<li><p><strong>renderer</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – A string containing the names of one or more registered renderers
 (separated by ‘+’ characters) or None.  If None, then the default
 renderers specified in plotly.io.renderers.default are used.</p></li>
-<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being shown,
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being shown,
 False otherwise.</p></li>
-<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – An integer or float that determines the number of pixels wide the
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – An integer or float that determines the number of pixels wide the
 plot is. The default is set in plotly.js.</p></li>
-<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – An integer or float specifying the height of the plot in pixels.
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – An integer or float specifying the height of the plot in pixels.
 The default is set in plotly.js.</p></li>
-<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – A dict of parameters to configure the figure. The defaults are set
+<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – A dict of parameters to configure the figure. The defaults are set
 in plotly.js.</p></li>
 </ul>
 </dd>
@@ -2376,7 +2377,7 @@ in plotly.js.</p></li>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)">None</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)">None</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2389,7 +2390,7 @@ in plotly.js.</p></li>
 <dl class="py class">
 <dt id="plotly.callbacks.BoxSelector">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.callbacks.</span></code><code class="sig-name descname"><span class="pre">BoxSelector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xrange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yrange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.callbacks.BoxSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="plotly.callbacks.BoxSelector.type">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">type</span></code><a class="headerlink" href="#plotly.callbacks.BoxSelector.type" title="Permalink to this definition">¶</a></dt>
@@ -2399,7 +2400,7 @@ in plotly.js.</p></li>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2413,7 +2414,7 @@ in plotly.js.</p></li>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a>, <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2427,7 +2428,7 @@ in plotly.js.</p></li>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a>, <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2437,7 +2438,7 @@ in plotly.js.</p></li>
 <dl class="py class">
 <dt id="plotly.callbacks.InputDeviceState">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.callbacks.</span></code><code class="sig-name descname"><span class="pre">InputDeviceState</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buttons</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.callbacks.InputDeviceState" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="plotly.callbacks.InputDeviceState.alt">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">alt</span></code><a class="headerlink" href="#plotly.callbacks.InputDeviceState.alt" title="Permalink to this definition">¶</a></dt>
@@ -2447,7 +2448,7 @@ in plotly.js.</p></li>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)">bool</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2477,7 +2478,7 @@ the event</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2504,7 +2505,7 @@ will result in a code of 5</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2518,7 +2519,7 @@ will result in a code of 5</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)">bool</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2532,7 +2533,7 @@ will result in a code of 5</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)">bool</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2546,7 +2547,7 @@ will result in a code of 5</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)">bool</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2556,7 +2557,7 @@ will result in a code of 5</p>
 <dl class="py class">
 <dt id="plotly.callbacks.LassoSelector">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.callbacks.</span></code><code class="sig-name descname"><span class="pre">LassoSelector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.callbacks.LassoSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="plotly.callbacks.LassoSelector.type">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">type</span></code><a class="headerlink" href="#plotly.callbacks.LassoSelector.type" title="Permalink to this definition">¶</a></dt>
@@ -2566,7 +2567,7 @@ will result in a code of 5</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2581,7 +2582,7 @@ boundary</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2596,7 +2597,7 @@ boundary</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2606,7 +2607,7 @@ boundary</p>
 <dl class="py class">
 <dt id="plotly.callbacks.Points">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.callbacks.</span></code><code class="sig-name descname"><span class="pre">Points</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_inds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trace_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trace_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.callbacks.Points" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="plotly.callbacks.Points.point_inds">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">point_inds</span></code><a class="headerlink" href="#plotly.callbacks.Points.point_inds" title="Permalink to this definition">¶</a></dt>
@@ -2616,7 +2617,7 @@ boundary</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a>]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)">int</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2630,7 +2631,7 @@ boundary</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2644,7 +2645,7 @@ boundary</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2658,7 +2659,7 @@ boundary</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2672,7 +2673,7 @@ boundary</p>
 <dd class="field-odd"><p></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2764,9 +2765,9 @@ configured in ‘layout’.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>rows</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default 1</em><em>)</em>) – Number of rows in the subplot grid. Must be greater than zero.</p></li>
-<li><p><strong>cols</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default 1</em><em>)</em>) – Number of columns in the subplot grid. Must be greater than zero.</p></li>
-<li><p><strong>shared_xaxes</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default False</em><em>)</em>) – <p>Assign shared (linked) x-axes for 2D cartesian subplots</p>
+<li><p><strong>rows</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default 1</em><em>)</em>) – Number of rows in the subplot grid. Must be greater than zero.</p></li>
+<li><p><strong>cols</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default 1</em><em>)</em>) – Number of columns in the subplot grid. Must be greater than zero.</p></li>
+<li><p><strong>shared_xaxes</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default False</em><em>)</em>) – <p>Assign shared (linked) x-axes for 2D cartesian subplots</p>
 <blockquote>
 <div><ul>
 <li><p>True or ‘columns’: Share axes among subplots in the same column</p></li>
@@ -2775,7 +2776,7 @@ configured in ‘layout’.</p>
 </ul>
 </div></blockquote>
 </p></li>
-<li><p><strong>shared_yaxes</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default False</em><em>)</em>) – <p>Assign shared (linked) y-axes for 2D cartesian subplots</p>
+<li><p><strong>shared_yaxes</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default False</em><em>)</em>) – <p>Assign shared (linked) y-axes for 2D cartesian subplots</p>
 <blockquote>
 <div><ul>
 <li><p>’columns’: Share axes among subplots in the same column</p></li>
@@ -2804,19 +2805,19 @@ domains_grid of the subplots.</p>
 <li><p><strong>print_grid</strong> (<em>boolean</em><em> (</em><em>default False</em><em>)</em><em>:</em>) – If True, prints a string representation of the plot grid. Grid may
 also be printed using the <code class="docutils literal notranslate"><span class="pre">Figure.print_grid()</span></code> method on the
 resulting figure.</p></li>
-<li><p><strong>horizontal_spacing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> (</em><em>default 0.2 / cols</em><em>)</em>) – <p>Space between subplot columns in normalized plot coordinates. Must be
+<li><p><strong>horizontal_spacing</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> (</em><em>default 0.2 / cols</em><em>)</em>) – <p>Space between subplot columns in normalized plot coordinates. Must be
 a float between 0 and 1.</p>
 <p>Applies to all columns (use ‘specs’ subplot-dependents spacing)</p>
 </p></li>
-<li><p><strong>vertical_spacing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> (</em><em>default 0.3 / rows</em><em>)</em>) – <p>Space between subplot rows in normalized plot coordinates. Must be
+<li><p><strong>vertical_spacing</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> (</em><em>default 0.3 / rows</em><em>)</em>) – <p>Space between subplot rows in normalized plot coordinates. Must be
 a float between 0 and 1.</p>
 <p>Applies to all rows (use ‘specs’ subplot-dependents spacing)</p>
 </p></li>
-<li><p><strong>subplot_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>Title of each subplot as a list in row-major ordering.</p>
+<li><p><strong>subplot_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>Title of each subplot as a list in row-major ordering.</p>
 <p>Empty strings (“”) can be included in the list if no subplot title
 is desired in that space so that the titles are properly indexed.</p>
 </p></li>
-<li><p><strong>specs</strong> (<em>list of lists of dict</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>Per subplot specifications of subplot type, row/column spanning, and
+<li><p><strong>specs</strong> (<em>list of lists of dict</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>Per subplot specifications of subplot type, row/column spanning, and
 spacing.</p>
 <p>ex1: specs=[[{}, {}], [{‘colspan’: 2}, None]]</p>
 <p>ex2: specs=[[{‘rowspan’: 2}, {}], [None, {}]]</p>
@@ -2884,7 +2885,7 @@ if type=’xy’.</p>
 the spacing in between the subplots.</p></li>
 </ul>
 </p></li>
-<li><p><strong>insets</strong> (<em>list of dict</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em><em>:</em>) – <p>Inset specifications.  Insets are subplots that overlay grid subplots</p>
+<li><p><strong>insets</strong> (<em>list of dict</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em><em>:</em>) – <p>Inset specifications.  Insets are subplots that overlay grid subplots</p>
 <ul>
 <li><dl class="simple">
 <dt>Each item in ‘insets’ is a dictionary.</dt><dd><p>The available keys are:</p>
@@ -2921,13 +2922,13 @@ the spacing in between the subplots.</p></li>
 </li>
 </ul>
 </p></li>
-<li><p><strong>column_widths</strong> (<em>list of numbers</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>list of length <code class="docutils literal notranslate"><span class="pre">cols</span></code> of the relative widths of each column of subplots.
+<li><p><strong>column_widths</strong> (<em>list of numbers</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>list of length <code class="docutils literal notranslate"><span class="pre">cols</span></code> of the relative widths of each column of subplots.
 Values are normalized internally and used to distribute overall width
 of the figure (excluding padding) among the columns.</p>
 <p>For backward compatibility, may also be specified using the
 <code class="docutils literal notranslate"><span class="pre">column_width</span></code> keyword argument.</p>
 </p></li>
-<li><p><strong>row_heights</strong> (<em>list of numbers</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>list of length <code class="docutils literal notranslate"><span class="pre">rows</span></code> of the relative heights of each row of subplots.
+<li><p><strong>row_heights</strong> (<em>list of numbers</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>list of length <code class="docutils literal notranslate"><span class="pre">rows</span></code> of the relative heights of each row of subplots.
 If start_cell=’top-left’ then row heights are applied top to bottom.
 Otherwise, if start_cell=’bottom-left’ then row heights are applied
 bottom to top.</p>
@@ -2936,17 +2937,17 @@ bottom to top.</p>
 are applied from bottom to top regardless of the value of start_cell.
 This matches the legacy behavior of the <code class="docutils literal notranslate"><span class="pre">row_width</span></code> argument.</p>
 </p></li>
-<li><p><strong>column_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – list of length <code class="docutils literal notranslate"><span class="pre">cols</span></code> of titles to place above the top subplot in
+<li><p><strong>column_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – list of length <code class="docutils literal notranslate"><span class="pre">cols</span></code> of titles to place above the top subplot in
 each column.</p></li>
-<li><p><strong>row_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – list of length <code class="docutils literal notranslate"><span class="pre">rows</span></code> of titles to place on the right side of each
+<li><p><strong>row_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – list of length <code class="docutils literal notranslate"><span class="pre">rows</span></code> of titles to place on the right side of each
 row of subplots. If start_cell=’top-left’ then row titles are
 applied top to bottom. Otherwise, if start_cell=’bottom-left’ then
 row titles are applied bottom to top.</p></li>
-<li><p><strong>x_title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Title to place below the bottom row of subplots,
+<li><p><strong>x_title</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Title to place below the bottom row of subplots,
 centered horizontally</p></li>
-<li><p><strong>y_title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Title to place to the left of the left column of subplots,
+<li><p><strong>y_title</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Title to place to the left of the left column of subplots,
 centered vertically</p></li>
-<li><p><strong>figure</strong> (<em>go.Figure</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – If None, a new go.Figure instance will be created and its axes will be
+<li><p><strong>figure</strong> (<em>go.Figure</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – If None, a new go.Figure instance will be created and its axes will be
 populated with those corresponding to the requested subplot geometry and
 this new figure will be returned.
 If a go.Figure instance, the axes will be added to the
@@ -3064,7 +3065,7 @@ already contains axes, they will be overwritten.</p></li>
 <dl class="py class">
 <dt id="plotly.tools.FigureFactory">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.tools.</span></code><code class="sig-name descname"><span class="pre">FigureFactory</span></code><a class="headerlink" href="#plotly.tools.FigureFactory" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="plotly.tools.FigureFactory.create_dendrogram">
 <em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">create_dendrogram</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.tools.FigureFactory.create_dendrogram" title="Permalink to this definition">¶</a></dt>
@@ -3394,7 +3395,7 @@ renderer.data – a list of plotly data dictionaries</p>
 <dl class="py class">
 <dt id="plotly.utils.ElidedWrapper">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.utils.</span></code><code class="sig-name descname"><span class="pre">ElidedWrapper</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.utils.ElidedWrapper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Helper class that wraps values of certain types and produces a custom
 __repr__() that may be elided and is suitable for use during pretty
 printing</p>
@@ -3418,7 +3419,7 @@ printing</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<em>(</em><em>list|dict</em><em>)</em>) – The top-level object.</p></li>
-<li><p><strong>path</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>]</em><em>|tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>]</em><em>)</em>) – Keys to access parts of obj.</p></li>
+<li><p><strong>path</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>]</em><em>|tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>]</em><em>)</em>) – Keys to access parts of obj.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -3447,8 +3448,8 @@ of that object to a nested value in the object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>node</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>)</em>) – Part of a dict to be traversed.</p></li>
-<li><p><strong>path</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>]</em><em>)</em>) – Defines the path of the current node.</p></li>
+<li><p><strong>node</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>)</em>) – Part of a dict to be traversed.</p></li>
+<li><p><strong>path</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>]</em><em>)</em>) – Defines the path of the current node.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -3470,7 +3471,7 @@ of that object to a nested value in the object.</p>
 <dl class="py class">
 <dt id="plotly.validator_cache.ValidatorCache">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">plotly.validator_cache.</span></code><code class="sig-name descname"><span class="pre">ValidatorCache</span></code><a class="headerlink" href="#plotly.validator_cache.ValidatorCache" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="plotly.validator_cache.ValidatorCache.get_validator">
 <em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_validator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.validator_cache.ValidatorCache.get_validator" title="Permalink to this definition">¶</a></dt>

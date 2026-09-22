@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.graph_objects.Figure.update_traces &#8212;  7.0.0 documentation</title>
+    <title>plotly.graph_objects.Figure.update_traces &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plotly-style.css" />
@@ -126,9 +126,9 @@ specified selection criteria</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>patch</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dictionary of property updates to be applied to all traces that
+<li><p><strong>patch</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dictionary of property updates to be applied to all traces that
 satisfy the selection criteria.</p></li>
-<li><p><strong>selector</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>, </em><em>function</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dict to use as selection criteria.
+<li><p><strong>selector</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>, </em><em>function</em><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Dict to use as selection criteria.
 Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all traces are
@@ -138,15 +138,15 @@ each trace and those for which the function returned True
 will be in the selection. If an int N, the Nth trace matching row
 and col will be selected (N can be negative). If a string S, the selector
 is equivalent to dict(type=S).</p></li>
-<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
-<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+<li><p><strong>col</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
-<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <ul>
+<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <ul>
 <li><p>If True, only select traces associated with the secondary
 y-axis of the subplot.</p></li>
 <li><p>If False, only select traces associated with the primary
@@ -159,7 +159,7 @@ created using plotly.subplots.make_subplots. See the docstring
 for the specs argument to make_subplots for more info on
 creating subplots with secondary y-axes.</p>
 </p></li>
-<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
 <li><p><strong>**kwargs</strong> – Additional property updates to apply to each selected trace. If

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.io.from_json &#8212;  7.0.0 documentation</title>
+    <title>plotly.io.from_json &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -125,12 +125,12 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)"><em>bytes</em></a>) – String or bytes object containing the JSON representation of a figure</p></li>
-<li><p><strong>output_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.14)"><em>type</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default 'Figure'</em><em>)</em>) – The output figure type or type name.
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#bytes" title="(in Python v3.14)"><em>bytes</em></a>) – String or bytes object containing the JSON representation of a figure</p></li>
+<li><p><strong>output_type</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#type" title="(in Python v3.14)"><em>type</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default 'Figure'</em><em>)</em>) – The output figure type or type name.
 One of:  graph_objects.Figure, ‘Figure’, graph_objects.FigureWidget, ‘FigureWidget’</p></li>
-<li><p><strong>skip_invalid</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default False</em><em>)</em>) – False if invalid figure properties should result in an exception.
+<li><p><strong>skip_invalid</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em> (</em><em>default False</em><em>)</em>) – False if invalid figure properties should result in an exception.
 True if invalid figure properties should be silently ignored.</p></li>
-<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – <dl class="simple">
+<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default None</em><em>)</em>) – <dl class="simple">
 <dt>The JSON decoding engine to use. One of:</dt><dd><ul>
 <li><p>if “json”, parse JSON using built in json module</p></li>
 <li><p>if “orjson”, parse using the faster orjson module, requires the orjson
@@ -145,7 +145,7 @@ plotly.io.json.config.default_engine.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – if value is not a string, or if skip_invalid=False and value contains
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – if value is not a string, or if skip_invalid=False and value contains
     invalid figure properties</p>
 </dd>
 <dt class="field-odd">Returns</dt>

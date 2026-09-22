@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.figure_factory.create_trisurf &#8212;  7.0.0 documentation</title>
+    <title>plotly.figure_factory.create_trisurf &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -137,7 +137,7 @@ of the form ‘rgb(x, y, z)’ where x, y, z belong to the interval
 [0, 255] and a color tuple is a tuple of the form (a, b, c) where
 a, b and c belong to [0, 1]. If colormap is a list, it must
 contain the valid color types aforementioned as its members</p></li>
-<li><p><strong>show_colorbar</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – determines if colorbar is visible</p></li>
+<li><p><strong>show_colorbar</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – determines if colorbar is visible</p></li>
 <li><p><strong>scale</strong> (<em>(</em><em>list|array</em><em>)</em>) – sets the scale values to be used if a non-
 linearly interpolated colormap is desired. If left as None, a
 linear interpolation between the colors will be excecuted</p></li>
@@ -145,21 +145,21 @@ linear interpolation between the colors will be excecuted</p></li>
 coloring of the surface. Takes either a function with 3 arguments
 x, y, z or a list/array of color values the same length as
 simplices. If None, coloring will only depend on the z axis</p></li>
-<li><p><strong>title</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – title of the plot</p></li>
-<li><p><strong>plot_edges</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – determines if the triangles on the trisurf
+<li><p><strong>title</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – title of the plot</p></li>
+<li><p><strong>plot_edges</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – determines if the triangles on the trisurf
 are visible</p></li>
-<li><p><strong>showbackground</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – makes background in plot visible</p></li>
-<li><p><strong>backgroundcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of background. Takes a string of
+<li><p><strong>showbackground</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – makes background in plot visible</p></li>
+<li><p><strong>backgroundcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of background. Takes a string of
 the form ‘rgb(x,y,z)’ x,y,z are between 0 and 255 inclusive</p></li>
-<li><p><strong>gridcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the gridlines besides the axes. Takes
+<li><p><strong>gridcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the gridlines besides the axes. Takes
 a string of the form ‘rgb(x,y,z)’ x,y,z are between 0 and 255
 inclusive</p></li>
-<li><p><strong>zerolinecolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the axes. Takes a string of the
+<li><p><strong>zerolinecolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the axes. Takes a string of the
 form ‘rgb(x,y,z)’ x,y,z are between 0 and 255 inclusive</p></li>
-<li><p><strong>edges_color</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the edges, if plot_edges is True</p></li>
+<li><p><strong>edges_color</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the edges, if plot_edges is True</p></li>
 <li><p><strong>height</strong> (<em>(</em><em>int|float</em><em>)</em>) – the height of the plot (in pixels)</p></li>
 <li><p><strong>width</strong> (<em>(</em><em>int|float</em><em>)</em>) – the width of the plot (in pixels)</p></li>
-<li><p><strong>aspectratio</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>)</em>) – a dictionary of the aspect ratio values for
+<li><p><strong>aspectratio</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>)</em>) – a dictionary of the aspect ratio values for
 the x, y and z axes. ‘x’, ‘y’ and ‘z’ take (int|float) values</p></li>
 </ul>
 </dd>

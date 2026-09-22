@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.express.data package &#8212;  7.0.0 documentation</title>
+    <title>plotly.express.data package &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -181,7 +181,7 @@ on three hypothetical experiments, along with their gender and control/treatment
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>indexed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, then the index is named “participant”.
+<li><p><strong>indexed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, then the index is named “participant”.
 Applicable only if <code class="docutils literal notranslate"><span class="pre">return_type='pandas'</span></code></p></li>
 <li><p><strong>return_type</strong> (<em>{'pandas'</em><em>, </em><em>'polars'</em><em>, </em><em>'pyarrow'</em><em>, </em><em>'modin'</em><em>, </em><em>'cudf'}</em>) – Type of the resulting dataframe</p></li>
 </ul>
@@ -205,10 +205,10 @@ If <code class="docutils literal notranslate"><span class="pre">indexed</span></
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>datetimes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not ‘year’ column will converted to datetime type</p></li>
-<li><p><strong>centroids</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, [‘centroid_lat’, ‘centroid_lon’] columns are added</p></li>
+<li><p><strong>datetimes</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not ‘year’ column will converted to datetime type</p></li>
+<li><p><strong>centroids</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, [‘centroid_lat’, ‘centroid_lon’] columns are added</p></li>
 <li><p><strong>year</strong> (<em>int | None</em>) – If provided, the dataset will be filtered for that year</p></li>
-<li><p><strong>pretty_names</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, prettifies the column names</p></li>
+<li><p><strong>pretty_names</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, prettifies the column names</p></li>
 <li><p><strong>return_type</strong> (<em>{'pandas'</em><em>, </em><em>'polars'</em><em>, </em><em>'pyarrow'</em><em>, </em><em>'modin'</em><em>, </em><em>'cudf'}</em>) – Type of the resulting dataframe</p></li>
 </ul>
 </dd>
@@ -254,7 +254,7 @@ top three nations as of 2020.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>indexed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not the ‘nation’ column is used as the index.
+<li><p><strong>indexed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not the ‘nation’ column is used as the index.
 Applicable only if <code class="docutils literal notranslate"><span class="pre">return_type='pandas'</span></code></p></li>
 <li><p><strong>return_type</strong> (<em>{'pandas'</em><em>, </em><em>'polars'</em><em>, </em><em>'pyarrow'</em><em>, </em><em>'modin'</em><em>, </em><em>'cudf'}</em>) – Type of the resulting dataframe</p></li>
 </ul>
@@ -277,7 +277,7 @@ top three nations as of 2020.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>indexed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not the ‘nation’ column is used as the index and the column index
+<li><p><strong>indexed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not the ‘nation’ column is used as the index and the column index
 is named ‘medal’. Applicable only if <code class="docutils literal notranslate"><span class="pre">return_type='pandas'</span></code></p></li>
 <li><p><strong>return_type</strong> (<em>{'pandas'</em><em>, </em><em>'polars'</em><em>, </em><em>'pyarrow'</em><em>, </em><em>'modin'</em><em>, </em><em>'cudf'}</em>) – Type of the resulting dataframe</p></li>
 </ul>
@@ -301,9 +301,9 @@ is named ‘medal’</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>indexed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not the ‘date’ column is used as the index and the column index
+<li><p><strong>indexed</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not the ‘date’ column is used as the index and the column index
 is named ‘company’. Applicable only if <code class="docutils literal notranslate"><span class="pre">return_type='pandas'</span></code></p></li>
-<li><p><strong>datetimes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not the ‘date’ column will be of datetime type</p></li>
+<li><p><strong>datetimes</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether or not the ‘date’ column will be of datetime type</p></li>
 <li><p><strong>return_type</strong> (<em>{'pandas'</em><em>, </em><em>'polars'</em><em>, </em><em>'pyarrow'</em><em>, </em><em>'modin'</em><em>, </em><em>'cudf'}</em>) – Type of the resulting dataframe</p></li>
 </ul>
 </dd>
@@ -328,7 +328,7 @@ If <code class="docutils literal notranslate"><span class="pre">datetimes</span>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pretty_names</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, prettifies the column names</p></li>
+<li><p><strong>pretty_names</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If True, prettifies the column names</p></li>
 <li><p><strong>return_type</strong> (<em>{'pandas'</em><em>, </em><em>'polars'</em><em>, </em><em>'pyarrow'</em><em>, </em><em>'modin'</em><em>, </em><em>'cudf'}</em>) – Type of the resulting dataframe</p></li>
 </ul>
 </dd>

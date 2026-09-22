@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.subplots.make_subplots &#8212;  7.0.0 documentation</title>
+    <title>plotly.subplots.make_subplots &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -126,9 +126,9 @@ configured in ‘layout’.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>rows</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default 1</em><em>)</em>) – Number of rows in the subplot grid. Must be greater than zero.</p></li>
-<li><p><strong>cols</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default 1</em><em>)</em>) – Number of columns in the subplot grid. Must be greater than zero.</p></li>
-<li><p><strong>shared_xaxes</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default False</em><em>)</em>) – <p>Assign shared (linked) x-axes for 2D cartesian subplots</p>
+<li><p><strong>rows</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default 1</em><em>)</em>) – Number of rows in the subplot grid. Must be greater than zero.</p></li>
+<li><p><strong>cols</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> (</em><em>default 1</em><em>)</em>) – Number of columns in the subplot grid. Must be greater than zero.</p></li>
+<li><p><strong>shared_xaxes</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default False</em><em>)</em>) – <p>Assign shared (linked) x-axes for 2D cartesian subplots</p>
 <blockquote>
 <div><ul>
 <li><p>True or ‘columns’: Share axes among subplots in the same column</p></li>
@@ -137,7 +137,7 @@ configured in ‘layout’.</p>
 </ul>
 </div></blockquote>
 </p></li>
-<li><p><strong>shared_yaxes</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default False</em><em>)</em>) – <p>Assign shared (linked) y-axes for 2D cartesian subplots</p>
+<li><p><strong>shared_yaxes</strong> (<em>boolean</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>default False</em><em>)</em>) – <p>Assign shared (linked) y-axes for 2D cartesian subplots</p>
 <blockquote>
 <div><ul>
 <li><p>’columns’: Share axes among subplots in the same column</p></li>
@@ -166,19 +166,19 @@ domains_grid of the subplots.</p>
 <li><p><strong>print_grid</strong> (<em>boolean</em><em> (</em><em>default False</em><em>)</em><em>:</em>) – If True, prints a string representation of the plot grid. Grid may
 also be printed using the <code class="docutils literal notranslate"><span class="pre">Figure.print_grid()</span></code> method on the
 resulting figure.</p></li>
-<li><p><strong>horizontal_spacing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> (</em><em>default 0.2 / cols</em><em>)</em>) – <p>Space between subplot columns in normalized plot coordinates. Must be
+<li><p><strong>horizontal_spacing</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> (</em><em>default 0.2 / cols</em><em>)</em>) – <p>Space between subplot columns in normalized plot coordinates. Must be
 a float between 0 and 1.</p>
 <p>Applies to all columns (use ‘specs’ subplot-dependents spacing)</p>
 </p></li>
-<li><p><strong>vertical_spacing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> (</em><em>default 0.3 / rows</em><em>)</em>) – <p>Space between subplot rows in normalized plot coordinates. Must be
+<li><p><strong>vertical_spacing</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> (</em><em>default 0.3 / rows</em><em>)</em>) – <p>Space between subplot rows in normalized plot coordinates. Must be
 a float between 0 and 1.</p>
 <p>Applies to all rows (use ‘specs’ subplot-dependents spacing)</p>
 </p></li>
-<li><p><strong>subplot_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>Title of each subplot as a list in row-major ordering.</p>
+<li><p><strong>subplot_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>Title of each subplot as a list in row-major ordering.</p>
 <p>Empty strings (“”) can be included in the list if no subplot title
 is desired in that space so that the titles are properly indexed.</p>
 </p></li>
-<li><p><strong>specs</strong> (<em>list of lists of dict</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>Per subplot specifications of subplot type, row/column spanning, and
+<li><p><strong>specs</strong> (<em>list of lists of dict</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>Per subplot specifications of subplot type, row/column spanning, and
 spacing.</p>
 <p>ex1: specs=[[{}, {}], [{‘colspan’: 2}, None]]</p>
 <p>ex2: specs=[[{‘rowspan’: 2}, {}], [None, {}]]</p>
@@ -246,7 +246,7 @@ if type=’xy’.</p>
 the spacing in between the subplots.</p></li>
 </ul>
 </p></li>
-<li><p><strong>insets</strong> (<em>list of dict</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em><em>:</em>) – <p>Inset specifications.  Insets are subplots that overlay grid subplots</p>
+<li><p><strong>insets</strong> (<em>list of dict</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em><em>:</em>) – <p>Inset specifications.  Insets are subplots that overlay grid subplots</p>
 <ul>
 <li><dl class="simple">
 <dt>Each item in ‘insets’ is a dictionary.</dt><dd><p>The available keys are:</p>
@@ -283,13 +283,13 @@ the spacing in between the subplots.</p></li>
 </li>
 </ul>
 </p></li>
-<li><p><strong>column_widths</strong> (<em>list of numbers</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>list of length <code class="docutils literal notranslate"><span class="pre">cols</span></code> of the relative widths of each column of subplots.
+<li><p><strong>column_widths</strong> (<em>list of numbers</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>list of length <code class="docutils literal notranslate"><span class="pre">cols</span></code> of the relative widths of each column of subplots.
 Values are normalized internally and used to distribute overall width
 of the figure (excluding padding) among the columns.</p>
 <p>For backward compatibility, may also be specified using the
 <code class="docutils literal notranslate"><span class="pre">column_width</span></code> keyword argument.</p>
 </p></li>
-<li><p><strong>row_heights</strong> (<em>list of numbers</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>list of length <code class="docutils literal notranslate"><span class="pre">rows</span></code> of the relative heights of each row of subplots.
+<li><p><strong>row_heights</strong> (<em>list of numbers</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – <p>list of length <code class="docutils literal notranslate"><span class="pre">rows</span></code> of the relative heights of each row of subplots.
 If start_cell=’top-left’ then row heights are applied top to bottom.
 Otherwise, if start_cell=’bottom-left’ then row heights are applied
 bottom to top.</p>
@@ -298,17 +298,17 @@ bottom to top.</p>
 are applied from bottom to top regardless of the value of start_cell.
 This matches the legacy behavior of the <code class="docutils literal notranslate"><span class="pre">row_width</span></code> argument.</p>
 </p></li>
-<li><p><strong>column_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – list of length <code class="docutils literal notranslate"><span class="pre">cols</span></code> of titles to place above the top subplot in
+<li><p><strong>column_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – list of length <code class="docutils literal notranslate"><span class="pre">cols</span></code> of titles to place above the top subplot in
 each column.</p></li>
-<li><p><strong>row_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – list of length <code class="docutils literal notranslate"><span class="pre">rows</span></code> of titles to place on the right side of each
+<li><p><strong>row_titles</strong> (<em>list of str</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – list of length <code class="docutils literal notranslate"><span class="pre">rows</span></code> of titles to place on the right side of each
 row of subplots. If start_cell=’top-left’ then row titles are
 applied top to bottom. Otherwise, if start_cell=’bottom-left’ then
 row titles are applied bottom to top.</p></li>
-<li><p><strong>x_title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Title to place below the bottom row of subplots,
+<li><p><strong>x_title</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Title to place below the bottom row of subplots,
 centered horizontally</p></li>
-<li><p><strong>y_title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Title to place to the left of the left column of subplots,
+<li><p><strong>y_title</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Title to place to the left of the left column of subplots,
 centered vertically</p></li>
-<li><p><strong>figure</strong> (<em>go.Figure</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – If None, a new go.Figure instance will be created and its axes will be
+<li><p><strong>figure</strong> (<em>go.Figure</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – If None, a new go.Figure instance will be created and its axes will be
 populated with those corresponding to the requested subplot geometry and
 this new figure will be returned.
 If a go.Figure instance, the axes will be added to the

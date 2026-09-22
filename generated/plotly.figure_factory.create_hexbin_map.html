@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.figure_factory.create_hexbin_map &#8212;  7.0.0 documentation</title>
+    <title>plotly.figure_factory.create_hexbin_map &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -127,23 +127,23 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data_frame</strong> (<em>DataFrame</em><em> or </em><em>array-like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – This argument needs to be passed for column names (and not keyword
+<li><p><strong>data_frame</strong> (<em>DataFrame</em><em> or </em><em>array-like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – This argument needs to be passed for column names (and not keyword
 names) to be used. Array-like and dict are transformed internally to a
 pandas DataFrame. Optional: if missing, a DataFrame gets constructed
 under the hood using the other arguments.</p></li>
-<li><p><strong>lat</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>lat</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 position marks according to latitude on a map.</p></li>
-<li><p><strong>lon</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>lon</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 position marks according to longitude on a map.</p></li>
-<li><p><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 assign color to marks.</p></li>
-<li><p><strong>nx_hexagon</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Number of hexagons (horizontally) to be created</p></li>
+<li><p><strong>nx_hexagon</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Number of hexagons (horizontally) to be created</p></li>
 <li><p><strong>agg_func</strong> (<em>function</em>) – Numpy array aggregator, it must take as input a 1D array and output a
 scalar value.</p></li>
-<li><p><strong>animation_frame</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>animation_frame</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 assign marks to animation frames.</p></li>
 <li><p><strong>color_discrete_sequence</strong> (<em>list of str</em>) – Strings should define valid CSS-colors. When <code class="docutils literal notranslate"><span class="pre">color</span></code> is set and the
@@ -174,26 +174,26 @@ and <code class="docutils literal notranslate"><span class="pre">plotly.express.
 desired midpoint. Setting this value is recommended when using
 <code class="docutils literal notranslate"><span class="pre">plotly.express.colors.diverging</span></code> color scales as the inputs to
 <code class="docutils literal notranslate"><span class="pre">color_continuous_scale</span></code>.</p></li>
-<li><p><strong>opacity</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Value between 0 and 1. Sets the opacity for markers.</p></li>
+<li><p><strong>opacity</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Value between 0 and 1. Sets the opacity for markers.</p></li>
 <li><p><strong>zoom</strong> (int (default <code class="docutils literal notranslate"><span class="pre">None</span></code>)) – Between 0 and 20. Sets initial map zoom level. Higher values are more
 zoomed-in. If not provided, the map will select its own zoom level.</p></li>
-<li><p><strong>center</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dict keys are <code class="docutils literal notranslate"><span class="pre">'lat'</span></code> and <code class="docutils literal notranslate"><span class="pre">'lon'</span></code> Sets the center point of the map.</p></li>
+<li><p><strong>center</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dict keys are <code class="docutils literal notranslate"><span class="pre">'lat'</span></code> and <code class="docutils literal notranslate"><span class="pre">'lon'</span></code> Sets the center point of the map.</p></li>
 <li><p><strong>map_style</strong> (str (default <code class="docutils literal notranslate"><span class="pre">'basic'</span></code>)) – Identifier of base map style. Allowed values are <code class="docutils literal notranslate"><span class="pre">'basic'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'carto-darkmatter'</span></code>, <code class="docutils literal notranslate"><span class="pre">'carto-darkmatter-nolabels'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'carto-positron'</span></code>, <code class="docutils literal notranslate"><span class="pre">'carto-positron-nolabels'</span></code>, <code class="docutils literal notranslate"><span class="pre">'carto-voyager'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'carto-voyager-nolabels'</span></code>, <code class="docutils literal notranslate"><span class="pre">'dark'</span></code>, <code class="docutils literal notranslate"><span class="pre">'light'</span></code>, <code class="docutils literal notranslate"><span class="pre">'open-street-map'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'outdoors'</span></code>, <code class="docutils literal notranslate"><span class="pre">'satellite'</span></code>, <code class="docutils literal notranslate"><span class="pre">'satellite-streets'</span></code>, <code class="docutils literal notranslate"><span class="pre">'streets'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'white-bg'</span></code>.</p></li>
-<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The figure title.</p></li>
-<li><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name (must be a key in plotly.io.templates) or
+<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The figure title.</p></li>
+<li><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name (must be a key in plotly.io.templates) or
 definition.</p></li>
 <li><p><strong>width</strong> (int (default <code class="docutils literal notranslate"><span class="pre">None</span></code>)) – The figure width in pixels.</p></li>
 <li><p><strong>height</strong> (int (default <code class="docutils literal notranslate"><span class="pre">None</span></code>)) – The figure height in pixels.</p></li>
-<li><p><strong>min_count</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Minimum number of points in a hexagon for it to be displayed. If None
+<li><p><strong>min_count</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Minimum number of points in a hexagon for it to be displayed. If None
 and color is not set, display all hexagons. If None and color is set,
 only display hexagons that contain points.</p></li>
-<li><p><strong>show_original_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether to show the original data on top of the hexbin aggregation.</p></li>
-<li><p><strong>original_data_marker</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Scattermap marker options.</p></li>
+<li><p><strong>show_original_data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether to show the original data on top of the hexbin aggregation.</p></li>
+<li><p><strong>original_data_marker</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Scattermap marker options.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

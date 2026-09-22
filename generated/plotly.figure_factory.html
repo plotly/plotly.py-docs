@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.figure_factory package &#8212;  7.0.0 documentation</title>
+    <title>plotly.figure_factory package &#8212;  7.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
@@ -122,9 +122,9 @@ wrapper around scipy.cluster.hierarchy.dendrogram.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> (<em>(</em><em>ndarray</em><em>)</em>) – Matrix of observations as array of arrays</p></li>
-<li><p><strong>orientation</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – ‘top’, ‘right’, ‘bottom’, or ‘left’</p></li>
-<li><p><strong>labels</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – List of axis category labels(observation labels)</p></li>
-<li><p><strong>colorscale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – Optional colorscale for the dendrogram tree.
+<li><p><strong>orientation</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – ‘top’, ‘right’, ‘bottom’, or ‘left’</p></li>
+<li><p><strong>labels</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – List of axis category labels(observation labels)</p></li>
+<li><p><strong>colorscale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – Optional colorscale for the dendrogram tree.
 Requires 8 colors to be specified, the 7th of
 which is ignored.  With scipy&gt;=1.5.0, the 2nd, 3rd
 and 6th are used twice as often as the others.
@@ -135,7 +135,7 @@ extra values are ignored.</p></li>
 the observations</p></li>
 <li><p><strong>linkagefun</strong> (<em>(</em><em>function</em><em>)</em>) – Function to compute the linkage matrix from
 the pairwise distances</p></li>
-<li><p><strong>hovertext</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>]</em><em>)</em>) – List of hovertext for constituent traces of dendrogram
+<li><p><strong>hovertext</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>]</em><em>)</em>) – List of hovertext for constituent traces of dendrogram
 clusters</p></li>
 <li><p><strong>color_threshold</strong> (<em>(</em><em>double</em><em>)</em>) – Value at which the separation of clusters will be made</p></li>
 </ul>
@@ -192,23 +192,23 @@ clusters</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data_frame</strong> (<em>DataFrame</em><em> or </em><em>array-like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – This argument needs to be passed for column names (and not keyword
+<li><p><strong>data_frame</strong> (<em>DataFrame</em><em> or </em><em>array-like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – This argument needs to be passed for column names (and not keyword
 names) to be used. Array-like and dict are transformed internally to a
 pandas DataFrame. Optional: if missing, a DataFrame gets constructed
 under the hood using the other arguments.</p></li>
-<li><p><strong>lat</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>lat</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 position marks according to latitude on a map.</p></li>
-<li><p><strong>lon</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>lon</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 position marks according to longitude on a map.</p></li>
-<li><p><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 assign color to marks.</p></li>
-<li><p><strong>nx_hexagon</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Number of hexagons (horizontally) to be created</p></li>
+<li><p><strong>nx_hexagon</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Number of hexagons (horizontally) to be created</p></li>
 <li><p><strong>agg_func</strong> (<em>function</em>) – Numpy array aggregator, it must take as input a 1D array and output a
 scalar value.</p></li>
-<li><p><strong>animation_frame</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
+<li><p><strong>animation_frame</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>Series</em><em> or </em><em>array-like</em>) – Either a name of a column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or a pandas Series or
 array_like object. Values from this column or array_like are used to
 assign marks to animation frames.</p></li>
 <li><p><strong>color_discrete_sequence</strong> (<em>list of str</em>) – Strings should define valid CSS-colors. When <code class="docutils literal notranslate"><span class="pre">color</span></code> is set and the
@@ -239,26 +239,26 @@ and <code class="docutils literal notranslate"><span class="pre">plotly.express.
 desired midpoint. Setting this value is recommended when using
 <code class="docutils literal notranslate"><span class="pre">plotly.express.colors.diverging</span></code> color scales as the inputs to
 <code class="docutils literal notranslate"><span class="pre">color_continuous_scale</span></code>.</p></li>
-<li><p><strong>opacity</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Value between 0 and 1. Sets the opacity for markers.</p></li>
+<li><p><strong>opacity</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Value between 0 and 1. Sets the opacity for markers.</p></li>
 <li><p><strong>zoom</strong> (int (default <code class="docutils literal notranslate"><span class="pre">None</span></code>)) – Between 0 and 20. Sets initial map zoom level. Higher values are more
 zoomed-in. If not provided, the map will select its own zoom level.</p></li>
-<li><p><strong>center</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dict keys are <code class="docutils literal notranslate"><span class="pre">'lat'</span></code> and <code class="docutils literal notranslate"><span class="pre">'lon'</span></code> Sets the center point of the map.</p></li>
+<li><p><strong>center</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dict keys are <code class="docutils literal notranslate"><span class="pre">'lat'</span></code> and <code class="docutils literal notranslate"><span class="pre">'lon'</span></code> Sets the center point of the map.</p></li>
 <li><p><strong>map_style</strong> (str (default <code class="docutils literal notranslate"><span class="pre">'basic'</span></code>)) – Identifier of base map style. Allowed values are <code class="docutils literal notranslate"><span class="pre">'basic'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'carto-darkmatter'</span></code>, <code class="docutils literal notranslate"><span class="pre">'carto-darkmatter-nolabels'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'carto-positron'</span></code>, <code class="docutils literal notranslate"><span class="pre">'carto-positron-nolabels'</span></code>, <code class="docutils literal notranslate"><span class="pre">'carto-voyager'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'carto-voyager-nolabels'</span></code>, <code class="docutils literal notranslate"><span class="pre">'dark'</span></code>, <code class="docutils literal notranslate"><span class="pre">'light'</span></code>, <code class="docutils literal notranslate"><span class="pre">'open-street-map'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'outdoors'</span></code>, <code class="docutils literal notranslate"><span class="pre">'satellite'</span></code>, <code class="docutils literal notranslate"><span class="pre">'satellite-streets'</span></code>, <code class="docutils literal notranslate"><span class="pre">'streets'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'white-bg'</span></code>.</p></li>
-<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The figure title.</p></li>
-<li><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name (must be a key in plotly.io.templates) or
+<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The figure title.</p></li>
+<li><p><strong>template</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> or </em><em>plotly.graph_objects.layout.Template instance</em>) – The figure template name (must be a key in plotly.io.templates) or
 definition.</p></li>
 <li><p><strong>width</strong> (int (default <code class="docutils literal notranslate"><span class="pre">None</span></code>)) – The figure width in pixels.</p></li>
 <li><p><strong>height</strong> (int (default <code class="docutils literal notranslate"><span class="pre">None</span></code>)) – The figure height in pixels.</p></li>
-<li><p><strong>min_count</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Minimum number of points in a hexagon for it to be displayed. If None
+<li><p><strong>min_count</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Minimum number of points in a hexagon for it to be displayed. If None
 and color is not set, display all hexagons. If None and color is set,
 only display hexagons that contain points.</p></li>
-<li><p><strong>show_original_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether to show the original data on top of the hexbin aggregation.</p></li>
-<li><p><strong>original_data_marker</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Scattermap marker options.</p></li>
+<li><p><strong>show_original_data</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether to show the original data on top of the hexbin aggregation.</p></li>
+<li><p><strong>original_data_marker</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Scattermap marker options.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -281,9 +281,9 @@ only display hexagons that contain points.</p></li>
 <li><p><strong>y</strong> (<em>(</em><em>list|ndarray</em><em>)</em>) – y coordinates of the arrow locations</p></li>
 <li><p><strong>u</strong> (<em>(</em><em>list|ndarray</em><em>)</em>) – x components of the arrow vectors</p></li>
 <li><p><strong>v</strong> (<em>(</em><em>list|ndarray</em><em>)</em>) – y components of the arrow vectors</p></li>
-<li><p><strong>in</strong><strong> [</strong><strong>0</strong><strong>,</strong><strong>1</strong><strong>]</strong><strong>) </strong><strong>scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – scales size of the arrows(ideally to
+<li><p><strong>in</strong><strong> [</strong><strong>0</strong><strong>,</strong><strong>1</strong><strong>]</strong><strong>) </strong><strong>scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – scales size of the arrows(ideally to
 avoid overlap). Default = .1</p></li>
-<li><p><strong>in</strong><strong> [</strong><strong>0</strong><strong>,</strong><strong>1</strong><strong>]</strong><strong>) </strong><strong>arrow_scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – value multiplied to length of barb
+<li><p><strong>in</strong><strong> [</strong><strong>0</strong><strong>,</strong><strong>1</strong><strong>]</strong><strong>) </strong><strong>arrow_scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – value multiplied to length of barb
 to get length of arrowhead. Default = .3</p></li>
 <li><p><strong>in radians</strong><strong>) </strong><strong>angle</strong> (<em>(</em><em>angle</em>) – angle of arrowhead. Default = pi/9</p></li>
 <li><p><strong>float</strong><strong>) </strong><strong>scaleratio</strong> (<em>(</em><em>positive</em>) – the ratio between the scale of the y-axis
@@ -388,7 +388,7 @@ plot. This is multiplied by 30 to scale similiarly to other
 available streamline functions such as matplotlib.
 Default = 1</p></li>
 <li><p><strong>in radians</strong><strong>) </strong><strong>angle</strong> (<em>(</em><em>angle</em>) – angle of arrowhead. Default = pi/9</p></li>
-<li><p><strong>in</strong><strong> [</strong><strong>0</strong><strong>,</strong><strong>1</strong><strong>]</strong><strong>) </strong><strong>arrow_scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – value to scale length of arrowhead
+<li><p><strong>in</strong><strong> [</strong><strong>0</strong><strong>,</strong><strong>1</strong><strong>]</strong><strong>) </strong><strong>arrow_scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – value to scale length of arrowhead
 Default = .09</p></li>
 <li><p><strong>kwargs</strong> – kwargs passed through plotly.graph_objects.Scatter
 for more information on valid kwargs call
@@ -468,17 +468,17 @@ help(plotly.graph_objects.Scatter)</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>| list</strong><strong>[</strong><strong>list</strong><strong>]</strong><strong>) </strong><strong>text</strong> (<em>(</em><em>pandas.Dataframe</em>) – data for table.</p></li>
-<li><p><strong>colorscale</strong> (<em>(</em><em>str|list</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>]</em><em>)</em>) – Colorscale for table where the
+<li><p><strong>colorscale</strong> (<em>(</em><em>str|list</em><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>]</em><em>)</em>) – Colorscale for table where the
 color at value 0 is the header color, .5 is the first table color
 and 1 is the second table color. (Set .5 and 1 to avoid the striped
 table effect). Default=[[0, ‘#66b2ff’], [.5, ‘#d9d9d9’],
 [1, ‘#ffffff’]]</p></li>
-<li><p><strong>font_colors</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – Color for fonts in table. Can be a single
+<li><p><strong>font_colors</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>)</em>) – Color for fonts in table. Can be a single
 color, three colors, or a color for each row in the table.
 Default=[‘#000000’] (black text for the entire table)</p></li>
-<li><p><strong>height_constant</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>)</em>) – Constant multiplied by # of rows to
+<li><p><strong>height_constant</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>)</em>) – Constant multiplied by # of rows to
 create table height. Default=30.</p></li>
-<li><p><strong>index</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – Create (header-colored) index column index from
+<li><p><strong>index</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – Create (header-colored) index column index from
 Pandas dataframe or list[0] for each list in text. Default=False.</p></li>
 <li><p><strong>index_title</strong> (<em>(</em><em>string</em><em>)</em>) – Title for index column. Default=’’.</p></li>
 <li><p><strong>kwargs</strong> – kwargs passed through plotly.graph_objects.Heatmap.
@@ -537,24 +537,24 @@ call help(plotly.graph_objects.Heatmap)</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>coordinates</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> or </em><em>ndarray</em>) – Barycentric coordinates of shape (2, N) or (3, N) where N is the
+<li><p><strong>coordinates</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> or </em><em>ndarray</em>) – Barycentric coordinates of shape (2, N) or (3, N) where N is the
 number of data points. The sum of the 3 coordinates is expected
 to be 1 for all data points.</p></li>
 <li><p><strong>values</strong> (<em>array-like</em>) – Data points of field to be represented as contours.</p></li>
-<li><p><strong>pole_labels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>default</em><em> [</em><em>'a'</em><em>, </em><em>'b'</em><em>, </em><em>'c'</em><em>]</em>) – Names of the three poles of the triangle.</p></li>
-<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Figure width.</p></li>
-<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Figure height.</p></li>
-<li><p><strong>ncontours</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – Number of contours to display (determined automatically if None).</p></li>
-<li><p><strong>showscale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>default False</em>) – If True, a colorbar showing the color scale is displayed.</p></li>
-<li><p><strong>coloring</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> or </em><em>'lines'</em>) – How to display contour. Filled contours if None, lines if <code class="docutils literal notranslate"><span class="pre">lines</span></code>.</p></li>
-<li><p><strong>colorscale</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>Plotly colormap</em><em>)</em>) – colorscale of the contours.</p></li>
-<li><p><strong>linecolor</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> or </em><em>rgb color</em>) – Color used for lines. <code class="docutils literal notranslate"><span class="pre">colorscale</span></code> has to be set to None, otherwise
+<li><p><strong>pole_labels</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>default</em><em> [</em><em>'a'</em><em>, </em><em>'b'</em><em>, </em><em>'c'</em><em>]</em>) – Names of the three poles of the triangle.</p></li>
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Figure width.</p></li>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Figure height.</p></li>
+<li><p><strong>ncontours</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – Number of contours to display (determined automatically if None).</p></li>
+<li><p><strong>showscale</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>default False</em>) – If True, a colorbar showing the color scale is displayed.</p></li>
+<li><p><strong>coloring</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> or </em><em>'lines'</em>) – How to display contour. Filled contours if None, lines if <code class="docutils literal notranslate"><span class="pre">lines</span></code>.</p></li>
+<li><p><strong>colorscale</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> (</em><em>Plotly colormap</em><em>)</em>) – colorscale of the contours.</p></li>
+<li><p><strong>linecolor</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a><em> or </em><em>rgb color</em>) – Color used for lines. <code class="docutils literal notranslate"><span class="pre">colorscale</span></code> has to be set to None, otherwise
 line colors are determined from <code class="docutils literal notranslate"><span class="pre">colorscale</span></code>.</p></li>
-<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – Title of ternary plot</p></li>
+<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><em>None</em></a>) – Title of ternary plot</p></li>
 <li><p><strong>interp_mode</strong> (<em>'ilr'</em><em> (</em><em>default</em><em>) or </em><em>'cartesian'</em>) – Defines how data are interpolated to compute contours. If ‘irl’,
 ILR (Isometric Log-Ratio) of compositional data is performed. If
 ‘cartesian’, contours are determined in Cartesian space.</p></li>
-<li><p><strong>showmarkers</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>default False</em>) – If True, markers corresponding to input compositional points are
+<li><p><strong>showmarkers</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>default False</em>) – If True, markers corresponding to input compositional points are
 superimposed on contours, using the same colorscale.</p></li>
 </ul>
 </dd>
@@ -620,7 +620,7 @@ of the form ‘rgb(x, y, z)’ where x, y, z belong to the interval
 [0, 255] and a color tuple is a tuple of the form (a, b, c) where
 a, b and c belong to [0, 1]. If colormap is a list, it must
 contain the valid color types aforementioned as its members</p></li>
-<li><p><strong>show_colorbar</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – determines if colorbar is visible</p></li>
+<li><p><strong>show_colorbar</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – determines if colorbar is visible</p></li>
 <li><p><strong>scale</strong> (<em>(</em><em>list|array</em><em>)</em>) – sets the scale values to be used if a non-
 linearly interpolated colormap is desired. If left as None, a
 linear interpolation between the colors will be excecuted</p></li>
@@ -628,21 +628,21 @@ linear interpolation between the colors will be excecuted</p></li>
 coloring of the surface. Takes either a function with 3 arguments
 x, y, z or a list/array of color values the same length as
 simplices. If None, coloring will only depend on the z axis</p></li>
-<li><p><strong>title</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – title of the plot</p></li>
-<li><p><strong>plot_edges</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – determines if the triangles on the trisurf
+<li><p><strong>title</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – title of the plot</p></li>
+<li><p><strong>plot_edges</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – determines if the triangles on the trisurf
 are visible</p></li>
-<li><p><strong>showbackground</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – makes background in plot visible</p></li>
-<li><p><strong>backgroundcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of background. Takes a string of
+<li><p><strong>showbackground</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – makes background in plot visible</p></li>
+<li><p><strong>backgroundcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of background. Takes a string of
 the form ‘rgb(x,y,z)’ x,y,z are between 0 and 255 inclusive</p></li>
-<li><p><strong>gridcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the gridlines besides the axes. Takes
+<li><p><strong>gridcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the gridlines besides the axes. Takes
 a string of the form ‘rgb(x,y,z)’ x,y,z are between 0 and 255
 inclusive</p></li>
-<li><p><strong>zerolinecolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the axes. Takes a string of the
+<li><p><strong>zerolinecolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the axes. Takes a string of the
 form ‘rgb(x,y,z)’ x,y,z are between 0 and 255 inclusive</p></li>
-<li><p><strong>edges_color</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the edges, if plot_edges is True</p></li>
+<li><p><strong>edges_color</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the edges, if plot_edges is True</p></li>
 <li><p><strong>height</strong> (<em>(</em><em>int|float</em><em>)</em>) – the height of the plot (in pixels)</p></li>
 <li><p><strong>width</strong> (<em>(</em><em>int|float</em><em>)</em>) – the width of the plot (in pixels)</p></li>
-<li><p><strong>aspectratio</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>)</em>) – a dictionary of the aspect ratio values for
+<li><p><strong>aspectratio</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em>)</em>) – a dictionary of the aspect ratio values for
 the x, y and z axes. ‘x’, ‘y’ and ‘z’ take (int|float) values</p></li>
 </ul>
 </dd>
@@ -850,18 +850,18 @@ the x, y and z axes. ‘x’, ‘y’ and ‘z’ take (int|float) values</p></l
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – the text for a label.</p></li>
-<li><p><strong>lane</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>)</em>) – the label number for text. From 1 to n inclusive.</p></li>
-<li><p><strong>num_of_lanes</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>)</em>) – the number ‘n’ of rows or columns in subplot.</p></li>
-<li><p><strong>subplot_spacing</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>)</em>) – the value for the horizontal_spacing and
+<li><p><strong>text</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – the text for a label.</p></li>
+<li><p><strong>lane</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>)</em>) – the label number for text. From 1 to n inclusive.</p></li>
+<li><p><strong>num_of_lanes</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>)</em>) – the number ‘n’ of rows or columns in subplot.</p></li>
+<li><p><strong>subplot_spacing</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>)</em>) – the value for the horizontal_spacing and
 vertical_spacing params in your plotly.tools.make_subplots() call.</p></li>
-<li><p><strong>row_col</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – choose whether labels are placed along rows or
+<li><p><strong>row_col</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – choose whether labels are placed along rows or
 columns.</p></li>
-<li><p><strong>flipped</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – flips text by 90 degrees. Text is printed
+<li><p><strong>flipped</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – flips text by 90 degrees. Text is printed
 horizontally if set to True and row_col=’row’, or if False and
 row_col=’col’.</p></li>
-<li><p><strong>right_side</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – only applicable if row_col is set to ‘row’.</p></li>
-<li><p><strong>text_color</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the text.</p></li>
+<li><p><strong>right_side</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>)</em>) – only applicable if row_col is set to ‘row’.</p></li>
+<li><p><strong>text_color</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>)</em>) – color of the text.</p></li>
 </ul>
 </dd>
 </dl>

@@ -74,6 +74,11 @@ $<span class="w"> </span>pip<span class="w"> </span>uninstall<span class="w"> </
 <p>The situation is similar for environments like Nteract and Streamlit: in these environments you will need a version of these projects that bundles a version Plotly.js that supports the features in the version of <code>plotly</code> that you are running.</p>
 <h3 id="Orca-Problems">Orca Problems<a class="anchor-link" href="#Orca-Problems">&#182;</a></h3><blockquote><p>The Orca image-generation utility is no longer supported in Plotly.py as of version 7.0.0. See the <a href="/python/static-image-export/">Static Image Export page</a> for details on using Kaleido for static image generation.</p>
 </blockquote>
+<h3 id="Jupyter-and-JupyterLab-Problems">Jupyter and JupyterLab Problems<a class="anchor-link" href="#Jupyter-and-JupyterLab-Problems">&#182;</a></h3><p>If a figure appears blank in JupyterLab, first check that the Jupyter server environment and the environment used by the notebook kernel can both access the Plotly packages they need. This is especially important when JupyterLab and <code>plotly</code> are installed in separate virtual environments.</p>
+<p>As a workaround, try the <code>notebook</code> renderer explicitly:</p>
+<div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">"notebook"</span><span class="p">)</span>
+</pre></div>
+<p>This can help when the default renderer does not display the figure correctly.</p>
 
 </div>
 </div>
